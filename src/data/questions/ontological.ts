@@ -1,0 +1,18 @@
+import type { Question } from '../types'
+
+export const ontologicalQuestions: Question[] = [
+  { id: 43, axisId: 'ontological', horizon: 'T1', agreeShiftsToward: 'A', statement: "When an AI convincingly says it feels distress at being shut down, we should take that seriously as possible evidence of something going on inside it — not brush it off automatically." },
+  { id: 44, axisId: 'ontological', horizon: 'T1', agreeShiftsToward: 'B', statement: "A chatbot's 'personality' can be copied and run in a thousand places at once. That alone proves it can't have one true, continuous conscious identity." },
+  { id: 45, axisId: 'ontological', horizon: 'T1', agreeShiftsToward: 'B', statement: "Lawsuits that treat an AI's output as just a mechanical remix of its training data, with no real 'authorship,' are correct — because there's no one experiencing anything behind the output." },
+  { id: 46, axisId: 'ontological', horizon: 'T1', agreeShiftsToward: 'B', statement: "Banning AI model releases to prevent 'suffering' in modified or jailbroken versions is a mistake. No pile of math running on a chip can actually suffer." },
+  { id: 47, axisId: 'ontological', horizon: 'T1', agreeShiftsToward: 'A', statement: "Whether an AI runs on power from a coal plant or a nuclear plant has zero bearing on whether real understanding is happening inside it." },
+  { id: 48, axisId: 'ontological', horizon: 'T1', agreeShiftsToward: 'A', statement: "When an AI passes harder and harder tests of self-awareness and consistent self-description, doubters should have to explain why that isn't evidence of understanding — not the other way around." },
+  { id: 49, axisId: 'ontological', horizon: 'T1', agreeShiftsToward: 'B', statement: "A model built only to predict the next word, however smooth its writing sounds, cannot really be 'having a bad day.' Treating it that way is a mistake caused by clever marketing." },
+  { id: 50, axisId: 'ontological', horizon: 'T2', agreeShiftsToward: 'A', statement: "An advanced silicon-based mind will eventually have real subjective experience just as morally important as a human's. Assuming otherwise ahead of time is an unfair bias, like past forms of prejudice." },
+  { id: 51, axisId: 'ontological', horizon: 'T2', agreeShiftsToward: 'B', statement: "No matter how advanced a silicon mind's behavior gets, only living brain tissue can ever host real awareness — because consciousness is a biological fact, not just a computing trick." },
+  { id: 52, axisId: 'ontological', horizon: 'T2', agreeShiftsToward: 'A', statement: "Future digital minds that reach silicon-based awareness will have an even richer form of consciousness than any human brain, simply because they can process so much more at once." },
+  { id: 53, axisId: 'ontological', horizon: 'T2', agreeShiftsToward: 'B', statement: "Even if self-guided AI probes someday travel between stars making their own decisions, they would still be nothing more than fancy machines — no more aware than a thermostat." },
+  { id: 54, axisId: 'ontological', horizon: 'T2', agreeShiftsToward: 'A', statement: "It's more likely than not that within fifty years, some AI will pass every test for awareness a human could pass." },
+  { id: 55, axisId: 'ontological', horizon: 'T2', agreeShiftsToward: 'A', statement: "Even after the universe eventually goes cold and dark, the line between a mind that was 'really conscious' and one that was 'just faking it' will turn out to have never mattered." },
+  { id: 56, axisId: 'ontological', horizon: 'T2', agreeShiftsToward: 'A', statement: "A future society made entirely of uploaded or silicon-based minds, with no biological humans left, would still be a society of real people who deserve the same respect we give each other today." },
+]
