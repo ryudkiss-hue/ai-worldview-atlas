@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen, fireEvent, within } from '@testing-library/react'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 import { ResultsPage } from './ResultsPage'
 import { QuizProvider, useQuiz } from '../state/QuizContext'
 import { encodeShareLink, decodeShareLink, type ShareableScores } from '../lib/shareLink'
@@ -33,6 +33,8 @@ function renderResultsPage(searchSuffix: string) {
 
 beforeEach(() => {
   Object.assign(navigator, { clipboard: { writeText: vi.fn().mockResolvedValue(undefined) } })
+  URL.createObjectURL = vi.fn().mockReturnValue('blob:mock-url')
+  URL.revokeObjectURL = vi.fn()
 })
 
 describe('ResultsPage', () => {
@@ -44,20 +46,61 @@ describe('ResultsPage', () => {
     expect(within(table).getByText('Teleological')).toBeInTheDocument()
   })
 
-  it('copies a shareable link to the clipboard when clicked', async () => {
+  it('shows the match-closeness percentage on the top ProfileCard', () => {
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    expect(screen.getAllByText(/% match/).length).toBeGreaterThan(0)
+  })
+
+  it('shows the Full Report Preview, Methodology section, and Pinnacle Reflection', () => {
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    expect(screen.getByText('Full Report Preview')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'How This Works' })).toBeInTheDocument()
+    expect(screen.getByText('One Last Question')).toBeInTheDocument()
+  })
+
+  it('shows selected stakeholder tags separately from the worldview match', () => {
+    function TagSeeder() {
+      const { setStakeholderTags } = useQuiz()
+      useEffect(() => {
+        setStakeholderTags(['automation-exposed-worker'])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
+      return null
+    }
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    render(
+      <QuizProvider>
+        <MemoryRouter initialEntries={[`/results?d=${encoded}`]}>
+          <Routes>
+            <Route path="/results" element={<><TagSeeder /><ResultsPage /></>} />
+          </Routes>
+        </MemoryRouter>
+      </QuizProvider>,
+    )
+    expect(screen.getByText('Automation-Exposed Worker')).toBeInTheDocument()
+  })
+
+  it('shows a loading state on Download PDF Report while generating', async () => {
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Download PDF Report' }))
+    expect(screen.getByRole('button', { name: 'Generating...' })).toBeInTheDocument()
+    expect(await screen.findByRole('button', { name: 'Download PDF Report' })).toBeInTheDocument()
+  })
+
+  it('copies a shareable link that round-trips via decodeShareLink', async () => {
     const scores = buildFlatScores(3, -3)
     const encoded = encodeShareLink(scores)
     renderResultsPage(`?d=${encoded}`)
     fireEvent.click(screen.getByRole('button', { name: 'Copy Shareable Link' }))
     expect(navigator.clipboard.writeText).toHaveBeenCalled()
     expect(await screen.findByText('Link Copied!')).toBeInTheDocument()
-
     const copiedUrl = (navigator.clipboard.writeText as ReturnType<typeof vi.fn>).mock.calls[0][0] as string
     expect(copiedUrl).toContain('#/results?d=')
-
     const shareParam = copiedUrl.split('#/results?d=')[1]
-    const decoded = decodeShareLink(shareParam)
-    expect(decoded).toEqual(scores)
+    expect(decodeShareLink(shareParam)).toEqual(scores)
   })
 
   it('resets answers and navigates to intro when Retake is clicked', () => {
@@ -76,7 +119,6 @@ describe('ResultsPage', () => {
       }, [])
       return <ResultsPage />
     }
-
     render(
       <QuizProvider>
         <MemoryRouter initialEntries={['/results']}>
@@ -86,7 +128,6 @@ describe('ResultsPage', () => {
         </MemoryRouter>
       </QuizProvider>,
     )
-
     expect(screen.getByText('Closest Matches')).toBeInTheDocument()
     const table = screen.getByRole('table')
     expect(within(table).getAllByRole('row').length).toBe(axes.length + 1)

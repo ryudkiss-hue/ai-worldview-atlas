@@ -3,6 +3,8 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
 import { profiles } from '../data/profiles'
+import { profileReports } from '../data/profileReports'
+import { stakeholderTags } from '../data/stakeholderTags'
 import { useQuiz } from '../state/QuizContext'
 import {
   computeRawAxisScores,
@@ -12,14 +14,21 @@ import {
   type AxisVector,
 } from '../lib/scoring'
 import { encodeShareLink, decodeShareLink } from '../lib/shareLink'
+import { pdf } from '@react-pdf/renderer'
+import { ReportDocument } from '../lib/pdfReport'
 import { RadarChart } from '../components/RadarChart'
 import { ProfileCard } from '../components/ProfileCard'
+import { ReportPreview } from '../components/ReportPreview'
+import { MethodologySection } from '../components/MethodologySection'
+import { ReflectiveBreakdown } from '../components/ReflectiveBreakdown'
+import { PinnacleReflection } from '../components/PinnacleReflection'
 
 export function ResultsPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { answers, reset } = useQuiz()
+  const { answers, reset, scenarioAnswers, selectedStakeholderTags } = useQuiz()
   const [copied, setCopied] = useState(false)
+  const [generatingPdf, setGeneratingPdf] = useState(false)
 
   const sharedParam = searchParams.get('d')
 
@@ -39,6 +48,10 @@ export function ResultsPage() {
   const combined = combineHorizons(t1Scaled, t2Scaled)
   const matches = classify(combined, profiles)
   const topMatches = matches.slice(0, 3)
+  const topMatch = topMatches[0]
+  const topContent = profileReports[topMatch.profile.id]
+
+  const selectedTagObjects = stakeholderTags.filter((tag) => selectedStakeholderTags.includes(tag.id))
 
   function handleShare() {
     const encoded = encodeShareLink({ t1Raw, t2Raw })
@@ -52,10 +65,41 @@ export function ResultsPage() {
     navigate('/')
   }
 
+  async function handleDownloadPdf() {
+    setGeneratingPdf(true)
+    try {
+      const doc = (
+        <ReportDocument
+          combined={combined}
+          t1Scaled={t1Scaled}
+          t2Scaled={t2Scaled}
+          topMatches={topMatches}
+          profileReports={profileReports}
+        />
+      )
+      const blob = await pdf(doc).toBlob()
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `tiam-report-${topMatch.profile.id}.pdf`
+      link.click()
+      URL.revokeObjectURL(url)
+    } finally {
+      setGeneratingPdf(false)
+    }
+  }
+
   return (
     <div className="max-w-3xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-4">Your Results</h2>
-      <RadarChart combined={combined} />
+      <RadarChart combined={combined} comparisonProfile={{ name: topMatch.profile.name, coords: topMatch.profile.coords }} />
+
+      {selectedTagObjects.length > 0 && (
+        <div className="mt-4">
+          <h3 className="text-lg font-semibold mb-1">Your Stake</h3>
+          <p className="text-gray-700">{selectedTagObjects.map((tag) => tag.name).join(', ')}</p>
+        </div>
+      )}
 
       <h3 className="text-xl font-semibold mt-8 mb-2">Closest Matches</h3>
       {topMatches.map((match, index) => (
@@ -82,9 +126,22 @@ export function ResultsPage() {
         </tbody>
       </table>
 
+      <ReportPreview content={topContent} />
+      <ReflectiveBreakdown content={topContent} scenarioAnswers={scenarioAnswers} combined={combined} />
+      <MethodologySection />
+      <PinnacleReflection archetypeName={topMatch.profile.name} />
+
       <div className="flex gap-3 mt-6">
         <button type="button" onClick={handleShare} className="px-4 py-2 rounded bg-blue-600 text-white">
           {copied ? 'Link Copied!' : 'Copy Shareable Link'}
+        </button>
+        <button
+          type="button"
+          onClick={handleDownloadPdf}
+          disabled={generatingPdf}
+          className="px-4 py-2 rounded bg-blue-600 text-white disabled:opacity-40"
+        >
+          {generatingPdf ? 'Generating...' : 'Download PDF Report'}
         </button>
         <button type="button" onClick={handleRetake} className="px-4 py-2 rounded border border-gray-300">
           Retake
