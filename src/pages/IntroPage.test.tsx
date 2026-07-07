@@ -27,7 +27,7 @@ function renderIntroPage() {
 describe('IntroPage', () => {
   it('shows the time commitment and no-persistence note', () => {
     renderIntroPage()
-    expect(screen.getByText(/15-20 minutes/)).toBeInTheDocument()
+    expect(screen.getByText(/17-22 minutes/)).toBeInTheDocument()
     expect(screen.getByText(/answers aren't saved/i)).toBeInTheDocument()
   })
 

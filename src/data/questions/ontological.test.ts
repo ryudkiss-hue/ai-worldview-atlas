@@ -8,9 +8,9 @@ describe('ontologicalQuestions', () => {
     expect(ontologicalQuestions.filter((q) => q.horizon === 'T2')).toHaveLength(7)
   })
 
-  it('uses ids 43 through 56 with no gaps or duplicates', () => {
+  it('uses ids 47 through 60 with no gaps or duplicates', () => {
     const ids = ontologicalQuestions.map((q) => q.id).sort((a, b) => a - b)
-    expect(ids).toEqual(Array.from({ length: 14 }, (_, i) => i + 43))
+    expect(ids).toEqual(Array.from({ length: 14 }, (_, i) => i + 47))
   })
 
   it('every question targets the ontological axis', () => {

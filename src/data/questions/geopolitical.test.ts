@@ -8,9 +8,9 @@ describe('geopoliticalQuestions', () => {
     expect(geopoliticalQuestions.filter((q) => q.horizon === 'T2')).toHaveLength(7)
   })
 
-  it('uses ids 99 through 112 with no gaps or duplicates', () => {
+  it('uses ids 111 through 124 with no gaps or duplicates', () => {
     const ids = geopoliticalQuestions.map((q) => q.id).sort((a, b) => a - b)
-    expect(ids).toEqual(Array.from({ length: 14 }, (_, i) => i + 99))
+    expect(ids).toEqual(Array.from({ length: 14 }, (_, i) => i + 111))
   })
 
   it('every question targets the geopolitical axis', () => {
