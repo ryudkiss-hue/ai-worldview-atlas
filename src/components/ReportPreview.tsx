@@ -14,6 +14,12 @@ export function ReportPreview({ content }: ReportPreviewProps) {
         ))}
       </div>
 
+      <h4 className="font-semibold mb-2">Commonly Confused With</h4>
+      <p className="text-gray-700 mb-4">
+        <span className="font-medium">{content.commonlyConfusedWith.profileName}.</span>{' '}
+        {content.commonlyConfusedWith.distinction}
+      </p>
+
       <h4 className="font-semibold mb-2">Thinkers whose public work resonates with this view</h4>
       <ul className="space-y-2 mb-4">
         {content.thinkers.map((thinker) => (

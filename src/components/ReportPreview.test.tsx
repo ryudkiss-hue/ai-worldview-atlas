@@ -24,4 +24,10 @@ describe('ReportPreview', () => {
     content.furtherReading.forEach((r) => expect(screen.getByText(r.title)).toBeInTheDocument())
     content.nextSteps.forEach((step) => expect(screen.getByText(step)).toBeInTheDocument())
   })
+
+  it('renders the commonly-confused-with archetype name and distinction', () => {
+    render(<ReportPreview content={content} />)
+    expect(screen.getByText(`${content.commonlyConfusedWith.profileName}.`)).toBeInTheDocument()
+    expect(screen.getByText(content.commonlyConfusedWith.distinction)).toBeInTheDocument()
+  })
 })
