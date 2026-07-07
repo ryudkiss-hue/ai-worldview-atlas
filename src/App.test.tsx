@@ -14,4 +14,15 @@ describe('App end-to-end smoke test', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Start' }))
     expect(screen.getByText('Teleological')).toBeInTheDocument()
   })
+
+  it('reaches the scenario page directly via /scenarios and can skip to results', () => {
+    render(
+      <MemoryRouter initialEntries={['/scenarios']}>
+        <App />
+      </MemoryRouter>,
+    )
+    expect(screen.getByText('One More Thing (Optional)')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Skip for now' }))
+    expect(screen.getByText('Your Results')).toBeInTheDocument()
+  })
 })
