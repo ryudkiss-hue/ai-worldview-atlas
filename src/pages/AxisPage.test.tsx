@@ -10,7 +10,7 @@ function renderAxisPage(initialAxis: number) {
       <MemoryRouter initialEntries={[`/quiz/${initialAxis}`]}>
         <Routes>
           <Route path="/quiz/:axisIndex" element={<AxisPage />} />
-          <Route path="/results" element={<p>Results Page</p>} />
+          <Route path="/scenarios" element={<p>Scenarios Page</p>} />
           <Route path="/" element={<p>Intro Page</p>} />
         </Routes>
       </MemoryRouter>
@@ -19,27 +19,30 @@ function renderAxisPage(initialAxis: number) {
 }
 
 describe('AxisPage', () => {
-  it('shows the axis name and both pole labels', () => {
+  it('shows the axis name but not the pole-vs-pole label', () => {
     renderAxisPage(1)
     expect(screen.getByText('Teleological')).toBeInTheDocument()
-    expect(screen.getByText('Cosmic Vitalism vs. Anthropocentric Humanism')).toBeInTheDocument()
+    expect(screen.queryByText(/vs\./)).not.toBeInTheDocument()
+  })
+
+  it('still renders exactly 14 questions (7 T1 + 7 T2), now in shuffled order', () => {
+    renderAxisPage(1)
+    expect(screen.getAllByRole('radio', { name: 'Strongly Agree' })).toHaveLength(14)
   })
 
   it('disables Next until all 14 questions on the page are answered', () => {
     renderAxisPage(1)
     const nextButton = screen.getByRole('button', { name: 'Next' })
     expect(nextButton).toBeDisabled()
-    const stronglyAgreeRadios = screen.getAllByRole('radio', { name: 'Strongly Agree' })
-    expect(stronglyAgreeRadios).toHaveLength(14)
-    stronglyAgreeRadios.forEach((radio) => fireEvent.click(radio))
+    screen.getAllByRole('radio', { name: 'Strongly Agree' }).forEach((radio) => fireEvent.click(radio))
     expect(nextButton).not.toBeDisabled()
   })
 
-  it('navigates to /results when Next is clicked from axis 8', () => {
+  it('navigates to /scenarios (not /results) when Next is clicked from axis 8', () => {
     renderAxisPage(8)
     screen.getAllByRole('radio', { name: 'Strongly Agree' }).forEach((radio) => fireEvent.click(radio))
     fireEvent.click(screen.getByRole('button', { name: 'Next' }))
-    expect(screen.getByText('Results Page')).toBeInTheDocument()
+    expect(screen.getByText('Scenarios Page')).toBeInTheDocument()
   })
 
   it('navigates to / when Back is clicked from axis 1', () => {

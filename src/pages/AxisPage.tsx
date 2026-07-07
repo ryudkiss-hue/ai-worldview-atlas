@@ -8,7 +8,7 @@ import { AxisHorizonGroup } from '../components/AxisHorizonGroup'
 export function AxisPage() {
   const { axisIndex } = useParams<{ axisIndex: string }>()
   const navigate = useNavigate()
-  const { answers, setAnswer } = useQuiz()
+  const { answers, setAnswer, questionOrder } = useQuiz()
 
   const index = Number(axisIndex)
   const axis = axes.find((a) => a.number === index)
@@ -18,13 +18,15 @@ export function AxisPage() {
   }
 
   const allQuestions = questionsForAxis(axis.id)
-  const t1Questions = allQuestions.filter((q) => q.horizon === 'T1')
-  const t2Questions = allQuestions.filter((q) => q.horizon === 'T2')
+  const order = questionOrder[axis.id]
+  const byId = new Map(allQuestions.map((q) => [q.id, q]))
+  const t1Questions = order.t1.map((id) => byId.get(id)!)
+  const t2Questions = order.t2.map((id) => byId.get(id)!)
   const allAnswered = allQuestions.every((q) => answers[q.id] !== undefined)
 
   function goNext() {
     if (index === 8) {
-      navigate('/results')
+      navigate('/scenarios')
     } else {
       navigate(`/quiz/${index + 1}`)
     }
@@ -41,10 +43,7 @@ export function AxisPage() {
   return (
     <div className="max-w-2xl mx-auto p-6">
       <ProgressBar current={index} total={8} label={`Axis ${index} of 8`} />
-      <h2 className="text-2xl font-bold mt-4 mb-1">{axis.name}</h2>
-      <p className="text-gray-600 mb-6">
-        {axis.poleA} vs. {axis.poleB}
-      </p>
+      <h2 className="text-2xl font-bold mt-4 mb-6">{axis.name}</h2>
       <AxisHorizonGroup
         title="Right Now (Next 2-5 Years)"
         questions={t1Questions}
