@@ -1,5 +1,19 @@
+import { Routes, Route } from 'react-router-dom'
+import { QuizProvider } from './state/QuizContext'
+import { IntroPage } from './pages/IntroPage'
+import { AxisPage } from './pages/AxisPage'
+import { ResultsPage } from './pages/ResultsPage'
+
 function App() {
-  return <h1>TIAM-112 Diagnostic</h1>
+  return (
+    <QuizProvider>
+      <Routes>
+        <Route path="/" element={<IntroPage />} />
+        <Route path="/quiz/:axisIndex" element={<AxisPage />} />
+        <Route path="/results" element={<ResultsPage />} />
+      </Routes>
+    </QuizProvider>
+  )
 }
 
 export default App
