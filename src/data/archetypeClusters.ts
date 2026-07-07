@@ -13,7 +13,7 @@ export const archetypeClusters: ArchetypeCluster[] = [
       'rationalist-alignment-researcher', 'global-governance-technocrat',
       'near-term-ai-ethicist', 'neo-luddite-degrowth-advocate',
       'whistleblower-insider-safety-advocate', 'compute-governance-specialist',
-      'eu-style-regulatory-standard-setter',
+      'eu-style-regulatory-standard-setter', 'ai-ethics-fairness-watchdog',
     ],
   },
   {
@@ -54,6 +54,6 @@ export const archetypeClusters: ArchetypeCluster[] = [
   {
     id: 'sovereignty-marginalized-voice',
     name: 'Sovereignty/Marginalized Voice',
-    profileIds: ['global-south-techno-sovereigntist', 'indigenous-data-sovereignty-advocate'],
+    profileIds: ['global-south-techno-sovereigntist', 'indigenous-data-sovereignty-advocate', 'ai-global-development-optimist'],
   },
 ]
