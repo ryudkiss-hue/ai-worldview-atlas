@@ -113,6 +113,28 @@ Example (Doomer profile): "Nick Bostrom — Philosopher, Oxford. His writing on
 existential risk from advanced AI, particularly *Superintelligence*, is the
 most cited academic grounding for this precautionary stance."
 
+**Exception for reputationally-sensitive or exemplar-free profiles.** Four
+profiles carry overtly negative or politically-loaded framing —
+`authoritarian-state-control-advocate`, `military-ai-strategist`,
+`techno-nationalist-hawk`, `corporate-ai-pragmatist` — where naming a specific
+living person against that label, even hedged, risks mischaracterizing them.
+For these four, `thinkers[]` cites **doctrines, institutions, historical
+(non-living) figures, or intellectual traditions** instead of living public
+individuals — e.g., a strategy doctrine, a declassified policy document, a
+historical political theorist writing generally about statecraft/realism, or
+a named think tank's published position, not a named living executive or
+official.
+
+A fifth profile, `pragmatic-centrist`, has no natural real-world exemplar by
+construction (its coordinates are all zero — "genuinely undecided"). For this
+one, `thinkers[]` cites people known for **epistemic humility or
+methodological caution as a discipline** (e.g., a philosopher of science
+writing on uncertainty, forecasting, or calibration) rather than forcing a
+fit to "undecided about AI" specifically.
+
+These five profile ids are the only exceptions to the "named living public
+figure" default in the rest of this section.
+
 ### 3.3 Per-user computed content
 
 Unlike the authored content above, this is generated from the user's actual
@@ -169,6 +191,19 @@ API, not `PDFDownloadLink`, for explicit control over a loading state),
 creates an object URL, triggers a download via a temporary anchor element,
 then revokes the URL. The button shows a disabled/spinner state while the
 blob is being generated, since multi-page PDF generation isn't instant.
+
+**Known risk:** `@react-pdf/renderer` rendering/testing under Vitest's jsdom
+environment is unverified and could hit the same class of gap the prior
+build's Recharts integration did (Tasks 20/21 needed jsdom shims beyond what
+was originally planned). The implementation task for `pdfReport.tsx` should
+investigate this early — verify `pdf(<ReportDocument ... />).toBlob()` actually
+resolves in the test environment before writing the full document structure
+around it. If it proves incompatible or requires disproportionate environment
+hacking, the fallback is a print-optimized HTML view (a dedicated
+`/report` route styled for print) triggered via `window.print()`, accepting
+the trade-off of an extra manual "Save as PDF" step for the user. This
+decision should be escalated (not silently substituted) if the primary
+approach doesn't pan out.
 
 ## 4. Quality-of-Life Additions (narrow, deliberate scope)
 
