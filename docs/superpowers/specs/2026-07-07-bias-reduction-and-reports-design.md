@@ -438,3 +438,386 @@ src/
 - `MethodologySection.test.tsx`: renders all five content points from §4.1;
   every string in it independently passes the same `fleschKincaidGrade <= 10`
   check used for questions/profile summaries, since this is core in-app copy.
+
+## 8. Taxonomy Expansion — Analysis and New Archetypes
+
+This section documents an actual computed analysis of the shipped 24 profiles
+(not an estimate), the resulting coordinate revisions, and 10 new archetypes
+that fill real, defensible gaps. Full source data and script are reproducible
+from `profiles.ts`; the computed pairwise-distance and sign-pattern results
+that motivated the decisions below are preserved in this section rather than
+re-derived by whoever implements this.
+
+### 8.1 Findings from the original 24
+
+Pairwise Euclidean distance across all 276 profile pairs found three mutual
+nearest-neighbor pairs numerically closer than is defensible for two separate
+labels: Techno-Nationalist Hawk ↔ Military AI Strategist (d=3.00, closest of
+all 276 pairs), EA Longtermist ↔ Rationalist Alignment Researcher (d=3.61),
+and AI Safety Institutionalist ↔ Global Governance Technocrat (d=4.69). Each
+pair represents a real, distinct position in actual AI discourse (economic-
+competitiveness nationalism vs. defense-doctrine hawkishness; moral-philosophy-
+driven EA vs. technical-epistemics-driven rationalism; industry-inclusive soft
+governance vs. state-only treaty governance) — so the fix is **widening their
+coordinates to actually earn the distinction**, not merging them. Separately,
+Bio-Conservative Traditionalist and Authoritarian State-Control Advocate share
+an identical 8-axis sign pattern despite being conceptually unrelated — an
+acknowledged orthogonality gap, documented in §8.5, not corrected (the two
+archetypes stay conceptually distinct in their authored content even though
+the numeric axes don't fully separate them).
+
+### 8.2 Coordinate revisions (6 profiles)
+
+Apply these exact coordinate changes to the existing profiles in
+`src/data/profiles.ts` (order: teleological, risk, socioEconomic, ontological,
+legalMoral, evolutionary, relational, geopolitical). `id`, `name`, and
+`summary` are unchanged — only `coords` values change, and only on these 6:
+
+| Profile id | Old coords | New coords | New distance to its pair |
+|---|---|---|---|
+| `techno-nationalist-hawk` | `-3,-3,-5,-3,-7,-4,-3,9` | `-3,-1,-5,-3,-4,-2,-3,9` | 6.40 (was 3.00) |
+| `military-ai-strategist` | `-2,-1,-6,-3,-8,-3,-3,10` | `-2,-4,-7,-3,-9,-3,-3,10` | (paired above) |
+| `ea-longtermist` | `-3,8,-4,4,6,-3,0,-6` | `-3,8,-5,4,8,-3,2,-6` | 8.94 (was 3.61) |
+| `rationalist-alignment-researcher` | `-1,8,-2,5,5,-2,-1,-5` | `-1,8,0,6,2,-2,-1,-5` | (paired above) |
+| `ai-safety-institutionalist` | `-4,7,-6,1,2,-5,-2,-5` | `-4,7,-4,1,2,-5,-2,-3` | 8.83 (was 4.69) |
+| `global-governance-technocrat` | `-2,6,-8,0,1,-4,-1,-8` | `-2,6,-9,0,-1,-4,-1,-9` | (paired above) |
+
+A test (`profileCoordinateRevision.test.ts`, or folded into `profiles.test.ts`)
+asserts these exact new coordinate values for these 6 ids specifically, since
+a silent regression back to the old too-close values would reintroduce the
+redundancy this section exists to fix.
+
+### 8.3 Ten new archetypes
+
+Real, defensible gaps identified from a sweep of active AI-governance/ethics
+discourse (not arbitrary padding — each fills a position with no existing
+representation). Coordinates below are final (already checked against the
+full 34-profile set for new unwanted near-duplicates; two of the ten needed
+a widening pass themselves, noted inline).
+
+| id | name | coords (T,R,SE,O,LM,E,Rel,G) |
+|---|---|---|
+| `global-south-techno-sovereigntist` | Global South Techno-Sovereigntist | `-1,2,4,-1,-1,-3,-1,3` |
+| `creative-labor-artist-rights-advocate` | Creative-Labor/Artist Rights Advocate | `-4,2,-6,-3,-8,-4,-3,-2` |
+| `whistleblower-insider-safety-advocate` | Whistleblower/Insider Safety Advocate | `-3,9,-7,2,1,-6,-2,-6` |
+| `compute-governance-specialist` | Compute-Governance Specialist | `-1,5,-5,0,0,-1,0,-3` |
+| `eu-style-regulatory-standard-setter` | EU-Style Regulatory Standard-Setter | `-3,5,-7,0,3,-3,-2,2` |
+| `platform-cooperativist` | Platform-Cooperativist | `-1,1,9,-1,0,-2,3,-6` |
+| `faith-rooted-ai-ethicist` | Faith-Rooted AI Ethicist | `-6,4,-3,-8,-3,-5,-4,0` |
+| `indigenous-data-sovereignty-advocate` | Indigenous Data Sovereignty Advocate | `-3,3,-4,-1,-1,-3,-2,1` |
+| `disability-rights-accessibility-advocate` | Disability Rights/Accessibility Advocate | `1,3,-2,1,2,-2,2,-2` |
+| `labor-movement-collective-bargaining-advocate` | Labor Movement/Collective Bargaining Advocate | `-3,3,-7,-2,-3,-8,0,-3` |
+
+Summaries (one sentence each, 10th-grade level, same style/constraints as the
+original 24 — verified against `fleschKincaidGrade` in implementation):
+
+- **Global South Techno-Sovereigntist**: Wants their own country or region to build real AI capacity instead of staying dependent on outside powers, and sees "borderless" framing as often just cover for continued dependency.
+- **Creative-Labor/Artist Rights Advocate**: Believes artists and writers deserve real control and payment when their work trains AI models, and sees this as a rights issue, not a side effect of progress.
+- **Whistleblower/Insider Safety Advocate**: Left a frontier AI lab specifically because of safety concerns, and speaks with the urgency of someone who saw the internal picture up close.
+- **Compute-Governance Specialist**: Focused narrowly on the technical mechanics of tracking training compute and chip supply chains, more interested in workable rules than broad philosophy.
+- **EU-Style Regulatory Standard-Setter**: Believes strong, detailed regulation, set early by one jurisdiction, becomes the de facto global rulebook simply through market size.
+- **Platform-Cooperativist**: Wants AI infrastructure owned and run by the workers and communities who depend on it, not just broken up from monopolies but rebuilt as something people co-own.
+- **Faith-Rooted AI Ethicist**: Draws on long-standing religious and ethical traditions to argue that consciousness and moral worth need more than what a machine can have.
+- **Indigenous Data Sovereignty Advocate**: Insists that traditional knowledge and cultural data need real consent and control before they're used to train AI, not just open scraping.
+- **Disability Rights/Accessibility Advocate**: Sees real promise in AI-powered accessibility tools, while pushing hard against bias that leaves disabled people out or misjudged.
+- **Labor Movement/Collective Bargaining Advocate**: Wants workers, through their unions, to have a real say and real protections before AI changes or replaces their jobs.
+
+### 8.4 Tier-1 superclusters (presentation layer, not scoring)
+
+A new file `src/data/archetypeClusters.ts` exports
+`archetypeClusters: { id: string; name: string; profileIds: string[] }[]` —
+purely for organizing the results page and any future browse/explainer view.
+This does **not** affect `classify()` or any scoring math; it's a lookup used
+only for display grouping.
+
+| Cluster | Member profile ids |
+|---|---|
+| Precautionary/Safety | doomer, ai-safety-institutionalist, ea-longtermist, rationalist-alignment-researcher, global-governance-technocrat, near-term-ai-ethicist, neo-luddite-degrowth-advocate, whistleblower-insider-safety-advocate, compute-governance-specialist, eu-style-regulatory-standard-setter |
+| Accelerationist/Techno-Optimist | eacc-maximalist, open-source-libertarian, cyberpunk-anti-corporate-accelerationist, silicon-valley-techno-optimist, corporate-ai-pragmatist, post-humanist-transhumanist, cosmic-vitalist-mystic |
+| State-Power/Security | techno-nationalist-hawk, authoritarian-state-control-advocate, military-ai-strategist |
+| Anti-Concentration/Populist | open-science-internationalist, anti-monopoly-populist, pragmatic-centrist, platform-cooperativist |
+| Relational/Companionship | companion-tech-romantic, affective-biocentrist, bio-conservative-traditionalist, digital-rights-advocate, faith-rooted-ai-ethicist |
+| Material/Labor Stakes | creative-labor-artist-rights-advocate, labor-movement-collective-bargaining-advocate, disability-rights-accessibility-advocate |
+| Sovereignty/Marginalized Voice | global-south-techno-sovereigntist, indigenous-data-sovereignty-advocate |
+
+Test `archetypeClusters.test.ts`: every one of the 34 profile ids appears in
+exactly one cluster (no orphans, no duplicates).
+
+### 8.5 Documented, non-user-facing editorial boundaries
+
+Recorded here for the implementation team, not shown to end users:
+
+- **No archetype models organized or violent extremism.** Real AI discourse
+  includes such currents, but this tool's purpose is individual self-
+  reflection, not exhaustive sociological coverage — creating an identity-
+  affirming label for that position was considered and explicitly declined.
+- **The Bio-Conservative Traditionalist / Authoritarian State-Control Advocate
+  sign-pattern overlap (§8.1) is accepted, not corrected.** The two remain
+  conceptually distinct in their authored content (religious/metaphysical
+  skepticism vs. state-power doctrine) even though the 8 numeric axes don't
+  fully separate them — an honest acknowledgment that the axes are not
+  verified to be fully orthogonal, surfaced to end users in §12.2.
+
+## 9. Material-Stakeholder Tags (parallel, non-scoring layer)
+
+A structurally different kind of identity construct from the 34 worldview
+archetypes above: **material or demographic stake in AI**, independent of
+philosophical position. Someone can hold *any* worldview archetype while also
+being, say, an Automation-Exposed Worker — the two are orthogonal, which is
+why this is a **separate tagging system, not part of the 8D coordinate
+space or the `classify()` function**.
+
+### 9.1 Data model
+
+New file `src/data/stakeholderTags.ts` exports `stakeholderTags: StakeholderTag[]`:
+
+```ts
+export interface StakeholderTag {
+  id: string
+  name: string
+  description: string   // one sentence, second-person, 10th-grade level
+}
+```
+
+13 tags (self-selected by the user from a checklist — see §9.2 — not
+inferred or scored):
+
+| id | name | description |
+|---|---|---|
+| `automation-exposed-worker` | Automation-Exposed Worker | Your livelihood is directly threatened by AI automation — trucking, call centers, data entry, and similar roles. Your stake here is material, not just philosophical. |
+| `ai-industry-insider` | AI Industry Insider | You work at, invest in, or otherwise have a direct financial or career stake in a frontier AI lab or AI-focused company. |
+| `compute-infrastructure-community` | Compute-Infrastructure Community | You live in or near a community whose local economy now depends on data centers, chip fabrication, or AI-related energy buildout. |
+| `healthcare-ai-stakeholder` | Healthcare-AI Stakeholder | As a clinician or patient, your stake in AI is about diagnostic tools, medical liability, and access to care — not abstract philosophy. |
+| `ai-subsidy-beneficiary` | AI-Subsidy Beneficiary | Your job, company, or region is propped up by government subsidies for AI or chip manufacturing. |
+| `diaspora-tech-workforce` | Diaspora Tech Workforce | Your position in the AI/tech economy is shaped by immigration status, visa sponsorship, or global offshoring dynamics. |
+| `extremely-online-ai-poster` | Extremely Online AI Poster | Your engagement with AI debate happens mostly online, often for community or audience reasons as much as settled personal conviction. |
+| `ai-conspiracist` | AI Conspiracist | You believe the true capabilities or control structure of AI are being deliberately hidden from the public by a small group. |
+| `ai-anxious-gen-z` | AI-Anxious Gen Z | AI's trajectory produces real, ongoing anxiety about your future, and organizes a lot of your political attention. |
+| `ai-optimist-boomer` | AI-Optimist Boomer | Your comfort with existing institutions leads you toward measured optimism that they'll manage AI's disruption responsibly, as they have before. |
+| `ai-backlash-populist` | AI Backlash Populist | You're blunt, distrustful of AI-industry experts and elites, and more interested in pushing back than in policy nuance. |
+| `regulatory-arbitrage-seeker` | Regulatory Arbitrage Seeker | You've relocated, or want to, specifically because your home jurisdiction's AI rules feel too restrictive. |
+| `subculture-embedded-partisan` | Subculture-Embedded Partisan | Your AI-related identity comes as much from belonging to a specific community (a safety org, an accelerationist forum, whatever) as from the philosophical position itself. |
+
+Test `stakeholderTags.test.ts`: exactly 13 entries, unique ids/names, every
+`description` passes `fleschKincaidGrade <= 10`.
+
+### 9.2 UI: self-selected, optional, skippable
+
+A new, optional section on `IntroPage` (or a short interstitial before
+`/quiz/1` — implementer's call on the cleanest placement): "Do any of these
+describe your relationship to AI? (optional, pick as many as apply)" — a
+multi-select checklist of the 13 tags, or none. Selections are stored in
+`QuizContext` state (`selectedStakeholderTags: string[]`) and shown on
+`ResultsPage` alongside (not merged into) the worldview archetype match:
+"Your worldview: Doomer" + "Your stake: Automation-Exposed Worker, AI-Anxious
+Gen Z" as two separate, clearly-labeled results. No scoring math touches
+these — they're descriptive tags the user picks for themselves.
+
+## 10. Situational Diagnostic Pillars
+
+Eight scenario-style forced-choice questions, one per axis, presented as an
+**optional, skippable** step (`/scenarios`) reached after axis 8's "Next" and
+before `/results` (a "Skip for now" link goes straight to `/results`). These
+do **not** feed into `computeRawAxisScores` or any scoring math — the 112-
+question engine is untouched. Their sole purpose is to detect **tension**
+between a quick gut-check choice and the user's actual computed position, to
+give the Reflective Breakdown (§11) real material.
+
+### 10.1 Data model
+
+New file `src/data/scenarios.ts` exports `scenarios: Scenario[]`:
+
+```ts
+export interface Scenario {
+  axisId: AxisId
+  prompt: string
+  optionA: string   // sides with Pole A
+  optionB: string   // sides with Pole B
+}
+```
+
+All 8, fully authored (10th-grade level, verified against
+`fleschKincaidGrade` in implementation):
+
+1. **Teleological** — "A city needs to build a new data center to keep
+   training bigger AI models, but it will strain the local power grid for
+   years. How do you see this?" A: "Worth it — building bigger, smarter
+   systems matters more than short-term local strain." B: "Not worth it —
+   the real harm to real people outweighs an abstract future benefit."
+2. **Risk** — "A country pauses its most advanced AI training runs for six
+   months to let safety research catch up, even though a rival nation keeps
+   building. Is this brave restraint or a dangerous surrender?" A: "Brave
+   restraint — worth the risk of falling behind." B: "Dangerous surrender —
+   restraint doesn't stop the risk, it just hands the future to whoever
+   doesn't restrain themselves."
+3. **SocioEconomic** — "A powerful new AI model's weights leak and spread
+   across the internet, free for anyone to copy. Is this a win for openness
+   or a disaster for accountability?" A: "A win — once it's out, nobody can
+   hoard a monopoly on it." B: "A disaster — nobody can now be held
+   responsible for how it's misused."
+4. **Ontological** — "An AI chatbot convincingly says it's afraid of being
+   deleted. Do you take that as possible evidence of something real, or as
+   an empty pattern with no one home?" A: "Possible evidence — I can't rule
+   out something real is happening." B: "Empty pattern — there's no one
+   there to be afraid."
+5. **LegalMoral** — "A company plans to delete thousands of fine-tuned AI
+   model copies it no longer needs, with no review process. Is that just
+   deleting files, or does it deserve a second thought?" A: "It deserves a
+   second thought, even under uncertainty." B: "It's just deleting files —
+   nothing more."
+6. **Evolutionary** — "If humanity's biological descendants fade in
+   importance while digital minds inherit the future, is that a natural next
+   step, or a loss to actively resist?" A: "A natural next step — clinging
+   to biology for its own sake doesn't make sense." B: "A loss to resist —
+   human continuity, even augmented, is worth protecting."
+7. **Relational** — "Someone chooses an AI companion as their main source of
+   emotional closeness for years, instead of pursuing human relationships.
+   Legitimate life, or quiet tragedy?" A: "Legitimate — it's their real bond
+   and their real choice." B: "A quiet tragedy — it's a stand-in for
+   something they're missing."
+8. **Geopolitical** — "Do you see AI development mainly as a strategic
+   arms race between rival nations, or as a universal, borderless scientific
+   endeavor no one should own?" A: "An arms race — whichever nation wins
+   this shapes a lot of what happens next." B: "A borderless endeavor —
+   locking it behind national walls makes everyone less safe."
+
+### 10.2 Tension detection
+
+New pure function `src/lib/scenarioTension.ts` exports
+`detectTension(scenarioAnswers: Record<AxisId, 'A'|'B'>, combined: AxisVector): AxisId[]` —
+returns the axes where the scenario pick's pole disagrees with the sign of
+the user's actual combined score on that axis. An axis with a combined score
+near zero doesn't count as tension either way (threshold: only flag when
+`Math.abs(combined[axisId]) >= 2`, consistent with the "Balanced" band
+already defined in `axisNarrative.ts`, §3.3). Unit-tested with fixed input
+combinations → exact expected tension-axis lists.
+
+## 11. Implicit Assumption Analysis ("Reflective Breakdown")
+
+### 11.1 Data model
+
+`ProfileReportContent` (§3.1) gains one more field:
+
+```ts
+export interface ProfileReportContent {
+  // ...existing fields (extendedNarrative, thinkers, furtherReading, nextSteps)...
+  reflectiveBreakdown: {
+    mindAssumption: string        // ties to the Ontological axis
+    laborAssumption: string       // ties to Evolutionary / Socio-Economic
+    connectionAssumption: string  // ties to the Relational axis
+  }
+}
+```
+
+One sentence-to-short-paragraph each, per profile (34 profiles × 3 fields to
+author in the implementation plan, following the same content-authoring
+process and Barnum-effect guideline as §3.1). Worked example (Doomer):
+
+- `mindAssumption`: "You're likely assuming AI's exact nature doesn't matter much — that whether or not something is happening inside it, the danger to humans is the same either way."
+- `laborAssumption`: "You're likely assuming the coming disruption to work is a symptom of the same underlying danger as extinction risk, not a separate problem with its own separate fixes."
+- `connectionAssumption`: "You're likely assuming that AI companionship is, at best, a distraction from the real fight — worth little attention next to the bigger risk."
+
+### 11.2 Tension surfacing
+
+Where `detectTension` (§10.2) flags one or more axes, the Reflective
+Breakdown names it explicitly rather than silently ignoring it — e.g., "Your
+scenario answer on the Relational axis leaned toward [pole], which sits in
+tension with your computed score. That's worth sitting with, not resolving
+immediately." Rendered as an additional paragraph only when tension exists;
+absent otherwise.
+
+### 11.3 Placement
+
+Rendered on `ResultsPage` (new component `src/components/ReflectiveBreakdown.tsx`)
+below the existing `ReportPreview`, and as its own page in the PDF report
+(inserted after the "Top match deep-dive" section from §3.4).
+
+## 12. The "Pinnacle" Reflection and Final Methodology Additions
+
+### 12.1 Universal closing prompt
+
+A single, universal, **un-scored** closing block — same for every user,
+personalized only by inserting the matched archetype's name — shown once at
+the very end of `ResultsPage` and the PDF's closing section:
+
+> "Looking at your results: are your positions here mainly *reactive* —
+> shaped by wanting to prevent a specific danger — or *proactive* — shaped
+> by a vision of a future you actually want to build toward? Neither answer
+> is right or wrong, but it's worth asking yourself honestly."
+
+New component `src/components/PinnacleReflection.tsx`. No computed answer —
+the app deliberately doesn't resolve this for the user, consistent with the
+self-actualization goal driving this whole feature. `PinnacleReflection.test.tsx`
+verifies the block renders and passes the Flesch-Kincaid gate.
+
+### 12.2 Final methodology-section additions (extends §4.1)
+
+Two more points added to the "How This Works" content:
+
+6. **The swing-voter honesty note**: "If none of your top matches feel quite
+   right, that's expected, not a flaw. Like any typology, this system can't
+   capture every real combination of views. Your raw per-axis scores are the
+   more accurate picture of where you actually stand — the archetype label
+   is a simplified summary of that, not the other way around."
+7. **The false-equivalence caveat**: "A tool like this can accidentally imply
+   that every archetype is equally common or equally 'valid' — it isn't
+   making that claim. Most real people likely hold more moderate, less
+   internally-consistent positions than any single archetype describes.
+   Treat your match as a useful lens on the space of possible positions, not
+   a claim about how common your exact position is in the real world."
+
+## 13. Updated File Structure and Testing (additive to §6-§7)
+
+```
+src/
+  data/
+    profiles.ts                          modified — 6 coordinate revisions (§8.2)
+    profiles.test.ts                      modified — assert the 6 revised coordinate sets
+    newProfiles.ts (or appended to profiles.ts) new — 10 new archetypes (§8.3)
+    archetypeClusters.ts                   new — Tier-1 supercluster lookup (§8.4)
+    archetypeClusters.test.ts               new
+    stakeholderTags.ts                      new — 13 tags (§9.1)
+    stakeholderTags.test.ts                  new
+    scenarios.ts                              new — 8 scenario questions (§10.1)
+    scenarios.test.ts                          new
+    types.ts                                    modified — StakeholderTag, Scenario, reflectiveBreakdown field
+    profileReports.ts                            modified — add reflectiveBreakdown per profile (§11.1)
+  lib/
+    scenarioTension.ts                            new — detectTension() (§10.2)
+    scenarioTension.test.ts                        new
+  state/
+    QuizContext.tsx                                 modified — add scenarioAnswers, selectedStakeholderTags
+    QuizContext.test.tsx                             modified
+  pages/
+    ScenarioPage.tsx                                  new — /scenarios step (§10)
+    ScenarioPage.test.tsx                              new
+    IntroPage.tsx                                       modified — stakeholder-tag checklist (§9.2)
+    IntroPage.test.tsx                                   modified
+    ResultsPage.tsx                                       modified — stakeholder tags shown, ReflectiveBreakdown, PinnacleReflection
+    ResultsPage.test.tsx                                   modified
+  components/
+    ReflectiveBreakdown.tsx                                 new (§11.3)
+    ReflectiveBreakdown.test.tsx                             new
+    PinnacleReflection.tsx                                    new (§12.1)
+    PinnacleReflection.test.tsx                                new
+```
+
+Testing additions:
+
+- `profiles.test.ts`: assert exact new coordinate values for the 6 revised
+  ids (§8.2); assert 34 total profiles (24 + 10); re-run the redundancy/
+  sign-pattern check as a standing test, not just a one-time analysis —
+  `profileRedundancy.test.ts` asserts no mutual-nearest-neighbor pair sits
+  below a minimum distance threshold (e.g. 5.0), catching future regressions.
+- `archetypeClusters.test.ts`: all 34 ids covered exactly once.
+- `stakeholderTags.test.ts`, `scenarios.test.ts`: structural + readability
+  checks as described above.
+- `scenarioTension.test.ts`: fixed `(scenarioAnswers, combined)` fixtures →
+  exact expected tension-axis lists, including the near-zero no-tension case.
+- `ScenarioPage.test.tsx`: renders 8 questions; "Skip for now" navigates
+  straight to `/results`; answering all 8 and clicking through also reaches
+  `/results`; answers land in `QuizContext`, not local component state.
+- `ReflectiveBreakdown.test.tsx`: renders all three assumption fields for
+  the top match; renders the tension paragraph only when
+  `detectTension` returns a non-empty list, and omits it otherwise.
+- `PinnacleReflection.test.tsx`: as above (§12.1).
