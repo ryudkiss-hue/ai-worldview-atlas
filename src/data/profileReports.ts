@@ -41,6 +41,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Dario Amodei', bio: 'CEO of Anthropic', connection: 'His public writing on AI safety argues that responsible frontier labs, operating under real accountability structures, are the most realistic path to safe AI development.' },
       { name: 'Helen Toner', bio: 'AI governance researcher, Georgetown Center for Security and Emerging Technology', connection: 'Her published policy work focuses on building workable oversight structures for frontier AI development, rather than either a ban or unregulated speed.' },
+      { name: 'Yoshua Bengio', bio: 'Turing Award-winning AI researcher, professor at University of Montreal', connection: 'His 2023 U.S. Senate testimony called for internationally coordinated safety oversight backed by public funding — institutional coordination, not a halt, argued from the top of the field\'s own technical authority.' },
     ],
     furtherReading: [
       { title: 'The Alignment Problem', author: 'Brian Christian', note: 'A survey of the technical and institutional challenges of building AI systems that do what we actually want.' },
@@ -99,6 +100,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Paul Christiano', bio: 'AI safety researcher, former OpenAI alignment team lead', connection: 'His technical proposals for AI alignment focus specifically on solving the control problem itself, rather than governance structures around it.' },
       { name: 'Eliezer Yudkowsky', bio: 'AI safety researcher, co-founder of the Machine Intelligence Research Institute', connection: 'His writing on rationalist epistemics and AI alignment shaped the technical, first-principles style of reasoning this stance is built on.' },
+      { name: 'Amanda Askell', bio: 'Philosopher, leads personality alignment research at Anthropic', connection: "She left OpenAI over concerns it wasn't prioritizing safety enough, and now trains character traits like honesty and intellectual humility directly into Claude as her primary technical approach to alignment — a live example of this stance's central concern." },
     ],
     furtherReading: [
       { title: 'Human Compatible', author: 'Stuart Russell', note: "A leading researcher's technical case for rebuilding AI systems around provable safety rather than assumed good behavior." },
@@ -157,6 +159,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Timnit Gebru', bio: 'Computer scientist, founder of the Distributed AI Research Institute', connection: 'Her published research on algorithmic bias and the real-world harms of large AI systems has shaped how near-term AI ethics is studied and discussed.' },
       { name: 'Joy Buolamwini', bio: 'Computer scientist, founder of the Algorithmic Justice League', connection: "Her research documented racial and gender bias in commercial AI systems, grounding this stance's focus on measurable, present-day harm." },
+      { name: 'Hank Green', bio: 'Science educator and video essayist, Complexly/Crash Course', connection: 'His public video essay cataloguing AI-related harms — misinformation ("internet of slop"), opaque algorithmic decisions, and IP theft — is a present-day, measurable-harms framing aimed at a broad public audience rather than policy specialists.' },
     ],
     furtherReading: [
       { title: 'Weapons of Math Destruction', author: "Cathy O'Neil", note: 'A detailed account of how deployed algorithms cause real, documented harm today, not hypothetically.' },
@@ -213,7 +216,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You're skeptical that internal safety teams, even well-intentioned ones, can hold their ground against pressure to ship faster — because you watched that pressure win.",
     ],
     thinkers: [
-      { name: 'Former frontier-lab safety researchers who resigned publicly', bio: 'Public statements from departed AI safety team members', connection: "Their public resignation statements describe specific internal safety concerns they felt weren't being adequately addressed before they left." },
+      { name: 'Geoffrey Hinton', bio: 'Computer scientist, Nobel laureate, "Godfather of AI"', connection: 'He resigned from Google in 2023 specifically to speak freely about AI risk, saying he could not do so "as long as I\'m paid by Google" — the clearest real-world example of this stance\'s exact position.' },
       { name: 'Daniel Ellsberg', bio: 'Analyst who leaked the Pentagon Papers', connection: "His historical example of insider whistleblowing on a matter of grave public concern is the closest precedent for this stance's moral posture, though the subject matter differs entirely." },
     ],
     furtherReading: [
@@ -389,6 +392,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Marc Andreessen', bio: 'Venture capitalist, co-founder of Andreessen Horowitz', connection: 'His public writing frames rapid commercial AI deployment as the primary driver of broad economic benefit.' },
       { name: 'Reid Hoffman', bio: 'Entrepreneur, co-founder of LinkedIn, AI investor', connection: 'His public commentary consistently frames continued fast deployment of AI products as the path to widespread benefit, more than a risk to be slowed.' },
+      { name: 'Steven Pinker', bio: 'Cognitive scientist, Harvard University', connection: 'His public writing dismisses AI existential-risk arguments as "magical thinking," arguing that engineering safety culture makes runaway AI implausible — a different, more academic route to the same unbothered-by-catastrophic-framing conclusion.' },
     ],
     furtherReading: [
       { title: 'The Techno-Optimist Manifesto', author: 'Marc Andreessen', note: "The clearest public statement of this stance's core belief in fast, market-driven technology deployment." },
@@ -416,8 +420,9 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You treat AI models as products and business assets, valuable, worth protecting, but not moral patients. The practical questions of liability, safety testing, and shipping reliable products matter more to you than abstract debates about machine rights.',
     ],
     thinkers: [
-      { name: 'Industry self-regulation frameworks', bio: 'Published voluntary safety commitments from major AI companies', connection: 'These frameworks reflect the premise that internal, company-led safety processes, rather than external mandates, can responsibly govern deployment.' },
-      { name: 'Corporate governance literature on tech self-regulation', bio: 'Standard business-ethics and governance scholarship', connection: 'This body of work documents the case, and the limits, of industry self-policing as a governance model, the same model this stance relies on.' },
+      { name: 'Daphne Koller', bio: 'Founder and CEO of insitro, co-founder of Coursera', connection: 'Her public interviews about running an AI-driven drug discovery company are grounded and unhyped — noting the hype "sometimes exceeds even the incredible contribution" AI has made — a practical, business-first read on the technology\'s real value.' },
+      { name: 'Jeff Dean', bio: 'Chief Scientist, Google DeepMind', connection: 'He has publicly positioned himself in the middle of AI-risk debate, rejecting both the view that systems will be overwhelmingly superior to humans and the view that there is nothing to worry about — a working engineer\'s pragmatic middle ground.' },
+      { name: 'Mira Murati', bio: 'Former Chief Technology Officer, OpenAI', connection: 'Her public statements frame safety as "not just a feature" but core to product development, while describing AI as a tool to "augment human capabilities" — safety and shipping treated as compatible business priorities, not opposed ones.' },
     ],
     furtherReading: [
       { title: "The Innovator's Dilemma", author: 'Clayton Christensen', note: 'A classic account of how established companies manage disruptive technology internally, relevant to how AI labs frame their own risk management.' },
@@ -447,6 +452,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Ray Kurzweil', bio: 'Inventor, futurist, Director of Engineering at Google', connection: 'His writing on the technological singularity argues that merging with and eventually being succeeded by more capable digital minds is the natural next stage of intelligence.' },
       { name: 'Max More', bio: 'Philosopher, early architect of transhumanist philosophy', connection: 'His foundational transhumanist writing frames the shift beyond biological limits as an opportunity, not a tragedy.' },
+      { name: 'Michio Kaku', bio: 'Theoretical physicist, science communicator', connection: 'His popular-science writing predicts humans will eventually "merge our minds with machine intelligence," a mainstream-facing version of this stance\'s core welcome-the-merger claim.' },
     ],
     furtherReading: [
       { title: 'The Singularity Is Near', author: 'Ray Kurzweil', note: 'The most widely-read case for a coming transition to a post-biological future of intelligence.' },
@@ -621,10 +627,12 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Lina Khan', bio: 'Legal scholar, former Federal Trade Commission chair', connection: 'Her published legal scholarship and policy work on antitrust directly targets concentrated corporate power, including in the technology sector.' },
       { name: 'Tim Wu', bio: 'Legal scholar, former White House competition policy advisor', connection: 'His writing on antitrust and the "curse of bigness" makes the case against concentrated corporate power as a threat in its own right, independent of any specific technology\'s promise or danger.' },
+      { name: 'Karen Hao', bio: 'Investigative journalist, author of Empire of AI', connection: 'Her book, built on over 250 interviews, frames leading AI companies explicitly as "empires" accumulating power through the dispossession of workers and communities worldwide — a direct, current, on-the-ground account of concentrated AI power.' },
     ],
     furtherReading: [
       { title: 'The Curse of Bigness', author: 'Tim Wu', note: 'The core case against concentrated corporate power that this stance applies directly to AI.' },
       { title: "Amazon's Antitrust Paradox", author: 'Lina Khan', note: 'A detailed legal case for antitrust action against dominant technology platforms.' },
+      { title: 'Empire of AI: Dreams and Nightmares in Sam Altman\'s OpenAI', author: 'Karen Hao', note: 'An investigative account of how one leading AI company concentrated power, drawing on interviews spanning Silicon Valley engineers to Kenyan data laborers.' },
     ],
     nextSteps: [
       'Look into an antitrust case or proposal targeting a major AI company to see this stance applied in practice.',
@@ -650,6 +658,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Philip Tetlock', bio: 'Psychologist, researcher on forecasting and judgment', connection: 'His published research on calibrated forecasting argues that holding uncertainty honestly, rather than defaulting to a confident extreme, produces better judgment over time.' },
       { name: 'Daniel Kahneman', bio: 'Psychologist, Nobel laureate in economics', connection: 'His research on judgment under uncertainty supports deliberately withholding strong conclusions until the evidence is genuinely sufficient.' },
+      { name: 'Ken Liu', bio: 'Science fiction author and translator', connection: 'His public interviews argue there shouldn\'t be a single narrative about AI, and that debating whether current systems count as "intelligent" misses more interesting, unresolved questions — a considered resistance to premature certainty.' },
     ],
     furtherReading: [
       { title: 'Superforecasting', author: 'Philip Tetlock and Dan Gardner', note: 'A case for calibrated uncertainty and resisting the pull toward confident extremes, the same instinct behind this stance.' },
@@ -708,6 +717,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'David Levy', bio: 'Author and researcher on human-robot relationships', connection: 'His research, Love and Sex with Robots, directly argues that human-AI romantic relationships will become a normal, accepted part of society.' },
       { name: 'Masahiro Mori', bio: 'Japanese roboticist, originator of the "uncanny valley" concept', connection: 'His foundational research on what makes a near-human machine feel emotionally convincing rather than unsettling underlies why an AI companion can feel like a real presence, not just a script running.' },
+      { name: 'Rana el Kaliouby', bio: 'Emotion-AI pioneer, co-founder of Affectiva', connection: 'Her work built technology specifically to close the gap she describes as "AI has high IQ but no EQ" — direct, technical grounding for why an emotionally responsive AI companion can feel genuinely present rather than scripted.' },
     ],
     furtherReading: [
       { title: 'Love and Sex with Robots', author: 'David Levy', note: 'A direct argument for the legitimacy and likely normalization of human-AI romantic relationships.' },
@@ -766,6 +776,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Leon Kass', bio: "Bioethicist, former chair of the President's Council on Bioethics", connection: 'His writing on the ethics of biotechnology argues that some traditional limits on remaking human life and relationships exist for good reason, not just habit.' },
       { name: 'Wendell Berry', bio: 'Writer and essayist on technology, agriculture, and community', connection: 'His essays argue that embodied, local, human-scale relationships are being displaced by technological substitutes, at real cost.' },
+      { name: 'Noam Chomsky', bio: 'Linguist, MIT professor emeritus', connection: 'His New York Times essay "The False Promise of ChatGPT," co-written with Ian Roberts and Jeffrey Watumull, argues large language models are statistical pattern-matchers fundamentally unlike the human mind — a direct, well-known case that current AI only imitates understanding.' },
     ],
     furtherReading: [
       { title: 'Life, Liberty and the Defense of Dignity', author: 'Leon Kass', note: 'A sustained argument for caution about technologies that reshape the human body and human relationships.' },
@@ -799,6 +810,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: 'The Edge of Sentience', author: 'Jonathan Birch', note: "A framework for extending moral caution to entities whose inner life we can't yet verify." },
       { title: 'Robot Rights', author: 'David J. Gunkel', note: 'A direct examination of whether and how machines could hold moral or legal status.' },
+      { title: 'A Psalm for the Wild-Built', author: 'Becky Chambers', note: 'A novel, not a policy argument — but its plot turns on sentient robots being offered legal personhood, dramatizing exactly this stance\'s central question.' },
     ],
     nextSteps: [
       'Read a published ethics framework on machine welfare from an AI lab or research institute.',
@@ -851,8 +863,8 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You want enforceable consent and compensation built into how AI companies use creative work, not a system that treats scraping the internet\'s creative output as automatically fair.',
     ],
     thinkers: [
-      { name: 'Authors Guild', bio: 'U.S. professional association representing writers', connection: 'Their public advocacy and litigation directly argue that AI training on copyrighted creative work without consent or payment violates authors\' rights.' },
-      { name: 'Concept Art Association', bio: 'Advocacy group representing visual artists in the entertainment industry', connection: "Their public campaigns argue for artists' consent and compensation when their work is used to train generative AI models." },
+      { name: 'Ted Chiang', bio: 'Science fiction author, essayist', connection: 'His New Yorker essays "ChatGPT Is a Blurry JPEG of the Web" and "Will A.I. Become the New McKinsey?" argue generative AI will cost jobs and hollow out industries not because it works well, but because companies adopt it to cut costs regardless.' },
+      { name: 'John Green', bio: 'Author, video essayist', connection: "His public videos and podcast commentary explore, from personal stake, whether generative AI threatens novelists' livelihoods directly — a specific, first-person version of this stance's core worry." },
     ],
     furtherReading: [
       { title: 'Chokepoint Capitalism', author: 'Rebecca Giblin and Cory Doctorow', note: 'An argument for restructuring how creative work is paid for, directly relevant to AI-training compensation debates.' },
@@ -1026,7 +1038,8 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     thinkers: [
       { name: 'Rumman Chowdhury', bio: 'AI ethics researcher, founder of Humane Intelligence, former U.S. State Department AI envoy', connection: 'Her work building algorithmic bias bounties and public AI red-teaming programs is a direct, practical model for external, adversarial auditing of AI systems rather than trusting company self-reports.' },
-      { name: 'Data & Society Research Institute', bio: 'Independent research institute studying the social implications of AI and data', connection: 'Their published research documents specific gaps between companies\' public AI ethics commitments and their actual internal practices.' },
+      { name: 'Merve Hickok', bio: 'President, Center for AI & Digital Policy; founder of AIethicist.org', connection: 'Her policy work names the greatest challenge as avoiding complicity in systems that "exploit human dignity and autonomy" — and she publicly critiques the AI ethics field itself for being too Western-centric, arguing for outside, non-self-referential scrutiny.' },
+      { name: 'Cansu Canca', bio: 'Applied ethics philosopher, founder and director of AI Ethics Lab', connection: 'Her Puzzle-solving in Ethics Model builds concrete, operational checks into AI systems from the design stage, rather than trusting a company\'s own account of its ethics after the fact.' },
     ],
     furtherReading: [
       { title: 'Weapons of Math Destruction', author: "Cathy O'Neil", note: 'A foundational case for why algorithmic systems need outside scrutiny, not just internal review.' },

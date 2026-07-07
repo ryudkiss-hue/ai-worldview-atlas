@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const PARAGRAPHS = [
-  "Here's how scoring works. Each answer you give gets turned into a number, added up per axis, and then squeezed onto a -10 to 10 scale using a math formula called tanh. Your result is matched to the closest of 36 named viewpoints by measuring distance across all eight scales at once.",
+  "Here's how scoring works. Each answer you give gets turned into a number, added up per axis, and then squeezed onto a -10 to 10 scale using a math formula called tanh. Your result is matched to the closest of 37 named viewpoints by measuring distance across all eight scales at once.",
   "One thing worth knowing: this matching looks at your whole pattern across all eight axes. A strong view on just one or two axes can pull you toward, or away from, a viewpoint you'd otherwise agree with on everything else.",
   "This tool has not been through the kind of testing a real psychometric instrument needs. Nobody has checked whether your results would stay the same if you took it twice, and no outside researchers have reviewed it. Treat it as a self-reflection prompt, not a scientific reading of who you are.",
   "We chose a 1-to-5 agree or disagree scale instead of a forced ranking between choices, on purpose. Forced-ranking tests resist people trying to game them, but they create their own math problems that make it harder to trust each individual score. A plain agree or disagree scale, answered one question at a time, avoids that problem.",
