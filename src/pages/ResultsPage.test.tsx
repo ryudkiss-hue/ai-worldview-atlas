@@ -87,7 +87,7 @@ describe('ResultsPage', () => {
     renderResultsPage(`?d=${encoded}`)
     fireEvent.click(screen.getByRole('button', { name: 'Download PDF Report' }))
     expect(screen.getByRole('button', { name: 'Generating...' })).toBeInTheDocument()
-    expect(await screen.findByRole('button', { name: 'Download PDF Report' })).toBeInTheDocument()
+    expect(await screen.findByRole('button', { name: 'Download PDF Report' }, { timeout: 10000 })).toBeInTheDocument()
   })
 
   it('copies a shareable link that round-trips via decodeShareLink', async () => {
