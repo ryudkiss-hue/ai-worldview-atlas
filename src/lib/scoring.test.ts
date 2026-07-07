@@ -5,6 +5,7 @@ import {
   scaleAxisScores,
   combineHorizons,
   classify,
+  matchCloseness,
 } from './scoring'
 
 const fixtureQuestions: Question[] = [
@@ -67,5 +68,21 @@ describe('classify', () => {
     expect(matches[0].profile.id).toBe('a')
     expect(matches[1].profile.id).toBe('b')
     expect(matches[0].distance).toBeLessThan(matches[1].distance)
+  })
+})
+
+describe('matchCloseness', () => {
+  const maxDistance = Math.sqrt(8 * 20 ** 2)
+
+  it('maps a distance of 0 to 100%', () => {
+    expect(matchCloseness(0)).toBe(100)
+  })
+
+  it('maps the maximum possible distance to 0%', () => {
+    expect(matchCloseness(maxDistance)).toBe(0)
+  })
+
+  it('maps a mid-range distance to a proportional percentage', () => {
+    expect(matchCloseness(maxDistance / 2)).toBe(50)
   })
 })

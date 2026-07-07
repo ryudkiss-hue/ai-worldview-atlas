@@ -60,3 +60,9 @@ export function classify(combined: AxisVector, profiles: Profile[]): ProfileMatc
   })
   return withDistance.sort((a, b) => a.distance - b.distance)
 }
+
+const MAX_POSSIBLE_DISTANCE = Math.sqrt(8 * 20 ** 2)
+
+export function matchCloseness(distance: number): number {
+  return Math.round(100 * (1 - distance / MAX_POSSIBLE_DISTANCE))
+}
