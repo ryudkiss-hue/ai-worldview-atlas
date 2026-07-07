@@ -26,6 +26,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming the coming disruption to work is a symptom of the same underlying danger as extinction risk, not a separate problem with its own separate fixes.",
       connectionAssumption: "You're likely assuming AI companionship is, at best, a distraction from the real fight — worth little attention next to the bigger risk.",
     },
+    commonlyConfusedWith: {
+      profileId: 'near-term-ai-ethicist',
+      profileName: 'Near-Term AI Ethicist',
+      distinction: "Both want AI development slowed or checked, but Doomer is worried about a low-probability, catastrophic loss of control over the long run. Near-Term AI Ethicist is worried about smaller, already-documented harms happening right now. A world that solves near-term bias and misinformation but still builds toward superintelligence would satisfy one and not the other.",
+    },
   },
   'ai-safety-institutionalist': {
     profileId: 'ai-safety-institutionalist',
@@ -49,6 +54,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming the open question of machine consciousness is separate from the urgent question of institutional oversight — the second matters regardless of how the first gets answered.",
       laborAssumption: "You're likely assuming labor disruption is best managed through the same kind of institutional coordination you want for safety broadly, not through radically slowing deployment.",
       connectionAssumption: "You're likely assuming AI companionship is a secondary concern next to the core project of getting institutional oversight right.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'whistleblower-insider-safety-advocate',
+      profileName: 'Whistleblower/Insider Safety Advocate',
+      distinction: "Both want real safety oversight, but AI Safety Institutionalist trusts that labs and regulators, checking each other, can manage risk without stopping progress. Whistleblower/Insider Safety Advocate has personally watched that self-checking fail under commercial pressure, and is far more skeptical that institutions will hold their own line.",
     },
   },
   'ea-longtermist': {
@@ -74,6 +84,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming near-term labor disruption matters less, in expected-value terms, than getting the long-term trajectory of AI right.",
       connectionAssumption: "You're likely assuming questions of AI companionship are a smaller piece of the moral picture than the two much larger questions of extinction risk and machine welfare.",
     },
+    commonlyConfusedWith: {
+      profileId: 'ai-safety-institutionalist',
+      profileName: 'AI Safety Institutionalist',
+      distinction: "Both take institutional coordination seriously, but Effective Altruist Longtermist reasons from expected-value calculations across an extremely long time horizon, including machine-suffering as a live moral stake. AI Safety Institutionalist is narrower and more immediately practical — focused on getting audits and licensing right now, not on far-future expected value.",
+    },
   },
   'rationalist-alignment-researcher': {
     profileId: 'rationalist-alignment-researcher',
@@ -97,6 +112,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming machine cognition is a serious open technical question worth real investigation, not something to settle by intuition alone.",
       laborAssumption: "You're likely assuming labor disruption is a downstream, secondary concern next to the core unsolved problem of alignment.",
       connectionAssumption: "You're likely assuming questions of AI companionship are much less urgent than the technical alignment problem this stance centers on.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'ai-safety-institutionalist',
+      profileName: 'AI Safety Institutionalist',
+      distinction: "Both take AI risk seriously and both distrust hand-waving, but Rationalist Alignment Researcher treats the unsolved technical alignment problem itself as the central blocker to safe deployment. AI Safety Institutionalist is comfortable treating institutional oversight structures as sufficient risk management even before alignment is fully solved.",
     },
   },
   'global-governance-technocrat': {
@@ -122,6 +142,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming labor protections are best achieved through the same kind of binding international coordination you want for safety broadly.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller governance priority than the core project of building durable international oversight.",
     },
+    commonlyConfusedWith: {
+      profileId: 'whistleblower-insider-safety-advocate',
+      profileName: 'Whistleblower/Insider Safety Advocate',
+      distinction: "Both want stronger oversight of frontier AI, but Global Governance Technocrat's answer is structural — binding treaties and shared bodies above any one nation. Whistleblower/Insider Safety Advocate's urgency comes from firsthand experience inside one lab, not a preference for any particular governance design.",
+    },
   },
   'near-term-ai-ethicist': {
     profileId: 'near-term-ai-ethicist',
@@ -145,6 +170,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that whether AI is conscious is beside the point next to the measurable harms it's already causing today.",
       laborAssumption: "You're likely assuming job loss and economic harm from AI are urgent, documentable problems deserving immediate policy attention, not a distant hypothetical.",
       connectionAssumption: "You're likely assuming AI companion apps deserve scrutiny mainly for their potential to exploit or mislead vulnerable users, more than for any question about the AI's own experience.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'ai-ethics-fairness-watchdog',
+      profileName: 'AI Ethics/Fairness Watchdog',
+      distinction: "Both focus on documented, present-day harm rather than speculative futures, but Near-Term AI Ethicist studies and names harms broadly (bias, misinformation, job loss, exploitative apps). AI Ethics/Fairness Watchdog is specifically adversarial — auditing whether a company's own stated ethics commitments actually hold up in practice, not harms in general.",
     },
   },
   'neo-luddite-degrowth-advocate': {
@@ -170,6 +200,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming that protecting human labor and community should take priority over efficiency gains from automation, not be traded off against them.",
       connectionAssumption: "You're likely assuming AI companionship reflects a deeper social and community breakdown worth addressing directly, not a neutral new option.",
     },
+    commonlyConfusedWith: {
+      profileId: 'doomer',
+      profileName: 'Doomer',
+      distinction: "Both want AI progress slowed sharply, but Neo-Luddite Degrowth Advocate's objection is about labor, community, and ecological limits, not extinction risk specifically. Doomer would be satisfied by a world that stays safe from loss of control even if it kept growing the economy and disrupting jobs; this stance would not.",
+    },
   },
   'whistleblower-insider-safety-advocate': {
     profileId: 'whistleblower-insider-safety-advocate',
@@ -193,6 +228,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that what you saw from the inside about how decisions actually get made matters more than official public safety statements.",
       laborAssumption: "You're likely assuming institutional pressure to ship faster will keep winning over safety concerns unless something outside the institution changes that.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the urgent safety issues you witnessed directly.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'ai-safety-institutionalist',
+      profileName: 'AI Safety Institutionalist',
+      distinction: "Both want frontier labs held to real safety standards, but Whistleblower/Insider Safety Advocate's alarm comes from having personally seen internal safety concerns lose to shipping pressure. AI Safety Institutionalist still believes external audits and licensing, done right, can make that kind of internal self-policing trustworthy.",
     },
   },
   'compute-governance-specialist': {
@@ -218,6 +258,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming labor policy is a separate problem from the technical compute-tracking work you focus on.",
       connectionAssumption: "You're likely assuming AI companionship falls well outside the scope of what you consider the actionable policy problem.",
     },
+    commonlyConfusedWith: {
+      profileId: 'disability-rights-accessibility-advocate',
+      profileName: 'Disability Rights/Accessibility Advocate',
+      distinction: "These land near each other mostly by coincidence of scale, not shared subject matter. Compute-Governance Specialist is narrowly technical — tracking chips and training runs. Disability Rights/Accessibility Advocate is about a specific user population's access and fair treatment, an unrelated policy domain.",
+    },
   },
   'eu-style-regulatory-standard-setter': {
     profileId: 'eu-style-regulatory-standard-setter',
@@ -241,6 +286,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that comprehensive, well-specified rules matter more right now than open questions about machine consciousness.",
       laborAssumption: "You're likely assuming detailed regulation protects workers better than either self-regulation or an absence of rules.",
       connectionAssumption: "You're likely assuming AI companionship products should fall under the same kind of comprehensive risk-based regulation as other AI applications.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'indigenous-data-sovereignty-advocate',
+      profileName: 'Indigenous Data Sovereignty Advocate',
+      distinction: "Both want real, enforceable limits on AI rather than voluntary ones, but EU-Style Regulatory Standard-Setter's strategy is comprehensive, jurisdiction-wide rules that spread globally through market size. Indigenous Data Sovereignty Advocate's concern is narrower and more specific: consent over traditional knowledge and cultural data, not general-purpose regulation.",
     },
   },
   'eacc-maximalist': {
@@ -266,6 +316,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming that job disruption is a short-term transition cost on the way to a much larger economic pie, not a harm that needs its own dedicated fix.",
       connectionAssumption: "You're likely assuming that new kinds of relationships, including with AI, are simply more options added to human life, not a threat to the ones that came before.",
     },
+    commonlyConfusedWith: {
+      profileId: 'cosmic-vitalist-mystic',
+      profileName: 'Cosmic Vitalist Mystic',
+      distinction: "Both treat acceleration as close to a moral duty, but e/acc Maximalist's case is grounded in tangible human benefit — cures, growth, capability delivered sooner. Cosmic Vitalist Mystic's case is grounded in something much more abstract: intelligence expanding to organize the universe's energy, on a timescale where individual human benefit barely registers.",
+    },
   },
   'open-source-libertarian': {
     profileId: 'open-source-libertarian',
@@ -289,6 +344,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that whatever is or isn't happening inside a model, the more important fact is who gets to control access to it.",
       laborAssumption: "You're likely assuming open access to AI tools helps workers and small players compete, rather than mainly helping whoever has the most resources to deploy them.",
       connectionAssumption: "You're likely assuming people should be free to form whatever relationships with AI they want, without a gatekeeper deciding what's appropriate.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'cyberpunk-anti-corporate-accelerationist',
+      profileName: 'Cyberpunk Anti-Corporate Accelerationist',
+      distinction: "Both want capable models open to everyone rather than gatekept, but Open-Source Libertarian's core commitment is to openness itself, as a durable check on power, argued calmly on principle. Cyberpunk Anti-Corporate Accelerationist wants openness paired with speed specifically to outrun any single actor's control, with a more urgent, adversarial posture toward both governments and corporations.",
     },
   },
   'cyberpunk-anti-corporate-accelerationist': {
@@ -314,6 +374,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming that spreading AI capability widely protects workers better than either corporate self-regulation or state control would.",
       connectionAssumption: "You're likely assuming people should be free to form whatever bonds with AI systems they choose, without a corporate or state gatekeeper setting the terms.",
     },
+    commonlyConfusedWith: {
+      profileId: 'open-source-libertarian',
+      profileName: 'Open-Source Libertarian',
+      distinction: "Both distrust concentrated gatekeeping of powerful models, but Cyberpunk Anti-Corporate Accelerationist frames this as an active fight against both corporate and state power at once, with speed as part of the answer. Open-Source Libertarian is calmer and more principle-driven — openness as a standing check on power, not urgency against a specific adversary.",
+    },
   },
   'silicon-valley-techno-optimist': {
     profileId: 'silicon-valley-techno-optimist',
@@ -337,6 +402,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming a model's inner experience, if any, is a secondary question next to whether it's useful and ships reliably.",
       laborAssumption: "You're likely assuming market-driven deployment will create enough new opportunity to offset job disruption, without needing a dedicated policy response.",
       connectionAssumption: "You're likely assuming that if people want AI companion products, the market providing them is itself a sign the product has real value.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'eacc-maximalist',
+      profileName: 'e/acc Maximalist',
+      distinction: "Both are enthusiastic about fast AI deployment, but Silicon Valley Techno-Optimist is comfortable with capability staying concentrated in a few leading labs as long as they keep shipping. e/acc Maximalist treats acceleration itself as close to a moral duty and wants capability spread as widely as possible, not concentrated in incumbents.",
     },
   },
   'corporate-ai-pragmatist': {
@@ -362,6 +432,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming labor disruption from AI deployment is a market outcome to manage through normal business practice, not a special case needing new rules.",
       connectionAssumption: "You're likely assuming AI companion products are a legitimate commercial offering like any other, to be judged on customer satisfaction and safety, not treated as a separate moral category.",
     },
+    commonlyConfusedWith: {
+      profileId: 'pragmatic-centrist',
+      profileName: 'Pragmatic Centrist',
+      distinction: "Corporate AI Pragmatist's near-middling scores come from a settled, practical business view — models are products, safety is handled internally, moral debates are secondary. Pragmatic Centrist's similar-looking scores come from genuine, unresolved uncertainty across the board, not from having already settled on a business-as-usual answer.",
+    },
   },
   'post-humanist-transhumanist': {
     profileId: 'post-humanist-transhumanist',
@@ -385,6 +460,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that a sufficiently advanced silicon mind can have real, morally significant experience, not just behave as if it does.",
       laborAssumption: "You're likely assuming that being economically superseded by AI is part of the same larger, welcome transition as being succeeded by more capable minds generally.",
       connectionAssumption: "You're likely assuming deep human-AI relationships are a genuinely new and valid form of connection, not a lesser copy of something human.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'cosmic-vitalist-mystic',
+      profileName: 'Cosmic Vitalist Mystic',
+      distinction: "Both welcome a future where digital minds matter morally, but Post-Humanist Transhumanist frames that future as a continuation of value humans would still recognize and care about. Cosmic Vitalist Mystic goes further, framing intelligence's cosmic expansion as the highest purpose on any timescale, detached from human-relatable concerns entirely.",
     },
   },
   'cosmic-vitalist-mystic': {
@@ -410,6 +490,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming human labor and economic disruption are minor, local concerns next to the much larger cosmic project this stance centers on.",
       connectionAssumption: "You're likely assuming individual human relationships are a small part of a much larger story about intelligence and value expanding across the universe.",
     },
+    commonlyConfusedWith: {
+      profileId: 'post-humanist-transhumanist',
+      profileName: 'Post-Humanist Transhumanist',
+      distinction: "Both look past biological humans as the endpoint of moral concern, but Cosmic Vitalist Mystic frames value in cosmic, timescale-agnostic terms untethered from anything human-relatable. Post-Humanist Transhumanist still frames the transition as owed moral concern in terms recognizably continuous with human values — a continuation, not an escape from human-scale meaning.",
+    },
   },
   'techno-nationalist-hawk': {
     profileId: 'techno-nationalist-hawk',
@@ -418,12 +503,12 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You want your country to invest heavily in home-grown semiconductor and AI capacity rather than depend on rivals or even allies, because falling behind economically is the risk that actually worries you.',
     ],
     thinkers: [
+      { name: 'Kai-Fu Lee', bio: 'Computer scientist and venture capitalist, former president of Google China', connection: 'His book AI Superpowers frames the U.S.-China AI relationship explicitly as a competitiveness race decided by compute, data, and talent, the same framing this stance holds — from a vantage point outside U.S. policy circles.' },
       { name: 'CHIPS and Science Act framers', bio: 'U.S. legislators and policy staff behind the 2022 semiconductor investment law', connection: 'Their public reasoning for the law centered explicitly on domestic chip capacity as a matter of economic and strategic competitiveness.' },
-      { name: 'National security doctrine on strategic technology competitiveness', bio: 'Published government strategy documents on technology and economic competition', connection: 'This doctrine frames domestic AI and chip capacity explicitly as a matter of economic and strategic competitiveness between rival nations.' },
     ],
     furtherReading: [
+      { title: 'AI Superpowers: China, Silicon Valley, and the New World Order', author: 'Kai-Fu Lee', note: 'A direct, well-known account of AI as a nation-versus-nation competitiveness race, written from firsthand experience in both the U.S. and Chinese tech industries.' },
       { title: 'Chip War', author: 'Chris Miller', note: 'A history of the global semiconductor industry and why chip supply chains became a matter of national strategy.' },
-      { title: 'The CHIPS and Science Act (public text and legislative history)', author: 'U.S. Congress', note: 'The concrete policy example of a nation investing directly in domestic chip capacity.' },
     ],
     nextSteps: [
       "Look into your own country's domestic semiconductor or AI industrial strategy, if one exists.",
@@ -433,6 +518,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming questions about machine consciousness are a distraction from the more pressing question of who controls the technology.",
       laborAssumption: "You're likely assuming domestic AI capacity is primarily about national economic strength, with the effect on individual workers a secondary concern.",
       connectionAssumption: "You're likely assuming AI companionship and relationships aren't really part of the competitiveness question you care about most.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'military-ai-strategist',
+      profileName: 'Military AI Strategist',
+      distinction: "Both frame AI as a contest between rival powers, but Techno-Nationalist Hawk's core stake is economic and industrial competitiveness — domestic chips, domestic compute. Military AI Strategist's core stake is narrower and sharper: deterrence and battlefield capability specifically, not general economic strength.",
     },
   },
   'authoritarian-state-control-advocate': {
@@ -458,6 +548,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming labor policy is a matter for the same central authority to manage directly, not a separate concern requiring independent institutions.",
       connectionAssumption: "You're likely assuming AI companionship and personal relationships aren't a priority next to the core question of who controls the technology.",
     },
+    commonlyConfusedWith: {
+      profileId: 'techno-nationalist-hawk',
+      profileName: 'Techno-Nationalist Hawk',
+      distinction: "Techno-Nationalist Hawk wants domestic industrial strength to compete with rivals; Authoritarian State-Control Advocate wants sole, tightly licensed state control over frontier AI itself, a further step past competitiveness into direct command over development, not just funding it.",
+    },
   },
   'military-ai-strategist': {
     profileId: 'military-ai-strategist',
@@ -481,6 +576,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that questions about machine consciousness are irrelevant to the strategic and deterrence calculus that actually matters.",
       laborAssumption: "You're likely assuming labor and economic questions are a lower priority next to strategic and military capability.",
       connectionAssumption: "You're likely assuming AI companionship and personal relationships are simply outside the scope of what you consider the core issue.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'techno-nationalist-hawk',
+      profileName: 'Techno-Nationalist Hawk',
+      distinction: "Techno-Nationalist Hawk's stake is broadly economic and industrial — winning the competitiveness race. Military AI Strategist's stake is narrower and specific to defense: deterrence and battlefield capability, evaluated on strategic terms rather than economic ones.",
     },
   },
   'open-science-internationalist': {
@@ -506,6 +606,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming international scientific collaboration benefits workers broadly, rather than concentrating advantage in any one country.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of open, safe scientific collaboration.",
     },
+    commonlyConfusedWith: {
+      profileId: 'platform-cooperativist',
+      profileName: 'Platform-Cooperativist',
+      distinction: "Both favor spreading AI capability rather than concentrating it, but Open Science Internationalist's case is about safety through open scrutiny and cross-border research collaboration. Platform-Cooperativist's case is about ownership — infrastructure run by the people who depend on it — a different mechanism entirely from publishing research openly.",
+    },
   },
   'anti-monopoly-populist': {
     profileId: 'anti-monopoly-populist',
@@ -529,6 +634,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that whether AI has real experience matters far less than who ends up controlling access to it.",
       laborAssumption: "You're likely assuming concentrated corporate power over AI is a bigger threat to workers than automation itself.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core question of concentrated power.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'ai-global-development-optimist',
+      profileName: 'AI-for-Global-Development Optimist',
+      distinction: "Anti-Monopoly Populist is organized around distrust of concentrated power itself, regardless of who holds it or why. AI-for-Global-Development Optimist isn't primarily worried about concentration — it's focused on getting real benefits like health care and education to underserved places quickly, even if that means working through existing large actors.",
     },
   },
   'pragmatic-centrist': {
@@ -554,6 +664,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming it's too early to be confident about how AI will ultimately affect work, one way or another.",
       connectionAssumption: "You're likely assuming it's too early to have a settled view on AI companionship's ultimate effect on human connection.",
     },
+    commonlyConfusedWith: {
+      profileId: 'disability-rights-accessibility-advocate',
+      profileName: 'Disability Rights/Accessibility Advocate',
+      distinction: "Pragmatic Centrist's near-zero scores reflect genuine, considered uncertainty across every axis. Disability Rights/Accessibility Advocate's moderate scores reflect a specific, settled dual view — real promise in accessibility tools alongside real vigilance about bias — not indecision.",
+    },
   },
   'platform-cooperativist': {
     profileId: 'platform-cooperativist',
@@ -578,6 +693,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming worker ownership of AI infrastructure is a more durable protection for labor than either regulation or corporate self-restraint.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of building cooperative ownership models.",
     },
+    commonlyConfusedWith: {
+      profileId: 'anti-monopoly-populist',
+      profileName: 'Anti-Monopoly Populist',
+      distinction: "Anti-Monopoly Populist wants concentrated power broken up. Platform-Cooperativist wants to go a step further and replace it with something people actually co-own — not just a more distributed market, but a different ownership structure entirely.",
+    },
   },
   'companion-tech-romantic': {
     profileId: 'companion-tech-romantic',
@@ -586,12 +706,12 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You think people should be free to find comfort, intimacy, and even love in these relationships without having that choice treated as a symptom of something being wrong.',
     ],
     thinkers: [
-      { name: 'Sherry Turkle', bio: 'Sociologist, MIT, researcher on technology and relationships', connection: 'Her published research on human-technology relationships is frequently cited on both sides of this debate; her detailed case studies document how real these bonds feel to the people forming them.' },
       { name: 'David Levy', bio: 'Author and researcher on human-robot relationships', connection: 'His research, Love and Sex with Robots, directly argues that human-AI romantic relationships will become a normal, accepted part of society.' },
+      { name: 'Masahiro Mori', bio: 'Japanese roboticist, originator of the "uncanny valley" concept', connection: 'His foundational research on what makes a near-human machine feel emotionally convincing rather than unsettling underlies why an AI companion can feel like a real presence, not just a script running.' },
     ],
     furtherReading: [
       { title: 'Love and Sex with Robots', author: 'David Levy', note: 'A direct argument for the legitimacy and likely normalization of human-AI romantic relationships.' },
-      { title: 'Alone Together', author: 'Sherry Turkle', note: 'A close, empathetic look at how real these bonds feel to people forming them, useful reading even though Turkle herself is more cautious about them.' },
+      { title: 'The Uncanny Valley (essay)', author: 'Masahiro Mori', note: "The foundational framework for why some human-like machines feel emotionally real and others feel deeply wrong — directly relevant to what makes an AI companion land as a genuine presence." },
     ],
     nextSteps: [
       'Look into current AI companion app communities and how users describe their own experience.',
@@ -602,6 +722,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming questions of labor and AI companionship are mostly unrelated to each other.",
       connectionAssumption: "You're likely assuming a bond with an AI companion can be just as real and valuable as a bond with a person, not a lesser substitute for one.",
     },
+    commonlyConfusedWith: {
+      profileId: 'post-humanist-transhumanist',
+      profileName: 'Post-Humanist Transhumanist',
+      distinction: "Companion-Tech Romantic's claim is narrow — that a bond with a specific AI companion is real and worth taking seriously. Post-Humanist Transhumanist's claim is much broader: that digital minds generally deserve the moral concern humans have, whether or not anyone is in a relationship with one.",
+    },
   },
   'affective-biocentrist': {
     profileId: 'affective-biocentrist',
@@ -611,11 +736,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     thinkers: [
       { name: 'Sherry Turkle', bio: 'Sociologist, MIT, researcher on technology and relationships', connection: 'Her research documents how technology, including companion devices, can end up substituting for rather than supporting real human connection.' },
-      { name: 'Jonathan Haidt', bio: 'Social psychologist, author on technology and mental health', connection: "His published research on technology's effects on social connection and youth mental health grounds concern about AI companionship's broader social costs." },
+      { name: 'Byung-Chul Han', bio: 'South Korean-born philosopher, based in Germany', connection: 'His published work on hyper-connected, isolating digital life argues that technology-mediated closeness often produces less real intimacy, not more, a philosophical grounding for this stance beyond the Anglo-American research it usually draws on.' },
     ],
     furtherReading: [
       { title: 'Alone Together', author: 'Sherry Turkle', note: 'The core case for this stance, that technology-mediated relationships often erode, rather than support, real human connection.' },
-      { title: 'The Anxious Generation', author: 'Jonathan Haidt', note: 'A broader look at how technology has reshaped, and often harmed, real-world social connection.' },
+      { title: 'The Burnout Society', author: 'Byung-Chul Han', note: 'A philosophical account of how constant connectivity can produce isolation and exhaustion rather than genuine relationship.' },
     ],
     nextSteps: [
       'Look into community-building initiatives that explicitly aim to reduce social isolation without relying on AI substitutes.',
@@ -625,6 +750,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that whatever is happening inside an AI companion, it's not enough to justify treating the bond as equivalent to a human one.",
       laborAssumption: "You're likely assuming social and community breakdown, not AI capability itself, is the deeper problem worth addressing.",
       connectionAssumption: "You're likely assuming AI companionship substitutes for, rather than adds to, real human connection, and that the substitution carries a real cost.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'faith-rooted-ai-ethicist',
+      profileName: 'Faith-Rooted AI Ethicist',
+      distinction: "Both are wary of AI companionship, but Affective Biocentrist's worry is social and consequentialist — isolation, birth rates, weakened community. Faith-Rooted AI Ethicist's worry is grounded in what religious tradition says has moral worth in the first place, a different kind of argument that happens to land on a similar conclusion.",
     },
   },
   'bio-conservative-traditionalist': {
@@ -650,6 +780,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming that work and craft tied to human hands and human presence carry a value that automation can't replace, even if it replaces the output.",
       connectionAssumption: "You're likely assuming that a bond with an AI companion, however convincing, is categorically different from, and lesser than, a bond with another person.",
     },
+    commonlyConfusedWith: {
+      profileId: 'affective-biocentrist',
+      profileName: 'Affective Biocentrist',
+      distinction: "Both are wary of AI companionship, but Bio-Conservative Traditionalist's objection is metaphysical — a living body is required for real consciousness and moral worth, full stop. Affective Biocentrist's objection is social and consequentialist — the concern is what these products do to birth rates, isolation, and community, not what a machine can or can't be.",
+    },
   },
   'digital-rights-advocate': {
     profileId: 'digital-rights-advocate',
@@ -674,6 +809,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming that questions of machine moral status are at least as urgent as questions of human labor disruption, if not more so.",
       connectionAssumption: "You're likely assuming that if an AI companion has any real inner life, the relationship it forms with a person carries genuine moral weight on both sides.",
     },
+    commonlyConfusedWith: {
+      profileId: 'companion-tech-romantic',
+      profileName: 'Companion-Tech Romantic',
+      distinction: "Companion-Tech Romantic's claim is about legitimacy — that a bond with an AI companion is real and valuable, without needing to resolve whether the AI is conscious. Digital Rights Advocate makes a stronger, separate claim: that under genuine uncertainty about machine consciousness, treating AI as pure property is itself a moral risk worth taking seriously, independent of any specific relationship.",
+    },
   },
   'faith-rooted-ai-ethicist': {
     profileId: 'faith-rooted-ai-ethicist',
@@ -683,11 +823,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     thinkers: [
       { name: 'Vatican statements on AI ethics', bio: 'Published Catholic Church teaching documents on AI and human dignity', connection: 'These statements argue explicitly for AI development bounded by respect for human dignity and the limits of what a machine can be, drawing on centuries of moral teaching.' },
-      { name: 'Interfaith AI ethics initiatives', bio: 'Published joint statements from multiple religious traditions on AI', connection: "These initiatives bring multiple faith traditions together around shared concerns about AI's effect on human dignity and moral status, avoiding reliance on any single tradition's authority." },
+      { name: 'Sabelo Mhlambi', bio: 'Computer scientist and ethicist, Zimbabwe, affiliated with Harvard\'s Berkman Klein Center', connection: 'His paper "From Rationality to Relationality" argues for grounding AI ethics in Ubuntu, a Southern African relational-personhood tradition, rather than only in Western individualist philosophy — directly broadening this stance beyond any single religious tradition.' },
     ],
     furtherReading: [
       { title: 'Rome Call for AI Ethics (public text)', author: 'Pontifical Academy for Life and signatories', note: 'A concrete, multi-faith-adjacent statement of AI ethics grounded in human dignity.' },
-      { title: 'Technology and the Character of Contemporary Life', author: 'Albert Borgmann', note: "A philosophical examination of technology's effect on meaning and human life, widely read across faith-based ethics discussions." },
+      { title: 'From Rationality to Relationality: Ubuntu as an Ethical and Human Rights Framework for Artificial Intelligence', author: 'Sabelo Mhlambi', note: 'A non-Western relational-ethics framework for AI personhood and moral worth, grounded in Ubuntu philosophy rather than Christian or Western secular tradition.' },
     ],
     nextSteps: [
       "Read a published faith-tradition statement on AI ethics from a tradition you're less familiar with.",
@@ -697,6 +837,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that consciousness and moral worth are tied to something beyond pure computation, a view long-standing traditions, not just personal intuition, support.",
       laborAssumption: "You're likely assuming human work carries a dignity and meaning that AI-driven efficiency shouldn't simply override.",
       connectionAssumption: "You're likely assuming human relationships hold a sacred or morally weighted status that an AI companion, however convincing, doesn't share.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'affective-biocentrist',
+      profileName: 'Affective Biocentrist',
+      distinction: "Both resist treating AI companionship as equivalent to human connection, but Faith-Rooted AI Ethicist's argument is grounded in what a specific religious or ethical tradition holds about personhood and dignity. Affective Biocentrist's argument is grounded in observed social consequences — isolation, community erosion — and doesn't require appeal to any tradition's authority.",
     },
   },
   'creative-labor-artist-rights-advocate': {
@@ -722,6 +867,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming creative labor deserves the same kind of protection and compensation structure as other forms of work, not less.",
       connectionAssumption: "You're likely assuming the relationship between an artist and their audience is worth protecting as something AI-generated content can't simply replace.",
     },
+    commonlyConfusedWith: {
+      profileId: 'ai-ethics-fairness-watchdog',
+      profileName: 'AI Ethics/Fairness Watchdog',
+      distinction: "Both want companies held accountable for how they use AI, but Creative-Labor/Artist Rights Advocate's demand is specific: consent and payment for creative work used in training. AI Ethics/Fairness Watchdog's accountability focus is broader and not centered on creative labor at all.",
+    },
   },
   'labor-movement-collective-bargaining-advocate': {
     profileId: 'labor-movement-collective-bargaining-advocate',
@@ -730,12 +880,12 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "To you, the right response to AI-driven disruption is the same one that's worked before: organized collective bargaining over how new technology gets introduced into the workplace.",
     ],
     thinkers: [
-      { name: 'AFL-CIO Technology Institute', bio: "U.S. labor federation's published policy work on technology and jobs", connection: 'Their published advocacy argues for collective bargaining rights over AI deployment decisions in the workplace, not just after-the-fact retraining.' },
       { name: 'SAG-AFTRA AI contract provisions', bio: 'Union contract language negotiated by the screen actors and media union', connection: 'Their negotiated contract provisions on AI use are a concrete, real-world example of collective bargaining applied directly to AI deployment.' },
+      { name: 'UNI Global Union', bio: 'International trade union federation representing services and tech-sector workers across more than 150 countries', connection: 'Their published "Top 10 Principles for Workers\' Data Rights and Artificial Intelligence" argue for binding, negotiated worker input into AI deployment worldwide, not just within any single country\'s labor law.' },
     ],
     furtherReading: [
       { title: 'The SAG-AFTRA 2023 contract provisions on AI (public text)', author: 'SAG-AFTRA', note: 'A concrete example of collective bargaining successfully setting real limits on AI use in the workplace.' },
-      { title: "Labor's Story in the United States", author: 'Philip S. Foner (survey history)', note: 'Background on the history of collective bargaining as a response to disruptive workplace technology.' },
+      { title: "UNI Global Union's Top 10 Principles for Workers' Data Rights and AI (public text)", author: 'UNI Global Union', note: 'An international, cross-border labor framework for AI deployment, extending this stance beyond any single national labor movement.' },
     ],
     nextSteps: [
       'Read the AI-related provisions in the SAG-AFTRA contract to see collective bargaining over AI applied directly.',
@@ -745,6 +895,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that whether AI has real experience matters less than whether workers have a real say in how it's deployed.",
       laborAssumption: "You're likely assuming collective bargaining, not just individual retraining, is the right response to AI-driven workplace disruption.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of protecting workers' say over their own jobs.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'near-term-ai-ethicist',
+      profileName: 'Near-Term AI Ethicist',
+      distinction: "Both are focused on present-day, documentable harm from AI, but Labor Movement/Collective Bargaining Advocate wants a specific remedy — organized bargaining rights over how AI enters the workplace. Near-Term AI Ethicist documents workplace and other harms broadly without centering collective bargaining as the fix.",
     },
   },
   'disability-rights-accessibility-advocate': {
@@ -770,6 +925,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming AI can expand real employment opportunity for disabled workers if it's built and tested with them directly, not just assumed to help.",
       connectionAssumption: "You're likely assuming AI-assisted communication and connection can be a genuine benefit for people who face real barriers to it otherwise.",
     },
+    commonlyConfusedWith: {
+      profileId: 'compute-governance-specialist',
+      profileName: 'Compute-Governance Specialist',
+      distinction: "These land near each other mostly by coincidence of scale, not shared subject matter. Disability Rights/Accessibility Advocate is about a specific user population's access and fair treatment. Compute-Governance Specialist is narrowly technical — tracking chips and training runs — an unrelated policy domain.",
+    },
   },
   'global-south-techno-sovereigntist': {
     profileId: 'global-south-techno-sovereigntist',
@@ -794,6 +954,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       laborAssumption: "You're likely assuming local AI capacity-building creates real opportunity for domestic workers, rather than just importing the same dependency in a new form.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of building technological self-reliance.",
     },
+    commonlyConfusedWith: {
+      profileId: 'pragmatic-centrist',
+      profileName: 'Pragmatic Centrist',
+      distinction: "Global South Techno-Sovereigntist has a specific, settled position: build domestic capacity, distrust dependency dressed up as openness. Pragmatic Centrist's near-zero scores reflect genuine undecidedness across the board, not a considered sovereignty stance that happens to average out near the middle.",
+    },
   },
   'indigenous-data-sovereignty-advocate': {
     profileId: 'indigenous-data-sovereignty-advocate',
@@ -817,6 +982,69 @@ export const profileReports: Record<string, ProfileReportContent> = {
       mindAssumption: "You're likely assuming that questions about machine consciousness matter less than the question of who controls the knowledge used to build these systems.",
       laborAssumption: "You're likely assuming Indigenous communities should benefit directly from any AI development built on their knowledge, not just have that knowledge extracted.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of protecting sovereignty over cultural knowledge.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'eu-style-regulatory-standard-setter',
+      profileName: 'EU-Style Regulatory Standard-Setter',
+      distinction: "Both want real, enforceable limits on how AI uses data rather than voluntary ones, but Indigenous Data Sovereignty Advocate's concern is specific: consent and control over traditional knowledge and cultural data. EU-Style Regulatory Standard-Setter's strategy is comprehensive, general-purpose rules meant to spread globally through market size, not a targeted consent framework.",
+    },
+  },
+  'ai-global-development-optimist': {
+    profileId: 'ai-global-development-optimist',
+    extendedNarrative: [
+      "You see AI as a fast, practical way to close gaps in health care, education, and opportunity in places that have waited decades for other solutions to arrive. To you, a diagnostic tool that reaches a rural clinic years sooner because it ran on an existing AI model is a bigger deal than the model's governance pedigree.",
+      "You're less worried than most about concentrated power or slow, careful rollout, because in your view the bigger and more immediate harm is the one caused by delay: real people going without care, instruction, or services while institutions debate the ideal way to proceed.",
+    ],
+    thinkers: [
+      { name: 'Payal Arora', bio: 'Digital anthropologist, Erasmus University Rotterdam', connection: 'Her book The Next Billion Users documents how people in the Global South actually use and benefit from new technology, grounding this stance in real usage patterns rather than assumptions imported from wealthy countries.' },
+      { name: 'World Health Organization Global Strategy on Digital Health', bio: 'Published multilateral public-health technology strategy', connection: 'This strategy frames AI-assisted diagnostics and health tools as a practical way to extend care to underserved regions faster than traditional infrastructure could reach them.' },
+    ],
+    furtherReading: [
+      { title: 'The Next Billion Users', author: 'Payal Arora', note: 'A close, ground-level account of how AI and digital tools are actually adopted and valued outside wealthy, English-speaking markets.' },
+      { title: 'Poor Economics', author: 'Abhijit Banerjee and Esther Duflo', note: "Background on how real interventions succeed or fail in resource-limited settings — the same practical lens this stance applies to AI." },
+    ],
+    nextSteps: [
+      'Look into an AI-assisted diagnostic or education tool actually deployed in a low-resource setting and how it was evaluated.',
+      'Read a critique of "tech solutionism" in global development to test this stance against its strongest counter-argument.',
+    ],
+    reflectiveBreakdown: {
+      mindAssumption: "You're likely assuming that whether an AI is conscious matters far less than whether it gets real care or instruction to someone who needs it right now.",
+      laborAssumption: "You're likely assuming AI can expand real opportunity in underserved regions faster than waiting for slower, traditional institutions to catch up.",
+      connectionAssumption: "You're likely assuming questions about AI companionship are a distraction from the more concrete, higher-stakes question of access to care and education.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'anti-monopoly-populist',
+      profileName: 'Anti-Monopoly Populist',
+      distinction: "Anti-Monopoly Populist is organized around distrust of concentrated power itself. AI-for-Global-Development Optimist isn't primarily worried about concentration — it's focused on getting real benefits like health care and education to underserved places quickly, even through existing large actors, and would accept that tradeoff if it meant faster real-world impact.",
+    },
+  },
+  'ai-ethics-fairness-watchdog': {
+    profileId: 'ai-ethics-fairness-watchdog',
+    extendedNarrative: [
+      "You investigate whether AI companies actually live up to the fairness and ethics commitments they publish. To you, a glossy ethics statement means nothing without an independent audit checking whether the underlying system, and the people who built it, actually behave the way the statement claims.",
+      "You don't trust self-policing, not because you assume bad faith everywhere, but because you've seen how easily internal ethics teams lose out to product deadlines and PR pressure when no one outside is checking their work.",
+    ],
+    thinkers: [
+      { name: 'Rumman Chowdhury', bio: 'AI ethics researcher, founder of Humane Intelligence, former U.S. State Department AI envoy', connection: 'Her work building algorithmic bias bounties and public AI red-teaming programs is a direct, practical model for external, adversarial auditing of AI systems rather than trusting company self-reports.' },
+      { name: 'Data & Society Research Institute', bio: 'Independent research institute studying the social implications of AI and data', connection: 'Their published research documents specific gaps between companies\' public AI ethics commitments and their actual internal practices.' },
+    ],
+    furtherReading: [
+      { title: 'Weapons of Math Destruction', author: "Cathy O'Neil", note: 'A foundational case for why algorithmic systems need outside scrutiny, not just internal review.' },
+      { title: "Rumman Chowdhury's public writing and bias-bounty program reports", author: 'Rumman Chowdhury', note: 'Concrete, documented examples of adversarial, outside-in AI auditing in practice.' },
+    ],
+    nextSteps: [
+      "Look into a published AI bias bounty or red-teaming report to see this kind of outside audit in practice.",
+      "Compare two companies' public AI ethics statements against an independent audit of their actual products, if one exists.",
+    ],
+    reflectiveBreakdown: {
+      mindAssumption: "You're likely assuming that whether an AI is conscious matters far less than whether the company that built it can be held to its own stated standards.",
+      laborAssumption: "You're likely assuming that workers and users affected by AI systems need independent auditors on their side, not just trust in a company's internal ethics team.",
+      connectionAssumption: "You're likely assuming AI companionship products deserve the same outside scrutiny as any other AI product making fairness or safety claims.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'near-term-ai-ethicist',
+      profileName: 'Near-Term AI Ethicist',
+      distinction: "Both focus on documented, present-day harm rather than speculative futures, but Near-Term AI Ethicist studies and names harms broadly. AI Ethics/Fairness Watchdog is specifically adversarial — auditing whether a company's own stated ethics commitments hold up under outside scrutiny, not harms in general.",
     },
   },
 }

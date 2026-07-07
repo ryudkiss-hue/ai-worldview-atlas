@@ -13,6 +13,10 @@ function checkShape(id: string) {
   expect(content.reflectiveBreakdown.mindAssumption.length).toBeGreaterThan(0)
   expect(content.reflectiveBreakdown.laborAssumption.length).toBeGreaterThan(0)
   expect(content.reflectiveBreakdown.connectionAssumption.length).toBeGreaterThan(0)
+  expect(content.commonlyConfusedWith.profileId.length).toBeGreaterThan(0)
+  expect(content.commonlyConfusedWith.profileId).not.toBe(id)
+  expect(content.commonlyConfusedWith.profileName.length).toBeGreaterThan(0)
+  expect(content.commonlyConfusedWith.distinction.length).toBeGreaterThan(0)
 }
 
 describe('profileReports (batch 1: Precautionary/Safety pt1)', () => {
@@ -51,10 +55,23 @@ describe('profileReports (batch 6: Material/Labor Stakes + Sovereignty, final ba
   })
 })
 
+describe('profileReports (batch 7: coverage-gap archetypes, added 2026-07-07)', () => {
+  it('has complete entries for ai-global-development-optimist and ai-ethics-fairness-watchdog', () => {
+    ['ai-global-development-optimist', 'ai-ethics-fairness-watchdog'].forEach(checkShape)
+  })
+})
+
 describe('profileReports completeness', () => {
-  it('has exactly one entry per profile, for all 34 profiles, with no orphans', () => {
+  it('has exactly one entry per profile, for all 36 profiles, with no orphans', () => {
     const profileIds = profiles.map((p) => p.id)
     const reportIds = Object.keys(profileReports)
     expect(reportIds.sort()).toEqual(profileIds.sort())
+  })
+
+  it('every commonlyConfusedWith.profileId points at a real profile', () => {
+    const profileIdSet = new Set(profiles.map((p) => p.id))
+    Object.values(profileReports).forEach((content) => {
+      expect(profileIdSet.has(content.commonlyConfusedWith.profileId), `${content.profileId}'s commonlyConfusedWith points at an unknown id`).toBe(true)
+    })
   })
 })

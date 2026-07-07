@@ -12,7 +12,7 @@ describe('new type shapes compile and hold expected fields', () => {
     expect(scenario.axisId).toBe('teleological')
   })
 
-  it('ProfileReportContent has reflectiveBreakdown with three assumption fields', () => {
+  it('ProfileReportContent has reflectiveBreakdown with three assumption fields and a commonlyConfusedWith field', () => {
     const content: ProfileReportContent = {
       profileId: 'doomer',
       extendedNarrative: ['p1', 'p2'],
@@ -20,7 +20,9 @@ describe('new type shapes compile and hold expected fields', () => {
       furtherReading: [{ title: 'T', author: 'A', note: 'N' }],
       nextSteps: ['step'],
       reflectiveBreakdown: { mindAssumption: 'm', laborAssumption: 'l', connectionAssumption: 'c' },
+      commonlyConfusedWith: { profileId: 'near-term-ai-ethicist', profileName: 'Near-Term AI Ethicist', distinction: 'd' },
     }
     expect(content.reflectiveBreakdown.mindAssumption).toBe('m')
+    expect(content.commonlyConfusedWith.profileId).toBe('near-term-ai-ethicist')
   })
 })

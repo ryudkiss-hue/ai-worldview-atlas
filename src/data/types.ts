@@ -65,4 +65,9 @@ export interface ProfileReportContent {
     laborAssumption: string
     connectionAssumption: string
   }
+  commonlyConfusedWith: {
+    profileId: string
+    profileName: string
+    distinction: string
+  }
 }
