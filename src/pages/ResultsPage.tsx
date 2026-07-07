@@ -42,7 +42,7 @@ export function ResultsPage() {
 
   function handleShare() {
     const encoded = encodeShareLink({ t1Raw, t2Raw })
-    const url = `${window.location.origin}/results?d=${encoded}`
+    const url = `${window.location.origin}${import.meta.env.BASE_URL}#/results?d=${encoded}`
     navigator.clipboard.writeText(url)
     setCopied(true)
   }
