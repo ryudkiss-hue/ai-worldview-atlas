@@ -27,7 +27,7 @@ export function ResultsPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const { answers, reset, scenarioAnswers, selectedStakeholderTags } = useQuiz()
-  const [copied, setCopied] = useState(false)
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
   const [generatingPdf, setGeneratingPdf] = useState(false)
 
   const sharedParam = searchParams.get('d')
@@ -53,11 +53,15 @@ export function ResultsPage() {
 
   const selectedTagObjects = stakeholderTags.filter((tag) => selectedStakeholderTags.includes(tag.id))
 
-  function handleShare() {
+  async function handleShare() {
     const encoded = encodeShareLink({ t1Raw, t2Raw })
     const url = `${window.location.origin}${import.meta.env.BASE_URL}#/results?d=${encoded}`
-    navigator.clipboard.writeText(url)
-    setCopied(true)
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopyStatus('copied')
+    } catch {
+      setCopyStatus('failed')
+    }
   }
 
   function handleRetake() {
@@ -132,8 +136,12 @@ export function ResultsPage() {
       <PinnacleReflection archetypeName={topMatch.profile.name} />
 
       <div className="flex gap-3 mt-6">
-        <button type="button" onClick={handleShare} className="px-4 py-2 rounded bg-blue-600 text-white">
-          {copied ? 'Link Copied!' : 'Copy Shareable Link'}
+        <button
+          type="button"
+          onClick={handleShare}
+          className={`px-4 py-2 rounded text-white ${copyStatus === 'failed' ? 'bg-red-600' : 'bg-blue-600'}`}
+        >
+          {copyStatus === 'copied' ? 'Link Copied!' : copyStatus === 'failed' ? 'Copy Failed — Try Again' : 'Copy Shareable Link'}
         </button>
         <button
           type="button"

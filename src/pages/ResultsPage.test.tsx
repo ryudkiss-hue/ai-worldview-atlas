@@ -103,6 +103,15 @@ describe('ResultsPage', () => {
     expect(decodeShareLink(shareParam)).toEqual(scores)
   })
 
+  it('shows a distinct failure state instead of a false "Link Copied!" when the clipboard write rejects', async () => {
+    Object.assign(navigator, { clipboard: { writeText: vi.fn().mockRejectedValue(new Error('denied')) } })
+    const encoded = encodeShareLink(buildFlatScores(3, -3))
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Copy Shareable Link' }))
+    expect(await screen.findByText('Copy Failed — Try Again')).toBeInTheDocument()
+    expect(screen.queryByText('Link Copied!')).not.toBeInTheDocument()
+  })
+
   it('resets answers and navigates to intro when Retake is clicked', () => {
     const encoded = encodeShareLink(buildFlatScores(0, 0))
     renderResultsPage(`?d=${encoded}`)
