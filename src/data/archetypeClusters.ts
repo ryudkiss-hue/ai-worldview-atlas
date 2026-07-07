@@ -22,7 +22,7 @@ export const archetypeClusters: ArchetypeCluster[] = [
     profileIds: [
       'eacc-maximalist', 'open-source-libertarian', 'cyberpunk-anti-corporate-accelerationist',
       'silicon-valley-techno-optimist', 'corporate-ai-pragmatist',
-      'post-humanist-transhumanist', 'cosmic-vitalist-mystic',
+      'post-humanist-transhumanist', 'cosmic-vitalist-mystic', 'human-ai-augmentation-advocate',
     ],
   },
   {
