@@ -14,6 +14,9 @@ export function ReportPreview({ content }: ReportPreviewProps) {
         ))}
       </div>
 
+      <h4 className="font-semibold mb-2">Shadow Side</h4>
+      <p className="text-gray-700 mb-4">{content.shadowSide}</p>
+
       <h4 className="font-semibold mb-2">Commonly Confused With</h4>
       <p className="text-gray-700 mb-4">
         <span className="font-medium">{content.commonlyConfusedWith.profileName}.</span>{' '}

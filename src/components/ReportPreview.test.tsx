@@ -11,6 +11,12 @@ describe('ReportPreview', () => {
     content.extendedNarrative.forEach((p) => expect(screen.getByText(p)).toBeInTheDocument())
   })
 
+  it('renders the shadow side', () => {
+    render(<ReportPreview content={content} />)
+    expect(screen.getByText('Shadow Side')).toBeInTheDocument()
+    expect(screen.getByText(content.shadowSide)).toBeInTheDocument()
+  })
+
   it('renders all thinkers with name and connection', () => {
     render(<ReportPreview content={content} />)
     content.thinkers.forEach((t) => {

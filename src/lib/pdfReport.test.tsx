@@ -25,6 +25,7 @@ const fixtureReports: Record<string, ProfileReportContent> = Object.fromEntries(
     {
       profileId: p.id,
       extendedNarrative: ['Paragraph one.', 'Paragraph two.'],
+      shadowSide: 'Shadow side sentence.',
       thinkers: [{ name: 'Thinker One', bio: 'Bio one', connection: 'Connection one.' }],
       furtherReading: [{ title: 'Title One', author: 'Author One', note: 'Note one.' }],
       nextSteps: ['Step one.'],

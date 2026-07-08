@@ -7,6 +7,7 @@ function checkShape(id: string) {
   expect(content, `missing profileReports entry for ${id}`).toBeDefined()
   expect(content.profileId).toBe(id)
   expect(content.extendedNarrative.length).toBeGreaterThanOrEqual(2)
+  expect(content.shadowSide.length).toBeGreaterThan(0)
   expect(content.thinkers.length).toBeGreaterThanOrEqual(2)
   expect(content.furtherReading.length).toBeGreaterThanOrEqual(2)
   expect(content.nextSteps.length).toBeGreaterThanOrEqual(2)
@@ -79,5 +80,11 @@ describe('profileReports completeness', () => {
     Object.values(profileReports).forEach((content) => {
       expect(profileIdSet.has(content.commonlyConfusedWith.profileId), `${content.profileId}'s commonlyConfusedWith points at an unknown id`).toBe(true)
     })
+  })
+
+  it('every profile has a distinct, non-empty shadowSide (no copy-pasted trade-offs)', () => {
+    const shadowSides = Object.values(profileReports).map((content) => content.shadowSide)
+    shadowSides.forEach((s) => expect(s.length).toBeGreaterThan(20))
+    expect(new Set(shadowSides).size).toBe(shadowSides.length)
   })
 })

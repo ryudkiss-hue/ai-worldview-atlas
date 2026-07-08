@@ -49,6 +49,7 @@ export interface Scenario {
 export interface ProfileReportContent {
   profileId: string
   extendedNarrative: string[]
+  shadowSide: string
   thinkers: {
     name: string
     bio: string

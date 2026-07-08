@@ -16,6 +16,7 @@ describe('new type shapes compile and hold expected fields', () => {
     const content: ProfileReportContent = {
       profileId: 'doomer',
       extendedNarrative: ['p1', 'p2'],
+      shadowSide: 's',
       thinkers: [{ name: 'N', bio: 'B', connection: 'C' }],
       furtherReading: [{ title: 'T', author: 'A', note: 'N' }],
       nextSteps: ['step'],

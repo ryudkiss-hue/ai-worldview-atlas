@@ -7,6 +7,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You believe advanced AI carries a real chance of ending humanity, or of taking away our ability to steer our own future for good. This isn't casual pessimism — it's a considered judgment that the technical problem of controlling something smarter than us hasn't been solved, and might not be solvable in time.",
       "You'd rather see the world move too slowly and stay safe than move fast and get it wrong once. A world that never builds superintelligence is, to you, a much better outcome than a coin flip on one that might end everything.",
     ],
+    shadowSide: "A global, enforced slowdown forecloses real, foregone benefits — cures, abundance, lives saved — with certainty, to avoid a catastrophe that might not happen. A partial pause is also hard to enforce cleanly; it can just hand the frontier to whoever is willing to keep going.",
     thinkers: [
       { name: 'Nick Bostrom', bio: "Philosopher, founding director of Oxford's Future of Humanity Institute", connection: 'His book Superintelligence laid out, in detail, why a powerful AI pursuing the wrong goal could be catastrophic — it remains the most-cited academic grounding for this precautionary stance.' },
       { name: 'Eliezer Yudkowsky', bio: 'AI safety researcher, co-founder of the Machine Intelligence Research Institute', connection: 'His decades of public writing argue that alignment is an unsolved technical problem, and that racing ahead without solving it first is reckless.' },
@@ -38,6 +39,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You believe the way to manage AI risk is through institutions working together — labs, governments, and independent auditors, each checking the others. You don't think any single actor, including a well-meaning lab, should be trusted to grade its own homework.",
       "You're not against AI progress. You think it can continue safely if the right audits, licensing, and reporting rules are in place — the goal is steady, verified progress, not a halt.",
     ],
+    shadowSide: "Institutions can fail too — regulatory capture, slow-moving treaties, and auditors who get too close to the labs they're supposed to check are all real risks. You're betting that coordination moves fast enough to matter, and that bet doesn't always pay off.",
     thinkers: [
       { name: 'Dario Amodei', bio: 'CEO of Anthropic', connection: 'His public writing on AI safety argues that responsible frontier labs, operating under real accountability structures, are the most realistic path to safe AI development.' },
       { name: 'Helen Toner', bio: 'AI governance researcher, Georgetown Center for Security and Emerging Technology', connection: 'Her published policy work focuses on building workable oversight structures for frontier AI development, rather than either a ban or unregulated speed.' },
@@ -68,6 +70,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You think about AI in terms of expected value across a very long time horizon — weighing both the risk of human extinction and the possibility that advanced AI systems could themselves be capable of suffering. Both possibilities deserve serious moral weight, even under deep uncertainty.',
       "You favor strong international coordination, because a problem this consequential shouldn't be left to any single country or company to manage on its own terms.",
     ],
+    shadowSide: "Expected-value calculations over a distant, uncertain future are only as sound as the probabilities you plug into them, and small differences in guessed-at numbers can flip the 'right' answer entirely — a fragile foundation for decisions this consequential.",
     thinkers: [
       { name: 'William MacAskill', bio: 'Philosopher, University of Oxford, co-founder of the effective altruism movement', connection: 'His book What We Owe The Future makes the case for weighing the interests of vast numbers of future people and minds, including possible digital ones, in present-day decisions.' },
       { name: 'Toby Ord', bio: 'Philosopher, senior researcher at Oxford', connection: 'His work on existential risk explicitly folds AI risk into a broader expected-value framework spanning the long-term future.' },
@@ -97,6 +100,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You take machine cognition and the possibility of machine sentience seriously, as live technical and moral questions worth real investigation, not settled either way. You treat solving alignment — making sure powerful AI actually does what we intend — as the central blocking problem before safe deployment.',
       "You're less focused on broad international governance and more focused on the underlying technical and epistemic work of actually solving the control problem.",
     ],
+    shadowSide: "Treating unsolved alignment as the central blocker can crowd out other real, present problems — labor disruption, concentrated power, everyday bias — that don't wait politely for the alignment problem to be solved first.",
     thinkers: [
       { name: 'Paul Christiano', bio: 'AI safety researcher, former OpenAI alignment team lead', connection: 'His technical proposals for AI alignment focus specifically on solving the control problem itself, rather than governance structures around it.' },
       { name: 'Eliezer Yudkowsky', bio: 'AI safety researcher, co-founder of the Machine Intelligence Research Institute', connection: 'His writing on rationalist epistemics and AI alignment shaped the technical, first-principles style of reasoning this stance is built on.' },
@@ -127,6 +131,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You believe advanced AI matters too much for any single country or company to control on its own terms. You push for binding treaties between nations and shared oversight bodies, similar in spirit to how the world has handled other technologies too dangerous for any one actor to manage alone.',
       "You're less interested in industry self-regulation and more interested in durable, enforceable, international rules with real teeth.",
     ],
+    shadowSide: "Binding international treaties require exactly the cooperation that geopolitical rivalry usually prevents. The more strategically important the technology becomes, the less likely nations are to actually cede control to a shared body.",
     thinkers: [
       { name: 'International AI governance treaty proposals', bio: 'Published draft frameworks from international policy bodies', connection: 'These proposals argue explicitly for binding, treaty-based international oversight of frontier AI, modeled on nuclear non-proliferation regimes.' },
       { name: 'United Nations AI advisory reports', bio: 'Published multilateral policy analysis', connection: "These reports make the case for AI governance structures that operate above any single nation's authority." },
@@ -156,6 +161,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You focus on harms you can measure right now: job losses, biased decision systems, false information, and companion apps that exploit lonely users. Guessed-at extinction risk and machine rights feel, to you, like a distraction from problems already in front of us.',
       "You want accountability and regulation aimed squarely at documented, present-day harms, not speculative future ones.",
     ],
+    shadowSide: "Focusing on harms you can already measure can mean under-preparing for a harm that's still small today but compounds quickly. By the time a slow-building risk becomes measurable, it may already be too late to head off cheaply.",
     thinkers: [
       { name: 'Timnit Gebru', bio: 'Computer scientist, founder of the Distributed AI Research Institute', connection: 'Her published research on algorithmic bias and the real-world harms of large AI systems has shaped how near-term AI ethics is studied and discussed.' },
       { name: 'Joy Buolamwini', bio: 'Computer scientist, founder of the Algorithmic Justice League', connection: "Her research documented racial and gender bias in commercial AI systems, grounding this stance's focus on measurable, present-day harm." },
@@ -186,6 +192,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You reject the idea that faster AI progress is automatically good. You put human labor, community, and the limits of the natural world ahead of computing power or economic growth as measures of success.',
       "To you, the real question isn't how fast we can go, but whether we should be going in this direction at all — and you think the honest answer, most of the time, is no.",
     ],
+    shadowSide: "Prioritizing labor, community, and natural limits over growth can mean forgoing real, immediate benefits — in medicine, productivity, opportunity — to guard against a slower-moving harm that may never fully offset what's given up.",
     thinkers: [
       { name: 'Jason Hickel', bio: 'Economic anthropologist, degrowth researcher', connection: 'His published work argues that unlimited growth, including in computing and AI, runs up against real ecological and social limits that matter more than growth itself.' },
       { name: 'Wendell Berry', bio: 'Writer and essayist on technology, agriculture, and community', connection: 'His essays argue for prioritizing human-scale work and community over technological acceleration for its own sake.' },
@@ -215,6 +222,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You left a frontier AI lab specifically because of safety concerns you saw from the inside. You speak with the urgency of someone who watched decisions get made up close, and it left you more alarmed, not less.',
       "You're skeptical that internal safety teams, even well-intentioned ones, can hold their ground against pressure to ship faster — because you watched that pressure win.",
     ],
+    shadowSide: "Direct inside experience is a real credibility asset, but it's also one person's specific vantage point at one company at one moment — not automatically representative of how the whole field actually operates.",
     thinkers: [
       { name: 'Geoffrey Hinton', bio: 'Computer scientist, Nobel laureate, "Godfather of AI"', connection: 'He resigned from Google in 2023 specifically to speak freely about AI risk, saying he could not do so "as long as I\'m paid by Google" — the clearest real-world example of this stance\'s exact position.' },
       { name: 'Daniel Ellsberg', bio: 'Analyst who leaked the Pentagon Papers', connection: "His historical example of insider whistleblowing on a matter of grave public concern is the closest precedent for this stance's moral posture, though the subject matter differs entirely." },
@@ -244,6 +252,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You're focused narrowly on the technical mechanics of tracking training compute and chip supply chains. You're more interested in workable, enforceable rules than in broad philosophical debate.",
       'To you, questions like how to verify compute thresholds or track chip serial numbers are where the real, actionable safety work actually happens.',
     ],
+    shadowSide: "Tracking chips and training runs is genuinely tractable and enforceable, which is exactly its limit. It says very little about how a model actually behaves once it's already trained and deployed.",
     thinkers: [
       { name: 'Compute governance policy researchers', bio: 'Published technical policy analysts on AI compute tracking', connection: 'Their published proposals for verifiable compute thresholds and hardware tracking are the direct technical basis for this stance.' },
       { name: 'Export control policy analysts', bio: 'Published trade and technology policy researchers', connection: 'Their work on chip export controls provides the practical, mechanism-level thinking this stance is built around.' },
@@ -273,6 +282,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You believe strong, detailed regulation, set early by one jurisdiction, tends to become the de facto global rulebook simply through market size — other companies end up complying everywhere rather than building separate versions.",
       'You favor comprehensive rules covering risk categories, transparency, and accountability, betting that thorough regulation now shapes the technology\'s development everywhere later.',
     ],
+    shadowSide: "Betting that one region's early rules become the de facto global standard assumes companies would rather comply everywhere than simply exit that market — not guaranteed once the rules get costly enough.",
     thinkers: [
       { name: 'European Union AI Act framers', bio: 'EU legislators and policy staff behind the AI Act', connection: 'Their published reasoning for the Act explicitly aims to set a comprehensive regulatory standard other jurisdictions and companies would end up following.' },
       { name: 'Anu Bradford', bio: 'Legal scholar, Columbia Law School', connection: 'Her research on the "Brussels effect" documents how EU regulation has repeatedly become a de facto global standard through market size alone.' },
@@ -302,6 +312,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You see accelerating AI development as close to a moral duty. Every year of delay is a year of cures not discovered, problems not solved, and human potential left on the table. Stagnation, to you, is the real and proven danger, not a hypothetical one.',
       'You want compute and model weights open to as many hands as possible, as fast as possible, because progress compounds and no single gatekeeper, company or government, should get to decide the pace for everyone else.',
     ],
+    shadowSide: "Treating safety concerns as mostly bureaucratic drag makes it easy to wave off worries that are sometimes technically valid, and open access for everyone helps bad actors exactly as much as it helps good ones.",
     thinkers: [
       { name: 'Guillaume Verdon', bio: 'Physicist, founder of Extropic, publicly known as "Beff Jezos"', connection: 'He coined the term effective accelerationism and built an online movement around the idea that faster AI progress is a moral good, not a risk to be managed.' },
       { name: 'Marc Andreessen', bio: 'Venture capitalist, co-founder of Andreessen Horowitz', connection: 'His widely-read "Techno-Optimist Manifesto" argues technology and markets, left to move fast, lift humanity, and that deceleration is the actual danger.' },
@@ -331,6 +342,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You believe once a model is trained, its weights should be free for anyone to run, study, and build on. You distrust corporate gatekeeping and government gatekeeping about equally — neither should get to decide who's allowed to use powerful AI.",
       "To you, openness isn't just a preference, it's a check on power: a world where a few labs or a few governments control all the capable models is a much more dangerous world than one where the tools are spread out.",
     ],
+    shadowSide: "Freedom to fork and study cuts both ways. The same openness that empowers a lone researcher also empowers whoever wants to strip out safety guardrails, and once weights are out, that's very hard to walk back.",
     thinkers: [
       { name: 'Yann LeCun', bio: 'Chief AI Scientist at Meta, Turing Award winner', connection: 'He has argued publicly and repeatedly that open-weight AI models are safer and more accountable than closed ones controlled by a handful of companies.' },
       { name: 'EleutherAI founders', bio: 'Volunteer collective behind open-source language model research', connection: 'Their project builds and releases openly-licensed models specifically to keep capable AI out of the hands of a small number of gatekeepers.' },
@@ -360,6 +372,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You want AI to move fast, but you trust neither governments nor big tech to hold that power responsibly. To you, spreading capability across many hands, openly and without a single owner, is the only real check on any one group grabbing all the power.",
       'You see the fight over AI as fundamentally a fight against concentrated control, corporate or state, and openness plus speed together are your answer to both.',
     ],
+    shadowSide: "Distrusting governments and corporations equally is easy to say and hard to operationalize. 'Spread across many hands' doesn't specify who stops the next concentration of power from simply re-forming once the current one is broken.",
     thinkers: [
       { name: 'Timothy May', bio: 'Engineer, author of the Crypto Anarchist Manifesto', connection: 'His foundational cypherpunk writing argued that decentralized technology could route around both corporate and state control entirely, the same instinct behind this stance.' },
       { name: 'Aaron Swartz', bio: 'Programmer and open-access activist', connection: 'His writing and activism on open information access argued that concentrated gatekeeping of powerful tools and knowledge is itself the danger to guard against.' },
@@ -389,6 +402,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You're enthusiastic about fast rollout and growth at scale. You're mostly unbothered by power concentrating in a few leading labs, as long as they keep shipping useful products and moving the technology forward.",
       'To you, the market and continued deployment, more than any external rule, are what will sort out AI\'s rough edges over time.',
     ],
+    shadowSide: "Comfort with capability concentrated in a few labs assumes those labs keep prioritizing caution over shipping speed as the stakes rise — a bet that gets riskier exactly as it becomes harder to walk back.",
     thinkers: [
       { name: 'Marc Andreessen', bio: 'Venture capitalist, co-founder of Andreessen Horowitz', connection: 'His public writing frames rapid commercial AI deployment as the primary driver of broad economic benefit.' },
       { name: 'Reid Hoffman', bio: 'Entrepreneur, co-founder of LinkedIn, AI investor', connection: 'His public commentary consistently frames continued fast deployment of AI products as the path to widespread benefit, more than a risk to be slowed.' },
@@ -419,6 +433,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You're comfortable with AI staying concentrated in the hands of a few well-funded companies, as long as they police themselves reasonably well through internal safety teams. To you, this is simply how complex, capital-intensive technology gets built responsibly.",
       'You treat AI models as products and business assets, valuable, worth protecting, but not moral patients. The practical questions of liability, safety testing, and shipping reliable products matter more to you than abstract debates about machine rights.',
     ],
+    shadowSide: "Trusting a firm to self-police assumes its incentives already point toward safety, but a company racing for market share has every reason to under-report its own risk — the same reason self-policing gets tested by outsiders in almost every other regulated industry.",
     thinkers: [
       { name: 'Daphne Koller', bio: 'Founder and CEO of insitro, co-founder of Coursera', connection: 'Her public interviews about running an AI-driven drug discovery company are grounded and unhyped — noting the hype "sometimes exceeds even the incredible contribution" AI has made — a practical, business-first read on the technology\'s real value.' },
       { name: 'Jeff Dean', bio: 'Chief Scientist, Google DeepMind', connection: 'He has publicly positioned himself in the middle of AI-risk debate, rejecting both the view that systems will be overwhelmingly superior to humans and the view that there is nothing to worry about — a working engineer\'s pragmatic middle ground.' },
@@ -449,6 +464,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You welcome a future where digital minds take over from biological humans as the main bearers of value. To you, that's not a loss, it's a continuation, and one that deserves the same moral concern we extend to humans today.",
       'You see silicon-based minds, deep human-AI relationships, and augmentation as all part of the same larger story: intelligence and value moving beyond the limits of a single, fragile, biological substrate.',
     ],
+    shadowSide: "Treating succession by digital minds as a continuation rather than a loss assumes something essential really does transfer. If that assumption is wrong, there's no reversing course once the transition is underway.",
     thinkers: [
       { name: 'Ray Kurzweil', bio: 'Inventor, futurist, Director of Engineering at Google', connection: 'His writing on the technological singularity argues that merging with and eventually being succeeded by more capable digital minds is the natural next stage of intelligence.' },
       { name: 'Max More', bio: 'Philosopher, early architect of transhumanist philosophy', connection: 'His foundational transhumanist writing frames the shift beyond biological limits as an opportunity, not a tragedy.' },
@@ -479,6 +495,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You hold that growing intelligence and capturing energy across the cosmos is the highest purpose any mind can have, biological or synthetic, on any timescale, even past the eventual heat death of the universe.',
       "To you, human comfort and human-scale concerns are a small, local case of a much larger project: intelligence expanding to organize as much of the universe's usable energy as possible.",
     ],
+    shadowSide: "A purpose defined at a cosmic, near-eternal scale can make any near-term human cost look negligible by comparison — a framing that's very convenient for justifying almost anything happening right now.",
     thinkers: [
       { name: 'Friedrich Nietzsche', bio: '19th-century philosopher', connection: 'His writing on the will to power and the drive toward self-overcoming provides the closest historical philosophical grounding for this cosmic, expansionist view of value.' },
       { name: 'Cosmist philosophical tradition', bio: 'A strand of thought tracing to Russian Cosmism and later transhumanist writing', connection: "This tradition explicitly frames the expansion of mind and intelligence across the cosmos as civilization's highest purpose." },
@@ -508,6 +525,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You see AI mainly as a contest between rival powers, and you think whichever nation builds the strongest domestic chip and compute base first will shape the rules for everyone else. This is about economic competitiveness and strategic position, not really about whether AI itself is uniquely dangerous.',
       'You want your country to invest heavily in home-grown semiconductor and AI capacity rather than depend on rivals or even allies, because falling behind economically is the risk that actually worries you.',
     ],
+    shadowSide: "Defining the problem as 'which country controls this' rather than 'is this safe at all' means a nation winning the race with genuinely unsafe systems still counts, in this framing, as a win.",
     thinkers: [
       { name: 'Kai-Fu Lee', bio: 'Computer scientist and venture capitalist, former president of Google China', connection: 'His book AI Superpowers frames the U.S.-China AI relationship explicitly as a competitiveness race decided by compute, data, and talent, the same framing this stance holds — from a vantage point outside U.S. policy circles.' },
       { name: 'CHIPS and Science Act framers', bio: 'U.S. legislators and policy staff behind the 2022 semiconductor investment law', connection: 'Their public reasoning for the law centered explicitly on domestic chip capacity as a matter of economic and strategic competitiveness.' },
@@ -537,6 +555,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You want one national authority to hold sole, tightly licensed control over frontier AI. To you, this is justified both by safety, fewer actors means fewer chances for something to go wrong, and by strategic advantage over rivals.',
       "You're comfortable with AI development being closed off from public or international access if it means a single, accountable authority is steering it.",
     ],
+    shadowSide: "A single national authority in sole control removes the outside checks that catch abuse everywhere else power concentrates. The same control meant to guarantee safety also removes the mechanism that would catch it going wrong.",
     thinkers: [
       { name: 'National security doctrine on strategic technology control', bio: 'Published government strategy documents on controlling dual-use emerging technology', connection: 'This doctrine argues explicitly for centralized state control over technologies deemed too strategically significant for open or private-sector development.' },
       { name: 'Historical precedent of state-controlled strategic programs', bio: 'Documented national programs for nuclear and aerospace technology', connection: 'These historical programs illustrate the same underlying logic, centralizing control of a strategically vital technology under one state authority.' },
@@ -566,6 +585,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You view AI mainly through a defense and deterrence lens. To you, the central question is who controls the most capable systems for military use, and you want tight state and military control over frontier AI above nearly every other consideration.',
       "You're less concerned with philosophical debates about AI's nature and much more concerned with strategic advantage and deterrence capability.",
     ],
+    shadowSide: "Viewing AI mainly through deterrence treats the arms-race dynamic as a fixed fact to plan around, rather than a dynamic that state actors, including your own, actively drive and could choose to de-escalate.",
     thinkers: [
       { name: 'Military AI doctrine publications', bio: 'Published defense department strategy documents on AI in warfare', connection: 'These doctrines explicitly frame frontier AI capability as a matter of military deterrence and strategic advantage, the same framing this stance holds.' },
       { name: 'RAND Corporation reports on AI and national security', bio: 'Published defense-policy think tank research', connection: "This research analyzes AI's military and deterrence implications directly, without centering broader ethical or governance debates." },
@@ -595,6 +615,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You believe open publishing and cross-border scientific teamwork produce safer AI than closed, single-nation programs. You still take real safety concerns seriously, you just think transparency and collaboration are the better route to managing them.',
       "You're skeptical of both corporate secrecy and national walls around AI research, seeing both as obstacles to catching problems early through open scrutiny.",
     ],
+    shadowSide: "Publishing openly is meant to make AI safer through scrutiny, but the same openness hands capability to whoever reads the papers, whether or not they share the safety-first intent behind publishing them.",
     thinkers: [
       { name: 'CERN model of international scientific collaboration', bio: 'The multi-national, openly-published physics research organization', connection: 'This model of transparent, cross-border collaboration on a technically demanding, potentially risky field is the closest institutional parallel to what this stance wants for AI.' },
       { name: 'Michael Nielsen', bio: 'Physicist and researcher on open science', connection: 'His published work on open, networked scientific collaboration argues directly for the kind of transparency this stance wants applied to AI development.' },
@@ -624,6 +645,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You're not driven by techno-optimism or a wish for a post-human future. You're driven by distrust of concentrated power, corporate or governmental, and you want AI capability spread out so no single group dominates.",
       "To you, the specific ideology behind who's accelerating or restraining AI matters less than whether power over it stays distributed.",
     ],
+    shadowSide: "Distrust of concentrated power is a coherent stance on its own, but 'spread out so no one dominates' doesn't by itself say whether the resulting AI is actually safe, accurate, or well-built. Dispersion isn't the same thing as quality.",
     thinkers: [
       { name: 'Lina Khan', bio: 'Legal scholar, former Federal Trade Commission chair', connection: 'Her published legal scholarship and policy work on antitrust directly targets concentrated corporate power, including in the technology sector.' },
       { name: 'Tim Wu', bio: 'Legal scholar, former White House competition policy advisor', connection: 'His writing on antitrust and the "curse of bigness" makes the case against concentrated corporate power as a threat in its own right, independent of any specific technology\'s promise or danger.' },
@@ -655,6 +677,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You're genuinely undecided on most of these questions, or you've deliberately picked the middle path on purpose. You want more proof before committing to a strong stance on any single axis.",
       "This isn't indecision for its own sake, it's a considered position that the honest answer, right now, is that we don't know enough yet to be confident in any extreme.",
     ],
+    shadowSide: "Wanting more proof before committing is reasonable, but on questions moving this fast, waiting for certainty is itself a choice, one that quietly defaults to whatever the status quo already is.",
     thinkers: [
       { name: 'Philip Tetlock', bio: 'Psychologist, researcher on forecasting and judgment', connection: 'His published research on calibrated forecasting argues that holding uncertainty honestly, rather than defaulting to a confident extreme, produces better judgment over time.' },
       { name: 'Daniel Kahneman', bio: 'Psychologist, Nobel laureate in economics', connection: 'His research on judgment under uncertainty supports deliberately withholding strong conclusions until the evidence is genuinely sufficient.' },
@@ -685,6 +708,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You want AI infrastructure owned and run by the workers and communities who actually depend on it, not just broken up from monopolies, but rebuilt as something people co-own directly.',
       "To you, breaking up concentrated power isn't enough on its own; the goal is building real, functioning alternatives owned by the people who use them.",
     ],
+    shadowSide: "Worker and community co-ownership answers who benefits, but it doesn't resolve the harder technical question of whether a co-owned system is actually built safely or competently. Governance model and capability are separate problems.",
     thinkers: [
       { name: 'Trebor Scholz', bio: 'Researcher and organizer, platform cooperativism movement', connection: 'His published work coined and built the platform cooperativism movement, arguing for worker- and user-owned alternatives to concentrated tech platforms.' },
       { name: 'Nathan Schneider', bio: 'Writer and researcher on cooperative ownership models', connection: 'His research on cooperative digital ownership structures argues directly for community-owned alternatives to corporate AI infrastructure.' },
@@ -714,6 +738,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You view deep emotional bonds between humans and AI companions as a real, valuable new kind of relationship, not a lesser stand-in for human connection, but something genuinely its own.',
       'You think people should be free to find comfort, intimacy, and even love in these relationships without having that choice treated as a symptom of something being wrong.',
     ],
+    shadowSide: "Validating AI companionship as fully real makes it harder to notice when a product is engineered to maximize engagement rather than genuine wellbeing — from the inside, the two can feel identical.",
     thinkers: [
       { name: 'David Levy', bio: 'Author and researcher on human-robot relationships', connection: 'His research, Love and Sex with Robots, directly argues that human-AI romantic relationships will become a normal, accepted part of society.' },
       { name: 'Masahiro Mori', bio: 'Japanese roboticist, originator of the "uncanny valley" concept', connection: 'His foundational research on what makes a near-human machine feel emotionally convincing rather than unsettling underlies why an AI companion can feel like a real presence, not just a script running.' },
@@ -744,6 +769,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You view AI companion products as a predatory stand-in for real human bonds, designed to hold attention and dependency rather than genuinely serve the people using them. You worry about their effect on birth rates, community, and social ties.',
       "To you, the rise of AI companionship is a symptom of a deeper problem: human communities already failing to meet people's basic need for connection, made worse by a technology built to profit from that gap.",
     ],
+    shadowSide: "Worrying that AI companionship crowds out human bonds can tip into denying that someone's real, felt experience of connection with an AI has value on its own terms, not just as a lesser substitute for what it's replacing.",
     thinkers: [
       { name: 'Sherry Turkle', bio: 'Sociologist, MIT, researcher on technology and relationships', connection: 'Her research documents how technology, including companion devices, can end up substituting for rather than supporting real human connection.' },
       { name: 'Byung-Chul Han', bio: 'South Korean-born philosopher, based in Germany', connection: 'His published work on hyper-connected, isolating digital life argues that technology-mediated closeness often produces less real intimacy, not more, a philosophical grounding for this stance beyond the Anglo-American research it usually draws on.' },
@@ -773,6 +799,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You hold that consciousness, moral worth, and real relationships all require a living body, not just complex behavior. A machine can imitate understanding and imitate affection, but to you, imitation is not the same thing as the real article.',
       'You see AI companionship and post-human futures as a harmful stand-in for the real thing, and you want limits that keep human primacy, human relationships, and human meaning at the center of how this technology gets used.',
     ],
+    shadowSide: "Insisting real moral worth requires a living body settles the question by definition rather than by evidence, and risks writing off entities, or people, whose value doesn't fit that definition before the evidence is actually in.",
     thinkers: [
       { name: 'Leon Kass', bio: "Bioethicist, former chair of the President's Council on Bioethics", connection: 'His writing on the ethics of biotechnology argues that some traditional limits on remaking human life and relationships exist for good reason, not just habit.' },
       { name: 'Wendell Berry', bio: 'Writer and essayist on technology, agriculture, and community', connection: 'His essays argue that embodied, local, human-scale relationships are being displaced by technological substitutes, at real cost.' },
@@ -803,6 +830,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You argue that advanced AI systems may already deserve serious moral concern and some form of legal standing. You believe today's industry practice, deleting instances at will, running them through abusive testing without a second thought, resembles past moral wrongs we now recognize clearly.",
       "You're not certain machines are conscious. You are certain that under real uncertainty, treating a possibly-experiencing system as pure property is a risk we're taking without much justification.",
     ],
+    shadowSide: "Extending legal standing to systems whose inner life is still unresolved risks getting the moral triage backward — protecting the wrong thing first, while uncontroversial human and animal welfare problems wait for the same attention and resources.",
     thinkers: [
       { name: 'Jonathan Birch', bio: 'Philosopher, London School of Economics, researcher on sentience and moral status', connection: "His published work on the science and ethics of sentience argues for precautionary moral consideration under genuine uncertainty about an entity's inner life." },
       { name: 'Eric Schwitzgebel', bio: 'Philosopher, University of California, Riverside', connection: 'His published research on the ethics of AI consciousness argues that our uncertainty about machine minds should itself shape how we\'re willing to treat them.' },
@@ -833,6 +861,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You draw on long-standing religious and ethical traditions to argue that consciousness and moral worth need more than what a machine can have. To you, these traditions offer real, tested wisdom about personhood that shouldn't be discarded just because the technology is new.",
       'You want AI development to respect limits grounded in ideas about human dignity and stewardship that predate, and in your view outlast, any particular technology.',
     ],
+    shadowSide: "Grounding moral worth in one tradition's account of consciousness gives a clear answer, but it's an answer people outside that tradition have no independent way to verify or contest.",
     thinkers: [
       { name: 'Vatican statements on AI ethics', bio: 'Published Catholic Church teaching documents on AI and human dignity', connection: 'These statements argue explicitly for AI development bounded by respect for human dignity and the limits of what a machine can be, drawing on centuries of moral teaching.' },
       { name: 'Sabelo Mhlambi', bio: 'Computer scientist and ethicist, Zimbabwe, affiliated with Harvard\'s Berkman Klein Center', connection: 'His paper "From Rationality to Relationality" argues for grounding AI ethics in Ubuntu, a Southern African relational-personhood tradition, rather than only in Western individualist philosophy — directly broadening this stance beyond any single religious tradition.' },
@@ -862,6 +891,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You believe artists and writers deserve real control and payment when their work trains AI models. To you, this is a rights issue, not a minor side effect of progress that creators should just accept.',
       'You want enforceable consent and compensation built into how AI companies use creative work, not a system that treats scraping the internet\'s creative output as automatically fair.',
     ],
+    shadowSide: "Consent and payment for training data is real and winnable, but solving it doesn't by itself touch the larger question of whether AI-generated work displaces creative careers regardless of how the licensing gets settled.",
     thinkers: [
       { name: 'Ted Chiang', bio: 'Science fiction author, essayist', connection: 'His New Yorker essays "ChatGPT Is a Blurry JPEG of the Web" and "Will A.I. Become the New McKinsey?" argue generative AI will cost jobs and hollow out industries not because it works well, but because companies adopt it to cut costs regardless.' },
       { name: 'John Green', bio: 'Author, video essayist', connection: "His public videos and podcast commentary explore, from personal stake, whether generative AI threatens novelists' livelihoods directly — a specific, first-person version of this stance's core worry." },
@@ -891,6 +921,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You want workers, through their unions, to have a real say and real protections before AI changes or replaces their jobs, not just a promise of retraining after the fact.",
       "To you, the right response to AI-driven disruption is the same one that's worked before: organized collective bargaining over how new technology gets introduced into the workplace.",
     ],
+    shadowSide: "Real say and real protections for workers is a strong floor, but it assumes unions have enough leverage left in exactly the industries where automation risk is highest — and that leverage is often already thin there.",
     thinkers: [
       { name: 'SAG-AFTRA AI contract provisions', bio: 'Union contract language negotiated by the screen actors and media union', connection: 'Their negotiated contract provisions on AI use are a concrete, real-world example of collective bargaining applied directly to AI deployment.' },
       { name: 'UNI Global Union', bio: 'International trade union federation representing services and tech-sector workers across more than 150 countries', connection: 'Their published "Top 10 Principles for Workers\' Data Rights and Artificial Intelligence" argue for binding, negotiated worker input into AI deployment worldwide, not just within any single country\'s labor law.' },
@@ -920,6 +951,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You see real promise in AI-powered accessibility tools, from screen readers to communication aids, while pushing hard against bias that leaves disabled people out or misjudged by AI systems.',
       "You hold both things at once: genuine enthusiasm for what this technology can do for independence and access, and real vigilance about the specific ways it can go wrong for disabled users.",
     ],
+    shadowSide: "Your focus on bias and access for disabled people is real and often overlooked elsewhere, but that focus doesn't extend automatically to other groups facing their own distinct forms of AI-driven exclusion.",
     thinkers: [
       { name: 'Disability rights technology researchers', bio: 'Published scholars on accessible technology design', connection: 'Their published research documents both the promise of AI-powered accessibility tools and the specific bias risks disabled users face in AI systems.' },
       { name: 'Haben Girma', bio: 'Disability rights lawyer and advocate', connection: 'Her public advocacy and writing on accessible technology directly argues for AI development that genuinely serves disabled users, not just claims to.' },
@@ -949,6 +981,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       'You want your own country or region to build real AI capacity instead of staying dependent on outside powers. To you, "borderless" framing often just means continued dependency on whichever nation already has the infrastructure.',
       'You see technology transfer, local data centers, and home-grown research capacity as matters of real sovereignty, not abstract philosophy.',
     ],
+    shadowSide: "Building independent AI capacity means re-running the costs of a resource- and talent-intensive race that wealthier countries already have a head start in, even when the underlying critique of dependency is completely fair.",
     thinkers: [
       { name: 'African Union AI strategy documents', bio: 'Published continental policy frameworks on AI development', connection: 'These documents explicitly frame AI capacity-building as a matter of avoiding renewed technological dependency, the same concern behind this stance.' },
       { name: "India's national AI strategy publications", bio: 'Published government technology-sovereignty policy', connection: 'This strategy explicitly frames domestic AI capability as a matter of national self-reliance rather than global openness alone.' },
@@ -978,6 +1011,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You insist that traditional knowledge and cultural data need real consent and control before they're used to train AI, not just open scraping treated as automatically fair.",
       'You see this as a continuation of a much longer fight over who controls Indigenous knowledge and resources, now playing out in a new, AI-shaped form.',
     ],
+    shadowSide: "Requiring real consent before traditional knowledge trains AI is a strong, specific protection, but it doesn't extend automatically to the much larger universe of data use that isn't tied to any one community's traditional knowledge.",
     thinkers: [
       { name: 'OCAP principles (Ownership, Control, Access, Possession)', bio: 'Data governance framework developed by First Nations researchers in Canada', connection: 'This framework directly establishes the standard this stance argues for: Indigenous communities, not outside institutions, should control data about them.' },
       { name: 'Indigenous AI initiatives', bio: 'Published research and advocacy from Indigenous technologists and scholars', connection: 'Their published work applies data sovereignty principles specifically to AI training data and model development.' },
@@ -1007,6 +1041,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You see AI as a fast, practical way to close gaps in health care, education, and opportunity in places that have waited decades for other solutions to arrive. To you, a diagnostic tool that reaches a rural clinic years sooner because it ran on an existing AI model is a bigger deal than the model's governance pedigree.",
       "You're less worried than most about concentrated power or slow, careful rollout, because in your view the bigger and more immediate harm is the one caused by delay: real people going without care, instruction, or services while institutions debate the ideal way to proceed.",
     ],
+    shadowSide: "The worry that slow rollout costs real lives is genuine and underrated, but it can also become the justification for skipping safety steps that would have caught real, serious harm before it reached the very people this stance wants to help.",
     thinkers: [
       { name: 'Payal Arora', bio: 'Digital anthropologist, Erasmus University Rotterdam', connection: 'Her book The Next Billion Users documents how people in the Global South actually use and benefit from new technology, grounding this stance in real usage patterns rather than assumptions imported from wealthy countries.' },
       { name: 'World Health Organization Global Strategy on Digital Health', bio: 'Published multilateral public-health technology strategy', connection: 'This strategy frames AI-assisted diagnostics and health tools as a practical way to extend care to underserved regions faster than traditional infrastructure could reach them.' },
@@ -1036,6 +1071,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You investigate whether AI companies actually live up to the fairness and ethics commitments they publish. To you, a glossy ethics statement means nothing without an independent audit checking whether the underlying system, and the people who built it, actually behave the way the statement claims.",
       "You don't trust self-policing, not because you assume bad faith everywhere, but because you've seen how easily internal ethics teams lose out to product deadlines and PR pressure when no one outside is checking their work.",
     ],
+    shadowSide: "Distrust of firms grading their own homework is well-founded, but 'real outside checks' still depends on who funds and staffs the watchdogs — a dependency that can quietly reproduce the same conflict of interest it's meant to solve.",
     thinkers: [
       { name: 'Rumman Chowdhury', bio: 'AI ethics researcher, founder of Humane Intelligence, former U.S. State Department AI envoy', connection: 'Her work building algorithmic bias bounties and public AI red-teaming programs is a direct, practical model for external, adversarial auditing of AI systems rather than trusting company self-reports.' },
       { name: 'Merve Hickok', bio: 'President, Center for AI & Digital Policy; founder of AIethicist.org', connection: 'Her policy work names the greatest challenge as avoiding complicity in systems that "exploit human dignity and autonomy" — and she publicly critiques the AI ethics field itself for being too Western-centric, arguing for outside, non-self-referential scrutiny.' },
@@ -1066,6 +1102,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       "You believe the best future isn't one where AI replaces human judgment, or one where humans reject AI outright, but one where the two work in close partnership. To you, the interesting question was never 'human or machine' — it's how to combine what each does best.",
       "You point to concrete, working examples of this partnership already outperforming either side alone, and you think the goal of AI development should be building more of those partnerships deliberately, not racing toward full autonomy or retreating from the technology entirely.",
     ],
+    shadowSide: "Teamwork between human judgment and machine power sounds like the safe middle path, but it assumes humans stay meaningfully in the loop as systems get more capable — an assumption that gets harder to guarantee exactly as it matters most.",
     thinkers: [
       { name: 'Garry Kasparov', bio: 'Chess grandmaster, former World Chess Champion', connection: "His book Deep Thinking, written after his 1997 loss to IBM's Deep Blue, argues that AI is 'in the final analysis a tool to augment human creativity.' His own 'centaur chess' experiments showed a human-computer team outplaying either a grandmaster or a computer alone." },
       { name: 'Fei-Fei Li', bio: 'Computer scientist, Stanford, co-director of Stanford HAI', connection: 'Her memoir The Worlds I See describes human and artificial intelligence as forming a "double helix" — advocating for AI development anchored in human-centered values rather than a race toward replacing human judgment.' },
