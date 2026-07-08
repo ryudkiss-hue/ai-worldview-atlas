@@ -24,7 +24,7 @@ export function IntroPage() {
       <p className="text-gray-700 mb-4">
         This is a 132-question survey about how you think AI development should go, both in the
         next few years and over the next fifty. It shows you where your views sit across eight
-        different dimensions, and matches you to the closest of 37 named viewpoints.
+        different dimensions, and matches you to the closest of 38 named viewpoints.
       </p>
       <p className="text-sm text-gray-500 mb-2">
         About 18-23 minutes, 132 questions. Your answers aren't saved if you refresh mid-quiz —

@@ -422,9 +422,9 @@ export const profileReports: Record<string, ProfileReportContent> = {
       connectionAssumption: "You're likely assuming that if people want AI companion products, the market providing them is itself a sign the product has real value.",
     },
     commonlyConfusedWith: {
-      profileId: 'eacc-maximalist',
-      profileName: 'e/acc Maximalist',
-      distinction: "Both are enthusiastic about fast AI deployment, but Silicon Valley Techno-Optimist is comfortable with capability staying concentrated in a few leading labs as long as they keep shipping. e/acc Maximalist treats acceleration itself as close to a moral duty and wants capability spread as widely as possible, not concentrated in incumbents.",
+      profileId: 'national-champion-accelerationist',
+      profileName: 'National Champion Accelerationist',
+      distinction: "Both are comfortable with capability concentrated in a few leading companies, but Silicon Valley Techno-Optimist's enthusiasm is market- and product-driven, largely agnostic about which country's labs end up on top. National Champion Accelerationist's acceleration is explicitly in service of national competitiveness — winning a specific geopolitical contest, not just shipping good products.",
     },
   },
   'corporate-ai-pragmatist': {
@@ -1125,6 +1125,36 @@ export const profileReports: Record<string, ProfileReportContent> = {
       profileId: 'pragmatic-centrist',
       profileName: 'Pragmatic Centrist',
       distinction: "Pragmatic Centrist's centrist-looking scores come from genuine, unresolved uncertainty across every axis. Human-AI Augmentation Advocate's similar-looking scores come from a specific, settled position — that human judgment and machine capability are both real and both valuable, and the future lies in combining them deliberately, not from being undecided about either one.",
+    },
+  },
+  'national-champion-accelerationist': {
+    profileId: 'national-champion-accelerationist',
+    extendedNarrative: [
+      "You want AI development to move as fast as possible, but unlike an open-everything accelerationist, you don't think weights should be free for anyone, anywhere. You want the acceleration to happen through a small number of national champion companies working closely with your own government, because the whole point of speed is to win, not to spread the technology evenly.",
+      "To you, deregulation and state support aren't in tension. Cutting rules that slow domestic labs down and channeling public backing toward them are the same move: clearing the field for your country's companies to reach the frontier first and stay there.",
+    ],
+    shadowSide: "Defining success as your own country's companies capturing the largest share of a fast-moving technology can end up treating safety and export controls as competitive inconveniences rather than real constraints — the same deregulation that helps you win could also be what lets something genuinely dangerous through unexamined.",
+    thinkers: [
+      { name: 'David Sacks', bio: 'White House AI and Crypto Czar', connection: "His public statements frame AI policy explicitly as a market-share contest with China: \"if American companies have 80% market share in AI in five years, it means we won,\" paired with a push to roll back what he called \"unnecessary burdensome regulation\" so \"the private sector\" can \"cook.\"" },
+      { name: 'Michael Kratsios', bio: 'Director, White House Office of Science and Technology Policy', connection: "Co-author of the 2025 American AI Action Plan, he has publicly championed a \"light-touch\" domestic AI policy while calling China \"our preeminent geopolitical rival,\" treating minimal regulation and national competitiveness as the same project." },
+    ],
+    furtherReading: [
+      { title: 'The American AI Action Plan (public policy text)', author: 'White House Office of Science and Technology Policy', note: "The official 2025 U.S. government strategy arguing explicitly for deregulation, expanded domestic AI infrastructure, and exporting American AI to win the technology race with China — the clearest primary-source statement of this stance." },
+      { title: 'AI Superpowers: China, Silicon Valley, and the New World Order', author: 'Kai-Fu Lee', note: 'Useful background on how the U.S.-China AI relationship gets framed as an existential contest for technological dominance, the same framing this stance treats as settled fact rather than one contestable lens among several.' },
+    ],
+    nextSteps: [
+      "Read the American AI Action Plan's actual text to see this stance's reasoning laid out as official policy, not just rhetoric.",
+      "Compare this stance's \"market share equals winning\" framing against a critique of zero-sum AI-race thinking, to test it against its strongest counter-argument.",
+    ],
+    reflectiveBreakdown: {
+      mindAssumption: "You're likely assuming that whether an AI has real inner experience matters far less than whether your country's companies are the ones building and controlling the most capable systems.",
+      laborAssumption: "You're likely assuming that domestic AI-driven growth, even with real job disruption, is worth the strategic payoff of staying ahead of geopolitical rivals.",
+      connectionAssumption: "You're likely assuming AI companionship and personal relationships are simply outside the scope of the competitiveness question you care about most.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'silicon-valley-techno-optimist',
+      profileName: 'Silicon Valley Techno-Optimist',
+      distinction: "Both are comfortable with capability concentrated in a few leading companies, but Silicon Valley Techno-Optimist's enthusiasm is market- and product-driven, largely agnostic about which country's labs end up on top. National Champion Accelerationist's acceleration is explicitly in service of national competitiveness — winning a specific geopolitical contest, not just shipping good products.",
     },
   },
 }

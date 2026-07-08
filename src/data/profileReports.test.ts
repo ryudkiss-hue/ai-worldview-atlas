@@ -68,8 +68,14 @@ describe('profileReports (batch 8: augmentation-gap archetype, added 2026-07-07)
   })
 })
 
+describe('profileReports (batch 9: calibration-gap archetype, added 2026-07-08)', () => {
+  it('has a complete entry for national-champion-accelerationist', () => {
+    checkShape('national-champion-accelerationist')
+  })
+})
+
 describe('profileReports completeness', () => {
-  it('has exactly one entry per profile, for all 37 profiles, with no orphans', () => {
+  it('has exactly one entry per profile, for all 38 profiles, with no orphans', () => {
     const profileIds = profiles.map((p) => p.id)
     const reportIds = Object.keys(profileReports)
     expect(reportIds.sort()).toEqual(profileIds.sort())
