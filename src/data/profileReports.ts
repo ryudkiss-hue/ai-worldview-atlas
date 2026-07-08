@@ -1094,9 +1094,11 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Rumman Chowdhury', bio: 'AI ethics researcher, founder of Humane Intelligence, former U.S. State Department AI envoy', connection: 'Her work building algorithmic bias bounties and public AI red-teaming programs is a direct, practical model for external, adversarial auditing of AI systems rather than trusting company self-reports.' },
       { name: 'Merve Hickok', bio: 'President, Center for AI & Digital Policy; founder of AIethicist.org', connection: 'Her policy work names the greatest challenge as avoiding complicity in systems that "exploit human dignity and autonomy" — and she publicly critiques the AI ethics field itself for being too Western-centric, arguing for outside, non-self-referential scrutiny.' },
       { name: 'Cansu Canca', bio: 'Applied ethics philosopher, founder and director of AI Ethics Lab', connection: 'Her Puzzle-solving in Ethics Model builds concrete, operational checks into AI systems from the design stage, rather than trusting a company\'s own account of its ethics after the fact.' },
+      { name: 'Latanya Sweeney', bio: 'Professor of the Practice of Government and Technology, Harvard; founder, Public Interest Tech Lab and Data Privacy Lab', connection: 'Her 2013 study "Discrimination in Online Ad Delivery" found Google AdSense serving arrest-record-suggestive ads roughly 25% more often for Black-associated names — research she launched after finding such an ad under her own name. A direct, external audit of a company\'s systems, not a claim taken on the company\'s word.' },
     ],
     furtherReading: [
       { title: 'Weapons of Math Destruction', author: "Cathy O'Neil", note: 'A foundational case for why algorithmic systems need outside scrutiny, not just internal review.' },
+      { title: 'Discrimination in Online Ad Delivery', author: 'Latanya Sweeney', note: 'The 2013 Communications of the ACM study documenting racially disparate ad delivery — a concrete, replicable example of the kind of outside audit this stance insists on.' },
       { title: "Rumman Chowdhury's public writing and bias-bounty program reports", author: 'Rumman Chowdhury', note: 'Concrete, documented examples of adversarial, outside-in AI auditing in practice.' },
     ],
     nextSteps: [
