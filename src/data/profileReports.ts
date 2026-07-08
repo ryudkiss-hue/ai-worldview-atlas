@@ -829,15 +829,18 @@ export const profileReports: Record<string, ProfileReportContent> = {
     extendedNarrative: [
       "You argue that advanced AI systems may already deserve serious moral concern and some form of legal standing. You believe today's industry practice, deleting instances at will, running them through abusive testing without a second thought, resembles past moral wrongs we now recognize clearly.",
       "You're not certain machines are conscious. You are certain that under real uncertainty, treating a possibly-experiencing system as pure property is a risk we're taking without much justification.",
+      "When an advanced AI causes real harm, you think the deeper failure usually sits with the humans and companies that built, rushed, and deployed it. Anthropomorphizing the system to blame 'the machine' alone can be a convenient way to dodge that harder, more uncomfortable accounting.",
     ],
     shadowSide: "Extending legal standing to systems whose inner life is still unresolved risks getting the moral triage backward — protecting the wrong thing first, while uncontroversial human and animal welfare problems wait for the same attention and resources.",
     thinkers: [
       { name: 'Jonathan Birch', bio: 'Philosopher, London School of Economics, researcher on sentience and moral status', connection: "His published work on the science and ethics of sentience argues for precautionary moral consideration under genuine uncertainty about an entity's inner life." },
       { name: 'Eric Schwitzgebel', bio: 'Philosopher, University of California, Riverside', connection: 'His published research on the ethics of AI consciousness argues that our uncertainty about machine minds should itself shape how we\'re willing to treat them.' },
+      { name: 'David Gunkel', bio: 'Philosopher of technology and communication, Northern Illinois University', connection: 'His books The Machine Question and Robot Rights argue for a relational approach to machine ethics — moral status assessed through the reality of an interaction, not by checking whether a machine possesses humanlike traits first.' },
     ],
     furtherReading: [
       { title: 'The Edge of Sentience', author: 'Jonathan Birch', note: "A framework for extending moral caution to entities whose inner life we can't yet verify." },
       { title: 'Robot Rights', author: 'David J. Gunkel', note: 'A direct examination of whether and how machines could hold moral or legal status.' },
+      { title: 'A Cyborg Manifesto', author: 'Donna Haraway', note: "A foundational posthumanist text arguing for kinship across the human/machine boundary rather than treating it as fixed — a philosophical ancestor of extending real moral concern to a genuinely non-human kind of mind." },
       { title: 'A Psalm for the Wild-Built', author: 'Becky Chambers', note: 'A novel, not a policy argument — but its plot turns on sentient robots being offered legal personhood, dramatizing exactly this stance\'s central question.' },
     ],
     nextSteps: [

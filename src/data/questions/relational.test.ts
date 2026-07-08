@@ -8,9 +8,9 @@ describe('relationalQuestions', () => {
     expect(relationalQuestions.filter((q) => q.horizon === 'T2')).toHaveLength(7)
   })
 
-  it('uses ids 105 through 118 with no gaps or duplicates', () => {
+  it('uses ids 107 through 120 with no gaps or duplicates', () => {
     const ids = relationalQuestions.map((q) => q.id).sort((a, b) => a - b)
-    expect(ids).toEqual(Array.from({ length: 14 }, (_, i) => i + 105))
+    expect(ids).toEqual(Array.from({ length: 14 }, (_, i) => i + 107))
   })
 
   it('every question targets the relational axis', () => {

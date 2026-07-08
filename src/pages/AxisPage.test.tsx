@@ -63,8 +63,8 @@ describe('AxisPage', () => {
     expect(progressbar.getAttribute('aria-valuenow')).toBe('0')
     const radios = screen.getAllByRole('radio', { name: 'Strongly Agree' })
     radios.slice(0, 7).forEach((radio) => fireEvent.click(radio))
-    // 7 of 132 total questions answered so far, not 7 of 14 for this axis alone.
-    expect(progressbar.getAttribute('aria-valuenow')).toBe(String(Math.round((7 / 132) * 100)))
-    expect(screen.getByText('Axis 1 of 8 · Question 7 of 132')).toBeInTheDocument()
+    // 7 of 134 total questions answered so far, not 7 of 14 for this axis alone.
+    expect(progressbar.getAttribute('aria-valuenow')).toBe(String(Math.round((7 / 134) * 100)))
+    expect(screen.getByText('Axis 1 of 8 · Question 7 of 134')).toBeInTheDocument()
   })
 })
