@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { axes } from '../data/axes'
-import { questionsForAxis } from '../data/questions'
+import { questions, questionsForAxis } from '../data/questions'
 import { useQuiz } from '../state/QuizContext'
 import { ProgressBar } from '../components/ProgressBar'
 import { AxisHorizonGroup } from '../components/AxisHorizonGroup'
@@ -23,6 +23,7 @@ export function AxisPage() {
   const t1Questions = order.t1.map((id) => byId.get(id)!)
   const t2Questions = order.t2.map((id) => byId.get(id)!)
   const allAnswered = allQuestions.every((q) => answers[q.id] !== undefined)
+  const answeredCount = Object.keys(answers).length
 
   function goNext() {
     if (index === 8) {
@@ -42,7 +43,11 @@ export function AxisPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <ProgressBar current={index} total={8} label={`Axis ${index} of 8`} />
+      <ProgressBar
+        current={answeredCount}
+        total={questions.length}
+        label={`Axis ${index} of 8 · Question ${answeredCount} of ${questions.length}`}
+      />
       <h2 className="text-2xl font-bold mt-4 mb-6">{axis.name}</h2>
       <AxisHorizonGroup
         title="Right Now (Next 2-5 Years)"
@@ -56,7 +61,7 @@ export function AxisPage() {
         answers={answers}
         onAnswer={setAnswer}
       />
-      <div className="flex justify-between mt-6">
+      <div className="flex flex-wrap justify-between gap-2 mt-6">
         <button type="button" onClick={goBack} className="px-4 py-2 rounded border border-gray-300">
           Back
         </button>

@@ -36,6 +36,7 @@ function buildInitialState(): QuizState {
 type QuizAction =
   | { type: 'ANSWER'; questionId: number; value: number }
   | { type: 'ANSWER_SCENARIO'; axisId: AxisId; choice: 'A' | 'B' }
+  | { type: 'CLEAR_SCENARIO_ANSWERS' }
   | { type: 'SET_STAKEHOLDER_TAGS'; tagIds: string[] }
   | { type: 'RESET' }
 
@@ -45,6 +46,8 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
       return { ...state, answers: { ...state.answers, [action.questionId]: action.value } }
     case 'ANSWER_SCENARIO':
       return { ...state, scenarioAnswers: { ...state.scenarioAnswers, [action.axisId]: action.choice } }
+    case 'CLEAR_SCENARIO_ANSWERS':
+      return { ...state, scenarioAnswers: {} }
     case 'SET_STAKEHOLDER_TAGS':
       return { ...state, selectedStakeholderTags: action.tagIds }
     case 'RESET':
@@ -61,6 +64,7 @@ interface QuizContextValue {
   selectedStakeholderTags: string[]
   setAnswer: (questionId: number, value: number) => void
   setScenarioAnswer: (axisId: AxisId, choice: 'A' | 'B') => void
+  clearScenarioAnswers: () => void
   setStakeholderTags: (tagIds: string[]) => void
   reset: () => void
 }
@@ -77,6 +81,7 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     selectedStakeholderTags: state.selectedStakeholderTags,
     setAnswer: (questionId, val) => dispatch({ type: 'ANSWER', questionId, value: val }),
     setScenarioAnswer: (axisId, choice) => dispatch({ type: 'ANSWER_SCENARIO', axisId, choice }),
+    clearScenarioAnswers: () => dispatch({ type: 'CLEAR_SCENARIO_ANSWERS' }),
     setStakeholderTags: (tagIds) => dispatch({ type: 'SET_STAKEHOLDER_TAGS', tagIds }),
     reset: () => dispatch({ type: 'RESET' }),
   }

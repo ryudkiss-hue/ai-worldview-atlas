@@ -4,9 +4,14 @@ import { useQuiz } from '../state/QuizContext'
 
 export function ScenarioPage() {
   const navigate = useNavigate()
-  const { scenarioAnswers, setScenarioAnswer } = useQuiz()
+  const { scenarioAnswers, setScenarioAnswer, clearScenarioAnswers } = useQuiz()
 
-  function goToResults() {
+  function skipAndGoToResults() {
+    clearScenarioAnswers()
+    navigate('/results')
+  }
+
+  function submitAndGoToResults() {
     navigate('/results')
   }
 
@@ -44,11 +49,11 @@ export function ScenarioPage() {
           </li>
         ))}
       </ul>
-      <div className="flex justify-between mt-8">
-        <button type="button" onClick={goToResults} className="px-4 py-2 rounded border border-gray-300">
+      <div className="flex flex-wrap justify-between gap-2 mt-8">
+        <button type="button" onClick={skipAndGoToResults} className="px-4 py-2 rounded border border-gray-300">
           Skip for now
         </button>
-        <button type="button" onClick={goToResults} className="px-4 py-2 rounded bg-blue-600 text-white">
+        <button type="button" onClick={submitAndGoToResults} className="px-4 py-2 rounded bg-blue-600 text-white">
           See My Results
         </button>
       </div>

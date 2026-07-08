@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
@@ -29,6 +29,11 @@ export function ResultsPage() {
   const { answers, reset, scenarioAnswers, selectedStakeholderTags } = useQuiz()
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
   const [generatingPdf, setGeneratingPdf] = useState(false)
+  const copyStatusResetRef = useRef<ReturnType<typeof setTimeout>>()
+
+  useEffect(() => {
+    return () => clearTimeout(copyStatusResetRef.current)
+  }, [])
 
   const sharedParam = searchParams.get('d')
 
@@ -56,12 +61,14 @@ export function ResultsPage() {
   async function handleShare() {
     const encoded = encodeShareLink({ t1Raw, t2Raw })
     const url = `${window.location.origin}${import.meta.env.BASE_URL}#/results?d=${encoded}`
+    clearTimeout(copyStatusResetRef.current)
     try {
       await navigator.clipboard.writeText(url)
       setCopyStatus('copied')
     } catch {
       setCopyStatus('failed')
     }
+    copyStatusResetRef.current = setTimeout(() => setCopyStatus('idle'), 2500)
   }
 
   function handleRetake() {
@@ -110,32 +117,7 @@ export function ResultsPage() {
         <ProfileCard key={match.profile.id} match={match} rank={index + 1} />
       ))}
 
-      <h3 className="text-xl font-semibold mt-8 mb-2">Near-Term vs. Long-Term, by Axis</h3>
-      <table className="w-full text-left border-collapse">
-        <thead>
-          <tr>
-            <th className="border-b py-2">Axis</th>
-            <th className="border-b py-2">Right Now</th>
-            <th className="border-b py-2">Looking Ahead</th>
-          </tr>
-        </thead>
-        <tbody>
-          {axes.map((axis) => (
-            <tr key={axis.id}>
-              <td className="py-2">{axis.name}</td>
-              <td className="py-2">{t1Scaled[axis.id].toFixed(1)}</td>
-              <td className="py-2">{t2Scaled[axis.id].toFixed(1)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      <ReportPreview content={topContent} />
-      <ReflectiveBreakdown content={topContent} scenarioAnswers={scenarioAnswers} combined={combined} />
-      <MethodologySection />
-      <PinnacleReflection archetypeName={topMatch.profile.name} />
-
-      <div className="flex gap-3 mt-6">
+      <div className="flex flex-wrap gap-3 mt-6">
         <button
           type="button"
           onClick={handleShare}
@@ -155,6 +137,33 @@ export function ResultsPage() {
           Retake
         </button>
       </div>
+
+      <h3 className="text-xl font-semibold mt-8 mb-2">Near-Term vs. Long-Term, by Axis</h3>
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr>
+              <th className="border-b py-2">Axis</th>
+              <th className="border-b py-2">Right Now</th>
+              <th className="border-b py-2">Looking Ahead</th>
+            </tr>
+          </thead>
+          <tbody>
+            {axes.map((axis) => (
+              <tr key={axis.id}>
+                <td className="py-2">{axis.name}</td>
+                <td className="py-2">{t1Scaled[axis.id].toFixed(1)}</td>
+                <td className="py-2">{t2Scaled[axis.id].toFixed(1)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <ReportPreview content={topContent} />
+      <ReflectiveBreakdown content={topContent} scenarioAnswers={scenarioAnswers} combined={combined} />
+      <MethodologySection />
+      <PinnacleReflection archetypeName={topMatch.profile.name} />
     </div>
   )
 }

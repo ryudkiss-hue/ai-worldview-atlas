@@ -116,6 +116,19 @@ describe('ResultsPage', () => {
     expect(decodeShareLink(shareParam)).toEqual(scores)
   })
 
+  it('reverts "Link Copied!" back to the default label after a few seconds', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true })
+    const scores = buildFlatScores(3, -3)
+    const encoded = encodeShareLink(scores)
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Copy Shareable Link' }))
+    expect(await screen.findByText('Link Copied!')).toBeInTheDocument()
+    await vi.advanceTimersByTimeAsync(2500)
+    expect(screen.queryByText('Link Copied!')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Copy Shareable Link' })).toBeInTheDocument()
+    vi.useRealTimers()
+  })
+
   it('shows a distinct failure state instead of a false "Link Copied!" when the clipboard write rejects', async () => {
     Object.assign(navigator, { clipboard: { writeText: vi.fn().mockRejectedValue(new Error('denied')) } })
     const encoded = encodeShareLink(buildFlatScores(3, -3))
