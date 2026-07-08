@@ -57,6 +57,16 @@ describe('AxisPage', () => {
     expect(screen.getByText('Intro Page')).toBeInTheDocument()
   })
 
+  it('allows Next once every question is either answered or declined as having no strong view', () => {
+    renderAxisPage(1)
+    const nextButton = screen.getByRole('button', { name: 'Next' })
+    const radios = screen.getAllByRole('radio', { name: 'Strongly Agree' })
+    radios.slice(0, 13).forEach((radio) => fireEvent.click(radio))
+    expect(nextButton).toBeDisabled()
+    fireEvent.click(screen.getAllByText("I don't have a strong view on this")[13])
+    expect(nextButton).not.toBeDisabled()
+  })
+
   it('tracks overall question progress (not just axis count), live as questions are answered', () => {
     renderAxisPage(1)
     const progressbar = screen.getByRole('progressbar')

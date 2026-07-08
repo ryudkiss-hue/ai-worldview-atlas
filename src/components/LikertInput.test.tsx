@@ -15,4 +15,17 @@ describe('LikertInput', () => {
     fireEvent.click(screen.getByRole('radio', { name: 'Strongly Agree' }))
     expect(onChange).toHaveBeenCalledWith(5)
   })
+
+  it('does not render a decline button when onDecline is not provided', () => {
+    render(<LikertInput questionId={1} value={undefined} onChange={() => {}} />)
+    expect(screen.queryByText(/no strong view/i)).not.toBeInTheDocument()
+  })
+
+  it('calls onDecline when the decline button is clicked, and shows no option as checked while declined', () => {
+    const onDecline = vi.fn()
+    render(<LikertInput questionId={1} value={3} declined onChange={() => {}} onDecline={onDecline} />)
+    fireEvent.click(screen.getByText("I don't have a strong view on this (selected)"))
+    expect(onDecline).toHaveBeenCalled()
+    expect(screen.getByRole('radio', { name: 'Neutral' }).getAttribute('aria-checked')).toBe('false')
+  })
 })

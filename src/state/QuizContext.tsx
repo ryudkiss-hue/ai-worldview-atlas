@@ -19,6 +19,7 @@ function buildQuestionOrder(): QuestionOrder {
 
 interface QuizState {
   answers: Record<number, number>
+  declinedQuestions: number[]
   questionOrder: QuestionOrder
   scenarioAnswers: Partial<Record<AxisId, 'A' | 'B'>>
   selectedStakeholderTags: string[]
@@ -27,6 +28,7 @@ interface QuizState {
 function buildInitialState(): QuizState {
   return {
     answers: {},
+    declinedQuestions: [],
     questionOrder: buildQuestionOrder(),
     scenarioAnswers: {},
     selectedStakeholderTags: [],
@@ -35,6 +37,7 @@ function buildInitialState(): QuizState {
 
 type QuizAction =
   | { type: 'ANSWER'; questionId: number; value: number }
+  | { type: 'DECLINE'; questionId: number }
   | { type: 'ANSWER_SCENARIO'; axisId: AxisId; choice: 'A' | 'B' }
   | { type: 'CLEAR_SCENARIO_ANSWERS' }
   | { type: 'SET_STAKEHOLDER_TAGS'; tagIds: string[] }
@@ -43,7 +46,20 @@ type QuizAction =
 function quizReducer(state: QuizState, action: QuizAction): QuizState {
   switch (action.type) {
     case 'ANSWER':
-      return { ...state, answers: { ...state.answers, [action.questionId]: action.value } }
+      return {
+        ...state,
+        answers: { ...state.answers, [action.questionId]: action.value },
+        declinedQuestions: state.declinedQuestions.filter((id) => id !== action.questionId),
+      }
+    case 'DECLINE': {
+      const isDeclined = state.declinedQuestions.includes(action.questionId)
+      if (isDeclined) {
+        return { ...state, declinedQuestions: state.declinedQuestions.filter((id) => id !== action.questionId) }
+      }
+      const nextAnswers = { ...state.answers }
+      delete nextAnswers[action.questionId]
+      return { ...state, answers: nextAnswers, declinedQuestions: [...state.declinedQuestions, action.questionId] }
+    }
     case 'ANSWER_SCENARIO':
       return { ...state, scenarioAnswers: { ...state.scenarioAnswers, [action.axisId]: action.choice } }
     case 'CLEAR_SCENARIO_ANSWERS':
@@ -59,10 +75,12 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
 
 interface QuizContextValue {
   answers: Record<number, number>
+  declinedQuestions: number[]
   questionOrder: QuestionOrder
   scenarioAnswers: Partial<Record<AxisId, 'A' | 'B'>>
   selectedStakeholderTags: string[]
   setAnswer: (questionId: number, value: number) => void
+  declineQuestion: (questionId: number) => void
   setScenarioAnswer: (axisId: AxisId, choice: 'A' | 'B') => void
   clearScenarioAnswers: () => void
   setStakeholderTags: (tagIds: string[]) => void
@@ -76,10 +94,12 @@ export function QuizProvider({ children }: { children: ReactNode }) {
 
   const value: QuizContextValue = {
     answers: state.answers,
+    declinedQuestions: state.declinedQuestions,
     questionOrder: state.questionOrder,
     scenarioAnswers: state.scenarioAnswers,
     selectedStakeholderTags: state.selectedStakeholderTags,
     setAnswer: (questionId, val) => dispatch({ type: 'ANSWER', questionId, value: val }),
+    declineQuestion: (questionId) => dispatch({ type: 'DECLINE', questionId }),
     setScenarioAnswer: (axisId, choice) => dispatch({ type: 'ANSWER_SCENARIO', axisId, choice }),
     clearScenarioAnswers: () => dispatch({ type: 'CLEAR_SCENARIO_ANSWERS' }),
     setStakeholderTags: (tagIds) => dispatch({ type: 'SET_STAKEHOLDER_TAGS', tagIds }),

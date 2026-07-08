@@ -23,4 +23,33 @@ describe('AxisHorizonGroup', () => {
     fireEvent.click(radios[0])
     expect(onAnswer).toHaveBeenCalledWith(1, 4)
   })
+
+  it('calls onDecline with the question id when its decline button is clicked', () => {
+    const onDecline = vi.fn()
+    render(
+      <AxisHorizonGroup
+        title="Right Now"
+        questions={sampleQuestions}
+        answers={{}}
+        onAnswer={() => {}}
+        onDecline={onDecline}
+      />,
+    )
+    fireEvent.click(screen.getAllByText("I don't have a strong view on this")[0])
+    expect(onDecline).toHaveBeenCalledWith(1)
+  })
+
+  it('marks a question as declined when its id is in declinedQuestions', () => {
+    render(
+      <AxisHorizonGroup
+        title="Right Now"
+        questions={sampleQuestions}
+        answers={{}}
+        declinedQuestions={[2]}
+        onAnswer={() => {}}
+        onDecline={() => {}}
+      />,
+    )
+    expect(screen.getAllByText("I don't have a strong view on this (selected)")).toHaveLength(1)
+  })
 })

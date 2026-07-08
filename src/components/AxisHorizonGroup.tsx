@@ -5,10 +5,19 @@ interface AxisHorizonGroupProps {
   title: string
   questions: Question[]
   answers: Record<number, number>
+  declinedQuestions?: number[]
   onAnswer: (questionId: number, value: number) => void
+  onDecline?: (questionId: number) => void
 }
 
-export function AxisHorizonGroup({ title, questions, answers, onAnswer }: AxisHorizonGroupProps) {
+export function AxisHorizonGroup({
+  title,
+  questions,
+  answers,
+  declinedQuestions = [],
+  onAnswer,
+  onDecline,
+}: AxisHorizonGroupProps) {
   return (
     <section className="mb-8">
       <h3 className="text-lg font-semibold mb-3">{title}</h3>
@@ -19,7 +28,9 @@ export function AxisHorizonGroup({ title, questions, answers, onAnswer }: AxisHo
             <LikertInput
               questionId={question.id}
               value={answers[question.id]}
+              declined={declinedQuestions.includes(question.id)}
               onChange={(value) => onAnswer(question.id, value)}
+              onDecline={onDecline ? () => onDecline(question.id) : undefined}
             />
           </li>
         ))}

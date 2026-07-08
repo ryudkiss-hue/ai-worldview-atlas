@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { ResultsPage } from './ResultsPage'
 import { QuizProvider, useQuiz } from '../state/QuizContext'
 import { encodeShareLink, decodeShareLink, type ShareableScores } from '../lib/shareLink'
+import { recordResult } from '../lib/resultHistory'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
 
@@ -22,6 +23,20 @@ vi.mock('@react-pdf/renderer', async (importOriginal) => {
   return {
     ...actual,
     pdf: () => ({ toBlob: toBlobMock }),
+  }
+})
+
+// jsdom has no real canvas support, so the share-image path is mocked the same
+// way as the PDF path above — this file only tests button-state UX, not the
+// actual pixel output (that's covered by shareCard.test.ts against a mock context).
+const { renderShareCardToBlobMock } = vi.hoisted(() => ({
+  renderShareCardToBlobMock: vi.fn(async (): Promise<Blob | null> => new Blob(['mock-png'], { type: 'image/png' })),
+}))
+vi.mock('../lib/shareCard', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('../lib/shareCard')>()
+  return {
+    ...actual,
+    renderShareCardToBlob: renderShareCardToBlobMock,
   }
 })
 
@@ -53,6 +68,7 @@ beforeEach(() => {
   URL.createObjectURL = vi.fn().mockReturnValue('blob:mock-url')
   URL.revokeObjectURL = vi.fn()
   vi.spyOn(window, 'confirm').mockReturnValue(true)
+  localStorage.clear()
 })
 
 describe('ResultsPage', () => {
@@ -106,6 +122,33 @@ describe('ResultsPage', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Download PDF Report' }))
     expect(screen.getByRole('button', { name: 'Generating...' })).toBeInTheDocument()
     expect(await screen.findByRole('button', { name: 'Download PDF Report' })).toBeInTheDocument()
+  })
+
+  it('shows a loading state on Download Share Image while generating, then downloads it', async () => {
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Download Share Image' }))
+    expect(screen.getByRole('button', { name: 'Generating...' })).toBeInTheDocument()
+    expect(await screen.findByRole('button', { name: 'Download Share Image' })).toBeInTheDocument()
+    expect(renderShareCardToBlobMock).toHaveBeenCalledWith(
+      expect.objectContaining({ archetypeName: expect.any(String), matchPercent: expect.any(Number) }),
+    )
+  })
+
+  it('shows a distinct failure state instead of a silent no-op when the share image fails to render', async () => {
+    renderShareCardToBlobMock.mockRejectedValueOnce(new Error('canvas failed'))
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Download Share Image' }))
+    expect(await screen.findByRole('button', { name: 'Download Failed — Try Again' })).toBeInTheDocument()
+  })
+
+  it('shows a distinct failure state when the share image renderer returns null (no canvas support)', async () => {
+    renderShareCardToBlobMock.mockResolvedValueOnce(null)
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Download Share Image' }))
+    expect(await screen.findByRole('button', { name: 'Download Failed — Try Again' })).toBeInTheDocument()
   })
 
   it('copies a shareable link that round-trips via decodeShareLink', async () => {
@@ -173,6 +216,142 @@ describe('ResultsPage', () => {
     expect(screen.getByText('No Results Yet')).toBeInTheDocument()
     expect(screen.queryByText('Closest Matches')).not.toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Start the Assessment' })).toBeInTheDocument()
+  })
+
+  it('shows a "no strong view" summary, naming the axis it clustered on, when questions were declined', () => {
+    function DeclineSeeder() {
+      const { setAnswer, declineQuestion } = useQuiz()
+      useEffect(() => {
+        questions.slice(0, 6).forEach((q) => setAnswer(q.id, q.agreeShiftsToward === 'A' ? 3 : -3))
+        const teleologicalQuestions = questions.filter((q) => q.axisId === 'teleological').slice(0, 2)
+        teleologicalQuestions.forEach((q) => declineQuestion(q.id))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
+      return <ResultsPage />
+    }
+    render(
+      <QuizProvider>
+        <MemoryRouter initialEntries={['/results']}>
+          <Routes>
+            <Route path="/results" element={<DeclineSeeder />} />
+          </Routes>
+        </MemoryRouter>
+      </QuizProvider>,
+    )
+    expect(screen.getByText('No Strong View')).toBeInTheDocument()
+    expect(screen.getByText(/marked 2 of 142 questions/)).toBeInTheDocument()
+    expect(screen.getByText(/mostly on Teleological/)).toBeInTheDocument()
+  })
+
+  it('does not show a "no strong view" summary when viewing a shared link, even if the local quiz state has declines', () => {
+    function DeclineSeederWithShare() {
+      const { declineQuestion } = useQuiz()
+      useEffect(() => {
+        declineQuestion(questions[0].id)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
+      return <ResultsPage />
+    }
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    render(
+      <QuizProvider>
+        <MemoryRouter initialEntries={[`/results?d=${encoded}`]}>
+          <Routes>
+            <Route path="/results" element={<DeclineSeederWithShare />} />
+          </Routes>
+        </MemoryRouter>
+      </QuizProvider>,
+    )
+    expect(screen.queryByText('No Strong View')).not.toBeInTheDocument()
+  })
+
+  it('shows a comparison to a prior recorded result, naming whether the top match changed', () => {
+    recordResult(
+      {
+        t1Raw: (() => {
+          const v = {} as ShareableScores['t1Raw']
+          axes.forEach((a) => { v[a.id] = 0 })
+          return v
+        })(),
+        t2Raw: (() => {
+          const v = {} as ShareableScores['t2Raw']
+          axes.forEach((a) => { v[a.id] = 0 })
+          return v
+        })(),
+        topMatchId: 'cosmic-vitalist-mystic',
+        topMatchName: 'Cosmic Vitalist Mystic',
+      },
+      Date.now() - 1000,
+    )
+    function AnswerSeeder() {
+      const { setAnswer } = useQuiz()
+      useEffect(() => {
+        questions.slice(0, 6).forEach((q) => setAnswer(q.id, q.agreeShiftsToward === 'A' ? 5 : 1))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
+      return <ResultsPage />
+    }
+    render(
+      <QuizProvider>
+        <MemoryRouter initialEntries={['/results']}>
+          <Routes>
+            <Route path="/results" element={<AnswerSeeder />} />
+          </Routes>
+        </MemoryRouter>
+      </QuizProvider>,
+    )
+    // A lightly-answered quiz (6 of 142 questions) lands near Pragmatic Centrist, virtually
+    // never the extreme Cosmic Vitalist Mystic corner seeded as the prior result — so this
+    // reliably exercises the "top match changed" branch without over-specifying classify()'s
+    // exact output.
+    const heading = screen.getByText('Compared to Your Last Attempt')
+    const comparisonSection = heading.closest('div') as HTMLElement
+    expect(within(comparisonSection).getByText('Cosmic Vitalist Mystic')).toBeInTheDocument()
+    expect(within(comparisonSection).getByText(/This time it's/)).toBeInTheDocument()
+  })
+
+  it('does not show a comparison section on someone\'s very first completed result', () => {
+    function AnswerSeeder() {
+      const { setAnswer } = useQuiz()
+      useEffect(() => {
+        questions.slice(0, 6).forEach((q) => setAnswer(q.id, q.agreeShiftsToward === 'A' ? 3 : -3))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [])
+      return <ResultsPage />
+    }
+    render(
+      <QuizProvider>
+        <MemoryRouter initialEntries={['/results']}>
+          <Routes>
+            <Route path="/results" element={<AnswerSeeder />} />
+          </Routes>
+        </MemoryRouter>
+      </QuizProvider>,
+    )
+    expect(screen.queryByText('Compared to Your Last Attempt')).not.toBeInTheDocument()
+  })
+
+  it('does not show a comparison section when viewing a shared link, even if local history exists', () => {
+    recordResult(
+      {
+        t1Raw: (() => {
+          const v = {} as ShareableScores['t1Raw']
+          axes.forEach((a) => { v[a.id] = 0 })
+          return v
+        })(),
+        t2Raw: (() => {
+          const v = {} as ShareableScores['t2Raw']
+          axes.forEach((a) => { v[a.id] = 0 })
+          return v
+        })(),
+        topMatchId: 'pragmatic-centrist',
+        topMatchName: 'Pragmatic Centrist',
+      },
+      Date.now() - 1000,
+    )
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    expect(screen.queryByText('Compared to Your Last Attempt')).not.toBeInTheDocument()
   })
 
   it('computes results from live quiz answers when no share param is present', () => {
