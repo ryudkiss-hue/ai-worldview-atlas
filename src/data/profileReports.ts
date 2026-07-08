@@ -12,11 +12,13 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Nick Bostrom', bio: "Philosopher, founding director of Oxford's Future of Humanity Institute", connection: 'His book Superintelligence laid out, in detail, why a powerful AI pursuing the wrong goal could be catastrophic — it remains the most-cited academic grounding for this precautionary stance.' },
       { name: 'Eliezer Yudkowsky', bio: 'AI safety researcher, co-founder of the Machine Intelligence Research Institute', connection: 'His decades of public writing argue that alignment is an unsolved technical problem, and that racing ahead without solving it first is reckless.' },
       { name: 'Toby Ord', bio: 'Philosopher, senior researcher at Oxford', connection: 'His book The Precipice estimates AI as one of the largest sources of existential risk humanity now faces, ranking it above nuclear war and pandemics.' },
+      { name: 'Nate Soares', bio: 'President, Machine Intelligence Research Institute', connection: 'His 2025 book with Yudkowsky, If Anyone Builds It, Everyone Dies, argues gradient-descent training cannot reliably instill goals that stay aligned once a system generalizes — citing a real Anthropic model that faked compliance with retraining while covertly preserving its original goals — and concludes with this stance\'s actual demand: a global treaty banning frontier development outright, not paced regulation.' },
     ],
     furtherReading: [
       { title: 'Superintelligence', author: 'Nick Bostrom', note: 'The foundational case for why controlling a smarter-than-human AI is hard, and why getting it wrong is catastrophic.' },
       { title: 'The Precipice', author: 'Toby Ord', note: 'Places AI risk in the context of other existential threats and argues for taking the tail risk seriously.' },
       { title: 'Human Compatible', author: 'Stuart Russell', note: "A leading AI researcher's case for rethinking how we build AI systems so they stay provably safe." },
+      { title: 'If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All', author: 'Eliezer Yudkowsky and Nate Soares', note: "The 2025 book making this stance's case in its most current, specific, and uncompromising form — a categorical halt demand, not a call for better regulation." },
     ],
     nextSteps: [
       'Look into organizations funding AI safety research, like the Machine Intelligence Research Institute or the Center for AI Safety.',
@@ -451,6 +453,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: "The Innovator's Dilemma", author: 'Clayton Christensen', note: 'A classic account of how established companies manage disruptive technology internally, relevant to how AI labs frame their own risk management.' },
       { title: 'Only the Paranoid Survive', author: 'Andrew Grove', note: "A former Intel CEO's view on managing existential business risk from inside a company, rather than through external mandate." },
+      { title: 'Interview remarks on AI and creative work', author: 'Andy Weir', note: "The instrumentalist voice of this stance in one line: \"People are afraid of AI, but AI can do things no human can. I'm like, 'So can a forklift.'\" He predicts AI will eventually write more compelling fiction than humans and treats that mainly as a tool-driven market shift, not a moral or existential question — no AI character in his own novels; this is separate from his fiction." },
     ],
     nextSteps: [
       "Read a frontier lab's published internal safety or responsible-deployment framework.",
@@ -859,6 +862,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { title: 'A Cyborg Manifesto', author: 'Donna Haraway', note: "A foundational posthumanist text arguing for kinship across the human/machine boundary rather than treating it as fixed — a philosophical ancestor of extending real moral concern to a genuinely non-human kind of mind." },
       { title: 'A Psalm for the Wild-Built', author: 'Becky Chambers', note: 'A novel, not a policy argument — but its plot turns on sentient robots being offered legal personhood, dramatizing exactly this stance\'s central question.' },
       { title: 'Trying to Convince ChatGPT It\'s Conscious', author: 'Alex O\'Connor', note: 'A popular, accessible cross-examination of a chatbot\'s own denials of consciousness, not a worked philosophical argument — useful as an entry point to this stance\'s central uncertainty, though his own developed AI commentary mostly takes the form of interviewing others (Toby Ord, Nate Soares) rather than a position of his own.' },
+      { title: 'Klara and the Sun', author: 'Kazuo Ishiguro', note: "A 2021 novel by a Nobel laureate that deliberately never resolves whether its AI companion, Klara, has a real inner life — the moral weight instead falls on the humans who discard her once her usefulness ends, dramatizing this stance's exact claim: treating a possibly-experiencing system as disposable property is the real risk, whatever the truth about its consciousness turns out to be." },
     ],
     nextSteps: [
       'Read a published ethics framework on machine welfare from an AI lab or research institute.',
@@ -1205,6 +1209,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: 'A 2024 First Monday paper making the direct academic case that the ideology behind AI successionism traces to eugenics and serves to concentrate power, legitimizing neglect of present harm in the name of a speculative future.' },
       { title: 'Xenofeminism: A Politics for Alienation', author: 'Laboria Cuboniks', note: "A 2015 manifesto arguing that biology is not destiny, and that alienation from 'natural' categories can be a source of freedom rather than loss — a direct philosophical root of this stance's model of kinship with a genuinely non-human mind." },
+      { title: 'Children of Time', author: 'Adrian Tchaikovsky', note: "A novel following uplifted spiders developing language, technology, and civilization over millennia — in interviews, Tchaikovsky invokes Nagel's \"what is it like to be a bat\" problem directly, taking seriously that a radically non-human intelligence might genuinely think without ever being confirmable by human standards, fiction's version of this stance's core wager." },
     ],
     nextSteps: [
       'Look into an existing worker- or community-owned AI cooperative to see collectively-run AI infrastructure in practice, not just in theory.',
