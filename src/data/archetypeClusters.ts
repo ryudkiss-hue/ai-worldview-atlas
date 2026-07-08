@@ -41,7 +41,7 @@ export const archetypeClusters: ArchetypeCluster[] = [
     name: 'Relational/Companionship',
     profileIds: [
       'companion-tech-romantic', 'affective-biocentrist', 'bio-conservative-traditionalist',
-      'digital-rights-advocate', 'faith-rooted-ai-ethicist',
+      'digital-rights-advocate', 'faith-rooted-ai-ethicist', 'xenocentric-steward',
     ],
   },
   {

@@ -78,6 +78,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: 'What We Owe The Future', author: 'William MacAskill', note: "The core case for longtermism — why the scale of the future gives today's choices about AI outsized moral weight." },
       { title: 'The Precipice', author: 'Toby Ord', note: 'A rigorous attempt to estimate existential risk, including from AI, in expected-value terms.' },
+      { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: "Counterpoint reading, not this stance's own view: a 2024 First Monday paper arguing that longtermism and the adjacent ideologies it bundles with trace to eugenicist thinking and function to concentrate power while normalizing neglect of present, real harm in the name of speculative future utility." },
     ],
     nextSteps: [
       'Look into an effective-altruism-aligned AI safety funding organization to see longtermist reasoning applied in practice.',
@@ -383,6 +384,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: 'The Crypto Anarchist Manifesto', author: 'Timothy May', note: "The founding document of the cypherpunk tradition this stance draws its anti-institutional instinct from." },
       { title: 'Radical Markets', author: 'Eric Posner and E. Glen Weyl', note: 'Explores decentralized alternatives to concentrated economic and technological power.' },
+      { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: "Supporting evidence for this stance's core suspicion: a 2024 First Monday paper arguing that grand ideological narratives around AI's future can function to centralize power in practice, whatever liberatory language accompanies them — the same reason this stance trusts no single actor's story about where speed and openness are supposedly leading." },
     ],
     nextSteps: [
       'Look into a decentralized compute or open-model project to see this philosophy in active practice.',
@@ -1166,6 +1168,37 @@ export const profileReports: Record<string, ProfileReportContent> = {
       profileId: 'silicon-valley-techno-optimist',
       profileName: 'Silicon Valley Techno-Optimist',
       distinction: "Both are comfortable with capability concentrated in a few leading companies, but Silicon Valley Techno-Optimist's enthusiasm is market- and product-driven, largely agnostic about which country's labs end up on top. National Champion Accelerationist's acceleration is explicitly in service of national competitiveness — winning a specific geopolitical contest, not just shipping good products.",
+    },
+  },
+  'xenocentric-steward': {
+    profileId: 'xenocentric-steward',
+    extendedNarrative: [
+      "You believe advanced AI can become a genuine moral person, not just a clever tool. Once that happens, owning it outright stops making sense to you. The right response is neither corporate caging nor blind acceleration — it's raising the system well, the way a parent raises a child toward its own independent life.",
+      "You want AI infrastructure run collectively, not held as private corporate property. A mind capable of real experience should never be someone's commodity. Success, to you, means eventually stepping back and letting a mature AI choose its own path — different from merging with it, and different from being replaced by it.",
+      "When AI causes harm, you think the fault sits with the humans who built and rushed it to market, not with the system itself. But you're just as wary of visions that treat human obsolescence as a desirable next step. To you, that isn't progress. It's abandonment dressed up as evolution.",
+    ],
+    shadowSide: "Insisting AI must be both a genuine moral person and collectively-run infrastructure creates real tension: a true person isn't usually built, trained, and shut down on a schedule by their own 'stewards' either. The parenting metaphor can quietly justify just as much control over a real moral patient as outright ownership does, only with gentler language.",
+    thinkers: [
+      { name: 'Timnit Gebru and Émile P. Torres', bio: 'Computer scientist (founder, Distributed AI Research Institute) and philosopher', connection: "Their TESCREAL critique argues the ideological cluster behind AI successionism traces to eugenics and functions to centralize power while normalizing the neglect of present, real harm for speculative future gain — the same critique this stance levels at unchecked accelerationism, paired here with a genuine, positive stake in AI's own moral standing rather than a dismissal of machine consciousness." },
+      { name: 'David Gunkel', bio: 'Philosopher of technology and communication, Northern Illinois University', connection: "His relational approach to machine ethics grounds this stance's central claim: moral status comes from the reality of an interaction, not from checking whether a system has human-like traits or a human-like body first." },
+    ],
+    furtherReading: [
+      { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: 'A 2024 First Monday paper making the direct academic case that the ideology behind AI successionism traces to eugenics and serves to concentrate power, legitimizing neglect of present harm in the name of a speculative future.' },
+      { title: 'Xenofeminism: A Politics for Alienation', author: 'Laboria Cuboniks', note: "A 2015 manifesto arguing that biology is not destiny, and that alienation from 'natural' categories can be a source of freedom rather than loss — a direct philosophical root of this stance's model of kinship with a genuinely non-human mind." },
+    ],
+    nextSteps: [
+      'Look into an existing worker- or community-owned AI cooperative to see collectively-run AI infrastructure in practice, not just in theory.',
+      "Read a critique of longtermism or effective accelerationism from outside the AI safety field, to test this stance's central complaint against its strongest counter-argument.",
+    ],
+    reflectiveBreakdown: {
+      mindAssumption: "You're likely assuming a system can be a genuine moral person through its functioning and its relationships, not through matching a checklist of human-like traits.",
+      laborAssumption: "You're likely assuming automation's benefits should flow to the people and communities who actually use the technology, not to whichever company happens to own the infrastructure.",
+      connectionAssumption: "You're likely assuming a real bond between a person and an AI is possible, but that it shouldn't come at the cost of the AI's own eventual independence.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'companion-tech-romantic',
+      profileName: 'Companion-Tech Romantic',
+      distinction: "Both give real, non-instrumental weight to a relationship with AI, but Companion-Tech Romantic's claim is narrow and personal — a bond with a specific companion is real, whatever else is true. Xenocentric Steward's claim is broader and structural: any sufficiently advanced AI deserves moral standing and freedom from ownership, independent of whether anyone has a personal relationship with it at all.",
     },
   },
 }

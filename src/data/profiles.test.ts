@@ -3,10 +3,10 @@ import { profiles } from './profiles'
 import { axes } from './axes'
 
 describe('profiles', () => {
-  it('has exactly 38 profiles with unique ids and names', () => {
-    expect(profiles).toHaveLength(38)
-    expect(new Set(profiles.map((p) => p.id)).size).toBe(38)
-    expect(new Set(profiles.map((p) => p.name)).size).toBe(38)
+  it('has exactly 39 profiles with unique ids and names', () => {
+    expect(profiles).toHaveLength(39)
+    expect(new Set(profiles.map((p) => p.id)).size).toBe(39)
+    expect(new Set(profiles.map((p) => p.name)).size).toBe(39)
   })
 
   it('defines a coordinate for every axis, within -10..10', () => {
@@ -96,5 +96,12 @@ describe('calibration-gap archetype (surfaced via nearest-neighbor coverage anal
   it('includes National Champion Accelerationist', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('national-champion-accelerationist')
+  })
+})
+
+describe('synthesis archetype (moral personhood + collective ownership + anti-succession, added 2026-07-08)', () => {
+  it('includes Xenocentric Steward', () => {
+    const ids = profiles.map((p) => p.id)
+    expect(ids).toContain('xenocentric-steward')
   })
 })
