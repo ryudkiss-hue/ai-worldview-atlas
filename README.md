@@ -1,10 +1,10 @@
 # TIAM-112 Diagnostic
 
-**A 142-question diagnostic that maps where you actually stand on AI's future — across 8 independent axes, matched against 39 named worldview archetypes.**
+**A 142-question diagnostic that maps where you actually stand on AI's future — across 8 independent axes, matched against 40 named worldview archetypes.**
 
 Live at **[ryudkiss-hue.github.io/tiam-diagnostic](https://ryudkiss-hue.github.io/tiam-diagnostic/)**
 
-TIAM stands for **T**eleological, **I**ntelligence, **A**lignment, **M**oral-status — the four broad clusters of questions the axes below cut across. Instead of collapsing "what do you think about AI?" into a single left-right slider, this tool asks 142 agree/disagree questions and scores your answers across eight genuinely independent dimensions, then finds which of 39 named viewpoints your combined position sits closest to.
+TIAM stands for **T**eleological, **I**ntelligence, **A**lignment, **M**oral-status — the four broad clusters of questions the axes below cut across. Instead of collapsing "what do you think about AI?" into a single left-right slider, this tool asks 142 agree/disagree questions and scores your answers across eight genuinely independent dimensions, then finds which of 40 named viewpoints your combined position sits closest to.
 
 ---
 
@@ -13,7 +13,7 @@ TIAM stands for **T**eleological, **I**ntelligence, **A**lignment, **M**oral-sta
 Most AI-opinion typologies (and most political-compass-style tools generally) make three mistakes this project tries to avoid:
 
 1. **They flatten a multi-dimensional space into one or two axes.** Whether you think AI poses existential risk and whether you think a chatbot can suffer are *different questions* — someone can be a safety-maximalist and a machine-consciousness skeptic at the same time. Collapsing that into "pro-AI vs. anti-AI" loses the actual shape of the disagreement.
-2. **They imply every position is equally common.** A flat list of 39 labels can make a niche academic stance and a mainstream one look like peers. This tool groups all 39 archetypes into 7 **Tier-1 superclusters** so the relative scale of each camp stays legible (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)).
+2. **They imply every position is equally common.** A flat list of 40 labels can make a niche academic stance and a mainstream one look like peers. This tool groups all 40 archetypes into 7 **Tier-1 superclusters** so the relative scale of each camp stays legible (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)).
 3. **They let question order and framing quietly bias the result.** See [Bias mitigations](#bias-mitigations-built-in) below for what this project does about it — including a standing automated test that audits the classifier itself for structural bias.
 
 ---
@@ -47,9 +47,9 @@ Each axis is scored separately for **T1 (next 2–5 years)** and **T2 (next 20�
 
 ---
 
-## The 39 archetypes, in 7 superclusters
+## The 40 archetypes, in 7 superclusters
 
-Rather than one flat list, every archetype belongs to exactly one of seven **Tier-1 superclusters** (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)), which keeps the relative size and shape of each camp visible instead of implying 39 equally-weighted tribes:
+Rather than one flat list, every archetype belongs to exactly one of seven **Tier-1 superclusters** (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)), which keeps the relative size and shape of each camp visible instead of implying 40 equally-weighted tribes:
 
 <details>
 <summary><strong>Precautionary / Safety</strong> (11 archetypes)</summary>
@@ -76,9 +76,9 @@ Open Science Internationalist · Anti-Monopoly Populist · Pragmatic Centrist ·
 </details>
 
 <details>
-<summary><strong>Relational / Companionship</strong> (6 archetypes)</summary>
+<summary><strong>Relational / Companionship</strong> (7 archetypes)</summary>
 
-Companion-Tech Romantic · Affective Biocentrist · Bio-Conservative Traditionalist · Digital Rights Advocate · Faith-Rooted AI Ethicist · Xenocentric Steward
+Companion-Tech Romantic · Affective Biocentrist · Bio-Conservative Traditionalist · Digital Rights Advocate · Faith-Rooted AI Ethicist · Xenocentric Steward · Corporate AI Welfare Researcher
 </details>
 
 <details>
@@ -104,7 +104,7 @@ This project treats "did we accidentally build a biased classifier" as a real en
 - **Hidden pole labels, shuffled question order.** You never see which pole a question feeds, and question order is re-shuffled per axis on every attempt (Fisher-Yates, see [`shuffle.ts`](src/lib/shuffle.ts)), so you can't game or pattern-match your way to a target label.
 - **Interpretable match-closeness %**, not just a raw Euclidean distance — makes it obvious when your *best* match is still not a great fit, rather than implying false precision.
 - **A structural bias audit runs as a standing test** ([`classificationBias.test.ts`](src/lib/classificationBias.test.ts)): 500 trials of pure-random answers are classified, and the test fails if any non-centrist archetype wins an implausible share of random trials — the kind of subtle "opinion matching effect" that has been documented in other online quiz classifiers even under uniformly random input.
-- **A profile-redundancy guard** ([`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts)) fails the build if any two of the 39 archetypes are close enough in 8D space to be functionally indistinguishable — this caught (and forced fixes to) three near-duplicate pairs during development, and every profile report also names its actual nearest neighbor with a specific distinguishing sentence.
+- **A profile-redundancy guard** ([`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts)) fails the build if any two of the 40 archetypes are close enough in 8D space to be functionally indistinguishable — this caught (and forced fixes to) three near-duplicate pairs during development, and every profile report also names its actual nearest neighbor with a specific distinguishing sentence.
 - **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation (no test-retest reliability studies, no independent peer review) and explains *why* a 1–5 Likert scale was chosen over a forced-ranking format (forced-choice/ipsative data has its own well-documented statistical problems).
 - **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 142 core questions target roughly a 10th-to-11th-grade level on average (precise enough phrasing to draw a real distinction, without requiring a graduate vocabulary); scenarios, stakeholder-tag descriptions, and other in-app UI copy stay at or below 10th grade, since those are read quickly rather than deliberated over. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
 - **Material-stakeholder tags are structurally separate from worldview scoring.** They're stored in their own piece of state, never enter `computeRawAxisScores`/`classify`, and are surfaced on the results page as their own labeled section — so "what you believe" and "what you have at stake" stay visibly distinct instead of getting blended into one score.
@@ -119,7 +119,7 @@ Likert answer (1–5)
    → summed per axis, separately for T1 and T2
    → scaled to -10..+10 via  10 * tanh(raw / 3.5)
    → T1 and T2 averaged into one combined 8D vector
-   → Euclidean distance computed to all 39 archetype coordinates
+   → Euclidean distance computed to all 40 archetype coordinates
    → sorted ascending; closest 3 shown
    → distance converted to an interpretable 0-100% "match closeness"
 ```
@@ -152,9 +152,9 @@ src/
 ├── data/
 │   ├── axes.ts                 8 axis definitions (id, name, pole labels)
 │   ├── questions/               142 questions, one file per axis (14 for teleological, 18 for six, 20 for legal & moral)
-│   ├── profiles.ts              39 archetypes: id, name, 8D coords, summary
+│   ├── profiles.ts              40 archetypes: id, name, 8D coords, summary
 │   ├── profileReports.ts        full report content per archetype
-│   ├── archetypeClusters.ts     7 Tier-1 superclusters grouping the 39
+│   ├── archetypeClusters.ts     7 Tier-1 superclusters grouping the 40
 │   ├── stakeholderTags.ts       13 material-stakeholder self-select tags
 │   ├── scenarios.ts             8 situational diagnostic questions
 │   └── types.ts                 shared TypeScript interfaces

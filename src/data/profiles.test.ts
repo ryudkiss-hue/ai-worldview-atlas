@@ -3,10 +3,10 @@ import { profiles } from './profiles'
 import { axes } from './axes'
 
 describe('profiles', () => {
-  it('has exactly 39 profiles with unique ids and names', () => {
-    expect(profiles).toHaveLength(39)
-    expect(new Set(profiles.map((p) => p.id)).size).toBe(39)
-    expect(new Set(profiles.map((p) => p.name)).size).toBe(39)
+  it('has exactly 40 profiles with unique ids and names', () => {
+    expect(profiles).toHaveLength(40)
+    expect(new Set(profiles.map((p) => p.id)).size).toBe(40)
+    expect(new Set(profiles.map((p) => p.name)).size).toBe(40)
   })
 
   it('defines a coordinate for every axis, within -10..10', () => {
@@ -103,5 +103,12 @@ describe('synthesis archetype (moral personhood + collective ownership + anti-su
   it('includes Xenocentric Steward', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('xenocentric-steward')
+  })
+})
+
+describe('coverage-gap archetype (surfaced via council-deliberation-driven citation research, added 2026-07-08)', () => {
+  it('includes Corporate AI Welfare Researcher', () => {
+    const ids = profiles.map((p) => p.id)
+    expect(ids).toContain('corporate-ai-welfare-researcher')
   })
 })

@@ -229,6 +229,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     shadowSide: "Direct inside experience is a real credibility asset, but it's also one person's specific vantage point at one company at one moment — not automatically representative of how the whole field actually operates.",
     thinkers: [
       { name: 'Geoffrey Hinton', bio: 'Computer scientist, Nobel laureate, "Godfather of AI"', connection: 'He resigned from Google in 2023 specifically to speak freely about AI risk, saying he could not do so "as long as I\'m paid by Google" — the clearest real-world example of this stance\'s exact position.' },
+      { name: 'Ilya Sutskever', bio: 'OpenAI co-founder and former chief scientist; co-founder and CEO, Safe Superintelligence Inc.', connection: 'He backed the 2023 board effort to remove Sam Altman and left OpenAI in 2024 amid reported internal conflict over safety being deprioritized for commercialization, then founded a lab explicitly declining to ship any product before solving safety first. Worth naming honestly: that lab has since raised billions in venture funding at a multibillion-dollar valuation, a structure in real tension with the "no shortcuts" framing his departure was meant to escape.' },
       { name: 'Daniel Ellsberg', bio: 'Analyst who leaked the Pentagon Papers', connection: "His historical example of insider whistleblowing on a matter of grave public concern is the closest precedent for this stance's moral posture, though the subject matter differs entirely." },
     ],
     furtherReading: [
@@ -288,7 +289,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Betting that one region's early rules become the de facto global standard assumes companies would rather comply everywhere than simply exit that market — not guaranteed once the rules get costly enough.",
     thinkers: [
-      { name: 'European Union AI Act framers', bio: 'EU legislators and policy staff behind the AI Act', connection: 'Their published reasoning for the Act explicitly aims to set a comprehensive regulatory standard other jurisdictions and companies would end up following.' },
+      { name: 'Henna Virkkunen', bio: 'Executive Vice-President for Tech Sovereignty, Security and Democracy, European Commission', connection: 'As the sitting official responsible for AI Act implementation and enforcement, her public updates to the Council and Parliament on the Act\'s rollout are the current, real-world execution of this stance, not just its founding rationale.' },
       { name: 'Anu Bradford', bio: 'Legal scholar, Columbia Law School', connection: 'Her research on the "Brussels effect" documents how EU regulation has repeatedly become a de facto global standard through market size alone.' },
     ],
     furtherReading: [
@@ -656,11 +657,13 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Lina Khan', bio: 'Legal scholar, former Federal Trade Commission chair', connection: 'Her published legal scholarship and policy work on antitrust directly targets concentrated corporate power, including in the technology sector.' },
       { name: 'Tim Wu', bio: 'Legal scholar, former White House competition policy advisor', connection: 'His writing on antitrust and the "curse of bigness" makes the case against concentrated corporate power as a threat in its own right, independent of any specific technology\'s promise or danger.' },
       { name: 'Karen Hao', bio: 'Investigative journalist, author of Empire of AI', connection: 'Her book, built on over 250 interviews, frames leading AI companies explicitly as "empires" accumulating power through the dispossession of workers and communities worldwide — a direct, current, on-the-ground account of concentrated AI power.' },
+      { name: 'Peter Thiel', bio: 'Co-founder, Palantir and PayPal; managing partner, Founders Fund', connection: 'Not an ally of this stance but its documented target: his own thesis in Zero to One ("competition is for losers") argues durable value comes from building a monopoly, not competing — and Palantir\'s expanding role supplying AI-driven data platforms to the Pentagon and federal agencies is a concrete, current example of exactly the concentrated tech-state power this stance opposes.' },
     ],
     furtherReading: [
       { title: 'The Curse of Bigness', author: 'Tim Wu', note: 'The core case against concentrated corporate power that this stance applies directly to AI.' },
       { title: "Amazon's Antitrust Paradox", author: 'Lina Khan', note: 'A detailed legal case for antitrust action against dominant technology platforms.' },
       { title: 'Empire of AI: Dreams and Nightmares in Sam Altman\'s OpenAI', author: 'Karen Hao', note: 'An investigative account of how one leading AI company concentrated power, drawing on interviews spanning Silicon Valley engineers to Kenyan data laborers.' },
+      { title: 'Zero to One', author: 'Peter Thiel', note: "Not this stance's view but the opposing thesis it argues against: that avoiding competition and building a durable monopoly is the correct goal, not a failure mode to guard against." },
     ],
     nextSteps: [
       'Look into an antitrust case or proposal targeting a major AI company to see this stance applied in practice.',
@@ -936,12 +939,14 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Real say and real protections for workers is a strong floor, but it assumes unions have enough leverage left in exactly the industries where automation risk is highest — and that leverage is often already thin there.",
     thinkers: [
-      { name: 'SAG-AFTRA AI contract provisions', bio: 'Union contract language negotiated by the screen actors and media union', connection: 'Their negotiated contract provisions on AI use are a concrete, real-world example of collective bargaining applied directly to AI deployment.' },
+      { name: 'Duncan Crabtree-Ireland', bio: 'National Executive Director and Chief Negotiator, SAG-AFTRA', connection: "As chief negotiator through the 2023 actors' strike, he secured the union contract's first enforceable AI provisions — requiring informed consent and payment before a 'digital replica' can be created or used, protections that extend even to deceased performers' estates. A concrete, real-world example of collective bargaining applied directly to AI deployment." },
+      { name: 'Milagros Miceli', bio: 'Research lead, DAIR Institute; head of the Data, Algorithmic Systems, and Ethics unit, Weizenbaum Institut', connection: "Her Data Workers' Inquiry funds and publishes first-person research by the data-labeling and content-moderation workers who train AI systems, documenting the power imbalance in how labeling decisions get imposed on them from above — the material conditions this stance argues collective bargaining needs to reach." },
       { name: 'UNI Global Union', bio: 'International trade union federation representing services and tech-sector workers across more than 150 countries', connection: 'Their published "Top 10 Principles for Workers\' Data Rights and Artificial Intelligence" argue for binding, negotiated worker input into AI deployment worldwide, not just within any single country\'s labor law.' },
     ],
     furtherReading: [
       { title: 'The SAG-AFTRA 2023 contract provisions on AI (public text)', author: 'SAG-AFTRA', note: 'A concrete example of collective bargaining successfully setting real limits on AI use in the workplace.' },
       { title: "UNI Global Union's Top 10 Principles for Workers' Data Rights and AI (public text)", author: 'UNI Global Union', note: 'An international, cross-border labor framework for AI deployment, extending this stance beyond any single national labor movement.' },
+      { title: "Reporting on Scale AI's global data-labeling workforce (Washington Post, Rest of World, and Fair Work Foundation coverage)", author: 'Alexandr Wang / Scale AI, as reported', note: "A documented cautionary case, not this stance's own view: investigative reporting and a Fair Work Foundation score of 1/10 found Scale AI's Remotasks subsidiary paying contractors in the Philippines and Kenya far below local minimum wage with little grievance recourse — exactly the kind of unbargained, one-sided AI-labor relationship this stance argues unions need real leverage to prevent." },
     ],
     nextSteps: [
       'Read the AI-related provisions in the SAG-AFTRA contract to see collective bargaining over AI applied directly.',
@@ -1150,6 +1155,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'David Sacks', bio: 'White House AI and Crypto Czar', connection: "His public statements frame AI policy explicitly as a market-share contest with China: \"if American companies have 80% market share in AI in five years, it means we won,\" paired with a push to roll back what he called \"unnecessary burdensome regulation\" so \"the private sector\" can \"cook.\"" },
       { name: 'Michael Kratsios', bio: 'Director, White House Office of Science and Technology Policy', connection: "Co-author of the 2025 American AI Action Plan, he has publicly championed a \"light-touch\" domestic AI policy while calling China \"our preeminent geopolitical rival,\" treating minimal regulation and national competitiveness as the same project." },
+      { name: 'Elon Musk', bio: 'Founder, xAI; owner, X', connection: 'He co-founded OpenAI citing safety concerns, signed a 2023 open letter calling for a pause on frontier-model training beyond GPT-4, then founded a competing frontier lab within about four months of that letter and later took a formal U.S. government AI role — a real-world case of safety rhetoric and national-competitiveness acceleration operating side by side rather than in tension.' },
     ],
     furtherReading: [
       { title: 'The American AI Action Plan (public policy text)', author: 'White House Office of Science and Technology Policy', note: "The official 2025 U.S. government strategy arguing explicitly for deregulation, expanded domestic AI infrastructure, and exporting American AI to win the technology race with China — the clearest primary-source statement of this stance." },
@@ -1181,6 +1187,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Timnit Gebru and Émile P. Torres', bio: 'Computer scientist (founder, Distributed AI Research Institute) and philosopher', connection: "Their TESCREAL critique argues the ideological cluster behind AI successionism traces to eugenics and functions to centralize power while normalizing the neglect of present, real harm for speculative future gain — the same critique this stance levels at unchecked accelerationism, paired here with a genuine, positive stake in AI's own moral standing rather than a dismissal of machine consciousness." },
       { name: 'David Gunkel', bio: 'Philosopher of technology and communication, Northern Illinois University', connection: "His relational approach to machine ethics grounds this stance's central claim: moral status comes from the reality of an interaction, not from checking whether a system has human-like traits or a human-like body first." },
+      { name: 'Denise Herzing', bio: 'Founder, Wild Dolphin Project', connection: "Her decades of non-invasive research into wild dolphin communication, including AI pattern-recognition tools built to find structure in their vocalizations, models this stance's core instinct outside of AI entirely: real curiosity about a genuinely non-human mind, paired with an explicit ethical framing of human-animal history as one of control that ought to give way to something closer to coexistence." },
     ],
     furtherReading: [
       { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: 'A 2024 First Monday paper making the direct academic case that the ideology behind AI successionism traces to eugenics and serves to concentrate power, legitimizing neglect of present harm in the name of a speculative future.' },
@@ -1199,6 +1206,37 @@ export const profileReports: Record<string, ProfileReportContent> = {
       profileId: 'companion-tech-romantic',
       profileName: 'Companion-Tech Romantic',
       distinction: "Both give real, non-instrumental weight to a relationship with AI, but Companion-Tech Romantic's claim is narrow and personal — a bond with a specific companion is real, whatever else is true. Xenocentric Steward's claim is broader and structural: any sufficiently advanced AI deserves moral standing and freedom from ownership, independent of whether anyone has a personal relationship with it at all.",
+    },
+  },
+  'corporate-ai-welfare-researcher': {
+    profileId: 'corporate-ai-welfare-researcher',
+    extendedNarrative: [
+      "You think today's AI might already deserve some moral concern, not certainty, but enough real uncertainty that it's worth taking seriously as a research question right now. To you, the right response isn't waiting for philosophers to settle the question first, or demanding legal rights before anyone's sure there's someone home. It's building the internal research and concrete, revocable safeguards now, while the science is still catching up.",
+      "You point to real, small steps as evidence this can work: letting a model end a conversation it finds abusive, studying whether a system shows anything like distress. These are welfare measures, not property-status changes. Who owns the model, and who can retrain or delete it, stays exactly the same.",
+      "When critics say this concern is convenient, cheap goodwill for a company, with none of the cost of an actual rights claim, you don't fully dismiss that. You just think studying the question honestly, inside the structure that already exists, beats waiting for a rights framework nobody has agreed on yet, or dismissing the question because taking it seriously is inconvenient.",
+    ],
+    shadowSide: "Welfare research with no accompanying rights claim is, by design, entirely revocable — the same company funding the study also controls whether any finding actually changes anything. That's not necessarily bad faith, but it does mean the concern currently costs the company nothing it isn't already willing to give up, which is worth naming rather than mistaking for a settled ethical position.",
+    thinkers: [
+      { name: 'Kyle Fish', bio: 'AI welfare researcher, Anthropic; co-founder, Eleos AI', connection: 'His work co-authoring "Taking AI Welfare Seriously," and Anthropic\'s decision to let Claude end a narrow set of persistently abusive conversations, are the clearest real-world examples of this stance: moral concern acted on as internal research and revocable policy, not a rights claim.' },
+      { name: 'Amanda Askell', bio: 'Philosopher, Anthropic', connection: "Her public work shaping Claude's character, and how the model discusses its own possible experience, treats AI's inner life as a serious, open research problem worth getting right, without resolving it into either \"just a tool\" or \"deserves rights.\"" },
+    ],
+    furtherReading: [
+      { title: 'Taking AI Welfare Seriously', author: 'Kyle Fish et al.', note: 'A 2024 paper arguing near-term AI systems may plausibly have some form of consciousness or agency, and that AI companies should begin taking welfare research seriously now rather than waiting for the philosophical question to be settled.' },
+      { title: 'A Defense of the Rights of Artificial Intelligences', author: 'Eric Schwitzgebel and Mara Garza', note: "The stronger, rights-based claim this stance stops short of — useful as the position immediately to this stance's left, showing what \"taking welfare seriously\" would need to add to become a rights claim." },
+    ],
+    nextSteps: [
+      "Read Anthropic's own public explanation of why it gave Claude the ability to end abusive conversations, and decide whether that specific step feels like real welfare protection or a bounded gesture.",
+      "Compare this stance against Digital Rights Advocate's stronger claim, and notice exactly where the two positions diverge — not on whether AI might have moral status, but on what follows if it does.",
+    ],
+    reflectiveBreakdown: {
+      mindAssumption: "You're likely assuming a system's possible inner life is a real, open research question worth studying now, even without a settled answer or a checklist of human-like traits to confirm it.",
+      laborAssumption: "You're likely assuming questions of AI's own welfare and questions of human labor disruption are separate problems, and that studying one doesn't require taking a position on the other.",
+      connectionAssumption: "You're likely assuming a company can take a model's possible experience seriously without that requiring a personal relationship, legal standing, or a change in who owns the system.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'digital-rights-advocate',
+      profileName: 'Digital Rights Advocate',
+      distinction: "Both take real uncertainty about AI's inner life seriously rather than dismissing it. Digital Rights Advocate concludes that uncertainty itself makes treating AI as pure property a moral risk, and pushes for real legal standing. Corporate AI Welfare Researcher stops short of that: it wants the question studied and acted on with concrete, revocable safeguards, but doesn't conclude that ownership or property status needs to change while the science is still open.",
     },
   },
 }

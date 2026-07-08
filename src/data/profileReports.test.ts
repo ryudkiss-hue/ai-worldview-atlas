@@ -80,8 +80,14 @@ describe('profileReports (batch 10: synthesis archetype, added 2026-07-08)', () 
   })
 })
 
+describe('profileReports (batch 11: coverage-gap archetype, added 2026-07-08)', () => {
+  it('has a complete entry for corporate-ai-welfare-researcher', () => {
+    checkShape('corporate-ai-welfare-researcher')
+  })
+})
+
 describe('profileReports completeness', () => {
-  it('has exactly one entry per profile, for all 39 profiles, with no orphans', () => {
+  it('has exactly one entry per profile, for all 40 profiles, with no orphans', () => {
     const profileIds = profiles.map((p) => p.id)
     const reportIds = Object.keys(profileReports)
     expect(reportIds.sort()).toEqual(profileIds.sort())
