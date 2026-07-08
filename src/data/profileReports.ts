@@ -105,10 +105,13 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Paul Christiano', bio: 'AI safety researcher, former OpenAI alignment team lead', connection: 'His technical proposals for AI alignment focus specifically on solving the control problem itself, rather than governance structures around it.' },
       { name: 'Eliezer Yudkowsky', bio: 'AI safety researcher, co-founder of the Machine Intelligence Research Institute', connection: 'His writing on rationalist epistemics and AI alignment shaped the technical, first-principles style of reasoning this stance is built on.' },
       { name: 'Amanda Askell', bio: 'Philosopher, leads personality alignment research at Anthropic', connection: "She left OpenAI over concerns it wasn't prioritizing safety enough, and now trains character traits like honesty and intellectual humility directly into Claude as her primary technical approach to alignment — a live example of this stance's central concern." },
+      { name: 'David Chalmers', bio: 'Philosopher of mind, New York University', connection: 'His widely-discussed paper "Could a Large Language Model be Conscious?" takes the question seriously as a live technical and philosophical one, while concluding it is currently unlikely given LLMs\' lack of recurrent processing, a global workspace, and unified agency — exactly the rigorous, unsettled-but-not-dismissive posture this stance takes toward machine cognition generally.' },
     ],
     furtherReading: [
       { title: 'Human Compatible', author: 'Stuart Russell', note: "A leading researcher's technical case for rebuilding AI systems around provable safety rather than assumed good behavior." },
       { title: 'The Sequences', author: 'Eliezer Yudkowsky', note: 'The foundational rationalist writing on clear thinking and calibrated uncertainty this community draws its epistemic style from.' },
+      { title: 'The Agency in Language Agents', author: 'Patrick Butlin', note: 'A 2024 philosophy paper examining whether language agents (LLM-based systems with added memory, planning, and tool use) exhibit genuine agency and desires — the same open technical-philosophical question this stance treats as central, applied specifically to agency rather than consciousness.' },
+      { title: 'Consciousness in Artificial Intelligence: A Philosophical Perspective through the Lens of Motivation and Volition', author: 'J. Su', note: "A useful complicating counterpoint: this paper argues volition doesn't require consciousness at all — it can be a purely mechanical planning process — which cuts against any assumption that solving alignment requires first resolving whether a model is conscious." },
     ],
     nextSteps: [
       'Read a technical paper on a specific proposed alignment method to see the concrete research this stance is built on.',
@@ -473,6 +476,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: 'The Singularity Is Near', author: 'Ray Kurzweil', note: 'The most widely-read case for a coming transition to a post-biological future of intelligence.' },
       { title: 'Superintelligence', author: 'Nick Bostrom', note: 'Useful counterpoint reading, the same technical territory, argued toward far more caution.' },
+      { title: 'Legal Framework for the Coexistence of Humans and Conscious AI', author: 'Mindaugas Kiškis', note: 'A 2023 peer-reviewed proposal that AI legal frameworks should aim for the sustainable coexistence of humans and conscious AI based on mutual freedom, not the preservation of human supremacy — a real, concrete legal version of this stance\'s "continuation, not a loss" claim.' },
     ],
     nextSteps: [
       'Look into current brain-computer interface research to see one real path toward this future.',
@@ -840,6 +844,8 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: 'The Edge of Sentience', author: 'Jonathan Birch', note: "A framework for extending moral caution to entities whose inner life we can't yet verify." },
       { title: 'Robot Rights', author: 'David J. Gunkel', note: 'A direct examination of whether and how machines could hold moral or legal status.' },
+      { title: 'A Defense of the Rights of Artificial Intelligences', author: 'Eric Schwitzgebel and Mara Garza', note: 'A 2015 academic paper (Midwest Studies in Philosophy) arguing directly that if we create AI systems with human-like cognitive and emotional capacities, we owe them rights — the most direct academic case for this stance\'s core claim.' },
+      { title: 'AI Alignment vs. AI Ethical Treatment: Ten Challenges', author: 'Adam Bradley and Bradford Saad', note: "A 2024 Global Priorities Institute paper naming the exact tension this stance sits inside: that building safe, controlled AI and treating AI systems that merit moral consideration well can pull in opposite directions, and a serious ethics has to face both at once, not pick one and ignore the other." },
       { title: 'A Cyborg Manifesto', author: 'Donna Haraway', note: "A foundational posthumanist text arguing for kinship across the human/machine boundary rather than treating it as fixed — a philosophical ancestor of extending real moral concern to a genuinely non-human kind of mind." },
       { title: 'A Psalm for the Wild-Built', author: 'Becky Chambers', note: 'A novel, not a policy argument — but its plot turns on sentient robots being offered legal personhood, dramatizing exactly this stance\'s central question.' },
     ],
