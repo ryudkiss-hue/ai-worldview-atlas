@@ -86,8 +86,14 @@ describe('profileReports (batch 11: coverage-gap archetype, added 2026-07-08)', 
   })
 })
 
+describe('profileReports (batch 12: balance-audit archetype, added 2026-07-08)', () => {
+  it('has a complete entry for normal-technology-gradualist', () => {
+    checkShape('normal-technology-gradualist')
+  })
+})
+
 describe('profileReports completeness', () => {
-  it('has exactly one entry per profile, for all 40 profiles, with no orphans', () => {
+  it('has exactly one entry per profile, for all 41 profiles, with no orphans', () => {
     const profileIds = profiles.map((p) => p.id)
     const reportIds = Object.keys(profileReports)
     expect(reportIds.sort()).toEqual(profileIds.sort())

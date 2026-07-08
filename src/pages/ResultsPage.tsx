@@ -12,6 +12,7 @@ import {
   combineHorizons,
   classify,
   matchCloseness,
+  isCloseCall,
   type AxisVector,
 } from '../lib/scoring'
 import { encodeShareLink, decodeShareLink } from '../lib/shareLink'
@@ -60,6 +61,7 @@ export function ResultsPage() {
   const topMatches = matches.slice(0, 3)
   const topMatch = topMatches[0]
   const topContent = profileReports[topMatch.profile.id]
+  const closeCall = isCloseCall(matches)
 
   useEffect(() => {
     if (decoded || hasNoData || savedHistoryRef.current) return
@@ -246,6 +248,17 @@ export function ResultsPage() {
           <p className="text-gray-500 text-sm mt-2">
             No test-retest reliability study backs this tool, so treat any shift as a prompt to reflect,
             not a precise measurement of how your views actually moved.
+          </p>
+        </div>
+      )}
+
+      {closeCall && (
+        <div className="mt-4 border-l-4 border-sky-500 bg-sky-50 p-4">
+          <h3 className="text-lg font-semibold mb-1">This Was a Close Call</h3>
+          <p className="text-gray-700">
+            Your top match beat your second-closest match by an unusually thin margin. Both are
+            worth reading — your actual position may sit meaningfully between them rather than
+            squarely inside either one.
           </p>
         </div>
       )}

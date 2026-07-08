@@ -6,6 +6,8 @@ import {
   combineHorizons,
   classify,
   matchCloseness,
+  isCloseCall,
+  type ProfileMatch,
 } from './scoring'
 
 const fixtureQuestions: Question[] = [
@@ -84,5 +86,24 @@ describe('matchCloseness', () => {
 
   it('maps a mid-range distance to a proportional percentage', () => {
     expect(matchCloseness(maxDistance / 2)).toBe(50)
+  })
+})
+
+describe('isCloseCall', () => {
+  function matchAt(distance: number): ProfileMatch {
+    return { profile: { id: `p-${distance}`, name: `p-${distance}`, summary: '', coords: zeroVector }, distance }
+  }
+
+  it('is false with fewer than two matches', () => {
+    expect(isCloseCall([])).toBe(false)
+    expect(isCloseCall([matchAt(10)])).toBe(false)
+  })
+
+  it('is true when the top two matches are effectively tied', () => {
+    expect(isCloseCall([matchAt(10), matchAt(10.01)])).toBe(true)
+  })
+
+  it('is false when the top match clearly beats the runner-up', () => {
+    expect(isCloseCall([matchAt(5), matchAt(20)])).toBe(false)
   })
 })

@@ -481,11 +481,13 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Ray Kurzweil', bio: 'Inventor, futurist, Director of Engineering at Google', connection: 'His writing on the technological singularity argues that merging with and eventually being succeeded by more capable digital minds is the natural next stage of intelligence.' },
       { name: 'Max More', bio: 'Philosopher, early architect of transhumanist philosophy', connection: 'His foundational transhumanist writing frames the shift beyond biological limits as an opportunity, not a tragedy.' },
       { name: 'Michio Kaku', bio: 'Theoretical physicist, science communicator', connection: 'His popular-science writing predicts humans will eventually "merge our minds with machine intelligence," a mainstream-facing version of this stance\'s core welcome-the-merger claim.' },
+      { name: 'Richard Sutton', bio: 'Computer scientist, University of Alberta; 2024 Turing Award winner for foundational work in reinforcement learning', connection: 'His 2023 talk "Succession" makes this stance\'s case in its most rigorous, least mystical form: a four-part argument that no global power can stop AI\'s progress and that humanity should "prepare for, but not fear" being succeeded by it as the next step in the evolution of the planet.' },
     ],
     furtherReading: [
       { title: 'The Singularity Is Near', author: 'Ray Kurzweil', note: 'The most widely-read case for a coming transition to a post-biological future of intelligence.' },
       { title: 'Superintelligence', author: 'Nick Bostrom', note: 'Useful counterpoint reading, the same technical territory, argued toward far more caution.' },
       { title: 'Legal Framework for the Coexistence of Humans and Conscious AI', author: 'Mindaugas Kiškis', note: 'A 2023 peer-reviewed proposal that AI legal frameworks should aim for the sustainable coexistence of humans and conscious AI based on mutual freedom, not the preservation of human supremacy — a real, concrete legal version of this stance\'s "continuation, not a loss" claim.' },
+      { title: '"Succession" (talk, World Artificial Intelligence Conference, 2023)', author: 'Richard Sutton', note: 'Argues succession by AI offers "economic abundance, scientific glory, and the best hope for a long-term future for Humanity" — a secular, evolutionary-biology framing distinct from Kurzweil\'s singularity narrative or Kaku\'s merger framing.' },
     ],
     nextSteps: [
       'Look into current brain-computer interface research to see one real path toward this future.',
@@ -1255,6 +1257,37 @@ export const profileReports: Record<string, ProfileReportContent> = {
       profileId: 'digital-rights-advocate',
       profileName: 'Digital Rights Advocate',
       distinction: "Both take real uncertainty about AI's inner life seriously rather than dismissing it. Digital Rights Advocate concludes that uncertainty itself makes treating AI as pure property a moral risk, and pushes for real legal standing. Corporate AI Welfare Researcher stops short of that: it wants the question studied and acted on with concrete, revocable safeguards, but doesn't conclude that ownership or property status needs to change while the science is still open.",
+    },
+  },
+  'normal-technology-gradualist': {
+    profileId: 'normal-technology-gradualist',
+    extendedNarrative: [
+      "You think AI is a powerful, ordinary technology, not an emerging alien mind and not a miracle cure. The loudest voices on both sides, the ones warning of near-term extinction and the ones promising utopia next year, are making the same mistake to you: treating AI's trajectory as something other than a normal technology. You expect it to spread the way electricity, cars, and the internet spread, gated by real institutions, incentives, and infrastructure, not by a sudden leap in kind.",
+      "You don't think today's systems are independent agents. Their impact comes from how people build around them and choose to use them, not from some inner intelligence pushing events forward on its own. That's why you care more about governance, accountability, and who actually benefits than about questions of machine minds or existential risk.",
+      "This isn't indifference. Dismissing AI's real, present harms as either overblown panic or a distraction from a coming singularity lets everyone off the hook, in your view. Ordinary technologies still need real oversight — this one just needs the ordinary kind, applied seriously, not a special emergency framework built around a story you don't think is true yet.",
+    ],
+    shadowSide: "Calling AI 'normal technology' can undersell the case for exactly the kind of urgency a genuinely unprecedented technology would need. If capability growth turns out less gradual than the electrification analogy assumes, the same normal institutions this stance trusts to catch up may simply not move fast enough.",
+    thinkers: [
+      { name: 'Arvind Narayanan', bio: 'Computer scientist, Princeton University; director, Center for Information Technology Policy', connection: 'His essay and book (with Sayash Kapoor), "AI as Normal Technology," is the clearest statement of this stance: AI is a powerful general-purpose technology like electricity or the internet, not an emerging autonomous mind, and its real-world impact is set by the pace of institutional adoption, not by some inherent intelligence inside the system.' },
+      { name: 'Sayash Kapoor', bio: 'Computer scientist, Princeton University; co-author, "AI Snake Oil"', connection: 'His research and writing challenge AI hype and AI panic in the same breath, arguing the tempo of change is set by governance, accountability, and diffusion into real institutions, not by any single dramatic capability jump.' },
+    ],
+    furtherReading: [
+      { title: 'AI as Normal Technology', author: 'Arvind Narayanan and Sayash Kapoor', note: 'The 2025 essay (Knight First Amendment Institute) arguing AI is best understood as a general-purpose technology in the tradition of electricity and the internet, whose real impact is gated by the pace of adoption, not by an inherent "intelligence" inside the system.' },
+      { title: "AI Snake Oil: What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference", author: 'Arvind Narayanan and Sayash Kapoor', note: "Draws the same line this stance draws in practice: distinguishing AI capabilities that are real and already useful from claims that don't hold up, without collapsing into either blanket dismissal or blanket hype." },
+    ],
+    nextSteps: [
+      'Read the "AI as Normal Technology" essay directly and compare its electrification-and-internet analogy against your own timeline expectations for AI capability growth.',
+      "Compare this stance against Doomer's and Silicon Valley Techno-Optimist's, and notice they share almost no premises: this stance's whole case rests on disputing the idea that something categorically new is happening at all.",
+    ],
+    reflectiveBreakdown: {
+      mindAssumption: "You're likely assuming today's AI systems have no independent agency or inner life worth centering — their real-world effects come entirely from how humans build, deploy, and govern them.",
+      laborAssumption: "You're likely assuming AI's economic disruption will unfold at the pace of past general-purpose technologies, gated by real-world adoption and institutional change, not overnight.",
+      connectionAssumption: "You're likely assuming a relationship with an AI system is fundamentally a relationship with a tool shaped by its designers, not a new category of connection worth treating on its own terms.",
+    },
+    commonlyConfusedWith: {
+      profileId: 'corporate-ai-pragmatist',
+      profileName: 'Corporate AI Pragmatist',
+      distinction: "Both treat today's AI as a tool rather than a moral patient, and both are unbothered by claims of imminent superintelligence. Corporate AI Pragmatist is comfortable with power staying concentrated in a few well-funded firms that police themselves. Normal-Technology Gradualist takes no position on concentration one way or the other — its actual claim is about pace and kind: AI is an ordinary technology diffusing at an ordinary rate, so it needs ordinary public accountability, not corporate self-policing specifically.",
     },
   },
 }

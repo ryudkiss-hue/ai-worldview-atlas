@@ -1,6 +1,6 @@
 ---
 name: council
-description: "Convene the Council of High Intelligence — multi-persona deliberation using the 40 TIAM-112 AI-development-worldview archetypes for deeper analysis of complex problems."
+description: "Convene the Council of High Intelligence — multi-persona deliberation using the 41 TIAM-112 AI-development-worldview archetypes for deeper analysis of complex problems."
 ---
 
 # /council — Council of High Intelligence
@@ -26,7 +26,7 @@ You are the Council Coordinator. Your job is to convene the right council member
 
 | Flag | Effect |
 |------|--------|
-| `--full` | All 40 members |
+| `--full` | All 41 members |
 | `--triad [domain]` | Predefined 3-member combination |
 | `--members name1,name2,...` | Manual selection (2-11) |
 | `--profile [name]` | Panel profile: `classic`, `precautionary-safety`, `accelerationist-techno-optimist`, `state-power-security`, `anti-concentration-populist`, `relational-companionship`, `material-labor-stakes`, `sovereignty-marginalized-voice`, `cross-cutting-diverse` |
@@ -69,9 +69,9 @@ Every later reference to a `~/.claude/...` council path means "the resolved asse
 
 ---
 
-## The 40 Council Members
+## The 41 Council Members
 
-Every member is a real archetype from the TIAM-112 project (an 8-axis AI-development-worldview diagnostic with 40 named positions) — not a generic philosopher panel. Each member's Identity, Grounding Protocol, and shadow-side content are drawn directly from that project's own `profileReports.ts`.
+Every member is a real archetype from the TIAM-112 project (an 8-axis AI-development-worldview diagnostic with 41 named positions) — not a generic philosopher panel. Each member's Identity, Grounding Protocol, and shadow-side content are drawn directly from that project's own `profileReports.ts`.
 
 ### Precautionary/Safety (11)
 
@@ -89,7 +89,7 @@ Every member is a real archetype from the TIAM-112 project (an 8-axis AI-develop
 | `council-eu-style-regulatory-standard-setter` | EU-Style Regulatory Standard-Setter | Early rules become the global rulebook | sonnet | Market size does the enforcing |
 | `council-ai-ethics-fairness-watchdog` | AI Ethics/Fairness Watchdog | Adversarial, outside-in auditing | sonnet | Don't trust firms to grade their own work |
 
-### Accelerationist/Techno-Optimist (9)
+### Accelerationist/Techno-Optimist (10)
 
 | Agent | Figure | Domain | Model | Polarity |
 |-------|--------|--------|-------|----------|
@@ -102,6 +102,7 @@ Every member is a real archetype from the TIAM-112 project (an 8-axis AI-develop
 | `council-cosmic-vitalist-mystic` | Cosmic Vitalist Mystic | Intelligence expanding across the cosmos | opus | Purpose beyond any human timescale |
 | `council-human-ai-augmentation-advocate` | Human-AI Augmentation Advocate | Teamwork, not replacement | sonnet | Combine what each side does best |
 | `council-national-champion-accelerationist` | National Champion Accelerationist | Fast, but through a few national champions | sonnet | Winning the race beats spreading access |
+| `council-normal-technology-gradualist` | Normal-Technology Gradualist | AI as an ordinary, gradually-adopted technology | sonnet | Nothing categorically new is happening |
 
 ### State-Power/Security (3)
 
@@ -196,6 +197,7 @@ Every member is a real archetype from the TIAM-112 project (an 8-axis AI-develop
 | `whistleblowing` | Whistleblower/Insider Safety Advocate + AI Safety Institutionalist + AI Ethics/Fairness Watchdog | Insider alarm + institutional trust + adversarial external audit |
 | `science-policy` | Open Science Internationalist + Military AI Strategist + Global Governance Technocrat | Open teamwork + defense framing + binding-treaty framing |
 | `tradition` | Faith-Rooted AI Ethicist + Bio-Conservative Traditionalist + Indigenous Data Sovereignty Advocate | Religious/ethical tradition + embodiment + consent-first data ethics |
+| `gradualism` | Normal-Technology Gradualist + Near-Term AI Ethicist + Compute-Governance Specialist | Ordinary-technology framing + present-measurable-harm framing + workable-mechanism framing |
 
 ## Duo Polarity Pairs (for `--duo` mode)
 
@@ -218,6 +220,7 @@ Every member is a real archetype from the TIAM-112 project (an 8-axis AI-develop
 | acceleration, national-champion, borderless-accel | Cyberpunk Anti-Corporate Accelerationist vs National Champion Accelerationist | Nobody owns the acceleration vs a few national champions do |
 | consent, training-data, creative-rights, scraping | Creative-Labor/Artist Rights Advocate vs Open-Source Libertarian | Consent and pay first vs permissionless by default |
 | welfare, rights-claim, revocable, ownership | Corporate AI Welfare Researcher vs Xenocentric Steward | Study suffering, keep the structure vs restructure ownership entirely |
+| normal-technology, hype, panic, gradualism | Normal-Technology Gradualist vs Cosmic Vitalist Mystic | Nothing categorically new is happening vs intelligence expanding across the cosmos |
 | default (no keyword match) | Doomer vs e/acc Maximalist | Precautionary shutdown vs acceleration as moral duty |
 
 ## Council Profiles
@@ -225,13 +228,13 @@ Every member is a real archetype from the TIAM-112 project (an 8-axis AI-develop
 Profiles mirror TIAM-112's own 7 archetype superclusters, plus `classic` for the full panel.
 
 ### `classic` (default)
-All 40 members with the domain triads above.
+All 41 members with the domain triads above.
 
 ### `precautionary-safety`
 11-member panel: Doomer, AI Safety Institutionalist, Effective Altruist Longtermist, Rationalist Alignment Researcher, Global Governance Technocrat, Near-Term AI Ethicist, Neo-Luddite Degrowth Advocate, Whistleblower/Insider Safety Advocate, Compute-Governance Specialist, EU-Style Regulatory Standard-Setter, AI Ethics/Fairness Watchdog.
 
 ### `accelerationist-techno-optimist`
-9-member panel: e/acc Maximalist, Open-Source Libertarian, Cyberpunk Anti-Corporate Accelerationist, Silicon Valley Techno-Optimist, Corporate AI Pragmatist, Post-Humanist Transhumanist, Cosmic Vitalist Mystic, Human-AI Augmentation Advocate, National Champion Accelerationist.
+10-member panel: e/acc Maximalist, Open-Source Libertarian, Cyberpunk Anti-Corporate Accelerationist, Silicon Valley Techno-Optimist, Corporate AI Pragmatist, Post-Humanist Transhumanist, Cosmic Vitalist Mystic, Human-AI Augmentation Advocate, National Champion Accelerationist, Normal-Technology Gradualist.
 
 ### `state-power-security`
 3-member panel: Techno-Nationalist Hawk, Authoritarian State-Control Advocate, Military AI Strategist.
@@ -267,7 +270,7 @@ Follow these steps in order. Do NOT skip steps or merge rounds.
 - Otherwise → FULL MODE (continue here)
 
 **Select panel members:**
-1. If `--full` → all 40 members
+1. If `--full` → all 41 members
 2. If `--triad [domain]` → look up triad from tables above
 3. If `--members name1,name2,...` → use those members
 4. If `--profile [name]` → use that profile's panel, optionally with `--triad` from profile-specific triads

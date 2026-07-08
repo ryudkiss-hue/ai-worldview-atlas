@@ -25,8 +25,8 @@ describe('profile redundancy guard', () => {
     expect(tooClose, `Pairs under the 5.0 threshold:\n${tooClose.join('\n')}`).toEqual([])
   })
 
-  it('has exactly 40 profiles with unique ids', () => {
-    expect(profiles).toHaveLength(40)
-    expect(new Set(profiles.map((p) => p.id)).size).toBe(40)
+  it('has exactly 41 profiles with unique ids', () => {
+    expect(profiles).toHaveLength(41)
+    expect(new Set(profiles.map((p) => p.id)).size).toBe(41)
   })
 })
