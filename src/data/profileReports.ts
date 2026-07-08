@@ -44,6 +44,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Dario Amodei', bio: 'CEO of Anthropic', connection: 'His public writing on AI safety argues that responsible frontier labs, operating under real accountability structures, are the most realistic path to safe AI development.' },
       { name: 'Helen Toner', bio: 'AI governance researcher, Georgetown Center for Security and Emerging Technology', connection: 'Her published policy work focuses on building workable oversight structures for frontier AI development, rather than either a ban or unregulated speed.' },
       { name: 'Yoshua Bengio', bio: 'Turing Award-winning AI researcher, professor at University of Montreal', connection: 'His 2023 U.S. Senate testimony called for internationally coordinated safety oversight backed by public funding — institutional coordination, not a halt, argued from the top of the field\'s own technical authority.' },
+      { name: 'Karen E. Silverman', bio: 'Founder and CEO, The Cantellus Group', connection: 'She led the partnership between Latham & Watkins and the World Economic Forum that produced "Empowering AI Leadership: An Oversight Toolkit for Boards of Directors" — a real, named governance artifact built for the exact institutional mechanism this stance trusts: internal audit and oversight bodies checking a company\'s own AI development.' },
     ],
     furtherReading: [
       { title: 'The Alignment Problem', author: 'Brian Christian', note: 'A survey of the technical and institutional challenges of building AI systems that do what we actually want.' },
@@ -138,7 +139,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     shadowSide: "Binding international treaties require exactly the cooperation that geopolitical rivalry usually prevents. The more strategically important the technology becomes, the less likely nations are to actually cede control to a shared body.",
     thinkers: [
       { name: 'International AI governance treaty proposals', bio: 'Published draft frameworks from international policy bodies', connection: 'These proposals argue explicitly for binding, treaty-based international oversight of frontier AI, modeled on nuclear non-proliferation regimes.' },
-      { name: 'United Nations AI advisory reports', bio: 'Published multilateral policy analysis', connection: "These reports make the case for AI governance structures that operate above any single nation's authority." },
+      { name: 'Kay Firth-Butterfield', bio: 'CEO, Good Tech Advisory; former inaugural Head of AI and Machine Learning, World Economic Forum', connection: "Her institutional record is the real-world version of this stance's ideal: a contributor to the 2015 Asilomar AI Principles, Vice Chair of the IEEE Global Initiative on Ethically Aligned Design, and co-founder of the Responsible AI Institute — cross-border, multi-stakeholder bodies operating above any single national government." },
     ],
     furtherReading: [
       { title: 'The Precipice', author: 'Toby Ord', note: 'Makes a complementary case for treating certain technological risks as requiring coordinated, global-scale response.' },
@@ -1099,6 +1100,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     furtherReading: [
       { title: 'Weapons of Math Destruction', author: "Cathy O'Neil", note: 'A foundational case for why algorithmic systems need outside scrutiny, not just internal review.' },
       { title: 'Discrimination in Online Ad Delivery', author: 'Latanya Sweeney', note: 'The 2013 Communications of the ACM study documenting racially disparate ad delivery — a concrete, replicable example of the kind of outside audit this stance insists on.' },
+      { title: 'Building Responsible AI Algorithms', author: 'Toju Duke', note: "A named framework, not a general appeal, for transparency, fairness, safety, privacy, and robustness checks across the AI development lifecycle — written by a former Google Responsible AI Programme Manager who also founded Diverse AI, a real organization supporting underrepresented groups building AI." },
       { title: "Rumman Chowdhury's public writing and bias-bounty program reports", author: 'Rumman Chowdhury', note: 'Concrete, documented examples of adversarial, outside-in AI auditing in practice.' },
     ],
     nextSteps: [
@@ -1127,10 +1129,13 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Garry Kasparov', bio: 'Chess grandmaster, former World Chess Champion', connection: "His book Deep Thinking, written after his 1997 loss to IBM's Deep Blue, argues that AI is 'in the final analysis a tool to augment human creativity.' His own 'centaur chess' experiments showed a human-computer team outplaying either a grandmaster or a computer alone." },
       { name: 'Fei-Fei Li', bio: 'Computer scientist, Stanford, co-director of Stanford HAI', connection: 'Her memoir The Worlds I See describes human and artificial intelligence as forming a "double helix" — advocating for AI development anchored in human-centered values rather than a race toward replacing human judgment.' },
       { name: 'Daniela Rus', bio: 'Director of MIT CSAIL, robotics researcher', connection: 'Her public work on robotics envisions machines "pervasively integrated into the fabric of life," supporting people with cognitive and physical tasks — collaboration and augmentation, not substitution.' },
+      { name: 'Maya Ackerman', bio: 'Associate Professor, Santa Clara University; co-founder and CEO, WaveAI', connection: 'Her book Creative Machines: AI, Art & Us argues generative AI should amplify human creativity rather than replace it — a thesis her own products, LyricStudio and MelodyStudio, are built around, not just written about.' },
     ],
     furtherReading: [
       { title: 'Deep Thinking: Where Machine Intelligence Ends and Human Creativity Begins', author: 'Garry Kasparov', note: 'A firsthand account of losing to a machine, then discovering that human-machine teams beat either one alone — the founding case for this stance.' },
       { title: 'The Worlds I See', author: 'Fei-Fei Li', note: 'A memoir making the case for AI development anchored in human values and collaboration rather than pure capability escalation.' },
+      { title: 'Creative Machines: AI, Art & Us', author: 'Maya Ackerman', note: 'A 2025 book making the specific case that generative AI in creative domains should be designed to elevate human creative capability, not substitute for it.' },
+      { title: 'Public writing and talks on Decision Intelligence', author: 'Cassie Kozyrkov', note: "This stance's business-decision-making analogue: her framing that humans must own the objective function while machines handle the statistics is a popularization of \"decision intelligence\" (a term originated by Lorien Pratt in 2012, not by Kozyrkov herself) applied to organizational AI adoption." },
     ],
     nextSteps: [
       "Look into a real-world example of human-AI collaboration outperforming either alone, like advanced chess or a diagnostic-support tool used alongside doctors.",
