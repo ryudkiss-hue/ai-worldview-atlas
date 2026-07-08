@@ -8,9 +8,9 @@ describe('legalMoralQuestions', () => {
     expect(legalMoralQuestions.filter((q) => q.horizon === 'T2')).toHaveLength(9)
   })
 
-  it('uses ids 61 through 78 with no gaps or duplicates', () => {
+  it('uses ids 69 through 86 with no gaps or duplicates', () => {
     const ids = legalMoralQuestions.map((q) => q.id).sort((a, b) => a - b)
-    expect(ids).toEqual(Array.from({ length: 18 }, (_, i) => i + 61))
+    expect(ids).toEqual(Array.from({ length: 18 }, (_, i) => i + 69))
   })
 
   it('every question targets the legalMoral axis', () => {

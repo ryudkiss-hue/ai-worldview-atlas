@@ -8,9 +8,9 @@ describe('evolutionaryQuestions', () => {
     expect(evolutionaryQuestions.filter((q) => q.horizon === 'T2')).toHaveLength(9)
   })
 
-  it('uses ids 79 through 96 with no gaps or duplicates', () => {
+  it('uses ids 87 through 104 with no gaps or duplicates', () => {
     const ids = evolutionaryQuestions.map((q) => q.id).sort((a, b) => a - b)
-    expect(ids).toEqual(Array.from({ length: 18 }, (_, i) => i + 79))
+    expect(ids).toEqual(Array.from({ length: 18 }, (_, i) => i + 87))
   })
 
   it('every question targets the evolutionary axis', () => {

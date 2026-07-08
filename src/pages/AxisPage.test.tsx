@@ -38,6 +38,12 @@ describe('AxisPage', () => {
     expect(nextButton).not.toBeDisabled()
   })
 
+  it('renders all 18 questions (9 T1 + 9 T2) for an expanded axis like risk', () => {
+    renderAxisPage(2)
+    expect(screen.getByText('Risk Profile')).toBeInTheDocument()
+    expect(screen.getAllByRole('radio', { name: 'Strongly Agree' })).toHaveLength(18)
+  })
+
   it('navigates to /scenarios (not /results) when Next is clicked from axis 8', () => {
     renderAxisPage(8)
     screen.getAllByRole('radio', { name: 'Strongly Agree' }).forEach((radio) => fireEvent.click(radio))
