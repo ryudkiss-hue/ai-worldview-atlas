@@ -17,12 +17,14 @@ export function MethodologySection() {
       <button
         type="button"
         onClick={() => setExpanded((prev) => !prev)}
+        aria-expanded={expanded}
+        aria-controls="methodology-content"
         className="text-blue-600 font-semibold underline"
       >
         How This Works
       </button>
       {expanded && (
-        <div className="mt-3 space-y-3">
+        <div id="methodology-content" className="mt-3 space-y-3">
           {PARAGRAPHS.map((text, index) => (
             <p key={index} data-testid="methodology-paragraph" className="text-gray-700">
               {text}

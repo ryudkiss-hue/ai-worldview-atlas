@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
 import { profiles } from '../data/profiles'
@@ -28,7 +28,7 @@ export function ResultsPage() {
   const [searchParams] = useSearchParams()
   const { answers, reset, scenarioAnswers, selectedStakeholderTags } = useQuiz()
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
-  const [generatingPdf, setGeneratingPdf] = useState(false)
+  const [pdfStatus, setPdfStatus] = useState<'idle' | 'generating' | 'failed'>('idle')
   const copyStatusResetRef = useRef<ReturnType<typeof setTimeout>>()
 
   useEffect(() => {
@@ -36,25 +36,16 @@ export function ResultsPage() {
   }, [])
 
   const sharedParam = searchParams.get('d')
+  const decoded = useMemo(() => (sharedParam ? decodeShareLink(sharedParam) : null), [sharedParam])
+  const hasNoData = !decoded && Object.keys(answers).length === 0
 
   const { t1Raw, t2Raw } = useMemo(() => {
-    if (sharedParam) {
-      const decoded = decodeShareLink(sharedParam)
-      if (decoded) return decoded
-    }
+    if (decoded) return decoded
     return {
       t1Raw: computeRawAxisScores(questions, answers, 'T1'),
       t2Raw: computeRawAxisScores(questions, answers, 'T2'),
     }
-  }, [sharedParam, answers])
-
-  const t1Scaled: AxisVector = scaleAxisScores(t1Raw)
-  const t2Scaled: AxisVector = scaleAxisScores(t2Raw)
-  const combined = combineHorizons(t1Scaled, t2Scaled)
-  const matches = classify(combined, profiles)
-  const topMatches = matches.slice(0, 3)
-  const topMatch = topMatches[0]
-  const topContent = profileReports[topMatch.profile.id]
+  }, [decoded, answers])
 
   const selectedTagObjects = stakeholderTags.filter((tag) => selectedStakeholderTags.includes(tag.id))
 
@@ -72,12 +63,38 @@ export function ResultsPage() {
   }
 
   function handleRetake() {
+    if (!window.confirm('Retake the assessment? This clears your current answers and this result.')) {
+      return
+    }
     reset()
     navigate('/')
   }
 
+  if (hasNoData) {
+    return (
+      <div className="max-w-2xl mx-auto p-6 text-center">
+        <h2 className="text-2xl font-bold mb-4">No Results Yet</h2>
+        <p className="text-gray-700 mb-6">
+          You haven't completed the assessment yet, so there's nothing to show here. Start from the
+          beginning to get your results.
+        </p>
+        <Link to="/" className="inline-block px-6 py-3 rounded bg-blue-600 text-white text-lg">
+          Start the Assessment
+        </Link>
+      </div>
+    )
+  }
+
+  const t1Scaled: AxisVector = scaleAxisScores(t1Raw)
+  const t2Scaled: AxisVector = scaleAxisScores(t2Raw)
+  const combined = combineHorizons(t1Scaled, t2Scaled)
+  const matches = classify(combined, profiles)
+  const topMatches = matches.slice(0, 3)
+  const topMatch = topMatches[0]
+  const topContent = profileReports[topMatch.profile.id]
+
   async function handleDownloadPdf() {
-    setGeneratingPdf(true)
+    setPdfStatus('generating')
     try {
       const doc = (
         <ReportDocument
@@ -95,8 +112,9 @@ export function ResultsPage() {
       link.download = `tiam-report-${topMatch.profile.id}.pdf`
       link.click()
       URL.revokeObjectURL(url)
-    } finally {
-      setGeneratingPdf(false)
+      setPdfStatus('idle')
+    } catch {
+      setPdfStatus('failed')
     }
   }
 
@@ -128,10 +146,14 @@ export function ResultsPage() {
         <button
           type="button"
           onClick={handleDownloadPdf}
-          disabled={generatingPdf}
-          className="px-4 py-2 rounded bg-blue-600 text-white disabled:opacity-40"
+          disabled={pdfStatus === 'generating'}
+          className={`px-4 py-2 rounded text-white disabled:opacity-40 ${pdfStatus === 'failed' ? 'bg-red-600' : 'bg-blue-600'}`}
         >
-          {generatingPdf ? 'Generating...' : 'Download PDF Report'}
+          {pdfStatus === 'generating'
+            ? 'Generating...'
+            : pdfStatus === 'failed'
+              ? 'Download Failed — Try Again'
+              : 'Download PDF Report'}
         </button>
         <button type="button" onClick={handleRetake} className="px-4 py-2 rounded border border-gray-300">
           Retake

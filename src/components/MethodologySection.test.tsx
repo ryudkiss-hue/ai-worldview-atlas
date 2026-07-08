@@ -11,6 +11,14 @@ describe('MethodologySection', () => {
     expect(screen.getByText(/strong view on just one or two axes/i)).toBeInTheDocument()
   })
 
+  it('exposes expanded state via aria-expanded for screen readers', () => {
+    render(<MethodologySection />)
+    const button = screen.getByRole('button', { name: 'How This Works' })
+    expect(button).toHaveAttribute('aria-expanded', 'false')
+    fireEvent.click(button)
+    expect(button).toHaveAttribute('aria-expanded', 'true')
+  })
+
   it('includes the honesty statement about validation and the false-equivalence caveat', () => {
     render(<MethodologySection />)
     fireEvent.click(screen.getByRole('button', { name: 'How This Works' }))

@@ -12,12 +12,16 @@ import { questions } from '../data/questions'
 // Here we only care about the loading-state UX, so the actual (CPU-heavy, and
 // growing as more profile content is added) rendering work is mocked out —
 // otherwise this test's runtime tracks production content size instead of
-// testing button-state behavior.
+// testing button-state behavior. toBlobMock is individually overridable per
+// test (e.g. mockRejectedValueOnce) to exercise the failure path.
+const { toBlobMock } = vi.hoisted(() => ({
+  toBlobMock: vi.fn(async () => new Blob(['mock-pdf'], { type: 'application/pdf' })),
+}))
 vi.mock('@react-pdf/renderer', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@react-pdf/renderer')>()
   return {
     ...actual,
-    pdf: () => ({ toBlob: async () => new Blob(['mock-pdf'], { type: 'application/pdf' }) }),
+    pdf: () => ({ toBlob: toBlobMock }),
   }
 })
 
@@ -48,6 +52,7 @@ beforeEach(() => {
   Object.assign(navigator, { clipboard: { writeText: vi.fn().mockResolvedValue(undefined) } })
   URL.createObjectURL = vi.fn().mockReturnValue('blob:mock-url')
   URL.revokeObjectURL = vi.fn()
+  vi.spyOn(window, 'confirm').mockReturnValue(true)
 })
 
 describe('ResultsPage', () => {
@@ -138,11 +143,36 @@ describe('ResultsPage', () => {
     expect(screen.queryByText('Link Copied!')).not.toBeInTheDocument()
   })
 
-  it('resets answers and navigates to intro when Retake is clicked', () => {
+  it('resets answers and navigates to intro when Retake is clicked and confirmed', () => {
     const encoded = encodeShareLink(buildFlatScores(0, 0))
     renderResultsPage(`?d=${encoded}`)
     fireEvent.click(screen.getByRole('button', { name: 'Retake' }))
+    expect(window.confirm).toHaveBeenCalled()
     expect(screen.getByText('Intro Page')).toBeInTheDocument()
+  })
+
+  it('does nothing when the Retake confirmation is declined', () => {
+    vi.spyOn(window, 'confirm').mockReturnValue(false)
+    const encoded = encodeShareLink(buildFlatScores(0, 0))
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Retake' }))
+    expect(screen.getByText('Closest Matches')).toBeInTheDocument()
+    expect(screen.queryByText('Intro Page')).not.toBeInTheDocument()
+  })
+
+  it('shows a distinct failure state instead of a silent no-op when PDF generation throws', async () => {
+    toBlobMock.mockRejectedValueOnce(new Error('render failed'))
+    const encoded = encodeShareLink(buildFlatScores(7, -7))
+    renderResultsPage(`?d=${encoded}`)
+    fireEvent.click(screen.getByRole('button', { name: 'Download PDF Report' }))
+    expect(await screen.findByRole('button', { name: 'Download Failed — Try Again' })).toBeInTheDocument()
+  })
+
+  it('shows a "no results yet" message instead of a fake neutral result when the quiz was never completed', () => {
+    renderResultsPage('')
+    expect(screen.getByText('No Results Yet')).toBeInTheDocument()
+    expect(screen.queryByText('Closest Matches')).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Start the Assessment' })).toBeInTheDocument()
   })
 
   it('computes results from live quiz answers when no share param is present', () => {
