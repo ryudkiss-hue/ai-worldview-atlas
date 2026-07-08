@@ -22,12 +22,12 @@ export function IntroPage() {
     <div className="max-w-2xl mx-auto p-6 text-center">
       <h1 className="text-3xl font-bold mb-4">TIAM-112 Diagnostic</h1>
       <p className="text-gray-700 mb-4">
-        This is a 134-question survey about how you think AI development should go, both in the
+        This is a 142-question survey about how you think AI development should go, both in the
         next few years and over the next fifty. It shows you where your views sit across eight
         different dimensions, and matches you to the closest of 38 named viewpoints.
       </p>
       <p className="text-sm text-gray-500 mb-2">
-        About 18-23 minutes, 134 questions. Your answers aren't saved if you refresh mid-quiz —
+        About 19-25 minutes, 142 questions. Your answers aren't saved if you refresh mid-quiz —
         only a finished result can be shared via link.
       </p>
       <p className="text-sm text-gray-500 mb-6">
