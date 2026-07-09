@@ -2,7 +2,7 @@
 
 **A 145-question diagnostic that maps where you actually stand on AI's future — across 8 independent axes, matched against 50 named worldview archetypes.**
 
-Live at **[ryudkiss-hue.github.io/tiam-diagnostic](https://ryudkiss-hue.github.io/tiam-diagnostic/)** (formerly published as "TIAM-112 Diagnostic" — same project, same URL, new name)
+Live at **[ryudkiss-hue.github.io/ai-worldview-atlas](https://ryudkiss-hue.github.io/ai-worldview-atlas/)** (formerly published as "TIAM-112 Diagnostic" at a `tiam-diagnostic` URL — GitHub auto-redirects old links, but update any bookmarks)
 
 Instead of collapsing "what do you think about AI?" into a single left-right slider, this tool asks 145 agree/disagree questions and scores your answers across eight genuinely independent dimensions, then finds which of 50 named viewpoints your combined position sits closest to.
 
