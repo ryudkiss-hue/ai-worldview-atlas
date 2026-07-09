@@ -157,8 +157,14 @@ While critics from both the accelerationist and precautionary extremes charge th
 `;
   }
 
-  // 2. Generate staged files
+  // 2. Generate staged files only if they do not exist
   profiles.forEach(profile => {
+    const filePath = path.join(STAGED_DIR, `${profile.id}.md`);
+    if (fs.existsSync(filePath)) {
+      console.log(`Staged file already exists: ${filePath} (skipping generation to preserve edits)`);
+      return;
+    }
+    
     let content = '';
     if (profile.id === 'doomer') {
       content = doomerManifesto;
@@ -170,7 +176,6 @@ While critics from both the accelerationist and precautionary extremes charge th
       content = generateSkeleton(profile);
     }
     
-    const filePath = path.join(STAGED_DIR, `${profile.id}.md`);
     fs.writeFileSync(filePath, content.trim() + '\n');
   });
 
