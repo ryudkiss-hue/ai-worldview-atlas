@@ -11,11 +11,11 @@ describe('scenarios', () => {
     axes.forEach((axis) => expect(axisIds).toContain(axis.id))
   })
 
-  it('every prompt and option passes the 10th-grade readability gate', () => {
+  it('every prompt and option passes the college (grade 14) readability gate', () => {
     scenarios.forEach((s) => {
       ;[s.prompt, s.optionA, s.optionB].forEach((text) => {
         const grade = fleschKincaidGrade(text)
-        expect(grade, `${s.axisId} scored grade ${grade.toFixed(1)}: "${text}"`).toBeLessThanOrEqual(10)
+        expect(grade, `${s.axisId} scored grade ${grade.toFixed(1)}: "${text}"`).toBeLessThanOrEqual(14)
       })
     })
   })

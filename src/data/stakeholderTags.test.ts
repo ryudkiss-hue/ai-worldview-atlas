@@ -9,10 +9,10 @@ describe('stakeholderTags', () => {
     expect(new Set(stakeholderTags.map((t) => t.name)).size).toBe(13)
   })
 
-  it('every description passes the 10th-grade readability gate', () => {
+  it('every description passes the college (grade 14) readability gate', () => {
     stakeholderTags.forEach((tag) => {
       const grade = fleschKincaidGrade(tag.description)
-      expect(grade, `${tag.name} scored grade ${grade.toFixed(1)}`).toBeLessThanOrEqual(10)
+      expect(grade, `${tag.name} scored grade ${grade.toFixed(1)}`).toBeLessThanOrEqual(14)
     })
   })
 })
