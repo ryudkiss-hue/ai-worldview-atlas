@@ -21,4 +21,6 @@ export const legalMoralQuestions: Question[] = [
   { id: 86, axisId: 'legalMoral', horizon: 'T2', agreeShiftsToward: 'B', statement: "Even a highly advanced AI capable of running an entire company should remain fully liable to, and controlled by, whichever humans hold its legal ownership. Its capability changes nothing about that arrangement." },
   { id: 87, axisId: 'legalMoral', horizon: 'T1', agreeShiftsToward: 'B', statement: "When a company's AI system gives a customer harmful advice, courts should hold the company fully liable because the AI itself cannot carry blame or responsibility." },
   { id: 88, axisId: 'legalMoral', horizon: 'T2', agreeShiftsToward: 'A', statement: "Suppose an advanced AI acts with real autonomy fifty years from now and causes serious harm on its own initiative. Treating it as having zero responsibility, purely because humans built it, will look like a real moral evasion by then." },
+  { id: 143, axisId: 'legalMoral', horizon: 'T1', agreeShiftsToward: 'B', statement: "Intellectual property laws should protect human creators from having their work scraped for training without permission, even if this slows down model development." },
 ]
+

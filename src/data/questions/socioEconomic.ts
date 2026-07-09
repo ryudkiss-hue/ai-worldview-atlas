@@ -19,4 +19,6 @@ export const socioEconomicQuestions: Question[] = [
   { id: 48, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'A', statement: "Over the coming decades, open access to AI will do more to prevent any single country or company from dominating the world. No regulator could ever accomplish as much." },
   { id: 49, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'B', statement: "In fifty years, computing power for advanced AI should be treated like a public utility, similar to electricity, with substantial government oversight of who gets access and how much. That protects the public interest better than a fully open market." },
   { id: 50, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'A', statement: "Openly available AI models may someday make it easier for a small group to design dangerous weapons. Even so, keeping AI development open remains the safer long-term choice than trusting a small group of regulators with sole control." },
+  { id: 145, axisId: 'socioEconomic', horizon: 'T1', agreeShiftsToward: 'A', statement: "Assistive AI tools should remain open and accessible, even if we require licenses for the largest computer systems." },
 ]
+

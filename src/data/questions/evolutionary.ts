@@ -19,4 +19,6 @@ export const evolutionaryQuestions: Question[] = [
   { id: 104, axisId: 'evolutionary', horizon: 'T2', agreeShiftsToward: 'B', statement: "It is wiser to slow down and carefully manage the shift to digital successors, through gradual upgrades and mixed human-AI systems. That beats letting replacement happen unchecked, or trying to ban it outright." },
   { id: 105, axisId: 'evolutionary', horizon: 'T2', agreeShiftsToward: 'A', statement: "Picture a future where humans exist only as historical curiosities, studied by their digital successors the way we study extinct ancestors. That would still be genuine progress, not a loss." },
   { id: 106, axisId: 'evolutionary', horizon: 'T2', agreeShiftsToward: 'B', statement: "Any transition to digital successors should require broad democratic consent from living humans, renewed every generation. It should not be treated as an inevitability no one gets to vote on." },
+  { id: 144, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'B', statement: "Labor unions should focus on wage and contract protections during automation, rather than trying to ban machine learning tools entirely." },
 ]
+

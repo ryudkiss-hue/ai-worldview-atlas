@@ -239,7 +239,7 @@ describe('ResultsPage', () => {
       </QuizProvider>,
     )
     expect(screen.getByText('No Strong View')).toBeInTheDocument()
-    expect(screen.getByText(/marked 2 of 142 questions/)).toBeInTheDocument()
+    expect(screen.getByText(/marked 2 of 145 questions/)).toBeInTheDocument()
     expect(screen.getByText(/mostly on Teleological/)).toBeInTheDocument()
   })
 
@@ -300,7 +300,7 @@ describe('ResultsPage', () => {
         </MemoryRouter>
       </QuizProvider>,
     )
-    // A lightly-answered quiz (6 of 142 questions) lands near Pragmatic Centrist, virtually
+    // A lightly-answered quiz (6 of 145 questions) lands near Pragmatic Centrist, virtually
     // never the extreme Cosmic Vitalist Mystic corner seeded as the prior result — so this
     // reliably exercises the "top match changed" branch without over-specifying classify()'s
     // exact output.
