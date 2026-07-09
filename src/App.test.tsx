@@ -15,7 +15,7 @@ describe('App end-to-end smoke test', () => {
         <App />
       </MemoryRouter>,
     )
-    expect(screen.getByText('TIAM-112 Diagnostic')).toBeInTheDocument()
+    expect(screen.getByText('The AI Worldview Atlas')).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Start' }))
     expect(screen.getByText('Teleological')).toBeInTheDocument()
   })

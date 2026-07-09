@@ -20,7 +20,7 @@ export function IntroPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 text-center">
-      <h1 className="text-3xl font-bold mb-4">TIAM-112 Diagnostic</h1>
+      <h1 className="text-3xl font-bold mb-4">The AI Worldview Atlas</h1>
       <p className="text-gray-700 mb-4">
         This is a 145-question survey about how you think AI development should go, both in the
         next few years and over the next fifty. It shows you where your views sit across eight

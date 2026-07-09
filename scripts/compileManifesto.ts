@@ -8,7 +8,7 @@ const MANIFESTO_DIR = 'docs/manifesto';
 const STAGED_DIR = 'docs/manifesto/staged';
 
 function run() {
-  console.log('Starting TIAM-112 Manifesto Generation...');
+  console.log('Starting AI Worldview Atlas Manifesto Generation...');
 
   // 1. Create directories
   if (!fs.existsSync(STAGED_DIR)) {
@@ -180,7 +180,7 @@ While critics from both the accelerationist and precautionary extremes charge th
   });
 
   // 3. Concatenate reports by cluster order
-  let compiledMarkdown = `% The TIAM-112 Worldview Manifesto
+  let compiledMarkdown = `% The AI Worldview Atlas: Worldview Manifesto
 % 50 Worldview Archetypes of Advanced AI Development
 % Generated on ${new Date().toISOString().split('T')[0]}
 
@@ -211,7 +211,7 @@ This manifesto presents a comprehensive catalog of the 50 worldview archetypes t
   // 4. Pandoc compilation
   const htmlPath = path.join(MANIFESTO_DIR, 'tiam_112_manifesto.html');
   try {
-    execSync(`pandoc "${compiledMdPath}" -o "${htmlPath}" --standalone --metadata title="TIAM-112 Worldview Manifesto"`);
+    execSync(`pandoc "${compiledMdPath}" -o "${htmlPath}" --standalone --metadata title="The AI Worldview Atlas: Worldview Manifesto"`);
     console.log(`Successfully compiled standalone HTML: ${htmlPath}`);
   } catch (err: any) {
     console.error('HTML compilation failed:', err.message);

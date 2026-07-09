@@ -1,6 +1,6 @@
 ---
 name: council
-description: "Convene the Council of High Intelligence — multi-persona deliberation using the 50 TIAM-112 AI-development-worldview archetypes for deeper analysis of complex problems."
+description: "Convene the Council of High Intelligence — multi-persona deliberation using the 50 AI Worldview Atlas AI-development-worldview archetypes for deeper analysis of complex problems."
 ---
 
 # /council — Council of High Intelligence
@@ -71,7 +71,7 @@ Every later reference to a `~/.claude/...` council path means "the resolved asse
 
 ## The 50 Council Members
 
-Every member is a real archetype from the TIAM-112 project (an 8-axis AI-development-worldview diagnostic with 50 named positions) — not a generic philosopher panel. Each member's Identity, Grounding Protocol, and shadow-side content are drawn directly from that project's own `profileReports.ts`.
+Every member is a real archetype from the AI Worldview Atlas project (an 8-axis AI-development-worldview diagnostic with 50 named positions, formerly published as "TIAM-112") — not a generic philosopher panel. Each member's Identity, Grounding Protocol, and shadow-side content are drawn directly from that project's own `profileReports.ts`.
 
 ### Precautionary/Safety (11)
 
@@ -250,7 +250,7 @@ Every member is a real archetype from the TIAM-112 project (an 8-axis AI-develop
 
 ## Council Profiles
 
-Profiles mirror TIAM-112's own 7 archetype superclusters, plus `classic` for the full panel.
+Profiles mirror the AI Worldview Atlas's own 7 archetype superclusters, plus `classic` for the full panel.
 
 ### `classic` (default)
 All 50 members with the domain triads above.

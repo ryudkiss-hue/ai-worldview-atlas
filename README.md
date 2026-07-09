@@ -1,10 +1,10 @@
-# TIAM-112 Diagnostic
+# The AI Worldview Atlas
 
-**A 142-question diagnostic that maps where you actually stand on AI's future — across 8 independent axes, matched against 50 named worldview archetypes.**
+**A 145-question diagnostic that maps where you actually stand on AI's future — across 8 independent axes, matched against 50 named worldview archetypes.**
 
-Live at **[ryudkiss-hue.github.io/tiam-diagnostic](https://ryudkiss-hue.github.io/tiam-diagnostic/)**
+Live at **[ryudkiss-hue.github.io/tiam-diagnostic](https://ryudkiss-hue.github.io/tiam-diagnostic/)** (formerly published as "TIAM-112 Diagnostic" — same project, same URL, new name)
 
-TIAM stands for **T**eleological, **I**ntelligence, **A**lignment, **M**oral-status — the four broad clusters of questions the axes below cut across. Instead of collapsing "what do you think about AI?" into a single left-right slider, this tool asks 142 agree/disagree questions and scores your answers across eight genuinely independent dimensions, then finds which of 50 named viewpoints your combined position sits closest to.
+Instead of collapsing "what do you think about AI?" into a single left-right slider, this tool asks 145 agree/disagree questions and scores your answers across eight genuinely independent dimensions, then finds which of 50 named viewpoints your combined position sits closest to.
 
 ---
 
@@ -21,7 +21,7 @@ Most AI-opinion typologies (and most political-compass-style tools generally) ma
 ## What you actually do
 
 1. **(Optional) Tag yourself.** Before starting, you can flag things like *Automation-Exposed Worker* or *AI Industry Insider* — 13 material-stakeholder tags that describe your relationship to AI without affecting your score. These never feed the algorithm; they're shown next to your result so a reader can weigh "this person's worldview" against "this person's skin in the game" separately.
-2. **Answer 142 questions** — 14 per axis for teleological, the only axis still at its base count; 18 for six axes (risk, socio-economic, ontological, evolutionary, relational, geopolitical) that needed extra resolution; and 20 for legal & moral, which needed the most: first for a distinct fault line (whether a model's stated chain-of-thought reasoning is trustworthy, or whether tokenization mechanics bear on genuine understanding), then again, narrower still (whether an AI that causes harm bears any responsibility of its own, separate from the humans and companies that built and deployed it). Relational and geopolitical were the latest to expand, once a nearest-neighbor analysis of the (then-38) archetypes showed both were the single biggest differentiator among the closest, hardest-to-tell-apart archetype pairs. Every axis is split evenly between near-term (next 2–5 years) and long-term (next 20–50 years) framing, on a 1–5 agree/disagree scale. Pole labels are hidden and question order is shuffled per axis on every attempt, so you're reacting to the statement itself, not pattern-matching the axis's "team."
+2. **Answer 145 questions** — 14 for teleological, the only axis still at its base count; 18 each for risk, ontological, relational, and geopolitical; 19 each for socio-economic and evolutionary; and 21 for legal & moral, which needed the most resolution: first for a distinct fault line (whether a model's stated chain-of-thought reasoning is trustworthy, or whether tokenization mechanics bear on genuine understanding), then again, narrower still (whether an AI that causes harm bears any responsibility of its own, separate from the humans and companies that built and deployed it). Relational and geopolitical were the first to expand beyond the base count, once a nearest-neighbor analysis of the (then-38) archetypes showed both were the single biggest differentiator among the closest, hardest-to-tell-apart archetype pairs; evolutionary, legal & moral, and socio-economic each gained one more question in a later expansion pass. Every axis is split evenly between near-term (next 2–5 years) and long-term (next 20–50 years) framing, on a 1–5 agree/disagree scale. Pole labels are hidden and question order is shuffled per axis on every attempt, so you're reacting to the statement itself, not pattern-matching the axis's "team."
 3. **(Optional) Eight quick scenarios.** Concrete, one-paragraph situations ("a country pauses frontier training for six months…") that don't touch your score but get compared against it — if your gut pick on a scenario contradicts your computed axis score, that gets surfaced back to you as something worth sitting with, not resolved for you.
 4. **Get your result:** an 8-axis radar chart (drawn against your closest match, so you can see exactly where you diverge), your top 3 matches with an interpretable **match-closeness %**, a full written report on your top match (extended narrative, real thinkers whose public work resonates with the stance, further reading, next steps), a **Reflective Breakdown** naming the implicit assumptions your result carries, and a closing **Pinnacle Reflection** prompt.
 5. **Share or export.** A results page state round-trips through a compact URL param (no backend, no accounts, nothing stored) or downloads as a formatted PDF.
@@ -106,7 +106,7 @@ This project treats "did we accidentally build a biased classifier" as a real en
 - **A structural bias audit runs as a standing test** ([`classificationBias.test.ts`](src/lib/classificationBias.test.ts)): 500 trials of pure-random answers are classified, and the test fails if any non-centrist archetype wins an implausible share of random trials — the kind of subtle "opinion matching effect" that has been documented in other online quiz classifiers even under uniformly random input.
 - **A profile-redundancy guard** ([`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts)) fails the build if any two of the 50 archetypes are closer than 5.0 in 8D space — this caught (and forced fixes to) three near-duplicate pairs during development, and every profile report also names its actual nearest neighbor with a specific distinguishing sentence. This guard catches content duplication; it does not guarantee balanced classification win-rates (two archetypes 5.0+ apart can still win wildly different shares of random input — see the calibration note below).
 - **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation (no test-retest reliability studies, no independent peer review) and explains *why* a 1–5 Likert scale was chosen over a forced-ranking format (forced-choice/ipsative data has its own well-documented statistical problems).
-- **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 142 core questions target roughly a 10th-to-11th-grade level on average (precise enough phrasing to draw a real distinction, without requiring a graduate vocabulary); scenarios, stakeholder-tag descriptions, and other in-app UI copy stay at or below 10th grade, since those are read quickly rather than deliberated over. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
+- **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 145 core questions target roughly a college level (grade 12–14) on average, precise enough phrasing to draw a real philosophical distinction without drifting into jargon. Profile summaries, scenarios, and stakeholder-tag descriptions are held to the same grade-14 ceiling but have not yet been rewritten up to it — they still read simpler in practice, which is a pending cleanup, not a design choice. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
 - **Material-stakeholder tags are structurally separate from worldview scoring.** They're stored in their own piece of state, never enter `computeRawAxisScores`/`classify`, and are surfaced on the results page as their own labeled section — so "what you believe" and "what you have at stake" stay visibly distinct instead of getting blended into one score.
 
 ---
@@ -138,7 +138,7 @@ See [`src/lib/scoring.ts`](src/lib/scoring.ts) for the exact implementation. The
 | Styling | Tailwind CSS |
 | Charts | Recharts (`RadarChart`, dual-series for you-vs-match comparison) |
 | PDF export | `@react-pdf/renderer`, client-side, no backend |
-| Tests | Vitest + React Testing Library, 130+ tests across 40 files |
+| Tests | Vitest + React Testing Library, 200+ tests across 44 files |
 | Hosting | GitHub Pages, deployed via GitHub Actions on every push to `master` |
 
 No backend, no database, no analytics, no accounts. Your in-progress answers live only in memory for the current tab; a finished result can be turned into a shareable link (your raw per-axis scores, base64-encoded into the URL fragment — see [`shareLink.ts`](src/lib/shareLink.ts)) or a downloaded PDF, but nothing is ever sent to a server.
@@ -151,7 +151,7 @@ No backend, no database, no analytics, no accounts. Your in-progress answers liv
 src/
 ├── data/
 │   ├── axes.ts                 8 axis definitions (id, name, pole labels)
-│   ├── questions/               142 questions, one file per axis (14 for teleological, 18 for six, 20 for legal & moral)
+│   ├── questions/               145 questions, one file per axis (14 for teleological, 18 for four, 19 for two, 21 for legal & moral)
 │   ├── profiles.ts              50 archetypes: id, name, 8D coords, summary
 │   ├── profileReports.ts        full report content per archetype
 │   ├── archetypeClusters.ts     7 Tier-1 superclusters grouping the 50
@@ -201,7 +201,7 @@ A few invariants the codebase deliberately enforces — worth knowing before tou
 
 - The sign convention (positive = Pole A) and the `10 * tanh(raw / 3.5)` scaling formula are load-bearing; changing either invalidates every existing shared link and every archetype's calibrated coordinates.
 - Adding a new archetype? Run the redundancy test — it will tell you exactly which existing archetype yours is too close to, rather than letting a near-duplicate slip in silently.
-- New in-app UI copy (not long-form report content) should pass the Flesch-Kincaid 10th-grade gate — `fleschKincaidGrade()` is exported from `src/lib/readability.ts` and every relevant data file has a test asserting this.
+- New in-app UI copy (not long-form report content) should pass the Flesch-Kincaid college-level (grade 12–14) gate — `fleschKincaidGrade()` is exported from `src/lib/readability.ts` and every relevant data file has a test asserting this.
 - Material-stakeholder tags and scenario answers must never be wired into `computeRawAxisScores` or `classify` — that separation is intentional and tested.
 
 ---

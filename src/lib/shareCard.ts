@@ -50,7 +50,7 @@ export function drawShareCard(ctx: CanvasRenderingContext2D, data: ShareCardData
 
   ctx.fillStyle = '#60a5fa'
   ctx.font = '600 26px system-ui, sans-serif'
-  ctx.fillText('TIAM-112 DIAGNOSTIC', 60, 76)
+  ctx.fillText('THE AI WORLDVIEW ATLAS', 60, 76)
 
   ctx.fillStyle = '#ffffff'
   ctx.font = '700 52px system-ui, sans-serif'

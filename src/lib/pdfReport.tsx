@@ -27,7 +27,7 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
   return (
     <Document>
       <Page style={styles.page}>
-        <Text style={styles.title}>Your TIAM-112 Report</Text>
+        <Text style={styles.title}>Your AI Worldview Atlas Report</Text>
         <Text style={styles.paragraph}>Closest match: {top.profile.name}</Text>
       </Page>
 
