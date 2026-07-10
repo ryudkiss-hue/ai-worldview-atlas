@@ -68,6 +68,21 @@ Finally, we ground ourselves in the history of successful technology regulation:
 
 ## 3. 8-Axis Coordinate Mapping
 
+```
+       [Coordinate Profile: NORMAL-TECHNOLOGY GRADUALIST]
+
+Teleological (Anthropocentric)  [-4] =======*============= [Cosmic Vitalism]
+Risk Profile (Precautionary)    [-3] ========*============ [Stagnation-Averse]
+Socio-Economic (Regulatory)     [-3] ========*============ [Open-Source]
+Ontological (Substrate-Except.) [-3] ========*============ [Functionalist]
+Legal & Moral (Instrumental)    [-5] ======*============== [Patienthood]
+Evolutionary (Biocentered)      [-2] =========*=========== [Post-Humanist]
+Relational (Biocentered)        [-1] =========*=========== [Pluralist]
+Geopolitical (Coordinated)       [0] ==========*========== [Nationalist]
+```
+
+Our profile is deliberately compressed into the moderate band on every axis — no coordinate beyond ±5 — because our foundational claim is precisely that AI does not warrant extreme positions on any dimension. Where other archetypes' profiles are defined by a single spike, ours is defined by its flatness, and we regard that flatness as the empirically correct posture toward a technology whose observed behavior so far matches the historical diffusion pattern of its general-purpose predecessors.
+
 In this section, we present and defend the coordinate mapping that defines our position across the eight structural axes of contemporary AI worldview analysis.
 
 *   **Teleological Axis: -4 (Mild Anthropocentrism / Pragmatic Telos)**
@@ -167,7 +182,21 @@ At the national scale, we advocate for the adaptation of existing federal agenci
 4.  **The Computational Incident Review Board (CIRB)**: We call for the creation of an independent, non-regulatory federal agency modeled on the National Transportation Safety Board (NTSB). The CIRB will be staffed by computer scientists, systems engineers, and domain experts, and charged with investigating significant algorithmic failures, systemic model biases, and high-impact software incidents (such as autonomous vehicle crashes, medical diagnostic failures, or flash crashes in financial markets). The CIRB will have no enforcement or licensing authority; its sole mandate will be to conduct rigorous, post-hoc technical investigations, determine root causes, and publish public reports with safety recommendations for both industry and sectoral regulators. By separating investigation from enforcement, we ensure that the CIRB can compile an objective, evidence-based record of actual failure modes, providing the empirical foundation needed for adaptive, sector-specific rulemaking without creating a preemptive licensing gate that stifles innovation.
 
 ### Global Scale: Technical Interoperability and International Standards
-At the global scale, we reject global treaties in favor of technical coordination and standard harmonization:
+At the global scale, we reject global treaties in favor of technical coordination and standard harmonization. Our preference here has a precise game-theoretic rationale that distinguishes it from mere modesty. International AI standard-setting is not a Prisoner's Dilemma, where each party's dominant strategy is defection and binding enforcement is therefore indispensable; it is a *pure coordination game* with multiple equilibria, structurally identical to the games that produced driving-side conventions, containerized shipping dimensions, and internet protocols. Consider two jurisdictions choosing between candidate certification standards A and B:
+
+```
+                           JURISDICTION 2
+                    Standard A       Standard B
+              +----------------+----------------+
+  Standard A  |    3 , 3       |    1 , 1       |
+JURISDICTION 1|  (harmonized)  |  (fragmented)  |
+              +----------------+----------------+
+  Standard B  |    1 , 1       |    3 , 3       |
+              |  (fragmented)  |  (harmonized)  |
+              +----------------+----------------+
+```
+
+Both (A, A) and (B, B) are Nash equilibria; neither party gains by unilaterally deviating from a matched standard, and both strictly prefer *any* matched outcome to mismatch. Games with this payoff structure do not require treaties, enforcement bodies, or sanctions — they require only a *focal point*, in Thomas Schelling's sense (*The Strategy of Conflict*, 1960): a salient candidate that each party expects the other to expect. This is exactly the function that technical standards bodies like ISO/IEC and IEEE have performed for a century — not enforcing cooperation, but supplying the focal points around which self-enforcing coordination crystallizes. The grand-treaty advocates, in our analysis, have misdiagnosed the game: they propose Prisoner's Dilemma machinery (verification, sanctions, supranational enforcement) for a coordination problem that history shows solves itself far more cheaply once a credible focal standard exists. That misdiagnosis is not merely wasteful; it delays harmonization by making the focal-point supply contingent on treaty negotiations that coordination games never actually required. Our program:
 1.  **Harmonized Certification Standards**: Cooperation between allied trade partners (e.g., US, EU, Japan) to align technical safety standards and certification criteria for high-risk software products (such as autonomous vehicles or medical devices), reducing trade friction and ensuring consistent safety baselines.
 2.  **International Algorithmic Safety Standards**: Support for technical standardization organizations (such as ISO/IEC and IEEE) to develop and update standards for AI data quality, software robustness, and risk management, providing a common technical vocabulary for regulators worldwide.
 3.  **Multilateral Coordination on Cyber-Incident Reporting**: Agreements between allied national security and cybersecurity agencies to share information on automated cyber-attacks, vulnerability exploits, and systemic software vulnerabilities, improving collective resilience against digital threats.
