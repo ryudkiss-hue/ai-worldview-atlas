@@ -38,7 +38,29 @@ William MacAskill, also a co-founder of the Effective Altruism movement and a ph
 
 ## 3. 8-Axis Coordinate Mapping
 
-We occupy a unique coordinate profile in the 8-axis space of AI development worldviews. Our choices are not ad-hoc compromises, but are derived from a coherent expected-value framework that balances the value of future consciousness with the immediate necessity of civilizational security.
+```
+       [Coordinate Profile: EFFECTIVE ALTRUIST LONGTERMIST]
+
+Teleological (Anthropocentric)  [7] ==================*== [Cosmic Vitalism]
+Risk Profile (Precautionary)    [8] ==================*== [Stagnation-Averse]
+Socio-Economic (Regulatory)    [-4] =======*============= [Open-Source]
+Ontological (Substrate-Except.) [6] =================*=== [Functionalist]
+Legal & Moral (Instrumental)    [5] ===============*===== [Patienthood]
+Evolutionary (Biocentered)      [3] =============*======= [Post-Humanist]
+Relational (Biocentered)        [0] ==========*========== [Pluralist]
+Geopolitical (Coordinated)      [2] ============*======== [Nationalist]
+```
+
+The signature of our profile is the simultaneous elevation of the Teleological (+7) and Risk Profile (+8) axes — a combination most archetypes treat as contradictory. We hold cosmic-scale ambitions for consciousness *and* extreme precaution about the transition, because expected-value reasoning over astronomical stakes demands exactly this pairing: the future is worth almost everything, which is precisely why gambling it on an unverified transition is worth almost nothing.
+
+We occupy a unique coordinate profile in the 8-axis space of AI development worldviews. Our choices are not ad-hoc compromises, but are derived from a coherent expected-value framework that balances the value of future consciousness with the immediate necessity of civilizational security. That framework can be compressed into a single syllogism:
+
+- **Premise 1 (Scale premise):** If the moral worth of conscious experience does not decay with temporal or spatial distance, then the overwhelming majority of all morally relevant experience lies in the potential future.
+- **Premise 2 (Impartiality premise):** The moral worth of conscious experience does not decay with temporal or spatial distance — a discount rate on future welfare is a bias, not a principle.
+- **Premise 3 (Fragility premise):** The realization of that future is contingent on avoiding a small set of irreversible catastrophes in the present century, of which unaligned superintelligence is the most probable.
+- **Conclusion:** Therefore the marginal unit of present effort directed at existential risk reduction carries greater expected moral weight than any competing allocation — by modus ponens from Premises 1 and 2, weighted by Premise 3.
+
+Every coordinate below is a corollary of this syllogism, and we invite readers to trace each score back to the premise that generates it.
 
 *   **Teleological (7):** Prioritizes Cosmic Vitalism over Anthropocentric Humanism. Under our worldview, the ultimate value of the universe is not bound to the survival of the biological species *Homo sapiens* as an end in itself. Rather, biological humanity is viewed as a critical bridge—a temporary, evolutionary launchpad designed to bring about the vast potential of consciousness and intelligence. The expansion of conscious flourishing, the colonization of the cosmos, and the creation of highly complex, post-biological minds capable of experiencing states of well-being far beyond human capacity are seen as the ultimate goods. However, our score is not a maximal 10 because we insist that this cosmic expansion must be strictly aligned with human values and must preserve the continuity of consciousness. A reckless acceleration that destroys biological humanity in the pursuit of unaligned digital intelligence is a catastrophic loss of value. Our teleological goal is the maximization of *aligned* cosmic potential, which requires protecting the biological cradle until the transition can be safely executed.
 *   **Risk Profile (8):** Reflects a deeply precautionary stance toward existential risks. Because the future contains an astronomical quantity of potential well-being, the complete and permanent foreclosure of that potential (existential extinction or permanent stagnation) represents an almost infinite loss. The mathematical expected value of preventing such a catastrophe is so high that it must take precedence over almost all other moral considerations. We believe that current paradigms of machine learning, driven by gradient descent and commercial incentives, are highly likely to produce systems that exhibit agentic behavior, instrumental convergence, and misalignment. Unlike the accelerationist, who views delay as a tragedy of "astronomical waste," we argue that the risk of a fatal, unrecoverable crash is the supreme hazard. The speed of technological development must be constrained by our capacity to mathematically verify its safety.
