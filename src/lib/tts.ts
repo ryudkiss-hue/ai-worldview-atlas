@@ -10,7 +10,7 @@ export interface TTSSettings {
 
 export const DEFAULT_TTS_SETTINGS: TTSSettings = {
   apiKey: '',
-  voiceId: 'z9fAnlkpzviPZ1470tqW', // Glinda: warm, cheery, sweet, and light American female voice
+  voiceId: 'naGqKMAolPCi1s94J9jk', // Charlotte: warm, cheery, sweet, and light American female voice
   stability: 0.55,
   similarityBoost: 0.75,
   enabled: false,

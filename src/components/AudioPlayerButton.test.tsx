@@ -45,7 +45,7 @@ describe('AudioPlayerButton', () => {
       'elevenlabs_settings',
       JSON.stringify({
         apiKey: 'fake-api-key',
-        voiceId: 'z9fAnlkpzviPZ1470tqW',
+        voiceId: 'naGqKMAolPCi1s94J9jk',
         stability: 0.5,
         similarityBoost: 0.75,
         enabled: true,
@@ -72,7 +72,7 @@ describe('AudioPlayerButton', () => {
     await waitFor(() => {
       expect(fetchSpy).toHaveBeenCalledWith('Simple statement to read', expect.objectContaining({
         apiKey: 'fake-api-key',
-        voiceId: 'z9fAnlkpzviPZ1470tqW',
+        voiceId: 'naGqKMAolPCi1s94J9jk',
       }))
     })
 
