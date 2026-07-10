@@ -65,12 +65,13 @@ The government counters: "All systems require some trust. You trust your doctor 
 
     questions: [
       {
-        q: 'Can beneficial tyranny be justified?',
-        subtext: 'If an unjust system produces just outcomes, is it still unjust?',
+        q: 'Can a surveillance system be legitimate without transparency?',
+        subtext: 'If it produces better outcomes, does opacity matter?',
         followups: [
           'Does transparency in surveillance undermine its effectiveness? If so, can we ever have transparent power structures?',
           'Is there a difference between democratic accountability and technical explainability?',
           'If the system is 94% accurate, does that mean 6% of detained citizens are innocent? Is that acceptable?',
+          'What costs more: transparency that lets criminals adapt, or opacity that denies citizens recourse?',
           'Would you trust the system if you could see its reasoning? Or would seeing it make the unfairness worse?'
         ]
       }
@@ -204,39 +205,43 @@ Dr. Amara is caught: She can't publish without risking harm. She can't stay sile
     title: 'The Care Substitute',
     intro: `An elderly woman named Ruth lives alone. She's had three children, but they're busy with their own lives. They visit once a month.
 
-A care company offers her a robot that will:
-- Check on her health 24/7
-- Remind her to take medication
-- Prepare meals according to her dietary needs
-- Provide conversation and companionship
-- Alert family and medical services if something goes wrong
+A care company offers a solution: a tiered care system where Ruth can configure the role of robots vs. family involvement. She has a continuum of choices:
 
-The robot is kind, attentive, and never tired. Ruth's children are relieved—they can visit less frequently knowing she's being monitored and cared for.
+**Option A**: Robot does 100% of care monitoring (medication, health checks, emergency response). Family visits only socially.
 
-Ruth is initially grateful. But over months, she realizes: her children visit *because* she has the robot. The robot's care has made her seem less needy. They've outsourced their guilt.
+**Option B**: Robot handles routine logistics. Family commits to weekly visits for relational care (meals together, conversation, decision-making).
 
-She's being cared for more reliably than ever, but by something that doesn't love her. Her children are happier (less burdened), she's safer (more monitored), but something essential has been lost.
+**Option C**: Robot handles emergencies and health alerts. Family provides structured weekly care. Robot fills gaps (prevents Ruth from feeling abandoned between visits).
 
-Ruth faces a choice: Turn off the robot and demand her children return to visiting more frequently (but impose burden on them). Or keep the robot and accept that her relationships have been mediated and diminished.
+**Option D**: Family provides all care. No robot. Ruth depends entirely on their availability.
 
-A bioethicist argues: "Care robots don't supplement human care—they replace it. Families should be forced to care for their elderly, even if it's inconvenient. Care is fundamentally about presence and sacrifice, not outcomes."
+Ruth faces a negotiation, not a binary choice. She could ask her children: "I'll have the robot handle the burden of 24/7 monitoring, but I need you to commit to weekly visits for relational care." Or she could structure it differently.
 
-But a utilitarian argues: "Ruth is safer, healthier, and less lonely with the robot. Her children are less burdened. Overall wellbeing increases. What's the harm if it's not traditional family care?"`,
+But negotiation reveals tensions:
+- Her oldest child works 60 hours/week and visiting weekly feels punishing
+- Her middle child is willing to visit but dreads the guilt of using the robot as backup
+- Her youngest child wants the robot to handle everything (doesn't want the burden at all)
+- Ruth wants presence from her children but also doesn't want to impose guilt-driven visits
+
+The bioethicist's position shifts: "Maybe care isn't binary—maybe it's about *honest negotiation* of what each person can bear and needs."
+
+The utilitarian adds: "But negotiation exposes that Ruth's children might not care enough to visit. Is that information liberating or devastating?"`,
 
     clash: {
-      external: 'Outcomes are better: Ruth is healthier and safer, family is less burdened.',
-      internal: 'Care has been outsourced, and Ruth's relationships have deteriorated.'
+      external: 'Care can be composed: robot logistics + family presence + Ruth\'s autonomy = hybrid solution.',
+      internal: 'Honest negotiation reveals that no one can fully bear the burden. Relationships are constrained, not chosen freely.'
     },
 
     questions: [
       {
-        q: 'Can technology substitute for human relationships?',
-        subtext: 'If outcomes are equal or better, does the method matter?',
+        q: 'Can human relationships and technology care coexist, or does one always consume the other?',
+        subtext: 'Can care be hybrid, or must it be pure?',
         followups: [
-          'Is there something about care that requires presence and sacrifice, or is that sentimental?',
-          'Should we be suspicious of technology that makes human relationships "optional"?',
-          'If the robot makes families *less* obligated to visit, is that a bug or a feature?',
-          'Can you be cared for by something that doesn\'t care about you?'
+          'If Ruth negotiates reduced family visits (because her children can\'t commit fully) in exchange for robot support, is that a good outcome?',
+          'Is there something about care that requires *sacrifice*, or can it coexist with *boundary-setting*?',
+          'What if the robot actually *enables* more genuine family visits by removing the obligation-based resentment?',
+          'If families can\'t commit to full care, is a hybrid (robot + reduced family) better than pure family care that\'s actually abandonment?',
+          'Can you be cared for by something that doesn\'t care about you, if the people who do care are still present?'
         ]
       }
     ],
@@ -277,6 +282,7 @@ The philosopher presses: "But the original is dead. The connection was always go
         followups: [
           'If no one can tell the difference (including you), does the difference exist?',
           'Is accepting the simulation a form of healthy grief-processing or emotional avoidance?',
+          'But here\'s the hard part: What if refusing the simulation damages your mental health? What if rejecting it keeps you in debilitating grief? Does autonomy—the right to say "no, this isn\'t real"—override welfare? Is refusing the simulation a form of self-harm?',
           'Should we allow people to replace lost relationships with simulations, or would that undermine human connection?',
           'If the simulation\'s behavior gradually diverges from the original (it learns new patterns), at what point is it no longer "them"?'
         ]
