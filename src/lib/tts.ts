@@ -56,6 +56,15 @@ export async function clearPersistentTTSCache(): Promise<boolean> {
   return false
 }
 
+const PRE_GENERATED_STD_AUDIO = new Set([
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+  31, 32, 33, 34, 35, 36
+])
+
+const PRE_GENERATED_SIMP_AUDIO = new Set<number>([])
+
 export async function fetchElevenLabsTTS(
   text: string,
   settings: TTSSettings,
@@ -64,19 +73,15 @@ export async function fetchElevenLabsTTS(
 ): Promise<string> {
   // 1. Try local pre-generated file first (if questionId is provided)
   if (questionId !== undefined) {
-    const base = import.meta.env.BASE_URL || '/'
-    const typeStr = isSimplified ? 'simp' : 'std'
-    // Normalize path slashes
-    const basePathNormalized = base.endsWith('/') ? base : `${base}/`
-    const localPath = `${basePathNormalized}audio/q_${questionId}_${typeStr}.mp3`
-    
-    try {
-      const checkRes = await fetch(localPath, { method: 'HEAD' })
-      if (checkRes.ok) {
-        return localPath // Success, use pre-generated file!
-      }
-    } catch (e) {
-      // Fallback
+    const isPreGenerated = isSimplified
+      ? PRE_GENERATED_SIMP_AUDIO.has(questionId)
+      : PRE_GENERATED_STD_AUDIO.has(questionId)
+
+    if (isPreGenerated) {
+      const base = import.meta.env.BASE_URL || '/'
+      const typeStr = isSimplified ? 'simp' : 'std'
+      const basePathNormalized = base.endsWith('/') ? base : `${base}/`
+      return `${basePathNormalized}audio/q_${questionId}_${typeStr}.mp3`
     }
   }
 

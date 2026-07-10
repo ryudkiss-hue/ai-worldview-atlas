@@ -21,7 +21,7 @@ describe('AudioPlayerButton', () => {
   it('renders the speaker button by default', () => {
     render(
       <QuizProvider>
-        <AudioPlayerButton text="Test statement text" questionId={1} />
+        <AudioPlayerButton text="Test statement text" questionId={100} />
       </QuizProvider>
     )
     expect(screen.getByRole('button', { name: 'Read question aloud' })).toBeInTheDocument()
@@ -30,7 +30,7 @@ describe('AudioPlayerButton', () => {
   it('shows an error state if clicked without an API key', async () => {
     render(
       <QuizProvider>
-        <AudioPlayerButton text="Test statement text" questionId={1} />
+        <AudioPlayerButton text="Test statement text" questionId={100} />
       </QuizProvider>
     )
     const button = screen.getByRole('button', { name: 'Read question aloud' })
@@ -65,7 +65,7 @@ describe('AudioPlayerButton', () => {
 
     render(
       <QuizProvider>
-        <AudioPlayerButton text="Simple statement to read" questionId={1} />
+        <AudioPlayerButton text="Simple statement to read" questionId={100} />
       </QuizProvider>
     )
 
@@ -79,7 +79,7 @@ describe('AudioPlayerButton', () => {
           apiKey: 'fake-api-key',
           voiceId: 'naGqKMAolPCi1s94J9jk',
         }),
-        1,
+        100,
         false
       )
     })
