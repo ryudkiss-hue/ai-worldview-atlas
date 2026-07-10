@@ -31,6 +31,7 @@ What the company *doesn't* say, but Elena understands: her work will be devalued
         followups: [
           "Do creators have property rights over their style, or only over specific works?",
           "If Elena consented to the AI being trained on her work, would that resolve the moral wrong? Or would it still feel like violation?",
+          "The company claims this is 'just learning at scale.' But does scale change the moral calculus? If a human artist studied Elena intensively vs. an AI learning from 50,000 images—is the learning functionally identical, or does scale/intent matter morally?",
           "What if the AI's Elena-style output is actually better than Elena's own new work? Has the AI improved upon her contribution?",
           "If an AI can learn your voice, your mannerisms, your way of thinking, have they created a kind of digital twin of you? Do you have moral status in that twin, even if you didn't consent?"
         ]

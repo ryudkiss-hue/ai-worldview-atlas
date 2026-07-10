@@ -95,6 +95,7 @@ But here's the catch: the drug will make his current self suffer. For the first 
         followups: [
           "If the machine shows you a future where you deeply regret your current choices, does that future regret become real in the present—something you should avoid now?",
           "Is the drug that aligns you with future-you a gift (sparing you regret) or a violation (overriding your current autonomy)?",
+          "Does improvement matter morally? If the drug will make your future life objectively better (more flourishing, less suffering), does that justify the override of your present autonomy? Or does autonomy trump even clear improvement?",
           "If the machine shows you that your future self will want something immoral—that you'll become prejudiced, or cruel, or exploitative—do you have a duty to prevent that future self from existing?",
           "If an AI can predict that your values are incoherent or self-undermining, should it try to 'correct' you toward coherence? Or would that be a form of epistemic colonization?"
         ]
