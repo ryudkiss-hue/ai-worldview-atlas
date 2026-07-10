@@ -26,6 +26,8 @@ import { ReportPreview } from '../components/ReportPreview'
 import { MethodologySection } from '../components/MethodologySection'
 import { ReflectiveBreakdown } from '../components/ReflectiveBreakdown'
 import { PinnacleReflection } from '../components/PinnacleReflection'
+import { manifestoContents } from '../data/manifestoContents'
+import { MarkdownRenderer } from '../components/MarkdownRenderer'
 
 export function ResultsPage() {
   const navigate = useNavigate()
@@ -60,8 +62,23 @@ export function ResultsPage() {
   const matches = classify(combined, profiles)
   const topMatches = matches.slice(0, 3)
   const topMatch = topMatches[0]
-  const topContent = profileReports[topMatch.profile.id]
   const closeCall = isCloseCall(matches)
+
+  const [inspectedProfileId, setInspectedProfileId] = useState<string>(topMatch.profile.id)
+  const [activeTab, setActiveTab] = useState<'summary' | 'manifesto'>('summary')
+
+  // Keep state updated if topMatch changes
+  useEffect(() => {
+    setInspectedProfileId(topMatch.profile.id)
+  }, [topMatch.profile.id])
+
+  const inspectedMatch = useMemo(() => {
+    return topMatches.find((m) => m.profile.id === inspectedProfileId) || topMatch
+  }, [topMatches, inspectedProfileId, topMatch])
+
+  const inspectedContent = useMemo(() => {
+    return profileReports[inspectedMatch.profile.id]
+  }, [inspectedMatch.profile.id])
 
   useEffect(() => {
     if (decoded || hasNoData || savedHistoryRef.current) return
@@ -327,8 +344,64 @@ export function ResultsPage() {
         </table>
       </div>
 
-      <ReportPreview content={topContent} />
-      <ReflectiveBreakdown content={topContent} scenarioAnswers={scenarioAnswers} combined={combined} />
+      <div className="border-t border-gray-200 mt-12 pt-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">View Report & Manifesto</h3>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {topMatches.map((match) => (
+            <button
+              key={match.profile.id}
+              type="button"
+              onClick={() => setInspectedProfileId(match.profile.id)}
+              className={`px-4 py-2 rounded-full border text-sm font-semibold transition ${
+                inspectedProfileId === match.profile.id
+                  ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-100'
+                  : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              {match.profile.name} ({matchCloseness(match.distance)}%)
+            </button>
+          ))}
+        </div>
+
+        {/* Tab buttons */}
+        <div className="flex border-b border-gray-200 mb-6">
+          <button
+            type="button"
+            onClick={() => setActiveTab('summary')}
+            className={`py-3 px-6 font-semibold border-b-2 transition ${
+              activeTab === 'summary'
+                ? 'border-blue-600 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            Summary Report
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('manifesto')}
+            className={`py-3 px-6 font-semibold border-b-2 transition ${
+              activeTab === 'manifesto'
+                ? 'border-blue-600 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+            }`}
+          >
+            Full Worldview Manifesto
+          </button>
+        </div>
+
+        {/* Tab content */}
+        {activeTab === 'summary' ? (
+          <div className="space-y-8 animate-fadeIn">
+            <ReportPreview content={inspectedContent} />
+            <ReflectiveBreakdown content={inspectedContent} scenarioAnswers={scenarioAnswers} combined={combined} />
+          </div>
+        ) : (
+          <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200 shadow-sm animate-fadeIn">
+            <MarkdownRenderer content={manifestoContents[inspectedMatch.profile.id] || '*No manifesto available.*'} />
+          </div>
+        )}
+      </div>
+
       <MethodologySection />
       <PinnacleReflection archetypeName={topMatch.profile.name} />
     </div>

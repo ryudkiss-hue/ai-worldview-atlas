@@ -208,8 +208,21 @@ This manifesto presents a comprehensive catalog of the 50 worldview archetypes t
   fs.writeFileSync(compiledMdPath, compiledMarkdown);
   console.log(`Created consolidated markdown: ${compiledMdPath}`);
 
+  // 3b. Compile to TypeScript file for React App
+  let tsContent = `// Automatically generated from docs/manifesto/staged/ by compileManifesto.ts\nexport const manifestoContents: Record<string, string> = {\n`;
+  profiles.forEach(profile => {
+    const filePath = path.join(STAGED_DIR, `${profile.id}.md`);
+    if (fs.existsSync(filePath)) {
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      tsContent += `  '${profile.id}': ${JSON.stringify(fileContent)},\n`;
+    }
+  });
+  tsContent += '};\n';
+  fs.writeFileSync('src/data/manifestoContents.ts', tsContent);
+  console.log('Created src/data/manifestoContents.ts');
+
   // 4. Pandoc compilation
-  const htmlPath = path.join(MANIFESTO_DIR, 'tiam_112_manifesto.html');
+  const htmlPath = path.join(MANIFESTO_DIR, 'ai_worldview_atlas_manifesto.html');
   try {
     execSync(`pandoc "${compiledMdPath}" -o "${htmlPath}" --standalone --metadata title="The AI Worldview Atlas: Worldview Manifesto"`);
     console.log(`Successfully compiled standalone HTML: ${htmlPath}`);
@@ -217,7 +230,7 @@ This manifesto presents a comprehensive catalog of the 50 worldview archetypes t
     console.error('HTML compilation failed:', err.message);
   }
 
-  const pdfPath = path.join(MANIFESTO_DIR, 'tiam_112_manifesto.pdf');
+  const pdfPath = path.join(MANIFESTO_DIR, 'ai_worldview_atlas_manifesto.pdf');
   try {
     execSync(`pandoc "${compiledMdPath}" -o "${pdfPath}" --pdf-engine=pdflatex --toc`);
     console.log(`Successfully compiled PDF: ${pdfPath}`);
