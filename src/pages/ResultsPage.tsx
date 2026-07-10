@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { LanguageSelector } from '../components/LanguageSelector'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
 import { profiles } from '../data/profiles'
@@ -32,7 +33,7 @@ import { MarkdownRenderer } from '../components/MarkdownRenderer'
 export function ResultsPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { answers, reset, scenarioAnswers, selectedStakeholderTags, declinedQuestions } = useQuiz()
+  const { answers, reset, scenarioAnswers, selectedStakeholderTags, declinedQuestions, t, tProfileName, tProfileSummary, tAxis } = useQuiz()
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
   const [pdfStatus, setPdfStatus] = useState<'idle' | 'generating' | 'failed'>('idle')
   const [imageStatus, setImageStatus] = useState<'idle' | 'generating' | 'failed'>('idle')
@@ -132,13 +133,12 @@ export function ResultsPage() {
   if (hasNoData) {
     return (
       <div className="max-w-2xl mx-auto p-6 text-center">
-        <h2 className="text-2xl font-bold mb-4">No Results Yet</h2>
+        <h2 className="text-2xl font-bold mb-4">{t('no_results_yet') || 'No Results Yet'}</h2>
         <p className="text-gray-700 mb-6">
-          You haven't completed the assessment yet, so there's nothing to show here. Start from the
-          beginning to get your results.
+          {t('no_results_desc') || "You haven't completed the assessment yet, so there's nothing to show here. Start from the beginning to get your results."}
         </p>
         <Link to="/" className="inline-block px-6 py-3 rounded bg-blue-600 text-white text-lg">
-          Start the Assessment
+          {t('start_assessment')}
         </Link>
       </div>
     )
@@ -196,8 +196,13 @@ export function ResultsPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-4">Your Results</h2>
-      <RadarChart combined={combined} comparisonProfile={{ name: topMatch.profile.name, coords: topMatch.profile.coords }} />
+      <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
+        <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
+        <LanguageSelector />
+      </div>
+
+      <h2 className="text-2xl font-bold mb-4">{t('results_title')}</h2>
+      <RadarChart combined={combined} comparisonProfile={{ name: tProfileName(topMatch.profile.id), coords: topMatch.profile.coords }} />
 
       {selectedTagObjects.length > 0 && (
         <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 p-4">
@@ -280,7 +285,7 @@ export function ResultsPage() {
         </div>
       )}
 
-      <h3 className="text-xl font-semibold mt-8 mb-2">Closest Matches</h3>
+      <h3 className="text-xl font-semibold mt-8 mb-2">{t('closest_archetype')}</h3>
       {topMatches.map((match, index) => (
         <ProfileCard key={match.profile.id} match={match} rank={index + 1} />
       ))}
@@ -291,7 +296,7 @@ export function ResultsPage() {
           onClick={handleShare}
           className={`px-4 py-2 rounded text-white ${copyStatus === 'failed' ? 'bg-red-600' : 'bg-blue-600'}`}
         >
-          {copyStatus === 'copied' ? 'Link Copied!' : copyStatus === 'failed' ? 'Copy Failed — Try Again' : 'Copy Shareable Link'}
+          {copyStatus === 'copied' ? t('link_copied') : copyStatus === 'failed' ? 'Copy Failed — Try Again' : t('share_link')}
         </button>
         <button
           type="button"
@@ -300,10 +305,10 @@ export function ResultsPage() {
           className={`px-4 py-2 rounded text-white disabled:opacity-40 ${pdfStatus === 'failed' ? 'bg-red-600' : 'bg-blue-600'}`}
         >
           {pdfStatus === 'generating'
-            ? 'Generating...'
+            ? t('loading_audio')
             : pdfStatus === 'failed'
               ? 'Download Failed — Try Again'
-              : 'Download PDF Report'}
+              : t('download_report')}
         </button>
         <button
           type="button"
@@ -312,30 +317,30 @@ export function ResultsPage() {
           className={`px-4 py-2 rounded text-white disabled:opacity-40 ${imageStatus === 'failed' ? 'bg-red-600' : 'bg-blue-600'}`}
         >
           {imageStatus === 'generating'
-            ? 'Generating...'
+            ? t('loading_audio')
             : imageStatus === 'failed'
               ? 'Download Failed — Try Again'
-              : 'Download Share Image'}
+              : t('download_image')}
         </button>
         <button type="button" onClick={handleRetake} className="px-4 py-2 rounded border border-gray-300">
-          Retake
+          {t('retake') || 'Retake'}
         </button>
       </div>
 
-      <h3 className="text-xl font-semibold mt-8 mb-2">Near-Term vs. Long-Term, by Axis</h3>
+      <h3 className="text-xl font-semibold mt-8 mb-2">{t('axis_comparison') || 'Near-Term vs. Long-Term, by Axis'}</h3>
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr>
-              <th className="border-b py-2">Axis</th>
-              <th className="border-b py-2">Right Now</th>
-              <th className="border-b py-2">Looking Ahead</th>
+              <th className="border-b py-2">{t('axis') || 'Axis'}</th>
+              <th className="border-b py-2">{t('right_now') || 'Right Now'}</th>
+              <th className="border-b py-2">{t('looking_ahead') || 'Looking Ahead'}</th>
             </tr>
           </thead>
           <tbody>
             {axes.map((axis) => (
               <tr key={axis.id}>
-                <td className="py-2">{axis.name}</td>
+                <td className="py-2">{tAxis(axis.id, 'name')}</td>
                 <td className="py-2">{t1Scaled[axis.id].toFixed(1)}</td>
                 <td className="py-2">{t2Scaled[axis.id].toFixed(1)}</td>
               </tr>
@@ -345,7 +350,7 @@ export function ResultsPage() {
       </div>
 
       <div className="border-t border-gray-200 mt-12 pt-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">View Report & Manifesto</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'View Report & Manifesto'}</h3>
         <div className="flex flex-wrap gap-2 mb-6">
           {topMatches.map((match) => (
             <button
@@ -358,7 +363,7 @@ export function ResultsPage() {
                   : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
               }`}
             >
-              {match.profile.name} ({matchCloseness(match.distance)}%)
+              {tProfileName(match.profile.id)} ({matchCloseness(match.distance)}%)
             </button>
           ))}
         </div>
@@ -374,7 +379,7 @@ export function ResultsPage() {
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
-            Summary Report
+            {t('summary_report') || 'Summary Report'}
           </button>
           <button
             type="button"
@@ -385,7 +390,7 @@ export function ResultsPage() {
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
-            Full Worldview Manifesto
+            {t('full_manifesto') || 'Full Worldview Manifesto'}
           </button>
         </div>
 

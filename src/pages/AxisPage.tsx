@@ -20,6 +20,8 @@ export function AxisPage() {
     setShowSimplified,
     ttsSettings,
     setTtsSettings,
+    t,
+    tAxis,
   } = useQuiz()
 
   const [showTtsPanel, setShowTtsPanel] = useState(false)
@@ -60,10 +62,10 @@ export function AxisPage() {
       <ProgressBar
         current={answeredCount}
         total={questions.length}
-        label={`Axis ${index} of 8 · Question ${answeredCount} of ${questions.length}`}
+        label={`${t('axis') || 'Axis'} ${index} of 8 · ${t('question') || 'Question'} ${answeredCount} of ${questions.length}`}
       />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 mb-6">
-        <h2 className="text-2xl font-bold">{axis.name}</h2>
+        <h2 className="text-2xl font-bold">{tAxis(axis.id, 'name')}</h2>
         <div className="flex flex-wrap items-center gap-2">
           <label className="inline-flex items-center space-x-2 cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full select-none transition border border-gray-200">
             <input
@@ -72,7 +74,7 @@ export function AxisPage() {
               onChange={(e) => setShowSimplified(e.target.checked)}
               className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
             />
-            <span className="text-sm font-semibold select-none">Simple Reading (6th-8th Grade)</span>
+            <span className="text-sm font-semibold select-none">{t('simple_reading')}</span>
           </label>
           <button
             type="button"
@@ -87,7 +89,7 @@ export function AxisPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span>Voice Settings</span>
+            <span>{t('voice_settings')}</span>
           </button>
         </div>
       </div>
@@ -95,13 +97,13 @@ export function AxisPage() {
       {showTtsPanel && (
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6 space-y-4">
           <div className="flex justify-between items-center border-b border-gray-200 pb-2">
-            <h4 className="font-bold text-gray-800 text-sm">ElevenLabs Text-to-Speech Settings</h4>
+            <h4 className="font-bold text-gray-800 text-sm">{t('voice_settings')}</h4>
             <button
               type="button"
               onClick={() => setShowTtsPanel(false)}
               className="text-gray-400 hover:text-gray-600 text-xs font-semibold"
             >
-              Close
+              {t('close') || 'Close'}
             </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -170,14 +172,14 @@ export function AxisPage() {
               }}
               className="text-xs text-red-600 hover:text-red-800 underline font-semibold focus:outline-none whitespace-nowrap self-start sm:self-center"
             >
-              Clear Local Audio Cache
+              {t('clear_cache')}
             </button>
           </div>
         </div>
       )}
 
       <AxisHorizonGroup
-        title="Right Now (Next 2-5 Years)"
+        title={t('horizon_t1') || "Right Now (Next 2-5 Years)"}
         questions={t1Questions}
         answers={answers}
         declinedQuestions={declinedQuestions}
@@ -186,7 +188,7 @@ export function AxisPage() {
         showSimplified={showSimplified}
       />
       <AxisHorizonGroup
-        title="Looking Ahead (20-50 Years)"
+        title={t('horizon_t2') || "Looking Ahead (20-50 Years)"}
         questions={t2Questions}
         answers={answers}
         declinedQuestions={declinedQuestions}
@@ -196,7 +198,7 @@ export function AxisPage() {
       />
       <div className="flex flex-wrap justify-between gap-2 mt-6">
         <button type="button" onClick={goBack} className="px-4 py-2 rounded border border-gray-300">
-          Back
+          {t('back')}
         </button>
         <button
           type="button"
@@ -204,7 +206,7 @@ export function AxisPage() {
           disabled={!allAnswered}
           className="px-4 py-2 rounded bg-blue-600 text-white disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          Next
+          {t('next')}
         </button>
       </div>
     </div>

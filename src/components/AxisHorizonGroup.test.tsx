@@ -5,8 +5,8 @@ import type { Question } from '../data/types'
 import { QuizProvider } from '../state/QuizContext'
 
 const sampleQuestions: Question[] = [
-  { id: 1, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'A', statement: 'Sample statement one.' },
-  { id: 2, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'B', statement: 'Sample statement two.' },
+  { id: 9999, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'A', statement: 'Sample statement one.' },
+  { id: 9998, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'B', statement: 'Sample statement two.' },
 ]
 
 function renderWithProvider(ui: React.ReactElement) {
@@ -26,7 +26,7 @@ describe('AxisHorizonGroup', () => {
     renderWithProvider(<AxisHorizonGroup title="Right Now" questions={sampleQuestions} answers={{}} onAnswer={onAnswer} />)
     const radios = screen.getAllByRole('radio', { name: 'Agree' })
     fireEvent.click(radios[0])
-    expect(onAnswer).toHaveBeenCalledWith(1, 4)
+    expect(onAnswer).toHaveBeenCalledWith(9999, 4)
   })
 
   it('calls onDecline with the question id when its decline button is clicked', () => {
@@ -41,7 +41,7 @@ describe('AxisHorizonGroup', () => {
       />,
     )
     fireEvent.click(screen.getAllByText("I don't have a strong view on this")[0])
-    expect(onDecline).toHaveBeenCalledWith(1)
+    expect(onDecline).toHaveBeenCalledWith(9999)
   })
 
   it('marks a question as declined when its id is in declinedQuestions', () => {
@@ -50,7 +50,7 @@ describe('AxisHorizonGroup', () => {
         title="Right Now"
         questions={sampleQuestions}
         answers={{}}
-        declinedQuestions={[2]}
+        declinedQuestions={[9998]}
         onAnswer={() => {}}
         onDecline={() => {}}
       />,

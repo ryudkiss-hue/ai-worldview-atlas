@@ -75,7 +75,7 @@ describe('ResultsPage', () => {
   it('decodes a shared link and shows the top matches and a divergence table row per axis', () => {
     const encoded = encodeShareLink(buildFlatScores(7, -7))
     renderResultsPage(`?d=${encoded}`)
-    expect(screen.getByText('Closest Matches')).toBeInTheDocument()
+    expect(screen.getByText('Closest Worldview Matches')).toBeInTheDocument()
     const table = screen.getByRole('table')
     expect(within(table).getByText('Teleological')).toBeInTheDocument()
   })
@@ -199,7 +199,7 @@ describe('ResultsPage', () => {
     const encoded = encodeShareLink(buildFlatScores(0, 0))
     renderResultsPage(`?d=${encoded}`)
     fireEvent.click(screen.getByRole('button', { name: 'Retake' }))
-    expect(screen.getByText('Closest Matches')).toBeInTheDocument()
+    expect(screen.getByText('Closest Worldview Matches')).toBeInTheDocument()
     expect(screen.queryByText('Intro Page')).not.toBeInTheDocument()
   })
 
@@ -214,7 +214,7 @@ describe('ResultsPage', () => {
   it('shows a "no results yet" message instead of a fake neutral result when the quiz was never completed', () => {
     renderResultsPage('')
     expect(screen.getByText('No Results Yet')).toBeInTheDocument()
-    expect(screen.queryByText('Closest Matches')).not.toBeInTheDocument()
+    expect(screen.queryByText('Closest Worldview Matches')).not.toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Start the Assessment' })).toBeInTheDocument()
   })
 
@@ -372,7 +372,7 @@ describe('ResultsPage', () => {
         </MemoryRouter>
       </QuizProvider>,
     )
-    expect(screen.getByText('Closest Matches')).toBeInTheDocument()
+    expect(screen.getByText('Closest Worldview Matches')).toBeInTheDocument()
     const table = screen.getByRole('table')
     expect(within(table).getAllByRole('row').length).toBe(axes.length + 1)
   })

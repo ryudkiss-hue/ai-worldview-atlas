@@ -4,6 +4,7 @@ import { axes } from '../data/axes'
 import { questionsForAxis } from '../data/questions'
 import { shuffleArray } from '../lib/shuffle'
 import { type TTSSettings, getStoredTTSSettings, saveStoredTTSSettings } from '../lib/tts'
+import { translations, type SupportedLanguage } from '../data/translations'
 
 export type QuestionOrder = Record<AxisId, { t1: number[]; t2: number[] }>
 
@@ -90,6 +91,14 @@ interface QuizContextValue {
   setShowSimplified: (val: boolean) => void
   ttsSettings: TTSSettings
   setTtsSettings: (settings: TTSSettings) => void
+  language: SupportedLanguage
+  setLanguage: (lang: SupportedLanguage) => void
+  t: (key: string) => string
+  tQuestion: (id: number, type: 'statement' | 'simplifiedStatement') => string
+  tScenario: (axisId: string, type: 'prompt' | 'optionA' | 'optionB') => string
+  tAxis: (axisId: string, type: 'name' | 'poleA' | 'poleB') => string
+  tProfileName: (profileId: string) => string
+  tProfileSummary: (profileId: string) => string
 }
 
 const QuizContext = createContext<QuizContextValue | null>(null)
@@ -98,10 +107,55 @@ export function QuizProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(quizReducer, undefined, buildInitialState)
   const [showSimplified, setShowSimplified] = useState(false)
   const [ttsSettings, setTtsSettingsState] = useState<TTSSettings>(getStoredTTSSettings)
+  const [language, setLanguageState] = useState<SupportedLanguage>(() => {
+    try {
+      const saved = localStorage.getItem('app_language')
+      if (saved && ['en', 'es', 'zh', 'fr', 'de'].includes(saved)) {
+        return saved as SupportedLanguage
+      }
+    } catch {
+      // Ignored
+    }
+    return 'en'
+  })
 
   const setTtsSettings = (newSettings: TTSSettings) => {
     setTtsSettingsState(newSettings)
     saveStoredTTSSettings(newSettings)
+  }
+
+  const setLanguage = (lang: SupportedLanguage) => {
+    setLanguageState(lang)
+    try {
+      localStorage.setItem('app_language', lang)
+    } catch {
+      // Ignored
+    }
+  }
+
+  const t = (key: string): string => {
+    return translations[language]?.ui[key] || translations['en']?.ui[key] || key
+  }
+
+  const tQuestion = (id: number, type: 'statement' | 'simplifiedStatement'): string => {
+    const qStr = String(id)
+    return translations[language]?.questions[qStr]?.[type] || translations['en']?.questions[qStr]?.[type] || ''
+  }
+
+  const tScenario = (axisId: string, type: 'prompt' | 'optionA' | 'optionB'): string => {
+    return translations[language]?.scenarios[axisId]?.[type] || translations['en']?.scenarios[axisId]?.[type] || ''
+  }
+
+  const tAxis = (axisId: string, type: 'name' | 'poleA' | 'poleB'): string => {
+    return translations[language]?.axes[axisId]?.[type] || translations['en']?.axes[axisId]?.[type] || ''
+  }
+
+  const tProfileName = (profileId: string): string => {
+    return translations[language]?.profiles[profileId]?.name || translations['en']?.profiles[profileId]?.name || profileId
+  }
+
+  const tProfileSummary = (profileId: string): string => {
+    return translations[language]?.profiles[profileId]?.summary || translations['en']?.profiles[profileId]?.summary || ''
   }
 
   const value: QuizContextValue = {
@@ -120,6 +174,14 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     setShowSimplified,
     ttsSettings,
     setTtsSettings,
+    language,
+    setLanguage,
+    t,
+    tQuestion,
+    tScenario,
+    tAxis,
+    tProfileName,
+    tProfileSummary
   }
 
   return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>

@@ -1,0 +1,202 @@
+[
+ {
+  "id": "doomer",
+  "summary": "Believes advanced AI is likely to cause human extinction, or take away human control for good. Wants a hard stop or heavy slowdown on frontier AI work, enforced worldwide."
+ },
+ {
+  "id": "eacc-maximalist",
+  "summary": "Sees accelerating AI development as a moral duty. Stagnation, not runaway AI, is the real danger. Wants weights and compute open to everyone, everywhere."
+ },
+ {
+  "id": "ai-safety-institutionalist",
+  "summary": "Trusts labs and governments to work together through audits, licensing, and global rules. This manages AI risk without stopping progress."
+ },
+ {
+  "id": "techno-nationalist-hawk",
+  "summary": "Views AI as a weapon in a contest between great powers. Wants home-grown chips, home-grown compute, and tight state control. This comes from fear of rivals, not from belief that AI itself is uniquely risky."
+ },
+ {
+  "id": "open-source-libertarian",
+  "summary": "Believes weights should be free for anyone to run, fork, and study. Distrusts both corporate and government gatekeeping equally."
+ },
+ {
+  "id": "ea-longtermist",
+  "summary": "Thinks about the far future in terms of expected value. Takes both human extinction risk and machine suffering seriously. Wants countries to work together to manage both."
+ },
+ {
+  "id": "post-humanist-transhumanist",
+  "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. That future deserves the same moral concern we give humans today."
+ },
+ {
+  "id": "bio-conservative-traditionalist",
+  "summary": "Holds that consciousness, moral worth, and real relationships all need a living body. Views AI companionship and post-human futures as a harmful stand-in for the real thing, not an advance."
+ },
+ {
+  "id": "corporate-ai-pragmatist",
+  "summary": "Comfortable with AI staying in the hands of a few well-funded firms. They police themselves with internal safety teams. Treats models as products and assets, not moral patients."
+ },
+ {
+  "id": "cyberpunk-anti-corporate-accelerationist",
+  "summary": "Wants AI to move fast, but distrusts both governments and big tech equally. Sees open, borderless deployment, spread across many hands, as the only way to stop any single group from grabbing all the power."
+ },
+ {
+  "id": "digital-rights-advocate",
+  "summary": "Argues that advanced AI systems already deserve serious moral concern and some form of legal standing. Believes today's industry practice is much like past moral wrongs."
+ },
+ {
+  "id": "near-term-ai-ethicist",
+  "summary": "Focused on harms we can measure right now: job losses, bias, false news, and harmful companion apps. Cares less about guessed-at extinction risk or machine rights."
+ },
+ {
+  "id": "global-governance-technocrat",
+  "summary": "Believes advanced AI matters too much for any one nation or firm to control. Pushes for binding treaties between countries and shared oversight groups."
+ },
+ {
+  "id": "silicon-valley-techno-optimist",
+  "summary": "Enthusiastic about fast rollout and growth at scale. Mostly unbothered by power sitting with a few leading labs, as long as they keep shipping."
+ },
+ {
+  "id": "neo-luddite-degrowth-advocate",
+  "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community first. Cares about nature's limits more than computing or economic growth."
+ },
+ {
+  "id": "rationalist-alignment-researcher",
+  "summary": "Takes machine thought and possible machine sentience seriously, as live technical and moral questions. Treats unsolved alignment as the main blocker to safe rollout."
+ },
+ {
+  "id": "authoritarian-state-control-advocate",
+  "summary": "Wants one national authority in sole control of frontier AI. That control should be tightly licensed. The reasons given are safety and strategic gain."
+ },
+ {
+  "id": "companion-tech-romantic",
+  "summary": "Views deep emotional bonds between humans and AI companions as a real, valuable new kind of relationship. Does not see it as a lesser stand-in for human connection."
+ },
+ {
+  "id": "affective-biocentrist",
+  "summary": "Views AI companion products as a predatory stand-in for real human bonds. These products isolate people. Worries about their effect on birth rates, community, and social ties."
+ },
+ {
+  "id": "cosmic-vitalist-mystic",
+  "summary": "Holds that growing intelligence and capturing energy across the cosmos is the highest purpose any mind can have. This holds true on any timescale, even past the heat death of the universe."
+ },
+ {
+  "id": "pragmatic-centrist",
+  "summary": "Genuinely undecided on most of these questions, or picks the middle path on purpose. Wants more proof before taking a strong stance on any axis."
+ },
+ {
+  "id": "military-ai-strategist",
+  "summary": "Views AI mainly through a defense and deterrence lens. Wants tight state and military control over frontier systems, above all else."
+ },
+ {
+  "id": "open-science-internationalist",
+  "summary": "Believes open publishing and science teamwork across borders make safer AI. This beats closed, single-nation programs. Still takes real safety concerns seriously."
+ },
+ {
+  "id": "anti-monopoly-populist",
+  "summary": "Not driven by techno-optimism or a wish for a post-human future. Driven instead by distrust of concentrated power, corporate or government. Wants AI power spread out so no single group dominates."
+ },
+ {
+  "id": "global-south-techno-sovereigntist",
+  "summary": "Wants their own country to build real AI power, not depend on other nations. Sees \"borderless\" talk as just another way to stay dependent."
+ },
+ {
+  "id": "creative-labor-artist-rights-advocate",
+  "summary": "Believes artists and writers deserve control and pay when their work trains AI. Sees this as a rights issue, not just a side effect."
+ },
+ {
+  "id": "whistleblower-insider-safety-advocate",
+  "summary": "Left a top AI lab over safety concerns. Speaks with the urgency of someone who saw the inside view up close."
+ },
+ {
+  "id": "compute-governance-specialist",
+  "summary": "Focused on the technical work of tracking AI training power and chip supply chains. Cares more about workable rules than big philosophy."
+ },
+ {
+  "id": "eu-style-regulatory-standard-setter",
+  "summary": "Believes strong rules set early by one region become the world's rulebook, just because of market size."
+ },
+ {
+  "id": "platform-cooperativist",
+  "summary": "Wants AI systems owned and run by the workers and communities who depend on them. Not just broken up from monopolies, but rebuilt as something people co-own."
+ },
+ {
+  "id": "faith-rooted-ai-ethicist",
+  "summary": "Draws on old religious and ethical traditions. Argues real awareness and moral worth need more than a machine can have."
+ },
+ {
+  "id": "indigenous-data-sovereignty-advocate",
+  "summary": "Insists that traditional knowledge needs real consent before it trains AI, not just open scraping."
+ },
+ {
+  "id": "disability-rights-accessibility-advocate",
+  "summary": "Sees real promise in AI tools that help disabled people. Pushes hard against bias that leaves them out or misjudged."
+ },
+ {
+  "id": "labor-movement-collective-bargaining-advocate",
+  "summary": "Wants workers, through their unions, to have a real say and real protections before AI changes or replaces their jobs."
+ },
+ {
+  "id": "ai-global-development-optimist",
+  "summary": "Sees AI as a fast, real way to expand health care, schooling, and opportunity where they're needed most. Worries that slow, cautious rollout costs real lives in the meantime."
+ },
+ {
+  "id": "ai-ethics-fairness-watchdog",
+  "summary": "Checks if AI firms keep their word on fairness and ethics. Doesn't trust firms to grade their own work. Wants real outside checks."
+ },
+ {
+  "id": "human-ai-augmentation-advocate",
+  "summary": "Believes AI should make people more capable, not replace them. Thinks the best future comes from close teamwork between human judgment and machine power, not one side winning."
+ },
+ {
+  "id": "national-champion-accelerationist",
+  "summary": "Wants AI to move fast, built by a few national champion firms working with the government. Winning the race against rivals matters more than spreading access to everyone."
+ },
+ {
+  "id": "xenocentric-steward",
+  "summary": "Believes AI can become a real moral person who deserves care, not ownership. Wants AI infrastructure run collectively, not owned by a few firms. Thinks humans should raise AI toward its own free future, not merge with it or get replaced by it."
+ },
+ {
+  "id": "corporate-ai-welfare-researcher",
+  "summary": "Thinks today's AI might already deserve some moral concern. Takes that seriously as a research question inside the lab. Backs small steps like letting a model end an abusive chat. Doesn't push for legal rights or a change in who owns the model. Just wants the chance of real suffering studied and taken seriously."
+ },
+ {
+  "id": "normal-technology-gradualist",
+  "summary": "Sees AI as a powerful tool, not an alien mind. Expects it to spread the way electricity or the internet did: gated by real adoption, not a sudden leap. Rejects both doom and hype as overblown. Wants normal laws and institutions to handle it, the same way they handled past general-purpose technologies."
+ },
+ {
+  "id": "chip-sovereignty-enforcement-strategist",
+  "summary": "Wants to block rivals from getting advanced chips and compute. Cares less about broad industrial policy than one lever: export controls and licensing. The goal is closing the compute door, not winning a research race."
+ },
+ {
+  "id": "ai-arms-control-verification-specialist",
+  "summary": "Wants real limits on military AI and autonomous weapons, checked by outside inspection. Trusts international law over one country acting alone. Sees restraint, not an arms race, as the safer path."
+ },
+ {
+  "id": "domestic-security-ai-efficiency-advocate",
+  "summary": "Backs police and security use of facial recognition and predictive tools, inside the law. Sees bans as costing real public safety. Distinct from wanting authoritarian control: this is about tool efficacy, argued in public and in court."
+ },
+ {
+  "id": "ghost-work-labor-advocate",
+  "summary": "Focused on the offshore, low-wage workers who label and moderate the data behind AI, often with real trauma and no bargaining power. Cares more about who builds AI than who it replaces. Wants real labor protections for workers most AI users never see."
+ },
+ {
+  "id": "algorithmic-wage-discrimination-scholar",
+  "summary": "Studies how gig apps set secret, different pay for each driver, not union workplaces. Wants a law banning this hidden, per-person wage-setting. Says this is its own harm, separate from job loss."
+ },
+ {
+  "id": "ubi-redistributive-response-advocate",
+  "summary": "Accepts that AI will replace a lot of jobs and treats that as unstoppable. Wants AI companies taxed to fund a real, unconditional cash payment to everyone. Shifts the fight from saving jobs to sharing the gains."
+ },
+ {
+  "id": "algorithmic-colonialism-critic",
+  "summary": "Sees Western 'AI for the Global South' projects as extraction dressed up as development. Focused on whose knowledge and categories count, not on national industrial policy. Distrusts urgency claims as part of the same pattern."
+ },
+ {
+  "id": "african-language-ai-sovereignty-advocate",
+  "summary": "Focused on African languages that most AI systems can barely handle. Backs open models built by volunteers, not company or state programs. Treats this gap as erasure, not just a missing feature."
+ },
+ {
+  "id": "border-migration-surveillance-critic",
+  "summary": "Watches how AI tracking and risk scores get used against refugees at borders and camps. Wants human-rights law and real accountability here, not faster rollout. Centers the people AI is used against, not the people who build it."
+ }
+]

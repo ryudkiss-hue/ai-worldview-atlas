@@ -1,6 +1,7 @@
 import type { Question } from '../data/types'
 import { LikertInput } from './LikertInput'
 import { AudioPlayerButton } from './AudioPlayerButton'
+import { useQuiz } from '../state/QuizContext'
 
 interface AxisHorizonGroupProps {
   title: string
@@ -21,15 +22,15 @@ export function AxisHorizonGroup({
   onDecline,
   showSimplified = false,
 }: AxisHorizonGroupProps) {
+  const { tQuestion } = useQuiz()
+
   return (
     <section className="mb-8">
       <h3 className="text-lg font-semibold mb-3">{title}</h3>
       <ul className="space-y-5">
         {questions.map((question) => {
-          const textToRead =
-            showSimplified && question.simplifiedStatement
-              ? question.simplifiedStatement
-              : question.statement
+          const typeKey = showSimplified ? 'simplifiedStatement' : 'statement'
+          const textToRead = tQuestion(question.id, typeKey) || question.statement
           return (
             <li key={question.id}>
               <div className="flex items-start justify-between gap-4 mb-2">

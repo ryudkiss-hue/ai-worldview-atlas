@@ -1,3 +1,5 @@
+import { useQuiz } from '../state/QuizContext'
+
 interface LikertInputProps {
   questionId: number
   value: number | undefined
@@ -6,15 +8,18 @@ interface LikertInputProps {
   onDecline?: () => void
 }
 
-const LABELS = ['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree']
+const LABELS_KEYS = ['strongly_disagree', 'disagree', 'neutral', 'agree', 'strongly_agree']
 
 export function LikertInput({ questionId, value, declined = false, onChange, onDecline }: LikertInputProps) {
+  const { t } = useQuiz()
+
   return (
     <div>
       <div role="radiogroup" aria-label={`Question ${questionId} answer`} className="flex flex-wrap gap-2">
-        {LABELS.map((label, index) => {
+        {LABELS_KEYS.map((key, index) => {
           const optionValue = index + 1
           const isSelected = !declined && value === optionValue
+          const label = t(key)
           return (
             <button
               key={optionValue}
@@ -38,7 +43,7 @@ export function LikertInput({ questionId, value, declined = false, onChange, onD
           aria-pressed={declined}
           className={`mt-2 text-sm underline ${declined ? 'text-blue-700 font-semibold' : 'text-gray-500'}`}
         >
-          {declined ? "I don't have a strong view on this (selected)" : "I don't have a strong view on this"}
+          {declined ? t('decline_selected') || "I don't have a strong view on this (selected)" : t('decline_unselected') || "I don't have a strong view on this"}
         </button>
       )}
     </div>
