@@ -8,7 +8,15 @@ import { AxisHorizonGroup } from '../components/AxisHorizonGroup'
 export function AxisPage() {
   const { axisIndex } = useParams<{ axisIndex: string }>()
   const navigate = useNavigate()
-  const { answers, setAnswer, declinedQuestions, declineQuestion, questionOrder } = useQuiz()
+  const {
+    answers,
+    setAnswer,
+    declinedQuestions,
+    declineQuestion,
+    questionOrder,
+    showSimplified,
+    setShowSimplified,
+  } = useQuiz()
 
   const index = Number(axisIndex)
   const axis = axes.find((a) => a.number === index)
@@ -48,7 +56,18 @@ export function AxisPage() {
         total={questions.length}
         label={`Axis ${index} of 8 · Question ${answeredCount} of ${questions.length}`}
       />
-      <h2 className="text-2xl font-bold mt-4 mb-6">{axis.name}</h2>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 mb-6">
+        <h2 className="text-2xl font-bold">{axis.name}</h2>
+        <label className="inline-flex items-center space-x-2 cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full select-none transition border border-gray-200">
+          <input
+            type="checkbox"
+            checked={showSimplified}
+            onChange={(e) => setShowSimplified(e.target.checked)}
+            className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
+          />
+          <span className="text-sm font-semibold select-none">Simple Reading (6th-8th Grade)</span>
+        </label>
+      </div>
       <AxisHorizonGroup
         title="Right Now (Next 2-5 Years)"
         questions={t1Questions}
@@ -56,6 +75,7 @@ export function AxisPage() {
         declinedQuestions={declinedQuestions}
         onAnswer={setAnswer}
         onDecline={declineQuestion}
+        showSimplified={showSimplified}
       />
       <AxisHorizonGroup
         title="Looking Ahead (20-50 Years)"
@@ -64,6 +84,7 @@ export function AxisPage() {
         declinedQuestions={declinedQuestions}
         onAnswer={setAnswer}
         onDecline={declineQuestion}
+        showSimplified={showSimplified}
       />
       <div className="flex flex-wrap justify-between gap-2 mt-6">
         <button type="button" onClick={goBack} className="px-4 py-2 rounded border border-gray-300">

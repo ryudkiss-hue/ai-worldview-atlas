@@ -23,6 +23,7 @@ export interface Question {
   axisId: AxisId
   horizon: Horizon
   statement: string
+  simplifiedStatement?: string
   agreeShiftsToward: 'A' | 'B'
 }
 

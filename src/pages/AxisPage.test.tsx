@@ -77,4 +77,25 @@ describe('AxisPage', () => {
     expect(progressbar.getAttribute('aria-valuenow')).toBe(String(Math.round((7 / 145) * 100)))
     expect(screen.getByText('Axis 1 of 8 · Question 7 of 145')).toBeInTheDocument()
   })
+
+  it('toggles between standard and simplified 6th-8th grade reading level statements', () => {
+    renderAxisPage(1)
+    
+    // Default: should render standard text
+    expect(screen.getByText(/A large AI data center uses/)).toBeInTheDocument()
+    expect(screen.queryByText(/A big AI computer center uses/)).not.toBeInTheDocument()
+    
+    // Toggle the checkbox
+    const checkbox = screen.getByLabelText('Simple Reading (6th-8th Grade)')
+    fireEvent.click(checkbox)
+    
+    // After toggle: should render simplified text
+    expect(screen.queryByText(/A large AI data center uses/)).not.toBeInTheDocument()
+    expect(screen.getByText(/A big AI computer center uses/)).toBeInTheDocument()
+    
+    // Toggle back
+    fireEvent.click(checkbox)
+    expect(screen.getByText(/A large AI data center uses/)).toBeInTheDocument()
+    expect(screen.queryByText(/A big AI computer center uses/)).not.toBeInTheDocument()
+  })
 })

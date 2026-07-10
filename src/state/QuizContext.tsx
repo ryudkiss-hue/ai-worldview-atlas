@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, type ReactNode } from 'react'
+import { createContext, useContext, useReducer, useState, type ReactNode } from 'react'
 import type { AxisId } from '../data/types'
 import { axes } from '../data/axes'
 import { questionsForAxis } from '../data/questions'
@@ -85,12 +85,15 @@ interface QuizContextValue {
   clearScenarioAnswers: () => void
   setStakeholderTags: (tagIds: string[]) => void
   reset: () => void
+  showSimplified: boolean
+  setShowSimplified: (val: boolean) => void
 }
 
 const QuizContext = createContext<QuizContextValue | null>(null)
 
 export function QuizProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(quizReducer, undefined, buildInitialState)
+  const [showSimplified, setShowSimplified] = useState(false)
 
   const value: QuizContextValue = {
     answers: state.answers,
@@ -104,6 +107,8 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     clearScenarioAnswers: () => dispatch({ type: 'CLEAR_SCENARIO_ANSWERS' }),
     setStakeholderTags: (tagIds) => dispatch({ type: 'SET_STAKEHOLDER_TAGS', tagIds }),
     reset: () => dispatch({ type: 'RESET' }),
+    showSimplified,
+    setShowSimplified,
   }
 
   return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>

@@ -8,6 +8,7 @@ interface AxisHorizonGroupProps {
   declinedQuestions?: number[]
   onAnswer: (questionId: number, value: number) => void
   onDecline?: (questionId: number) => void
+  showSimplified?: boolean
 }
 
 export function AxisHorizonGroup({
@@ -17,6 +18,7 @@ export function AxisHorizonGroup({
   declinedQuestions = [],
   onAnswer,
   onDecline,
+  showSimplified = false,
 }: AxisHorizonGroupProps) {
   return (
     <section className="mb-8">
@@ -24,7 +26,11 @@ export function AxisHorizonGroup({
       <ul className="space-y-5">
         {questions.map((question) => (
           <li key={question.id}>
-            <p className="mb-2">{question.statement}</p>
+            <p className="mb-2">
+              {showSimplified && question.simplifiedStatement
+                ? question.simplifiedStatement
+                : question.statement}
+            </p>
             <LikertInput
               questionId={question.id}
               value={answers[question.id]}
