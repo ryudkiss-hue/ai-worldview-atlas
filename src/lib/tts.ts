@@ -207,7 +207,7 @@ export function stopGlobalAudio() {
   }
 }
 
-export function playGlobalAudio(audioUrl: string, onStop: () => void, onEnded: () => void) {
+export async function playGlobalAudio(audioUrl: string, onStop: () => void, onEnded: () => void): Promise<void> {
   stopGlobalAudio()
 
   const audio = new Audio(audioUrl)
@@ -222,14 +222,15 @@ export function playGlobalAudio(audioUrl: string, onStop: () => void, onEnded: (
     }
   })
 
-  audio.play().catch((err) => {
-    console.error('Playback failed', err)
-    onEnded()
+  try {
+    await audio.play()
+  } catch (err) {
     if (activeAudio === audio) {
       activeAudio = null
       activeStopCallback = null
     }
-  })
+    throw err
+  }
 }
 
 export function playBrowserTTS(text: string, onStop: () => void, onEnded: () => void) {

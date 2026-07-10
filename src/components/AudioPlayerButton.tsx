@@ -52,7 +52,7 @@ export function AudioPlayerButton({ text, questionId }: AudioPlayerButtonProps) 
       // Notify other players to stop
       window.dispatchEvent(new CustomEvent('global-audio-stopped'))
 
-      playGlobalAudio(
+      await playGlobalAudio(
         audioUrl,
         () => {
           setStatus('idle')
