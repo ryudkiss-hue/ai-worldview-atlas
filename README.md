@@ -18,7 +18,26 @@ Most AI-opinion typologies (and most political-compass-style tools generally) ma
 
 ---
 
-## What you actually do
+## Assessment Platform
+
+**The new Assessment component** (`/assessment` route) offers an alternative flow optimized for **deep narrative reasoning**:
+
+1. **145 questions + 25 interspersed thought experiments** — every 5-6 questions, you're paused and presented with a concrete philosophical dilemma (e.g., *The Empathy Prison*, *The Value Reversal Machine*). These aren't scored; they're reflective anchors that make the abstract axis questions feel grounded.
+2. **8-axis scoring in real-time** — as you progress, your position on each axis updates. Progress bar shows your position relative to the full range.
+3. **Synthesis results** — after all 145 questions, a SynthesisCommentary page shows:
+   - Your responses to all 25 experiments
+   - Predicted archetype alignment (top 2-3 with confidence scores)
+   - Key themes extracted from your experiment responses
+   - Nuance acknowledgment: *"These archetypes are simplifications of genuine complexity"*
+4. **Completion code** — for Prolific/Qualtrics integration (respondent tracking).
+
+Access via: **`http://localhost:5173/assessment`**
+
+---
+
+## Original Quiz Flow
+
+The classic assessment path combines question-answering with optional reflection:
 
 1. **(Optional) Tag yourself.** Before starting, you can flag things like *Automation-Exposed Worker* or *AI Industry Insider* — 13 material-stakeholder tags that describe your relationship to AI without affecting your score. These never feed the algorithm; they're shown next to your result so a reader can weigh "this person's worldview" against "this person's skin in the game" separately.
 2. **Answer 145 questions** — 14 for teleological, the only axis still at its base count; 18 each for risk, ontological, relational, and geopolitical; 19 each for socio-economic and evolutionary; and 21 for legal & moral, which needed the most resolution: first for a distinct fault line (whether a model's stated chain-of-thought reasoning is trustworthy, or whether tokenization mechanics bear on genuine understanding), then again, narrower still (whether an AI that causes harm bears any responsibility of its own, separate from the humans and companies that built and deployed it). Relational and geopolitical were the first to expand beyond the base count, once a nearest-neighbor analysis of the (then-38) archetypes showed both were the single biggest differentiator among the closest, hardest-to-tell-apart archetype pairs; evolutionary, legal & moral, and socio-economic each gained one more question in a later expansion pass. Every axis is split evenly between near-term (next 2–5 years) and long-term (next 20–50 years) framing, on a 1–5 agree/disagree scale. Pole labels are hidden and question order is shuffled per axis on every attempt, so you're reacting to the statement itself, not pattern-matching the axis's "team."
@@ -137,6 +156,8 @@ See [`src/lib/scoring.ts`](src/lib/scoring.ts) for the exact implementation. The
 | State | A single `QuizContext` (React `useReducer`) — no external state library |
 | Styling | Tailwind CSS |
 | Charts | Recharts (`RadarChart`, dual-series for you-vs-match comparison) |
+| Animations | Framer Motion (`motion` for smooth experiment transitions) |
+| Translations | Pre-cached Google Translate (5 languages, 436 KB static data, zero runtime API calls) |
 | PDF export | `@react-pdf/renderer`, client-side, no backend |
 | Tests | Vitest + React Testing Library, 200+ tests across 44 files |
 | Hosting | GitHub Pages, deployed via GitHub Actions on every push to `master` |
@@ -175,6 +196,43 @@ src/
     ├── ScenarioPage.tsx          optional situational scenarios (/scenarios)
     └── ResultsPage.tsx           radar chart, matches, full report, PDF export
 ```
+
+---
+
+## Internationalization (Translations)
+
+All content is pre-translated and permanently cached via Google Translate. **Zero runtime API calls** — translations are served statically from `src/data/translations.ts`.
+
+### Supported Languages
+- **English** (en) — baseline
+- **Spanish** (es)
+- **Chinese** (zh-CN)
+- **French** (fr)
+- **German** (de)
+
+### What's Translated
+✅ 145 assessment questions (standard + simplified)  
+✅ 8 scenarios with options  
+✅ 8 axes with pole labels  
+✅ 50 archetype profiles  
+✅ 68 UI strings  
+**Total: 436 KB of pre-cached translations (4,635 lines)**
+
+### Regenerating Translations
+
+To refresh translations after updating content:
+
+```bash
+python scripts/generate_translations.py
+```
+
+This script:
+1. Extracts all content from source files
+2. Translates via Google Translate (batched to ~4000 char chunks)
+3. Writes permanent cache to `src/data/translations.ts`
+4. Handles individual fallback if batch translation fails
+
+Dependencies: `pip install deep-translator`
 
 ---
 
