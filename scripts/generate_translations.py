@@ -217,21 +217,31 @@ def translate_list(texts, target_lang):
     # Map language codes to deep-translator supported codes
     lang_map = {
         "zh": "zh-CN",
-        "he": "iw",   # Hebrew
-        "fil": "tl",  # Filipino -> Tagalog
-        "kan": "kn",  # Kannada
-        "mr": "mr",   # Marathi
-        "te": "te",   # Telugu
-        "ur": "ur",   # Urdu
-        "ta": "ta",   # Tamil
-        "gu": "gu",   # Gujarati
-        "hi": "hi",   # Hindi
-        "pa": "pa",   # Punjabi
-        "bn": "bn",   # Bengali
-        "ckb": "ckb", # Kurdish (Central)
-        "or": "or",   # Odia
-        "rw": "rw",   # Kinyarwanda
-        "ny": "ny",   # Chichewa
+        "he": "iw",    # Hebrew
+        "fil": "tl",   # Filipino -> Tagalog
+        "kn": "kn",    # Kannada
+        "mr": "mr",    # Marathi
+        "te": "te",    # Telugu
+        "ur": "ur",    # Urdu
+        "ta": "ta",    # Tamil
+        "gu": "gu",    # Gujarati
+        "hi": "hi",    # Hindi
+        "pa": "pa",    # Punjabi
+        "bn": "bn",    # Bengali
+        "ckb": "ckb",  # Kurdish (Central/Sorani)
+        "or": "or",    # Odia/Oriya
+        "rw": "rw",    # Kinyarwanda
+        "ny": "ny",    # Chichewa
+        "so": "so",    # Somali
+        "sw": "sw",    # Swahili
+        "am": "am",    # Amharic
+        "ha": "ha",    # Hausa
+        "yo": "yo",    # Yoruba
+        "ka": "ka",    # Georgian
+        "my": "my",    # Burmese/Myanmar
+        "fa": "fa",    # Persian/Farsi
+        "th": "th",    # Thai
+        "el": "el",    # Greek
     }
     actual_target = lang_map.get(target_lang, target_lang)
     translator = GoogleTranslator(source='en', target=actual_target)
@@ -319,13 +329,16 @@ def main():
         strings_to_translate.append(p["name"])
         strings_to_translate.append(p["summary"])
         
-    # Top 20 languages initially (covers ~90% of world population)
-    # Can expand to 50+ languages after infrastructure validated
-    # ALL_50_LANGUAGES = es, hi, ar, pt, bn, ru, ja, pa, mr, de, fr, ur, ko, tr, vi, it, fa, th, pl, my, ta, te, gu, uk, kk, id, nl, he, sv, cs, ro, fil, no, kan, hu, ms, fi, som, sw, sk, da, bg, af, am, ckb, ha, yo, or, rw, ny
+    # Top 50 languages on Earth (by native + second language speakers)
+    # Covers ~95% of world population
     languages = [
-        "es", "hi", "ar", "pt", "bn", "ru", "ja", "de",  # Top 8
-        "fr", "ko", "tr", "vi", "it", "pl", "id", "nl",  # 16
-        "he", "sv", "cs", "ro"  # Top 20
+        "es", "hi", "ar", "pt", "bn", "ru", "ja", "de",  # 8: Spanish, Hindi, Arabic, Portuguese, Bengali, Russian, Japanese, German
+        "fr", "ko", "tr", "vi", "it", "pl", "id", "nl",  # 16: French, Korean, Turkish, Vietnamese, Italian, Polish, Indonesian, Dutch
+        "he", "sv", "cs", "ro", "fil", "no", "kn", "hu",  # 24: Hebrew, Swedish, Czech, Romanian, Filipino, Norwegian, Kannada, Hungarian
+        "ms", "fi", "so", "sw", "sk", "da", "bg", "af",  # 32: Malay, Finnish, Somali, Swahili, Slovak, Danish, Bulgarian, Afrikaans
+        "am", "ckb", "ha", "yo", "or", "rw", "ny", "el",  # 40: Amharic, Kurdish, Hausa, Yoruba, Odia, Kinyarwanda, Chichewa, Greek
+        "ka", "ur", "pa", "ta", "te", "gu", "uk", "my",  # 48: Georgian, Urdu, Punjabi, Tamil, Telugu, Gujarati, Ukrainian, Burmese
+        "fa", "th"  # 50: Persian, Thai
     ]
     translations = {}
     
@@ -338,9 +351,12 @@ def main():
         "profiles": {p["id"]: {"name": p["name"], "summary": p["summary"]} for p in profiles}
     }
     
-    for lang in languages:
-        print(f"\n--- Translating to {lang.upper()} ---")
+    for lang_idx, lang in enumerate(languages):
+        print(f"\n--- Translating to {lang.upper()} ({lang_idx + 1}/{len(languages)}) ---")
         translated_strings = translate_list(strings_to_translate, lang)
+        # Add delay between language batches to avoid rate limiting (especially important for 50+ languages)
+        if lang_idx < len(languages) - 1:
+            time.sleep(0.5)
         
         # Verify length matching
         if len(translated_strings) != len(strings_to_translate):
