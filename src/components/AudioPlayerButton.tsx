@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useQuiz } from '../state/QuizContext'
-import { fetchElevenLabsTTS, playGlobalAudio, stopGlobalAudio } from '../lib/tts'
+import { fetchElevenLabsTTS, playGlobalAudio, stopGlobalAudio, playBrowserTTS } from '../lib/tts'
 
 interface AudioPlayerButtonProps {
   text: string
@@ -63,9 +63,28 @@ export function AudioPlayerButton({ text, questionId }: AudioPlayerButtonProps) 
       )
       setStatus('playing')
     } catch (err: any) {
-      console.error(err)
-      setStatus('error')
-      setErrorMessage(err.message || 'Failed to generate speech.')
+      console.warn('ElevenLabs unavailable or API key missing, falling back to Web Speech API', err)
+      
+      // Stop ElevenLabs audio if playing, notify other buttons
+      stopGlobalAudio()
+      window.dispatchEvent(new CustomEvent('global-audio-stopped'))
+
+      try {
+        playBrowserTTS(
+          text,
+          () => {
+            setStatus('idle')
+          },
+          () => {
+            setStatus('idle')
+          }
+        )
+        setStatus('playing')
+      } catch (speechErr: any) {
+        console.error('Speech synthesis failed', speechErr)
+        setStatus('error')
+        setErrorMessage('Speech synthesis is not supported on this browser.')
+      }
     }
   }
 

@@ -36,9 +36,9 @@ describe('AudioPlayerButton', () => {
     const button = screen.getByRole('button', { name: 'Read question aloud' })
     fireEvent.click(button)
 
-    // Should display the error message in the title/tooltip
+    // Should display the error message in the title/tooltip (fallback to SpeechSynthesis fails in JSDOM)
     await waitFor(() => {
-      expect(button.getAttribute('title')).toContain('API key is missing')
+      expect(button.getAttribute('title')).toContain('Speech synthesis is not supported')
     })
   })
 

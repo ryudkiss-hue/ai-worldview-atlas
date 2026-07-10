@@ -56,6 +56,7 @@ export async function clearPersistentTTSCache(): Promise<boolean> {
   return false
 }
 
+// Hardcoded sets of question IDs that have static audio files saved in public/audio/
 const PRE_GENERATED_STD_AUDIO = new Set([
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
   11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -177,6 +178,7 @@ export async function fetchElevenLabsTTS(
 
 let activeAudio: HTMLAudioElement | null = null
 let activeStopCallback: (() => void) | null = null
+let activeBrowserSpeechUtterance: SpeechSynthesisUtterance | null = null
 
 export function stopGlobalAudio() {
   if (activeAudio) {
@@ -194,6 +196,14 @@ export function stopGlobalAudio() {
       // Ignored
     }
     activeStopCallback = null
+  }
+  // Stop native browser speech synthesis too
+  if (typeof window !== 'undefined' && window.speechSynthesis) {
+    try {
+      window.speechSynthesis.cancel()
+    } catch (e) {
+      // Ignored
+    }
   }
 }
 
@@ -220,4 +230,55 @@ export function playGlobalAudio(audioUrl: string, onStop: () => void, onEnded: (
       activeStopCallback = null
     }
   })
+}
+
+export function playBrowserTTS(text: string, onStop: () => void, onEnded: () => void) {
+  stopGlobalAudio()
+
+  if (typeof window === 'undefined' || !window.speechSynthesis) {
+    throw new Error('Speech synthesis is not supported on this browser.')
+  }
+
+  const utterance = new SpeechSynthesisUtterance(text)
+  activeBrowserSpeechUtterance = utterance
+  activeStopCallback = onStop
+
+  // Try to find a warm, cheery female American voice
+  const voices = window.speechSynthesis.getVoices()
+  const femaleVoice = voices.find(
+    (v) =>
+      v.lang.startsWith('en-US') &&
+      (v.name.toLowerCase().includes('female') ||
+        v.name.toLowerCase().includes('zira') ||
+        v.name.toLowerCase().includes('google') ||
+        v.name.toLowerCase().includes('samantha') ||
+        v.name.toLowerCase().includes('karen') ||
+        v.name.toLowerCase().includes('hazel'))
+  ) || voices.find((v) => v.lang.startsWith('en'))
+
+  if (femaleVoice) {
+    utterance.voice = femaleVoice
+  }
+
+  // Slightly adjust rate and pitch for a warmer, sweet tone
+  utterance.rate = 0.95
+  utterance.pitch = 1.05
+
+  utterance.onend = () => {
+    onEnded()
+    if (activeBrowserSpeechUtterance === utterance) {
+      activeBrowserSpeechUtterance = null
+      activeStopCallback = null
+    }
+  }
+
+  utterance.onerror = () => {
+    onEnded()
+    if (activeBrowserSpeechUtterance === utterance) {
+      activeBrowserSpeechUtterance = null
+      activeStopCallback = null
+    }
+  }
+
+  window.speechSynthesis.speak(utterance)
 }
