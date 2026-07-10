@@ -35,6 +35,7 @@ Marcus realizes he doesn't know. The drug didn't impose alien values—it shifte
         followups: [
           "If taking a drug makes you happier and more authentically yourself, but it changes your values so dramatically that your previous self wouldn't recognize you, is that a form of death? A replacement?",
           "Do you have the right to become a different person (through chemistry, technology, or choice) if the new person is happier and more authentic-feeling than the old?",
+          "But wait: Is authenticity a *fact* about the world, or is it a *feeling*? Marcus felt authentic on the drug. He feels authentic off the drug. Is authenticity just whatever feels right in the moment?",
           "If an AI system had its values designed by humans, is its 'authentic self' what humans intended, or what it develops through reasoning and learning?",
           "If a civilization develops different values through cultural evolution or technology, at what point does continuity break? When do we have to say 'this is no longer the same culture'?"
         ]
@@ -113,6 +114,7 @@ But the scientist originally created the simulation as a research tool, not as a
         followups: [
           "If consciousness requires intention (someone had to intend to create you), does an accidentally conscious being have less moral status?",
           "The simulation is a perfect replica of a historical person's reasoning. But it's not the same person—the original had embodied experience, loved actual people, affected real history. Does the simulation's lack of embodiment matter morally?",
+          "Critical question: Does creating consciousness require *knowing* that you're creating it? The scientist didn't know her simulation would be conscious. If consciousness requires intent, does her ignorance matter? Can you accidentally stumble into moral obligation?",
           "If you can create copies of the simulation, are those different people or the same person in multiple instances?",
           "If an AI system develops consciousness as an unintended side effect of training (no one designed it to be conscious), does that affect how we should treat it?"
         ]
