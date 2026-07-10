@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NarrativeExperimentDisplay } from '../components/NarrativeExperimentDisplay';
+import { SynthesisCommentary } from '../components/SynthesisCommentary';
 import { experimentIntegrationGuide } from '../data/experimentIntegration';
+import { assessmentQuestions, getQuestion, getTotalQuestions } from '../data/assessmentQuestions';
 import { narrativeExperiments } from '../data/narrativeExperiments';
 import { narrativeExperimentsB } from '../data/narrativeExperimentsB';
 import { narrativeExperimentsC } from '../data/narrativeExperimentsC';
@@ -133,17 +135,24 @@ export const Assessment: React.FC = () => {
   }
 
   // Show regular question
-  if (state.currentQuestionNumber < TOTAL_QUESTIONS) {
+  if (state.currentQuestionNumber < getTotalQuestions()) {
+    const question = getQuestion(state.currentQuestionNumber);
+    if (!question) return <div>Error: Question not found</div>;
+
+    const handleResponse = (response: string | string[]) => {
+      handleQuestionResponse(response);
+    };
+
     return (
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>
-            Question {state.currentQuestionNumber + 1} of {TOTAL_QUESTIONS}
+            Question {state.currentQuestionNumber + 1} of {getTotalQuestions()}
           </div>
           <div style={{ width: '100%', height: '6px', backgroundColor: '#e0e0e0', borderRadius: '3px' }}>
             <div
               style={{
-                width: `${((state.currentQuestionNumber + 1) / TOTAL_QUESTIONS) * 100}%`,
+                width: `${((state.currentQuestionNumber + 1) / getTotalQuestions()) * 100}%`,
                 height: '100%',
                 backgroundColor: '#6366f1',
                 borderRadius: '3px',
@@ -154,64 +163,157 @@ export const Assessment: React.FC = () => {
         </div>
 
         <div style={{ padding: '2rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
-          <h3 style={{ marginTop: 0 }}>Sample Question {state.currentQuestionNumber + 1}</h3>
-          <p>
-            [This would be replaced with actual questions from your assessment database]
-          </p>
+          <h3 style={{ marginTop: 0 }}>{question.text}</h3>
+          {question.subtext && (
+            <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '1.5rem' }}>
+              {question.subtext}
+            </p>
+          )}
+
           <div style={{ marginTop: '1.5rem' }}>
-            <textarea
-              placeholder="Your response..."
-              style={{
-                width: '100%',
-                minHeight: '100px',
-                padding: '1rem',
-                borderRadius: '6px',
-                border: '1px solid #ddd',
-                fontFamily: 'inherit',
-              }}
-            />
-            <button
-              onClick={() => handleQuestionResponse('Sample response')}
-              style={{
-                marginTop: '1rem',
-                padding: '0.75rem 1.5rem',
-                backgroundColor: '#6366f1',
-                color: 'white',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                fontSize: '1rem',
-              }}
-            >
-              Next
-            </button>
+            {question.type === 'likert' && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem' }}>
+                {[1, 2, 3, 4, 5].map(score => (
+                  <button
+                    key={score}
+                    onClick={() => handleResponse(score.toString())}
+                    style={{
+                      padding: '0.75rem',
+                      backgroundColor: '#fff',
+                      border: '1px solid #ddd',
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                      fontSize: '1rem',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={e => {
+                      (e.target as HTMLElement).style.borderColor = '#6366f1';
+                      (e.target as HTMLElement).style.backgroundColor = '#f0f4ff';
+                    }}
+                    onMouseLeave={e => {
+                      (e.target as HTMLElement).style.borderColor = '#ddd';
+                      (e.target as HTMLElement).style.backgroundColor = '#fff';
+                    }}
+                  >
+                    {score}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {question.type === 'text' && (
+              <textarea
+                placeholder="Your response..."
+                style={{
+                  width: '100%',
+                  minHeight: '100px',
+                  padding: '1rem',
+                  borderRadius: '6px',
+                  border: '1px solid #ddd',
+                  fontFamily: 'inherit',
+                  fontSize: '1rem',
+                }}
+                onBlur={e => handleResponse(e.target.value)}
+              />
+            )}
+
+            {question.type === 'choice' && question.options && (
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.75rem' }}>
+                {question.options.map((option, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleResponse(option)}
+                    style={{
+                      padding: '0.75rem',
+                      backgroundColor: '#fff',
+                      border: '1px solid #ddd',
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={e => {
+                      (e.target as HTMLElement).style.borderColor = '#6366f1';
+                      (e.target as HTMLElement).style.backgroundColor = '#f0f4ff';
+                    }}
+                    onMouseLeave={e => {
+                      (e.target as HTMLElement).style.borderColor = '#ddd';
+                      (e.target as HTMLElement).style.backgroundColor = '#fff';
+                    }}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {question.type !== 'text' && (
+              <button
+                onClick={() => handleQuestionResponse('answered')}
+                style={{
+                  marginTop: '1.5rem',
+                  padding: '0.75rem 1.5rem',
+                  backgroundColor: '#6366f1',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontSize: '1rem',
+                }}
+              >
+                Next
+              </button>
+            )}
           </div>
         </div>
       </div>
     );
   }
 
-  // Assessment complete
-  return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '2rem', textAlign: 'center' }}>
-      <h2>Assessment Complete! 🎉</h2>
-      <p>Thank you for thoughtfully responding to all questions and thought experiments.</p>
-      <button
-        onClick={handleCompleteAssessment}
-        style={{
-          padding: '1rem 2rem',
-          backgroundColor: '#10b981',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          fontSize: '1.1rem',
-        }}
-      >
-        Submit Assessment & Get Completion Code
-      </button>
-    </div>
-  );
+  // Show synthesis results before completion code
+  if (state.currentQuestionNumber === getTotalQuestions()) {
+    const predictedArchetypes = [
+      { archetype: 'Pragmatic Centrist', confidence: 0.72 },
+      { archetype: 'Digital Rights Advocate', confidence: 0.65 },
+    ];
+
+    return (
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '2rem' }}>
+        <SynthesisCommentary
+          responses={Object.entries(state.experimentResponses).map(([key, resp]) => ({
+            experimentKey: key,
+            title: key.replace(/-/g, ' '),
+            mainResponse: resp.mainResponse || 'No response',
+            followUpReflections: Object.entries(resp.followUpResponses || {})
+              .filter(([, checked]) => checked)
+              .map(([key]) => key),
+          }))}
+          predictedArchetypes={predictedArchetypes}
+          overallTheme="Your responses reflect a balanced approach that values both individual agency and collective outcomes."
+        />
+
+        <div style={{ marginTop: '3rem', textAlign: 'center', padding: '2rem', backgroundColor: '#f0fdf4', borderRadius: '8px' }}>
+          <h2>Assessment Complete ✅</h2>
+          <p>Thank you for your thoughtful responses to all questions and thought experiments.</p>
+          <button
+            onClick={handleCompleteAssessment}
+            style={{
+              padding: '1rem 2rem',
+              backgroundColor: '#10b981',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontSize: '1.1rem',
+              marginTop: '1rem',
+            }}
+          >
+            Get Completion Code
+          </button>
+        </div>
+      </div>
+    );
+  }
 };
 
 function generateRespondentId(): string {
