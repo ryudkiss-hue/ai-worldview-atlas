@@ -3,6 +3,7 @@ import type { AxisId } from '../data/types'
 import { axes } from '../data/axes'
 import { questionsForAxis } from '../data/questions'
 import { shuffleArray } from '../lib/shuffle'
+import { type TTSSettings, getStoredTTSSettings, saveStoredTTSSettings } from '../lib/tts'
 
 export type QuestionOrder = Record<AxisId, { t1: number[]; t2: number[] }>
 
@@ -87,6 +88,8 @@ interface QuizContextValue {
   reset: () => void
   showSimplified: boolean
   setShowSimplified: (val: boolean) => void
+  ttsSettings: TTSSettings
+  setTtsSettings: (settings: TTSSettings) => void
 }
 
 const QuizContext = createContext<QuizContextValue | null>(null)
@@ -94,6 +97,12 @@ const QuizContext = createContext<QuizContextValue | null>(null)
 export function QuizProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(quizReducer, undefined, buildInitialState)
   const [showSimplified, setShowSimplified] = useState(false)
+  const [ttsSettings, setTtsSettingsState] = useState<TTSSettings>(getStoredTTSSettings)
+
+  const setTtsSettings = (newSettings: TTSSettings) => {
+    setTtsSettingsState(newSettings)
+    saveStoredTTSSettings(newSettings)
+  }
 
   const value: QuizContextValue = {
     answers: state.answers,
@@ -109,6 +118,8 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     reset: () => dispatch({ type: 'RESET' }),
     showSimplified,
     setShowSimplified,
+    ttsSettings,
+    setTtsSettings,
   }
 
   return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
