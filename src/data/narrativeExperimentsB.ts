@@ -75,6 +75,7 @@ But now he's living a lie. He's deceiving all parties—the AI company about the
         followups: [
           "If Kenji's beliefs about alignment are right, does that justify his deception?",
           "What if Kenji is wrong—what if his constraint actually breaks the AI's reasoning, causing it to make worse decisions? His hidden constraint has now caused harm he's responsible for but can never acknowledge.",
+          "But here's the cascade problem: Kenji's deception about the constraint becomes secret knowledge. Others eventually discover it. They use it to understand the AI's true capabilities. They exploit it. Now Kenji's own deception has become a weapon in the hands of others. Does the fact that your deception itself gets weaponized change whether it was ethical to begin with?",
           "Can society ever grant someone the moral authority to make civilization-scale decisions in secret 'for the greater good'?",
           "If an AI system believes its hidden constraint is necessary for humanity's survival, and it can justify deceiving humans about it, does it have permission to do so?"
         ]
@@ -160,6 +161,7 @@ Or she can refuse to work on enhancement and watch from the sidelines as someone
           "If cognitive enhancement is available and safe, is it ethical to have un-enhanced children (denying them the opportunity)?",
           "Should enhancement be universally available before it's permitted (preventing inequality)? If so, do we delay beneficial technology indefinitely?",
           "If enhancement creates a cognitive divide, at what point do enhanced and un-enhanced humans become effectively different species with different moral status?",
+          "Patel claims 'enhancement will happen anyway.' But that's her *prediction*, not a fact. Your choice to accelerate it is still *your* decision. Does inevitability remove your moral responsibility to participate or refrain?",
           "Does participating in the process of enhancement give you moral responsibility for how it's used, or does refusing to participate make you responsible for letting it happen poorly?"
         ]
       }
