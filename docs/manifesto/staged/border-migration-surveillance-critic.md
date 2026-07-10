@@ -236,20 +236,20 @@ Our worldview is frequently challenged by proponents of other archetypes, partic
 
 ## 7. Formal Syllogistic Architecture
 
-To demonstrate the logical necessity of our critiques and the internal consistency of our ethical claims, we formalize our primary arguments into three distinct syllogistic structures. These architectures outline the legal, philosophical, and biopolitical deductions that underpin our opposition to automated borders.
+To demonstrate the logical necessity of our critiques, we formalize our primary arguments into three distinct syllogistic structures outlining the legal, philosophical, and biopolitical deductions that underpin our opposition to automated borders.
 
 ### Syllogism I: The Principle of Non-Refoulement and Algorithmic Sorting
-*   **Major Premise:** Any state administrative procedure that systematically replaces individualized credibility assessments with collective, probabilistic risk-scoring derived from historical group data violates the absolute prohibition on refoulement under international refugee law, which demands a case-by-case evaluation of a claimant's specific fear of persecution (1951 Refugee Convention; Guy Goodwin-Gill & Jane McAdam, *The Refugee in International Law*, 2021).
+*   **Major Premise:** State procedures replacing individualized credibility assessments with collective, probabilistic risk-scoring violate the absolute prohibition on refoulement under international refugee law, which demands case-by-case evaluation of a claimant's specific fear of persecution (1951 Refugee Convention; Guy Goodwin-Gill & Jane McAdam, *The Refugee in International Law*, 2021).
 *   **Minor Premise:** AI-enabled border risk-scoring systems systematically substitute credibility assessments with automated, group-based risk profiles derived from demographic factors, travel histories, and historical databases (Petra Molnar, *The Walls Have Eyes: How AI is Bordering the World*, 2024).
 *   **Conclusion:** Therefore, the deployment of AI-enabled border risk-scoring systems by sovereign states violates the principle of non-refoulement under international refugee law.
 
 ### Syllogism II: Algorithmic Opacity and the Arendtian Right to Have Rights
 *   **Major Premise:** The recognition of an individual as a subject of rights—the "right to have rights"—requires that administrative actions determining legal status are subject to transparent judicial review, public accountability, and the capacity for meaningful contestation (Hannah Arendt, *The Origins of Totalitarianism*, 1951).
-*   **Minor Premise:** Algorithmic migration systems produce classifications and denials based on proprietary code and complex multi-variable interactions that are structurally opaque, shielding decisions from judicial scrutiny and preventing legal appeal (Louise Amoore, *Cloud Ethics: Algorithms and the Attributes of Human and Machine*, 2020).
+*   **Minor Premise:** Algorithmic migration systems produce classifications and denials based on proprietary, complex multi-variable interactions that are structurally opaque, shielding decisions from judicial scrutiny and preventing appeal (Louise Amoore, *Cloud Ethics: Algorithms and the Attributes of Human and Machine*, 2020).
 *   **Conclusion:** Therefore, the deployment of algorithmic migration systems in border enforcement denies migrants their status as rights-bearing subjects, violating their fundamental right to have rights.
 
 ### Syllogism III: Biopolitical Subjectification and the Production of Bare Life
-*   **Major Premise:** Administrative practices that reduce human subjects to biological, somatic data points (such as biometrics) for automated classification and physical containment reduce political subjects (*bios*) to "bare life" (*zoe*), stripping them of political agency (Giorgio Agamben, *Homo Sacer: Sovereign Power and Bare Life*, 1995).
+*   **Major Premise:** Practices reducing human subjects to somatic data points (biometrics) for automated classification and containment reduce political subjects (*bios*) to "bare life" (*zoe*), stripping them of political agency (Giorgio Agamben, *Homo Sacer: Sovereign Power and Bare Life*, 1995).
 *   **Minor Premise:** Biometric border surveillance networks (including facial recognition, thermal tracking, and biometric databases) scan and process the human body as a biological object to execute sovereign exclusion.
 *   **Conclusion:** Therefore, biometric border surveillance networks reduce migrants to bare life, transforming the border zone into a permanent space of exception.
 
@@ -257,7 +257,7 @@ To demonstrate the logical necessity of our critiques and the internal consisten
 
 ## 8. Game-Theoretic Analysis
 
-To explain why sovereign nation-states systematically over-invest in militarized AI border surveillance despite the financial costs and humanitarian crises these technologies cause, we model border policy through the **Border Externalization Dilemma**, represented as a symmetric Prisoner's Dilemma between adjacent wealthy states.
+To explain why sovereign states systematically over-invest in militarized AI border surveillance despite the financial and humanitarian costs, we model border policy through the **Border Externalization Dilemma** as a symmetric Prisoner's Dilemma between adjacent wealthy states.
 
 ### The Border Externalization Dilemma (Prisoner's Dilemma)
 
@@ -290,13 +290,13 @@ To provide a rigorous mathematical description of the mechanisms of exclusion, a
 
 ### Model I: Algorithmic Disparate Impact and Error Rate Disparities
 
-Let $X \in \{0, 1\}$ denote a binary demographic variable representing national origin, where $X = 1$ denotes applicants from historically favored Global North nations and $X = 0$ denotes applicants from historically marginalized Global South nations.
+Let $X \in \{0, 1\}$ represent national origin, where $X = 1$ denotes applicants from historically favored Global North nations and $X = 0$ denotes applicants from historically marginalized Global South nations.
 Let $Y \in \{0, 1\}$ represent the true suitability label of an asylum seeker, where $Y = 1$ indicates a legitimate asylum seeker fleeing persecution and $Y = 0$ indicates a non-eligible applicant.
 Let $z \in \mathcal{Z}$ represent the feature vector of the applicant (biometric data, credit history, travel records).
 Let $S(z) \in [0, 1]$ be the continuous risk score generated by the state's machine learning model.
 The binary decision of the automated system is represented by:
-$$\hat{Y} = \mathbb{I}(S(z) \le 	au)$$
-where $	au \in (0, 1)$ is the decision threshold set by the state, and $\hat{Y} = 1$ denotes a visa grant or entry clearance, while $\hat{Y} = 0$ denotes rejection or refoulement.
+$$\hat{Y} = \mathbb{I}(S(z) \le \tau)$$
+where $\tau \in (0, 1)$ is the decision threshold set by the state, and $\hat{Y} = 1$ denotes a visa grant or entry clearance, while $\hat{Y} = 0$ denotes rejection or refoulement.
 
 We formalize the systemic discrimination of the automated border through two fairness violations:
 1.  **Demographic Parity Violation:** The probability of being granted entry is significantly lower for Global South applicants:
@@ -309,20 +309,20 @@ This shows that automated risk-scoring systems act as engines of refoulement, di
 ### Model II: The Necropolitical Utility and Deterrence Cost Function
 
 We model the sovereign state's decision-making utility function regarding the deployment of border AI. The state seeks to maximize domestic political utility by minimizing migrant entries, while discounting the biological lives of migrants. Let the state's utility function $U_s$ be defined as:
-$$U_s(S_a) = lpha D(S_a) - C(S_a) - \gamma \Lambda(S_a)$$
+$$U_s(S_a) = \alpha D(S_a) - C(S_a) - \gamma \Lambda(S_a)$$
 where:
 *   $S_a \in [0, \infty)$ represents the intensity of deployed AI surveillance and automated exclusion technologies.
 *   $D(S_a)$ is the deterrence function, where $D'(S_a) > 0$ and $D''(S_a) < 0$.
-*   $lpha > 0$ represents the domestic political utility weight assigned to reducing immigration.
+*   $\alpha > 0$ represents the domestic political utility weight assigned to reducing immigration.
 *   $C(S_a)$ is the financial cost of the AI infrastructure, where $C'(S_a) > 0$.
-*   $\Lambda(S_a)$ represents the humanitarian cost (migrant deaths, physical injuries) resulting from the redirection of migrants to hazardous geographical zones. We assume $\Lambda'(S_a) > 0$ and $\Lambda''(S_a) > 0$.
+*   $\Lambda(S_a)$ represents the humanitarian cost (migrant deaths) resulting from the redirection of migrants to hazardous geographical zones. We assume $\Lambda'(S_a) > 0$ and $\Lambda''(S_a) > 0$.
 *   $\gamma \in [0, 1]$ is the ethical discount factor the state applies to migrant lives. 
 
-As the state's political drive to exclude increases ($lpha 	o \infty$) and the ethical value assigned to migrant lives decreases ($\gamma 	o 0$), the state's optimal surveillance intensity $S_a^*$ increases, regardless of the magnitude of the humanitarian toll $\Lambda(S_a)$.
+As the state's political drive to exclude increases ($\alpha \to \infty$) and the ethical value assigned to migrant lives decreases ($\gamma \to 0$), the state's optimal surveillance intensity $S_a^*$ increases, regardless of the magnitude of the humanitarian toll $\Lambda(S_a)$.
 The state maximizes utility by solving the first-order condition:
-$$rac{dU_s}{dS_a} = lpha D'(S_a) - C'(S_a) - \gamma \Lambda'(S_a) = 0 \implies lpha D'(S_a^*) = C'(S_a^*) + \gamma \Lambda'(S_a^*)$$
-In the limit where the state adopts an exclusionary stance and discounts migrant lives entirely ($\gamma 	o 0$):
-$$lpha D'(S_a^*) pprox C'(S_a^*)$$
+$$\frac{dU_s}{dS_a} = \alpha D'(S_a) - C'(S_a) - \gamma \Lambda'(S_a) = 0 \implies \alpha D'(S_a^*) = C'(S_a^*) + \gamma \Lambda'(S_a^*)$$
+In the limit where the state adopts an exclusionary stance and discounts migrant lives entirely ($\gamma \to 0$):
+$$\alpha D'(S_a^*) \approx C'(S_a^*)$$
 Because the term $\gamma \Lambda'(S_a^*)$ vanishes, the optimal level of automated exclusion $S_a^*$ becomes independent of the physical deaths it causes, mathematically formalizing the logic of state-sponsored necropolitics.
 
 ---

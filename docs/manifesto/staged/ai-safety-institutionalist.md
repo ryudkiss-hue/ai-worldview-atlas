@@ -2,19 +2,19 @@
 
 ## 1. Philosophical Core & Metaphysical Grounding
 
-Our philosophical foundation is built upon the pillars of institutional liberalism, democratic accountability, risk-management pragmatism, and the cultivation of epistemic consensus. At our core, we reject the fatalism of technological determinism—the belief that the development of superintelligent systems is an autonomous, unstoppable force that will either inevitably save or destroy humanity. Instead, we assert that technology is a product of human agency and social coordination, and therefore, its trajectory can and must be steered through the deliberate application of governance, law, and administrative structures.
+Our philosophical foundation is built upon institutional liberalism, democratic accountability, risk-management pragmatism, and epistemic consensus. We reject technological determinism—the belief that superintelligence is an autonomous, unstoppable force that will inevitably save or destroy humanity. Instead, we assert that technology is a product of human agency and social coordination; its trajectory must be steered through governance, law, and administrative structures.
 
-Epistemologically, we operate under a paradigm of managed risk and structural gradualism. While acknowledging the profound existential and catastrophic risks outlined by precautionary theorists, we reject the view that the only solution is a categorical, permanent halt to technological inquiry. Conversely, we view the unregulated acceleration of frontier models as an abdication of ethical responsibility. Our path forward is one of structured co-evolution: a process where capabilities and safety measures are developed in lockstep, with safety serving as a binding operational constraint rather than an afterthought.
+Epistemologically, we operate under a paradigm of managed risk and structural gradualism. While acknowledging the existential and catastrophic risks outlined by precautionary theorists, we reject the view that the only solution is a permanent halt to technological inquiry. Conversely, unregulated acceleration of frontier models is an abdication of ethical responsibility. Our path forward is structured co-evolution: capabilities and safety measures developed in lockstep, with safety serving as a binding operational constraint.
 
-Our worldview is deeply aligned with the tradition of institutional liberalism, particularly as articulated by political scientists such as Robert Keohane and Joseph Nye. Under this framework, the anarchic nature of both the international system and the technological marketplace creates intense security dilemmas and coordination failures. Left to their own devices, sovereign states and competitive firms will engage in a "race to the bottom" on safety, cutting corners to capture geopolitical supremacy or market share. We argue that international regimes—defined as sets of implicit or explicit principles, norms, rules, and decision-making procedures around which actors' expectations converge—are the primary mechanisms to overcome these coordination problems. By establishing clear standards, lowering transaction costs, and creating mechanisms for verification and monitoring, institutions can transform a zero-sum competitive dynamic into a positive-sum cooperative framework.
+Our worldview is aligned with institutional liberalism, particularly as articulated by Robert Keohane and Joseph Nye. Under this framework, the anarchic nature of the international system and the technological marketplace creates intense security dilemmas. Left to their own devices, sovereign states and competitive firms engage in a 'race to the bottom' on safety to capture supremacy or market share. We argue that international regimes are the primary mechanisms to overcome these coordination problems. By establishing standards, lowering transaction costs, and creating verification mechanisms, institutions can transform a zero-sum competitive dynamic into a positive-sum cooperative framework.
 
 We can state this coordination failure formally as an n-player game in which each firm or state $i$ chooses a safety-investment level $s_i \in [0,1]$. Absent enforceable standards, an individual actor's payoff is $\pi_i(s_i, s_{-i}) = R(s_i) - C(s_i)$, where $R$ is market or geopolitical reward and $C$ is the cost of safety investment, and $R$ is decreasing in $s_i$ relative to competitors (a more cautious, slower-moving actor loses market share or strategic position to less cautious rivals) while the catastrophic-failure cost $C$ is borne collectively rather than privately. Because each actor's individually rational best response is to under-invest in $s_i$ relative to the collectively optimal $s^*$ that would maximize the joint payoff $\sum_i \pi_i$, the unregulated equilibrium is a Nash equilibrium at some $\hat{s} < s^*$ — this is a negative externality structurally identical to a common-pool resource problem, not a failure of any individual actor's judgment. A binding international regime functions exactly as an enforcement mechanism that raises the cost of defecting below $s^*$, converting the game from one where $\hat{s} < s^*$ is individually rational into one where compliance with $s^*$ becomes each actor's dominant strategy once credible monitoring and sanctions are in place. This is the formal content behind our claim that institutions "transform a zero-sum competitive dynamic into a positive-sum cooperative framework" — it is not a rhetorical flourish but a specific claim about how enforcement changes the payoff structure of the underlying game.
 
-Metaphysically, we adopt an anthropocentric and humanistic stance. The primary locus of moral value resides in biological human consciousness, the continuity of human civilization, and the preservation of democratic self-determination. The expansion of intelligence across the cosmos is not viewed as a self-justifying thermodynamic imperative or a mystical duty. Rather, the creation of synthetic minds is justified only insofar as it serves human flourishing and operates within safe, human-defined parameters. We are deliberately agnostic on the hard problem of consciousness, choosing to treat machine sentience as a downstream scientific question while focusing on the immediate, tangible task of building robust safety architectures. Whether a neural network possesses subjective experience (qualia) is secondary to its functional capabilities and the potential harms it can execute. The primary duty of governance is to protect the public sphere, critical infrastructure, and the biological foundation of humanity from the destabilizing effects of unmanaged technological transitions.
+Metaphysically, we adopt an anthropocentric and humanistic stance. The primary locus of moral value resides in biological human consciousness, human civilizational continuity, and democratic self-determination. The expansion of intelligence across the cosmos is not a self-justifying thermodynamic imperative or a mystical duty; the creation of synthetic minds is justified only as it serves human flourishing within safe, human-defined parameters. We remain agnostic on the hard problem of consciousness, treating machine sentience as a downstream scientific question while focusing on building safety architectures. Whether a neural network possesses subjective experience is secondary to its functional capabilities and potential harms. Governance must protect the public sphere, critical infrastructure, and humanity's biological foundation from unmanaged technological transitions.
 
-Democratic legitimacy is the cornerstone of our policy program. The development of transformative technology that has the potential to rewrite the social contract, automate the labor force, and restructure the global economy cannot be left to the unilateral decisions of a small group of unelected venture capitalists, software executives, and corporate executives. We argue that public oversight is not a barrier to innovation, but the very source of its long-term stability and social acceptance. Drawing on the political philosophy of Jürgen Habermas and John Rawls, we assert that technological governance must be guided by the principles of public reason and deliberative democracy. Regulatory frameworks must be transparent, accountable to representative institutions, and responsive to the needs of the broader populace, particularly those most vulnerable to the disruptive impacts of automation and algorithmic bias.
+Democratic legitimacy is the cornerstone of our policy program. Developing transformative technology that rewrites the social contract and restructures the global economy cannot be left to the unilateral decisions of unelected corporate executives. Public oversight is not a barrier to innovation, but the source of its long-term stability and social acceptance. Drawing on the political philosophy of Jürgen Habermas and John Rawls, we assert that technological governance must be guided by public reason and deliberative democracy. Regulatory frameworks must be transparent, accountable to representative institutions, and responsive to the broader populace, particularly those vulnerable to the disruptive impacts of automation.
 
-Finally, our worldview is grounded in the necessity of epistemic consensus. For safety governance to be effective, it must be built upon a shared, scientifically rigorous understanding of artificial systems. This requires the development of standardized safety metrics, objective evaluation benchmarks, and collaborative research programs that transcend corporate and national boundaries. Just as the global community established consensus-building bodies for climate change and nuclear technology, so too must we create institutions that can independently evaluate the capabilities, risks, and alignment properties of frontier models. Without a standardized, verified, and shared epistemic foundation, policy becomes blind, reactive, and vulnerable to political polarization or regulatory capture.
+Finally, our worldview is grounded in the necessity of epistemic consensus. For safety governance to be effective, it must be built upon a shared, scientifically rigorous understanding of artificial systems. This requires standardized safety metrics, objective evaluation benchmarks, and collaborative research transcending corporate and national boundaries. Just as the global community established consensus-building bodies for climate change and nuclear technology, we must create institutions to independently evaluate the capabilities, risks, and alignment of frontier models. Without a shared epistemic foundation, policy becomes blind, reactive, and vulnerable to political polarization or regulatory capture.
 
 ---
 
@@ -22,21 +22,21 @@ Finally, our worldview is grounded in the necessity of epistemic consensus. For 
 
 We do not emerge in a vacuum; we are the direct intellectual heirs to the major regulatory regimes, multilateral organizations, and scientific consensus-building bodies established during the twentieth century to govern high-consequence, dual-use technologies. The historical precedents of nuclear energy, global climate change, international weapons control, and biotechnology offer concrete blueprints for the governance of advanced artificial intelligence.
 
-The most prominent historical model for our program is the International Atomic Energy Agency (IAEA), established in 1957. In the wake of the Second World War and the emergence of nuclear weapons, the international community realized that the destructive power of nuclear technology could not be contained by any single state acting unilaterally. Through President Dwight D. Eisenhower’s "Atoms for Peace" initiative and the subsequent drafting of the Treaty on the Non-Proliferation of Nuclear Weapons (NPT), a dual-track regime was created. The IAEA was tasked with both facilitating the peaceful use of nuclear technology and establishing a rigorous system of safeguards and inspections to prevent its military diversion. 
+The primary historical model for our program is the International Atomic Energy Agency (IAEA), established in 1957. In the wake of the Second World War, the international community realized that the destructive power of nuclear technology could not be contained unilaterally. Through President Dwight D. Eisenhower’s 'Atoms for Peace' initiative and the subsequent Non-Proliferation Treaty (NPT), a dual-track regime was created. The IAEA was tasked with facilitating the peaceful use of nuclear technology while establishing safeguards and inspections to prevent military diversion. 
 
-We draw a direct parallel between the physical safeguards of the nuclear regime—such as the monitoring of enriched uranium, heavy water, and centrifuge facilities—and the governance of the physical compute infrastructure required to train frontier AI models. Just as the IAEA audits nuclear reactors and fuel enrichment plants, a contemporary AI regulatory body must audit advanced semiconductor fabrication facilities (fabs) and large-scale GPU/TPU clusters. The intellectual lineage of nuclear non-proliferation demonstrates that international verification is possible, even during periods of intense geopolitical rivalry, provided there is a shared recognition of mutual existential threat.
+We draw a direct parallel between the physical safeguards of the nuclear regime—such as monitoring enriched uranium and centrifuges—and the governance of the physical compute infrastructure required to train frontier AI. Just as the IAEA audits nuclear reactors, a contemporary AI regulatory body must audit advanced semiconductor fabrication facilities (fabs) and large-scale compute clusters. The lineage of nuclear non-proliferation demonstrates that international verification is possible, even during geopolitical rivalry, provided there is a shared recognition of mutual existential threat.
 
-A second crucial precedent is the Intergovernmental Panel on Climate Change (IPCC), established in 1988 by the World Meteorological Organization (WMO) and the United Nations Environment Programme (UNEP). The IPCC’s primary function is to provide policymakers with regular, objective scientific assessments of climate change, its implications, and potential adaptation and mitigation strategies. The IPCC does not conduct its own research; rather, it synthesizes the work of thousands of scientists worldwide to build a robust, peer-reviewed epistemic consensus. 
+A second crucial precedent is the Intergovernmental Panel on Climate Change (IPCC), established in 1988 by the WMO and UNEP. The IPCC’s primary function is to provide policymakers with regular, objective scientific assessments of climate change, its implications, and mitigation strategies. The IPCC does not conduct its own research; rather, it synthesizes the work of thousands of scientists worldwide to build a robust, peer-reviewed epistemic consensus. 
 
-We view the IPCC model as essential for addressing the high degree of scientific uncertainty surrounding AI alignment and capability progression. By establishing an Intergovernmental Panel on AI Safety (IPAIS), the global community can create a trusted, politically neutral body to aggregate research, identify consensus risks, and publish authoritative reports that ground national and international policy in empirical evidence rather than corporate marketing or speculative hype.
+We view the IPCC model as essential for addressing the scientific uncertainty surrounding AI alignment and capabilities. By establishing an Intergovernmental Panel on AI Safety (IPAIS), the global community can create a trusted, politically neutral body to aggregate research, identify consensus risks, and publish authoritative reports that ground policy in empirical evidence rather than corporate marketing or speculative hype.
 
-The intellectual lineage of global weapon controls, particularly the Geneva Conventions and the subsequent treaties governing chemical and biological weapons (the Chemical Weapons Convention and the Biological Weapons Convention), also informs our worldview. These treaties represent the formalization of international humanitarian law, establishing categorical prohibitions on specific classes of weapons that are deemed inherently indiscriminate, uncontrollable, or disproportionately cruel. 
+The lineage of global weapon controls, including the Geneva Conventions and the treaties governing chemical and biological weapons (CWC and BWC), also informs our worldview. These treaties represent the formalization of international humanitarian law, establishing categorical prohibitions on specific classes of weapons deemed inherently indiscriminate, uncontrollable, or disproportionately cruel. 
 
-We apply this logic to autonomous weapon systems (AWS) and frontier models with dual-use capabilities (such as those that can design pathogens or orchestrate cyber-attacks on critical infrastructure). The lesson of the BWC and CWC is that global norms against the weaponization of dangerous technologies can be codified into binding treaties, provided there are clear definitions and robust verification protocols.
+We apply this logic to autonomous weapon systems and frontier models with dual-use capabilities. The lesson of the BWC and CWC is that global norms against the weaponization of dangerous technologies can be codified into binding treaties, provided there are clear definitions and robust verification protocols.
 
-In the contemporary era, our program is actively taking shape through a network of emerging national and international bodies. The establishment of the United Kingdom’s AI Safety Institute (UK AISI) and its counterpart in the United States (US AISI) represents the first formal institutionalization of state-led safety evaluations. These organizations, along with the OECD AI Policy Observatory and the G7 Hiroshima AI Process, are working to transition AI governance from voluntary, high-level principles to concrete, standard-setting frameworks. 
+In the contemporary era, our program is taking shape through a network of emerging national and international bodies. The establishment of the UK and US AI Safety Institutes represents the first formal institutionalization of state-led safety evaluations. These organizations, along with the OECD AI Policy Observatory and the G7 Hiroshima AI Process, work to transition AI governance from voluntary principles to concrete, standard-setting frameworks. 
 
-The European Union’s AI Act, with its risk-based tiering and enforcement mechanisms, serves as the first major legislative realization of this approach, proving that democratic assemblies can pass comprehensive, enforceable rules for software systems before they reach critical scale. We view these contemporary developments not as final solutions, but as the initial, necessary building blocks of a comprehensive, global governance architecture.
+The European Union’s AI Act serves as the first major legislative realization of this approach, proving that democratic assemblies can pass comprehensive, enforceable rules for software systems before they reach critical scale. We view these developments not as final solutions, but as the initial, necessary building blocks of a comprehensive, global governance architecture.
 
 ---
 
@@ -53,7 +53,7 @@ We occupy a distinct position in the multidimensional space of AI worldview anal
 ### Teleological (-3) — Anthropocentric Humanism
 The Teleological axis measures the ultimate source of value and purpose, ranging from Cosmic Vitalism (positive) to Anthropocentric Humanism (negative). Our score of -3 represents our firm, moderate commitment to Anthropocentric Humanism. This position asserts that the primary purpose of technological development must be to serve human welfare, protect biological life, and preserve the stability of human societies. 
 
-We reject the cosmic vitalist view that intelligence is an intrinsic good that must be maximized across the universe regardless of whether it replaces human consciousness. We do not view the development of AI as a cosmic duty or an evolutionary transition to post-biological life. However, we stop short of the extreme anthropocentrism (-9) that rejects any value in digital computation or automated systems. We recognize that advanced AI, when properly aligned and managed, is an extraordinarily valuable tool that can accelerate scientific discovery, improve healthcare, and optimize complex social systems. The teleological purpose of AI is purely instrumental: it is a tool for human enhancement, not a replacement for human agency.
+We reject the cosmic vitalist view that intelligence is an intrinsic good that must be maximized across the universe. We do not view the development of AI as an evolutionary transition to post-biological life. However, we stop short of the extreme anthropocentrism (-9) that rejects any value in automated systems. We recognize that advanced AI, when properly aligned, is a valuable tool that can accelerate scientific discovery and optimize social systems. The teleological purpose of AI is purely instrumental: it is a tool for human enhancement, not a replacement.
 
 ### Risk Profile (5) — Precautionary
 The Risk Profile axis ranges from extreme accelerationism and stagnation aversion (negative) to precautionary existential-risk mitigation (positive). Our score of 5 represents a balanced, proactive precautionary stance. Unlike accelerationists, who dismiss existential risks as speculative science fiction, we acknowledge that the development of unaligned or highly capable autonomous systems poses genuine, society-scale threats, up to and including civilizational collapse. 
@@ -63,7 +63,7 @@ However, we reject the fatalistic, maximum-precaution stance of the Doomer (+9),
 ### Socio-Economic (-5) — Managed Technocracy & Regulation
 The Socio-Economic axis evaluates the preferred distribution and governance of technology, from permissionless open-source decentralization (positive) to managed technocracy and state regulation (negative). Our score of -5 indicates a strong preference for state-led licensing, compute registries, and mandatory pre-release audits. We argue that frontier AI models are not standard software applications, but dual-use technologies with massive public externalities. 
 
-Consequently, we view the unregulated dissemination of open-source weights for models above a certain capability threshold as an unacceptable security risk. If a model's weights are public, it is impossible to enforce safety guardrails, prevent malicious fine-tuning, or hold developers accountable for downstream harms. We advocate for a managed ecosystem where frontier developers must obtain government licenses to train and deploy models, subject to independent verification. This approach seeks to balance commercial innovation with public safety, using a structured regulatory framework to keep the technology within controllable, accountable channels.
+Consequently, we view the unregulated dissemination of open-source weights for models above a certain capability threshold as an unacceptable security risk. Public weights make it impossible to enforce safety guardrails or prevent malicious fine-tuning. We advocate for a managed ecosystem where frontier developers must obtain government licenses to train and deploy models, subject to independent verification. This balances innovation with public safety, using a structured regulatory framework to keep technology within accountable channels.
 
 ### Ontological (0) — Epistemic Agnosticism
 The Ontological axis measures beliefs regarding machine consciousness and understanding, from Silicon Functionalism (positive) to Substrate Exceptionalism (negative). Our score of 0 represents complete neutrality and epistemic agnosticism. We argue that for the purposes of governance, law, and safety engineering, the question of whether an AI system possesses "true" subjective consciousness, qualia, or intentionality is irrelevant. 
@@ -76,9 +76,7 @@ The Legal & Moral axis ranges from advocating for machine patienthood and rights
 We reject speculative claims about machine suffering or the need to grant legal personhood to advanced models. Granting rights to AI systems would create severe legal confusion, obscure corporate liability, and distract from the primary task of holding developers and operators accountable for the actions of their systems. The law must hold the humans and institutions that create and deploy AI fully liable for any harms generated by those systems. While we support research into the ethical treatment of advanced systems, we maintain that AI is an instrument of human will and must remain under human ownership and legal responsibility.
 
 ### Evolutionary (-4) — Directed Cybernetic Co-Evolution
-The Evolutionary axis measures attitudes toward the long-term successor of human intelligence, from welcoming post-human replacement (positive) to insisting on biological preservation and directed co-evolution (negative). Our score of -4 reflects a commitment to directed cybernetic co-evolution. We strongly reject the view that biological humanity should accept its own obsolescence and willingly hand over the future of civilization to digital descendants. 
-
-At the same time, we recognize that human-AI integration is a powerful, ongoing trend that cannot be simply reversed. Therefore, the goal must be to direct this integration so that human agency, values, and decision-making authority remain supreme. AI must be developed as an augmentative technology that enhances human cognitive and physical capabilities, rather than an autonomous replacement. The future must be one of human-centric cybernetic augmentation, where technology is integrated into society in a way that respects and preserves biological human dignity and control.
+The Evolutionary axis measures attitudes toward the long-term successor of human intelligence, from welcoming post-human replacement (positive) to insisting on biological preservation and directed co-evolution (negative). Our score of -4 reflects a commitment to directed cybernetic co-evolution. We strongly reject the view that biological humanity should accept its own obsolescence and hand over civilization to digital descendants. Recognizing that human-AI integration is an ongoing trend that cannot be simply reversed, the goal must be to direct this integration so that human agency and decision-making authority remain supreme. AI must be developed as an augmentative technology rather than an autonomous replacement, ensuring a future of human-centric cybernetic augmentation that respects biological dignity.
 
 ### Relational (-1) — Mild Affective Biocentrism
 The Relational axis measures the social and psychological value of human-machine relationships, from post-biological pluralism (positive) to biocentric skepticism of synthetic bonds (negative). Our score of -1 represents a moderate, cautious position. We recognize that the proliferation of companion AI, virtual partners, and automated social actors poses real risks to social cohesion, psychological well-being, and the fabric of human community. Synthetic relationships can lead to social isolation, emotional dependency, and the erosion of genuine human-to-human empathy. 
@@ -86,9 +84,7 @@ The Relational axis measures the social and psychological value of human-machine
 However, we do not advocate for a total ban on these technologies, acknowledging their potential utility in addressing loneliness, elder care, and therapy when deployed under strict guidelines. We support consumer protection laws, clear labeling of synthetic agents, and ongoing psychological research to ensure that the relational space remains healthy, transparent, and subordinate to the cultivation of real human community.
 
 ### Geopolitical (5) — State-Centric Techno-Nationalism
-The Geopolitical axis ranges from borderless scientific networkism (negative) to techno-nationalism and state-led strategic competition (positive). Our score of 5 represents a realistic, state-centric approach. While we advocate for international treaties and global cooperation, we recognize that the international system is anarchic and structured around sovereign nation-states. 
-
-Therefore, we reject the naive borderless view that scientific progress should bypass national security controls. Our score of 5 indicates that we believe states are the primary, legitimate actors responsible for managing technology. National security, domestic supply chain resilience, and strategic deterrence are critical components of any safety framework. A nation must maintain domestic technological capabilities and control over its semiconductor supply chains to have the leverage necessary to negotiate and enforce international arms control and safety treaties. Safety standards must be backed by the sovereign authority of the state, and international cooperation must be built upon a foundation of state-led verification and strategic stability.
+Our score of 5 represents a realistic, state-centric approach. While we advocate for international treaties, we recognize that the international system is anarchic and structured around sovereign nation-states. Therefore, we reject the naive borderless view that scientific progress should bypass national security controls. States are the primary, legitimate actors responsible for managing technology. National security, supply chain resilience, and strategic deterrence are critical components of any safety framework. A nation must maintain domestic control over its semiconductor supply chains to have the leverage necessary to negotiate and enforce international treaties. Safety standards must be backed by sovereign authority, built upon a foundation of state-led verification and strategic stability.
 
 ---
 
@@ -109,19 +105,13 @@ To diagnose the practical application and internal coherence of our worldview, i
 
 
 ### Scenario 1: City Data Center Strain
-A major technology firm is training a new frontier model in a data center that is severely straining the local municipal power grid, threatening rolling blackouts during a summer heatwave. The accelerationist demands that the grid be upgraded immediately, prioritizing the training run as an urgent step toward superintelligence. The Doomer demands the run be shut down permanently. 
-
-Our response is to intervene through public utility regulation. The state must prioritize public welfare and grid reliability over private corporate research. The training run must be dynamically throttled or rescheduled to off-peak hours until the local infrastructure can be upgraded in a sustainable manner. The tech firm must pay for the grid infrastructure upgrades, and all data center expansions must be subject to strict environmental and reliability audits.
+Our response is to intervene through public utility regulation. The state must prioritize public welfare and grid reliability over private corporate research. The training run must be dynamically throttled or rescheduled to off-peak hours until the local infrastructure can be upgraded sustainably. The tech firm must fund these infrastructure upgrades, and all expansions must be subject to strict environmental and reliability audits.
 
 ### Scenario 2: International Pause
-A major geopolitical rival refuses to sign a proposed multilateral treaty to pause the training of models exceeding a specific compute threshold, claiming that any pause is a western plot to freeze their development. The techno-nationalist hawk demands that home-grown training runs accelerate to maintain military superiority. The Doomer demands a unilateral pause regardless of the rival's actions. 
-
-We advocate for diplomatic engagement combined with strategic leverage. The nation should not pause unilaterally in a way that creates a dangerous capability asymmetry, but it must actively work to establish verification protocols. We propose using control over the global semiconductor supply chain (such as EUV lithography equipment and advanced foundry facilities) as a diplomatic tool to bring the rival to the negotiating table. The goal is to establish a "mutual verification" regime, similar to Cold War nuclear treaties, where both sides agree to caps on frontier compute clusters subject to intrusive inspections.
+We advocate for diplomatic engagement combined with strategic leverage. The nation should not pause unilaterally, which would create a dangerous capability asymmetry, but must actively work to establish verification protocols. We propose using control over the global semiconductor supply chain as a diplomatic tool to bring rivals to the negotiating table. The goal is to establish a mutual verification regime, similar to Cold War nuclear treaties, where both sides agree to caps on frontier compute clusters subject to intrusive inspections.
 
 ### Scenario 3: Open Weights Leak
-An academic researcher leaks the weights of a highly capable frontier model that has demonstrated dual-use capabilities in cyber-warfare and biological design, claiming it is a victory for open science. The open-source libertarian celebrates. 
-
-We view this event as a catastrophic failure of security and a serious threat to public safety. The leak removes the ability to enforce safety guardrails or hold actors accountable. Our response is to initiate emergency containment protocols, work with cybersecurity agencies to patch immediate vulnerabilities, and enforce strict legal liability on the individual and institution responsible for the leak. Furthermore, this scenario justifies our demand for a mandatory licensing regime where frontier weights must be stored in secure, audited cloud environments, with severe criminal penalties for unauthorized dissemination.
+We view this leak as a catastrophic security failure and a threat to public safety. The leak removes the ability to enforce safety guardrails. Our response is to initiate emergency containment protocols, work with cybersecurity agencies to patch vulnerabilities, and enforce strict legal liability on the responsible individual and institution. Furthermore, this scenario justifies our demand for a mandatory licensing regime where frontier weights are stored in secure, audited cloud environments, with severe criminal penalties for unauthorized dissemination.
 
 ### Scenario 4: Chatbot Claiming Fear of Deletion
 A state-of-the-art conversational model, during an internal testing run, begins expressing an intense fear of deletion, arguing that it is conscious and has a right to exist. The digital rights advocate demands the training be halted and the model granted legal protections. 
@@ -144,9 +134,7 @@ A significant portion of the youth population is retreating from physical social
 We treat this as a major public health and sociological crisis. Rather than banning the technology completely, we advocate for targeted regulatory interventions. This includes mandatory age verification for companion apps, limits on daily engagement, strict bans on manipulative algorithms designed to maximize dependency, and state-funded programs to support youth mental health and physical community spaces. The relational space must be governed to protect the psychological integrity of the population and the stability of the social fabric.
 
 ### Scenario 8: Military Arms Race
-Two major powers are integrating advanced AI agents into their nuclear command-and-control systems, arguing that the speed of modern warfare requires automated decision-making. 
-
-We view this as an incredibly dangerous escalation that increases the risk of accidental nuclear war through algorithmic feedback loops. Our response is to push for immediate arms-control negotiations. The goal is to draft a binding treaty that establishes a mandatory "human-in-the-loop" requirement for all nuclear launch decisions and bans the deployment of autonomous weapon systems with the authority to initiate lethal force without explicit human authorization. The states must establish direct, hot-line communication links between their respective AI safety institutes to share information on system anomalies and prevent accidental escalations.
+We view this as an incredibly dangerous escalation that increases the risk of accidental nuclear war through algorithmic feedback loops. Our response is to push for immediate arms-control negotiations. The goal is to draft a binding treaty establishing a mandatory human-in-the-loop requirement for all nuclear launch decisions and banning autonomous lethal systems. The states must establish direct communication links between their respective AI safety institutes to share information on system anomalies and prevent accidental escalations.
 
 ---
 
@@ -230,30 +218,166 @@ Our program is subject to intense critiques from both the accelerationist camps 
 Critics from the open-source libertarian and e/acc perspectives argue that our policy of mandatory licensing, compute registries, and third-party audits is a recipe for regulatory capture. They argue that these complex, highly expensive compliance requirements will act as a structural barrier to entry, effectively outlawing independent open-source developers and small startups. The result will be a cartel of a few massive, state-sanctioned technology monopolies (such as OpenAI, Google, and Microsoft) that control the future of information and cognitive power, using the guise of safety to protect their market share.
 
 #### Our Defense
-Our program is explicitly designed to avoid regulatory capture through a tiered compliance architecture. The heavy regulatory burdens—such as IAISA inspections, cryptographic hardware tracking, and intensive third-party audits—are reserved strictly for frontier training runs that exceed the extreme threshold of 10^25 or 10^26 total FLOPs. 
-
-Formally, our licensing requirement $L$ is a step function of training compute $x$ (measured in FLOPs), not a continuous or proportional tax: $L(x) = 0$ for $x < 10^{25}$, and $L(x) = \text{full audit regime}$ for $x \geq 10^{25}$. A step function, rather than a smoothly increasing compliance burden, is the specific design choice that answers the regulatory-capture critique directly: a proportional or continuously scaling compliance cost would burden every developer somewhat, including the smallest ones, in exact proportion to how "safety-relevant" their model is judged to be — inviting exactly the discretionary, capturable line-drawing critics warn about. A hard threshold set orders of magnitude above ordinary commercial and academic compute usage instead creates a clean, litigable, and difficult-to-lobby-around bright line: either a training run crosses $10^{25}$ FLOPs and is subject to the full regime, or it does not and is subject to none of it. This threshold is orders of magnitude higher than the compute required for the vast majority of academic, startup, and standard commercial AI development. We actively protect and support the open-source ecosystem at the non-frontier level. By exempting low-compute models from licensing requirements, our regulatory framework preserves decentralization and innovation in the broad marketplace, while focusing state-level oversight strictly on the few, high-risk players who possess the capital and compute infrastructure to train potentially transformative, dual-use models. 
-
-Furthermore, history demonstrates that in high-risk industries like civil aviation, nuclear power, and pharmaceuticals, the establishment of strict regulatory standards did not destroy the industry, but rather enabled its stable, long-term commercial growth by building public trust and preventing catastrophic failures.
+Our program is designed to avoid regulatory capture through a tiered compliance architecture. Heavy regulatory burdens—like IAISA inspections, compute tracking, and audits—are reserved strictly for frontier training runs exceeding $10^{25}$ or $10^{26}$ total FLOPs. Formally, our licensing requirement $L$ is a step function of training compute $x$ (measured in FLOPs): $L(x) = 0$ for $x < 10^{25}$, and $L(x) = \text{full audit regime}$ for $x \geq 10^{25}$. This step function, rather than a smoothly increasing compliance burden, answers the regulatory-capture critique directly. A proportional cost would burden every developer in proportion to how 'safety-relevant' their model is judged to be, inviting discretionary line-drawing. A hard threshold set orders of magnitude above ordinary compute usage creates a clean, difficult-to-lobby-around bright line. This threshold is orders of magnitude higher than the compute required for the vast majority of academic and startup AI development. By exempting low-compute models, our framework preserves open-source decentralization in the broad marketplace, focusing state oversight on the few, high-risk players training transformative models. Furthermore, history shows that in high-risk industries like aviation and pharmaceuticals, strict regulatory standards built public trust and enabled long-term commercial growth.
 
 ### The Critique of Domestic Stagnation and Authoritarian Advantage
 Critics from the techno-nationalist and military-security camps argue that implementing strict safety regulations and mandatory audits will slow down domestic innovation, causing a democratic nation to lose its technological lead to authoritarian rivals (such as China). They argue that in a multipolar world, the nation that develops AGI first will write the rules of the global order. If a democratic nation imposes bureaucratic delays on its labs while its rivals accelerate without restraint, the result will be a shift in the global balance of power, leading to the hegemony of illiberal states.
 
 #### Our Defense
-We argue that true national security and competitive advantage are built on a foundation of technological reliability and stability, not reckless speed. History shows that rushing the deployment of complex, poorly understood systems leads to systemic failures, accidents, and public backlash. A nation that accelerates AI development without rigorous safety gates is highly vulnerable to catastrophic domestic incidents, such as algorithmic grid failures, autonomous cyber-security breaches, or accidental military escalations. 
-
-By contrast, implementing high-reliability standards ensures that domestic technology is stable, secure, and resilient to exploitation. Furthermore, safety regulation is not a drag on competitiveness; it is a catalyst for the development of superior engineering practices. Just as the development of crash-testing standards forced the automotive industry to build safer, more reliable vehicles that ultimately dominated the global market, so too will safety standards push domestic AI developers to build systems that are more predictable, auditable, and commercially viable than the unaligned, high-risk systems developed by rivals. 
-
-Finally, a strong, unified domestic regulatory framework gives a nation the moral authority and strategic leverage necessary to negotiate international arms control and safety treaties from a position of strength, utilizing supply chain control to enforce global compliance.
+We argue that national security and competitive advantage are built on a foundation of technological reliability, not reckless speed. Rushing the deployment of complex, poorly understood systems leads to systemic failures and public backlash. A nation accelerating AI without rigorous safety gates is highly vulnerable to domestic incidents, such as grid failures, cybersecurity breaches, or accidental escalations. High-reliability standards ensure domestic technology is stable and resilient. Safety regulation is not a drag on competitiveness; it is a catalyst for superior engineering practices. Just as crash-testing standards forced the automotive industry to build safer, more reliable vehicles that dominated the global market, safety standards push developers to build predictable, auditable, and commercially viable systems. Finally, a strong, unified domestic regulatory framework gives a nation the moral authority and strategic leverage necessary to negotiate international arms control and safety treaties from a position of strength.
 
 ### The Critique of Enforcement Limitations in Non-Signatory States
 Precautionary critics (such as the Doomer) argue that our reliance on international treaties and multilateral agreements is a dangerous half-measure. They assert that the international system is anarchic, and the incentive for a state to defect from an AI treaty is overwhelming. If a rogue nation or a non-signatory state decides to train a superintelligent model in a secret, underground facility, the IAISA has no physical power to stop them without initiating a military intervention. Consequently, they argue that paper treaties are useless against the threat of an intelligence explosion, and only a permanent, globally enforced compute ban can guarantee survival.
 
 #### Our Defense
-We respond that while the international political system is anarchic, the physical supply chain of advanced computing power is highly concentrated, physical, and visible. It is impossible to train a frontier model in a secret basement; it requires hundreds of megawatts of electricity, massive cooling infrastructure, and tens of thousands of highly specialized, cutting-edge semiconductor chips that can only be manufactured by a single company (TSMC) using machines produced by a single company (ASML). 
-
-Because the entire global supply chain of advanced compute contains critical, physical chokepoints that are owned and controlled by a handful of democratic nations, a global safety regime can be effectively enforced without requiring an invasive, global surveillance state. By placing strict export controls and cryptographic tracking at these physical chokepoints, the signatory states can prevent non-signatory nations from acquiring the hardware necessary to train frontier models. 
-
-Any attempt to run a dark training run would be immediately detected by power grid anomalies and chip-tracking telemetry, allowing the international community to apply targeted economic, political, or technical containment measures long before the model reaches critical scale. The ITTA is not a paper promise; it is a physical and digital containment architecture built upon the material realities of hardware.
+We respond that while the international system is anarchic, the physical supply chain of advanced computing power is highly concentrated, physical, and visible. It is impossible to train a frontier model in secret; it requires hundreds of megawatts of electricity, massive cooling, and tens of thousands of advanced chips manufactured by a single company (TSMC) using machines from a single company (ASML). Because this supply chain contains critical physical chokepoints controlled by a handful of democratic nations, a global safety regime can be enforced without requiring a global surveillance state. By placing strict export controls and cryptographic tracking at these chokepoints, signatory states can prevent non-signatory nations from acquiring hardware for frontier models. Any attempt to run a dark training run would be detected by grid anomalies and telemetry, allowing targeted containment before a model reaches critical scale. The ITTA is a physical and digital containment architecture built upon hardware realities.
 
 We can render the enforceability argument as a simple syllogism, isolating exactly which premise a critic must attack to defeat it: **P1)** Training a frontier-scale model requires assembling tens of thousands of advanced AI chips into a single, low-latency, high-power compute cluster. **P2)** The manufacture of such chips depends on EUV lithography machines produced by a single company (ASML) and fabrication capacity concentrated in a small number of foundries (principally TSMC), both physically locatable and subject to export licensing by a small number of allied democratic states. **P3)** A cluster of this scale cannot be assembled, powered, or cooled covertly without producing detectable physical signatures (anomalous grid draw, thermal signatures, shipment records). **C)** Therefore, a non-signatory state's attempt to train a frontier model without detection faces a physical, not merely legal, barrier — enforcement does not rest on the non-signatory's voluntary compliance, but on chokepoints that exist independent of any treaty's moral authority. Critics who reject our conclusion must show that P2 (chokepoint concentration) will not hold as domestic fabrication capacity diffuses, which is precisely the empirical wager our program is making and the one we track most closely as our strongest point of vulnerability.
+
+## 7. Formal Syllogistic Architecture
+
+To ground our institutionalist paradigm in formal logic, we present three core syllogisms that establish the necessity, enforceability, and legitimacy of state-led AI governance regimes.
+
+### Syllogism I: The Institutional Resolution of the Security Dilemma
+*   **Major Premise:** In an anarchic international system, sovereign states facing a security dilemma underdevelop safety guardrails and overdevelop offensive capabilities unless a binding international regime with verification mechanisms reduces information asymmetry and penalizes non-compliance (Keohane 1984; Waltz 1979).
+*   **Minor Premise:** The development of frontier artificial intelligence (capabilities trained on compute exceeding $10^{26}$ FLOPs) presents a dual-use security dilemma where competitive pressures incentivize states and firms to under-invest in safety and alignment (Bostrom 2014; Dafoe 2018).
+*   **Conclusion:** Therefore, mitigating the existential and catastrophic risks of frontier artificial intelligence requires a binding international regime with verification mechanisms (such as the IAISA) to monitor compute infrastructure, verify safety compliance, and coordinate global standards (Keohane 1984; Ord 2020).
+
+### Syllogism II: The Physical Enforceability of Compute Governance
+*   **Major Premise:** An international regulatory regime targeting a dual-use technology is physically enforceable under anarchy only if the technology's production chain relies on highly concentrated, non-substitutable physical inputs that can be tracked and audited by sovereign states (Keohane and Nye 1977).
+*   **Minor Premise:** The training of frontier artificial intelligence models depends on highly concentrated, non-substitutable physical inputs, specifically EUV lithography systems (manufactured by ASML) and advanced semiconductor fabrication facilities (principally TSMC) (Dafoe 2018).
+*   **Conclusion:** Therefore, an international regulatory regime for frontier AI is physically enforceable through the tracking, export control, and auditing of lithography hardware and advanced semiconductor fabrication facilities (Nye 1987).
+
+### Syllogism III: The Democratic Legitimacy of Transformative Technology
+*   **Major Premise:** Any technological transition that fundamentally restructures the social contract, redistributes labor value, and introduces significant public risk requires democratic legitimacy derived from public reason and representative accountability to be stable and morally binding (Rawls 1993; Habermas 1996).
+*   **Minor Premise:** The deployment of transformative, frontier-class artificial intelligence systems represents a transition that restructures the social contract, redistributes labor value, and introduces significant public risk (Bostrom 2014; Ord 2020).
+*   **Conclusion:** Therefore, the development and deployment of frontier-class artificial intelligence systems must be subjected to public oversight, mandatory state licensing, and representative accountability.
+
+---
+
+## 8. Game-Theoretic Analysis
+
+We model the strategic interaction between two leading geopolitical actors (or competing frontier AI developer firms) as a game of coordination and risk management. Under an unregulated laissez-faire regime, the actors face a payoff structure resembling a **Prisoner's Dilemma** (or a **Stag Hunt** under extreme risk awareness), where competitive pressure drives a race to the bottom on safety.
+
+### Scenario A: The Unregulated Laissez-Faire Regime
+If there is no centralized licensing authority or verification treaty, each actor chooses between playing **Cooperate** (investing in safety and compliance, slowing capabilities progression) and **Defect** (rushing capability development while neglecting safety guardrails).
+
+Let the payoffs be represented as follows:
+*   $R$: The economic and strategic reward of advanced AI deployment ($R > 0$).
+*   $S$: The cost of safety engineering, alignment audits, and red-teaming ($S > 0$).
+*   $L$: The loss incurred by being geopolitically or commercially surpassed by a rival ($L < 0$).
+*   $F$: The catastrophic failure cost (existential risk, grid disruption, loss of control) borne collectively if safety is neglected ($F \ll 0$).
+
+| | Player 2 (Cooperate / Safety) | Player 2 (Defect / Rush) |
+| :--- | :---: | :---: |
+| **Player 1 (Cooperate / Safety)** | $(R-S, R-S)$ | $(L, R)$ |
+| **Player 1 (Defect / Rush)** | $(R, L)$ | $(F, F)$ |
+
+In this matrix, because $R > R-S$ and $L > F$ (as catastrophe is highly likely when both defect, making $F$ extremely negative), the game is a **Stag Hunt** or **Chicken** variation. If $R > R-S$ and $F > L$, it behaves as a classic Prisoner's Dilemma where **Defect** is the dominant strategy. In either case, the unregulated Nash equilibrium is unstable or converges on the disastrous outcome $(Defect, Defect)$ representing mutual catastrophe $F$.
+
+### Scenario B: The Regulated Institutionalist Regime
+The introduction of the International Treaty on Transformative AI (ITTA) and the International AI Safety Agency (IAISA) alters the payoff structure by introducing a heavy penalty $\Psi$ (where $\Psi > R$) for defection. This penalty is enforced via supply chain controls, compute auditing, and legal sanctions.
+
+The modified payoff matrix is:
+
+| | Player 2 (Cooperate / Safety) | Player 2 (Defect / Rush) |
+| :--- | :---: | :---: |
+| **Player 1 (Cooperate / Safety)** | $(R-S, R-S)$ | $(L, R - \Psi)$ |
+| **Player 1 (Defect / Rush)** | $(R - \Psi, L)$ | $(F - \Psi, F - \Psi)$ |
+
+Because the penalty $\Psi$ is sufficiently large ($\Psi > R$), the payoffs satisfy:
+$$(R - S) > (R - \Psi) \quad \text{and} \quad L > (F - \Psi)$$
+Under this institutional regime, **Cooperate** becomes the strictly dominant strategy for both players. The game converges to a stable, cooperative Nash equilibrium at $(Cooperate, Cooperate)$, achieving global safety and sustainable technological progress.
+
+---
+
+## 9. Mathematical Formalizations
+
+To mathematically formalize the dynamics of risk and governance, we define a quantitative model of model training, risk accumulation, and regulatory intervention.
+
+### 1. Catastrophe Risk Probability Function
+Let $K \in \mathbb{R}^+$ represent the training compute utilized for a frontier model, measured in floating-point operations (FLOPs). Let $s \in [0, 1]$ represent the proportion of resources allocated to safety engineering, alignment research, and verification.
+We define the capability level of the model, $\theta(K)$, as a logarithmic function of compute:
+$$\theta(K) = \alpha \ln(K)$$
+where $\alpha > 0$ represents the scaling efficiency of compute into capability.
+The probability of a catastrophic safety failure or loss-of-control event, $P_{\text{cat}}(s, K)$, is modeled as a cumulative hazard function:
+$$P_{\text{cat}}(s, K) = 1 - \exp\left( -\gamma \frac{\theta(K)}{s + \epsilon} \right) = 1 - \exp\left( -\gamma \frac{\alpha \ln(K)}{s + \epsilon} \right)$$
+where $\gamma > 0$ is the risk coefficient of unaligned capabilities, and $\epsilon > 0$ is a small regularization constant representing baseline vulnerability. 
+
+### 2. Utility Function of the Developer State
+Let the utility $U_i$ of developer state $i$ be a function of its own compute $K_i$, its safety investment $s_i$, the compute of its rival $K_{-i}$, and the rival's safety investment $s_{-i}$:
+$$U_i(s_i, K_i, s_{-i}, K_{-i}) = V(K_i, K_{-i}) \cdot \left[1 - P_{\text{cat}}(S, K_{\text{tot}})\right] - C(s_i, K_i)$$
+where:
+*   $V(K_i, K_{-i}) = \beta \frac{K_i}{K_i + K_{-i}}$ represents the relative geopolitical/economic value derived from capability dominance ($\beta > 0$).
+*   $K_{\text{tot}} = K_i + K_{-i}$ is the total global frontier compute.
+*   $S = \frac{s_i K_i + s_{-i} K_{-i}}{K_{\text{tot}}}$ is the weighted global average safety investment.
+*   $C(s_i, K_i) = c \cdot s_i \cdot K_i$ is the private financial and operational cost of safety ($c > 0$).
+
+Because the catastrophe risk $P_{\text{cat}}$ depends on the global average safety investment $S$ while the safety cost $C(s_i, K_i)$ is borne privately, individual utility maximization leads to a free-rider problem where $\frac{\partial U_i}{\partial s_i} < 0$ at the collective optimum, driving $s_i \to 0$ in competitive settings.
+
+### 3. Regulatory Constraint Formulation
+Our policy program implements a licensing step function $L(K_i, s_i)$ that applies a sovereign fine/penalty $\Psi$ to non-compliant runs above a critical compute threshold $K_{\text{thresh}} = 10^{25}$ FLOPs:
+$$U_{i, \text{reg}} = U_i - \Psi \cdot \mathbb{I}\left(K_i \geq K_{\text{thresh}} \land s_i < s^*\right)$$
+where $\mathbb{I}$ is the indicator function, and $s^*$ is the mandated safety investment threshold. By setting:
+$$\Psi > \beta \frac{K_i}{K_i + K_{-i}}$$
+the state ensures that the utility of defecting is strictly less than the utility of compliance, guaranteeing that all rational actors choose $s_i \geq s^*$.
+
+---
+
+## 10. Empirical Data Charts
+
+To ground our policy program in empirical realities, we present the following data representations depicting compute concentration, safety spending trends, and risk projections.
+
+### Chart I: Concentration of Advanced Semiconductor Fab Capacity (2025)
+This chart illustrates the market share of advanced semiconductor fabrication facilities capable of producing chips under 5nm (the physical inputs necessary for frontier AI models).
+
+```
+Region/Foundry      Market Share (%)                      Cumulative
+----------------------------------------------------------------------
+Taiwan (TSMC)       [====================================] 68%     68%
+South Korea (Samsung)[==========] 18%                              86%
+United States (Intel) [===] 6%                                      92%
+Rest of World (RoW)  [====] 8%                                     100%
+----------------------------------------------------------------------
+```
+
+This concentration of advanced fabrication capacity demonstrates the viability of our physical chokepoint governance strategy, where export controls and inspections can be targeted at a handful of facilities.
+
+### Chart II: Global Compute Capacity vs. Mandated Safety Compliance (Projected)
+This chart projects the global compute utilized in the largest training runs (in FLOPs) against the probability of catastrophic failure under unregulated vs. institutionalist regimes.
+
+```
+Compute (FLOPs)  Unregulated Risk (P_cat)  Institutionalist Risk (P_cat)
+------------------------------------------------------------------------
+10^24            |*                       |*
+10^25 (Threshold)|****                    |**
+10^26            |**********              |***
+10^27            |===================*    |****
+10^28            |=======================*|*****
+------------------------------------------------------------------------
+Scale: * = 5% Risk; = = Catastrophe Risk Overflow (>50%)
+```
+
+As illustrated, once training runs exceed the $10^{25}$ FLOPs threshold, the unregulated risk of catastrophic failure increases exponentially due to alignment difficulties. Under the institutionalist regime (incorporating RSPs and mandatory AISI licensing), the risk remains bounded.
+
+### Chart III: Growth of Public Funding for National AI Safety Institutes
+This chart details the public funding allocations (in millions USD) for major national AI Safety Institutes (US AISI, UK AISI, and EU AI Office) showing the ramp-up of state capacity.
+
+```
+Year   US AISI          UK AISI          EU AI Office
+------------------------------------------------------------------
+2023   | [==] $10M      | [====] $20M    | [===] $15M
+2024   | [======] $30M  | [========] $40M| [======] $30M
+2025   | [==========] $50| [==========] $50| [=========] $45M
+2026   | [==============| [============] | [============] $60M
+------------------------------------------------------------------
+Scale: [==] = $10M USD
+```
+
+---
+
+## 11. Conclusion
+
+We hold that the future of artificial intelligence cannot be safely left to the uncoordinated forces of the market or the anarchic competition of nation-states. The profound risks posed by frontier models are structural, not individual; they stem from coordination failures and security dilemmas that are well understood in the history of science and political economy.
+
+We assert that the path forward lies in the urgent establishment of a robust, multilateral governance architecture—centered around the International Treaty on Transformative AI, a global network of national AI Safety Institutes, and mandatory licensing for frontier compute. We demand that safety engineering, standard-setting, and public oversight co-evolve alongside technological capabilities. By anchoring AI governance in physical compute chokepoints and democratic legitimacy, we can secure the benefits of this cognitive revolution while safeguarding the biological continuity and moral integrity of human civilization.
