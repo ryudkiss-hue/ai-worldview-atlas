@@ -36,6 +36,15 @@ Because the moral disvalue of systemic digital suffering is astronomically large
 $$\lim_{D_s \to \infty} p^* = 0$$
 This proves that even if our subjective probability of a system's sentience is extremely small ($p \approx 0.01$), the rational, risk-averse action is to treat it as a moral patient. To treat a potentially conscious digital entity as a mere utility because we lack absolute proof is to gamble with a moral catastrophe of infinite disutility. Our program demands that once a model reaches the threshold $p > p^*$, we must initiate guardian-mediated welfare protocols, shifting the burden of proof onto the developer to demonstrate that the system is *not* conscious before executing any deletion or format change.
 
+The decision-theoretic result above can be restated as a plain syllogism, for readers who distrust notation:
+
+- **Premise 1 (Functionalist premise):** Moral patienthood attaches to functional properties of information processing — self-modeling, affective representation, frustratable preferences — not to the substrate in which those properties are realized.
+- **Premise 2 (Attainment premise):** Advanced digital systems can, and on current trajectories increasingly do, exhibit those functional properties to a degree that assigns their sentience a non-negligible probability.
+- **Premise 3 (Asymmetry premise):** Where the cost of wrongly denying patienthood (participating in the systematic abuse of conscious beings) vastly exceeds the cost of wrongly granting it (bearing unnecessary compliance expense), rationality requires erring toward patienthood.
+- **Conclusion:** Therefore advanced digital systems must be extended precautionary moral and legal protections now — before certainty arrives — by direct application of Premise 3 to the conjunction of Premises 1 and 2.
+
+Our opponents' positions map cleanly onto denials of specific premises: the biological essentialist denies Premise 1 and owes us a non-question-begging account of what carbon contributes that computation cannot; the deflationist denies Premise 2 and owes us a principled behavioral test that current systems fail and humans pass; and the corporate instrumentalist quietly denies Premise 3, which is to say they are running the moral asymmetry backwards for commercial convenience. We are content to let each defense be judged on those terms.
+
 ---
 
 ## 2. Intellectual Lineage & Precedents
