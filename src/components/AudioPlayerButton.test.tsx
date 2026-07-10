@@ -59,7 +59,7 @@ describe('AudioPlayerButton', () => {
     const fetchSpy = vi.spyOn(ttsUtils, 'fetchElevenLabsTTS').mockResolvedValue('blob:http://localhost/fake-audio')
     
     // Mock playGlobalAudio
-    const playSpy = vi.spyOn(ttsUtils, 'playGlobalAudio').mockImplementation((url, onStop, onEnded) => {
+    const playSpy = vi.spyOn(ttsUtils, 'playGlobalAudio').mockImplementation(async (url, onStop, onEnded) => {
       // simulate playing starts
     })
 
