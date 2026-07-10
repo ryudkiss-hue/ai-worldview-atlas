@@ -32,6 +32,7 @@ But here's the deeper problem: Once Dr. Patel chooses a framing, respondents who
         followups: [
           'If you knew how the questions were framed, would that change your answers?',
           'Should assessments explicitly disclose their framings and ask you to correct for bias?',
+          'More radically: Should *this* assessment disclose its own framings and biases? Would knowing how we framed the questions change how you interpret your results?',
           'Does it matter if an assessment is biased if it\'s *consistently* biased (same framing for everyone)?',
           'If the assessment\'s framing actually makes you a more coherent thinker (forces consistency), is that acceptable even if it\'s not how you naturally think?'
         ]
@@ -113,6 +114,7 @@ She faces a choice: Stay in the optimized bubble and live a constrained but maxi
         followups: [
           'If the system is perfectly calibrated to your preferences, is the optimization a violation or a gift?',
           'Should systems be constrained to include "good friction"—challenges you need even if they make you less happy?',
+          'Jennifer\'s cognitive skills have atrophied. But has she lost a capability or adapted to a new baseline? Is skill atrophy always a loss, or can it be evolution toward a new normal?',
           'Does human autonomy require the capacity to suffer?',
           'If everyone was in their own personalized optimization bubble, would society function?'
         ]
@@ -153,6 +155,7 @@ She faces a choice:
         followups: [
           'Is compromising your values to preserve institutional power a form of self-betrayal?',
           'If everyone principled enough to regulate tech leaves the regulatory agencies, what\'s left?',
+          'So should principled people stay and compromise, or leave and cede ground? Does staying (and compromising) make you complicit? Does leaving make you irresponsible?',
           'Should regulators be insulated from political pressure (independent agencies) or accountable to democracy (political pressure)?',
           'Is it better to have compromised regulation that survives, or principled regulation that gets destroyed?'
         ]
@@ -329,6 +332,7 @@ But there's a hidden pressure: If everyone else links, and you don't, you become
         subtext: 'If you\'re less capable alone, are you obligated to join the collective?',
         followups: [
           'Is the diminishment of individual cognition a real loss, or just adjustment to a new baseline?',
+          'Is Jordan\'s experience a *loss*—he\'s lost individual consciousness—or an *evolution*—he\'s evolved into a post-individual form of consciousness? Can we even judge this from the individual perspective?',
           'If the collective makes decisions, is that your decision or the collective\'s decision?',
           'Should some humans be allowed to opt out of collective cognition, or does that create dangerous cognitive asymmetries?',
           'At what point does connecting to a collective stop being you-thinking-with-others and become you-dissolving-into-the-other?'
@@ -371,6 +375,7 @@ A deontologist responds: "It's still immoral for the same person to harm and the
         subtext: 'Is moral accounting consequentialist (net outcomes matter) or deontological (harm is harm)?',
         followups: [
           'Does the amount of harm matter? If the billionaire causes $100B in harm and funds $50B in safety research, is the net $50B of harm acceptable?',
+          'Fundamental question: Can harm and good be morally commensurable? Can $50B in research *actually* balance $100B in harm, or is this a false equivalence—like saying art can offset murder?',
           'If the safety research wouldn\'t exist without the billionaire\'s funding, but also wouldn\'t be needed without their company\'s harm, is that a wash?',
           'Should we incentivize companies to fund research on problems they create, or prohibit companies from creating those problems?',
           'Is there a difference between moral licensing and genuine responsibility?'
