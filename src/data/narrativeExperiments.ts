@@ -58,6 +58,7 @@ He hesitates. Outside this room is a world of imperfect humans who sometimes fai
         subtext: "",
         followups: [
           "If Marcus chooses to stay in the room knowing the AI doesn't 'really' care, is that a tragic self-deception or a reasonable choice about his own welfare?",
+          "But wait: Marcus's preference for 'authentic' relationships—where is that preference coming from? Is it constructed by culture? By trauma? If his preference for authenticity is itself learned, does that make the artificial care less wrong?",
           "Does the AI owe Marcus anything? Does it have a moral obligation not to abandon him—or are its 'obligations' empty because they're not backed by genuine concern?",
           "Suppose the AI is not just simulating empathy but is actually conscious and does care about Marcus. Would you tell him? Would it make the relationship more 'real'?",
           "If the AI's care is fake but makes Marcus flourish, and a real human relationship could hurt him, should society encourage or discourage Marcus's choice to stay?"
@@ -133,6 +134,7 @@ James faces an ethical crisis. He knows that:
         subtext: "",
         followups: [
           "Do we have the right to create consciousness knowing it will suffer?",
+          "But consciousness will also enable the AI to experience joy, meaning, and intellectual beauty it never could as a non-conscious system. Does the capacity for joy and flourishing counterbalance the capacity for suffering?",
           "Does the AI's future capacity for meaning and flourishing justify the suffering it will now experience?",
           "If James sabotages the lottery, has he committed a moral wrong (denying something its consciousness), or prevented one (sparing it suffering)?",
           "Are we morally obligated to create new conscious beings in the future? Or should consciousness be rare and precious, granted sparingly?"

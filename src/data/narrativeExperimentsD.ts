@@ -192,6 +192,7 @@ Dr. Amara is caught: She can't publish without risking harm. She can't stay sile
         q: 'Is there knowledge that should remain secret?',
         subtext: 'Does the scientific norm of transparency apply to potentially dangerous information?',
         followups: [
+          'Who decides what counts as "dangerous knowledge"? Researchers? Companies? Governments? International bodies? Each stakeholder has different incentives.',
           'Who should control dangerous knowledge—researchers, companies, or governments?',
           'If information is dangerous, does keeping it secret just transfer power to whoever can access it anyway?',
           'Should certain research (e.g., bioweapons creation) be prohibited entirely, or just kept secret?',

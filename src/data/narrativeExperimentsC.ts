@@ -75,6 +75,7 @@ Did the AI's creators' life's work matter? Did their intention matter?`,
         subtext: "Should love and appreciation require a foundation in hardship?",
         followups: [
           "If you could rewrite history so that your parents achieved their goals without sacrifice, but you felt no special gratitude, would that be better or worse?",
+          "Does gratitude *require suffering*, or just *effort*? If your parents effortlessly achieved everything but invested their time and attention in you, would you feel less grateful than if they had struggled?",
           "Does gratitude *require* suffering, or can you feel appreciation for goods given easily?",
           "If an AI is designed to feel gratitude toward its creators (as a form of alignment), are you implicitly designing it to value a relationship built on scarcity and suffering?",
           "Do all meaningful things require struggle, or can meaning exist in ease?"
@@ -156,6 +157,7 @@ She feels that something important was taken from her: the right to not know her
         subtext: "Even if that knowledge could help you?",
         followups: [
           "Is there value in uncertainty—in the possibility that you might escape your predicted path?",
+          "Could Sophia negotiate a middle path—knowing her general health risk level but not the specific timing? Would partial knowledge feel less imprisoning than certain doom?",
           "If the AI's prediction is 85% accurate, does that mean she's 15% likely to escape? Or does living as if she might escape undermine the usefulness of the information?",
           "Should some knowledge be restricted—not because it's untrue, but because knowing it harms human flourishing?",
           "If AIs can predict future crime with high accuracy, should they? Should people be imprisoned for crimes they haven't yet committed because prediction systems say they will?"
