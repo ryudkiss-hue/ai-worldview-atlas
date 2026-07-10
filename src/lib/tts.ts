@@ -58,16 +58,36 @@ export async function clearPersistentTTSCache(): Promise<boolean> {
 
 export async function fetchElevenLabsTTS(
   text: string,
-  settings: TTSSettings
+  settings: TTSSettings,
+  questionId?: number,
+  isSimplified?: boolean
 ): Promise<string> {
+  // 1. Try local pre-generated file first (if questionId is provided)
+  if (questionId !== undefined) {
+    const base = import.meta.env.BASE_URL || '/'
+    const typeStr = isSimplified ? 'simp' : 'std'
+    // Normalize path slashes
+    const basePathNormalized = base.endsWith('/') ? base : `${base}/`
+    const localPath = `${basePathNormalized}audio/q_${questionId}_${typeStr}.mp3`
+    
+    try {
+      const checkRes = await fetch(localPath, { method: 'HEAD' })
+      if (checkRes.ok) {
+        return localPath // Success, use pre-generated file!
+      }
+    } catch (e) {
+      // Fallback
+    }
+  }
+
   const cacheKey = `${settings.voiceId}:${settings.stability}:${settings.similarityBoost}:${text}`
   
-  // 1. Check in-memory cache first
+  // 2. Check in-memory cache
   if (ttsCache.has(cacheKey)) {
     return ttsCache.get(cacheKey)!
   }
 
-  // 2. Check browser persistent Cache Storage (if available)
+  // 3. Check browser persistent Cache Storage (if available)
   if (typeof caches !== 'undefined') {
     try {
       const cache = await caches.open(CACHE_NAME)
@@ -101,7 +121,7 @@ export async function fetchElevenLabsTTS(
     },
     body: JSON.stringify({
       text,
-      model_id: 'eleven_monolingual_v1',
+      model_id: 'eleven_multilingual_v2',
       voice_settings: {
         stability: settings.stability,
         similarity_boost: settings.similarityBoost,

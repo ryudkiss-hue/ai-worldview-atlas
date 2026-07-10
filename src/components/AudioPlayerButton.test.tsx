@@ -73,10 +73,15 @@ describe('AudioPlayerButton', () => {
     fireEvent.click(button)
 
     await waitFor(() => {
-      expect(fetchSpy).toHaveBeenCalledWith('Simple statement to read', expect.objectContaining({
-        apiKey: 'fake-api-key',
-        voiceId: 'naGqKMAolPCi1s94J9jk',
-      }))
+      expect(fetchSpy).toHaveBeenCalledWith(
+        'Simple statement to read',
+        expect.objectContaining({
+          apiKey: 'fake-api-key',
+          voiceId: 'naGqKMAolPCi1s94J9jk',
+        }),
+        1,
+        false
+      )
     })
 
     expect(playSpy).toHaveBeenCalled()
