@@ -30,6 +30,8 @@ const DEFAULT_LANGUAGES = {
   enm: 'Middle English',
   ang: 'Old English',
   eo: 'Esperanto',
+  pie: 'Proto-Indo-European',
+  laa: 'Laadan',
 };
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({

@@ -13,6 +13,7 @@ export type SupportedLanguage = 'en' | 'es' | 'hi' | 'ar' | 'pt' | 'bn' | 'ru' |
 // Extended language support (configured in .env.local and language hooks, awaiting translation generation):
 // - el (Greek), uk (Ukrainian), jbo (Lojban), tokipona (toki pona), da (Danish), nb (Norwegian), la (Latin), sv (Swedish)
 // - tl (Tagalog), enm (Middle English), ang (Old English), eo (Esperanto)
+// - pie (Proto-Indo-European), laa (Laadan)
 // Run: python scripts/translate_all_questions.py to generate translations for these languages
 
 export const translations: Record<SupportedLanguage, LanguageTranslation> = {
