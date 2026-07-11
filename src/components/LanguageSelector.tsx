@@ -2,8 +2,10 @@ import { useQuiz } from '../state/QuizContext'
 import type { SupportedLanguage } from '../data/translations'
 
 // Tier 1 languages with full translations (21)
-// Tier 2 languages configured and awaiting translations (15) - zh, el, uk, jbo, tokipona, da, nb, la, tl, enm, ang, eo, pie, laa, ixk
+// Tier 2A languages with partial translations (5): jbo, tokipona, laa, pie, ixk
+// Tier 2B languages with translations (10): zh, el, uk, da, nb, la, tl, enm, ang, eo
 const LANG_LABELS: Record<SupportedLanguage, string> = {
+  // Tier 1
   en: 'English',
   es: 'Español',
   hi: 'हिन्दी',
@@ -25,6 +27,23 @@ const LANG_LABELS: Record<SupportedLanguage, string> = {
   sv: 'Svenska',
   cs: 'Čeština',
   ro: 'Română',
+  // Tier 2A: Constructed languages
+  jbo: 'Lojban',
+  tokipona: 'toki pona',
+  laa: 'Laadan',
+  pie: 'Proto-Indo-European',
+  ixk: 'Ithkuil',
+  // Tier 2B: Standard languages
+  zh: '中文',
+  el: 'Ελληνικά',
+  uk: 'Українська',
+  da: 'Dansk',
+  nb: 'Norsk Bokmål',
+  la: 'Latīnum',
+  tl: 'Tagalog',
+  enm: 'Middle English',
+  ang: 'Old English',
+  eo: 'Esperanto',
 }
 
 export function LanguageSelector() {
