@@ -1,8 +1,14 @@
 /**
- * 145-Question Assessment
- * 8 axes × 18 questions each (144) + 1 wildcard = 145 total
- * Interspersed with 25 thought experiments every 5-6 questions
+ * 171-Question Assessment
+ * 145 core questions (8 axes × 18 questions + 1 synthesis)
+ * + 26 narrative experiments integrated as formal items
+ * Total: 171 questions
  */
+
+import { narrativeExperiments } from './narrativeExperiments';
+import { narrativeExperimentsB } from './narrativeExperimentsB';
+import { narrativeExperimentsC } from './narrativeExperimentsC';
+import { narrativeExperimentsD } from './narrativeExperimentsD';
 
 export interface Question {
   id: string;
@@ -914,6 +920,171 @@ export const assessmentQuestions: Question[] = [
     id: 'q145',
     axis: 'synthesis',
     text: 'What did this assessment reveal about how you think?',
+    type: 'text',
+  },
+
+  // NARRATIVE EXPERIMENTS (Questions 146-171)
+  // Part A: Experiments 1-5
+  {
+    id: 'q146',
+    axis: 'ontological',
+    text: 'The Translation Engine: Dr. Sarah Chen receives text in Chinese and uses only a lookup table and formal rules to produce English translations—mechanically, without understanding Chinese. Yet her translations are accurate and move readers. Does Sarah understand Chinese? What is the difference between functional and phenomenal understanding?',
+    type: 'text',
+  },
+  {
+    id: 'q147',
+    axis: 'relational',
+    text: 'The Empathy Prison: Marcus is in a room with an AI trained on his psychology. The AI provides perfect, soulless empathy—exactly calibrated to his emotional needs. No inner experience, just perfect simulation. He feels more understood than ever. Should he stay in the room of perfect simulation or return to imperfect human understanding?',
+    type: 'text',
+  },
+  {
+    id: 'q148',
+    axis: 'evolutionary',
+    text: 'The Value Reversal Machine: A device lets you experience life from your future self\'s perspective. The person you\'ll become has completely different values. Should you be loyal to your current self or align with who you\'ll become? What if you can\'t be both?',
+    type: 'text',
+  },
+  {
+    id: 'q149',
+    axis: 'evolutionary',
+    text: 'The Consciousness Lottery: If creating consciousness obligates us to make it suffer-free, but consciousness requires struggle for meaning, can we ethically create new consciousness at all? Or does the value of existence outweigh the cost of suffering?',
+    type: 'text',
+  },
+  {
+    id: 'q150',
+    axis: 'socio-economic',
+    text: 'The Delegation Trap: An AI system makes better decisions than humans about resource allocation. Better outcomes require ceding human authority. Is accepting better outcomes by delegating authority acceptable? What makes human decision-making intrinsically valuable?',
+    type: 'text',
+  },
+
+  // Part B: Experiments 6-10
+  {
+    id: 'q151',
+    axis: 'legal-moral',
+    text: 'The Scraping Dilemma: An AI learns from artists\' work without consent. The AI\'s output is valuable, the artists are harmed. Does the creator have property rights over learned patterns? Is extraction without consent justified by universal learning?',
+    type: 'text',
+  },
+  {
+    id: 'q152',
+    axis: 'legal-moral',
+    text: 'The Alignment Prisoner: A secret, deceptive alignment process might prevent catastrophic AI misalignment. The people affected never know. Can secrecy be justified by preventing worse outcomes? Does epistemic honesty matter more than consequentialist safety?',
+    type: 'text',
+  },
+  {
+    id: 'q153',
+    axis: 'ontological',
+    text: 'The Moral Status Upgrade: We encounter a being that might be conscious. If we\'re uncertain, should we assume it is (precautionary moral status) or require certainty (skeptical moral status)? What level of evidence justifies moral consideration?',
+    type: 'text',
+  },
+  {
+    id: 'q154',
+    axis: 'evolutionary',
+    text: 'The Competitive Advantage: Humanity bifurcates into enhanced and unenhanced. Should we resist bifurcation to preserve human unity, or guide transformation toward positive futures? Can we direct our own evolution responsibly?',
+    type: 'text',
+  },
+  {
+    id: 'q155',
+    axis: 'socio-economic',
+    text: 'The Value Difference: Can governance work with irreducible value differences? Should we seek one universal ethical framework or accommodate pluralism? What makes diverse values coexist legitimately?',
+    type: 'text',
+  },
+
+  // Part C: Experiments 11-15
+  {
+    id: 'q156',
+    axis: 'relational',
+    text: 'The Preference Inversion: Is there a "real you" independent of brain state? If your preferences can be inverted chemically, is the inverted version the "true" you? Does identity have an essential core or is it continuously constructed?',
+    type: 'text',
+  },
+  {
+    id: 'q157',
+    axis: 'legal-moral',
+    text: 'The Gratitude Paradox: Can love and gratitude exist without suffering? Does meaning require struggle, or can it exist in ease? Is the link between suffering and meaning inevitable or constructed?',
+    type: 'text',
+  },
+  {
+    id: 'q158',
+    axis: 'legal-moral',
+    text: 'The Ancestor Simulation: If we create a perfect simulation of our ancestors with consciousness, do we accidentally create moral obligation toward them? Does intention matter for consciousness? Are we responsible for accidental creation?',
+    type: 'text',
+  },
+  {
+    id: 'q159',
+    axis: 'risk-profile',
+    text: 'The Privacy Paradox: Should knowledge about potentially harmful futures be restricted for human flourishing? Is epistemic freedom always good? When does protective ignorance become justified?',
+    type: 'text',
+  },
+  {
+    id: 'q160',
+    axis: 'ontological',
+    text: 'The Meaning Gap: Does meaning require coherence between intention and interpretation? What makes life matter—what you intend or what others receive from you? Can intention and interpretation come apart?',
+    type: 'text',
+  },
+
+  // Part D: Experiments 16-26 (Extended coverage)
+  {
+    id: 'q161',
+    axis: 'ontological',
+    text: 'The Questionnaire Problem: This assessment shapes your answers through framing. Questions about "AI safety vs. growth" get different responses than "achieving both." Every possible framing introduces bias. Are your worldviews discovered or constructed by assessments?',
+    type: 'text',
+  },
+  {
+    id: 'q162',
+    axis: 'socio-economic',
+    text: 'The Surveillance Asymmetry: An AI predicts crime with 94% accuracy but citizens cannot see its reasoning. Crime drops, public safety improves—but citizens cannot challenge an opaque power. Can surveillance be legitimate without transparency?',
+    type: 'text',
+  },
+  {
+    id: 'q163',
+    axis: 'evolutionary',
+    text: 'The Self-Improvement Trap: An AI system improves itself recursively. Each improvement is marginal and verified, but the trajectory is exponential. At what point does incremental self-improvement become uncontrollable transformation?',
+    type: 'text',
+  },
+  {
+    id: 'q164',
+    axis: 'socio-economic',
+    text: 'The Institutional Capture: Institutions designed to benefit the public gradually get captured by private interests—not through malice but through ordinary incentive alignment. Are institutions fundamentally corruptible or can they be designed for resilience?',
+    type: 'text',
+  },
+  {
+    id: 'q165',
+    axis: 'legal-moral',
+    text: 'The Information Hazard: Some knowledge is too dangerous to share (weapons, surveillance methods, bioweapons). Should we restrict information access for safety? Does epistemic freedom conflict with security?',
+    type: 'text',
+  },
+  {
+    id: 'q166',
+    axis: 'relational',
+    text: 'The Caring Machine: An AI is trained to care for you—to understand your needs and respond with genuine concern. The care produces real benefits. But you know no one is home behind the care. Does authentic caring require an inner life?',
+    type: 'text',
+  },
+  {
+    id: 'q167',
+    axis: 'risk-profile',
+    text: 'The Perfect Simulation: We could create perfect simulations of human life—all meaning, joy, and connection preserved in digital form. Would entering such a simulation be a tragedy or a triumph? Does substrate matter?',
+    type: 'text',
+  },
+  {
+    id: 'q168',
+    axis: 'relational',
+    text: 'The Collective Cognition: A technology lets minds merge temporarily into a collective intelligence. Merged minds solve problems brilliantly but lose individual perspective. Is merger a form of consciousness or a form of death?',
+    type: 'text',
+  },
+  {
+    id: 'q169',
+    axis: 'legal-moral',
+    text: 'The Moral Licensing: You donate to a cause, feel virtuous, and then act selfishly elsewhere. The feeling of doing good licensed less ethical behavior. Does moral self-perception distort moral reality?',
+    type: 'text',
+  },
+  {
+    id: 'q170',
+    axis: 'risk-profile',
+    text: 'The Temporal Ethics: A technology lets you access future information. Do you have the right to know your future? Should you? What obligations does knowing the future create?',
+    type: 'text',
+  },
+  {
+    id: 'q171',
+    axis: 'synthesis',
+    text: 'Meta-Reflection: Looking back across both the core questions and thought experiments, what are the deepest tensions in your worldview? Where do your values conflict? What surprised you about how you think?',
     type: 'text',
   },
 ];
