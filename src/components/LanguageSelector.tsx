@@ -1,6 +1,8 @@
 import { useQuiz } from '../state/QuizContext'
 import type { SupportedLanguage } from '../data/translations'
 
+// Tier 1 languages with full translations (21)
+// Tier 2 languages configured and awaiting translations (15) - zh, el, uk, jbo, tokipona, da, nb, la, tl, enm, ang, eo, pie, laa, ixk
 const LANG_LABELS: Record<SupportedLanguage, string> = {
   en: 'English',
   es: 'Español',

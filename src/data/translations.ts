@@ -9,18 +9,27 @@ export interface LanguageTranslation {
   profiles: Record<string, { name: string; summary: string }>
 }
 
+// Tier 1: Languages with full translations (21 languages below)
 export type SupportedLanguage = 'en' | 'es' | 'hi' | 'ar' | 'pt' | 'bn' | 'ru' | 'ja' | 'de' | 'fr' | 'ko' | 'tr' | 'vi' | 'it' | 'pl' | 'id' | 'nl' | 'he' | 'sv' | 'cs' | 'ro'
-// Extended language support (configured in .env.local and language hooks, awaiting translation generation):
-// - el (Greek), uk (Ukrainian), jbo (Lojban), tokipona (toki pona), da (Danish), nb (Norwegian), la (Latin), sv (Swedish)
-// - tl (Tagalog), enm (Middle English), ang (Old English), eo (Esperanto)
-// - pie (Proto-Indo-European), laa (Laadan), ixk (Ithkuil)
+
+// Tier 2: Languages configured in infrastructure, awaiting translation generation (15 languages):
+// zh (Chinese), el (Greek), uk (Ukrainian), jbo (Lojban), tokipona (toki pona)
+// da (Danish), nb (Norwegian), la (Latin), tl (Tagalog), enm (Middle English)
+// ang (Old English), eo (Esperanto), pie (Proto-Indo-European), laa (Laadan), ixk (Ithkuil)
+//
+// Configuration:
+// - .env.local: VITE_TRANSLATION_LANGUAGES includes all 25 languages
+// - src/hooks/useLanguage.ts: SUPPORTED_LANGUAGES includes all 25 languages
+// - src/components/LanguageSwitcher.tsx: DEFAULT_LANGUAGES includes all 25 with native names
 //
 // Translation Resources for Constructed/Historic Languages:
 // - Laadan: http://www.laadanlanguage.org/e2l.html (English-to-Laadan dictionary)
 // - Ithkuil: https://ithkuil.net/index.htm (full language documentation)
 // - toki pona: https://tokipona.org/compounds.txt + https://nimi.li/ (word lists)
+// - Lojban: https://lojban.org/ (logical language)
+// - Esperanto: https://esperanto.org/ (international auxiliary language)
 //
-// Run: python scripts/translate_all_questions.py to generate translations for these languages
+// To generate Tier 2 translations: python scripts/translate_all_questions.py
 
 export const translations: Record<SupportedLanguage, LanguageTranslation> = {
   "en": {
