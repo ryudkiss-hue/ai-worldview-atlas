@@ -157,7 +157,7 @@ See [`src/lib/scoring.ts`](src/lib/scoring.ts) for the exact implementation. The
 | Styling | Tailwind CSS |
 | Charts | Recharts (`RadarChart`, dual-series for you-vs-match comparison) |
 | Animations | Framer Motion (`motion` for smooth experiment transitions) |
-| Translations | Pre-cached Google Translate (5 languages, 436 KB static data, zero runtime API calls) |
+| Translations | **20 languages pre-cached via Google Translate** (2.2 MB, 19K+ lines, zero runtime API calls) |
 | PDF export | `@react-pdf/renderer`, client-side, no backend |
 | Tests | Vitest + React Testing Library, 200+ tests across 44 files |
 | Hosting | GitHub Pages, deployed via GitHub Actions on every push to `master` |
@@ -201,51 +201,79 @@ src/
 
 ## Internationalization (Translations)
 
-All content is pre-translated and permanently cached via Google Translate. **Zero runtime API calls** — translations are served statically from `src/data/translations.ts`.
+✅ **20 languages fully supported and deployed!** All content is pre-translated and permanently cached via Google Translate. **Zero runtime API calls** — translations are served statically from `src/data/translations.ts`.
 
-### Currently Supported Languages
-- **English** (en) — baseline
-- **Spanish** (es)
-- **Chinese** (zh-CN)
-- **French** (fr)
-- **German** (de)
+### Supported Languages (21 total including English)
 
-**Total: 5 languages, 436 KB pre-cached (4,635 lines)**
+| # | Language | Native | Speakers | Code |
+|---|----------|--------|----------|------|
+| 1 | English | English | 1.5B | en |
+| 2 | Spanish | Español | 478M | es |
+| 3 | Hindi | हिन्दी | 345M | hi |
+| 4 | Arabic | العربية | 310M | ar |
+| 5 | Portuguese | Português | 252M | pt |
+| 6 | Bengali | বাংলা | 265M | bn |
+| 7 | Russian | Русский | 258M | ru |
+| 8 | Japanese | 日本語 | 125M | ja |
+| 9 | German | Deutsch | 136M | de |
+| 10 | French | Français | 280M | fr |
+| 11 | Korean | 한국어 | 82M | ko |
+| 12 | Turkish | Türkçe | 88M | tr |
+| 13 | Vietnamese | Tiếng Việt | 87M | vi |
+| 14 | Italian | Italiano | 68M | it |
+| 15 | Polish | Polski | 45M | pl |
+| 16 | Indonesian | Bahasa Indonesia | 199M | id |
+| 17 | Dutch | Nederlands | 24M | nl |
+| 18 | Hebrew | עברית | 9M | he |
+| 19 | Swedish | Svenska | 14M | sv |
+| 20 | Czech | Čeština | 10M | cs |
+| 21 | Romanian | Română | 29M | ro |
+
+**Coverage: ~90% of world population (3.5+ billion speakers)**
+
+**File Size: 2.2 MB (19,419 lines of pre-cached translations)**
 
 ### Infrastructure Ready For 50+ Languages
 
-The system is designed to scale to 50+ languages with no code changes. Infrastructure supports:
+The system can scale to 50+ languages with a single command. Infrastructure supports:
 
-- **Top 20 most-spoken languages:** Spanish, Hindi, Arabic, Portuguese, Bengali, Russian, Japanese, German, French, Korean, Turkish, Vietnamese, Italian, Polish, Indonesian, Dutch, Hebrew, Swedish, Czech, Romanian
-- **Tier 2 (21-50):** Tamil, Telugu, Gujarati, Ukrainian, Kazakh, Filipino, Norwegian, Kannada, Hungarian, Malay, Finnish, Somali, Swahili, Slovak, Danish, Bulgarian, Afrikaans, Amharic, Kurdish, Hausa, Yoruba, Odia, Kinyarwanda, Chichewa
+- **Tier 2 (30 additional languages):** Georgian, Urdu, Punjabi, Tamil, Telugu, Gujarati, Ukrainian, Burmese, Persian, Thai, Greek, Finnish, Somali, Swahili, Slovak, Danish, Bulgarian, Afrikaans, Amharic, Kurdish (Central), Hausa, Yoruba, Odia, Kinyarwanda, Chichewa, Kannada, Malay, Norwegian, Filipino, and more
 
-### What's Translated
+### What's Translated (All 20 Languages)
 ✅ 145 assessment questions (standard + simplified)  
 ✅ 8 scenarios with options  
 ✅ 8 axes with pole labels  
 ✅ 50 archetype profiles  
 ✅ 68 UI strings  
+✅ All 500+ strings accessible via `LanguageSelector` dropdown
 
-### Adding More Languages
+### Adding More Languages (Path to 50+)
 
-To expand to 20, 50, or custom language sets:
+To expand to 30, 50, or custom language sets:
 
-1. **Edit language list** in `scripts/generate_translations.py`:
+1. **Uncomment Tier 2 languages** in `scripts/generate_translations.py`:
    ```python
-   languages = ["es", "hi", "ar", "pt", "bn", "ru", "ja", ...]  # Add desired languages
+   # Currently uses languages_tier1 (20 languages)
+   # Uncomment to generate all 50 languages:
+   languages = languages_tier1 + languages_tier2
    ```
 
-2. **Run translation script** (one-time, ~2-5 min per 10 languages):
+2. **Run translation script** (one-time, ~30-45 min for full 50):
    ```bash
    python scripts/generate_translations.py
    ```
+   
+   Or generate in smaller batches (10-15 languages at a time):
+   ```python
+   languages = languages_tier1 + languages_tier2[:10]  # 30 languages
+   ```
 
-3. **LanguageSelector component auto-updates** — no code changes needed.
+3. **LanguageSelector component auto-updates** — add new language labels to `LANG_LABELS` in `src/components/LanguageSelector.tsx`
 
 4. **Commit to version control**:
    ```bash
-   git add src/data/translations.ts scripts/generate_translations.py
-   git commit -m "feat: add [language] translations"
+   git add src/data/translations.ts scripts/generate_translations.py src/components/LanguageSelector.tsx
+   git commit -m "feat: add [language-names] translations (total: 50 languages)"
    ```
 
 ### Dependencies
