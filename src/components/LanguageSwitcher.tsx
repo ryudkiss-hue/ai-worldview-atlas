@@ -26,6 +26,10 @@ const DEFAULT_LANGUAGES = {
   nb: 'Norsk',
   la: 'Latina',
   sv: 'Svenska',
+  tl: 'Tagalog',
+  enm: 'Middle English',
+  ang: 'Old English',
+  eo: 'Esperanto',
 };
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({

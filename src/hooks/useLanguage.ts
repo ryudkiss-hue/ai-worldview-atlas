@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const STORAGE_KEY = 'assessment-language';
 const DEFAULT_LANGUAGE = 'en';
-const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'de', 'zh', 'ja', 'pt', 'it', 'ko', 'ar', 'ru', 'el', 'uk', 'jbo', 'tokipona', 'da', 'nb', 'la', 'sv'];
+const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'de', 'zh', 'ja', 'pt', 'it', 'ko', 'ar', 'ru', 'el', 'uk', 'jbo', 'tokipona', 'da', 'nb', 'la', 'sv', 'tl', 'enm', 'ang', 'eo'];
 
 export const useLanguage = () => {
   const [language, setLanguage] = useState<string>(DEFAULT_LANGUAGE);
