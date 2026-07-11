@@ -32,6 +32,7 @@ const DEFAULT_LANGUAGES = {
   eo: 'Esperanto',
   pie: 'Proto-Indo-European',
   laa: 'Laadan',
+  ixk: 'Ithkuil',
 };
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({

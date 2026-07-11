@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Translate all 171 assessment questions using Google Translate free tier.
+Translate all 170 assessment questions using Google Translate free tier.
 Supports batch translation with rate limiting.
+Reads target languages from .env.local VITE_TRANSLATION_LANGUAGES
 """
 
 import json
@@ -9,6 +10,7 @@ import re
 import time
 import os
 from typing import Dict, List
+from dotenv import load_dotenv
 
 try:
     from deep_translator import GoogleTranslator
@@ -18,12 +20,17 @@ except ImportError:
     subprocess.check_call(["pip", "install", "deep_translator"])
     from deep_translator import GoogleTranslator
 
+# Load .env.local
+load_dotenv('.env.local')
+
 # Configuration
 INPUT_FILE = "src/data/assessmentQuestions.ts"
 OUTPUT_FILE = "src/data/translations.ts"
 BATCH_SIZE = 5  # Translate in batches to avoid rate limits
 DELAY_BETWEEN_BATCHES = 1  # seconds
-LANGUAGES = {
+
+# Language display names
+LANGUAGE_NAMES = {
     "es": "Spanish",
     "fr": "French",
     "de": "German",
@@ -33,8 +40,49 @@ LANGUAGES = {
     "it": "Italian",
     "ko": "Korean",
     "ar": "Arabic",
-    "ru": "Russian"
+    "ru": "Russian",
+    "el": "Greek",
+    "uk": "Ukrainian",
+    "jbo": "Lojban",
+    "tokipona": "toki pona",
+    "da": "Danish",
+    "nb": "Norwegian",
+    "la": "Latin",
+    "sv": "Swedish",
+    "tl": "Tagalog",
+    "enm": "Middle English",
+    "ang": "Old English",
+    "eo": "Esperanto",
+    "pie": "Proto-Indo-European",
+    "laa": "Laadan",
+    "ixk": "Ithkuil"
 }
+
+# Get languages from .env.local
+env_languages = os.getenv('VITE_TRANSLATION_LANGUAGES', '')
+LANGUAGES = {}
+if env_languages:
+    for lang_code in env_languages.split(','):
+        lang_code = lang_code.strip()
+        if lang_code in LANGUAGE_NAMES:
+            LANGUAGES[lang_code] = LANGUAGE_NAMES[lang_code]
+        else:
+            LANGUAGES[lang_code] = lang_code.upper()
+
+if not LANGUAGES:
+    # Fallback to default languages if .env.local not set
+    LANGUAGES = {
+        "es": "Spanish",
+        "fr": "French",
+        "de": "German",
+        "zh": "Chinese",
+        "ja": "Japanese",
+        "pt": "Portuguese",
+        "it": "Italian",
+        "ko": "Korean",
+        "ar": "Arabic",
+        "ru": "Russian"
+    }
 
 def extract_questions() -> List[Dict]:
     """Extract all 171 questions from assessmentQuestions.ts"""
