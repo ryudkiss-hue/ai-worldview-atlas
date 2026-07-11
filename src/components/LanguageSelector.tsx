@@ -4,9 +4,25 @@ import type { SupportedLanguage } from '../data/translations'
 const LANG_LABELS: Record<SupportedLanguage, string> = {
   en: 'English',
   es: 'Español',
-  zh: '中文',
-  fr: 'Français',
+  hi: 'हिन्दी',
+  ar: 'العربية',
+  pt: 'Português',
+  bn: 'বাংলা',
+  ru: 'Русский',
+  ja: '日本語',
   de: 'Deutsch',
+  fr: 'Français',
+  ko: '한국어',
+  tr: 'Türkçe',
+  vi: 'Tiếng Việt',
+  it: 'Italiano',
+  pl: 'Polski',
+  id: 'Bahasa Indonesia',
+  nl: 'Nederlands',
+  he: 'עברית',
+  sv: 'Svenska',
+  cs: 'Čeština',
+  ro: 'Română',
 }
 
 export function LanguageSelector() {

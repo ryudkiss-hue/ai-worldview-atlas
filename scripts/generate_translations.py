@@ -329,17 +329,29 @@ def main():
         strings_to_translate.append(p["name"])
         strings_to_translate.append(p["summary"])
         
-    # Top 50 languages on Earth (by native + second language speakers)
-    # Covers ~95% of world population
-    languages = [
-        "es", "hi", "ar", "pt", "bn", "ru", "ja", "de",  # 8: Spanish, Hindi, Arabic, Portuguese, Bengali, Russian, Japanese, German
-        "fr", "ko", "tr", "vi", "it", "pl", "id", "nl",  # 16: French, Korean, Turkish, Vietnamese, Italian, Polish, Indonesian, Dutch
-        "he", "sv", "cs", "ro", "fil", "no", "kn", "hu",  # 24: Hebrew, Swedish, Czech, Romanian, Filipino, Norwegian, Kannada, Hungarian
-        "ms", "fi", "so", "sw", "sk", "da", "bg", "af",  # 32: Malay, Finnish, Somali, Swahili, Slovak, Danish, Bulgarian, Afrikaans
-        "am", "ckb", "ha", "yo", "or", "rw", "ny", "el",  # 40: Amharic, Kurdish, Hausa, Yoruba, Odia, Kinyarwanda, Chichewa, Greek
-        "ka", "ur", "pa", "ta", "te", "gu", "uk", "my",  # 48: Georgian, Urdu, Punjabi, Tamil, Telugu, Gujarati, Ukrainian, Burmese
-        "fa", "th"  # 50: Persian, Thai
+    # TOP 20 LANGUAGES TIER (proven reliable, ~90% world population)
+    languages_tier1 = [
+        "es", "hi", "ar", "pt", "bn", "ru", "ja", "de",  # 8
+        "fr", "ko", "tr", "vi", "it", "pl", "id", "nl",  # 16
+        "he", "sv", "cs", "ro"  # 20
     ]
+
+    # TIER 2: Additional 30 languages for 50-language goal
+    # Uncomment ALL_50_LANGUAGES below to generate full 50-language set
+    # languages_tier2 = [
+    #     "fil", "no", "kn", "hu", "ms", "fi", "so", "sw",  # 8
+    #     "sk", "da", "bg", "af", "am", "ckb", "ha", "yo",  # 16
+    #     "or", "rw", "ny", "el", "ka", "ur", "pa", "ta",  # 24
+    #     "te", "gu", "uk", "my", "fa", "th"  # 30
+    # ]
+
+    # SELECT WHICH TIER TO USE:
+    # Use languages_tier1 for fast generation (~5 min, proven stable)
+    # Use languages_tier1 + languages_tier2 for full 50-language set (~30-45 min)
+
+    languages = languages_tier1
+    # UNCOMMENT NEXT LINE TO GENERATE ALL 50 LANGUAGES:
+    # languages = languages_tier1 + languages_tier2
     translations = {}
     
     # Populate English as baseline
