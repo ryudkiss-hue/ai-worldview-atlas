@@ -3,10 +3,13 @@ import { NarrativeExperimentDisplay } from '../components/NarrativeExperimentDis
 import { SynthesisCommentary } from '../components/SynthesisCommentary';
 import { experimentIntegrationGuide } from '../data/experimentIntegration';
 import { assessmentQuestions, getQuestion, getTotalQuestions } from '../data/assessmentQuestions';
+import { questions } from '../data/questions';
 import { narrativeExperiments } from '../data/narrativeExperiments';
 import { narrativeExperimentsB } from '../data/narrativeExperimentsB';
 import { narrativeExperimentsC } from '../data/narrativeExperimentsC';
 import { narrativeExperimentsD } from '../data/narrativeExperimentsD';
+import { profiles } from '../data/profiles';
+import { computeRawAxisScores, scaleAxisScores, combineHorizons, classify, matchCloseness, isCloseCall, type Answers } from '../lib/scoring';
 
 interface AssessmentState {
   respondentId: string;
@@ -282,10 +285,39 @@ export const Assessment: React.FC = () => {
 
   // Show synthesis results before completion code
   if (state.currentQuestionNumber === getTotalQuestions()) {
-    const predictedArchetypes = [
-      { archetype: 'Pragmatic Centrist', description: 'Balances innovation with caution', alignment: 72 },
-      { archetype: 'Digital Rights Advocate', description: 'Prioritizes individual autonomy and privacy', alignment: 65 },
-    ];
+    // Convert responses to numeric format for scoring
+    const answers: Answers = {};
+    Object.entries(state.questionResponses).forEach(([key, data]) => {
+      const match = key.match(/q_(\d+)/);
+      if (match) {
+        const questionIndex = parseInt(match[1], 10);
+        const response = data.response;
+        const numValue = typeof response === 'string' ? parseInt(response, 10) : response;
+        if (!isNaN(numValue) && numValue >= 1 && numValue <= 5) {
+          answers[questionIndex] = numValue;
+        }
+      }
+    });
+
+    // Compute scoring
+    const t1Scores = computeRawAxisScores(questions, answers, 'T1');
+    const t2Scores = computeRawAxisScores(questions, answers, 'T2');
+    const scaledT1 = scaleAxisScores(t1Scores);
+    const scaledT2 = scaleAxisScores(t2Scores);
+    const combined = combineHorizons(scaledT1, scaledT2);
+    const matches = classify(combined, profiles);
+    const closeCall = isCloseCall(matches);
+
+    const topMatches = matches.slice(0, 2);
+    const predictedArchetypes = topMatches.map((match, idx) => ({
+      archetype: match.profile.name,
+      description: match.profile.summary,
+      alignment: matchCloseness(match.distance),
+    }));
+
+    const closenessWarning = closeCall
+      ? ' (close call — consider reviewing both results)'
+      : '';
 
     return (
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '2rem' }}>
@@ -299,12 +331,18 @@ export const Assessment: React.FC = () => {
               .map(([key]) => key),
           }))}
           predictedArchetypes={predictedArchetypes}
-          overallTheme="Your responses reflect a balanced approach that values both individual agency and collective outcomes."
+          overallTheme={`Your responses align most closely with "${topMatches[0]?.profile.name}"${closenessWarning}`}
         />
 
         <div style={{ marginTop: '3rem', textAlign: 'center', padding: '2rem', backgroundColor: '#f0fdf4', borderRadius: '8px' }}>
           <h2>Assessment Complete ✅</h2>
           <p>Thank you for your thoughtful responses to all questions and thought experiments.</p>
+          {topMatches[0] && (
+            <div style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: '#e8f5e9', borderRadius: '6px', textAlign: 'left' }}>
+              <strong>Your Primary Profile: {topMatches[0].profile.name}</strong>
+              <p>{topMatches[0].profile.summary}</p>
+            </div>
+          )}
           <button
             onClick={handleCompleteAssessment}
             style={{
