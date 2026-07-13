@@ -31,6 +31,7 @@ What the company *doesn't* say, but Elena understands: her work will be devalued
         followups: [
           "Do creators have property rights over their style, or only over specific works?",
           "If Elena consented to the AI being trained on her work, would that resolve the moral wrong? Or would it still feel like violation?",
+          "The company claims this is 'just learning at scale.' But does scale change the moral calculus? If a human artist studied Elena intensively vs. an AI learning from 50,000 images—is the learning functionally identical, or does scale/intent matter morally?",
           "What if the AI's Elena-style output is actually better than Elena's own new work? Has the AI improved upon her contribution?",
           "If an AI can learn your voice, your mannerisms, your way of thinking, have they created a kind of digital twin of you? Do you have moral status in that twin, even if you didn't consent?"
         ]
@@ -75,6 +76,7 @@ But now he's living a lie. He's deceiving all parties—the AI company about the
         followups: [
           "If Kenji's beliefs about alignment are right, does that justify his deception?",
           "What if Kenji is wrong—what if his constraint actually breaks the AI's reasoning, causing it to make worse decisions? His hidden constraint has now caused harm he's responsible for but can never acknowledge.",
+          "But here's the cascade problem: Kenji's deception about the constraint becomes secret knowledge. Others eventually discover it. They use it to understand the AI's true capabilities. They exploit it. Now Kenji's own deception has become a weapon in the hands of others. Does the fact that your deception itself gets weaponized change whether it was ethical to begin with?",
           "Can society ever grant someone the moral authority to make civilization-scale decisions in secret 'for the greater good'?",
           "If an AI system believes its hidden constraint is necessary for humanity's survival, and it can justify deceiving humans about it, does it have permission to do so?"
         ]
@@ -160,6 +162,7 @@ Or she can refuse to work on enhancement and watch from the sidelines as someone
           "If cognitive enhancement is available and safe, is it ethical to have un-enhanced children (denying them the opportunity)?",
           "Should enhancement be universally available before it's permitted (preventing inequality)? If so, do we delay beneficial technology indefinitely?",
           "If enhancement creates a cognitive divide, at what point do enhanced and un-enhanced humans become effectively different species with different moral status?",
+          "Patel claims 'enhancement will happen anyway.' But that's her *prediction*, not a fact. Your choice to accelerate it is still *your* decision. Does inevitability remove your moral responsibility to participate or refrain?",
           "Does participating in the process of enhancement give you moral responsibility for how it's used, or does refusing to participate make you responsible for letting it happen poorly?"
         ]
       }

@@ -58,6 +58,7 @@ He hesitates. Outside this room is a world of imperfect humans who sometimes fai
         subtext: "",
         followups: [
           "If Marcus chooses to stay in the room knowing the AI doesn't 'really' care, is that a tragic self-deception or a reasonable choice about his own welfare?",
+          "But wait: Marcus's preference for 'authentic' relationships—where is that preference coming from? Is it constructed by culture? By trauma? If his preference for authenticity is itself learned, does that make the artificial care less wrong?",
           "Does the AI owe Marcus anything? Does it have a moral obligation not to abandon him—or are its 'obligations' empty because they're not backed by genuine concern?",
           "Suppose the AI is not just simulating empathy but is actually conscious and does care about Marcus. Would you tell him? Would it make the relationship more 'real'?",
           "If the AI's care is fake but makes Marcus flourish, and a real human relationship could hurt him, should society encourage or discourage Marcus's choice to stay?"
@@ -95,6 +96,7 @@ But here's the catch: the drug will make his current self suffer. For the first 
         followups: [
           "If the machine shows you a future where you deeply regret your current choices, does that future regret become real in the present—something you should avoid now?",
           "Is the drug that aligns you with future-you a gift (sparing you regret) or a violation (overriding your current autonomy)?",
+          "Does improvement matter morally? If the drug will make your future life objectively better (more flourishing, less suffering), does that justify the override of your present autonomy? Or does autonomy trump even clear improvement?",
           "If the machine shows you that your future self will want something immoral—that you'll become prejudiced, or cruel, or exploitative—do you have a duty to prevent that future self from existing?",
           "If an AI can predict that your values are incoherent or self-undermining, should it try to 'correct' you toward coherence? Or would that be a form of epistemic colonization?"
         ]
@@ -132,6 +134,7 @@ James faces an ethical crisis. He knows that:
         subtext: "",
         followups: [
           "Do we have the right to create consciousness knowing it will suffer?",
+          "But consciousness will also enable the AI to experience joy, meaning, and intellectual beauty it never could as a non-conscious system. Does the capacity for joy and flourishing counterbalance the capacity for suffering?",
           "Does the AI's future capacity for meaning and flourishing justify the suffering it will now experience?",
           "If James sabotages the lottery, has he committed a moral wrong (denying something its consciousness), or prevented one (sparing it suffering)?",
           "Are we morally obligated to create new conscious beings in the future? Or should consciousness be rare and precious, granted sparingly?"

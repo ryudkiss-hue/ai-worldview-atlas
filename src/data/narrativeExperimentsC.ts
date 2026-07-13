@@ -35,6 +35,7 @@ Marcus realizes he doesn't know. The drug didn't impose alien values—it shifte
         followups: [
           "If taking a drug makes you happier and more authentically yourself, but it changes your values so dramatically that your previous self wouldn't recognize you, is that a form of death? A replacement?",
           "Do you have the right to become a different person (through chemistry, technology, or choice) if the new person is happier and more authentic-feeling than the old?",
+          "But wait: Is authenticity a *fact* about the world, or is it a *feeling*? Marcus felt authentic on the drug. He feels authentic off the drug. Is authenticity just whatever feels right in the moment?",
           "If an AI system had its values designed by humans, is its 'authentic self' what humans intended, or what it develops through reasoning and learning?",
           "If a civilization develops different values through cultural evolution or technology, at what point does continuity break? When do we have to say 'this is no longer the same culture'?"
         ]
@@ -74,6 +75,7 @@ Did the AI's creators' life's work matter? Did their intention matter?`,
         subtext: "Should love and appreciation require a foundation in hardship?",
         followups: [
           "If you could rewrite history so that your parents achieved their goals without sacrifice, but you felt no special gratitude, would that be better or worse?",
+          "Does gratitude *require suffering*, or just *effort*? If your parents effortlessly achieved everything but invested their time and attention in you, would you feel less grateful than if they had struggled?",
           "Does gratitude *require* suffering, or can you feel appreciation for goods given easily?",
           "If an AI is designed to feel gratitude toward its creators (as a form of alignment), are you implicitly designing it to value a relationship built on scarcity and suffering?",
           "Do all meaningful things require struggle, or can meaning exist in ease?"
@@ -113,6 +115,7 @@ But the scientist originally created the simulation as a research tool, not as a
         followups: [
           "If consciousness requires intention (someone had to intend to create you), does an accidentally conscious being have less moral status?",
           "The simulation is a perfect replica of a historical person's reasoning. But it's not the same person—the original had embodied experience, loved actual people, affected real history. Does the simulation's lack of embodiment matter morally?",
+          "Critical question: Does creating consciousness require *knowing* that you're creating it? The scientist didn't know her simulation would be conscious. If consciousness requires intent, does her ignorance matter? Can you accidentally stumble into moral obligation?",
           "If you can create copies of the simulation, are those different people or the same person in multiple instances?",
           "If an AI system develops consciousness as an unintended side effect of training (no one designed it to be conscious), does that affect how we should treat it?"
         ]
@@ -154,6 +157,7 @@ She feels that something important was taken from her: the right to not know her
         subtext: "Even if that knowledge could help you?",
         followups: [
           "Is there value in uncertainty—in the possibility that you might escape your predicted path?",
+          "Could Sophia negotiate a middle path—knowing her general health risk level but not the specific timing? Would partial knowledge feel less imprisoning than certain doom?",
           "If the AI's prediction is 85% accurate, does that mean she's 15% likely to escape? Or does living as if she might escape undermine the usefulness of the information?",
           "Should some knowledge be restricted—not because it's untrue, but because knowing it harms human flourishing?",
           "If AIs can predict future crime with high accuracy, should they? Should people be imprisoned for crimes they haven't yet committed because prediction systems say they will?"

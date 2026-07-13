@@ -5,6 +5,7 @@ import { IntroPage } from './pages/IntroPage'
 import { AxisPage } from './pages/AxisPage'
 import { ScenarioPage } from './pages/ScenarioPage'
 import { ResultsPage } from './pages/ResultsPage'
+import { Assessment } from './pages/Assessment'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <QuizProvider>
         <Routes>
           <Route path="/" element={<IntroPage />} />
+          <Route path="/assessment" element={<Assessment />} />
           <Route path="/quiz/:axisIndex" element={<AxisPage />} />
           <Route path="/scenarios" element={<ScenarioPage />} />
           <Route path="/results" element={<ResultsPage />} />
