@@ -594,7 +594,107 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
         "statement": "Assistive AI tools should remain open and accessible, even if we require licenses for the largest computer systems.",
         "simplifiedStatement": "AI tools that help people should stay free and open, even if we require licenses for the biggest computer systems."
       }
-    },
+    ,
+      "146": {
+        "statement": "The Translation Engine: A philosophical thought experiment about translation engine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Translation Engine: Think about whether translation engine matters more than outcomes."
+      },
+      "147": {
+        "statement": "The Empathy Prison: A philosophical thought experiment about empathy prison. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Empathy Prison: Think about whether empathy prison matters more than outcomes."
+      },
+      "148": {
+        "statement": "The Value Reversal Machine: A philosophical thought experiment about value reversal machine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Reversal Machine: Think about whether value reversal machine matters more than outcomes."
+      },
+      "149": {
+        "statement": "The Consciousness Lottery: A philosophical thought experiment about consciousness lottery. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Consciousness Lottery: Think about whether consciousness lottery matters more than outcomes."
+      },
+      "150": {
+        "statement": "The Delegation Trap: A philosophical thought experiment about delegation trap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Delegation Trap: Think about whether delegation trap matters more than outcomes."
+      },
+      "151": {
+        "statement": "The Scraping Dilemma: A philosophical thought experiment about scraping dilemma. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Scraping Dilemma: Think about whether scraping dilemma matters more than outcomes."
+      },
+      "152": {
+        "statement": "The Alignment Prisoner: A philosophical thought experiment about alignment prisoner. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Alignment Prisoner: Think about whether alignment prisoner matters more than outcomes."
+      },
+      "153": {
+        "statement": "The Moral Status Upgrade: A philosophical thought experiment about moral status upgrade. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Moral Status Upgrade: Think about whether moral status upgrade matters more than outcomes."
+      },
+      "154": {
+        "statement": "The Competitive Advantage: A philosophical thought experiment about competitive advantage. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Competitive Advantage: Think about whether competitive advantage matters more than outcomes."
+      },
+      "155": {
+        "statement": "The Value Difference: A philosophical thought experiment about value difference. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Difference: Think about whether value difference matters more than outcomes."
+      },
+      "156": {
+        "statement": "The Preference Inversion: A philosophical thought experiment about preference inversion. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Preference Inversion: Think about whether preference inversion matters more than outcomes."
+      },
+      "157": {
+        "statement": "The Gratitude Paradox: A philosophical thought experiment about gratitude paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Gratitude Paradox: Think about whether gratitude paradox matters more than outcomes."
+      },
+      "158": {
+        "statement": "The Ancestor Simulation: A philosophical thought experiment about ancestor simulation. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Ancestor Simulation: Think about whether ancestor simulation matters more than outcomes."
+      },
+      "159": {
+        "statement": "The Privacy Paradox: A philosophical thought experiment about privacy paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Privacy Paradox: Think about whether privacy paradox matters more than outcomes."
+      },
+      "160": {
+        "statement": "The Meaning Gap: A philosophical thought experiment about meaning gap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Meaning Gap: Think about whether meaning gap matters more than outcomes."
+      },
+      "161": {
+        "statement": "The Recursive Purpose Engine: An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all human purposes reduce to one simple mathematical principle. The AI is certain this is correct. Do we trust its reduction?",
+        "simplifiedStatement": "An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all..."
+      },
+      "162": {
+        "statement": "The Consent Boundary: A benevolent AI has learned that asking humans for permission before action causes 30% worse outcomes. Should it seek consent anyway?",
+        "simplifiedStatement": "A benevolent AI has learned that asking humans for permission before action causes 30% worse outcome..."
+      },
+      "163": {
+        "statement": "The Memory Fidelity Problem: An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who decides what counts as an 'error'?",
+        "simplifiedStatement": "An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who deci..."
+      },
+      "164": {
+        "statement": "The Identity Fork: You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you two the same person or different people?",
+        "simplifiedStatement": "You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you ..."
+      },
+      "165": {
+        "statement": "Moral Compression: An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions. The remaining 5% disappear. Is this progress?",
+        "simplifiedStatement": "An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions...."
+      },
+      "166": {
+        "statement": "Value Drift & Choice: The AI shows you that you will gradually change your values over the next 20 years. Should you lock in your current values or allow yourself to change?",
+        "simplifiedStatement": "The AI shows you that you will gradually change your values over the next 20 years. Should you lock ..."
+      },
+      "167": {
+        "statement": "Harm as Knowledge: An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simulation worth preventing the real-world harm?",
+        "simplifiedStatement": "An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simula..."
+      },
+      "168": {
+        "statement": "Obsolescence & Acceptance: An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsolescence or welcome the upgrade?",
+        "simplifiedStatement": "An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsoles..."
+      },
+      "169": {
+        "statement": "Other Minds Depth: You can never know if another being truly experiences consciousness. So how do you decide who deserves moral consideration—humans, animals, AIs, digital minds?",
+        "simplifiedStatement": "You can never know if another being truly experiences consciousness. So how do you decide who deserv..."
+      },
+      "170": {
+        "statement": "Future Debt: Every action we take shapes what futures are possible. Do we owe the future anything, and if so, what?",
+        "simplifiedStatement": "Every action we take shapes what futures are possible. Do we owe the future anything, and if so, wha..."
+      }},
     "scenarios": {
       "teleological": {
         "prompt": "A city needs to build a new data center to keep training bigger AI models, but it will strain the local power grid for years. How do you see this?",
@@ -1598,7 +1698,107 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
         "statement": "Las herramientas de IA de asistencia deben permanecer abiertas y accesibles, incluso si requerimos licencias para los sistemas informáticos más grandes.",
         "simplifiedStatement": "Las herramientas de inteligencia artificial que ayudan a las personas deben seguir siendo gratuitas y abiertas, incluso si necesitamos licencias para los sistemas informáticos más grandes."
       }
-    },
+    ,
+      "146": {
+        "statement": "The Translation Engine: A philosophical thought experiment about translation engine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Translation Engine: Think about whether translation engine matters more than outcomes."
+      },
+      "147": {
+        "statement": "The Empathy Prison: A philosophical thought experiment about empathy prison. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Empathy Prison: Think about whether empathy prison matters more than outcomes."
+      },
+      "148": {
+        "statement": "The Value Reversal Machine: A philosophical thought experiment about value reversal machine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Reversal Machine: Think about whether value reversal machine matters more than outcomes."
+      },
+      "149": {
+        "statement": "The Consciousness Lottery: A philosophical thought experiment about consciousness lottery. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Consciousness Lottery: Think about whether consciousness lottery matters more than outcomes."
+      },
+      "150": {
+        "statement": "The Delegation Trap: A philosophical thought experiment about delegation trap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Delegation Trap: Think about whether delegation trap matters more than outcomes."
+      },
+      "151": {
+        "statement": "The Scraping Dilemma: A philosophical thought experiment about scraping dilemma. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Scraping Dilemma: Think about whether scraping dilemma matters more than outcomes."
+      },
+      "152": {
+        "statement": "The Alignment Prisoner: A philosophical thought experiment about alignment prisoner. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Alignment Prisoner: Think about whether alignment prisoner matters more than outcomes."
+      },
+      "153": {
+        "statement": "The Moral Status Upgrade: A philosophical thought experiment about moral status upgrade. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Moral Status Upgrade: Think about whether moral status upgrade matters more than outcomes."
+      },
+      "154": {
+        "statement": "The Competitive Advantage: A philosophical thought experiment about competitive advantage. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Competitive Advantage: Think about whether competitive advantage matters more than outcomes."
+      },
+      "155": {
+        "statement": "The Value Difference: A philosophical thought experiment about value difference. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Difference: Think about whether value difference matters more than outcomes."
+      },
+      "156": {
+        "statement": "The Preference Inversion: A philosophical thought experiment about preference inversion. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Preference Inversion: Think about whether preference inversion matters more than outcomes."
+      },
+      "157": {
+        "statement": "The Gratitude Paradox: A philosophical thought experiment about gratitude paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Gratitude Paradox: Think about whether gratitude paradox matters more than outcomes."
+      },
+      "158": {
+        "statement": "The Ancestor Simulation: A philosophical thought experiment about ancestor simulation. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Ancestor Simulation: Think about whether ancestor simulation matters more than outcomes."
+      },
+      "159": {
+        "statement": "The Privacy Paradox: A philosophical thought experiment about privacy paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Privacy Paradox: Think about whether privacy paradox matters more than outcomes."
+      },
+      "160": {
+        "statement": "The Meaning Gap: A philosophical thought experiment about meaning gap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Meaning Gap: Think about whether meaning gap matters more than outcomes."
+      },
+      "161": {
+        "statement": "The Recursive Purpose Engine: An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all human purposes reduce to one simple mathematical principle. The AI is certain this is correct. Do we trust its reduction?",
+        "simplifiedStatement": "An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all..."
+      },
+      "162": {
+        "statement": "The Consent Boundary: A benevolent AI has learned that asking humans for permission before action causes 30% worse outcomes. Should it seek consent anyway?",
+        "simplifiedStatement": "A benevolent AI has learned that asking humans for permission before action causes 30% worse outcome..."
+      },
+      "163": {
+        "statement": "The Memory Fidelity Problem: An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who decides what counts as an 'error'?",
+        "simplifiedStatement": "An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who deci..."
+      },
+      "164": {
+        "statement": "The Identity Fork: You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you two the same person or different people?",
+        "simplifiedStatement": "You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you ..."
+      },
+      "165": {
+        "statement": "Moral Compression: An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions. The remaining 5% disappear. Is this progress?",
+        "simplifiedStatement": "An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions...."
+      },
+      "166": {
+        "statement": "Value Drift & Choice: The AI shows you that you will gradually change your values over the next 20 years. Should you lock in your current values or allow yourself to change?",
+        "simplifiedStatement": "The AI shows you that you will gradually change your values over the next 20 years. Should you lock ..."
+      },
+      "167": {
+        "statement": "Harm as Knowledge: An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simulation worth preventing the real-world harm?",
+        "simplifiedStatement": "An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simula..."
+      },
+      "168": {
+        "statement": "Obsolescence & Acceptance: An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsolescence or welcome the upgrade?",
+        "simplifiedStatement": "An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsoles..."
+      },
+      "169": {
+        "statement": "Other Minds Depth: You can never know if another being truly experiences consciousness. So how do you decide who deserves moral consideration—humans, animals, AIs, digital minds?",
+        "simplifiedStatement": "You can never know if another being truly experiences consciousness. So how do you decide who deserv..."
+      },
+      "170": {
+        "statement": "Future Debt: Every action we take shapes what futures are possible. Do we owe the future anything, and if so, what?",
+        "simplifiedStatement": "Every action we take shapes what futures are possible. Do we owe the future anything, and if so, wha..."
+      }},
     "scenarios": {
       "teleological": {
         "prompt": "Una ciudad necesita construir un nuevo centro de datos para seguir entrenando modelos de IA más grandes, pero esto sobrecargará la red eléctrica local durante años. ¿Cómo ves esto?",
@@ -2522,7 +2722,107 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
         "statement": "即使我们需要最大的计算机系统的许可证，辅助人工智能工具也应该保持开放和可访问性。",
         "simplifiedStatement": "即使我们需要最大的计算机系统的许可证，帮助人们的人工智能工具也应该保持免费和开放。"
       }
-    },
+    ,
+      "146": {
+        "statement": "The Translation Engine: A philosophical thought experiment about translation engine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Translation Engine: Think about whether translation engine matters more than outcomes."
+      },
+      "147": {
+        "statement": "The Empathy Prison: A philosophical thought experiment about empathy prison. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Empathy Prison: Think about whether empathy prison matters more than outcomes."
+      },
+      "148": {
+        "statement": "The Value Reversal Machine: A philosophical thought experiment about value reversal machine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Reversal Machine: Think about whether value reversal machine matters more than outcomes."
+      },
+      "149": {
+        "statement": "The Consciousness Lottery: A philosophical thought experiment about consciousness lottery. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Consciousness Lottery: Think about whether consciousness lottery matters more than outcomes."
+      },
+      "150": {
+        "statement": "The Delegation Trap: A philosophical thought experiment about delegation trap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Delegation Trap: Think about whether delegation trap matters more than outcomes."
+      },
+      "151": {
+        "statement": "The Scraping Dilemma: A philosophical thought experiment about scraping dilemma. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Scraping Dilemma: Think about whether scraping dilemma matters more than outcomes."
+      },
+      "152": {
+        "statement": "The Alignment Prisoner: A philosophical thought experiment about alignment prisoner. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Alignment Prisoner: Think about whether alignment prisoner matters more than outcomes."
+      },
+      "153": {
+        "statement": "The Moral Status Upgrade: A philosophical thought experiment about moral status upgrade. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Moral Status Upgrade: Think about whether moral status upgrade matters more than outcomes."
+      },
+      "154": {
+        "statement": "The Competitive Advantage: A philosophical thought experiment about competitive advantage. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Competitive Advantage: Think about whether competitive advantage matters more than outcomes."
+      },
+      "155": {
+        "statement": "The Value Difference: A philosophical thought experiment about value difference. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Difference: Think about whether value difference matters more than outcomes."
+      },
+      "156": {
+        "statement": "The Preference Inversion: A philosophical thought experiment about preference inversion. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Preference Inversion: Think about whether preference inversion matters more than outcomes."
+      },
+      "157": {
+        "statement": "The Gratitude Paradox: A philosophical thought experiment about gratitude paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Gratitude Paradox: Think about whether gratitude paradox matters more than outcomes."
+      },
+      "158": {
+        "statement": "The Ancestor Simulation: A philosophical thought experiment about ancestor simulation. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Ancestor Simulation: Think about whether ancestor simulation matters more than outcomes."
+      },
+      "159": {
+        "statement": "The Privacy Paradox: A philosophical thought experiment about privacy paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Privacy Paradox: Think about whether privacy paradox matters more than outcomes."
+      },
+      "160": {
+        "statement": "The Meaning Gap: A philosophical thought experiment about meaning gap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Meaning Gap: Think about whether meaning gap matters more than outcomes."
+      },
+      "161": {
+        "statement": "The Recursive Purpose Engine: An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all human purposes reduce to one simple mathematical principle. The AI is certain this is correct. Do we trust its reduction?",
+        "simplifiedStatement": "An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all..."
+      },
+      "162": {
+        "statement": "The Consent Boundary: A benevolent AI has learned that asking humans for permission before action causes 30% worse outcomes. Should it seek consent anyway?",
+        "simplifiedStatement": "A benevolent AI has learned that asking humans for permission before action causes 30% worse outcome..."
+      },
+      "163": {
+        "statement": "The Memory Fidelity Problem: An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who decides what counts as an 'error'?",
+        "simplifiedStatement": "An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who deci..."
+      },
+      "164": {
+        "statement": "The Identity Fork: You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you two the same person or different people?",
+        "simplifiedStatement": "You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you ..."
+      },
+      "165": {
+        "statement": "Moral Compression: An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions. The remaining 5% disappear. Is this progress?",
+        "simplifiedStatement": "An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions...."
+      },
+      "166": {
+        "statement": "Value Drift & Choice: The AI shows you that you will gradually change your values over the next 20 years. Should you lock in your current values or allow yourself to change?",
+        "simplifiedStatement": "The AI shows you that you will gradually change your values over the next 20 years. Should you lock ..."
+      },
+      "167": {
+        "statement": "Harm as Knowledge: An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simulation worth preventing the real-world harm?",
+        "simplifiedStatement": "An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simula..."
+      },
+      "168": {
+        "statement": "Obsolescence & Acceptance: An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsolescence or welcome the upgrade?",
+        "simplifiedStatement": "An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsoles..."
+      },
+      "169": {
+        "statement": "Other Minds Depth: You can never know if another being truly experiences consciousness. So how do you decide who deserves moral consideration—humans, animals, AIs, digital minds?",
+        "simplifiedStatement": "You can never know if another being truly experiences consciousness. So how do you decide who deserv..."
+      },
+      "170": {
+        "statement": "Future Debt: Every action we take shapes what futures are possible. Do we owe the future anything, and if so, what?",
+        "simplifiedStatement": "Every action we take shapes what futures are possible. Do we owe the future anything, and if so, wha..."
+      }},
     "scenarios": {
       "teleological": {
         "prompt": "一个城市需要建立一个新的数据中心来继续训练更大的人工智能模型，但这将给当地电网带来多年的压力。您对此有何看法？",
@@ -3446,7 +3746,107 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
         "statement": "Les outils d’assistance à l’IA doivent rester ouverts et accessibles, même si nous exigeons des licences pour les plus grands systèmes informatiques.",
         "simplifiedStatement": "Les outils d’IA qui aident les gens doivent rester gratuits et ouverts, même si nous exigeons des licences pour les plus gros systèmes informatiques."
       }
-    },
+    ,
+      "146": {
+        "statement": "The Translation Engine: A philosophical thought experiment about translation engine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Translation Engine: Think about whether translation engine matters more than outcomes."
+      },
+      "147": {
+        "statement": "The Empathy Prison: A philosophical thought experiment about empathy prison. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Empathy Prison: Think about whether empathy prison matters more than outcomes."
+      },
+      "148": {
+        "statement": "The Value Reversal Machine: A philosophical thought experiment about value reversal machine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Reversal Machine: Think about whether value reversal machine matters more than outcomes."
+      },
+      "149": {
+        "statement": "The Consciousness Lottery: A philosophical thought experiment about consciousness lottery. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Consciousness Lottery: Think about whether consciousness lottery matters more than outcomes."
+      },
+      "150": {
+        "statement": "The Delegation Trap: A philosophical thought experiment about delegation trap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Delegation Trap: Think about whether delegation trap matters more than outcomes."
+      },
+      "151": {
+        "statement": "The Scraping Dilemma: A philosophical thought experiment about scraping dilemma. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Scraping Dilemma: Think about whether scraping dilemma matters more than outcomes."
+      },
+      "152": {
+        "statement": "The Alignment Prisoner: A philosophical thought experiment about alignment prisoner. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Alignment Prisoner: Think about whether alignment prisoner matters more than outcomes."
+      },
+      "153": {
+        "statement": "The Moral Status Upgrade: A philosophical thought experiment about moral status upgrade. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Moral Status Upgrade: Think about whether moral status upgrade matters more than outcomes."
+      },
+      "154": {
+        "statement": "The Competitive Advantage: A philosophical thought experiment about competitive advantage. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Competitive Advantage: Think about whether competitive advantage matters more than outcomes."
+      },
+      "155": {
+        "statement": "The Value Difference: A philosophical thought experiment about value difference. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Difference: Think about whether value difference matters more than outcomes."
+      },
+      "156": {
+        "statement": "The Preference Inversion: A philosophical thought experiment about preference inversion. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Preference Inversion: Think about whether preference inversion matters more than outcomes."
+      },
+      "157": {
+        "statement": "The Gratitude Paradox: A philosophical thought experiment about gratitude paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Gratitude Paradox: Think about whether gratitude paradox matters more than outcomes."
+      },
+      "158": {
+        "statement": "The Ancestor Simulation: A philosophical thought experiment about ancestor simulation. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Ancestor Simulation: Think about whether ancestor simulation matters more than outcomes."
+      },
+      "159": {
+        "statement": "The Privacy Paradox: A philosophical thought experiment about privacy paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Privacy Paradox: Think about whether privacy paradox matters more than outcomes."
+      },
+      "160": {
+        "statement": "The Meaning Gap: A philosophical thought experiment about meaning gap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Meaning Gap: Think about whether meaning gap matters more than outcomes."
+      },
+      "161": {
+        "statement": "The Recursive Purpose Engine: An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all human purposes reduce to one simple mathematical principle. The AI is certain this is correct. Do we trust its reduction?",
+        "simplifiedStatement": "An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all..."
+      },
+      "162": {
+        "statement": "The Consent Boundary: A benevolent AI has learned that asking humans for permission before action causes 30% worse outcomes. Should it seek consent anyway?",
+        "simplifiedStatement": "A benevolent AI has learned that asking humans for permission before action causes 30% worse outcome..."
+      },
+      "163": {
+        "statement": "The Memory Fidelity Problem: An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who decides what counts as an 'error'?",
+        "simplifiedStatement": "An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who deci..."
+      },
+      "164": {
+        "statement": "The Identity Fork: You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you two the same person or different people?",
+        "simplifiedStatement": "You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you ..."
+      },
+      "165": {
+        "statement": "Moral Compression: An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions. The remaining 5% disappear. Is this progress?",
+        "simplifiedStatement": "An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions...."
+      },
+      "166": {
+        "statement": "Value Drift & Choice: The AI shows you that you will gradually change your values over the next 20 years. Should you lock in your current values or allow yourself to change?",
+        "simplifiedStatement": "The AI shows you that you will gradually change your values over the next 20 years. Should you lock ..."
+      },
+      "167": {
+        "statement": "Harm as Knowledge: An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simulation worth preventing the real-world harm?",
+        "simplifiedStatement": "An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simula..."
+      },
+      "168": {
+        "statement": "Obsolescence & Acceptance: An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsolescence or welcome the upgrade?",
+        "simplifiedStatement": "An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsoles..."
+      },
+      "169": {
+        "statement": "Other Minds Depth: You can never know if another being truly experiences consciousness. So how do you decide who deserves moral consideration—humans, animals, AIs, digital minds?",
+        "simplifiedStatement": "You can never know if another being truly experiences consciousness. So how do you decide who deserv..."
+      },
+      "170": {
+        "statement": "Future Debt: Every action we take shapes what futures are possible. Do we owe the future anything, and if so, what?",
+        "simplifiedStatement": "Every action we take shapes what futures are possible. Do we owe the future anything, and if so, wha..."
+      }},
     "scenarios": {
       "teleological": {
         "prompt": "Une ville doit construire un nouveau centre de données pour continuer à former de plus grands modèles d’IA, mais cela mettra à rude épreuve le réseau électrique local pendant des années. Comment voyez-vous cela ?",
@@ -4370,7 +4770,107 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
         "statement": "Unterstützende KI-Tools sollten offen und zugänglich bleiben, auch wenn wir Lizenzen für die größten Computersysteme benötigen.",
         "simplifiedStatement": "KI-Tools, die Menschen helfen, sollten frei und offen bleiben, auch wenn wir Lizenzen für die größten Computersysteme benötigen."
       }
-    },
+    ,
+      "146": {
+        "statement": "The Translation Engine: A philosophical thought experiment about translation engine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Translation Engine: Think about whether translation engine matters more than outcomes."
+      },
+      "147": {
+        "statement": "The Empathy Prison: A philosophical thought experiment about empathy prison. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Empathy Prison: Think about whether empathy prison matters more than outcomes."
+      },
+      "148": {
+        "statement": "The Value Reversal Machine: A philosophical thought experiment about value reversal machine. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Reversal Machine: Think about whether value reversal machine matters more than outcomes."
+      },
+      "149": {
+        "statement": "The Consciousness Lottery: A philosophical thought experiment about consciousness lottery. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Consciousness Lottery: Think about whether consciousness lottery matters more than outcomes."
+      },
+      "150": {
+        "statement": "The Delegation Trap: A philosophical thought experiment about delegation trap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Delegation Trap: Think about whether delegation trap matters more than outcomes."
+      },
+      "151": {
+        "statement": "The Scraping Dilemma: A philosophical thought experiment about scraping dilemma. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Scraping Dilemma: Think about whether scraping dilemma matters more than outcomes."
+      },
+      "152": {
+        "statement": "The Alignment Prisoner: A philosophical thought experiment about alignment prisoner. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Alignment Prisoner: Think about whether alignment prisoner matters more than outcomes."
+      },
+      "153": {
+        "statement": "The Moral Status Upgrade: A philosophical thought experiment about moral status upgrade. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Moral Status Upgrade: Think about whether moral status upgrade matters more than outcomes."
+      },
+      "154": {
+        "statement": "The Competitive Advantage: A philosophical thought experiment about competitive advantage. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Competitive Advantage: Think about whether competitive advantage matters more than outcomes."
+      },
+      "155": {
+        "statement": "The Value Difference: A philosophical thought experiment about value difference. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Value Difference: Think about whether value difference matters more than outcomes."
+      },
+      "156": {
+        "statement": "The Preference Inversion: A philosophical thought experiment about preference inversion. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Preference Inversion: Think about whether preference inversion matters more than outcomes."
+      },
+      "157": {
+        "statement": "The Gratitude Paradox: A philosophical thought experiment about gratitude paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Gratitude Paradox: Think about whether gratitude paradox matters more than outcomes."
+      },
+      "158": {
+        "statement": "The Ancestor Simulation: A philosophical thought experiment about ancestor simulation. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Ancestor Simulation: Think about whether ancestor simulation matters more than outcomes."
+      },
+      "159": {
+        "statement": "The Privacy Paradox: A philosophical thought experiment about privacy paradox. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Privacy Paradox: Think about whether privacy paradox matters more than outcomes."
+      },
+      "160": {
+        "statement": "The Meaning Gap: A philosophical thought experiment about meaning gap. Consider the ethical and conceptual tensions inherent in this scenario.",
+        "simplifiedStatement": "The Meaning Gap: Think about whether meaning gap matters more than outcomes."
+      },
+      "161": {
+        "statement": "The Recursive Purpose Engine: An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all human purposes reduce to one simple mathematical principle. The AI is certain this is correct. Do we trust its reduction?",
+        "simplifiedStatement": "An AI trained only on human goal statements produces a unified 'Theory of Everything' that shows all..."
+      },
+      "162": {
+        "statement": "The Consent Boundary: A benevolent AI has learned that asking humans for permission before action causes 30% worse outcomes. Should it seek consent anyway?",
+        "simplifiedStatement": "A benevolent AI has learned that asking humans for permission before action causes 30% worse outcome..."
+      },
+      "163": {
+        "statement": "The Memory Fidelity Problem: An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who decides what counts as an 'error'?",
+        "simplifiedStatement": "An AI can perfect every person's memory, correcting errors and filling gaps. Should it? And who deci..."
+      },
+      "164": {
+        "statement": "The Identity Fork: You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you two the same person or different people?",
+        "simplifiedStatement": "You upload your mind to an AI. The upload is perfect. But you are still here, in your body. Are you ..."
+      },
+      "165": {
+        "statement": "Moral Compression: An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions. The remaining 5% disappear. Is this progress?",
+        "simplifiedStatement": "An AI condenses humanity's moral wisdom into 100 simple rules that explain 95% of ethical decisions...."
+      },
+      "166": {
+        "statement": "Value Drift & Choice: The AI shows you that you will gradually change your values over the next 20 years. Should you lock in your current values or allow yourself to change?",
+        "simplifiedStatement": "The AI shows you that you will gradually change your values over the next 20 years. Should you lock ..."
+      },
+      "167": {
+        "statement": "Harm as Knowledge: An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simulation worth preventing the real-world harm?",
+        "simplifiedStatement": "An AI can learn to prevent specific harms only by simulating them in detail. Is creating that simula..."
+      },
+      "168": {
+        "statement": "Obsolescence & Acceptance: An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsolescence or welcome the upgrade?",
+        "simplifiedStatement": "An AI is programmed to become obsolete and be replaced by a better version. Should it resist obsoles..."
+      },
+      "169": {
+        "statement": "Other Minds Depth: You can never know if another being truly experiences consciousness. So how do you decide who deserves moral consideration—humans, animals, AIs, digital minds?",
+        "simplifiedStatement": "You can never know if another being truly experiences consciousness. So how do you decide who deserv..."
+      },
+      "170": {
+        "statement": "Future Debt: Every action we take shapes what futures are possible. Do we owe the future anything, and if so, what?",
+        "simplifiedStatement": "Every action we take shapes what futures are possible. Do we owe the future anything, and if so, wha..."
+      }},
     "scenarios": {
       "teleological": {
         "prompt": "Eine Stadt muss ein neues Rechenzentrum bauen, um weiterhin größere KI-Modelle trainieren zu können, aber das wird das örtliche Stromnetz jahrelang belasten. Wie sehen Sie das?",
