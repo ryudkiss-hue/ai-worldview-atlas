@@ -869,7 +869,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Post-Humanist Transhumanist",
-        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. That future deserves the same moral concern we give humans today."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Bio-Conservative Traditionalist",
@@ -901,7 +901,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Neo-Luddite Degrowth Advocate",
-        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community first. Cares about nature's limits more than computing or economic growth."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Rationalist Alignment Researcher",
@@ -1042,6 +1042,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Border/Migration Surveillance Critic",
         "summary": "Watches how AI tracking and risk scores get used against refugees at borders and camps. Wants human-rights law and real accountability here, not faster rollout. Centers the people AI is used against, not the people who build it."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -1893,7 +1901,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Transhumanista poshumanista",
-        "summary": "Da la bienvenida a un futuro en el que las mentes digitales reemplacen a los humanos biológicos como principales portadores de valor. Ese futuro merece la misma preocupación moral que brindamos a los humanos hoy."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Tradicionalista bioconservador",
@@ -1925,7 +1933,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Defensor neoludita del decrecimiento",
-        "summary": "Rechaza la idea de que un progreso más rápido de la IA siempre sea bueno. Pone en primer lugar el trabajo humano y la comunidad. Se preocupa más por los límites de la naturaleza que por la informática o el crecimiento económico."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Investigador del Alineamiento Racionalista",
@@ -2066,6 +2074,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Crítico de la vigilancia fronteriza y migratoria",
         "summary": "Observa cómo se utilizan el seguimiento de la IA y las puntuaciones de riesgo contra los refugiados en las fronteras y los campamentos. Quiere leyes de derechos humanos y una rendición de cuentas real aquí, no una implementación más rápida. Se centra en las personas contra las que se utiliza la IA, no en las personas que la construyen."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -2917,7 +2933,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "उत्तर-मानवतावादी ट्रांसह्यूमनिस्ट",
-        "summary": "एक ऐसे भविष्य का स्वागत करता है जहां मूल्य के मुख्य वाहक के रूप में डिजिटल दिमाग जैविक मनुष्यों से आगे निकल जाएगा। वह भविष्य उसी नैतिक चिंता का पात्र है जो हम आज मनुष्यों को देते हैं।"
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "जैव-रूढ़िवादी परंपरावादी",
@@ -2949,7 +2965,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "नियो-लुडाइट डीग्रोथ एडवोकेट",
-        "summary": "इस विचार को खारिज करता है कि तेज एआई प्रगति हमेशा अच्छी होती है। मानव श्रम और समुदाय को पहले स्थान पर रखता है। कंप्यूटिंग या आर्थिक विकास से अधिक प्रकृति की सीमाओं की परवाह करता है।"
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "तर्कवादी संरेखण शोधकर्ता",
@@ -3090,6 +3106,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "सीमा/प्रवासन निगरानी समीक्षक",
         "summary": "देखता है कि सीमाओं और शिविरों में शरणार्थियों के खिलाफ एआई ट्रैकिंग और जोखिम स्कोर का उपयोग कैसे किया जाता है। यहां मानवाधिकार कानून और वास्तविक जवाबदेही चाहता है, न कि तेजी से लागू करना। एआई का उपयोग उन लोगों को केन्द्रित करता है जिनके विरुद्ध एआई का उपयोग किया जाता है, न कि वे लोग जो इसे बनाते हैं।"
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -3941,7 +3965,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "ما بعد الإنسانية ما بعد الإنسانية",
-        "summary": "ترحب بمستقبل تتولى فيه العقول الرقمية المسؤولية عن البشر البيولوجيين باعتبارهم الحاملين الرئيسيين للقيمة. إن ذلك المستقبل يستحق نفس الاهتمام الأخلاقي الذي نوليه للبشر اليوم."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "التقليدي المحافظ الحيوي",
@@ -3973,7 +3997,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "المدافع عن تراجع النمو اللاضوي الجديد",
-        "summary": "يرفض فكرة أن التقدم الأسرع في الذكاء الاصطناعي هو أمر جيد دائمًا. يضع العمل البشري والمجتمع في المقام الأول. يهتم بحدود الطبيعة أكثر من الحوسبة أو النمو الاقتصادي."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "باحث في الاصطفاف العقلاني",
@@ -4114,6 +4138,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "ناقد مراقبة الحدود/الهجرة",
         "summary": "شاهد كيف يتم استخدام تتبع الذكاء الاصطناعي ونتائج المخاطر ضد اللاجئين على الحدود والمخيمات. يريد قانون حقوق الإنسان والمساءلة الحقيقية هنا، وليس التعجيل بالتنفيذ. المراكز هي الأشخاص الذين يُستخدم الذكاء الاصطناعي ضدهم، وليس الأشخاص الذين يقومون ببنائه."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -4965,7 +4997,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Transumanista Pós-Humanista",
-        "summary": "Congratula-se com um futuro em que as mentes digitais substituem os humanos biológicos como os principais portadores de valor. Esse futuro merece a mesma preocupação moral que damos aos humanos hoje."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Tradicionalista Bioconservador",
@@ -4997,7 +5029,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Defensor Neo-Ludita do Decrescimento",
-        "summary": "Rejeita a ideia de que um progresso mais rápido da IA ​​é sempre bom. Coloca o trabalho humano e a comunidade em primeiro lugar. Preocupa-se mais com os limites da natureza do que com a computação ou com o crescimento econômico."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Pesquisador do Alinhamento Racionalista",
@@ -5138,6 +5170,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Crítico da vigilância das fronteiras/migrações",
         "summary": "Observa como o rastreamento de IA e as pontuações de risco são usados ​​contra refugiados nas fronteiras e nos campos. Quer leis de direitos humanos e responsabilização real aqui, e não uma implementação mais rápida. Centra as pessoas contra as quais a IA é usada, não as pessoas que a constroem."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -5989,7 +6029,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "পোস্ট-হিউম্যানিস্ট ট্রান্সহিউম্যানিস্ট",
-        "summary": "একটি ভবিষ্যতকে স্বাগত জানায় যেখানে ডিজিটাল মন জৈবিক মানুষের কাছ থেকে মূল্যের প্রধান বাহক হিসাবে গ্রহণ করে। সেই ভবিষ্যত একই নৈতিক উদ্বেগের যোগ্য যা আমরা আজকে মানুষকে দিই।"
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "জৈব-রক্ষণশীল ঐতিহ্যবাদী",
@@ -6021,7 +6061,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "নিও-লুড্ডিট ডিগ্রোথ অ্যাডভোকেট",
-        "summary": "এই ধারণা প্রত্যাখ্যান করে যে দ্রুত এআই অগ্রগতি সর্বদা ভাল। মানব শ্রম এবং সম্প্রদায়কে প্রথমে রাখে। কম্পিউটিং বা অর্থনৈতিক বৃদ্ধির চেয়ে প্রকৃতির সীমা সম্পর্কে বেশি যত্নশীল।"
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "যুক্তিবাদী প্রান্তিককরণ গবেষক",
@@ -6162,6 +6202,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "বর্ডার/মাইগ্রেশন সার্ভিলেন্স ক্রিটিক",
         "summary": "সীমান্ত এবং ক্যাম্পে শরণার্থীদের বিরুদ্ধে এআই ট্র্যাকিং এবং ঝুঁকির স্কোর কীভাবে ব্যবহার করা হয় তা দেখে। এখানে মানবাধিকার আইন এবং প্রকৃত জবাবদিহিতা চায়, দ্রুত রোলআউট নয়। AI যাদের বিরুদ্ধে ব্যবহার করা হয় তাদের কেন্দ্র করে, যারা এটি তৈরি করে তাদের নয়।"
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -7013,7 +7061,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Постгуманист Трансгуманист",
-        "summary": "Приветствуется будущее, в котором цифровые умы заменят биологических людей в качестве основных носителей ценностей. Это будущее заслуживает той же моральной заботы, которую мы испытываем к людям сегодня."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Биоконсервативный традиционалист",
@@ -7045,7 +7093,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Неолуддит, защитник экономического роста",
-        "summary": "Отвергает идею о том, что более быстрый прогресс ИИ всегда хорош. Ставит человеческий труд и сообщество на первое место. Больше заботится о пределах природы, чем о компьютерах или экономическом росте."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Исследователь рационалистического мировоззрения",
@@ -7186,6 +7234,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Критик пограничного/миграционного надзора",
         "summary": "Наблюдает за тем, как ИИ-отслеживание и оценки риска используются против беженцев на границах и в лагерях. Здесь нужен закон о правах человека и реальная подотчетность, а не более быстрое внедрение. Центрирует людей, против которых используется ИИ, а не людей, которые его создают."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -8037,7 +8093,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "ポストヒューマニストトランスヒューマニスト",
-        "summary": "デジタルマインドが価値の主な担い手として生物学的人間に取って代わる未来を歓迎します。その未来は、私たちが今日人間に与えているのと同じ道徳的懸念を抱くに値します。"
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "生物保守的な伝統主義者",
@@ -8069,7 +8125,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "新ラッダイト脱成長擁護者",
-        "summary": "AI の進歩が速いことが常に良いことであるという考えを否定します。人間の労働とコミュニティを第一に考えます。コンピューティングや経済成長よりも自然の限界を気にします。"
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "合理主義者調整研究者",
@@ -8210,6 +8266,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "国境/移民監視評論家",
         "summary": "AI 追跡とリスク スコアが国境やキャンプで難民に対してどのように使用されるかを観察します。ここで求めているのは人権法と本当の説明責任であり、より迅速な展開ではありません。 AI を構築する人々ではなく、AI が使用される人々が中心になります。"
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -9061,7 +9125,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Posthumanistischer Transhumanist",
-        "summary": "Begrüßt eine Zukunft, in der digitale Köpfe den biologischen Menschen als Hauptwertträger ablösen. Diese Zukunft verdient die gleiche moralische Sorge, die wir den Menschen heute entgegenbringen."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Biokonservativer Traditionalist",
@@ -9093,7 +9157,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Neo-Ludditischer Degrowth-Befürworter",
-        "summary": "Lehnt die Vorstellung ab, dass ein schnellerer KI-Fortschritt immer gut sei. Stellt menschliche Arbeit und Gemeinschaft an erste Stelle. Die Grenzen der Natur sind ihm wichtiger als Computer oder Wirtschaftswachstum."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Rationalistischer Ausrichtungsforscher",
@@ -9234,6 +9298,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Kritiker der Grenz-/Migrationsüberwachung",
         "summary": "Beobachtet, wie KI-Tracking und Risikobewertungen an Grenzen und Lagern gegen Flüchtlinge eingesetzt werden. Will hier Menschenrechte und echte Rechenschaftspflicht, nicht eine schnellere Einführung. Im Mittelpunkt stehen die Menschen, gegen die KI eingesetzt wird, nicht die Menschen, die sie entwickeln."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -10085,7 +10157,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Transhumaniste post-humaniste",
-        "summary": "Accueille un avenir où les esprits numériques prendront le pas sur les humains biologiques en tant que principaux porteurs de valeur. Cet avenir mérite la même préoccupation morale que celle que nous accordons aux humains aujourd’hui."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Traditionaliste bio-conservateur",
@@ -10117,7 +10189,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Défenseur de la décroissance néo-luddite",
-        "summary": "Rejette l’idée selon laquelle des progrès plus rapides en matière d’IA sont toujours une bonne chose. Donne la priorité au travail humain et à la communauté. Se soucie plus des limites de la nature que de l'informatique ou de la croissance économique."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Chercheur en alignement rationaliste",
@@ -10258,6 +10330,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Porte-parole en matière de surveillance des frontières et des migrations",
         "summary": "Regardez comment le suivi de l'IA et les scores de risque sont utilisés contre les réfugiés aux frontières et dans les camps. Il veut une législation relative aux droits de l’homme et une véritable responsabilité ici, et non une mise en œuvre plus rapide. Centres contre lesquels l’IA est utilisée, et non contre ceux qui la construisent."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -11109,7 +11189,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "포스트휴머니스트 트랜스휴머니스트",
-        "summary": "디지털 정신이 생물학적 인간을 가치의 주요 보유자로 인계받는 미래를 환영합니다. 그 미래는 오늘날 우리가 인간에게 주는 것과 같은 도덕적 관심을 가질 가치가 있습니다."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "생물보수적 전통주의자",
@@ -11141,7 +11221,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "네오러다이트 탈성장 지지자",
-        "summary": "AI가 더 빨리 발전하는 것이 항상 좋다는 생각을 거부합니다. 인간의 노동과 공동체를 최우선으로 생각합니다. 컴퓨팅이나 경제 성장보다 자연의 한계에 더 관심을 갖습니다."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "합리주의 성향 연구원",
@@ -11282,6 +11362,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "국경/이주 감시 비평가",
         "summary": "국경과 캠프에서 난민을 대상으로 AI 추적 및 위험 점수가 어떻게 사용되는지 살펴보세요. 더 빠른 출시가 아닌 인권법과 실질적인 책임을 원합니다. AI를 사용하는 사람들을 중심으로 삼는 것이지 AI를 만드는 사람이 아닙니다."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -12133,7 +12221,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Post-Hümanist Transhümanist",
-        "summary": "Dijital zihinlerin, değerin ana taşıyıcıları olarak biyolojik insanlardan görevi devraldığı bir geleceği memnuniyetle karşılıyoruz. Bu gelecek, bugün insanlara gösterdiğimiz ahlaki kaygının aynısını hak ediyor."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Biyo-Muhafazakâr Gelenekçi",
@@ -12165,7 +12253,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Neo-Luddit Küçülme Savunucusu",
-        "summary": "Daha hızlı yapay zeka ilerlemesinin her zaman iyi olduğu fikrini reddediyor. İnsan emeğine ve topluma öncelik verir. Doğanın sınırlarına bilgi işlem veya ekonomik büyümeden daha fazla önem verir."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Rasyonalist Hizalama Araştırmacısı",
@@ -12306,6 +12394,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Sınır/Göç Gözetim Eleştirmeni",
         "summary": "Yapay zeka takibinin ve risk puanlarının sınırlarda ve kamplarda mültecilere karşı nasıl kullanıldığını izliyor. Burada daha hızlı yayılma değil, insan hakları hukuku ve gerçek hesap verebilirlik istiyor. Yapay zekanın onu geliştirenleri değil, kullanıldığı kişileri merkeze alır."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -13157,7 +13253,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Nhà siêu nhân học hậu nhân văn",
-        "summary": "Chào mừng một tương lai nơi trí tuệ kỹ thuật số tiếp quản con người sinh học với tư cách là người mang giá trị chính. Tương lai đó xứng đáng nhận được sự quan tâm về mặt đạo đức giống như chúng ta dành cho con người ngày nay."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Người theo chủ nghĩa truyền thống bảo thủ sinh học",
@@ -13189,7 +13285,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Người ủng hộ sự phát triển của Neo-Luddite",
-        "summary": "Bác bỏ quan điểm cho rằng tiến bộ AI nhanh hơn luôn tốt. Đặt sức lao động của con người và cộng đồng lên hàng đầu. Quan tâm đến những giới hạn của thiên nhiên hơn là tính toán hay tăng trưởng kinh tế."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Nhà nghiên cứu về sự liên kết theo chủ nghĩa duy lý",
@@ -13330,6 +13426,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Nhà phê bình giám sát biên giới/di cư",
         "summary": "Xem cách sử dụng tính năng theo dõi AI và điểm rủi ro để chống lại người tị nạn ở biên giới và trại. Muốn có luật nhân quyền và trách nhiệm thực sự ở đây chứ không phải triển khai nhanh hơn. Tập trung vào những người mà AI được sử dụng để chống lại, không phải những người xây dựng nó."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -14181,7 +14285,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Transumanista post-umanista",
-        "summary": "Accoglie con favore un futuro in cui le menti digitali subentrano agli esseri umani biologici come principali portatori di valore. Quel futuro merita la stessa preoccupazione morale che diamo agli esseri umani oggi."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Tradizionalista bioconservatore",
@@ -14213,7 +14317,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Sostenitore neo-luddista della decrescita",
-        "summary": "Rifiuta l'idea che un progresso più rapido dell'IA sia sempre positivo. Mette al primo posto il lavoro umano e la comunità. Si preoccupa dei limiti della natura più che dell'informatica o della crescita economica."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Ricercatore di allineamento razionalista",
@@ -14354,6 +14458,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Critico sulla sorveglianza delle frontiere e della migrazione",
         "summary": "Osserva come il monitoraggio dell'intelligenza artificiale e i punteggi di rischio vengono utilizzati contro i rifugiati alle frontiere e nei campi. Vuole leggi sui diritti umani e una reale responsabilità qui, non un’implementazione più rapida. Si concentra sulle persone contro cui viene utilizzata l'intelligenza artificiale, non sulle persone che la costruiscono."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -15205,7 +15317,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Posthumanistyczny transhumanista",
-        "summary": "Z zadowoleniem przyjmuje przyszłość, w której cyfrowe umysły przejmują kontrolę nad biologicznymi ludźmi jako główni nośniki wartości. Przyszłość ta zasługuje na taką samą troskę moralną, jaką otaczamy dzisiaj ludzi."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Biokonserwatywny tradycjonalista",
@@ -15237,7 +15349,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Neoluddyjski zwolennik postwzrostu",
-        "summary": "Odrzuca pogląd, że szybszy postęp sztucznej inteligencji jest zawsze dobry. Na pierwszym miejscu stawia ludzką pracę i społeczność. Bardziej dba o ograniczenia natury niż o komputery i rozwój gospodarczy."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Badacz racjonalizmu",
@@ -15378,6 +15490,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Krytyk nadzoru granic/migracji",
         "summary": "Obserwuje, jak śledzenie AI i wyniki ryzyka są wykorzystywane przeciwko uchodźcom na granicach i w obozach. Oczekuje prawa dotyczącego praw człowieka i prawdziwej odpowiedzialności, a nie szybszego wdrożenia. Centra, przeciwko którym wykorzystywana jest sztuczna inteligencja, a nie ludzie, którzy ją tworzą."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -16229,7 +16349,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Transhumanis Pasca-Humanis",
-        "summary": "Menyambut masa depan di mana pikiran digital mengambil alih peran manusia biologis sebagai pembawa nilai utama. Masa depan tersebut layak mendapat perhatian moral yang sama seperti yang kita berikan kepada umat manusia saat ini."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Tradisionalis Bio-Konservatif",
@@ -16261,7 +16381,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Pendukung Pertumbuhan Neo-Luddite",
-        "summary": "Menolak gagasan bahwa kemajuan AI yang lebih cepat selalu baik. Mengutamakan tenaga kerja manusia dan komunitas. Lebih peduli terhadap batasan alam dibandingkan komputasi atau pertumbuhan ekonomi."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Peneliti Keselarasan Rasionalis",
@@ -16402,6 +16522,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Kritikus Pengawasan Perbatasan/Migrasi",
         "summary": "Melihat bagaimana pelacakan AI dan skor risiko digunakan terhadap pengungsi di perbatasan dan kamp. Menginginkan hukum hak asasi manusia dan akuntabilitas nyata, bukan peluncuran yang lebih cepat. Memusatkan orang-orang yang menjadi lawan dari AI, bukan orang-orang yang membangunnya."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -17253,7 +17381,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Posthumanistisch transhumanistisch",
-        "summary": "Verwelkomt een toekomst waarin digitale geesten de rol van biologische mensen als belangrijkste dragers van waarde overnemen. Die toekomst verdient dezelfde morele zorg die we mensen vandaag de dag geven."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Bio-conservatieve traditionalist",
@@ -17285,7 +17413,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Neo-Luddite Degrowth-advocaat",
-        "summary": "Verwerpt het idee dat snellere AI-vooruitgang altijd goed is. Zet menselijke arbeid en gemeenschap op de eerste plaats. Geeft meer om de grenzen van de natuur dan om computers of economische groei."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Onderzoeker rationalistische afstemming",
@@ -17426,6 +17554,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Grens-/migratietoezichtcriticus",
         "summary": "Kijkt hoe AI-tracking en risicoscores worden gebruikt tegen vluchtelingen aan grenzen en kampen. Wil hier mensenrechtenwetgeving en echte verantwoordelijkheid, en niet een snellere uitrol. Centraal staan ​​de mensen waartegen AI wordt gebruikt, niet de mensen die het bouwen."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -18277,7 +18413,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "טרנסהומניסט פוסט-הומניסטי",
-        "summary": "מברך על עתיד שבו מוחות דיגיטליים משתלטים על בני אדם ביולוגיים כנושאי הערך העיקריים. העתיד הזה ראוי לאותה דאגה מוסרית שאנו נותנים לבני אדם היום."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "מסורתי ביו-שמרני",
@@ -18309,7 +18445,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "עו\"ד ניאו-לודיטי Degrowth",
-        "summary": "דוחה את הרעיון שהתקדמות AI מהירה יותר היא תמיד טובה. שם את העבודה האנושית והקהילה במקום הראשון. דואג לגבולות הטבע יותר מאשר מחשוב או צמיחה כלכלית."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "חוקר המערך הרציונליסטי",
@@ -18450,6 +18586,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "מבקר מעקב גבולות/הגירה",
         "summary": "צופה כיצד מעקב בינה מלאכותית וציוני סיכונים מתרגלים נגד פליטים בגבולות ובמחנות. רוצה כאן חוק זכויות אדם ואחריות אמיתית, לא יישום מהיר יותר. מרכז את האנשים ש-AI משמש נגדם, לא האנשים שבונים אותו."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -19301,7 +19445,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Post-Humanist Transhumanist",
-        "summary": "Välkomnar en framtid där digitala sinnen tar över från biologiska människor som de främsta värdebärarna. Den framtiden förtjänar samma moraliska oro som vi ger människor idag."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Biokonservativ traditionellist",
@@ -19333,7 +19477,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Neo-Luddite Degrowth Advocate",
-        "summary": "Avvisar tanken att snabbare AI-framsteg alltid är bra. Sätter mänskligt arbete och gemenskap först. Bryr sig om naturens gränser mer än datorer eller ekonomisk tillväxt."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Rationalist Alignment Researcher",
@@ -19474,6 +19618,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Gräns-/migrationsövervakningskritiker",
         "summary": "Tittar på hur AI-spårning och riskpoäng används mot flyktingar vid gränser och läger. Vill ha lagar om mänskliga rättigheter och verklig ansvarighet här, inte snabbare utbyggnad. Centrerar människorna som AI används mot, inte människorna som bygger den."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -20325,7 +20477,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Post-humanistický transhumanista",
-        "summary": "Vítá budoucnost, kde digitální mysl převezme od biologických lidí hlavní nositele hodnoty. Tato budoucnost si zaslouží stejný morální zájem, jaký dnes věnujeme lidem."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Bio-konzervativní tradicionalista",
@@ -20357,7 +20509,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Neo-Luddite Degrowth Advocate",
-        "summary": "Odmítá myšlenku, že rychlejší pokrok AI je vždy dobrý. Klade lidskou práci a komunitu na první místo. Zajímá se o limity přírody více než o výpočetní techniku ​​nebo ekonomický růst."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Racionalistický výzkumník zarovnání",
@@ -20498,6 +20650,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Kritik hraničního/migračního dozoru",
         "summary": "Sleduje, jak se sledování AI a skóre rizika používají proti uprchlíkům na hranicích a v táborech. Chce zde zákon o lidských právech a skutečnou odpovědnost, ne rychlejší zavádění. Centra lidí, proti kterým je umělá inteligence používána, ne lidí, kteří ji vytvářejí."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -21349,7 +21509,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "post-humanist-transhumanist": {
         "name": "Transumanist post-umanist",
-        "summary": "Salută un viitor în care mințile digitale preiau de la oamenii biologici ca principali purtători de valoare. Acel viitor merită aceeași preocupare morală pe care o acordăm oamenilor astăzi."
+        "summary": "Welcomes a future where digital minds take over from biological humans as the main bearers of value. Uploads, mind-copying, digital existence in better simulations: the real endgame. Not interested in left-behind flesh. *Note: Differs from critical posthumanists like Ferrando who question whether transcendence itself is the goal.*"
       },
       "bio-conservative-traditionalist": {
         "name": "Tradiționalist bio-conservator",
@@ -21381,7 +21541,7 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       },
       "neo-luddite-degrowth-advocate": {
         "name": "Avocat neo-luddit pentru decreștere",
-        "summary": "Respinge ideea că progresul mai rapid al AI este întotdeauna bun. Pune munca umană și comunitatea pe primul loc. Îi pasă de limitele naturii mai mult decât de calcul sau de creștere economică."
+        "summary": "Rejects the idea that faster AI progress is always good. Puts human labor and community resilience over technological acceleration. Wants to slow down, not speed up. Sees risk in every scaling push. Common ground with affirmative posthumanists like Braidotti: questions disembodied futures, values relational ethics over transcendence."
       },
       "rationalist-alignment-researcher": {
         "name": "Cercetător raționalist în aliniere",
@@ -21522,6 +21682,14 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "border-migration-surveillance-critic": {
         "name": "Critic de supraveghere a frontierelor/migrației",
         "summary": "Urmărește modul în care urmărirea AI și scorurile de risc sunt folosite împotriva refugiaților de la granițe și lagăre. Vrea aici legea drepturilor omului și responsabilitate reală, nu o lansare mai rapidă. Centrează oamenii împotriva cărora este folosită IA, nu oamenii care o construiesc."
+      },
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
       }
     }
   },
@@ -22211,7 +22379,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "da": {
     "questions": {
@@ -22899,7 +23076,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "el": {
     "questions": {
@@ -23587,7 +23773,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "enm": {
     "questions": {
@@ -24275,7 +24470,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "eo": {
     "questions": {
@@ -24963,7 +25167,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "la": {
     "questions": {
@@ -25651,7 +25864,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "nb": {
     "questions": {
@@ -26339,7 +26561,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "tl": {
     "questions": {
@@ -27027,7 +27258,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "tokipona": {
     "questions": {
@@ -27715,7 +27955,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "uk": {
     "questions": {
@@ -28403,7 +28652,16 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   },
   "zh": {
     "questions": {
@@ -29091,6 +29349,15 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
     "scenarios": {},
     "axes": {},
     "ui": {},
-    "profiles": {}
+    "profiles": {
+      "ferrando-critical-posthumanist": {
+        "name": "Critical Posthumanist (Ferrando)",
+        "summary": "Questions the assumption that transcending humanity is inherently good. Sees posthumanism as an epistemic shift—a revolution in how we know and categorize—not just technological enhancement. Concerns with power structures, who gets to define \"human,\" and epistemic violence in AI deployment. Integration of philosophy, science, and activism required."
+      },
+      "braidotti-affirmative-posthumanist": {
+        "name": "Affirmative Posthumanist (Braidotti)",
+        "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      }
+    }
   }
 };
