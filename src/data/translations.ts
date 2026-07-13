@@ -20,6 +20,13 @@ export type SupportedLanguage = 'ang' | 'ar' | 'bn' | 'cs' | 'da' | 'de' | 'el' 
 // zh (Chinese), el (Greek), uk (Ukrainian), da (Danish), nb (Norwegian)
 // la (Latin), tl (Tagalog), enm (Middle English), ang (Old English), eo (Esperanto)
 
+// PROFILES & PERSONAS: 64 total (32 languages × 64 profiles each)
+// Draws from multiple theoretical frameworks:
+// - Ferrando & Braidotti: Critical and Affirmative Posthumanism
+// - Posthuman Glossary (Braidotti & Hlavajova): Afrofuturism, Ecocriticism, Xenofeminism, Nomadic Theory, Multispecies Relations, Trans* Theory, OOO, Necropolitics, Resilience, Platform Cooperativism, and more
+// - Contributors: Haraway, Parisi, MacCormack, van der Tuin, Wolfe, Dolphijn, Oppermann, Parikka, Clarke, and 100+ glossary thinkers
+// - Comprehensive coverage of posthumanist orientations across decolonial, feminist, ecological, and technological dimensions
+
 export const translations: Record<SupportedLanguage, LanguageTranslation> = {
   "en": {
     "questions": {
@@ -1050,6 +1057,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -2082,6 +2137,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -3114,6 +3217,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -4146,6 +4297,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -5178,6 +5377,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -6210,6 +6457,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -7242,6 +7537,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -8274,6 +8617,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -9306,6 +9697,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -10338,6 +10777,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -11370,6 +11857,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -12402,6 +12937,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -13434,6 +14017,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -14466,6 +15097,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -15498,6 +16177,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -16530,6 +17257,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -17562,6 +18337,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -18594,6 +19417,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -19626,6 +20497,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -20658,6 +21577,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -21690,6 +22657,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -22387,6 +23402,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -23084,6 +24147,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -23781,6 +24892,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -24478,6 +25637,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -25175,6 +26382,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -25872,6 +27127,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -26569,6 +27872,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -27266,6 +28617,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -27963,6 +29362,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -28660,6 +30107,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   },
@@ -29357,6 +30852,54 @@ export const translations: Record<SupportedLanguage, LanguageTranslation> = {
       "braidotti-affirmative-posthumanist": {
         "name": "Affirmative Posthumanist (Braidotti)",
         "summary": "Embraces the posthuman condition affirmatively but with ethical grounding. Nomadic consciousness—fluid identity, always becoming. Rejects disembodied transcendence in favor of embodied, relational futures. Feminist posthumanism that stays accountable to material conditions. Plural futures, not singular destiny."
+      },
+      "afrofuturist-liberationist": {
+        "name": "Afrofuturist Liberationist",
+        "summary": "Draws on Black radical futures and Afrofuturism to reimagine AI and technology beyond white, Western narratives. Centers Black creativity, resistance, and speculative imagination. Questions who gets to imagine posthuman futures. Integrates cultural memory, resistance aesthetics, and decolonial thinking into technological visions."
+      },
+      "ecocritical-posthumanist": {
+        "name": "Ecocritical Posthumanist",
+        "summary": "Engages material ecocriticism and storied matter to challenge human exceptionalism in relation to nature. Views AI through ecological entanglement, not technological separation. Attends to environmental violence, multispecies relations, and the Anthropocene/Capitalocene. Seeks posthuman ethics that include nonhuman worlds."
+      },
+      "xenofeminist-technologist": {
+        "name": "Xenofeminist Technologist",
+        "summary": "Embraces xenofeminism: uses technology strategically for feminist liberation, refusing both techno-optimism and puritanism. Advocates for reproductive autonomy, gender fluidity, and technological self-determination. Views AI as a site of contested feminist futures. Integrates speculative posthumanism with material gender politics."
+      },
+      "nomadic-polymorphic-thinker": {
+        "name": "Nomadic & Polymorphic Thinker",
+        "summary": "Practices nomadic sensibility and operates across disciplinary boundaries (postdisciplinarity). Refuses fixed identities and categories. Embraces transnational, trans* perspectives that question stable subjectivity. Views AI through fluid, relational, and rhizomatic thinking influenced by Braidotti's nomadic theory."
+      },
+      "speculative-posthuman-designer": {
+        "name": "Speculative Posthuman Designer",
+        "summary": "Engages speculative posthumanism and experimental design practices (art in the Anthropocene, posthuman museum practices). Uses creative speculation to imagine alternative AI futures. Practices critical making, wearable technology, and posthuman artifacts as ways of thinking. Treats art/design as epistemic practice."
+      },
+      "multispecies-relationalist": {
+        "name": "Multispecies Relationalist",
+        "summary": "Centers multispecies approaches, symbiogenesis, and naturecultures in thinking about AI. Refuses anthropocentrism while maintaining ethical responsibility. Attends to animal agency, ecological relationality, and nonhuman kinship. Follows Haraway's \"staying with the trouble\" in understanding technology as multispecies entanglement."
+      },
+      "necropolitical-analyst": {
+        "name": "Necropolitical Analyst",
+        "summary": "Analyzes how AI systems govern life and death—surveillance, biopolitics, and political affect. Examines digital necropolitics: who is left out, abandoned, or systematically killed by AI systems? Incorporates decolonial critique and posthuman disability studies. Questions security/surveillance and precarity."
+      },
+      "trans-embodied-theorist": {
+        "name": "Trans-Embodied Theorist",
+        "summary": "Integrates trans* theory, trans-corporeality, and body-without-organs thinking into AI discourse. Questions fixed embodiment and categorical thinking. Embraces plasticity, becoming, and relational embodiment. Views posthuman futures through transgender liberation and radical gender pluralism as epistemic resources."
+      },
+      "object-oriented-ontologist": {
+        "name": "Object-Oriented Ontologist",
+        "summary": "Works with OOO and flat ontologies that refuse anthropocentric hierarchies. Attributes agency and reality to objects, algorithms, and nonhuman entities. Questions whether AI has its own being independent of human purposes. Explores inhuman perspectives and object-oriented philosophy as critical practice."
+      },
+      "resilience-ecology-advocate": {
+        "name": "Resilience & Ecology Advocate",
+        "summary": "Emphasizes resilience, rewilding, and ecological regeneration in technological contexts. Questions whether resilience itself can be coopted by neoliberal systems. Integrates material feminism, environmental humanities, and place-based knowledge. Seeks technologies accountable to local ecosystems and communities."
+      },
+      "precognitive-futurist": {
+        "name": "Precognitive Speculative Futurist",
+        "summary": "Engages speculative thinking about futures that AI might enable or foreclose. Practices precognition and quantum anthropology—thinking from strange temporalities. Resists linear progress narratives. Views AI as a tool for imagining plural futures and practicing speculative posthumanism across disciplines."
+      },
+      "platform-cooperative-organizer": {
+        "name": "Platform Cooperative Organizer",
+        "summary": "Focuses on P2P economies, platform cooperativism, and alternative organization of AI systems. Questions who controls AI infrastructure and data. Advocates for collective ownership, digital commons, and peer-to-peer networks. Integrates labor politics with posthuman thinking about collective agency."
       }
     }
   }
