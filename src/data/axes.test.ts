@@ -14,8 +14,16 @@ describe('axes', () => {
     expect(ids.size).toBe(8)
   })
 
+  it('describes both poles and the question each axis asks', () => {
+    axes.forEach((axis) => {
+      expect(axis.question.endsWith('?'), axis.id).toBe(true)
+      expect(axis.poleADesc.length, axis.id).toBeGreaterThan(20)
+      expect(axis.poleBDesc.length, axis.id).toBeGreaterThan(20)
+    })
+  })
+
   it('getAxisById finds an existing axis and returns undefined for unknown ids', () => {
-    expect(getAxisById('geopolitical')?.name).toBe('Geopolitical')
+    expect(getAxisById('geopolitical')?.name).toBe('Geopolitics')
     expect(getAxisById('not-real')).toBeUndefined()
   })
 })

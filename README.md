@@ -1,68 +1,53 @@
 # The AI Worldview Atlas
 
-**A 145-question diagnostic that maps where you actually stand on AI's future — across 8 independent axes, matched against 50 named worldview archetypes.**
+**A 144-statement diagnostic that maps where you stand on artificial minds and AI's future, across 8 axes, matched against 50 named worldview archetypes.**
 
-Live at **[ryudkiss-hue.github.io/ai-worldview-atlas](https://ryudkiss-hue.github.io/ai-worldview-atlas/)** (formerly published as "TIAM-112 Diagnostic" at a `tiam-diagnostic` URL — GitHub auto-redirects old links, but update any bookmarks)
+Live at **[ryudkiss-hue.github.io/ai-worldview-atlas](https://ryudkiss-hue.github.io/ai-worldview-atlas/)**
 
-Instead of collapsing "what do you think about AI?" into a single left-right slider, this tool asks 145 agree/disagree questions and scores your answers across eight genuinely independent dimensions, then finds which of 50 named viewpoints your combined position sits closest to.
+This version merges two instruments: the original Atlas (145 questions on 8 axes) and the Synthetic Compass (120 statements on machine minds, their moral standing, and the future of intelligence). Every statement was rewritten to one standard, described below, and the two item sets were folded into one set of axes so nothing is measured twice. The Atlas is English only.
 
 ---
 
 ## Why this exists
 
-Most AI-opinion typologies (and most political-compass-style tools generally) make three mistakes this project tries to avoid:
+Most AI-opinion typologies make three mistakes this project tries to avoid:
 
-1. **They flatten a multi-dimensional space into one or two axes.** Whether you think AI poses existential risk and whether you think a chatbot can suffer are *different questions* — someone can be a safety-maximalist and a machine-consciousness skeptic at the same time. Collapsing that into "pro-AI vs. anti-AI" loses the actual shape of the disagreement.
-2. **They imply every position is equally common.** A flat list of 50 labels can make a niche academic stance and a mainstream one look like peers. This tool groups all 50 archetypes into 7 **Tier-1 superclusters** so the relative scale of each camp stays legible (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)).
-3. **They let question order and framing quietly bias the result.** See [Bias mitigations](#bias-mitigations-built-in) below for what this project does about it — including a standing automated test that audits the classifier itself for structural bias.
-
----
-
-## Assessment Platform
-
-**The new Assessment component** (`/assessment` route) offers an alternative flow optimized for **deep narrative reasoning**:
-
-1. **145 questions + 25 interspersed thought experiments** — every 5-6 questions, you're paused and presented with a concrete philosophical dilemma (e.g., *The Empathy Prison*, *The Value Reversal Machine*). These aren't scored; they're reflective anchors that make the abstract axis questions feel grounded.
-2. **8-axis scoring in real-time** — as you progress, your position on each axis updates. Progress bar shows your position relative to the full range.
-3. **Synthesis results** — after all 145 questions, a SynthesisCommentary page shows:
-   - Your responses to all 25 experiments
-   - Predicted archetype alignment (top 2-3 with confidence scores)
-   - Key themes extracted from your experiment responses
-   - Nuance acknowledgment: *"These archetypes are simplifications of genuine complexity"*
-4. **Completion code** — for Prolific/Qualtrics integration (respondent tracking).
-
-Access via: **`http://localhost:5173/assessment`**
+1. **They flatten a multi-dimensional space into one or two axes.** Whether you think AI poses existential risk and whether you think a chatbot can suffer are different questions. Collapsing them into "pro-AI vs. anti-AI" loses the shape of the disagreement.
+2. **They imply every position is equally common.** This tool groups its 50 archetypes into 7 **Tier-1 superclusters** so the relative scale of each camp stays legible (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)).
+3. **They let wording, order and the habit of agreeing bias the result.** See [How the statements are built](#how-the-statements-are-built) and [Bias mitigations](#bias-mitigations-built-in).
 
 ---
 
-## Original Quiz Flow
+## How the statements are built
 
-The classic assessment path combines question-answering with optional reflection:
+Every statement meets five tests:
 
-1. **(Optional) Tag yourself.** Before starting, you can flag things like *Automation-Exposed Worker* or *AI Industry Insider* — 13 material-stakeholder tags that describe your relationship to AI without affecting your score. These never feed the algorithm; they're shown next to your result so a reader can weigh "this person's worldview" against "this person's skin in the game" separately.
-2. **Answer 145 questions** — 14 for teleological, the only axis still at its base count; 18 each for risk, ontological, relational, and geopolitical; 19 each for socio-economic and evolutionary; and 21 for legal & moral, which needed the most resolution: first for a distinct fault line (whether a model's stated chain-of-thought reasoning is trustworthy, or whether tokenization mechanics bear on genuine understanding), then again, narrower still (whether an AI that causes harm bears any responsibility of its own, separate from the humans and companies that built and deployed it). Relational and geopolitical were the first to expand beyond the base count, once a nearest-neighbor analysis of the (then-38) archetypes showed both were the single biggest differentiator among the closest, hardest-to-tell-apart archetype pairs; evolutionary, legal & moral, and socio-economic each gained one more question in a later expansion pass. Every axis is split evenly between near-term (next 2–5 years) and long-term (next 20–50 years) framing, on a 1–5 agree/disagree scale. Pole labels are hidden and question order is shuffled per axis on every attempt, so you're reacting to the statement itself, not pattern-matching the axis's "team."
-3. **(Optional) Eight quick scenarios.** Concrete, one-paragraph situations ("a country pauses frontier training for six months…") that don't touch your score but get compared against it — if your gut pick on a scenario contradicts your computed axis score, that gets surfaced back to you as something worth sitting with, not resolved for you.
-4. **Get your result:** an 8-axis radar chart (drawn against your closest match, so you can see exactly where you diverge), your top 3 matches with an interpretable **match-closeness %**, a full written report on your top match (extended narrative, real thinkers whose public work resonates with the stance, further reading, next steps), a **Reflective Breakdown** naming the implicit assumptions your result carries, and a closing **Pinnacle Reflection** prompt.
-5. **Share or export.** A results page state round-trips through a compact URL param (no backend, no accounts, nothing stored) or downloads as a formatted PDF.
+1. **Mirrored pairs.** Each statement has a partner on the same topic, under the same conditions, taking the opposite side (ids 1–2, 3–4, …). Agreeing with everything, or disagreeing with everything, lands at exactly 0 on every axis.
+2. **One claim.** No premise-plus-conclusion bundles and no second clause a reader might accept on its own.
+3. **A view, not a prediction.** Statements ask what is true in principle or what should happen, not what will happen, so answers reflect values and judgments rather than guesses about facts.
+4. **Matched strength.** Both sides of a pair are about equally easy to agree with, and neither uses loaded words.
+5. **The right axis.** Each pair measures its own axis's question and not something that merely travels with it (for example, relationship statements sit on Relationships, not on Moral Standing).
+
+Each axis has 9 pairs: 4 about today's and near-term AI (T1) and 5 about what is possible in principle or in the long run (T2). Answers use four options with no neutral midpoint, plus an explicit "I have no settled view on this", which counts as zero.
 
 ---
 
 ## The 8 axes
 
-Each axis has a **Pole A** and **Pole B** — positive scores lean toward A, negative toward B. None of the eight is a stand-in for "pro-AI" or "anti-AI"; they're deliberately close to orthogonal.
+Positive scores lean toward Pole A, negative toward Pole B. The axes fall into four groups: what AI is (1), how we live with it (2–3), what future to build (4–5), and who decides and how fast (6–8). Axis ids are kept from the original Atlas so the 50 archetypes, their reports and manifestos still line up.
 
-| # | Axis | Pole A | Pole B |
-|---|------|--------|--------|
-| 1 | **Teleological** | Cosmic Vitalism | Anthropocentric Humanism |
-| 2 | **Risk Profile** | X-Risk Precautionary | Accelerationary / Stagnation-Averse |
-| 3 | **Socio-Economic** | Permissionless Open-Source | Managed Technocracy & Regulation |
-| 4 | **Ontological** | Silicon Functionalism | Substrate Exceptionalism |
-| 5 | **Legal & Moral** | Machine Patienthood | Pure Instrumentalism & Property |
-| 6 | **Evolutionary** | Post-Human Replacement | Directed Cybernetic Co-Evolution |
-| 7 | **Relational** | Post-Biological Pluralism | Affective Biocentrism |
-| 8 | **Geopolitical** | Techno-Nationalism | Borderless Networkism |
+| # | Axis | Question | Pole A | Pole B |
+|---|------|----------|--------|--------|
+| 1 | **Mind** | Could AI systems have minds? | Silicon Functionalism | Substrate Exceptionalism |
+| 2 | **Moral Standing** | Can AI systems be wronged, and what do we owe them? | Machine Patienthood | Instrumentalism & Property |
+| 3 | **Relationships** | What are bonds between people and AI systems worth? | Post-Biological Pluralism | Affective Biocentrism |
+| 4 | **Ends of Intelligence** | What should intelligence ultimately be for? | Cosmic Vitalism | Human & Ecological Limits |
+| 5 | **Succession** | Should humans remain the ones who shape the future? | Post-Human Succession | Human-Directed Co-Evolution |
+| 6 | **Risk** | How much should we slow down to avoid catastrophe? | Precautionary | Accelerationist |
+| 7 | **Openness & Control** | Who should be able to build and use powerful AI? | Permissionless Openness | Managed Oversight |
+| 8 | **Geopolitics** | Should AI serve nations or humanity as a whole? | Techno-Nationalism | Borderless Networkism |
 
-Each axis is scored separately for **T1 (next 2–5 years)** and **T2 (next 20–50 years)**, because plenty of real positions are asymmetric across time horizons — e.g. cautious about near-term deployment but optimistic about the long run, or the reverse.
+Each axis is also scored separately for T1 and T2, because many positions differ between the near term and the long run.
 
 ---
 
@@ -116,33 +101,23 @@ Full definitions, 8-axis coordinates, and one-paragraph summaries for every arch
 
 ---
 
-## The Synthetic Compass
+## The core-three reading
 
-A second, separate instrument in the Atlas, at **`#/compass`** ([live](https://ryudkiss-hue.github.io/ai-worldview-atlas/#/compass)). It asks 120 agree/disagree statements about artificial minds and places you on three axes, each from −10 to +10:
+Results also place you among the Synthetic Compass's **27 archetypes**, using only the three axes about artificial minds themselves: Mind (X), Moral Standing (Y) and Ends of Intelligence read in reverse (Z, from beyond-biology to living-world). Each axis is split into three tiers at −2 and +2, and the three tiers pick one cell of 3 × 3 × 3. Descriptions are built from one sentence per tier, so the same tier always reads the same way. See [`coreThree.ts`](src/data/coreThree.ts).
 
-- **X, Ontological:** whether AI systems could have real experiences (Substrate Biologism to Embodied Functionalism)
-- **Y, Moral-agency:** how AI systems should be treated (Anthropocentric Instrumentalism to Autonomous Emancipation)
-- **Z, Teleological-ecological:** what future intelligence should build (Post-Biological Accelerationism to Embodied Ecological Pluralism)
-
-Each axis is split into three tiers at −2 and +2, and the three tiers pick one of 27 archetypes. Every statement has a mirrored partner with the opposite stance and the same weight, so agreeing or disagreeing with everything lands at the exact center. Results also show an archetype profile, axis facets, six module scores and three tension diagnostics. The Compass is English only and keeps its answers in the browser under its own storage key, separate from the Atlas quiz.
-
-| Path | What it is |
-|---|---|
-| `src/compass/data.ts` | The 120 statements and weights (quiz version 3.6, item-set hash `cc009f76830473a3`), tiers and archetypes. Generated from the validated item set. |
-| `src/compass/engine.ts` | Scoring. `engine.test.ts` checks the item-set hash and matches the standalone quiz's engine on reference answer sheets. |
-| `src/pages/compass/CompassPages.tsx` | Intro, the six stages, results and the archetype reference. |
-| `public/compass/` | A printable paper edition with tally scoring (PDF) and a Google Apps Script that builds the quiz as a Google Form and scores responses in a Sheet. |
+---
 
 ## Bias mitigations built in
 
 This project treats "did we accidentally build a biased classifier" as a real engineering question, not an afterthought:
 
 - **Hidden pole labels, shuffled question order.** You never see which pole a question feeds, and question order is re-shuffled per axis on every attempt (Fisher-Yates, see [`shuffle.ts`](src/lib/shuffle.ts)), so you can't game or pattern-match your way to a target label.
-- **Interpretable match-closeness %**, not just a raw Euclidean distance — makes it obvious when your *best* match is still not a great fit, rather than implying false precision.
+- **Axes in agreement instead of a match percentage.** Each match shows how many of the 8 axes put you on the same side as the archetype (pole A, middle, pole B). The old percentage put even very different archetypes in the 70s and 80s.
+- **Mirrored, balanced statements.** Every axis and horizon has as many pole-A as pole-B statements, so the habit of agreeing cancels out; a standing test checks that uniform answer sheets score exactly 0.
 - **A structural bias audit runs as a standing test** ([`classificationBias.test.ts`](src/lib/classificationBias.test.ts)): 500 trials of pure-random answers are classified, and the test fails if any non-centrist archetype wins an implausible share of random trials — the kind of subtle "opinion matching effect" that has been documented in other online quiz classifiers even under uniformly random input.
 - **A profile-redundancy guard** ([`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts)) fails the build if any two of the 50 archetypes are closer than 5.0 in 8D space — this caught (and forced fixes to) three near-duplicate pairs during development, and every profile report also names its actual nearest neighbor with a specific distinguishing sentence. This guard catches content duplication; it does not guarantee balanced classification win-rates (two archetypes 5.0+ apart can still win wildly different shares of random input — see the calibration note below).
-- **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation (no test-retest reliability studies, no independent peer review) and explains *why* a 1–5 Likert scale was chosen over a forced-ranking format (forced-choice/ipsative data has its own well-documented statistical problems).
-- **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 145 core questions target roughly a college level (grade 12–14) on average, precise enough phrasing to draw a real philosophical distinction without drifting into jargon. Profile summaries, scenarios, and stakeholder-tag descriptions are held to the same grade-14 ceiling but have not yet been rewritten up to it — they still read simpler in practice, which is a pending cleanup, not a design choice. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
+- **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation (no test-retest reliability studies, no independent peer review) and explains the four-option scale with an explicit "no settled view" choice.
+- **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 144 statements aim for clarity: no statement above grade 15 and an average between grades 8 and 12, so the idea, not the vocabulary, does the work. Profile summaries, scenarios, and stakeholder-tag descriptions are held to the same grade-14 ceiling but have not yet been rewritten up to it — they still read simpler in practice, which is a pending cleanup, not a design choice. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
 - **Material-stakeholder tags are structurally separate from worldview scoring.** They're stored in their own piece of state, never enter `computeRawAxisScores`/`classify`, and are surfaced on the results page as their own labeled section — so "what you believe" and "what you have at stake" stay visibly distinct instead of getting blended into one score.
 
 ---
@@ -150,17 +125,16 @@ This project treats "did we accidentally build a biased classifier" as a real en
 ## How scoring works
 
 ```
-Likert answer (1–5)
-   → signed (-2..+2), flipped if the question's pole is reversed
-   → summed per axis, separately for T1 and T2
-   → scaled to -10..+10 via  10 * tanh(raw / 3.5)
-   → T1 and T2 averaged into one combined 8D vector
-   → Euclidean distance computed to all 50 archetype coordinates
-   → sorted ascending; closest 3 shown
-   → distance converted to an interpretable 0-100% "match closeness"
+Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2   ("no settled view" = 0)
+   → flipped for pole-B statements, summed per axis (and per horizon)
+   → scaled linearly to -10..+10:  10 × sum ÷ (2 × number of statements)
+   → T1 and T2 combined in proportion to their statement counts (= the score over all 18)
+   → Euclidean distance to all 50 archetype coordinates; closest 3 shown, with axes in agreement
+   → close call when the second match is less than 0.8 farther away than the first
+   → core-three reading from the tiers of Mind, Moral Standing and Ends of Intelligence
 ```
 
-See [`src/lib/scoring.ts`](src/lib/scoring.ts) for the exact implementation. The **situational scenarios** and **material-stakeholder tags** never enter this pipeline — scenarios are only ever compared *after the fact* against your already-computed score (via [`scenarioTension.ts`](src/lib/scenarioTension.ts)) to surface tension, not to adjust it.
+Weights are equal: with no response data yet, there is no basis for weighting one statement above another. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **25 thought experiments** are a separate, unscored reading page.
 
 ---
 
@@ -174,7 +148,7 @@ See [`src/lib/scoring.ts`](src/lib/scoring.ts) for the exact implementation. The
 | Styling | Tailwind CSS |
 | Charts | Recharts (`RadarChart`, dual-series for you-vs-match comparison) |
 | Animations | Framer Motion (`motion` for smooth experiment transitions) |
-| Translations | **20 languages pre-cached via Google Translate** (2.2 MB, 19K+ lines, zero runtime API calls) |
+| Language | English only |
 | PDF export | `@react-pdf/renderer`, client-side, no backend |
 | Tests | Vitest + React Testing Library, 200+ tests across 44 files |
 | Hosting | GitHub Pages, deployed via GitHub Actions on every push to `master` |
@@ -188,8 +162,9 @@ No backend, no database, no analytics, no accounts. Your in-progress answers liv
 ```
 src/
 ├── data/
-│   ├── axes.ts                 8 axis definitions (id, name, pole labels)
-│   ├── questions/               145 questions, one file per axis (14 for teleological, 18 for four, 19 for two, 21 for legal & moral)
+│   ├── axes.ts                 8 axis definitions (id, name, question, poles)
+│   ├── coreThree.ts             the 27-archetype core-three reading
+│   ├── questions/               144 statements in mirrored pairs, 18 per axis, one file per axis
 │   ├── profiles.ts              50 archetypes: id, name, 8D coords, summary
 │   ├── profileReports.ts        full report content per archetype
 │   ├── archetypeClusters.ts     7 Tier-1 superclusters grouping the 50
@@ -211,107 +186,16 @@ src/
     ├── IntroPage.tsx             landing + stakeholder-tag checklist
     ├── AxisPage.tsx              one of 8 question pages (/quiz/:axisIndex)
     ├── ScenarioPage.tsx          optional situational scenarios (/scenarios)
-    └── ResultsPage.tsx           radar chart, matches, full report, PDF export
+    ├── ResultsPage.tsx           radar chart, matches, full report, PDF export
+    ├── ThoughtExperimentsPage.tsx the 25 thought experiments, unscored (/thought-experiments)
+    └── PaperScoresPage.tsx       enter the paper edition's 16 net totals to see the online results (/paper)
 ```
 
 ---
 
-## Internationalization (Translations)
+## Language
 
-✅ **20 languages fully supported and deployed!** All content is pre-translated and permanently cached via Google Translate. **Zero runtime API calls** — translations are served statically from `src/data/translations.ts`.
-
-### Supported Languages (21 total including English)
-
-| # | Language | Native | Speakers | Code |
-|---|----------|--------|----------|------|
-| 1 | English | English | 1.5B | en |
-| 2 | Spanish | Español | 478M | es |
-| 3 | Hindi | हिन्दी | 345M | hi |
-| 4 | Arabic | العربية | 310M | ar |
-| 5 | Portuguese | Português | 252M | pt |
-| 6 | Bengali | বাংলা | 265M | bn |
-| 7 | Russian | Русский | 258M | ru |
-| 8 | Japanese | 日本語 | 125M | ja |
-| 9 | German | Deutsch | 136M | de |
-| 10 | French | Français | 280M | fr |
-| 11 | Korean | 한국어 | 82M | ko |
-| 12 | Turkish | Türkçe | 88M | tr |
-| 13 | Vietnamese | Tiếng Việt | 87M | vi |
-| 14 | Italian | Italiano | 68M | it |
-| 15 | Polish | Polski | 45M | pl |
-| 16 | Indonesian | Bahasa Indonesia | 199M | id |
-| 17 | Dutch | Nederlands | 24M | nl |
-| 18 | Hebrew | עברית | 9M | he |
-| 19 | Swedish | Svenska | 14M | sv |
-| 20 | Czech | Čeština | 10M | cs |
-| 21 | Romanian | Română | 29M | ro |
-
-**Coverage: ~90% of world population (3.5+ billion speakers)**
-
-**File Size: 2.2 MB (19,419 lines of pre-cached translations)**
-
-### Infrastructure Ready For 50+ Languages
-
-The system can scale to 50+ languages with a single command. Infrastructure supports:
-
-- **Tier 2 (30 additional languages):** Georgian, Urdu, Punjabi, Tamil, Telugu, Gujarati, Ukrainian, Burmese, Persian, Thai, Greek, Finnish, Somali, Swahili, Slovak, Danish, Bulgarian, Afrikaans, Amharic, Kurdish (Central), Hausa, Yoruba, Odia, Kinyarwanda, Chichewa, Kannada, Malay, Norwegian, Filipino, and more
-
-### What's Translated (All 20 Languages)
-✅ 145 assessment questions (standard + simplified)  
-✅ 8 scenarios with options  
-✅ 8 axes with pole labels  
-✅ 50 archetype profiles  
-✅ 68 UI strings  
-✅ All 500+ strings accessible via `LanguageSelector` dropdown
-
-### Adding More Languages (Path to 50+)
-
-To expand to 30, 50, or custom language sets:
-
-1. **Uncomment Tier 2 languages** in `scripts/generate_translations.py`:
-   ```python
-   # Currently uses languages_tier1 (20 languages)
-   # Uncomment to generate all 50 languages:
-   languages = languages_tier1 + languages_tier2
-   ```
-
-2. **Run translation script** (one-time, ~30-45 min for full 50):
-   ```bash
-   python scripts/generate_translations.py
-   ```
-   
-   Or generate in smaller batches (10-15 languages at a time):
-   ```python
-   languages = languages_tier1 + languages_tier2[:10]  # 30 languages
-   ```
-
-3. **LanguageSelector component auto-updates** — add new language labels to `LANG_LABELS` in `src/components/LanguageSelector.tsx`
-
-4. **Commit to version control**:
-   ```bash
-   git add src/data/translations.ts scripts/generate_translations.py src/components/LanguageSelector.tsx
-   git commit -m "feat: add [language-names] translations (total: 50 languages)"
-   ```
-
-### Dependencies
-
-```bash
-pip install deep-translator
-```
-
-### Known Considerations
-
-- **API Rate Limiting:** Google Translate (via deep-translator) may throttle requests when translating 50+ languages. Solution: Translate in batches of 10-15 languages.
-- **Batch Size:** Script auto-batches to ~4000 characters per request. Fallback to individual item translation if batch fails.
-- **Translation Time:** Current 5-language set takes ~60 seconds. Estimated time: 2-3 seconds per language per 500 strings.
-- **Cache Invalidation:** Regenerate entire translations.ts after updating any source content (questions, UI strings, profiles, etc.)
-
-### Translation Quality
-
-Translations are generated via Google Translate API. For production use with 50+ languages, consider:
-- Human review of critical UI copy and axis pole labels
-- Community translations via platforms like Crowdin
-- A/B testing key workflows with native speakers
+The Atlas is English only. The earlier translations and pre-recorded audio matched the previous question set, so they were removed when the statements were rewritten. Read-aloud still works through the optional ElevenLabs key in Voice Settings, which reads the current text.
 
 ---
 
@@ -336,9 +220,9 @@ Deployment is automatic: every push to `master` runs the test suite, builds, and
 
 A few invariants the codebase deliberately enforces — worth knowing before touching things:
 
-- The sign convention (positive = Pole A) and the `10 * tanh(raw / 3.5)` scaling formula are load-bearing; changing either invalidates every existing shared link and every archetype's calibrated coordinates.
+- The sign convention (positive = Pole A), the linear scaling and the mirrored-pair structure are load-bearing. Adding a statement means adding its mirrored partner on the same axis and horizon; `questions/index.test.ts` fails otherwise. Changing the item set or scaling invalidates shared links (bump `SHARE_LINK_VERSION`) and needs a new check that the 50 archetypes are still recovered.
 - Adding a new archetype? Run the redundancy test — it will tell you exactly which existing archetype yours is too close to, rather than letting a near-duplicate slip in silently.
-- New in-app UI copy (not long-form report content) should pass the Flesch-Kincaid college-level (grade 12–14) gate — `fleschKincaidGrade()` is exported from `src/lib/readability.ts` and every relevant data file has a test asserting this.
+- Statements must stay at or below grade 15 (average 8–12), and the methodology text at or below grade 10; `fleschKincaidGrade()` is exported from `src/lib/readability.ts` and tests assert both.
 - Material-stakeholder tags and scenario answers must never be wired into `computeRawAxisScores` or `classify` — that separation is intentional and tested.
 
 ---

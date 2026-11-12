@@ -24,8 +24,12 @@ describe('shareLink', () => {
     expect(decodeShareLink('not-valid-base64!!!')).toBeNull()
   })
 
-  it('returns null when the decoded array has the wrong length', () => {
-    const shortArray = btoa(JSON.stringify([1, 2, 3]))
-    expect(decodeShareLink(shortArray)).toBeNull()
+  it('returns null when the decoded scores have the wrong length', () => {
+    expect(decodeShareLink(btoa(JSON.stringify({ v: 2, s: [1, 2, 3] })))).toBeNull()
+  })
+
+  it('returns null for a link from the earlier question set', () => {
+    // Earlier links encoded a bare array of 16 raw scores from different statements.
+    expect(decodeShareLink(btoa(JSON.stringify(Array.from({ length: 16 }, () => 1))))).toBeNull()
   })
 })

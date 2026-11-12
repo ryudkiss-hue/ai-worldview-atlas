@@ -17,7 +17,16 @@ describe('App end-to-end smoke test', () => {
     )
     expect(screen.getByText('The AI Worldview Atlas')).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Start' }))
-    expect(screen.getByText('Teleological')).toBeInTheDocument()
+    expect(screen.getByText('Mind')).toBeInTheDocument()
+  })
+
+  it('sends the retired Compass and research routes to the intro page', () => {
+    render(
+      <MemoryRouter initialEntries={['/compass/stage/2']}>
+        <App />
+      </MemoryRouter>,
+    )
+    expect(screen.getByText('The AI Worldview Atlas')).toBeInTheDocument()
   })
 
   it('reaches the scenario page directly via /scenarios and can skip to results once the quiz is answered', () => {

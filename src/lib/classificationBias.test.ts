@@ -6,7 +6,7 @@ import { computeRawAxisScores, scaleAxisScores, combineHorizons, classify } from
 function randomAnswers(): Record<number, number> {
   const answers: Record<number, number> = {}
   questions.forEach((q) => {
-    answers[q.id] = 1 + Math.floor(Math.random() * 5)
+    answers[q.id] = [1, 2, 4, 5][Math.floor(Math.random() * 4)]
   })
   return answers
 }
@@ -17,8 +17,8 @@ describe('classification structural bias audit', () => {
     const trials = 500
     for (let i = 0; i < trials; i++) {
       const answers = randomAnswers()
-      const t1 = scaleAxisScores(computeRawAxisScores(questions, answers, 'T1'))
-      const t2 = scaleAxisScores(computeRawAxisScores(questions, answers, 'T2'))
+      const t1 = scaleAxisScores(computeRawAxisScores(questions, answers, 'T1'), 'T1')
+      const t2 = scaleAxisScores(computeRawAxisScores(questions, answers, 'T2'), 'T2')
       const combined = combineHorizons(t1, t2)
       const winner = classify(combined, profiles)[0].profile.id
       wins[winner] = (wins[winner] ?? 0) + 1

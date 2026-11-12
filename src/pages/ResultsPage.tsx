@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { LanguageSelector } from '../components/LanguageSelector'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
 import { profiles } from '../data/profiles'
@@ -12,7 +11,7 @@ import {
   scaleAxisScores,
   combineHorizons,
   classify,
-  matchCloseness,
+  axesInAgreement,
   isCloseCall,
   type AxisVector,
 } from '../lib/scoring'
@@ -29,6 +28,7 @@ import { ReflectiveBreakdown } from '../components/ReflectiveBreakdown'
 import { PinnacleReflection } from '../components/PinnacleReflection'
 import { manifestoContents } from '../data/manifestoContents'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
+import { coreArchetype, coreCode, describeCore, tierInfo, type CoreAxis } from '../data/coreThree'
 
 export function ResultsPage() {
   const navigate = useNavigate()
@@ -47,6 +47,7 @@ export function ResultsPage() {
 
   const sharedParam = searchParams.get('d')
   const decoded = useMemo(() => (sharedParam ? decodeShareLink(sharedParam) : null), [sharedParam])
+  const staleLink = !!sharedParam && !decoded
   const hasNoData = !decoded && Object.keys(answers).length === 0
 
   const { t1Raw, t2Raw } = useMemo(() => {
@@ -57,13 +58,14 @@ export function ResultsPage() {
     }
   }, [decoded, answers])
 
-  const t1Scaled: AxisVector = scaleAxisScores(t1Raw)
-  const t2Scaled: AxisVector = scaleAxisScores(t2Raw)
+  const t1Scaled: AxisVector = scaleAxisScores(t1Raw, 'T1')
+  const t2Scaled: AxisVector = scaleAxisScores(t2Raw, 'T2')
   const combined = combineHorizons(t1Scaled, t2Scaled)
   const matches = classify(combined, profiles)
   const topMatches = matches.slice(0, 3)
   const topMatch = topMatches[0]
   const closeCall = isCloseCall(matches)
+  const core = coreArchetype(combined)
 
   const [inspectedProfileId, setInspectedProfileId] = useState<string>(topMatch.profile.id)
   const [activeTab, setActiveTab] = useState<'summary' | 'manifesto'>('summary')
@@ -94,7 +96,7 @@ export function ResultsPage() {
 
   const priorCombined = useMemo(() => {
     if (!priorEntry) return null
-    return combineHorizons(scaleAxisScores(priorEntry.t1Raw), scaleAxisScores(priorEntry.t2Raw))
+    return combineHorizons(scaleAxisScores(priorEntry.t1Raw, 'T1'), scaleAxisScores(priorEntry.t2Raw, 'T2'))
   }, [priorEntry])
 
   const selectedTagObjects = stakeholderTags.filter((tag) => selectedStakeholderTags.includes(tag.id))
@@ -132,6 +134,18 @@ export function ResultsPage() {
 
   if (hasNoData) {
     return (
+      staleLink ? (
+        <div className="max-w-2xl mx-auto p-6 text-center">
+          <h2 className="text-2xl font-bold mb-4">This link is from an earlier version</h2>
+          <p className="text-gray-700 mb-6">
+            The Atlas has been rebuilt with a new set of statements, so results shared from the earlier version can't be shown
+            here. Take the current assessment to get a result you can share.
+          </p>
+          <Link to="/" className="inline-block px-6 py-3 rounded bg-blue-600 text-white text-lg">
+            {t('start_assessment')}
+          </Link>
+        </div>
+      ) : (
       <div className="max-w-2xl mx-auto p-6 text-center">
         <h2 className="text-2xl font-bold mb-4">{t('no_results_yet') || 'No Results Yet'}</h2>
         <p className="text-gray-700 mb-6">
@@ -141,6 +155,7 @@ export function ResultsPage() {
           {t('start_assessment')}
         </Link>
       </div>
+      )
     )
   }
 
@@ -175,7 +190,7 @@ export function ResultsPage() {
       const blob = await renderShareCardToBlob({
         archetypeName: topMatch.profile.name,
         summary: topMatch.profile.summary,
-        matchPercent: matchCloseness(topMatch.distance),
+        axesInAgreement: axesInAgreement(combined, topMatch.profile),
         combined,
       })
       if (!blob) {
@@ -198,7 +213,6 @@ export function ResultsPage() {
     <div className="max-w-3xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
         <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
-        <LanguageSelector />
       </div>
 
       <h2 className="text-2xl font-bold mb-4">{t('results_title')}</h2>
@@ -218,10 +232,10 @@ export function ResultsPage() {
 
       {!decoded && declinedQuestions.length > 0 && (
         <div className="mt-4 border-l-4 border-gray-400 bg-gray-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">No Strong View</h3>
+          <h3 className="text-lg font-semibold mb-1">No Settled View</h3>
           <p className="text-gray-700">
-            You marked {declinedQuestions.length} of {questions.length} questions as having no strong
-            view{topDeclineAxis ? `, mostly on ${topDeclineAxis.name}` : ''}. A near-zero score on an
+            You marked {declinedQuestions.length} of {questions.length} statements as having no settled
+            view{topDeclineAxis ? `, mostly on ${topDeclineAxis.name}` : ''}. Each counts as zero. A near-zero score on an
             axis can mean a genuinely balanced position, or it can mean this. The math can&apos;t tell
             those apart on its own — only you can.
           </p>
@@ -287,8 +301,26 @@ export function ResultsPage() {
 
       <h3 className="text-xl font-semibold mt-8 mb-2">{t('closest_archetype')}</h3>
       {topMatches.map((match, index) => (
-        <ProfileCard key={match.profile.id} match={match} rank={index + 1} />
+        <ProfileCard key={match.profile.id} match={match} rank={index + 1} agreement={axesInAgreement(combined, match.profile)} />
       ))}
+      <p className="text-sm text-gray-500">
+        Matches are ranked by distance across all eight axes. &quot;Axes in agreement&quot; counts the axes where you and the
+        archetype fall on the same side (toward pole A, the middle, or toward pole B, with the middle running from −2 to +2).
+      </p>
+
+      <section className="mt-8 rounded-lg border border-gray-200 p-4" aria-labelledby="core-three-heading">
+        <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Your core three · {coreCode(core.tiers)}</p>
+        <h3 id="core-three-heading" className="text-xl font-semibold mt-1">{core.name}</h3>
+        <p className="text-gray-600 italic">{core.tagline}</p>
+        <p className="text-gray-800 mt-2">{describeCore(core)}</p>
+        <p className="text-sm text-gray-500 mt-2">
+          A second reading on the three axes about artificial minds themselves: X is Mind, Y is Moral Standing, and Z is Ends of
+          Intelligence read from the beyond-biology end (Z−) to the living-world end (Z+). Your tiers on these three pick one of 27
+          archetypes. Related thinkers, one group per axis:{' '}
+          {(['x', 'y', 'z'] as CoreAxis[]).map((k, i) => tierInfo(k, core.tiers[i]).thinkers).join('; ')}. Each argued something
+          close to one part; none necessarily holds all of it.
+        </p>
+      </section>
 
       <div className="flex flex-wrap gap-3 mt-6">
         <button
@@ -363,7 +395,7 @@ export function ResultsPage() {
                   : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
               }`}
             >
-              {tProfileName(match.profile.id)} ({matchCloseness(match.distance)}%)
+              {tProfileName(match.profile.id)} ({axesInAgreement(combined, match.profile)}/8)
             </button>
           ))}
         </div>
@@ -406,6 +438,12 @@ export function ResultsPage() {
           </div>
         )}
       </div>
+
+      <p className="mt-8 text-gray-700">
+        Want to test your views against harder cases?{' '}
+        <Link to="/thought-experiments" className="text-blue-600 underline">Read the 25 thought experiments</Link>. They don&apos;t
+        change your scores.
+      </p>
 
       <MethodologySection />
       <PinnacleReflection archetypeName={topMatch.profile.name} />

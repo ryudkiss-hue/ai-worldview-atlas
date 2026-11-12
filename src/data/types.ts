@@ -12,14 +12,20 @@ export interface Axis {
   id: AxisId
   number: number
   name: string
+  /** The question the axis asks, in plain words */
+  question: string
   poleA: string
+  poleADesc: string
   poleB: string
+  poleBDesc: string
 }
 
 export type Horizon = 'T1' | 'T2'
 
 export interface Question {
   id: number
+  /** id of the mirrored partner: same topic, opposite stance */
+  pair: number
   axisId: AxisId
   horizon: Horizon
   statement: string

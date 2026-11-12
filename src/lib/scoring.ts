@@ -1,6 +1,8 @@
-import type { AxisId, Question, Profile } from '../data/types'
+import type { AxisId, Horizon, Question, Profile } from '../data/types'
 import { axes } from '../data/axes'
+import { questions as allQuestions } from '../data/questions'
 
+/** Stored answers: 1 strongly disagree, 2 disagree, 4 agree, 5 strongly agree. "No settled view" is stored separately and scores 0. */
 export type Answers = Record<number, number>
 
 export type AxisVector = Record<AxisId, number>
@@ -9,11 +11,8 @@ function likertToSigned(value: number): number {
   return value - 3
 }
 
-export function computeRawAxisScores(
-  questions: Question[],
-  answers: Answers,
-  horizon: 'T1' | 'T2',
-): AxisVector {
+/** Sum of signed answers per axis for one horizon: +1/+2 toward pole A, -1/-2 toward pole B, unanswered or declined = 0. */
+export function computeRawAxisScores(questions: Question[], answers: Answers, horizon: Horizon): AxisVector {
   const raw = {} as AxisVector
   axes.forEach((axis) => {
     const axisQuestions = questions.filter((q) => q.axisId === axis.id && q.horizon === horizon)
@@ -27,18 +26,37 @@ export function computeRawAxisScores(
   return raw
 }
 
-export function scaleAxisScores(raw: AxisVector): AxisVector {
+/** Number of statements per axis in a horizon (each can contribute at most 2 points either way). */
+export function itemCounts(horizon: Horizon, questions: Question[] = allQuestions): AxisVector {
+  const counts = {} as AxisVector
+  axes.forEach((axis) => {
+    counts[axis.id] = questions.filter((q) => q.axisId === axis.id && q.horizon === horizon).length
+  })
+  return counts
+}
+
+/**
+ * Linear scaling to -10..+10: 10 x raw / (2 x number of statements). Strongly agreeing with every pole-A
+ * statement and strongly disagreeing with every pole-B one gives +10. Because every statement has a mirrored
+ * partner, agreeing (or disagreeing) with everything gives exactly 0.
+ */
+export function scaleAxisScores(raw: AxisVector, horizon: Horizon, questions: Question[] = allQuestions): AxisVector {
+  const counts = itemCounts(horizon, questions)
   const scaled = {} as AxisVector
   ;(Object.keys(raw) as AxisId[]).forEach((axisId) => {
-    scaled[axisId] = 10 * Math.tanh(raw[axisId] / 3.5)
+    scaled[axisId] = counts[axisId] ? (10 * raw[axisId]) / (2 * counts[axisId]) : 0
   })
   return scaled
 }
 
-export function combineHorizons(t1: AxisVector, t2: AxisVector): AxisVector {
+/** Overall score per axis: the two horizons weighted by how many statements each has, i.e. the score over all of them. */
+export function combineHorizons(t1: AxisVector, t2: AxisVector, questions: Question[] = allQuestions): AxisVector {
+  const n1 = itemCounts('T1', questions)
+  const n2 = itemCounts('T2', questions)
   const combined = {} as AxisVector
   ;(Object.keys(t1) as AxisId[]).forEach((axisId) => {
-    combined[axisId] = (t1[axisId] + t2[axisId]) / 2
+    const total = n1[axisId] + n2[axisId]
+    combined[axisId] = total ? (t1[axisId] * n1[axisId] + t2[axisId] * n2[axisId]) / total : 0
   })
   return combined
 }
@@ -61,25 +79,27 @@ export function classify(combined: AxisVector, profiles: Profile[]): ProfileMatc
   return withDistance.sort((a, b) => a.distance - b.distance)
 }
 
-const MAX_POSSIBLE_DISTANCE = Math.sqrt(8 * 20 ** 2)
+/** Tier boundary: a score of +2 or more leans toward pole A, -2 or less toward pole B, anything between is middle. */
+export const TIER_BAND = 2
+export type Tier = -1 | 0 | 1
+export const tierOf = (v: number): Tier => (v >= TIER_BAND ? 1 : v <= -TIER_BAND ? -1 : 0)
 
-export function matchCloseness(distance: number): number {
-  return Math.round(100 * (1 - distance / MAX_POSSIBLE_DISTANCE))
+/**
+ * How many of the eight axes put you in the same tier (pole A, middle, pole B) as an archetype. Shown instead of a
+ * percentage, which made distant archetypes look like strong matches.
+ */
+export function axesInAgreement(combined: AxisVector, profile: Profile): number {
+  return axes.filter((a) => tierOf(combined[a.id]) === tierOf(profile.coords[a.id])).length
 }
 
-// Calibrated against a 20,000-trial uniform-random simulation: the unrounded gap between the top
-// two matches' closeness scores falls below 0.65 in roughly the bottom quartile of cases, so this
-// flags a genuine minority of close calls rather than firing on most results. Uses unrounded
-// closeness (not the display-rounded matchCloseness()) since rounding would collapse most real
-// margins to 0 or 1 and make the threshold meaningless.
-const CLOSE_CALL_MARGIN = 0.65
-
-function unroundedCloseness(distance: number): number {
-  return 100 * (1 - distance / MAX_POSSIBLE_DISTANCE)
-}
+/**
+ * A close call is when the second-closest archetype is less than 0.8 points farther away than the closest.
+ * Calibrated by simulation (synthetic respondents placed near each archetype's coordinates), where about a quarter
+ * of results fell under this margin.
+ */
+export const CLOSE_CALL_MARGIN = 0.8
 
 export function isCloseCall(matches: ProfileMatch[]): boolean {
   if (matches.length < 2) return false
-  const margin = unroundedCloseness(matches[0].distance) - unroundedCloseness(matches[1].distance)
-  return margin < CLOSE_CALL_MARGIN
+  return matches[1].distance - matches[0].distance < CLOSE_CALL_MARGIN
 }

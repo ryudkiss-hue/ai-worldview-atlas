@@ -1,19 +1,25 @@
 import { describe, it, expect } from 'vitest'
 import type { Question, Profile } from '../data/types'
+import { questions } from '../data/questions'
+import { axes } from '../data/axes'
 import {
   computeRawAxisScores,
   scaleAxisScores,
   combineHorizons,
   classify,
-  matchCloseness,
+  axesInAgreement,
   isCloseCall,
+  itemCounts,
+  tierOf,
+  CLOSE_CALL_MARGIN,
   type ProfileMatch,
 } from './scoring'
 
 const fixtureQuestions: Question[] = [
-  { id: 1, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'A', statement: 'q1' },
-  { id: 2, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'B', statement: 'q2' },
-  { id: 3, axisId: 'teleological', horizon: 'T2', agreeShiftsToward: 'A', statement: 'q3' },
+  { id: 1, pair: 2, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'A', statement: 'q1' },
+  { id: 2, pair: 1, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'B', statement: 'q2' },
+  { id: 3, pair: 4, axisId: 'teleological', horizon: 'T2', agreeShiftsToward: 'A', statement: 'q3' },
+  { id: 4, pair: 3, axisId: 'teleological', horizon: 'T2', agreeShiftsToward: 'B', statement: 'q4' },
 ]
 
 const zeroVector = {
@@ -21,89 +27,101 @@ const zeroVector = {
   legalMoral: 0, evolutionary: 0, relational: 0, geopolitical: 0,
 }
 
+// Test answer sheets built from the real item set
+const sheet = (f: (q: Question) => number) => Object.fromEntries(questions.map((q) => [q.id, f(q)]))
+const score = (answers: Record<number, number>) =>
+  combineHorizons(
+    scaleAxisScores(computeRawAxisScores(questions, answers, 'T1'), 'T1'),
+    scaleAxisScores(computeRawAxisScores(questions, answers, 'T2'), 'T2'),
+  )
+
 describe('computeRawAxisScores', () => {
-  it('sums signed answers per axis and horizon, flipping reverse-keyed items', () => {
-    const answers = { 1: 5, 2: 5, 3: 3 }
-    const t1 = computeRawAxisScores(fixtureQuestions, answers, 'T1')
-    expect(t1.teleological).toBe(0)
-    const t2 = computeRawAxisScores(fixtureQuestions, answers, 'T2')
-    expect(t2.teleological).toBe(0)
+  it('sums signed answers per axis and horizon, flipping pole-B statements', () => {
+    const answers = { 1: 5, 2: 5, 3: 4, 4: 4 }
+    expect(computeRawAxisScores(fixtureQuestions, answers, 'T1').teleological).toBe(0)
+    expect(computeRawAxisScores(fixtureQuestions, answers, 'T2').teleological).toBe(0)
   })
 
-  it('treats an unanswered question as contributing zero', () => {
-    const t1 = computeRawAxisScores(fixtureQuestions, { 1: 5 }, 'T1')
-    expect(t1.teleological).toBe(2)
+  it('treats an unanswered or declined statement as zero', () => {
+    expect(computeRawAxisScores(fixtureQuestions, { 1: 5 }, 'T1').teleological).toBe(2)
   })
 })
 
 describe('scaleAxisScores', () => {
-  it('maps a raw score of 0 to a scaled score of 0', () => {
-    const scaled = scaleAxisScores(zeroVector)
-    expect(scaled.teleological).toBe(0)
+  it('maps 0 to 0 and the strongest possible raw score to exactly 10', () => {
+    expect(scaleAxisScores(zeroVector, 'T1', fixtureQuestions).teleological).toBe(0)
+    expect(scaleAxisScores({ ...zeroVector, teleological: 4 }, 'T1', fixtureQuestions).teleological).toBe(10)
+    expect(scaleAxisScores({ ...zeroVector, teleological: -2 }, 'T1', fixtureQuestions).teleological).toBe(-5)
   })
 
-  it('maps a raw score of 14 through the tanh formula and keeps it under the ceiling', () => {
-    const scaled = scaleAxisScores({ ...zeroVector, teleological: 14 })
-    expect(scaled.teleological).toBeCloseTo(10 * Math.tanh(14 / 3.5), 5)
-    expect(scaled.teleological).toBeLessThan(10)
+  it('is linear, with no squashing', () => {
+    expect(scaleAxisScores({ ...zeroVector, teleological: 1 }, 'T1', fixtureQuestions).teleological).toBe(2.5)
   })
 })
 
 describe('combineHorizons', () => {
-  it('averages T1 and T2 scaled scores per axis', () => {
-    const t1 = { ...zeroVector, teleological: 4 }
-    const t2 = { ...zeroVector, teleological: 8 }
-    const combined = combineHorizons(t1, t2)
-    expect(combined.teleological).toBe(6)
+  it('weights each horizon by its number of statements', () => {
+    const n1 = itemCounts('T1').ontological
+    const n2 = itemCounts('T2').ontological
+    const combined = combineHorizons({ ...zeroVector, ontological: 10 }, { ...zeroVector, ontological: 0 })
+    expect(combined.ontological).toBeCloseTo((10 * n1) / (n1 + n2), 10)
+  })
+})
+
+describe('scoring the real item set', () => {
+  it('puts every uniform answer sheet at exactly 0 on every axis', () => {
+    for (const v of [1, 2, 4, 5]) {
+      const s = score(sheet(() => v))
+      axes.forEach((a) => expect(s[a.id], `${a.id} with every answer ${v}`).toBe(0))
+    }
+  })
+
+  it('reaches +10 and -10 at the poles', () => {
+    const toA = score(sheet((q) => (q.agreeShiftsToward === 'A' ? 5 : 1)))
+    const toB = score(sheet((q) => (q.agreeShiftsToward === 'A' ? 1 : 5)))
+    axes.forEach((a) => {
+      expect(toA[a.id]).toBe(10)
+      expect(toB[a.id]).toBe(-10)
+    })
+  })
+
+  it('counts "no settled view" as zero', () => {
+    expect(score({})).toEqual(zeroVector)
   })
 })
 
 describe('classify', () => {
   const profiles: Profile[] = [
-    { id: 'a', name: 'A', summary: '', coords: { ...zeroVector, teleological: 10 } },
-    { id: 'b', name: 'B', summary: '', coords: { ...zeroVector, teleological: -10 } },
+    { id: 'near', name: 'Near', summary: '', coords: { ...zeroVector, teleological: 1 } },
+    { id: 'far', name: 'Far', summary: '', coords: { ...zeroVector, teleological: 9 } },
   ]
-
-  it('sorts profiles by ascending distance to the combined vector', () => {
-    const combined = { ...zeroVector, teleological: 9 }
-    const matches = classify(combined, profiles)
-    expect(matches[0].profile.id).toBe('a')
-    expect(matches[1].profile.id).toBe('b')
-    expect(matches[0].distance).toBeLessThan(matches[1].distance)
+  it('ranks by Euclidean distance, closest first', () => {
+    const ranked = classify(zeroVector, profiles)
+    expect(ranked.map((m) => m.profile.id)).toEqual(['near', 'far'])
+    expect(ranked[0].distance).toBe(1)
   })
 })
 
-describe('matchCloseness', () => {
-  const maxDistance = Math.sqrt(8 * 20 ** 2)
-
-  it('maps a distance of 0 to 100%', () => {
-    expect(matchCloseness(0)).toBe(100)
-  })
-
-  it('maps the maximum possible distance to 0%', () => {
-    expect(matchCloseness(maxDistance)).toBe(0)
-  })
-
-  it('maps a mid-range distance to a proportional percentage', () => {
-    expect(matchCloseness(maxDistance / 2)).toBe(50)
+describe('axesInAgreement', () => {
+  it('counts axes where you and the archetype share a tier (pole A, middle, pole B)', () => {
+    expect(tierOf(2)).toBe(1)
+    expect(tierOf(1.99)).toBe(0)
+    expect(tierOf(-2)).toBe(-1)
+    const profile: Profile = { id: 'p', name: 'P', summary: '', coords: { ...zeroVector, risk: 8, geopolitical: -5 } }
+    expect(axesInAgreement({ ...zeroVector, risk: 3 }, profile)).toBe(7)
+    expect(axesInAgreement({ ...zeroVector, risk: 3, geopolitical: -2.5 }, profile)).toBe(8)
   })
 })
 
 describe('isCloseCall', () => {
-  function matchAt(distance: number): ProfileMatch {
-    return { profile: { id: `p-${distance}`, name: `p-${distance}`, summary: '', coords: zeroVector }, distance }
-  }
-
-  it('is false with fewer than two matches', () => {
+  const matchAt = (distance: number): ProfileMatch => ({
+    profile: { id: String(distance), name: '', summary: '', coords: zeroVector },
+    distance,
+  })
+  it('flags a top-two distance gap under the margin', () => {
     expect(isCloseCall([])).toBe(false)
     expect(isCloseCall([matchAt(10)])).toBe(false)
-  })
-
-  it('is true when the top two matches are effectively tied', () => {
-    expect(isCloseCall([matchAt(10), matchAt(10.01)])).toBe(true)
-  })
-
-  it('is false when the top match clearly beats the runner-up', () => {
+    expect(isCloseCall([matchAt(10), matchAt(10 + CLOSE_CALL_MARGIN / 2)])).toBe(true)
     expect(isCloseCall([matchAt(5), matchAt(20)])).toBe(false)
   })
 })

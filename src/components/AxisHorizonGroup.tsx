@@ -10,7 +10,6 @@ interface AxisHorizonGroupProps {
   declinedQuestions?: number[]
   onAnswer: (questionId: number, value: number) => void
   onDecline?: (questionId: number) => void
-  showSimplified?: boolean
 }
 
 export function AxisHorizonGroup({
@@ -20,7 +19,6 @@ export function AxisHorizonGroup({
   declinedQuestions = [],
   onAnswer,
   onDecline,
-  showSimplified = false,
 }: AxisHorizonGroupProps) {
   const { tQuestion } = useQuiz()
 
@@ -29,8 +27,7 @@ export function AxisHorizonGroup({
       <h3 className="text-lg font-semibold mb-3">{title}</h3>
       <ul className="space-y-5">
         {questions.map((question) => {
-          const typeKey = showSimplified ? 'simplifiedStatement' : 'statement'
-          const textToRead = tQuestion(question.id, typeKey) || question.statement
+          const textToRead = tQuestion(question.id) || question.statement
           return (
             <li key={question.id}>
               <div className="flex items-start justify-between gap-4 mb-2">

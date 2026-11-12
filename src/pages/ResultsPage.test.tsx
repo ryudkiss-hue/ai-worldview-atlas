@@ -77,13 +77,15 @@ describe('ResultsPage', () => {
     renderResultsPage(`?d=${encoded}`)
     expect(screen.getByText('Closest Worldview Matches')).toBeInTheDocument()
     const table = screen.getByRole('table')
-    expect(within(table).getByText('Teleological')).toBeInTheDocument()
+    expect(within(table).getByText('Ends of Intelligence')).toBeInTheDocument()
   })
 
-  it('shows the match-closeness percentage on the top ProfileCard', () => {
+  it('shows axes in agreement, not a percentage, on the top ProfileCard, plus the core-three reading', () => {
     const encoded = encodeShareLink(buildFlatScores(7, -7))
     renderResultsPage(`?d=${encoded}`)
-    expect(screen.getAllByText(/% match/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/of 8 axes in agreement/).length).toBeGreaterThan(0)
+    expect(screen.queryByText(/% match/)).not.toBeInTheDocument()
+    expect(screen.getByText(/Your core three/)).toBeInTheDocument()
   })
 
   it('shows the Full Report Preview, Methodology section, and Pinnacle Reflection', () => {
@@ -131,7 +133,7 @@ describe('ResultsPage', () => {
     expect(screen.getByRole('button', { name: 'Generating...' })).toBeInTheDocument()
     expect(await screen.findByRole('button', { name: 'Download Share Image' })).toBeInTheDocument()
     expect(renderShareCardToBlobMock).toHaveBeenCalledWith(
-      expect.objectContaining({ archetypeName: expect.any(String), matchPercent: expect.any(Number) }),
+      expect.objectContaining({ archetypeName: expect.any(String), axesInAgreement: expect.any(Number) }),
     )
   })
 
@@ -211,6 +213,13 @@ describe('ResultsPage', () => {
     expect(await screen.findByRole('button', { name: 'Download Failed — Try Again' })).toBeInTheDocument()
   })
 
+  it('explains that a link from the earlier version of the Atlas cannot be shown', () => {
+    const oldLink = btoa(JSON.stringify(Array.from({ length: 16 }, () => 2)))
+    renderResultsPage(`?d=${oldLink}`)
+    expect(screen.getByText('This link is from an earlier version')).toBeInTheDocument()
+    expect(screen.queryByText('Closest Worldview Matches')).not.toBeInTheDocument()
+  })
+
   it('shows a "no results yet" message instead of a fake neutral result when the quiz was never completed', () => {
     renderResultsPage('')
     expect(screen.getByText('No Results Yet')).toBeInTheDocument()
@@ -218,7 +227,7 @@ describe('ResultsPage', () => {
     expect(screen.getByRole('link', { name: 'Start the Assessment' })).toBeInTheDocument()
   })
 
-  it('shows a "no strong view" summary, naming the axis it clustered on, when questions were declined', () => {
+  it('shows a "no settled view" summary, naming the axis it clustered on, when questions were declined', () => {
     function DeclineSeeder() {
       const { setAnswer, declineQuestion } = useQuiz()
       useEffect(() => {
@@ -238,12 +247,12 @@ describe('ResultsPage', () => {
         </MemoryRouter>
       </QuizProvider>,
     )
-    expect(screen.getByText('No Strong View')).toBeInTheDocument()
-    expect(screen.getByText(/marked 2 of 145 questions/)).toBeInTheDocument()
-    expect(screen.getByText(/mostly on Teleological/)).toBeInTheDocument()
+    expect(screen.getByText('No Settled View')).toBeInTheDocument()
+    expect(screen.getByText(/marked 2 of 144 statements/)).toBeInTheDocument()
+    expect(screen.getByText(/mostly on Ends of Intelligence/)).toBeInTheDocument()
   })
 
-  it('does not show a "no strong view" summary when viewing a shared link, even if the local quiz state has declines', () => {
+  it('does not show a "no settled view" summary when viewing a shared link, even if the local quiz state has declines', () => {
     function DeclineSeederWithShare() {
       const { declineQuestion } = useQuiz()
       useEffect(() => {
@@ -262,7 +271,7 @@ describe('ResultsPage', () => {
         </MemoryRouter>
       </QuizProvider>,
     )
-    expect(screen.queryByText('No Strong View')).not.toBeInTheDocument()
+    expect(screen.queryByText('No Settled View')).not.toBeInTheDocument()
   })
 
   it('shows a comparison to a prior recorded result, naming whether the top match changed', () => {
