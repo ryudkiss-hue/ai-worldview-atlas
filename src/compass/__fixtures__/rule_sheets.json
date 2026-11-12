@@ -1,0 +1,379 @@
+{
+ "_comment": "Test fixtures only: the nine rule-built answer sheets from the Synthetic Compass test plan, with results from the standalone v3.6 page engine.",
+ "sheets": {
+  "T1 all Agree": {
+   "x": 0,
+   "y": 0,
+   "z": 0,
+   "archetype": "The Open Questioner",
+   "code": "X0 Y0 Z0",
+   "closest3": [
+    "The Open Questioner 100%",
+    "The Grounded Skeptic 84%",
+    "The Prudent Overseer 84%"
+   ],
+   "close_calls": [],
+   "modules": [
+    50,
+    50,
+    50,
+    50,
+    50,
+    50
+   ],
+   "flags": [],
+   "facets": {
+    "x": [
+     "Machine experience 0.00",
+     "Bodies and senses 0.00",
+     "Agency and choice 0.00"
+    ],
+    "y": [
+     "Bodily autonomy 0.00",
+     "Purpose and agency 0.00",
+     "Rights and labor 0.00",
+     "Relationships 0.00"
+    ],
+    "z": [
+     "Ecological restraint 0.00",
+     "Embodied or digital life 0.00",
+     "Coexistence or succession 0.00"
+    ]
+   }
+  },
+  "T2 all Strongly disagree": {
+   "x": 0,
+   "y": 0,
+   "z": 0,
+   "archetype": "The Open Questioner",
+   "code": "X0 Y0 Z0",
+   "closest3": [
+    "The Open Questioner 100%",
+    "The Grounded Skeptic 84%",
+    "The Prudent Overseer 84%"
+   ],
+   "close_calls": [],
+   "modules": [
+    50,
+    50,
+    50,
+    50,
+    50,
+    50
+   ],
+   "flags": [],
+   "facets": {
+    "x": [
+     "Machine experience 0.00",
+     "Bodies and senses 0.00",
+     "Agency and choice 0.00"
+    ],
+    "y": [
+     "Bodily autonomy 0.00",
+     "Purpose and agency 0.00",
+     "Rights and labor 0.00",
+     "Relationships 0.00"
+    ],
+    "z": [
+     "Ecological restraint 0.00",
+     "Embodied or digital life 0.00",
+     "Coexistence or succession 0.00"
+    ]
+   }
+  },
+  "T3 positive pole": {
+   "x": 10,
+   "y": 10,
+   "z": 10,
+   "archetype": "The Embodied Pluralist",
+   "code": "X+ Y+ Z+",
+   "closest3": [
+    "The Embodied Pluralist 57%",
+    "The Precautionary Steward 46%",
+    "The Measured Pluralist 46%"
+   ],
+   "close_calls": [],
+   "modules": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "flags": [],
+   "facets": {
+    "x": [
+     "Machine experience 10.00",
+     "Bodies and senses 10.00",
+     "Agency and choice 10.00"
+    ],
+    "y": [
+     "Bodily autonomy 10.00",
+     "Purpose and agency 10.00",
+     "Rights and labor 10.00",
+     "Relationships 10.00"
+    ],
+    "z": [
+     "Ecological restraint 10.00",
+     "Embodied or digital life 10.00",
+     "Coexistence or succession 10.00"
+    ]
+   }
+  },
+  "T4 negative pole": {
+   "x": -10,
+   "y": -10,
+   "z": -10,
+   "archetype": "The Industrial Technocrat",
+   "code": "X- Y- Z-",
+   "closest3": [
+    "The Industrial Technocrat 57%",
+    "The Practical Humanist 46%",
+    "The Pragmatic Skeptic 46%"
+   ],
+   "close_calls": [],
+   "modules": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "flags": [],
+   "facets": {
+    "x": [
+     "Machine experience -10.00",
+     "Bodies and senses -10.00",
+     "Agency and choice -10.00"
+    ],
+    "y": [
+     "Bodily autonomy -10.00",
+     "Purpose and agency -10.00",
+     "Rights and labor -10.00",
+     "Relationships -10.00"
+    ],
+    "z": [
+     "Ecological restraint -10.00",
+     "Embodied or digital life -10.00",
+     "Coexistence or succession -10.00"
+    ]
+   }
+  },
+  "T5 cycle [SA,A,D,SD] by id mod 4": {
+   "x": 1.2,
+   "y": -2.18,
+   "z": -3.52,
+   "archetype": "The Prudent Builder",
+   "code": "X0 Y- Z-",
+   "closest3": [
+    "The Prudent Builder 91%",
+    "The Open-Minded Futurist 90%",
+    "The Promethean Instrumentalist 86%"
+   ],
+   "close_calls": [
+    "X",
+    "Y"
+   ],
+   "modules": [
+    65,
+    39,
+    47,
+    30,
+    44,
+    32
+   ],
+   "flags": [],
+   "facets": {
+    "x": [
+     "Machine experience 3.00",
+     "Bodies and senses -1.92",
+     "Agency and choice -2.50"
+    ],
+    "y": [
+     "Bodily autonomy -2.50",
+     "Purpose and agency -0.83",
+     "Rights and labor -4.08",
+     "Relationships -1.11"
+    ],
+    "z": [
+     "Ecological restraint 2.63",
+     "Embodied or digital life -6.54",
+     "Coexistence or succession -10.00"
+    ]
+   }
+  },
+  "T6 cycle [D,SA,SD,A] by id mod 4": {
+   "x": -0.83,
+   "y": 7.61,
+   "z": 7.16,
+   "archetype": "The Precautionary Steward",
+   "code": "X0 Y+ Z+",
+   "closest3": [
+    "The Precautionary Steward 80%",
+    "The Relational Steward 76%",
+    "The Embodied Pluralist 72%"
+   ],
+   "close_calls": [],
+   "modules": [
+    30,
+    81,
+    91,
+    85,
+    90,
+    86
+   ],
+   "flags": [
+    "humility"
+   ],
+   "facets": {
+    "x": [
+     "Machine experience -4.00",
+     "Bodies and senses 3.85",
+     "Agency and choice 7.50"
+    ],
+    "y": [
+     "Bodily autonomy 7.50",
+     "Purpose and agency 8.06",
+     "Rights and labor 6.97",
+     "Relationships 7.96"
+    ],
+    "z": [
+     "Ecological restraint 9.21",
+     "Embodied or digital life 6.15",
+     "Coexistence or succession 5.00"
+    ]
+   }
+  },
+  "T7 X toward +, everything else toward -": {
+   "x": 10,
+   "y": -9.15,
+   "z": -10,
+   "archetype": "The Promethean Instrumentalist",
+   "code": "X+ Y- Z-",
+   "closest3": [
+    "The Promethean Instrumentalist 59%",
+    "The Measured Accelerationist 49%",
+    "The Prudent Builder 47%"
+   ],
+   "close_calls": [],
+   "modules": [
+    100,
+    37,
+    16,
+    0,
+    0,
+    0
+   ],
+   "flags": [
+    "slave",
+    "schism"
+   ],
+   "facets": {
+    "x": [
+     "Machine experience 10.00",
+     "Bodies and senses 10.00",
+     "Agency and choice 10.00"
+    ],
+    "y": [
+     "Bodily autonomy -10.00",
+     "Purpose and agency -7.22",
+     "Rights and labor -10.00",
+     "Relationships -10.00"
+    ],
+    "z": [
+     "Ecological restraint -10.00",
+     "Embodied or digital life -10.00",
+     "Coexistence or succession -10.00"
+    ]
+   }
+  },
+  "T8 Module 1 toward -, everything else toward +": {
+   "x": -2.96,
+   "y": 10,
+   "z": 10,
+   "archetype": "The Relational Steward",
+   "code": "X- Y+ Z+",
+   "closest3": [
+    "The Relational Steward 65%",
+    "The Precautionary Steward 63%",
+    "The Embodied Pluralist 55%"
+   ],
+   "close_calls": [
+    "X"
+   ],
+   "modules": [
+    0,
+    100,
+    100,
+    100,
+    100,
+    100
+   ],
+   "flags": [
+    "humility"
+   ],
+   "facets": {
+    "x": [
+     "Machine experience -10.00",
+     "Bodies and senses 10.00",
+     "Agency and choice 10.00"
+    ],
+    "y": [
+     "Bodily autonomy 10.00",
+     "Purpose and agency 10.00",
+     "Rights and labor 10.00",
+     "Relationships 10.00"
+    ],
+    "z": [
+     "Ecological restraint 10.00",
+     "Embodied or digital life 10.00",
+     "Coexistence or succession 10.00"
+    ]
+   }
+  },
+  "T9 X toward +, Z toward -, Y Agree": {
+   "x": 10,
+   "y": 0.43,
+   "z": -10,
+   "archetype": "The Measured Accelerationist",
+   "code": "X+ Y0 Z-",
+   "closest3": [
+    "The Measured Accelerationist 65%",
+    "The Post-Biological Accelerationist 62%",
+    "The Promethean Instrumentalist 61%"
+   ],
+   "close_calls": [],
+   "modules": [
+    100,
+    60,
+    58,
+    50,
+    50,
+    0
+   ],
+   "flags": [
+    "schism"
+   ],
+   "facets": {
+    "x": [
+     "Machine experience 10.00",
+     "Bodies and senses 10.00",
+     "Agency and choice 10.00"
+    ],
+    "y": [
+     "Bodily autonomy 0.00",
+     "Purpose and agency 1.39",
+     "Rights and labor 0.00",
+     "Relationships 0.00"
+    ],
+    "z": [
+     "Ecological restraint -10.00",
+     "Embodied or digital life -10.00",
+     "Coexistence or succession -10.00"
+    ]
+   }
+  }
+ }
+}

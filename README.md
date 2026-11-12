@@ -116,6 +116,23 @@ Full definitions, 8-axis coordinates, and one-paragraph summaries for every arch
 
 ---
 
+## The Synthetic Compass
+
+A second, separate instrument in the Atlas, at **`#/compass`** ([live](https://ryudkiss-hue.github.io/ai-worldview-atlas/#/compass)). It asks 120 agree/disagree statements about artificial minds and places you on three axes, each from −10 to +10:
+
+- **X, Ontological:** whether AI systems could have real experiences (Substrate Biologism to Embodied Functionalism)
+- **Y, Moral-agency:** how AI systems should be treated (Anthropocentric Instrumentalism to Autonomous Emancipation)
+- **Z, Teleological-ecological:** what future intelligence should build (Post-Biological Accelerationism to Embodied Ecological Pluralism)
+
+Each axis is split into three tiers at −2 and +2, and the three tiers pick one of 27 archetypes. Every statement has a mirrored partner with the opposite stance and the same weight, so agreeing or disagreeing with everything lands at the exact center. Results also show an archetype profile, axis facets, six module scores and three tension diagnostics. The Compass is English only and keeps its answers in the browser under its own storage key, separate from the Atlas quiz.
+
+| Path | What it is |
+|---|---|
+| `src/compass/data.ts` | The 120 statements and weights (quiz version 3.6, item-set hash `cc009f76830473a3`), tiers and archetypes. Generated from the validated item set. |
+| `src/compass/engine.ts` | Scoring. `engine.test.ts` checks the item-set hash and matches the standalone quiz's engine on reference answer sheets. |
+| `src/pages/compass/CompassPages.tsx` | Intro, the six stages, results and the archetype reference. |
+| `public/compass/` | A printable paper edition with tally scoring (PDF) and a Google Apps Script that builds the quiz as a Google Form and scores responses in a Sheet. |
+
 ## Bias mitigations built in
 
 This project treats "did we accidentally build a biased classifier" as a real engineering question, not an afterthought:
