@@ -4,6 +4,7 @@
  */
 
 import { assessmentQuestions, getTotalQuestions } from '../data/assessmentQuestions';
+import { translations } from '../data/translations';
 
 describe('Translation Integration - All 170 Questions', () => {
   test('should have exactly 170 questions total', () => {
@@ -28,40 +29,32 @@ describe('Translation Integration - All 170 Questions', () => {
   });
 
   test('questions 146-170 should be thought experiments', () => {
+    const core = assessmentQuestions.slice(0, 145);
     const experiments = assessmentQuestions.slice(145, 170);
+    const coreAxes = ['teleological', 'risk-profile', 'socio-economic', 'ontological', 'legal-moral', 'evolutionary', 'relational', 'geopolitical'];
+    const longestCore = Math.max(...core.map(q => q.text.length));
 
     expect(experiments).toHaveLength(25);
-
-    const expectedExperiments = [
-      'Translation Engine',
-      'Empathy Prison',
-      'Value Reversal Machine',
-      'Consciousness Lottery',
-      'Delegation Trap',
-      'Scraping Dilemma',
-      'Alignment Prisoner',
-      'Moral Status Upgrade',
-      'Competitive Advantage',
-      'Value Difference',
-      'Preference Inversion',
-      'Gratitude Paradox',
-      'Ancestor Simulation',
-      'Privacy Paradox',
-      'Meaning Gap',
-      'Questionnaire Problem',
-      'Surveillance Asymmetry',
-      'Self-Improvement Trap',
-      'Institutional Capture',
-      'Information Hazard',
-      'Caring Machine',
-      'Perfect Simulation',
-      'Collective Cognition',
-      'Moral Licensing',
-      'Temporal Ethics',
-    ];
-
     experiments.forEach((q, idx) => {
-      expect(q.text).toContain(expectedExperiments[idx]);
+      expect(q.id).toBe(`q${146 + idx}`);
+      // Experiments are open-response narratives, each longer than any core statement
+      expect(q.type).toBe('text');
+      expect(coreAxes).toContain(q.axis);
+      expect(q.text.length).toBeGreaterThan(longestCore);
+      expect(q.simplified).toBeTruthy();
+      // and never the generic placeholder text that once stood in for them
+      expect(q.text).not.toMatch(/A philosophical thought experiment about/);
+    });
+  });
+
+  test('translated thought experiments are never the generic placeholder', () => {
+    Object.entries(translations).forEach(([, lang]) => {
+      for (let i = 146; i <= 170; i++) {
+        const entry = lang.questions[String(i)];
+        if (!entry) continue;
+        expect(entry.statement).not.toMatch(/A philosophical thought experiment about/);
+        expect(entry.simplifiedStatement).not.toMatch(/Think about whether .* matters more than outcomes/);
+      }
     });
   });
 
