@@ -1,7 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useQuiz } from '../state/QuizContext'
 import { stakeholderTags } from '../data/stakeholderTags'
-import { LanguageSelector } from '../components/LanguageSelector'
 
 export function IntroPage() {
   const navigate = useNavigate()
@@ -23,7 +22,6 @@ export function IntroPage() {
     <div className="max-w-2xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
         <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
-        <LanguageSelector />
       </div>
       
       <div className="text-center mb-8">
@@ -69,20 +67,6 @@ export function IntroPage() {
         >
           {t('start')}
         </button>
-      </div>
-
-      <div className="mt-10 pt-6 border-t border-gray-100">
-        <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-2">Also in the Atlas</p>
-        <Link
-          to="/compass"
-          className="block rounded-lg border border-gray-200 p-4 hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          <span className="font-semibold text-gray-800">The Synthetic Compass</span>
-          <span className="block text-sm text-gray-600 mt-1">
-            120 statements on artificial minds: whether AI systems could have real experiences, how they should be treated, and what
-            future intelligence should build. Three axes and 27 archetypes. In English only.
-          </span>
-        </Link>
       </div>
     </div>
   )

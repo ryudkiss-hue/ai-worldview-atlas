@@ -8,7 +8,14 @@ interface LikertInputProps {
   onDecline?: () => void
 }
 
-const LABELS_KEYS = ['strongly_disagree', 'disagree', 'neutral', 'agree', 'strongly_agree']
+// Four options with no neutral midpoint; "no settled view" is a separate, explicit choice that scores 0.
+// Stored values keep the original 1-5 coding (3 is unused) so a value minus 3 gives -2, -1, +1, +2.
+const OPTIONS: { key: string; value: number }[] = [
+  { key: 'strongly_disagree', value: 1 },
+  { key: 'disagree', value: 2 },
+  { key: 'agree', value: 4 },
+  { key: 'strongly_agree', value: 5 },
+]
 
 export function LikertInput({ questionId, value, declined = false, onChange, onDecline }: LikertInputProps) {
   const { t } = useQuiz()
@@ -16,8 +23,7 @@ export function LikertInput({ questionId, value, declined = false, onChange, onD
   return (
     <div>
       <div role="radiogroup" aria-label={`Question ${questionId} answer`} className="flex flex-wrap gap-2">
-        {LABELS_KEYS.map((key, index) => {
-          const optionValue = index + 1
+        {OPTIONS.map(({ key, value: optionValue }) => {
           const isSelected = !declined && value === optionValue
           const label = t(key)
           return (
@@ -43,7 +49,7 @@ export function LikertInput({ questionId, value, declined = false, onChange, onD
           aria-pressed={declined}
           className={`mt-2 text-sm underline ${declined ? 'text-blue-700 font-semibold' : 'text-gray-500'}`}
         >
-          {declined ? t('decline_selected') || "I don't have a strong view on this (selected)" : t('decline_unselected') || "I don't have a strong view on this"}
+          {declined ? t('decline_selected') : t('decline_unselected')}
         </button>
       )}
     </div>

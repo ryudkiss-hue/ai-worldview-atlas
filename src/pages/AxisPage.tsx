@@ -16,8 +16,6 @@ export function AxisPage() {
     declinedQuestions,
     declineQuestion,
     questionOrder,
-    showSimplified,
-    setShowSimplified,
     ttsSettings,
     setTtsSettings,
     t,
@@ -65,17 +63,11 @@ export function AxisPage() {
         label={`${t('axis') || 'Axis'} ${index} of 8 · ${t('question') || 'Question'} ${answeredCount} of ${questions.length}`}
       />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 mb-6">
-        <h2 className="text-2xl font-bold">{tAxis(axis.id, 'name')}</h2>
+        <div>
+          <h2 className="text-2xl font-bold">{tAxis(axis.id, 'name')}</h2>
+          <p className="text-gray-600 mt-1">{axis.question}</p>
+        </div>
         <div className="flex flex-wrap items-center gap-2">
-          <label className="inline-flex items-center space-x-2 cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full select-none transition border border-gray-200">
-            <input
-              type="checkbox"
-              checked={showSimplified}
-              onChange={(e) => setShowSimplified(e.target.checked)}
-              className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
-            />
-            <span className="text-sm font-semibold select-none">{t('simple_reading')}</span>
-          </label>
           <button
             type="button"
             onClick={() => setShowTtsPanel(!showTtsPanel)}
@@ -179,22 +171,20 @@ export function AxisPage() {
       )}
 
       <AxisHorizonGroup
-        title={t('horizon_t1') || "Right Now (Next 2-5 Years)"}
+        title={t('horizon_t1')}
         questions={t1Questions}
         answers={answers}
         declinedQuestions={declinedQuestions}
         onAnswer={setAnswer}
         onDecline={declineQuestion}
-        showSimplified={showSimplified}
       />
       <AxisHorizonGroup
-        title={t('horizon_t2') || "Looking Ahead (20-50 Years)"}
+        title={t('horizon_t2')}
         questions={t2Questions}
         answers={answers}
         declinedQuestions={declinedQuestions}
         onAnswer={setAnswer}
         onDecline={declineQuestion}
-        showSimplified={showSimplified}
       />
       <div className="flex flex-wrap justify-between gap-2 mt-6">
         <button type="button" onClick={goBack} className="px-4 py-2 rounded border border-gray-300">

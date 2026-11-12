@@ -8,7 +8,8 @@ export interface ResultHistoryEntry {
   topMatchName: string
 }
 
-const STORAGE_KEY = 'tiam-result-history'
+// v2: the merged 144-statement Atlas. Results from the earlier question set are kept under the old key, unread.
+const STORAGE_KEY = 'atlas-result-history-v2'
 const MAX_ENTRIES = 20
 
 function readRaw(): ResultHistoryEntry[] {

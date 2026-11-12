@@ -62,12 +62,12 @@ describe('resultHistory', () => {
   })
 
   it('does not throw and returns an empty array if localStorage contains malformed JSON', () => {
-    localStorage.setItem('tiam-result-history', 'not valid json{{{')
+    localStorage.setItem('atlas-result-history-v2', 'not valid json{{{')
     expect(getResultHistory()).toEqual([])
   })
 
   it('filters out malformed entries instead of throwing', () => {
-    localStorage.setItem('tiam-result-history', JSON.stringify([{ garbage: true }, { ...buildEntry(), timestamp: 500 }]))
+    localStorage.setItem('atlas-result-history-v2', JSON.stringify([{ garbage: true }, { ...buildEntry(), timestamp: 500 }]))
     const history = getResultHistory()
     expect(history).toHaveLength(1)
     expect(history[0].timestamp).toBe(500)

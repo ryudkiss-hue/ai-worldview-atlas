@@ -4,7 +4,7 @@ import type { AxisVector } from './scoring'
 export interface ShareCardData {
   archetypeName: string
   summary: string
-  matchPercent: number
+  axesInAgreement: number
   combined: AxisVector
 }
 
@@ -58,7 +58,7 @@ export function drawShareCard(ctx: CanvasRenderingContext2D, data: ShareCardData
 
   ctx.fillStyle = '#34d399'
   ctx.font = '600 28px system-ui, sans-serif'
-  ctx.fillText(`${data.matchPercent}% match`, 60, afterName + 20)
+  ctx.fillText(`${data.axesInAgreement} of 8 axes in agreement`, 60, afterName + 20)
 
   ctx.fillStyle = '#cbd5e1'
   ctx.font = '400 24px system-ui, sans-serif'

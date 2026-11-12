@@ -56,36 +56,13 @@ export async function clearPersistentTTSCache(): Promise<boolean> {
   return false
 }
 
-// Hardcoded sets of question IDs that have static audio files saved in public/audio/
-const PRE_GENERATED_STD_AUDIO = new Set([
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-  11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-  31, 32, 33, 34, 35, 36
-])
-
-const PRE_GENERATED_SIMP_AUDIO = new Set<number>([])
-
 export async function fetchElevenLabsTTS(
   text: string,
   settings: TTSSettings,
-  questionId?: number,
-  isSimplified?: boolean
+  // Kept for call compatibility. Pre-recorded audio was removed because it read the previous wording.
+  _questionId?: number,
+  _isSimplified?: boolean
 ): Promise<string> {
-  // 1. Try local pre-generated file first (if questionId is provided)
-  if (questionId !== undefined) {
-    const isPreGenerated = isSimplified
-      ? PRE_GENERATED_SIMP_AUDIO.has(questionId)
-      : PRE_GENERATED_STD_AUDIO.has(questionId)
-
-    if (isPreGenerated) {
-      const base = import.meta.env.BASE_URL || '/'
-      const typeStr = isSimplified ? 'simp' : 'std'
-      const basePathNormalized = base.endsWith('/') ? base : `${base}/`
-      return `${basePathNormalized}audio/q_${questionId}_${typeStr}.mp3`
-    }
-  }
-
   const cacheKey = `${settings.voiceId}:${settings.stability}:${settings.similarityBoost}:${text}`
   
   // 2. Check in-memory cache

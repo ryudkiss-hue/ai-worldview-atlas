@@ -33,9 +33,9 @@ function TestConsumer() {
 }
 
 describe('QuizContext', () => {
-  it('builds a questionOrder with 7 T1 ids per axis on init', () => {
+  it('builds a questionOrder with 8 T1 ids per axis on init', () => {
     render(<QuizProvider><TestConsumer /></QuizProvider>)
-    expect(screen.getByTestId('order-teleological-t1-length').textContent).toBe('7')
+    expect(screen.getByTestId('order-teleological-t1-length').textContent).toBe('8')
   })
 
   it('records an answer, a scenario answer, and stakeholder tags independently', () => {
@@ -58,7 +58,7 @@ describe('QuizContext', () => {
     expect(screen.getByTestId('declined').textContent).toBe('')
     expect(screen.getByTestId('scenario-teleological').textContent).toBe('unset')
     expect(screen.getByTestId('tags').textContent).toBe('automation-exposed-worker')
-    expect(screen.getByTestId('order-teleological-t1-length').textContent).toBe('7')
+    expect(screen.getByTestId('order-teleological-t1-length').textContent).toBe('8')
   })
 
   it('questionOrder covers all 8 axes', () => {

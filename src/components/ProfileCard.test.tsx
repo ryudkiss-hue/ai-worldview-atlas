@@ -19,20 +19,16 @@ const match: ProfileMatch = {
 }
 
 describe('ProfileCard', () => {
-  it('shows the match-closeness percentage as the primary figure', () => {
-    renderWithProvider(<ProfileCard match={match} rank={1} />)
-    const maxDistance = Math.sqrt(8 * 20 ** 2)
-    const expectedPercent = Math.round(100 * (1 - 3.456 / maxDistance))
-    expect(screen.getByText(`${expectedPercent}% match`)).toBeInTheDocument()
+  it('shows how many axes are in agreement as the primary figure, instead of a percentage', () => {
+    renderWithProvider(<ProfileCard match={match} rank={1} agreement={6} />)
+    expect(screen.getByText('6 of 8 axes in agreement')).toBeInTheDocument()
+    expect(screen.queryByText(/% match/)).not.toBeInTheDocument()
   })
 
   it('still shows the profile name, summary, and rank', () => {
     renderWithProvider(<ProfileCard match={match} rank={1} />)
-    // tProfileName falls back to profile.id when not in translations; tProfileSummary falls back to ''
-    // so we test what's actually rendered
     expect(screen.getByText(/Match #1/)).toBeInTheDocument()
-    // Name from translations en.profiles.doomer.name or fallback to id
-    expect(screen.getByRole('heading', { level: 3 })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: 'Doomer' })).toBeInTheDocument()
   })
 
   it('shows the raw distance as a secondary detail', () => {

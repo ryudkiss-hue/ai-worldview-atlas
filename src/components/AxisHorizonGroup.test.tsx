@@ -5,8 +5,8 @@ import type { Question } from '../data/types'
 import { QuizProvider } from '../state/QuizContext'
 
 const sampleQuestions: Question[] = [
-  { id: 9999, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'A', statement: 'Sample statement one.' },
-  { id: 9998, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'B', statement: 'Sample statement two.' },
+  { id: 9999, pair: 9999, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'A', statement: 'Sample statement one.' },
+  { id: 9998, pair: 9998, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'B', statement: 'Sample statement two.' },
 ]
 
 function renderWithProvider(ui: React.ReactElement) {
@@ -40,7 +40,7 @@ describe('AxisHorizonGroup', () => {
         onDecline={onDecline}
       />,
     )
-    fireEvent.click(screen.getAllByText("I don't have a strong view on this")[0])
+    fireEvent.click(screen.getAllByText("I have no settled view on this")[0])
     expect(onDecline).toHaveBeenCalledWith(9999)
   })
 
@@ -55,6 +55,6 @@ describe('AxisHorizonGroup', () => {
         onDecline={() => {}}
       />,
     )
-    expect(screen.getAllByText("I don't have a strong view on this (selected)")).toHaveLength(1)
+    expect(screen.getAllByText("I have no settled view on this (selected)")).toHaveLength(1)
   })
 })

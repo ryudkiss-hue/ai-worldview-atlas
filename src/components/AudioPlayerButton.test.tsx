@@ -80,7 +80,6 @@ describe('AudioPlayerButton', () => {
           voiceId: 'naGqKMAolPCi1s94J9jk',
         }),
         100,
-        false
       )
     })
 
