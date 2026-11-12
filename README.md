@@ -186,7 +186,9 @@ src/
     ├── IntroPage.tsx             landing + stakeholder-tag checklist
     ├── AxisPage.tsx              one of 8 question pages (/quiz/:axisIndex)
     ├── ScenarioPage.tsx          optional situational scenarios (/scenarios)
-    └── ResultsPage.tsx           radar chart, matches, full report, PDF export
+    ├── ResultsPage.tsx           radar chart, matches, full report, PDF export
+    ├── ThoughtExperimentsPage.tsx the 25 thought experiments, unscored (/thought-experiments)
+    └── PaperScoresPage.tsx       enter the paper edition's 16 net totals to see the online results (/paper)
 ```
 
 ---

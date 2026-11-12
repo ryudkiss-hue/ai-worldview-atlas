@@ -6,6 +6,7 @@ import { AxisPage } from './pages/AxisPage'
 import { ScenarioPage } from './pages/ScenarioPage'
 import { ResultsPage } from './pages/ResultsPage'
 import { ThoughtExperimentsPage } from './pages/ThoughtExperimentsPage'
+import { PaperScoresPage } from './pages/PaperScoresPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/scenarios" element={<ScenarioPage />} />
           <Route path="/results" element={<ResultsPage />} />
           <Route path="/thought-experiments" element={<ThoughtExperimentsPage />} />
+          <Route path="/paper" element={<PaperScoresPage />} />
           {/* The Synthetic Compass and the old research flow are now part of the main assessment. */}
           <Route path="/compass/*" element={<Navigate to="/" replace />} />
           <Route path="/assessment" element={<Navigate to="/" replace />} />
