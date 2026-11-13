@@ -22,6 +22,9 @@ describe('new type shapes compile and hold expected fields', () => {
       nextSteps: ['step'],
       reflectiveBreakdown: { mindAssumption: 'm', laborAssumption: 'l', connectionAssumption: 'c' },
       commonlyConfusedWith: { profileId: 'near-term-ai-ethicist', profileName: 'Near-Term AI Ethicist', distinction: 'd' },
+      axisReasons: { teleological: 't', risk: 'r', socioEconomic: 's', ontological: 'o', legalMoral: 'l', evolutionary: 'e', relational: 'rel', geopolitical: 'g' },
+      objections: [{ objection: 'An objection.', reply: 'A reply.' }],
+      landmarks: [{ name: 'A landmark', year: '2020', what: 'What happened.', source: 'Where it comes from' }],
     }
     expect(content.reflectiveBreakdown.mindAssumption).toBe('m')
     expect(content.commonlyConfusedWith.profileId).toBe('near-term-ai-ethicist')

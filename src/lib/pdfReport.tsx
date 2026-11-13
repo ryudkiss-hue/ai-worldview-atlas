@@ -2,6 +2,7 @@ import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer'
 import { axes } from '../data/axes'
 import type { AxisVector, ProfileMatch } from './scoring'
 import type { ProfileReportContent } from '../data/types'
+import { describePosition } from './axisPositions'
 
 const styles = StyleSheet.create({
   page: { padding: 40, fontSize: 11, fontFamily: 'Helvetica' },
@@ -59,6 +60,31 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
         {topContent.extendedNarrative.map((paragraph, index) => (
           <Text key={index} style={styles.paragraph}>{paragraph}</Text>
         ))}
+      </Page>
+
+      <Page style={styles.page}>
+        <Text style={styles.heading}>Where {top.profile.name} Stands on Each Axis</Text>
+        {axes.map((axis) => (
+          <Text key={axis.id} style={styles.paragraph}>
+            {axis.name} ({describePosition(axis.id, top.profile.coords[axis.id])}): {topContent.axisReasons[axis.id]}
+          </Text>
+        ))}
+        <Text style={styles.heading}>The Strongest Objections</Text>
+        {topContent.objections.map((o) => (
+          <View key={o.objection}>
+            <Text style={styles.paragraph}>{o.objection}</Text>
+            <Text style={{ ...styles.paragraph, marginLeft: 12 }}>{o.reply}</Text>
+          </View>
+        ))}
+        <Text style={styles.heading}>Where This View Shows Up</Text>
+        {topContent.landmarks.map((l) => (
+          <Text key={l.name} style={styles.paragraph}>
+            {l.name} ({l.year}). {l.what} Source: {l.source}
+          </Text>
+        ))}
+      </Page>
+
+      <Page style={styles.page}>
         <Text style={styles.heading}>Thinkers</Text>
         {topContent.thinkers.map((thinker) => (
           <Text key={thinker.name} style={styles.paragraph}>

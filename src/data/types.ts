@@ -53,7 +53,42 @@ export interface Scenario {
   optionB: string
 }
 
+export interface Thinker {
+  name: string
+  bio: string
+  connection: string
+}
+
+export interface ReadingItem {
+  title: string
+  author: string
+  note: string
+}
+
+/** A real event, law, document or project where this view shows up, with where it comes from. */
+export interface Landmark {
+  name: string
+  year: string
+  what: string
+  source: string
+}
+
+export interface ProfileExpansion {
+  /** One more narrative paragraph, appended to extendedNarrative */
+  moreNarrative: string
+  /** Why this archetype sits where it does on each axis, in the reader's voice */
+  axisReasons: Record<AxisId, string>
+  /** The strongest objections to this view, each with the reply its holders give */
+  objections: { objection: string; reply: string }[]
+  landmarks: Landmark[]
+  addedThinkers: Thinker[]
+  addedReading: ReadingItem[]
+}
+
 export interface ProfileReportContent {
+  axisReasons: Record<AxisId, string>
+  objections: { objection: string; reply: string }[]
+  landmarks: Landmark[]
   profileId: string
   extendedNarrative: string[]
   shadowSide: string

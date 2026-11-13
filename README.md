@@ -97,7 +97,7 @@ Creative-Labor/Artist Rights Advocate · Labor Movement/Collective Bargaining Ad
 Global South Techno-Sovereigntist · Indigenous Data Sovereignty Advocate · AI-for-Global-Development Optimist · Algorithmic Colonialism Critic · African-Language AI Sovereignty Advocate · Border/Migration Surveillance Critic
 </details>
 
-Full definitions, 8-axis coordinates, and one-paragraph summaries for every archetype live in [`src/data/profiles.ts`](src/data/profiles.ts). Every archetype also has a full written report — extended narrative, real thinkers, further reading, next steps, a "commonly confused with" distinction naming an archetype people often mix it up with and what separates them, and a reflective breakdown of its implicit assumptions — in [`src/data/profileReports.ts`](src/data/profileReports.ts).
+Full definitions, 8-axis coordinates, and one-paragraph summaries for every archetype live in [`src/data/profiles.ts`](src/data/profiles.ts). Every archetype also has a full written report — extended narrative, its position and reasoning on each of the eight axes, the strongest objections with replies, real-world landmarks with sources ([`profileExpansions.ts`](src/data/profileExpansions.ts)), real thinkers, further reading, next steps, a "commonly confused with" distinction naming an archetype people often mix it up with and what separates them, and a reflective breakdown of its implicit assumptions — in [`src/data/profileReports.ts`](src/data/profileReports.ts).
 
 ---
 
