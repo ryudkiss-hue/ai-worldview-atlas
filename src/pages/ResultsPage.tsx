@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { axes } from '../data/axes'
-import { questions } from '../data/questions'
+import { questions, questionsForAxis } from '../data/questions'
+import { questionsForMode } from '../data/shortForm'
 import { profiles } from '../data/profiles'
 import { profileReports } from '../data/profileReports'
 import { stakeholderTags } from '../data/stakeholderTags'
@@ -13,6 +14,10 @@ import {
   classify,
   axesInAgreement,
   isCloseCall,
+  isEqualWeights,
+  CLOSE_CALL_MARGIN,
+  CLOSE_CALL_MARGIN_SHORT,
+  EQUAL_WEIGHTS,
   type AxisVector,
 } from '../lib/scoring'
 import { encodeShareLink, decodeShareLink } from '../lib/shareLink'
@@ -32,11 +37,29 @@ import { coreArchetype, coreCode, describeCore, tierInfo, type CoreAxis } from '
 import { biggestGaps, withAxisPositions } from '../lib/axisPositions'
 import { failedAttentionChecks } from '../data/attentionChecks'
 import { STUDY_FORM_URL } from '../data/study'
+import { AxisWeightsPanel } from '../components/AxisWeightsPanel'
+import { StatementComparison } from '../components/StatementComparison'
 
 export function ResultsPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { answers, reset, scenarioAnswers, selectedStakeholderTags, declinedQuestions, checkAnswers, t, tProfileName, tProfileSummary, tAxis } = useQuiz()
+  const {
+    answers,
+    reset,
+    scenarioAnswers,
+    selectedStakeholderTags,
+    declinedQuestions,
+    checkAnswers,
+    mode,
+    setMode,
+    axisWeights,
+    setAxisWeight,
+    resetWeights,
+    t,
+    tProfileName,
+    tProfileSummary,
+    tAxis,
+  } = useQuiz()
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
   const [pdfStatus, setPdfStatus] = useState<'idle' | 'generating' | 'failed'>('idle')
   const [imageStatus, setImageStatus] = useState<'idle' | 'generating' | 'failed'>('idle')
@@ -51,23 +74,31 @@ export function ResultsPage() {
   const sharedParam = searchParams.get('d')
   const decoded = useMemo(() => (sharedParam ? decodeShareLink(sharedParam) : null), [sharedParam])
   const staleLink = !!sharedParam && !decoded
-  const hasNoData = !decoded && Object.keys(answers).length === 0
+  // Scores are scaled by the statements actually shown: all 144, or the 48 of the short version.
+  const resultMode = decoded ? (decoded.mode ?? 'full') : mode
+  const modeQuestions = questionsForMode(resultMode)
+  const hasNoData = !decoded && !modeQuestions.some((q) => answers[q.id] !== undefined)
+  const modeDeclined = declinedQuestions.filter((id) => modeQuestions.some((q) => q.id === id))
 
   const { t1Raw, t2Raw } = useMemo(() => {
     if (decoded) return decoded
     return {
-      t1Raw: computeRawAxisScores(questions, answers, 'T1'),
-      t2Raw: computeRawAxisScores(questions, answers, 'T2'),
+      t1Raw: computeRawAxisScores(modeQuestions, answers, 'T1'),
+      t2Raw: computeRawAxisScores(modeQuestions, answers, 'T2'),
     }
-  }, [decoded, answers])
+  }, [decoded, answers, modeQuestions])
 
-  const t1Scaled: AxisVector = scaleAxisScores(t1Raw, 'T1')
-  const t2Scaled: AxisVector = scaleAxisScores(t2Raw, 'T2')
-  const combined = combineHorizons(t1Scaled, t2Scaled)
-  const matches = classify(combined, profiles)
+  const t1Scaled: AxisVector = scaleAxisScores(t1Raw, 'T1', modeQuestions)
+  const t2Scaled: AxisVector = scaleAxisScores(t2Raw, 'T2', modeQuestions)
+  const combined = combineHorizons(t1Scaled, t2Scaled, modeQuestions)
+  // Weights change only which archetypes rank closest; equal weights give the ordinary distance.
+  const weights = decoded ? (decoded.weights ?? EQUAL_WEIGHTS) : axisWeights
+  const weighted = !isEqualWeights(weights)
+  const matches = classify(combined, profiles, weighted ? weights : undefined)
   const topMatches = matches.slice(0, 3)
   const topMatch = topMatches[0]
-  const closeCall = isCloseCall(matches)
+  const closeCall = isCloseCall(matches, resultMode === 'short' ? CLOSE_CALL_MARGIN_SHORT : CLOSE_CALL_MARGIN)
+  const remainingFull = questions.filter((q) => answers[q.id] === undefined && !declinedQuestions.includes(q.id)).length
   const closeCallAxes = closeCall ? biggestGaps(matches[0].profile.coords, matches[1].profile.coords, 3, 1) : []
   const missedChecks = decoded ? [] : failedAttentionChecks(checkAnswers)
   const core = coreArchetype(combined)
@@ -92,7 +123,7 @@ export function ResultsPage() {
     if (decoded || hasNoData || savedHistoryRef.current) return
     savedHistoryRef.current = true
     const priorHistory = recordResult(
-      { t1Raw, t2Raw, topMatchId: topMatch.profile.id, topMatchName: topMatch.profile.name },
+      { t1Raw, t2Raw, topMatchId: topMatch.profile.id, topMatchName: topMatch.profile.name, mode: resultMode },
       Date.now(),
     )
     setPriorEntry(priorHistory.length > 0 ? priorHistory[priorHistory.length - 1] : null)
@@ -101,23 +132,24 @@ export function ResultsPage() {
 
   const priorCombined = useMemo(() => {
     if (!priorEntry) return null
-    return combineHorizons(scaleAxisScores(priorEntry.t1Raw, 'T1'), scaleAxisScores(priorEntry.t2Raw, 'T2'))
+    const qs = questionsForMode(priorEntry.mode ?? 'full')
+    return combineHorizons(scaleAxisScores(priorEntry.t1Raw, 'T1', qs), scaleAxisScores(priorEntry.t2Raw, 'T2', qs), qs)
   }, [priorEntry])
 
   const selectedTagObjects = stakeholderTags.filter((tag) => selectedStakeholderTags.includes(tag.id))
 
   const topDeclineAxis = useMemo<{ name: string; count: number } | null>(() => {
-    if (decoded || declinedQuestions.length === 0) return null
+    if (decoded || modeDeclined.length === 0) return null
     let best: { name: string; count: number } | null = null
     axes.forEach((axis) => {
-      const count = declinedQuestions.filter((qId) => questions.find((q) => q.id === qId)?.axisId === axis.id).length
+      const count = modeDeclined.filter((qId) => questions.find((q) => q.id === qId)?.axisId === axis.id).length
       if (count > 0 && (!best || count > best.count)) best = { name: axis.name, count }
     })
     return best
-  }, [decoded, declinedQuestions])
+  }, [decoded, modeDeclined])
 
   async function handleShare() {
-    const encoded = encodeShareLink({ t1Raw, t2Raw })
+    const encoded = encodeShareLink({ t1Raw, t2Raw, mode: resultMode, weights })
     const url = `${window.location.origin}${import.meta.env.BASE_URL}#/results?d=${encoded}`
     clearTimeout(copyStatusResetRef.current)
     try {
@@ -127,6 +159,12 @@ export function ResultsPage() {
       setCopyStatus('failed')
     }
     copyStatusResetRef.current = setTimeout(() => setCopyStatus('idle'), 2500)
+  }
+
+  function handleFinishFull() {
+    setMode('full')
+    const next = axes.find((a) => questionsForAxis(a.id).some((q) => answers[q.id] === undefined && !declinedQuestions.includes(q.id)))
+    navigate(next ? `/quiz/${next.number}` : '/results')
   }
 
   function handleRetake() {
@@ -143,7 +181,7 @@ export function ResultsPage() {
         <div className="max-w-2xl mx-auto p-6 text-center">
           <h2 className="text-2xl font-bold mb-4">This link is from an earlier version</h2>
           <p className="text-gray-700 mb-6">
-            The Atlas has been rebuilt with a new set of statements, so results shared from the earlier version can't be shown
+            The Atlas's statements have been reworded since this link was made, so its result can't be shown
             here. Take the current assessment to get a result you can share.
           </p>
           <Link to="/" className="inline-block px-6 py-3 rounded bg-blue-600 text-white text-lg">
@@ -223,6 +261,26 @@ export function ResultsPage() {
       <h2 className="text-2xl font-bold mb-4">{t('results_title')}</h2>
       <RadarChart combined={combined} comparisonProfile={{ name: tProfileName(topMatch.profile.id), coords: topMatch.profile.coords }} />
 
+      {resultMode === 'short' && (
+        <div className="mt-4 border-l-4 border-indigo-500 bg-indigo-50 p-4">
+          <h3 className="text-lg font-semibold mb-1">{decoded ? 'From the Short Version' : 'You Took the Short Version'}</h3>
+          <p className="text-gray-700">
+            This result comes from {modeQuestions.length} of the {questions.length} statements, six per axis instead of eighteen.
+            Each score sits on the same −10 to +10 scale but rests on fewer answers, so one answer moves it more and your closest
+            archetype is less certain. Treat it as a first look.
+          </p>
+          {!decoded && remainingFull > 0 && (
+            <button
+              type="button"
+              onClick={handleFinishFull}
+              className="mt-3 px-4 py-2 rounded bg-indigo-600 text-white font-semibold"
+            >
+              Answer the other {remainingFull} for the full result
+            </button>
+          )}
+        </div>
+      )}
+
       {selectedTagObjects.length > 0 && (
         <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 p-4">
           <h3 className="text-lg font-semibold mb-1">Your Stake</h3>
@@ -235,11 +293,11 @@ export function ResultsPage() {
         </div>
       )}
 
-      {!decoded && declinedQuestions.length > 0 && (
+      {!decoded && modeDeclined.length > 0 && (
         <div className="mt-4 border-l-4 border-gray-400 bg-gray-50 p-4">
           <h3 className="text-lg font-semibold mb-1">No Settled View</h3>
           <p className="text-gray-700">
-            You marked {declinedQuestions.length} of {questions.length} statements as having no settled
+            You marked {modeDeclined.length} of {modeQuestions.length} statements as having no settled
             view{topDeclineAxis ? `, mostly on ${topDeclineAxis.name}` : ''}. Each counts as zero. A near-zero score on an
             axis can mean a genuinely balanced position, or it can mean this. The math can&apos;t tell
             those apart on its own — only you can.
@@ -253,6 +311,7 @@ export function ResultsPage() {
           <p className="text-gray-700 mb-3">
             Last taken {new Date(priorEntry.timestamp).toLocaleDateString()}, you matched closest to{' '}
             <strong>{priorEntry.topMatchName}</strong>
+            {(priorEntry.mode ?? 'full') !== resultMode && ` (using the ${priorEntry.mode === 'short' ? 'short' : 'full'} version)`}
             {priorEntry.topMatchId === topMatch.profile.id
               ? ' — the same match as this time.'
               : `. This time it's ${topMatch.profile.name}.`}
@@ -347,7 +406,14 @@ export function ResultsPage() {
         side&quot; counts the axes where you and the archetype fall in the same band (toward pole A, the middle from −2 to +2,
         or toward pole B). The two can disagree: an archetype just over a band boundary on several axes shares fewer sides
         with you but can still be closer overall than one that matches your sides and is far away on one axis.
+        {weighted && ' These matches use the axis weights below, so gaps on the axes that count more pull harder.'}
       </p>
+
+      <AxisWeightsPanel
+        weights={weights}
+        onChange={decoded ? undefined : setAxisWeight}
+        onReset={decoded ? undefined : resetWeights}
+      />
 
       <section className="mt-8 rounded-lg border border-gray-200 p-4" aria-labelledby="core-three-heading">
         <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Your core three · {coreCode(core.tiers)}</p>
@@ -355,9 +421,9 @@ export function ResultsPage() {
         <p className="text-gray-600 italic">{core.tagline}</p>
         <p className="text-gray-800 mt-2">{describeCore(core)}</p>
         <p className="text-sm text-gray-500 mt-2">
-          A second reading on the three axes about artificial minds themselves: X is Mind, Y is Moral Standing, and Z is Ends of
-          Intelligence read from the beyond-biology end (Z−) to the living-world end (Z+). Your tiers on these three pick one of 27
-          archetypes. Related thinkers, one group per axis:{' '}
+          A second reading from three axes about AI systems themselves and what they are for: X is Machine Experience, Y is Moral
+          Standing, and Z is Growth and Limits read from the growth-first end (Z−) to the within-limits end (Z+). Your tiers on
+          these three pick one of 27 archetypes. Related thinkers, one group per axis:{' '}
           {(['x', 'y', 'z'] as CoreAxis[]).map((k, i) => tierInfo(k, core.tiers[i]).thinkers).join('; ')}. Each argued something
           close to one part; none necessarily holds all of it.
         </p>
@@ -421,6 +487,15 @@ export function ResultsPage() {
           </tbody>
         </table>
       </div>
+
+      {!decoded && (
+        <StatementComparison
+          questions={modeQuestions}
+          answers={answers}
+          declinedQuestions={declinedQuestions}
+          profiles={topMatches.map((m) => m.profile)}
+        />
+      )}
 
       <div className="border-t border-gray-200 mt-12 pt-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'View Report & Manifesto'}</h3>
@@ -488,8 +563,13 @@ export function ResultsPage() {
 
       <p className="mt-8 text-gray-700">
         Want to test your views against harder cases?{' '}
-        <Link to="/thought-experiments" className="text-blue-600 underline">Read the 25 thought experiments</Link>. They don&apos;t
+        <Link to="/thought-experiments" className="text-blue-600 underline">Read the thought experiments</Link>. They don&apos;t
         change your scores.
+      </p>
+      <p className="mt-4 text-gray-700">
+        Curious about AI as a friend, partner or therapist?{' '}
+        <Link to="/intimacy" className="text-blue-600 underline">Try the focus module on synthetic intimacy</Link>. It has its own
+        score and a summary of the research, and it doesn&apos;t change this result.
       </p>
 
       {STUDY_FORM_URL && (

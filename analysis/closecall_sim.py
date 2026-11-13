@@ -8,6 +8,9 @@ import numpy as np
 import os
 REF = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'atlas_reference.json'), encoding='utf-8'))
 items = [dict(i, agreeShiftsToward='A' if i['direction'] == 1 else 'B') for i in REF['items']]
+if '--short' in sys.argv:   # the short version: three pairs per axis
+    SHORT = {7, 13, 15, 25, 27, 31, 41, 49, 53, 55, 67, 69, 79, 81, 85, 93, 101, 103, 109, 117, 121, 127, 137, 143}
+    items = [i for i in items if i['id'] in SHORT or i['id'] - 1 in SHORT]
 AX = [a['id'] for a in REF['axes']]
 profiles = REF['profiles']
 P = np.array([[p['coords'][a] for a in AX] for p in profiles], float)

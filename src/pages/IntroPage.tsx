@@ -1,17 +1,25 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useQuiz } from '../state/QuizContext'
 import { stakeholderTags } from '../data/stakeholderTags'
 import { axes } from '../data/axes'
-import { questions, questionsForAxis } from '../data/questions'
+import { questionsForAxis } from '../data/questions'
+import { isInShortForm, questionsForMode, shortQuestions, type QuizMode } from '../data/shortForm'
+import { questions } from '../data/questions'
+import { intimacyStatements } from '../data/intimacyModule'
 
 export function IntroPage() {
   const navigate = useNavigate()
-  const { reset, selectedStakeholderTags, setStakeholderTags, t, hasProgress, answers, declinedQuestions } = useQuiz()
-  const done = Object.keys(answers).length + declinedQuestions.length
+  const { startQuiz, selectedStakeholderTags, setStakeholderTags, t, hasProgress, answers, declinedQuestions, mode } = useQuiz()
+  const modeQuestions = questionsForMode(mode)
+  const isOpen = (id: number) => answers[id] === undefined && !declinedQuestions.includes(id)
+  const done = modeQuestions.filter((q) => !isOpen(q.id)).length
   // First axis with a statement still to answer; if none, the quiz is finished and continuing goes to results.
-  const nextAxis = axes.find((a) => questionsForAxis(a.id).some((q) => answers[q.id] === undefined && !declinedQuestions.includes(q.id)))
+  const nextAxis = axes.find((a) =>
+    questionsForAxis(a.id).some((q) => (mode === 'full' || isInShortForm(q.id)) && isOpen(q.id)),
+  )
 
-  function handleStart() {
+  function handleStart(chosen: QuizMode) {
+    startQuiz(chosen)
     navigate('/quiz/1')
   }
 
@@ -67,7 +75,7 @@ export function IntroPage() {
 
       <div className="text-center">
         {hasProgress && (
-          <div className="mb-4">
+          <div className="mb-6">
             <button
               type="button"
               onClick={handleContinue}
@@ -76,24 +84,49 @@ export function IntroPage() {
               {nextAxis ? 'Continue where you left off' : 'See your results'}
             </button>
             <p className="text-sm text-gray-500 mt-2">
-              {done} of {questions.length} statements answered. Your answers are saved in this browser only.
+              {mode === 'short' ? 'Short version: ' : ''}
+              {done} of {modeQuestions.length} statements answered. Your answers are saved in this browser only.
             </p>
+            <p className="text-sm text-gray-500 mt-3">Or start over, which clears these answers:</p>
           </div>
         )}
-        <button
-          type="button"
-          onClick={() => {
-            reset()
-            handleStart()
-          }}
-          className={
-            hasProgress
-              ? 'px-6 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold transition'
-              : 'px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400'
-          }
-        >
-          {hasProgress ? 'Start over' : t('start')}
-        </button>
+        <div className="flex flex-col sm:flex-row sm:justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => handleStart('full')}
+            className={
+              hasProgress
+                ? 'px-6 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold transition'
+                : 'px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400'
+            }
+          >
+            {hasProgress ? `Full Atlas (${questions.length})` : t('start')}
+          </button>
+          <button
+            type="button"
+            onClick={() => handleStart('short')}
+            className="px-6 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold transition"
+          >
+            Short version ({shortQuestions.length})
+          </button>
+        </div>
+        <p className="text-sm text-gray-500 mt-3 max-w-md mx-auto">
+          The short version uses {shortQuestions.length} of the {questions.length} statements and takes about 10 minutes. Its scores
+          are rougher, and you can answer the rest later to get the full result.
+        </p>
+      </div>
+
+      <div className="mt-10 rounded-lg border border-gray-200 p-4">
+        <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Focus module · optional · about 5 minutes</p>
+        <h2 className="text-lg font-semibold mt-1">Friends, partners and therapists</h2>
+        <p className="text-gray-700 mt-1">
+          {intimacyStatements.length} statements on AI as a best friend, partner or therapist, and what that may do to attachment,
+          critical thinking, identity, loneliness and intimacy, with a summary of the research. Scored separately; it never changes
+          your Atlas result.
+        </p>
+        <Link to="/intimacy" className="inline-block mt-2 text-blue-600 underline font-semibold">
+          Open the focus module
+        </Link>
       </div>
     </div>
   )

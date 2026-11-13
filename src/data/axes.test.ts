@@ -23,7 +23,7 @@ describe('axes', () => {
   })
 
   it('getAxisById finds an existing axis and returns undefined for unknown ids', () => {
-    expect(getAxisById('geopolitical')?.name).toBe('Geopolitics')
+    expect(getAxisById('geopolitical')?.name).toBe('Nations and the World')
     expect(getAxisById('not-real')).toBeUndefined()
   })
 })

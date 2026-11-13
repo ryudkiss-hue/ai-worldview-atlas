@@ -7,7 +7,7 @@ export interface ArchetypeCluster {
 export const archetypeClusters: ArchetypeCluster[] = [
   {
     id: 'precautionary-safety',
-    name: 'Precautionary/Safety',
+    name: 'Caution and safety',
     profileIds: [
       'doomer', 'ai-safety-institutionalist', 'ea-longtermist',
       'rationalist-alignment-researcher', 'global-governance-technocrat',
@@ -18,7 +18,7 @@ export const archetypeClusters: ArchetypeCluster[] = [
   },
   {
     id: 'accelerationist-techno-optimist',
-    name: 'Accelerationist/Techno-Optimist',
+    name: 'Speed and optimism',
     profileIds: [
       'eacc-maximalist', 'open-source-libertarian', 'cyberpunk-anti-corporate-accelerationist',
       'silicon-valley-techno-optimist', 'corporate-ai-pragmatist',
@@ -28,7 +28,7 @@ export const archetypeClusters: ArchetypeCluster[] = [
   },
   {
     id: 'state-power-security',
-    name: 'State-Power/Security',
+    name: 'State power and security',
     profileIds: [
       'techno-nationalist-hawk', 'authoritarian-state-control-advocate', 'military-ai-strategist',
       'chip-sovereignty-enforcement-strategist', 'ai-arms-control-verification-specialist',
@@ -37,12 +37,12 @@ export const archetypeClusters: ArchetypeCluster[] = [
   },
   {
     id: 'anti-concentration-populist',
-    name: 'Anti-Concentration/Populist',
+    name: 'Spreading power out',
     profileIds: ['open-science-internationalist', 'anti-monopoly-populist', 'pragmatic-centrist', 'platform-cooperativist'],
   },
   {
     id: 'relational-companionship',
-    name: 'Relational/Companionship',
+    name: 'Relationships and moral standing',
     profileIds: [
       'companion-tech-romantic', 'affective-biocentrist', 'bio-conservative-traditionalist',
       'digital-rights-advocate', 'faith-rooted-ai-ethicist', 'xenocentric-steward',
@@ -51,7 +51,7 @@ export const archetypeClusters: ArchetypeCluster[] = [
   },
   {
     id: 'material-labor-stakes',
-    name: 'Material/Labor Stakes',
+    name: 'Work and livelihoods',
     profileIds: [
       'creative-labor-artist-rights-advocate', 'labor-movement-collective-bargaining-advocate',
       'disability-rights-accessibility-advocate', 'ghost-work-labor-advocate',
@@ -60,7 +60,7 @@ export const archetypeClusters: ArchetypeCluster[] = [
   },
   {
     id: 'sovereignty-marginalized-voice',
-    name: 'Sovereignty/Marginalized Voice',
+    name: 'Self-determination and rights',
     profileIds: [
       'global-south-techno-sovereigntist', 'indigenous-data-sovereignty-advocate', 'ai-global-development-optimist',
       'algorithmic-colonialism-critic', 'african-language-ai-sovereignty-advocate', 'border-migration-surveillance-critic',

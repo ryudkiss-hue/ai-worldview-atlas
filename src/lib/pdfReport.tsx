@@ -3,6 +3,7 @@ import { axes } from '../data/axes'
 import type { AxisVector, ProfileMatch } from './scoring'
 import type { ProfileReportContent } from '../data/types'
 import { describePosition } from './axisPositions'
+import { uiStrings } from '../data/uiStrings'
 
 const styles = StyleSheet.create({
   page: { padding: 40, fontSize: 11, fontFamily: 'Helvetica' },
@@ -57,6 +58,7 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
 
       <Page style={styles.page}>
         <Text style={styles.heading}>Your Top Match: {top.profile.name}</Text>
+        <Text style={styles.paragraph}>{uiStrings.report_framing}</Text>
         {topContent.extendedNarrative.map((paragraph, index) => (
           <Text key={index} style={styles.paragraph}>{paragraph}</Text>
         ))}

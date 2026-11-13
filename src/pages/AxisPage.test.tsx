@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { AxisPage } from './AxisPage'
-import { QuizProvider } from '../state/QuizContext'
+import { QuizProvider, PROGRESS_KEY } from '../state/QuizContext'
 
 function renderAxisPage(initialAxis: number) {
   return render(
@@ -21,9 +21,9 @@ function renderAxisPage(initialAxis: number) {
 describe('AxisPage', () => {
   it('shows the axis name and its question, but not the pole-vs-pole label', () => {
     renderAxisPage(1)
-    expect(screen.getByText('Mind')).toBeInTheDocument()
-    expect(screen.getByText('Could AI systems have minds?')).toBeInTheDocument()
-    expect(screen.queryByText(/Silicon Functionalism/)).not.toBeInTheDocument()
+    expect(screen.getByText('Machine Experience')).toBeInTheDocument()
+    expect(screen.getByText('Could an AI system ever have real experiences, such as feelings?')).toBeInTheDocument()
+    expect(screen.queryByText(/Possible in machines/)).not.toBeInTheDocument()
     expect(screen.queryByText(/vs\./)).not.toBeInTheDocument()
   })
 
@@ -42,7 +42,7 @@ describe('AxisPage', () => {
 
   it('mixes one optional check statement into the Risk page, without a no-settled-view option or a required answer', () => {
     renderAxisPage(6)
-    expect(screen.getByText('Risk')).toBeInTheDocument()
+    expect(screen.getByText('Speed and Safety')).toBeInTheDocument()
     expect(screen.getAllByRole('radio')).toHaveLength(19 * 4)
     expect(screen.getByText(/checks that answers are being read/)).toBeInTheDocument()
     expect(screen.getAllByText('I have no settled view on this')).toHaveLength(18)
@@ -100,5 +100,12 @@ describe('AxisPage', () => {
     screen.getAllByRole('radio', { name: 'Strongly Agree' }).slice(0, 9).forEach((radio) => fireEvent.click(radio))
     expect(progressbar.getAttribute('aria-valuenow')).toBe(String(Math.round((9 / 144) * 100)))
     expect(screen.getByText('Axis 1 of 8 · Question 9 of 144')).toBeInTheDocument()
+  })
+
+  it('shows only the six short-version statements in the short version', () => {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: {}, mode: 'short' }))
+    renderAxisPage(1)
+    expect(screen.getAllByRole('radio', { name: 'Strongly Agree' })).toHaveLength(6)
+    expect(screen.getByText(/Short version · Axis 1 of 8 · Question 0 of 48/)).toBeInTheDocument()
   })
 })

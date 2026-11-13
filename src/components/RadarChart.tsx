@@ -19,7 +19,7 @@ const YOU = '#2563eb'
 const THEM = '#dc2626'
 const NARROW_QUERY = '(max-width: 480px)'
 
-/** Splits an axis name into at most two lines, so long names like "Ends of Intelligence" fit at phone width. */
+/** Splits an axis name into at most two lines, so long names like "Growth and Limits" fit at phone width. */
 export function labelLines(name: string, maxChars = 11): string[] {
   if (name.length <= maxChars) return [name]
   const words = name.split(' ')

@@ -4,7 +4,7 @@ import { tierOf } from './scoring'
 
 const signed = (v: number) => (v > 0 ? `+${v}` : `${v}`)
 
-/** One line per axis describing a position in words, e.g. "+7, toward Machine Patienthood". */
+/** One line per axis describing a position in words, e.g. "+7, toward Owed some protection". */
 export function describePosition(axisId: AxisId, value: number): string {
   const axis = axes.find((a) => a.id === axisId)!
   const tier = tierOf(value)

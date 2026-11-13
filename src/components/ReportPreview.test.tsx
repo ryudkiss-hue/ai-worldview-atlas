@@ -41,7 +41,7 @@ describe('ReportPreview', () => {
     render(<ReportPreview content={content} />)
     expect(screen.getByText('Where This View Stands on Each Axis')).toBeInTheDocument()
     Object.values(content.axisReasons).forEach((r) => expect(screen.getByText(r)).toBeInTheDocument())
-    expect(screen.getByText('+9, toward Precautionary')).toBeInTheDocument()
+    expect(screen.getByText('+9, toward Caution first')).toBeInTheDocument()
   })
 
   it('renders the objections with replies, and landmarks with their sources', () => {

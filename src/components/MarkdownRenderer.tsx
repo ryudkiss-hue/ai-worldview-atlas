@@ -195,7 +195,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     }
 
     elements.push(
-      <p key={`p-${idx}`} className="text-gray-700 leading-relaxed my-4 text-justify">
+      <p key={`p-${idx}`} className="text-gray-700 leading-relaxed my-4">
         {renderInlineText(line)}
       </p>
     )

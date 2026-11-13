@@ -9,6 +9,9 @@ import { questions } from '../data/questions'
 import { scenarios } from '../data/scenarios'
 import { profiles } from '../data/profiles'
 import { attentionChecks } from '../data/attentionChecks'
+import { questionsForMode, type QuizMode } from '../data/shortForm'
+import { intimacyStatements } from '../data/intimacyModule'
+import { AXIS_WEIGHT_OPTIONS, EQUAL_WEIGHTS, type AxisWeights } from '../lib/scoring'
 
 export type QuestionOrder = Record<AxisId, { t1: number[]; t2: number[] }>
 
@@ -36,6 +39,12 @@ interface QuizState {
   selectedStakeholderTags: string[]
   /** Answers to the optional attention checks, kept apart from the scored answers */
   checkAnswers: Record<number, number>
+  /** Full 144-statement Atlas or the 48-statement short version */
+  mode: QuizMode
+  /** How much each axis counts when matching archetypes (never changes the scores) */
+  axisWeights: AxisWeights
+  /** The optional synthetic-intimacy module: 1, 2, 4, 5, or 0 for no settled view. Never part of the core score. */
+  intimacyAnswers: Record<number, number>
 }
 
 function buildInitialState(): QuizState {
@@ -46,15 +55,20 @@ function buildInitialState(): QuizState {
     scenarioAnswers: {},
     selectedStakeholderTags: [],
     checkAnswers: {},
+    mode: 'full',
+    axisWeights: { ...EQUAL_WEIGHTS },
+    intimacyAnswers: {},
   }
 }
 
 /**
  * Progress is saved in this browser only, so a refresh or a closed tab doesn't lose 144 answers. The key carries
- * the item-set date: if statements change, old progress is dropped rather than applied to new wording.
+ * the item-set id: if statements change, old progress is dropped rather than applied to new wording.
  */
-export const PROGRESS_KEY = 'atlas-quiz-progress-2026-11-13'
+export const PROGRESS_KEY = 'atlas-quiz-progress-86c01d104481'
 const VALID_ANSWERS = new Set([1, 2, 4, 5])
+const INTIMACY_VALUES = new Set([0, 1, 2, 4, 5])
+const intimacyIds = new Set(intimacyStatements.map((q) => q.id))
 
 function sameIds(a: unknown, b: number[]): boolean {
   return Array.isArray(a) && a.length === b.length && [...a].sort((x, y) => x - y).join() === [...b].sort((x, y) => x - y).join()
@@ -96,6 +110,18 @@ export function loadSavedProgress(): QuizState | null {
         ? saved.selectedStakeholderTags.filter((x) => typeof x === 'string')
         : [],
       checkAnswers: pick(saved.checkAnswers, checkIds),
+      mode: saved.mode === 'short' ? 'short' : 'full',
+      axisWeights: Object.fromEntries(
+        axes.map((a) => {
+          const w = saved.axisWeights?.[a.id]
+          return [a.id, AXIS_WEIGHT_OPTIONS.some((o) => o.value === w) ? w : 1]
+        }),
+      ) as AxisWeights,
+      intimacyAnswers: Object.fromEntries(
+        Object.entries(saved.intimacyAnswers && typeof saved.intimacyAnswers === 'object' ? saved.intimacyAnswers : {}).filter(
+          ([k, v]) => intimacyIds.has(Number(k)) && INTIMACY_VALUES.has(v as number),
+        ),
+      ) as Record<number, number>,
     }
   } catch {
     return null
@@ -118,6 +144,12 @@ type QuizAction =
   | { type: 'SET_STAKEHOLDER_TAGS'; tagIds: string[] }
   | { type: 'ANSWER_CHECK'; checkId: number; value: number }
   | { type: 'RESET' }
+  | { type: 'START'; mode: QuizMode }
+  | { type: 'SET_MODE'; mode: QuizMode }
+  | { type: 'SET_AXIS_WEIGHT'; axisId: AxisId; weight: number }
+  | { type: 'RESET_WEIGHTS' }
+  | { type: 'ANSWER_INTIMACY'; questionId: number; value: number }
+  | { type: 'RESET_INTIMACY' }
 
 function quizReducer(state: QuizState, action: QuizAction): QuizState {
   switch (action.type) {
@@ -145,7 +177,25 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
     case 'ANSWER_CHECK':
       return { ...state, checkAnswers: { ...state.checkAnswers, [action.checkId]: action.value } }
     case 'RESET':
-      return { ...buildInitialState(), selectedStakeholderTags: state.selectedStakeholderTags }
+      // The intimacy module is separate, so retaking the main quiz leaves it alone.
+      return { ...buildInitialState(), selectedStakeholderTags: state.selectedStakeholderTags, intimacyAnswers: state.intimacyAnswers }
+    case 'START':
+      return {
+        ...buildInitialState(),
+        selectedStakeholderTags: state.selectedStakeholderTags,
+        intimacyAnswers: state.intimacyAnswers,
+        mode: action.mode,
+      }
+    case 'SET_MODE':
+      return { ...state, mode: action.mode }
+    case 'SET_AXIS_WEIGHT':
+      return { ...state, axisWeights: { ...state.axisWeights, [action.axisId]: action.weight } }
+    case 'RESET_WEIGHTS':
+      return { ...state, axisWeights: { ...EQUAL_WEIGHTS } }
+    case 'ANSWER_INTIMACY':
+      return { ...state, intimacyAnswers: { ...state.intimacyAnswers, [action.questionId]: action.value } }
+    case 'RESET_INTIMACY':
+      return { ...state, intimacyAnswers: {} }
     default:
       return state
   }
@@ -158,6 +208,9 @@ interface QuizContextValue {
   scenarioAnswers: Partial<Record<AxisId, 'A' | 'B'>>
   selectedStakeholderTags: string[]
   checkAnswers: Record<number, number>
+  mode: QuizMode
+  axisWeights: AxisWeights
+  intimacyAnswers: Record<number, number>
   /** True when answers or skipped statements were restored or entered, so there is something to continue */
   hasProgress: boolean
   setAnswer: (questionId: number, value: number) => void
@@ -167,6 +220,14 @@ interface QuizContextValue {
   setStakeholderTags: (tagIds: string[]) => void
   setCheckAnswer: (checkId: number, value: number) => void
   reset: () => void
+  /** Clears answers and starts the chosen version from the first axis */
+  startQuiz: (mode: QuizMode) => void
+  /** Switches version and keeps every answer (used to go from the short version to the full one) */
+  setMode: (mode: QuizMode) => void
+  setAxisWeight: (axisId: AxisId, weight: number) => void
+  resetWeights: () => void
+  setIntimacyAnswer: (questionId: number, value: number) => void
+  resetIntimacy: () => void
   ttsSettings: TTSSettings
   setTtsSettings: (settings: TTSSettings) => void
   /** The Atlas is English only. */
@@ -212,7 +273,12 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     scenarioAnswers: state.scenarioAnswers,
     selectedStakeholderTags: state.selectedStakeholderTags,
     checkAnswers: state.checkAnswers,
-    hasProgress: Object.keys(state.answers).length + state.declinedQuestions.length > 0,
+    mode: state.mode,
+    axisWeights: state.axisWeights,
+    intimacyAnswers: state.intimacyAnswers,
+    hasProgress: questionsForMode(state.mode).some(
+      (q) => state.answers[q.id] !== undefined || state.declinedQuestions.includes(q.id),
+    ),
     setAnswer: (questionId, val) => dispatch({ type: 'ANSWER', questionId, value: val }),
     declineQuestion: (questionId) => dispatch({ type: 'DECLINE', questionId }),
     setScenarioAnswer: (axisId, choice) => dispatch({ type: 'ANSWER_SCENARIO', axisId, choice }),
@@ -220,6 +286,12 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     setStakeholderTags: (tagIds) => dispatch({ type: 'SET_STAKEHOLDER_TAGS', tagIds }),
     setCheckAnswer: (checkId, val) => dispatch({ type: 'ANSWER_CHECK', checkId, value: val }),
     reset: () => dispatch({ type: 'RESET' }),
+    startQuiz: (mode) => dispatch({ type: 'START', mode }),
+    setMode: (mode) => dispatch({ type: 'SET_MODE', mode }),
+    setAxisWeight: (axisId, weight) => dispatch({ type: 'SET_AXIS_WEIGHT', axisId, weight }),
+    resetWeights: () => dispatch({ type: 'RESET_WEIGHTS' }),
+    setIntimacyAnswer: (questionId, val) => dispatch({ type: 'ANSWER_INTIMACY', questionId, value: val }),
+    resetIntimacy: () => dispatch({ type: 'RESET_INTIMACY' }),
     ttsSettings,
     setTtsSettings,
     language: 'en',

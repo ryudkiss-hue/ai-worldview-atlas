@@ -8,6 +8,7 @@ import { encodeShareLink, decodeShareLink, type ShareableScores } from '../lib/s
 import { recordResult } from '../lib/resultHistory'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
+import { shortQuestions } from '../data/shortForm'
 
 // PDF generation itself is covered by pdfReport.test.tsx against a small fixture.
 // Here we only care about the loading-state UX, so the actual (CPU-heavy, and
@@ -77,7 +78,7 @@ describe('ResultsPage', () => {
     renderResultsPage(`?d=${encoded}`)
     expect(screen.getByText('Closest Worldview Matches')).toBeInTheDocument()
     const table = screen.getByRole('table')
-    expect(within(table).getByText('Ends of Intelligence')).toBeInTheDocument()
+    expect(within(table).getByText('Growth and Limits')).toBeInTheDocument()
   })
 
   it('shows the average gap and same-side axes, not a percentage, on the top ProfileCard, plus the core-three reading', () => {
@@ -116,7 +117,7 @@ describe('ResultsPage', () => {
         </MemoryRouter>
       </QuizProvider>,
     )
-    expect(screen.getByText('Automation-Exposed Worker')).toBeInTheDocument()
+    expect(screen.getByText('My job could be automated')).toBeInTheDocument()
   })
 
   it('shows a loading state on Download PDF Report while generating', async () => {
@@ -226,7 +227,7 @@ describe('ResultsPage', () => {
     const t2Raw = { teleological: 6, risk: -10, socioEconomic: 3, ontological: -9, legalMoral: 10, evolutionary: 14, relational: -6, geopolitical: 11 }
     renderResultsPage(`?d=${encodeShareLink({ t1Raw, t2Raw })}`)
     expect(screen.getByText('This Was a Close Call')).toBeInTheDocument()
-    expect(screen.getByText(/Pragmatic Centrist and Techno-Nationalist Hawk are almost exactly as close/)).toBeInTheDocument()
+    expect(screen.getByText(/Pragmatic Centrist and National Security Hawk are almost exactly as close/)).toBeInTheDocument()
     expect(screen.getByText('Where the two differ most:')).toBeInTheDocument()
   })
 
@@ -276,7 +277,7 @@ describe('ResultsPage', () => {
     )
     expect(screen.getByText('No Settled View')).toBeInTheDocument()
     expect(screen.getByText(/marked 2 of 144 statements/)).toBeInTheDocument()
-    expect(screen.getByText(/mostly on Ends of Intelligence/)).toBeInTheDocument()
+    expect(screen.getByText(/mostly on Growth and Limits/)).toBeInTheDocument()
   })
 
   it('does not show a "no settled view" summary when viewing a shared link, even if the local quiz state has declines', () => {
@@ -315,7 +316,7 @@ describe('ResultsPage', () => {
           return v
         })(),
         topMatchId: 'cosmic-vitalist-mystic',
-        topMatchName: 'Cosmic Vitalist Mystic',
+        topMatchName: 'Space-Expansion Visionary',
       },
       Date.now() - 1000,
     )
@@ -337,12 +338,12 @@ describe('ResultsPage', () => {
       </QuizProvider>,
     )
     // A lightly-answered quiz (6 of 145 questions) lands near Pragmatic Centrist, virtually
-    // never the extreme Cosmic Vitalist Mystic corner seeded as the prior result — so this
+    // never the extreme Space-Expansion Visionary corner seeded as the prior result — so this
     // reliably exercises the "top match changed" branch without over-specifying classify()'s
     // exact output.
     const heading = screen.getByText('Compared to Your Last Attempt')
     const comparisonSection = heading.closest('div') as HTMLElement
-    expect(within(comparisonSection).getByText('Cosmic Vitalist Mystic')).toBeInTheDocument()
+    expect(within(comparisonSection).getByText('Space-Expansion Visionary')).toBeInTheDocument()
     expect(within(comparisonSection).getByText(/This time it's/)).toBeInTheDocument()
   })
 
@@ -411,5 +412,61 @@ describe('ResultsPage', () => {
     expect(screen.getByText('Closest Worldview Matches')).toBeInTheDocument()
     const table = screen.getByRole('table')
     expect(within(table).getAllByRole('row').length).toBe(axes.length + 1)
+  })
+
+  describe('short version, weights and statement comparison', () => {
+    const towardA = (ids?: Set<number>) =>
+      Object.fromEntries(
+        questions.filter((q) => !ids || ids.has(q.id)).map((q) => [q.id, q.agreeShiftsToward === 'A' ? 5 : 1]),
+      )
+
+    it('compares your answers statement by statement with your top archetypes', () => {
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA() }))
+      renderResultsPage('')
+      expect(screen.getByText('Statement by Statement')).toBeInTheDocument()
+      expect(screen.getByText(/Their answers here are estimates/)).toBeInTheDocument()
+      // one collapsible group per axis
+      expect(screen.getAllByText(/opposite sides from .+ on \d+ of 18/)).toHaveLength(8)
+    })
+
+    it('lets you weight an axis, which is saved and noted next to the matches', () => {
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA() }))
+      renderResultsPage('')
+      expect(screen.queryByText(/These matches use the axis weights below/)).not.toBeInTheDocument()
+      const group = screen.getByRole('radiogroup', { name: 'How much Machine Experience counts' })
+      fireEvent.click(within(group).getByRole('radio', { name: 'More' }))
+      expect(screen.getByText(/These matches use the axis weights below/)).toBeInTheDocument()
+      expect(JSON.parse(localStorage.getItem(PROGRESS_KEY)!).axisWeights.ontological).toBe(2)
+      fireEvent.click(screen.getByRole('button', { name: 'Count every axis the same again' }))
+      expect(screen.queryByText(/These matches use the axis weights below/)).not.toBeInTheDocument()
+    })
+
+    it('marks a short-version result and offers to finish the full version', () => {
+      const shortIds = new Set(shortQuestions.map((q) => q.id))
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA(shortIds), mode: 'short' }))
+      renderResultsPage('')
+      expect(screen.getByText('You Took the Short Version')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: 'Answer the other 96 for the full result' })).toBeInTheDocument()
+      expect(screen.getAllByText(/opposite sides from .+ on \d+ of 6/)).toHaveLength(8)
+    })
+
+    it('scores a short version on the same scale: all toward pole A gives +10 on every axis', () => {
+      const shortIds = new Set(shortQuestions.map((q) => q.id))
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA(shortIds), mode: 'short' }))
+      renderResultsPage('')
+      const table = screen.getByRole('table')
+      expect(within(table).getAllByText('10.0')).toHaveLength(16)
+    })
+
+    it('shows a shared link’s version and weights without letting the viewer change them', () => {
+      const weights = Object.fromEntries(axes.map((a) => [a.id, a.id === 'risk' ? 2 : 1])) as ShareableScores['t1Raw']
+      const encoded = encodeShareLink({ ...buildFlatScores(3, -3), mode: 'short', weights })
+      renderResultsPage(`?d=${encoded}`)
+      expect(screen.getByText('From the Short Version')).toBeInTheDocument()
+      expect(screen.getByText(/The person who shared this result weighted some axes/)).toBeInTheDocument()
+      const group = screen.getByRole('radiogroup', { name: 'How much Speed and Safety counts' })
+      expect(within(group).getByRole('radio', { name: 'More' })).toBeDisabled()
+      expect(screen.queryByText('Statement by Statement')).not.toBeInTheDocument()
+    })
   })
 })
