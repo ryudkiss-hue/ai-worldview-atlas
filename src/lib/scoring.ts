@@ -66,14 +66,30 @@ export interface ProfileMatch {
   distance: number
 }
 
-export function classify(combined: AxisVector, profiles: Profile[]): ProfileMatch[] {
+/** How much an axis counts when matching archetypes: less, normal or more. Scores themselves never change. */
+export const AXIS_WEIGHT_OPTIONS = [
+  { value: 0.5, label: 'Less' },
+  { value: 1, label: 'Normal' },
+  { value: 2, label: 'More' },
+] as const
+export type AxisWeights = Record<AxisId, number>
+export const EQUAL_WEIGHTS: AxisWeights = Object.fromEntries(axes.map((a) => [a.id, 1])) as AxisWeights
+export const isEqualWeights = (w?: AxisWeights): boolean => !w || axes.every((a) => w[a.id] === 1)
+
+/**
+ * Ranks archetypes by distance. With weights, each axis's squared gap counts in proportion to its weight, normalised so
+ * that equal weights give exactly the ordinary Euclidean distance (and the same scale for the close-call margin).
+ */
+export function classify(combined: AxisVector, profiles: Profile[], weights?: AxisWeights): ProfileMatch[] {
+  const ids = Object.keys(combined) as AxisId[]
+  const w = (id: AxisId) => (weights ? weights[id] ?? 1 : 1)
+  const totalWeight = ids.reduce((s, id) => s + w(id), 0)
   const withDistance = profiles.map((profile) => {
-    const distance = Math.sqrt(
-      (Object.keys(combined) as AxisId[]).reduce((sum, axisId) => {
-        const diff = combined[axisId] - profile.coords[axisId]
-        return sum + diff * diff
-      }, 0),
-    )
+    const weighted = ids.reduce((sum, axisId) => {
+      const diff = combined[axisId] - profile.coords[axisId]
+      return sum + w(axisId) * diff * diff
+    }, 0)
+    const distance = weights ? Math.sqrt((ids.length * weighted) / totalWeight) : Math.sqrt(weighted)
     return { profile, distance }
   })
   return withDistance.sort((a, b) => a.distance - b.distance)
@@ -101,7 +117,15 @@ export function axesInAgreement(combined: AxisVector, profile: Profile): number 
  */
 export const CLOSE_CALL_MARGIN = 0.3
 
-export function isCloseCall(matches: ProfileMatch[]): boolean {
+/**
+ * The same calibration rerun for the 48-statement short version (analysis/closecall_sim.py --short, synthetic sheets
+ * only). The simulation found the same 0.3 margin; it flags about 14% of sheets near an archetype and 20% of broad
+ * sheets. The short version's scores are still less precise, so its top match is less stable overall; the results page
+ * says so.
+ */
+export const CLOSE_CALL_MARGIN_SHORT = 0.3
+
+export function isCloseCall(matches: ProfileMatch[], margin: number = CLOSE_CALL_MARGIN): boolean {
   if (matches.length < 2) return false
-  return matches[1].distance - matches[0].distance < CLOSE_CALL_MARGIN
+  return matches[1].distance - matches[0].distance < margin
 }

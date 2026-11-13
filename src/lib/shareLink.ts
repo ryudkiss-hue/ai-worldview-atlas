@@ -4,7 +4,13 @@ import { axes } from '../data/axes'
 export interface ShareableScores {
   t1Raw: Record<AxisId, number>
   t2Raw: Record<AxisId, number>
+  /** Which version was taken; raw totals are scaled by the statements shown. Absent means the full quiz. */
+  mode?: 'full' | 'short'
+  /** How much each axis counts in matching. Absent means equal weights. */
+  weights?: Record<AxisId, number>
 }
+
+const WEIGHT_VALUES = [0.5, 1, 2]
 
 /** Version 2 = the merged 144-statement Atlas. Links from the earlier question set (a bare array) are not decoded. */
 export const SHARE_LINK_VERSION = 2
@@ -12,7 +18,10 @@ export const SHARE_LINK_VERSION = 2
 export function encodeShareLink(scores: ShareableScores): string {
   const orderedIds = axes.map((a) => a.id)
   const flat = [...orderedIds.map((id) => scores.t1Raw[id]), ...orderedIds.map((id) => scores.t2Raw[id])]
-  return btoa(JSON.stringify({ v: SHARE_LINK_VERSION, s: flat }))
+  const payload: Record<string, unknown> = { v: SHARE_LINK_VERSION, s: flat }
+  if (scores.mode === 'short') payload.m = 's'
+  if (scores.weights && orderedIds.some((id) => scores.weights![id] !== 1)) payload.w = orderedIds.map((id) => scores.weights![id])
+  return btoa(JSON.stringify(payload))
 }
 
 export function decodeShareLink(encoded: string): ShareableScores | null {
@@ -29,7 +38,13 @@ export function decodeShareLink(encoded: string): ShareableScores | null {
       t1Raw[id] = flat[index] as number
       t2Raw[id] = flat[orderedIds.length + index] as number
     })
-    return { t1Raw, t2Raw }
+    const result: ShareableScores = { t1Raw, t2Raw }
+    if (parsed.m === 's') result.mode = 'short'
+    const w: unknown = parsed.w
+    if (Array.isArray(w) && w.length === orderedIds.length && w.every((v) => WEIGHT_VALUES.includes(v as number))) {
+      result.weights = Object.fromEntries(orderedIds.map((id, i) => [id, w[i] as number])) as Record<AxisId, number>
+    }
+    return result
   } catch {
     return null
   }

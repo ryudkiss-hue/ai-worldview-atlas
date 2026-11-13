@@ -136,7 +136,16 @@ Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2 
    → core-three reading from the tiers of Mind, Moral Standing and Ends of Intelligence
 ```
 
-Weights are equal: with no response data yet, there is no basis for weighting one statement above another. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **25 thought experiments** are a separate, unscored reading page.
+Statement weights are equal: with no response data yet, there is no basis for weighting one statement above another. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **25 thought experiments** are a separate, unscored reading page.
+
+### Optional extras on the website
+
+These are web-only and exploratory. They are not part of the validation study (see the deviation log in the protocol).
+
+- **Short version.** 48 of the 144 statements: three mirrored pairs per axis, one near-term and two long-run ([`src/data/shortForm.ts`](src/data/shortForm.ts)). Scores are scaled by the statements shown, so they sit on the same −10..+10 scale with less precision (six answers per axis instead of eighteen). The results page says so and offers to answer the other 96 without losing anything. The close-call simulation was rerun for the short version (`python3 analysis/closecall_sim.py --short`, synthetic sheets only) and gave the same 0.3 margin.
+- **What matters most to you.** On the results page you can mark any axis Less (×0.5), Normal or More (×2). Only the archetype ranking changes: distance becomes √(8 × Σ wᵢΔᵢ² ÷ Σ wᵢ), which equals the ordinary distance when every weight is 1, so the average gap and the close-call margin keep their meaning. Your scores never change. Weights travel in share links.
+- **Statement by statement.** Your answer to each statement next to the answer each of your three closest archetypes would be expected to give. Archetypes never answered statements, so their answers are estimates from their position on that axis (strongly agree at 6 or more toward the statement's pole, agree at 2 or more, no clear lean in between), and the page says so. Only opposite sides are flagged.
+- **Focus module: friends, partners and therapists** (`/intimacy`). 18 mirrored statements on AI as a best friend, romantic partner and therapist, and on attachment, critical thinking, identity, loneliness, intimacy and social connection ([`src/data/intimacyModule.ts`](src/data/intimacyModule.ts)). It has its own Guarded ↔ Open score and theme breakdown, reflection questions, and a research summary that gives both sides, drawing on the American Psychological Association's 2025 health advisories, the World Health Organization's Commission on Social Connection, the American Philosophical Association's blog, peer-reviewed studies (Journal of Consumer Research, Psychological Science, Nature Human Behaviour, Perspectives on Psychological Science, New Media & Society, NEJM AI, JMIR, ACM CHI and AIES) and WIRED. It never touches the Atlas score, the match or share links.
 
 ---
 
@@ -175,6 +184,8 @@ src/
 │   ├── attentionChecks.ts       2 optional, unscored check statements
 │   ├── manifestoContents.ts     the 50 long-form manifestos (axis positions filled from profiles.ts)
 │   ├── study.ts                 link to the validation study's form (empty until set)
+│   ├── shortForm.ts             the 48-statement short version
+│   ├── intimacyModule.ts        focus module: statements, scoring, research summary and sources
 │   └── types.ts                 shared TypeScript interfaces
 ├── lib/
 │   ├── scoring.ts                the scoring pipeline (see above)
@@ -183,9 +194,10 @@ src/
 │   ├── shareLink.ts              encode/decode results into a URL param
 │   ├── readability.ts            Flesch-Kincaid grade-level checker
 │   ├── axisPositions.ts          an archetype's positions in words; biggest gaps between two positions
+│   ├── statementComparison.ts    expected answers of an archetype, estimated from its coordinates
 │   └── pdfReport.tsx              @react-pdf/renderer PDF document
 ├── state/
-│   └── QuizContext.tsx           answers, question order, tags, scenario picks
+│   └── QuizContext.tsx           answers, question order, tags, scenario picks, version, axis weights, focus-module answers
 ├── components/                  RadarChart, ProfileCard, MethodologySection,
 │                                 ReflectiveBreakdown, PinnacleReflection, ...
 └── pages/
@@ -194,6 +206,7 @@ src/
     ├── ScenarioPage.tsx          optional situational scenarios (/scenarios)
     ├── ResultsPage.tsx           radar chart, matches, full report, PDF export
     ├── ThoughtExperimentsPage.tsx the 25 thought experiments, unscored (/thought-experiments)
+    ├── IntimacyPage.tsx          the synthetic-intimacy focus module (/intimacy)
     └── PaperScoresPage.tsx       enter the paper edition's 16 net totals to see the online results (/paper)
 ```
 

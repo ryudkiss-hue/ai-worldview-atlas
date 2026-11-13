@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { axes } from '../data/axes'
-import { questions, questionsForAxis } from '../data/questions'
+import { questionsForAxis } from '../data/questions'
+import { isInShortForm, questionsForMode } from '../data/shortForm'
 import { useQuiz } from '../state/QuizContext'
 import { ProgressBar } from '../components/ProgressBar'
 import { AxisHorizonGroup } from '../components/AxisHorizonGroup'
@@ -23,6 +24,7 @@ export function AxisPage() {
     setTtsSettings,
     t,
     tAxis,
+    mode,
   } = useQuiz()
 
   const [showTtsPanel, setShowTtsPanel] = useState(false)
@@ -34,18 +36,21 @@ export function AxisPage() {
     return <p>Unknown axis.</p>
   }
 
-  const allQuestions = questionsForAxis(axis.id)
+  // The short version shows 6 of each axis's 18 statements; attention checks appear in both versions.
+  const inMode = (id: number) => mode === 'full' || isAttentionCheck(id) || isInShortForm(id)
+  const allQuestions = questionsForAxis(axis.id).filter((q) => inMode(q.id))
+  const modeQuestions = questionsForMode(mode)
   const order = questionOrder[axis.id]
   const byId = new Map([
     ...allQuestions.map((q) => [q.id, q] as const),
     ...attentionChecks.map((c) => [c.id, attentionCheckAsQuestion(c)] as const),
   ])
-  const t1Questions = order.t1.map((id) => byId.get(id)).filter((q) => q !== undefined)
-  const t2Questions = order.t2.map((id) => byId.get(id)).filter((q) => q !== undefined)
+  const t1Questions = order.t1.filter(inMode).map((id) => byId.get(id)).filter((q) => q !== undefined)
+  const t2Questions = order.t2.filter(inMode).map((id) => byId.get(id)).filter((q) => q !== undefined)
   const shownAnswers = { ...answers, ...checkAnswers }
   const onAnswer = (id: number, value: number) => (isAttentionCheck(id) ? setCheckAnswer(id, value) : setAnswer(id, value))
   const allAnswered = allQuestions.every((q) => answers[q.id] !== undefined || declinedQuestions.includes(q.id))
-  const answeredCount = Object.keys(answers).length + declinedQuestions.length
+  const answeredCount = modeQuestions.filter((q) => answers[q.id] !== undefined || declinedQuestions.includes(q.id)).length
 
   function goNext() {
     if (index === 8) {
@@ -67,8 +72,8 @@ export function AxisPage() {
     <div className="max-w-2xl mx-auto p-6">
       <ProgressBar
         current={answeredCount}
-        total={questions.length}
-        label={`${t('axis') || 'Axis'} ${index} of 8 · ${t('question') || 'Question'} ${answeredCount} of ${questions.length}`}
+        total={modeQuestions.length}
+        label={`${mode === 'short' ? 'Short version · ' : ''}${t('axis') || 'Axis'} ${index} of 8 · ${t('question') || 'Question'} ${answeredCount} of ${modeQuestions.length}`}
       />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 mb-6">
         <div>

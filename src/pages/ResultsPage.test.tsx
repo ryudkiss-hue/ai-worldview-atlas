@@ -8,6 +8,7 @@ import { encodeShareLink, decodeShareLink, type ShareableScores } from '../lib/s
 import { recordResult } from '../lib/resultHistory'
 import { axes } from '../data/axes'
 import { questions } from '../data/questions'
+import { shortQuestions } from '../data/shortForm'
 
 // PDF generation itself is covered by pdfReport.test.tsx against a small fixture.
 // Here we only care about the loading-state UX, so the actual (CPU-heavy, and
@@ -411,5 +412,61 @@ describe('ResultsPage', () => {
     expect(screen.getByText('Closest Worldview Matches')).toBeInTheDocument()
     const table = screen.getByRole('table')
     expect(within(table).getAllByRole('row').length).toBe(axes.length + 1)
+  })
+
+  describe('short version, weights and statement comparison', () => {
+    const towardA = (ids?: Set<number>) =>
+      Object.fromEntries(
+        questions.filter((q) => !ids || ids.has(q.id)).map((q) => [q.id, q.agreeShiftsToward === 'A' ? 5 : 1]),
+      )
+
+    it('compares your answers statement by statement with your top archetypes', () => {
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA() }))
+      renderResultsPage('')
+      expect(screen.getByText('Statement by Statement')).toBeInTheDocument()
+      expect(screen.getByText(/Their answers here are estimates/)).toBeInTheDocument()
+      // one collapsible group per axis
+      expect(screen.getAllByText(/opposite sides from .+ on \d+ of 18/)).toHaveLength(8)
+    })
+
+    it('lets you weight an axis, which is saved and noted next to the matches', () => {
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA() }))
+      renderResultsPage('')
+      expect(screen.queryByText(/These matches use the axis weights below/)).not.toBeInTheDocument()
+      const group = screen.getByRole('radiogroup', { name: 'How much Mind counts' })
+      fireEvent.click(within(group).getByRole('radio', { name: 'More' }))
+      expect(screen.getByText(/These matches use the axis weights below/)).toBeInTheDocument()
+      expect(JSON.parse(localStorage.getItem(PROGRESS_KEY)!).axisWeights.ontological).toBe(2)
+      fireEvent.click(screen.getByRole('button', { name: 'Count every axis the same again' }))
+      expect(screen.queryByText(/These matches use the axis weights below/)).not.toBeInTheDocument()
+    })
+
+    it('marks a short-version result and offers to finish the full version', () => {
+      const shortIds = new Set(shortQuestions.map((q) => q.id))
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA(shortIds), mode: 'short' }))
+      renderResultsPage('')
+      expect(screen.getByText('You Took the Short Version')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: 'Answer the other 96 for the full result' })).toBeInTheDocument()
+      expect(screen.getAllByText(/opposite sides from .+ on \d+ of 6/)).toHaveLength(8)
+    })
+
+    it('scores a short version on the same scale: all toward pole A gives +10 on every axis', () => {
+      const shortIds = new Set(shortQuestions.map((q) => q.id))
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: towardA(shortIds), mode: 'short' }))
+      renderResultsPage('')
+      const table = screen.getByRole('table')
+      expect(within(table).getAllByText('10.0')).toHaveLength(16)
+    })
+
+    it('shows a shared link’s version and weights without letting the viewer change them', () => {
+      const weights = Object.fromEntries(axes.map((a) => [a.id, a.id === 'risk' ? 2 : 1])) as ShareableScores['t1Raw']
+      const encoded = encodeShareLink({ ...buildFlatScores(3, -3), mode: 'short', weights })
+      renderResultsPage(`?d=${encoded}`)
+      expect(screen.getByText('From the Short Version')).toBeInTheDocument()
+      expect(screen.getByText(/The person who shared this result weighted some axes/)).toBeInTheDocument()
+      const group = screen.getByRole('radiogroup', { name: 'How much Risk counts' })
+      expect(within(group).getByRole('radio', { name: 'More' })).toBeDisabled()
+      expect(screen.queryByText('Statement by Statement')).not.toBeInTheDocument()
+    })
   })
 })
