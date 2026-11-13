@@ -9,10 +9,10 @@ describe('core-three reading', () => {
     expect(new Set(CORE_ARCHETYPES.map((a) => a.name)).size).toBe(27)
   })
 
-  it('reads Mind as X, Moral Standing as Y, and Ends of Intelligence in reverse as Z', () => {
+  it('reads Machine Experience as X, Moral Standing as Y, and Growth and Limits in reverse as Z', () => {
     expect(coreTiers({ ...zero, ontological: 5, legalMoral: -3, teleological: 6 })).toEqual([1, -1, -1])
-    expect(coreArchetype({ ...zero, ontological: 5, legalMoral: -3, teleological: 6 }).name).toBe('The Promethean Instrumentalist')
-    expect(coreArchetype({ ...zero, ontological: 5, legalMoral: 5, teleological: -6 }).name).toBe('The Embodied Pluralist')
+    expect(coreArchetype({ ...zero, ontological: 5, legalMoral: -3, teleological: 6 }).name).toBe('The Ambitious Engineer')
+    expect(coreArchetype({ ...zero, ontological: 5, legalMoral: 5, teleological: -6 }).name).toBe('The Shared-Planet Advocate')
     expect(coreArchetype(zero).name).toBe('The Open Questioner')
   })
 

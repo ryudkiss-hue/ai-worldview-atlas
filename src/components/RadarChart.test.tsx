@@ -26,22 +26,22 @@ describe('RadarChart', () => {
 
   it('renders two distinct radar series when a comparison profile is supplied', () => {
     const { container } = render(
-      <RadarChart combined={sample} comparisonProfile={{ name: 'Doomer', coords: comparisonSample }} />,
+      <RadarChart combined={sample} comparisonProfile={{ name: 'Extinction-Risk Advocate', coords: comparisonSample }} />,
     )
     expect(container.querySelectorAll('.recharts-radar')).toHaveLength(2)
   })
 
   it('names both series in a legend', () => {
     const { getByText } = render(
-      <RadarChart combined={sample} comparisonProfile={{ name: 'Doomer', coords: comparisonSample }} />,
+      <RadarChart combined={sample} comparisonProfile={{ name: 'Extinction-Risk Advocate', coords: comparisonSample }} />,
     )
     expect(getByText('You')).toBeInTheDocument()
-    expect(getByText('Doomer')).toBeInTheDocument()
+    expect(getByText('Extinction-Risk Advocate')).toBeInTheDocument()
   })
 
   it('splits long axis names into two balanced lines for narrow screens', () => {
-    expect(labelLines('Mind')).toEqual(['Mind'])
-    expect(labelLines('Ends of Intelligence')).toEqual(['Ends of', 'Intelligence'])
+    expect(labelLines('Relationships')).toEqual(['Relationships'])
+    expect(labelLines('Machine Experience')).toEqual(['Machine', 'Experience'])
     expect(labelLines('Openness & Control')).toEqual(['Openness &', 'Control'])
     expect(labelLines('Moral Standing')).toEqual(['Moral', 'Standing'])
   })

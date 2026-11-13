@@ -25,7 +25,11 @@ describe('shareLink', () => {
   })
 
   it('returns null when the decoded scores have the wrong length', () => {
-    expect(decodeShareLink(btoa(JSON.stringify({ v: 2, s: [1, 2, 3] })))).toBeNull()
+    expect(decodeShareLink(btoa(JSON.stringify({ v: 3, s: [1, 2, 3] })))).toBeNull()
+  })
+
+  it('returns null for a link from the previous wording (version 2)', () => {
+    expect(decodeShareLink(btoa(JSON.stringify({ v: 2, s: Array(16).fill(0) })))).toBeNull()
   })
 
   it('returns null for a link from the earlier question set', () => {
@@ -35,7 +39,7 @@ describe('shareLink', () => {
 
   it('carries the short version and axis weights only when they differ from the defaults', () => {
     const plain = buildScores(1, 2)
-    expect(JSON.parse(atob(encodeShareLink(plain)))).toEqual({ v: 2, s: expect.any(Array) })
+    expect(JSON.parse(atob(encodeShareLink(plain)))).toEqual({ v: 3, s: expect.any(Array) })
     const weights = Object.fromEntries(axes.map((a, i) => [a.id, i === 0 ? 2 : i === 1 ? 0.5 : 1])) as ShareableScores['t1Raw']
     const decoded = decodeShareLink(encodeShareLink({ ...plain, mode: 'short', weights }))
     expect(decoded?.mode).toBe('short')
@@ -45,7 +49,7 @@ describe('shareLink', () => {
   })
 
   it('ignores weights that are not Less, Normal or More', () => {
-    const decoded = decodeShareLink(btoa(JSON.stringify({ v: 2, s: Array(16).fill(0), w: Array(8).fill(7) })))
+    const decoded = decodeShareLink(btoa(JSON.stringify({ v: 3, s: Array(16).fill(0), w: Array(8).fill(7) })))
     expect(decoded).not.toBeNull()
     expect(decoded?.weights).toBeUndefined()
   })

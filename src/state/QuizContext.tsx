@@ -63,9 +63,9 @@ function buildInitialState(): QuizState {
 
 /**
  * Progress is saved in this browser only, so a refresh or a closed tab doesn't lose 144 answers. The key carries
- * the item-set date: if statements change, old progress is dropped rather than applied to new wording.
+ * the item-set id: if statements change, old progress is dropped rather than applied to new wording.
  */
-export const PROGRESS_KEY = 'atlas-quiz-progress-2026-11-13'
+export const PROGRESS_KEY = 'atlas-quiz-progress-86c01d104481'
 const VALID_ANSWERS = new Set([1, 2, 4, 5])
 const INTIMACY_VALUES = new Set([0, 1, 2, 4, 5])
 const intimacyIds = new Set(intimacyStatements.map((q) => q.id))

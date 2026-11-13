@@ -21,9 +21,9 @@ function renderAxisPage(initialAxis: number) {
 describe('AxisPage', () => {
   it('shows the axis name and its question, but not the pole-vs-pole label', () => {
     renderAxisPage(1)
-    expect(screen.getByText('Mind')).toBeInTheDocument()
-    expect(screen.getByText('Could AI systems have minds?')).toBeInTheDocument()
-    expect(screen.queryByText(/Silicon Functionalism/)).not.toBeInTheDocument()
+    expect(screen.getByText('Machine Experience')).toBeInTheDocument()
+    expect(screen.getByText('Could an AI system ever have real experiences, such as feelings?')).toBeInTheDocument()
+    expect(screen.queryByText(/Possible in machines/)).not.toBeInTheDocument()
     expect(screen.queryByText(/vs\./)).not.toBeInTheDocument()
   })
 
@@ -42,7 +42,7 @@ describe('AxisPage', () => {
 
   it('mixes one optional check statement into the Risk page, without a no-settled-view option or a required answer', () => {
     renderAxisPage(6)
-    expect(screen.getByText('Risk')).toBeInTheDocument()
+    expect(screen.getByText('Speed and Safety')).toBeInTheDocument()
     expect(screen.getAllByRole('radio')).toHaveLength(19 * 4)
     expect(screen.getByText(/checks that answers are being read/)).toBeInTheDocument()
     expect(screen.getAllByText('I have no settled view on this')).toHaveLength(18)

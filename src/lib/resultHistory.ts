@@ -10,8 +10,8 @@ export interface ResultHistoryEntry {
   mode?: 'full' | 'short'
 }
 
-// v2: the merged 144-statement Atlas. Results from the earlier question set are kept under the old key, unread.
-const STORAGE_KEY = 'atlas-result-history-v2'
+// v3: item set 3, the plain-language rewrite. Results from earlier wordings stay under their old keys, unread.
+const STORAGE_KEY = 'atlas-result-history-v3'
 const MAX_ENTRIES = 20
 
 function readRaw(): ResultHistoryEntry[] {

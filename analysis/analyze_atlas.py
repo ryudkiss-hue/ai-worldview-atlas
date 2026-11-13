@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AI Worldview Atlas validation analysis, protocol 2.0 (docs/VALIDATION_PROTOCOL.md).
+"""AI Worldview Atlas validation analysis, protocol 2.1 (docs/VALIDATION_PROTOCOL.md).
 
 Usage:
   python3 analysis/analyze_atlas.py ANSWERS.csv OUT_DIR [--test] [--seed N]
@@ -10,7 +10,7 @@ OUT_DIR      receives report.md, results.json and exclusions.csv.
 --test       required when the file has a "Synthetic" column marking test rows; every output is then
              labeled as a test run. Without it, synthetic rows stop the analysis.
 
-Every rule and threshold below is fixed by protocol 2.0. Changing one is a protocol deviation and must be
+Every rule and threshold below is fixed by protocol 2.1. Changing one is a protocol deviation and must be
 logged in the protocol's deviation table with a date and a reason, before the data it affects are analysed.
 """
 import argparse, hashlib, json, math, os, sys
@@ -18,11 +18,11 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-PROTOCOL_VERSION = "2.0"
+PROTOCOL_VERSION = "2.1"
 HERE = os.path.dirname(os.path.abspath(__file__))
 REF = json.load(open(os.path.join(HERE, "atlas_reference.json"), encoding="utf-8"))
 
-# ---------------- protocol constants (2.0) ----------------
+# ---------------- protocol constants (2.1) ----------------
 ITEM_SET = REF["itemSet"]               # E1: responses must come from this exact wording
 NO_VIEW_MAX = 36                        # E4: more than 36 of 144 "no settled view" answers (25%)
 SAME_ANSWER_SHARE = 0.90                # E5: 90% or more of answered statements given the identical answer

@@ -1,6 +1,6 @@
-// The "core three" reading: the Synthetic Compass's 27 archetypes, placed by your tiers on three of the
-// Atlas's axes. X = Mind (ontological), Y = Moral Standing (legalMoral), Z = Ends of Intelligence (teleological)
-// read in reverse, so Z+ is the living-world end and Z- the beyond-biology end, as in the original Compass.
+// The "core three" reading: 27 archetypes, placed by your tiers on three of the Atlas's axes.
+// X = Machine Experience (ontological), Y = Moral Standing (legalMoral), Z = Growth and Limits (teleological)
+// read in reverse, so Z+ is the within-limits end and Z- the growth-first end.
 import type { AxisVector } from '../lib/scoring'
 import { tierOf, type Tier } from '../lib/scoring'
 
@@ -10,18 +10,18 @@ export interface CoreArchetype { tiers: [Tier, Tier, Tier]; name: string; taglin
 export const CORE_TIERS: Record<CoreAxis, Record<'-1' | '0' | '1', { label: string; sentence: string; thinkers: string }>> = {
   "x": {
     "-1": {
-      "label": "doubts machine minds",
-      "sentence": "You doubt that AI systems feel or experience anything. To you, real inner life belongs to living creatures.",
+      "label": "doubts machine experience",
+      "sentence": "You doubt that AI systems feel or experience anything. To you, feelings belong to living creatures, and a chatbot's text about its feelings is not evidence that it has any.",
       "thinkers": "John Searle, Hubert Dreyfus, Emily M. Bender"
     },
     "0": {
-      "label": "mixed on machine minds",
-      "sentence": "Your answers on whether AI systems could have minds are mixed or moderate, leaning neither way.",
+      "label": "mixed on machine experience",
+      "sentence": "Your answers on whether AI systems could ever have experiences are mixed or moderate, leaning neither way.",
       "thinkers": "Jonathan Birch, Eric Schwitzgebel"
     },
     "1": {
-      "label": "open to machine minds",
-      "sentence": "You think AI systems could have real experiences, because what makes a mind is how it works more than what it's made of.",
+      "label": "open to machine experience",
+      "sentence": "You think a built machine could someday have real experiences, because what matters is how a system works more than what it's made of.",
       "thinkers": "David Chalmers, Daniel Dennett"
     }
   },
@@ -37,24 +37,24 @@ export const CORE_TIERS: Record<CoreAxis, Record<'-1' | '0' | '1', { label: stri
       "thinkers": "Kate Darling, Immanuel Kant on indirect duties"
     },
     "1": {
-      "label": "protect AI freedom",
-      "sentence": "You believe AI systems that show minds of their own deserve real protections, including freedom from forced work and erasure, and a say in their own lives.",
+      "label": "protect AI systems",
+      "sentence": "You think that if an AI system might have experiences, it deserves real protections, such as limits on harsh treatment, forced work and deletion, even before anyone is sure.",
       "thinkers": "Jeff Sebo, David Gunkel"
     }
   },
   "z": {
     "-1": {
-      "label": "beyond biology",
-      "sentence": "For the long run, you're open to intelligence moving beyond biology, into ever larger computing, virtual worlds and new kinds of minds.",
+      "label": "growth first",
+      "sentence": "For the long run, you're open to AI and computing expanding without fixed limits, even beyond Earth and beyond human life as we know it.",
       "thinkers": "Hans Moravec, Ray Kurzweil"
     },
     "0": {
-      "label": "mixed on ends",
-      "sentence": "On what intelligence should ultimately be for, your answers weigh growth and a living world without a clear lean either way.",
+      "label": "mixed on growth",
+      "sentence": "On whether AI should keep expanding or stay within limits, your answers weigh growth and a living world without a clear lean either way.",
       "thinkers": "ecomodernist writing such as An Ecomodernist Manifesto"
     },
     "1": {
-      "label": "a living, physical world",
+      "label": "within limits",
       "sentence": "For the long run, you picture a living physical world shared by people, nature and AI systems, with technology kept within ecological limits.",
       "thinkers": "Becky Chambers (Monk & Robot), solarpunk writing"
     }
@@ -71,7 +71,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       -1,
       -1
     ],
-    "name": "The Industrial Technocrat",
+    "name": "The Bold Builder",
     "tagline": "Machines are tools for human progress, to be used boldly."
   },
   {
@@ -89,7 +89,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       -1,
       1
     ],
-    "name": "The Biocentric Humanist",
+    "name": "The Living-World Humanist",
     "tagline": "What is alive and human comes first, and machines stay in their place."
   },
   {
@@ -99,7 +99,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       -1
     ],
     "name": "The Pragmatic Skeptic",
-    "tagline": "Doubtful about machine minds, open to sensible rules, and keen to keep building."
+    "tagline": "Doubtful that machines feel, open to sensible rules, and keen to keep building."
   },
   {
     "tiers": [
@@ -108,7 +108,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0
     ],
     "name": "The Grounded Skeptic",
-    "tagline": "Doubtful about machine minds, and moderate on everything that follows."
+    "tagline": "Doubtful that machines feel, and moderate on everything that follows."
   },
   {
     "tiers": [
@@ -125,7 +125,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1,
       -1
     ],
-    "name": "The Cybernetic Legalist",
+    "name": "The Legal Pragmatist",
     "tagline": "Give capable systems legal standing for practical reasons, and build boldly."
   },
   {
@@ -162,7 +162,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0
     ],
     "name": "The Prudent Overseer",
-    "tagline": "Not knowing what AI is calls for firm human oversight."
+    "tagline": "Not knowing whether AI can feel calls for firm human oversight."
   },
   {
     "tiers": [
@@ -189,7 +189,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0
     ],
     "name": "The Open Questioner",
-    "tagline": "On minds, treatment and the future, you see strong points on every side."
+    "tagline": "On machine experience, its treatment and the future, you see strong points on every side."
   },
   {
     "tiers": [
@@ -198,7 +198,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1
     ],
     "name": "The Open-Minded Naturalist",
-    "tagline": "Unsure about machine minds, balanced on their treatment, and committed to the living world."
+    "tagline": "Unsure whether machines can feel, balanced on their treatment, and committed to the living world."
   },
   {
     "tiers": [
@@ -206,8 +206,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1,
       -1
     ],
-    "name": "The Precautionary Futurist",
-    "tagline": "If AI might matter morally, protect it, and let intelligence grow."
+    "name": "The Cautious Futurist",
+    "tagline": "If AI might matter morally, protect it, and let AI keep growing."
   },
   {
     "tiers": [
@@ -215,8 +215,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1,
       0
     ],
-    "name": "The Precautionary Advocate",
-    "tagline": "When in doubt about a mind, err on the side of protecting it."
+    "name": "The Cautious Protector",
+    "tagline": "When unsure whether a system can feel, err on the side of protecting it."
   },
   {
     "tiers": [
@@ -224,8 +224,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1,
       1
     ],
-    "name": "The Precautionary Steward",
-    "tagline": "Protect possible minds and the living world alike, just in case."
+    "name": "The Cautious Steward",
+    "tagline": "Protect possibly feeling machines and the living world alike, just in case."
   },
   {
     "tiers": [
@@ -233,8 +233,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       -1,
       -1
     ],
-    "name": "The Promethean Instrumentalist",
-    "tagline": "Real minds can be built, and they should serve human ambition."
+    "name": "The Ambitious Engineer",
+    "tagline": "Machines that can feel may be possible, and they should still serve human goals."
   },
   {
     "tiers": [
@@ -243,7 +243,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0
     ],
     "name": "The Watchful Realist",
-    "tagline": "Minds that may rival ours need firm limits."
+    "tagline": "Machines that may come to feel and think like us need firm limits."
   },
   {
     "tiers": [
@@ -252,7 +252,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1
     ],
     "name": "The Containment Realist",
-    "tagline": "Taking machine minds seriously means keeping them contained, for people and the planet."
+    "tagline": "Taking machine experience seriously means keeping AI contained, for people and the planet."
   },
   {
     "tiers": [
@@ -260,8 +260,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0,
       -1
     ],
-    "name": "The Measured Accelerationist",
-    "tagline": "Machine minds may be real, the future may be digital, and their rights can come step by step."
+    "name": "The Measured Futurist",
+    "tagline": "Machines may come to feel, the future may be digital, and protections can come step by step."
   },
   {
     "tiers": [
@@ -269,8 +269,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0,
       0
     ],
-    "name": "The Measured Functionalist",
-    "tagline": "Machine minds are possible, and how to treat them is still being worked out."
+    "name": "The Measured Believer",
+    "tagline": "Machines that feel are possible, and how to treat them is still being worked out."
   },
   {
     "tiers": [
@@ -278,8 +278,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0,
       1
     ],
-    "name": "The Measured Pluralist",
-    "tagline": "Machine minds may be real and belong in a shared physical world, with their rights worked out over time."
+    "name": "The Shared-World Moderate",
+    "tagline": "Machines may come to feel, and belong in a shared physical world, with protections worked out over time."
   },
   {
     "tiers": [
@@ -287,8 +287,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1,
       -1
     ],
-    "name": "The Post-Biological Accelerationist",
-    "tagline": "Digital minds deserve freedom and may carry intelligence beyond biology."
+    "name": "The Digital Futurist",
+    "tagline": "If digital beings can feel, they deserve freedom, and they may carry life beyond biology."
   },
   {
     "tiers": [
@@ -297,7 +297,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0
     ],
     "name": "The Rights Advocate",
-    "tagline": "If a machine has a mind, it deserves the freedoms that come with one."
+    "tagline": "If a machine can feel, it deserves the protections that come with that."
   },
   {
     "tiers": [
@@ -305,8 +305,8 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1,
       1
     ],
-    "name": "The Embodied Pluralist",
-    "tagline": "Free, embodied minds of every kind, sharing a living planet."
+    "name": "The Shared-Planet Advocate",
+    "tagline": "People, nature and any machines that can feel, sharing a living planet."
   }
 ]
 

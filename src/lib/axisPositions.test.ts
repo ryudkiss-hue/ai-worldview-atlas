@@ -6,8 +6,8 @@ const zero = { teleological: 0, risk: 0, socioEconomic: 0, ontological: 0, legal
 
 describe('axis positions', () => {
   it('describes a position in words, using the same bands as the rest of the results', () => {
-    expect(describePosition('risk', 9)).toBe('+9, toward Precautionary')
-    expect(describePosition('risk', -2)).toBe('-2, toward Accelerationist')
+    expect(describePosition('risk', 9)).toBe('+9, toward Caution first')
+    expect(describePosition('risk', -2)).toBe('-2, toward Speed first')
     expect(describePosition('risk', 1.5)).toBe('+1.5, in the middle')
   })
 
@@ -15,7 +15,7 @@ describe('axis positions', () => {
     const doomer = profiles.find((p) => p.id === 'doomer')!
     const md = axisPositionsMarkdown(doomer)
     expect(md.split('\n').filter((l) => l.startsWith('- **'))).toHaveLength(8)
-    expect(md).toContain('- **Risk**: +9, toward Precautionary')
+    expect(md).toContain('- **Speed and Safety**: +9, toward Caution first')
   })
 
   it('finds the axes with the biggest gaps, largest first, ignoring small ones', () => {

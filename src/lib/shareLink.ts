@@ -12,8 +12,11 @@ export interface ShareableScores {
 
 const WEIGHT_VALUES = [0.5, 1, 2]
 
-/** Version 2 = the merged 144-statement Atlas. Links from the earlier question set (a bare array) are not decoded. */
-export const SHARE_LINK_VERSION = 2
+/**
+ * Version 3 = item set 3, the plain-language rewrite (docs/LANGUAGE_GUIDE.md). Links from earlier wordings are not decoded,
+ * because their scores came from different statements.
+ */
+export const SHARE_LINK_VERSION = 3
 
 export function encodeShareLink(scores: ShareableScores): string {
   const orderedIds = axes.map((a) => a.id)

@@ -181,7 +181,7 @@ export function ResultsPage() {
         <div className="max-w-2xl mx-auto p-6 text-center">
           <h2 className="text-2xl font-bold mb-4">This link is from an earlier version</h2>
           <p className="text-gray-700 mb-6">
-            The Atlas has been rebuilt with a new set of statements, so results shared from the earlier version can't be shown
+            The Atlas's statements have been reworded since this link was made, so its result can't be shown
             here. Take the current assessment to get a result you can share.
           </p>
           <Link to="/" className="inline-block px-6 py-3 rounded bg-blue-600 text-white text-lg">
@@ -421,9 +421,9 @@ export function ResultsPage() {
         <p className="text-gray-600 italic">{core.tagline}</p>
         <p className="text-gray-800 mt-2">{describeCore(core)}</p>
         <p className="text-sm text-gray-500 mt-2">
-          A second reading on the three axes about artificial minds themselves: X is Mind, Y is Moral Standing, and Z is Ends of
-          Intelligence read from the beyond-biology end (Z−) to the living-world end (Z+). Your tiers on these three pick one of 27
-          archetypes. Related thinkers, one group per axis:{' '}
+          A second reading from three axes about AI systems themselves and what they are for: X is Machine Experience, Y is Moral
+          Standing, and Z is Growth and Limits read from the growth-first end (Z−) to the within-limits end (Z+). Your tiers on
+          these three pick one of 27 archetypes. Related thinkers, one group per axis:{' '}
           {(['x', 'y', 'z'] as CoreAxis[]).map((k, i) => tierInfo(k, core.tiers[i]).thinkers).join('; ')}. Each argued something
           close to one part; none necessarily holds all of it.
         </p>

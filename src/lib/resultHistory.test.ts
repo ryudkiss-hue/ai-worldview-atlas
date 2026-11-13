@@ -16,7 +16,7 @@ function buildEntry(overrides: Partial<Omit<ResultHistoryEntry, 'timestamp'>> = 
     t1Raw: flatVector(3),
     t2Raw: flatVector(-3),
     topMatchId: 'doomer',
-    topMatchName: 'Doomer',
+    topMatchName: 'Extinction-Risk Advocate',
     ...overrides,
   }
 }
@@ -38,9 +38,9 @@ describe('resultHistory', () => {
   })
 
   it('returns the history as it was BEFORE the new entry, not including it', () => {
-    recordResult(buildEntry({ topMatchId: 'doomer', topMatchName: 'Doomer' }), 1000)
+    recordResult(buildEntry({ topMatchId: 'doomer', topMatchName: 'Extinction-Risk Advocate' }), 1000)
     const priorHistory = recordResult(
-      buildEntry({ t1Raw: flatVector(-4), topMatchId: 'eacc-maximalist', topMatchName: 'e/acc Maximalist' }),
+      buildEntry({ t1Raw: flatVector(-4), topMatchId: 'eacc-maximalist', topMatchName: 'Full-Speed Builder' }),
       2000,
     )
     expect(priorHistory).toHaveLength(1)
@@ -74,12 +74,12 @@ describe('resultHistory', () => {
   })
 
   it('does not throw and returns an empty array if localStorage contains malformed JSON', () => {
-    localStorage.setItem('atlas-result-history-v2', 'not valid json{{{')
+    localStorage.setItem('atlas-result-history-v3', 'not valid json{{{')
     expect(getResultHistory()).toEqual([])
   })
 
   it('filters out malformed entries instead of throwing', () => {
-    localStorage.setItem('atlas-result-history-v2', JSON.stringify([{ garbage: true }, { ...buildEntry(), timestamp: 500 }]))
+    localStorage.setItem('atlas-result-history-v3', JSON.stringify([{ garbage: true }, { ...buildEntry(), timestamp: 500 }]))
     const history = getResultHistory()
     expect(history).toHaveLength(1)
     expect(history[0].timestamp).toBe(500)

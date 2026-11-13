@@ -24,8 +24,8 @@ describe('profiles', () => {
 describe('coordinate revisions (design spec §8.2)', () => {
   const byId = Object.fromEntries(profiles.map((p) => [p.id, p]))
 
-  it('widens Techno-Nationalist Hawk / Military AI Strategist', () => {
-    // 2026-11-13: Ends of Intelligence and Risk corrected to the hawk's own manifesto (+4, -6), which argues them
+  it('widens National Security Hawk / Military AI Strategist', () => {
+    // 2026-11-13: Growth and Limits and Risk corrected to the hawk's own manifesto (+4, -6), which argues them
     // in the terms the merged axes now use (capability as a national good; no pause while rivals build).
     expect(byId['techno-nationalist-hawk'].coords).toEqual({
       teleological: 4, risk: -6, socioEconomic: -5, ontological: -3,
@@ -37,8 +37,8 @@ describe('coordinate revisions (design spec §8.2)', () => {
     })
   })
 
-  it('widens EA Longtermist / Rationalist Alignment Researcher', () => {
-    // 2026-11-13: Ends of Intelligence corrected to +7, the position the EA manifesto builds its whole profile on.
+  it('widens EA Longtermist / Alignment Researcher', () => {
+    // 2026-11-13: Growth and Limits corrected to +7, the position the EA manifesto builds its whole profile on.
     expect(byId['ea-longtermist'].coords).toEqual({
       teleological: 7, risk: 8, socioEconomic: -5, ontological: 4,
       legalMoral: 8, evolutionary: -3, relational: 2, geopolitical: -6,
@@ -49,7 +49,7 @@ describe('coordinate revisions (design spec §8.2)', () => {
     })
   })
 
-  it('widens AI Safety Institutionalist / Global Governance Technocrat', () => {
+  it('widens Safety Regulation Advocate / Global Treaty Advocate', () => {
     expect(byId['ai-safety-institutionalist'].coords).toEqual({
       teleological: -4, risk: 7, socioEconomic: -4, ontological: 1,
       legalMoral: -2, evolutionary: -5, relational: -2, geopolitical: -3,
@@ -81,7 +81,7 @@ describe('new archetypes (design spec §8.3)', () => {
 })
 
 describe('coverage-gap archetypes (added 2026-07-07)', () => {
-  it('includes AI-for-Global-Development Optimist and AI Ethics/Fairness Watchdog', () => {
+  it('includes Global Development Optimist and Fairness Watchdog', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('ai-global-development-optimist')
     expect(ids).toContain('ai-ethics-fairness-watchdog')
@@ -89,35 +89,35 @@ describe('coverage-gap archetypes (added 2026-07-07)', () => {
 })
 
 describe('augmentation-gap archetype (surfaced via thinker research, added 2026-07-07)', () => {
-  it('includes Human-AI Augmentation Advocate', () => {
+  it('includes Augment-Not-Replace Advocate', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('human-ai-augmentation-advocate')
   })
 })
 
 describe('calibration-gap archetype (surfaced via nearest-neighbor coverage analysis, added 2026-07-08)', () => {
-  it('includes National Champion Accelerationist', () => {
+  it('includes National Champion Builder', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('national-champion-accelerationist')
   })
 })
 
 describe('synthesis archetype (moral personhood + collective ownership + anti-succession, added 2026-07-08)', () => {
-  it('includes Xenocentric Steward', () => {
+  it('includes AI Guardianship Advocate', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('xenocentric-steward')
   })
 })
 
 describe('coverage-gap archetype (surfaced via council-deliberation-driven citation research, added 2026-07-08)', () => {
-  it('includes Corporate AI Welfare Researcher', () => {
+  it('includes AI Welfare Researcher', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('corporate-ai-welfare-researcher')
   })
 })
 
 describe('balance-audit archetype (surfaced via classification win-rate calibration, added 2026-07-08)', () => {
-  it('includes Normal-Technology Gradualist', () => {
+  it('includes Normal-Technology Realist', () => {
     const ids = profiles.map((p) => p.id)
     expect(ids).toContain('normal-technology-gradualist')
   })

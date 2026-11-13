@@ -35,7 +35,7 @@ describe('IntroPage', () => {
   it('renders all 13 stakeholder tag checkboxes and records selections', () => {
     renderIntroPage()
     stakeholderTags.forEach((tag) => expect(screen.getByLabelText(tag.name)).toBeInTheDocument())
-    fireEvent.click(screen.getByLabelText('Automation-Exposed Worker'))
+    fireEvent.click(screen.getByLabelText('My job could be automated'))
     expect(screen.getByTestId('tags').textContent).toBe('automation-exposed-worker')
   })
 
@@ -85,7 +85,7 @@ describe('IntroPage', () => {
 
   it('a tag selected before Start survives the reset-on-Start click', () => {
     renderIntroPage()
-    fireEvent.click(screen.getByLabelText('Automation-Exposed Worker'))
+    fireEvent.click(screen.getByLabelText('My job could be automated'))
     fireEvent.click(screen.getByRole('button', { name: 'Start' }))
     expect(screen.getByTestId('tags').textContent).toBe('automation-exposed-worker')
   })

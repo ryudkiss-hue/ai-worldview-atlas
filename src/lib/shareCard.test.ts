@@ -23,7 +23,7 @@ function buildMockContext() {
 
 function buildData(overrides: Partial<ShareCardData> = {}): ShareCardData {
   return {
-    archetypeName: 'Doomer',
+    archetypeName: 'Extinction-Risk Advocate',
     summary: 'Believes advanced AI carries a real chance of ending humanity.',
     axesInAgreement: 6,
     combined: flatVector(4),
@@ -40,9 +40,9 @@ describe('drawShareCard', () => {
 
   it('renders the archetype name and same-side axes as text', () => {
     const ctx = buildMockContext()
-    drawShareCard(ctx, buildData({ archetypeName: 'Xenocentric Steward', axesInAgreement: 7 }))
+    drawShareCard(ctx, buildData({ archetypeName: 'AI Guardianship Advocate', axesInAgreement: 7 }))
     const textCalls = (ctx.fillText as ReturnType<typeof vi.fn>).mock.calls.map((call) => call[0])
-    expect(textCalls).toContain('Xenocentric Steward')
+    expect(textCalls).toContain('AI Guardianship Advocate')
     expect(textCalls.some((text) => text.includes('Same side on 7 of 8 axes'))).toBe(true)
   })
 

@@ -13,7 +13,7 @@ This version merges two instruments: the original Atlas (145 questions on 8 axes
 Most AI-opinion typologies make three mistakes this project tries to avoid:
 
 1. **They flatten a multi-dimensional space into one or two axes.** Whether you think AI poses existential risk and whether you think a chatbot can suffer are different questions. Collapsing them into "pro-AI vs. anti-AI" loses the shape of the disagreement.
-2. **They imply every position is equally common.** This tool groups its 50 archetypes into 7 **Tier-1 superclusters** so the relative scale of each camp stays legible (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)).
+2. **They imply every position is equally common.** This tool groups its 50 archetypes into 7 **groups** so the relative scale of each camp stays legible (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)).
 3. **They let wording, order and the habit of agreeing bias the result.** See [How the statements are built](#how-the-statements-are-built) and [Bias mitigations](#bias-mitigations-built-in).
 
 ---
@@ -34,67 +34,67 @@ Each axis has 9 pairs: 4 about today's and near-term AI (T1) and 5 about what is
 
 ## The 8 axes
 
-Positive scores lean toward Pole A, negative toward Pole B. The axes fall into four groups: what AI is (1), how we live with it (2–3), what future to build (4–5), and who decides and how fast (6–8). Axis ids are kept from the original Atlas so the 50 archetypes, their reports and manifestos still line up.
+Positive scores lean toward Pole A, negative toward Pole B. Axis names, poles, archetype names and stakeholder tags follow the plain-language rules in [`docs/LANGUAGE_GUIDE.md`](docs/LANGUAGE_GUIDE.md). The axes fall into four groups: what AI is (1), how we live with it (2–3), what future to build (4–5), and who decides and how fast (6–8). Axis ids are kept from the original Atlas so the 50 archetypes, their reports and manifestos still line up.
 
 | # | Axis | Question | Pole A | Pole B |
 |---|------|----------|--------|--------|
-| 1 | **Mind** | Could AI systems have minds? | Silicon Functionalism | Substrate Exceptionalism |
-| 2 | **Moral Standing** | Can AI systems be wronged, and what do we owe them? | Machine Patienthood | Instrumentalism & Property |
-| 3 | **Relationships** | What are bonds between people and AI systems worth? | Post-Biological Pluralism | Affective Biocentrism |
-| 4 | **Ends of Intelligence** | What should intelligence ultimately be for? | Cosmic Vitalism | Human & Ecological Limits |
-| 5 | **Succession** | Should humans remain the ones who shape the future? | Post-Human Succession | Human-Directed Co-Evolution |
-| 6 | **Risk** | How much should we slow down to avoid catastrophe? | Precautionary | Accelerationist |
-| 7 | **Openness & Control** | Who should be able to build and use powerful AI? | Permissionless Openness | Managed Oversight |
-| 8 | **Geopolitics** | Should AI serve nations or humanity as a whole? | Techno-Nationalism | Borderless Networkism |
+| 1 | **Machine Experience** | Could an AI system ever have real experiences, such as feelings? | Possible in machines | Only in living things |
+| 2 | **Moral Standing** | Could an AI system ever be owed moral consideration for its own sake? | Owed some protection | Tools and property |
+| 3 | **Relationships** | What are relationships with AI systems worth? | As valuable as human bonds | Human bonds come first |
+| 4 | **Growth and Limits** | Should AI keep expanding, or stay within the limits of people and the planet? | Growth first | Within limits |
+| 5 | **Human Control** | Should people keep the final say, even where machines do better? | Open to handing over | People stay in charge |
+| 6 | **Speed and Safety** | How carefully should AI be developed and released? | Caution first | Speed first |
+| 7 | **Openness & Control** | Who should be able to build and use powerful AI? | Open to all | Public oversight |
+| 8 | **Nations and the World** | Should AI serve national interests or people everywhere? | National interest | Global cooperation |
 
 Each axis is also scored separately for T1 and T2, because many positions differ between the near term and the long run.
 
 ---
 
-## The 50 archetypes, in 7 superclusters
+## The 50 archetypes, in 7 groups
 
-Rather than one flat list, every archetype belongs to exactly one of seven **Tier-1 superclusters** (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)), which keeps the relative size and shape of each camp visible instead of implying 50 equally-weighted tribes:
+Rather than one flat list, every archetype belongs to exactly one of seven **groups** (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)), which keeps the relative size and shape of each camp visible instead of implying 50 equally-weighted tribes:
 
 <details>
-<summary><strong>Precautionary / Safety</strong> (11 archetypes)</summary>
+<summary><strong>Caution and safety</strong> (11 archetypes)</summary>
 
-Doomer · AI Safety Institutionalist · Effective Altruist Longtermist · Rationalist Alignment Researcher · Global Governance Technocrat · Near-Term AI Ethicist · Neo-Luddite Degrowth Advocate · Whistleblower/Insider Safety Advocate · Compute-Governance Specialist · EU-Style Regulatory Standard-Setter · AI Ethics/Fairness Watchdog
+Extinction-Risk Advocate · Safety Regulation Advocate · Long-Term Future Planner · Alignment Researcher · Global Treaty Advocate · Present-Harms Ethicist · Degrowth Tech Skeptic · Insider Whistleblower · Computing-Power Oversight Specialist · Rules-First Regulator · Fairness Watchdog
 </details>
 
 <details>
-<summary><strong>Accelerationist / Techno-Optimist</strong> (10 archetypes)</summary>
+<summary><strong>Speed and optimism</strong> (10 archetypes)</summary>
 
-e/acc Maximalist · Open-Source Libertarian · Cyberpunk Anti-Corporate Accelerationist · Silicon Valley Techno-Optimist · Corporate AI Pragmatist · Post-Humanist Transhumanist · Cosmic Vitalist Mystic · Human-AI Augmentation Advocate · National Champion Accelerationist · Normal-Technology Gradualist
+Full-Speed Builder · Open-Source Libertarian · Anti-Corporate Hacker · Tech Industry Optimist · Business-First Pragmatist · Beyond-Human Futurist · Space-Expansion Visionary · Augment-Not-Replace Advocate · National Champion Builder · Normal-Technology Realist
 </details>
 
 <details>
-<summary><strong>State-Power / Security</strong> (6 archetypes)</summary>
+<summary><strong>State power and security</strong> (6 archetypes)</summary>
 
-Techno-Nationalist Hawk · Authoritarian State-Control Advocate · Military AI Strategist · Chip-Sovereignty Enforcement Strategist · AI Arms-Control Verification Specialist · Domestic Security-AI Efficiency Advocate
+National Security Hawk · Central State-Control Advocate · Military AI Strategist · Chip Export-Control Strategist · Arms-Control Verification Specialist · Public-Safety AI Advocate
 </details>
 
 <details>
-<summary><strong>Anti-Concentration / Populist</strong> (4 archetypes)</summary>
+<summary><strong>Spreading power out</strong> (4 archetypes)</summary>
 
-Open Science Internationalist · Anti-Monopoly Populist · Pragmatic Centrist · Platform-Cooperativist
+Open Science Internationalist · Anti-Monopoly Advocate · Pragmatic Centrist · Worker-Owned Tech Advocate
 </details>
 
 <details>
-<summary><strong>Relational / Companionship</strong> (7 archetypes)</summary>
+<summary><strong>Relationships and moral standing</strong> (7 archetypes)</summary>
 
-Companion-Tech Romantic · Affective Biocentrist · Bio-Conservative Traditionalist · Digital Rights Advocate · Faith-Rooted AI Ethicist · Xenocentric Steward · Corporate AI Welfare Researcher
+AI Companionship Advocate · Human-Bonds Defender · Human Nature Traditionalist · AI Rights Advocate · Faith-Based Ethicist · AI Guardianship Advocate · AI Welfare Researcher
 </details>
 
 <details>
-<summary><strong>Material / Labor Stakes</strong> (6 archetypes)</summary>
+<summary><strong>Work and livelihoods</strong> (6 archetypes)</summary>
 
-Creative-Labor/Artist Rights Advocate · Labor Movement/Collective Bargaining Advocate · Disability Rights/Accessibility Advocate · Ghost-Work Labor Advocate · Algorithmic Wage-Discrimination Scholar · UBI Redistributive-Response Advocate
+Artist Rights Advocate · Union Bargaining Advocate · Disability Rights Advocate · Data-Worker Rights Advocate · Gig-Pay Fairness Advocate · Basic Income Advocate
 </details>
 
 <details>
-<summary><strong>Sovereignty / Marginalized Voice</strong> (6 archetypes)</summary>
+<summary><strong>Self-determination and rights</strong> (6 archetypes)</summary>
 
-Global South Techno-Sovereigntist · Indigenous Data Sovereignty Advocate · AI-for-Global-Development Optimist · Algorithmic Colonialism Critic · African-Language AI Sovereignty Advocate · Border/Migration Surveillance Critic
+Global South Self-Reliance Advocate · Indigenous Data Sovereignty Advocate · Global Development Optimist · Digital Colonialism Critic · African-Language AI Advocate · Border Surveillance Critic
 </details>
 
 Full definitions, 8-axis coordinates, and one-paragraph summaries for every archetype live in [`src/data/profiles.ts`](src/data/profiles.ts). Every archetype also has a full written report — extended narrative, its position and reasoning on each of the eight axes, the strongest objections with replies, real-world landmarks with sources ([`profileExpansions.ts`](src/data/profileExpansions.ts)), real thinkers, further reading, next steps, a "commonly confused with" distinction naming an archetype people often mix it up with and what separates them, and a reflective breakdown of its implicit assumptions — in [`src/data/profileReports.ts`](src/data/profileReports.ts).
@@ -103,7 +103,7 @@ Full definitions, 8-axis coordinates, and one-paragraph summaries for every arch
 
 ## The core-three reading
 
-Results also place you among the Synthetic Compass's **27 archetypes**, using only the three axes about artificial minds themselves: Mind (X), Moral Standing (Y) and Ends of Intelligence read in reverse (Z, from beyond-biology to living-world). Each axis is split into three tiers at −2 and +2, and the three tiers pick one cell of 3 × 3 × 3. Descriptions are built from one sentence per tier, so the same tier always reads the same way. See [`coreThree.ts`](src/data/coreThree.ts).
+Results also place you among **27 archetypes** from three axes about AI systems themselves and what they are for: Machine Experience (X), Moral Standing (Y) and Growth and Limits read in reverse (Z, from growth-first to within-limits). Each axis is split into three tiers at −2 and +2, and the three tiers pick one cell of 3 × 3 × 3. Descriptions are built from one sentence per tier, so the same tier always reads the same way. See [`coreThree.ts`](src/data/coreThree.ts).
 
 ---
 
@@ -119,7 +119,7 @@ This project treats "did we accidentally build a biased classifier" as a real en
 - **A structural bias audit runs as a standing test** ([`classificationBias.test.ts`](src/lib/classificationBias.test.ts)): 500 trials of pure-random answers are classified, and the test fails if any non-centrist archetype wins an implausible share of random trials — the kind of subtle "opinion matching effect" that has been documented in other online quiz classifiers even under uniformly random input.
 - **A profile-redundancy guard** ([`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts)) fails the build if any two of the 50 archetypes are closer than 5.0 in 8D space — this caught (and forced fixes to) three near-duplicate pairs during development, and every profile report also names an archetype it's often confused with, with a specific distinguishing sentence (a conceptual neighbor, not always the nearest in coordinates; the results page shows the coordinate gaps directly). This guard catches content duplication; it does not guarantee balanced classification win-rates (two archetypes 5.0+ apart can still win wildly different shares of random input — see the calibration note below).
 - **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation (no test-retest reliability studies, no independent peer review) and explains the four-option scale with an explicit "no settled view" choice.
-- **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 144 statements aim for clarity: no statement above grade 15 and an average between grades 8 and 12, so the idea, not the vocabulary, does the work. Profile summaries, scenarios, and stakeholder-tag descriptions are held to a grade-14 ceiling and in practice read well below it (averages near grades 6 to 8, none above grade 10). (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
+- **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 144 statements aim for clarity: no statement above grade 15 and an average between grades 8 and 12, so the idea, not the vocabulary, does the work. Profile summaries, scenarios, and stakeholder-tag descriptions are held to a grade-14 ceiling. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
 - **Material-stakeholder tags are structurally separate from worldview scoring.** They're stored in their own piece of state, never enter `computeRawAxisScores`/`classify`, and are surfaced on the results page as their own labeled section — so "what you believe" and "what you have at stake" stay visibly distinct instead of getting blended into one score.
 
 ---
@@ -133,7 +133,7 @@ Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2 
    → T1 and T2 combined in proportion to their statement counts (= the score over all 18)
    → Euclidean distance to all 50 archetype coordinates; closest 3 shown as average gap per axis (distance ÷ √8)
    → close call when the second match is less than 0.3 farther away than the first
-   → core-three reading from the tiers of Mind, Moral Standing and Ends of Intelligence
+   → core-three reading from the tiers of Machine Experience, Moral Standing and Growth and Limits
 ```
 
 Statement weights are equal: with no response data yet, there is no basis for weighting one statement above another. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **25 thought experiments** are a separate, unscored reading page.
@@ -178,11 +178,11 @@ src/
 │   ├── questions/               144 statements in mirrored pairs, 18 per axis, one file per axis
 │   ├── profiles.ts              50 archetypes: id, name, 8D coords, summary
 │   ├── profileReports.ts        full report content per archetype
-│   ├── archetypeClusters.ts     7 Tier-1 superclusters grouping the 50
+│   ├── archetypeClusters.ts     7 groups of the 50 archetypes
 │   ├── stakeholderTags.ts       13 material-stakeholder self-select tags
 │   ├── scenarios.ts             8 situational diagnostic questions
 │   ├── attentionChecks.ts       2 optional, unscored check statements
-│   ├── manifestoContents.ts     the 50 long-form manifestos (axis positions filled from profiles.ts)
+│   ├── manifestoContents.ts     50 plain-language manifestos, one per archetype (axis positions filled from profiles.ts)
 │   ├── study.ts                 link to the validation study's form (empty until set)
 │   ├── shortForm.ts             the 48-statement short version
 │   ├── intimacyModule.ts        focus module: statements, scoring, research summary and sources

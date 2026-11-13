@@ -14,7 +14,7 @@ describe('manifestos', () => {
       expect(text.split(AXIS_POSITIONS_MARKER).length - 1, p.id).toBe(1)
       const filled = withAxisPositions(text, p)
       expect(filled).not.toContain(AXIS_POSITIONS_MARKER)
-      expect(filled).toContain('- **Ends of Intelligence**:')
+      expect(filled).toContain('- **Growth and Limits**:')
     }
   })
 

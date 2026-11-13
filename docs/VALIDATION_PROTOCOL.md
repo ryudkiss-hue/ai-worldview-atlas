@@ -1,6 +1,6 @@
 # Validation protocol for the AI Worldview Atlas
 
-**Protocol 2.0, fixed 2026-11-13.** This protocol is written before any responses are collected. It says what data will be gathered, which responses will be set aside, what will be measured, and what each result would lead to. Changing any rule or threshold after this date is a deviation: it goes in the log at the end, with a date and a reason, before the data it affects are analysed.
+**Protocol 2.1, fixed 2026-11-13.** (2.1 replaces 2.0, fixed earlier the same day, before any responses existed; the only changes are the reworded item set and the hashes below. See "Changes made before this protocol was fixed".) This protocol is written before any responses are collected. It says what data will be gathered, which responses will be set aside, what will be measured, and what each result would lead to. Changing any rule or threshold after this date is a deviation: it goes in the log at the end, with a date and a reason, before the data it affects are analysed.
 
 It replaces the Synthetic Compass study protocol (1.2), which covered the earlier three-axis quiz, and the older pilot plan that used to sit in `PILOT_TESTING_PROTOCOL.md`.
 
@@ -17,10 +17,10 @@ The Atlas claims to place people on eight axes and to name the archetypes closes
 
 | Record | Value |
 |---|---|
-| Item set | 144 statements, 8 axes × 9 mirrored pairs; identifier `2026-11-13-61dbdadfc894` (first 12 hex digits of the SHA-256 of `id\|statement` lines) |
+| Item set | 144 statements, 8 axes × 9 mirrored pairs; identifier `2026-11-13-86c01d104481` (first 12 hex digits of the SHA-256 of `id\|statement` lines) |
 | Scoring | As in `src/lib/scoring.ts`: linear, −10 to +10 per axis; "no settled view" = 0; tiers at ±2; close call when the top two archetypes are less than 0.3 apart |
 | Archetypes | 50, coordinates as in `src/data/profiles.ts` on 2026-11-13 |
-| Analysis script | `analysis/analyze_atlas.py`, SHA-256 `67b814ac705b8e07…`; reference data `analysis/atlas_reference.json`, SHA-256 `0080d52f9ea06a78…` |
+| Analysis script | `analysis/analyze_atlas.py`, SHA-256 `a7fbac01e269376f…`; reference data `analysis/atlas_reference.json`, SHA-256 `aaef552d500e2705…` |
 | Attention checks | Two optional statements (901 asks for "Disagree", 902 for "Strongly agree"), never scored |
 
 A test in the repository (`src/data/analysisReference.test.ts`) fails if the reference data drifts from the quiz's own statements, directions or coordinates.
@@ -41,7 +41,7 @@ A response is set aside if any of these apply. Each exclusion is listed with its
 
 | Rule | Condition |
 |---|---|
-| E1 | Item set differs from `2026-11-13-61dbdadfc894`, or the answer row is incomplete |
+| E1 | Item set differs from `2026-11-13-86c01d104481`, or the answer row is incomplete |
 | E2 | Duplicate response ID (the first is kept) |
 | E3 | Consent is not "Yes" |
 | E4 | More than 36 of 144 statements (25%) answered "no settled view" |
@@ -82,6 +82,7 @@ These were made on 2026-11-13, before any responses existed, and are recorded so
 - Seven mirrored pairs rewritten: 43/44 (romantic relationships with AI, replacing a pair about children), 59/60 (general intelligence or tools for needs, replacing local power bills), 63/64 (sacrifices for spreading intelligence beyond Earth), 75/76 (keeping up skills AI does better, replacing human review of automated decisions), 97/98 (pulling AI systems after a serious accident), 123/124 (responsibility for openly released models, replacing a weapons pair), 133/134 (researchers from rival countries, replacing cultural data).
 - Five coordinates corrected where an archetype's own manifesto argued the other side of the axis: Techno-Nationalist Hawk (Ends of Intelligence −3 → +4, Risk −1 → −6), AI-for-Global-Development Optimist (Risk +4 → −4), Effective Altruist Longtermist (Ends of Intelligence −3 → +7), AI Safety Institutionalist (Moral Standing +2 → −2).
 - Close-call margin set to 0.3 by simulation (`analysis/closecall_sim.py`: synthetic answer sheets only).
+- Item set 3, the same day: every statement, scenario, axis and pole name, archetype name and stakeholder tag was reworded to the plain-language rules in `docs/LANGUAGE_GUIDE.md` (no insider jargon, AI systems described as products, no stereotyping labels, more near-term statements grounded in present-day effects). Ids, mirrored pairs, horizons, pole directions and archetype coordinates are unchanged, so every analysis below applies as written. The new identifier is `2026-11-13-86c01d104481`; protocol 2.0's identifier `2026-11-13-61dbdadfc894` was never used to collect data.
 
 ## Deviation log
 
