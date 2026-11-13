@@ -25,8 +25,10 @@ describe('coordinate revisions (design spec §8.2)', () => {
   const byId = Object.fromEntries(profiles.map((p) => [p.id, p]))
 
   it('widens Techno-Nationalist Hawk / Military AI Strategist', () => {
+    // 2026-11-13: Ends of Intelligence and Risk corrected to the hawk's own manifesto (+4, -6), which argues them
+    // in the terms the merged axes now use (capability as a national good; no pause while rivals build).
     expect(byId['techno-nationalist-hawk'].coords).toEqual({
-      teleological: -3, risk: -1, socioEconomic: -5, ontological: -3,
+      teleological: 4, risk: -6, socioEconomic: -5, ontological: -3,
       legalMoral: -4, evolutionary: -2, relational: -3, geopolitical: 9,
     })
     expect(byId['military-ai-strategist'].coords).toEqual({
@@ -36,8 +38,9 @@ describe('coordinate revisions (design spec §8.2)', () => {
   })
 
   it('widens EA Longtermist / Rationalist Alignment Researcher', () => {
+    // 2026-11-13: Ends of Intelligence corrected to +7, the position the EA manifesto builds its whole profile on.
     expect(byId['ea-longtermist'].coords).toEqual({
-      teleological: -3, risk: 8, socioEconomic: -5, ontological: 4,
+      teleological: 7, risk: 8, socioEconomic: -5, ontological: 4,
       legalMoral: 8, evolutionary: -3, relational: 2, geopolitical: -6,
     })
     expect(byId['rationalist-alignment-researcher'].coords).toEqual({
@@ -49,7 +52,7 @@ describe('coordinate revisions (design spec §8.2)', () => {
   it('widens AI Safety Institutionalist / Global Governance Technocrat', () => {
     expect(byId['ai-safety-institutionalist'].coords).toEqual({
       teleological: -4, risk: 7, socioEconomic: -4, ontological: 1,
-      legalMoral: 2, evolutionary: -5, relational: -2, geopolitical: -3,
+      legalMoral: -2, evolutionary: -5, relational: -2, geopolitical: -3,
     })
     expect(byId['global-governance-technocrat'].coords).toEqual({
       teleological: -2, risk: 6, socioEconomic: -9, ontological: 0,

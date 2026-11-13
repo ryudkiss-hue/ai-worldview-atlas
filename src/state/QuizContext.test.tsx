@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { QuizProvider, useQuiz } from './QuizContext'
+import { QuizProvider, useQuiz, loadSavedProgress, PROGRESS_KEY } from './QuizContext'
 import { axes } from '../data/axes'
 
 function TestConsumer() {
@@ -92,5 +92,24 @@ describe('QuizContext', () => {
       return null
     }
     expect(() => render(<Broken />)).toThrow('useQuiz must be used within a QuizProvider')
+  })
+})
+
+describe('saved progress', () => {
+  it('restores valid answers and drops anything that does not fit the current statements', () => {
+    localStorage.setItem(
+      PROGRESS_KEY,
+      JSON.stringify({ answers: { 1: 5, 2: 3, 9999: 4 }, declinedQuestions: [3, 1, 777], checkAnswers: { 901: 2, 5: 4 }, questionOrder: {} }),
+    )
+    const saved = loadSavedProgress()!
+    expect(saved.answers).toEqual({ 1: 5 })
+    expect(saved.declinedQuestions).toEqual([3])
+    expect(saved.checkAnswers).toEqual({ 901: 2 })
+    expect(Object.keys(saved.questionOrder)).toHaveLength(8)
+  })
+
+  it('starts fresh when the saved data is unreadable', () => {
+    localStorage.setItem(PROGRESS_KEY, '{not json')
+    expect(loadSavedProgress()).toBeNull()
   })
 })

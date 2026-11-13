@@ -79,7 +79,7 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
           <View key={match.profile.id} style={{ marginBottom: 12 }}>
             <Text style={{ fontSize: 13, marginBottom: 4 }}>{match.profile.name}</Text>
             <Text style={styles.paragraph}>{match.profile.summary}</Text>
-            <Text>Distance: {match.distance.toFixed(2)}</Text>
+            <Text>About {(match.distance / Math.sqrt(8)).toFixed(1)} points apart per axis (distance {match.distance.toFixed(2)})</Text>
           </View>
         ))}
 

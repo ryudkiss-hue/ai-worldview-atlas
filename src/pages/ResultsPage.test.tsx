@@ -3,7 +3,7 @@ import { render, screen, fireEvent, within } from '@testing-library/react'
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
 import { ResultsPage } from './ResultsPage'
-import { QuizProvider, useQuiz } from '../state/QuizContext'
+import { QuizProvider, useQuiz, PROGRESS_KEY } from '../state/QuizContext'
 import { encodeShareLink, decodeShareLink, type ShareableScores } from '../lib/shareLink'
 import { recordResult } from '../lib/resultHistory'
 import { axes } from '../data/axes'
@@ -80,10 +80,11 @@ describe('ResultsPage', () => {
     expect(within(table).getByText('Ends of Intelligence')).toBeInTheDocument()
   })
 
-  it('shows axes in agreement, not a percentage, on the top ProfileCard, plus the core-three reading', () => {
+  it('shows the average gap and same-side axes, not a percentage, on the top ProfileCard, plus the core-three reading', () => {
     const encoded = encodeShareLink(buildFlatScores(7, -7))
     renderResultsPage(`?d=${encoded}`)
-    expect(screen.getAllByText(/of 8 axes in agreement/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/points apart per axis/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Same side as you on \d of 8 axes/).length).toBeGreaterThan(0)
     expect(screen.queryByText(/% match/)).not.toBeInTheDocument()
     expect(screen.getByText(/Your core three/)).toBeInTheDocument()
   })
@@ -218,6 +219,32 @@ describe('ResultsPage', () => {
     renderResultsPage(`?d=${oldLink}`)
     expect(screen.getByText('This link is from an earlier version')).toBeInTheDocument()
     expect(screen.queryByText('Closest Worldview Matches')).not.toBeInTheDocument()
+  })
+
+  it('flags a close call, names both archetypes and the axes that separate them', () => {
+    const t1Raw = { teleological: 12, risk: -12, socioEconomic: 3, ontological: -11, legalMoral: 9, evolutionary: 4, relational: -11, geopolitical: 8 }
+    const t2Raw = { teleological: 6, risk: -10, socioEconomic: 3, ontological: -9, legalMoral: 10, evolutionary: 14, relational: -6, geopolitical: 11 }
+    renderResultsPage(`?d=${encodeShareLink({ t1Raw, t2Raw })}`)
+    expect(screen.getByText('This Was a Close Call')).toBeInTheDocument()
+    expect(screen.getByText(/Pragmatic Centrist and Techno-Nationalist Hawk are almost exactly as close/)).toBeInTheDocument()
+    expect(screen.getByText('Where the two differ most:')).toBeInTheDocument()
+  })
+
+  it('does not flag a close call when the top match is clearly ahead', () => {
+    const t1Raw = { teleological: 11, risk: 1, socioEconomic: -7, ontological: 3, legalMoral: -3, evolutionary: 1, relational: 4, geopolitical: 8 }
+    const t2Raw = { teleological: 15, risk: 9, socioEconomic: -7, ontological: 10, legalMoral: -14, evolutionary: 2, relational: 6, geopolitical: 13 }
+    renderResultsPage(`?d=${encodeShareLink({ t1Raw, t2Raw })}`)
+    expect(screen.queryByText('This Was a Close Call')).not.toBeInTheDocument()
+  })
+
+  it('says so when a check statement got a different answer from the one it asked for', () => {
+    localStorage.setItem(
+      PROGRESS_KEY,
+      JSON.stringify({ answers: Object.fromEntries(questions.map((q) => [q.id, q.id % 3 ? 4 : 2])), checkAnswers: { 901: 4, 902: 5 } }),
+    )
+    renderResultsPage('')
+    expect(screen.getByText('A Check Statement Was Answered Differently')).toBeInTheDocument()
+    expect(screen.getByText(/One of the two check statements/)).toBeInTheDocument()
   })
 
   it('shows a "no results yet" message instead of a fake neutral result when the quiz was never completed', () => {

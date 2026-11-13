@@ -6,6 +6,7 @@ import { useQuiz } from '../state/QuizContext'
 import { ProgressBar } from '../components/ProgressBar'
 import { AxisHorizonGroup } from '../components/AxisHorizonGroup'
 import { clearPersistentTTSCache } from '../lib/tts'
+import { attentionChecks, attentionCheckAsQuestion, isAttentionCheck } from '../data/attentionChecks'
 
 export function AxisPage() {
   const { axisIndex } = useParams<{ axisIndex: string }>()
@@ -15,6 +16,8 @@ export function AxisPage() {
     setAnswer,
     declinedQuestions,
     declineQuestion,
+    checkAnswers,
+    setCheckAnswer,
     questionOrder,
     ttsSettings,
     setTtsSettings,
@@ -33,9 +36,14 @@ export function AxisPage() {
 
   const allQuestions = questionsForAxis(axis.id)
   const order = questionOrder[axis.id]
-  const byId = new Map(allQuestions.map((q) => [q.id, q]))
-  const t1Questions = order.t1.map((id) => byId.get(id)!)
-  const t2Questions = order.t2.map((id) => byId.get(id)!)
+  const byId = new Map([
+    ...allQuestions.map((q) => [q.id, q] as const),
+    ...attentionChecks.map((c) => [c.id, attentionCheckAsQuestion(c)] as const),
+  ])
+  const t1Questions = order.t1.map((id) => byId.get(id)).filter((q) => q !== undefined)
+  const t2Questions = order.t2.map((id) => byId.get(id)).filter((q) => q !== undefined)
+  const shownAnswers = { ...answers, ...checkAnswers }
+  const onAnswer = (id: number, value: number) => (isAttentionCheck(id) ? setCheckAnswer(id, value) : setAnswer(id, value))
   const allAnswered = allQuestions.every((q) => answers[q.id] !== undefined || declinedQuestions.includes(q.id))
   const answeredCount = Object.keys(answers).length + declinedQuestions.length
 
@@ -173,17 +181,17 @@ export function AxisPage() {
       <AxisHorizonGroup
         title={t('horizon_t1')}
         questions={t1Questions}
-        answers={answers}
+        answers={shownAnswers}
         declinedQuestions={declinedQuestions}
-        onAnswer={setAnswer}
+        onAnswer={onAnswer}
         onDecline={declineQuestion}
       />
       <AxisHorizonGroup
         title={t('horizon_t2')}
         questions={t2Questions}
-        answers={answers}
+        answers={shownAnswers}
         declinedQuestions={declinedQuestions}
-        onAnswer={setAnswer}
+        onAnswer={onAnswer}
         onDecline={declineQuestion}
       />
       <div className="flex flex-wrap justify-between gap-2 mt-6">

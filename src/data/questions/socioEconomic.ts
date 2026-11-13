@@ -16,8 +16,8 @@ export const socioEconomicQuestions: Question[] = [
   { id: 120, pair: 119, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'B', statement: "A permanent global agency should have the authority to approve or halt powerful AI systems." },
   { id: 121, pair: 122, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'A', statement: "Access to large-scale computing should be left to the open market." },
   { id: 122, pair: 121, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'B', statement: "Access to large-scale computing should be overseen by government, like electricity or water." },
-  { id: 123, pair: 124, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'A', statement: "AI models should stay openly available even if they make it somewhat easier to design dangerous weapons." },
-  { id: 124, pair: 123, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'B', statement: "AI models that make it easier to design dangerous weapons should not be openly available." },
+  { id: 123, pair: 124, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'A', statement: "As AI grows more powerful, developers who release models openly should not be held responsible for what others do with them." },
+  { id: 124, pair: 123, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'B', statement: "As AI grows more powerful, developers who release models openly should share responsibility for harms others cause with them." },
   { id: 125, pair: 126, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'A', statement: "The most advanced AI should be built by many independent groups rather than a few large firms." },
   { id: 126, pair: 125, axisId: 'socioEconomic', horizon: 'T2', agreeShiftsToward: 'B', statement: "The most advanced AI should be built by a few large, well-resourced firms rather than many independent groups." },
 ]

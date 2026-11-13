@@ -4,8 +4,8 @@ import type { Question } from '../types'
 export const evolutionaryQuestions: Question[] = [
   { id: 73, pair: 74, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'A', statement: "As AI outperforms people at more kinds of work, people should step back from those roles rather than hold on to them." },
   { id: 74, pair: 73, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'B', statement: "Even where AI outperforms people at a kind of work, people should keep a meaningful role in it." },
-  { id: 75, pair: 76, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'A', statement: "Human review of important automated decisions should be dropped wherever AI proves more accurate." },
-  { id: 76, pair: 75, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'B', statement: "Human review of important automated decisions should be kept, even where AI proves more accurate." },
+  { id: 75, pair: 76, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'A', statement: "People need not keep up skills such as writing and arithmetic once AI systems do them better." },
+  { id: 76, pair: 75, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'B', statement: "People should keep up skills such as writing and arithmetic, even where AI systems do them better." },
   { id: 77, pair: 78, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'A', statement: "AI systems taking over most creative work would be no loss, if the results were just as good." },
   { id: 78, pair: 77, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'B', statement: "AI systems taking over most creative work would be a loss, even if the results were just as good." },
   { id: 79, pair: 80, axisId: 'evolutionary', horizon: 'T1', agreeShiftsToward: 'A', statement: "AI systems should be allowed to make major decisions for society wherever they decide better than people." },

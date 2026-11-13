@@ -2,6 +2,7 @@ import type { Question } from '../data/types'
 import { LikertInput } from './LikertInput'
 import { AudioPlayerButton } from './AudioPlayerButton'
 import { useQuiz } from '../state/QuizContext'
+import { isAttentionCheck } from '../data/attentionChecks'
 
 interface AxisHorizonGroupProps {
   title: string
@@ -39,7 +40,7 @@ export function AxisHorizonGroup({
                 value={answers[question.id]}
                 declined={declinedQuestions.includes(question.id)}
                 onChange={(value) => onAnswer(question.id, value)}
-                onDecline={onDecline ? () => onDecline(question.id) : undefined}
+                onDecline={onDecline && !isAttentionCheck(question.id) ? () => onDecline(question.id) : undefined}
               />
             </li>
           )

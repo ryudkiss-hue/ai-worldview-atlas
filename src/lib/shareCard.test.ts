@@ -38,12 +38,12 @@ describe('drawShareCard', () => {
     expect(ctx.fillRect).toHaveBeenCalledWith(0, 0, SHARE_CARD_WIDTH, SHARE_CARD_HEIGHT)
   })
 
-  it('renders the archetype name and axes in agreement as text', () => {
+  it('renders the archetype name and same-side axes as text', () => {
     const ctx = buildMockContext()
     drawShareCard(ctx, buildData({ archetypeName: 'Xenocentric Steward', axesInAgreement: 7 }))
     const textCalls = (ctx.fillText as ReturnType<typeof vi.fn>).mock.calls.map((call) => call[0])
     expect(textCalls).toContain('Xenocentric Steward')
-    expect(textCalls.some((text) => text.includes('7 of 8 axes in agreement'))).toBe(true)
+    expect(textCalls.some((text) => text.includes('Same side on 7 of 8 axes'))).toBe(true)
   })
 
   it('wraps a long summary across multiple fillText calls instead of one overflowing line', () => {
