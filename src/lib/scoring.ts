@@ -93,11 +93,13 @@ export function axesInAgreement(combined: AxisVector, profile: Profile): number 
 }
 
 /**
- * A close call is when the second-closest archetype is less than 0.8 points farther away than the closest.
- * Calibrated by simulation (synthetic respondents placed near each archetype's coordinates), where about a quarter
- * of results fell under this margin.
+ * A close call is when the second-closest archetype is less than 0.3 points farther away than the closest.
+ * Calibrated by simulation against measurement error (analysis/closecall_sim.py: synthetic answer sheets, never data about
+ * people): each sheet was rescored many times on resampled statements, and below this gap the top match survived
+ * fewer than half of the resamples. About 1 in 10 sheets near an archetype and 1 in 5 broad sheets fall under it.
+ * To be rechecked against real responses in the validation study.
  */
-export const CLOSE_CALL_MARGIN = 0.8
+export const CLOSE_CALL_MARGIN = 0.3
 
 export function isCloseCall(matches: ProfileMatch[]): boolean {
   if (matches.length < 2) return false

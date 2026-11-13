@@ -58,7 +58,7 @@ export function drawShareCard(ctx: CanvasRenderingContext2D, data: ShareCardData
 
   ctx.fillStyle = '#34d399'
   ctx.font = '600 28px system-ui, sans-serif'
-  ctx.fillText(`${data.axesInAgreement} of 8 axes in agreement`, 60, afterName + 20)
+  ctx.fillText(`Same side on ${data.axesInAgreement} of 8 axes`, 60, afterName + 20)
 
   ctx.fillStyle = '#cbd5e1'
   ctx.font = '400 24px system-ui, sans-serif'

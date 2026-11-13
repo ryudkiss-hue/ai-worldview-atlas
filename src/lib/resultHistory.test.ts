@@ -39,7 +39,10 @@ describe('resultHistory', () => {
 
   it('returns the history as it was BEFORE the new entry, not including it', () => {
     recordResult(buildEntry({ topMatchId: 'doomer', topMatchName: 'Doomer' }), 1000)
-    const priorHistory = recordResult(buildEntry({ topMatchId: 'eacc-maximalist', topMatchName: 'e/acc Maximalist' }), 2000)
+    const priorHistory = recordResult(
+      buildEntry({ t1Raw: flatVector(-4), topMatchId: 'eacc-maximalist', topMatchName: 'e/acc Maximalist' }),
+      2000,
+    )
     expect(priorHistory).toHaveLength(1)
     expect(priorHistory[0].topMatchId).toBe('doomer')
     expect(getResultHistory()).toHaveLength(2)
@@ -47,12 +50,21 @@ describe('resultHistory', () => {
 
   it('caps stored history at 20 entries, dropping the oldest first', () => {
     for (let i = 0; i < 25; i++) {
-      recordResult(buildEntry({ topMatchId: `profile-${i}` }), i)
+      recordResult(buildEntry({ t1Raw: flatVector(i), topMatchId: `profile-${i}` }), i)
     }
     const history = getResultHistory()
     expect(history).toHaveLength(20)
     expect(history[0].topMatchId).toBe('profile-5')
     expect(history[19].topMatchId).toBe('profile-24')
+  })
+
+  it('does not log the same result twice when the results page is reopened', () => {
+    recordResult(buildEntry({ t1Raw: flatVector(1) }), 1000)
+    recordResult(buildEntry({ t1Raw: flatVector(2) }), 2000)
+    const prior = recordResult(buildEntry({ t1Raw: flatVector(2) }), 3000)
+    expect(getResultHistory()).toHaveLength(2)
+    expect(prior).toHaveLength(1)
+    expect(prior[0].timestamp).toBe(1000)
   })
 
   it('clearResultHistory empties the stored history', () => {

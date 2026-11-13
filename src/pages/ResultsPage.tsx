@@ -29,11 +29,14 @@ import { PinnacleReflection } from '../components/PinnacleReflection'
 import { manifestoContents } from '../data/manifestoContents'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 import { coreArchetype, coreCode, describeCore, tierInfo, type CoreAxis } from '../data/coreThree'
+import { biggestGaps, withAxisPositions } from '../lib/axisPositions'
+import { failedAttentionChecks } from '../data/attentionChecks'
+import { STUDY_FORM_URL } from '../data/study'
 
 export function ResultsPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { answers, reset, scenarioAnswers, selectedStakeholderTags, declinedQuestions, t, tProfileName, tProfileSummary, tAxis } = useQuiz()
+  const { answers, reset, scenarioAnswers, selectedStakeholderTags, declinedQuestions, checkAnswers, t, tProfileName, tProfileSummary, tAxis } = useQuiz()
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle')
   const [pdfStatus, setPdfStatus] = useState<'idle' | 'generating' | 'failed'>('idle')
   const [imageStatus, setImageStatus] = useState<'idle' | 'generating' | 'failed'>('idle')
@@ -65,6 +68,8 @@ export function ResultsPage() {
   const topMatches = matches.slice(0, 3)
   const topMatch = topMatches[0]
   const closeCall = isCloseCall(matches)
+  const closeCallAxes = closeCall ? biggestGaps(matches[0].profile.coords, matches[1].profile.coords, 3, 1) : []
+  const missedChecks = decoded ? [] : failedAttentionChecks(checkAnswers)
   const core = coreArchetype(combined)
 
   const [inspectedProfileId, setInspectedProfileId] = useState<string>(topMatch.profile.id)
@@ -288,24 +293,60 @@ export function ResultsPage() {
         </div>
       )}
 
+      {missedChecks.length > 0 && (
+        <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 p-4">
+          <h3 className="text-lg font-semibold mb-1">A Check Statement Was Answered Differently</h3>
+          <p className="text-gray-700">
+            {missedChecks.length === 1 ? 'One of the two check statements' : 'Both check statements'} asked for a particular
+            answer and got a different one. That often just means a quick tap, but if you were moving fast, your scores may
+            be less reliable than usual. Your answers are saved, so you can go back and look over any axis.
+          </p>
+        </div>
+      )}
+
       {closeCall && (
         <div className="mt-4 border-l-4 border-sky-500 bg-sky-50 p-4">
           <h3 className="text-lg font-semibold mb-1">This Was a Close Call</h3>
           <p className="text-gray-700">
-            Your top match beat your second-closest match by an unusually thin margin. Both are
-            worth reading — your actual position may sit meaningfully between them rather than
-            squarely inside either one.
+            {topMatch.profile.name} and {matches[1].profile.name} are almost exactly as close to you as each other. When the
+            gap is this small, a slightly different set of statements on the same themes would give a different first match
+            about half the time, so read both.
           </p>
+          {closeCallAxes.length > 0 && (
+            <p className="text-gray-700 mt-2">Where the two differ most:</p>
+          )}
+          {closeCallAxes.length > 0 && (
+            <ul className="list-disc pl-5 mt-1 text-gray-700 text-sm space-y-1">
+              {closeCallAxes.map((id) => {
+                const axis = axes.find((a) => a.id === id)!
+                const f = (v: number) => (v > 0 ? `+${v.toFixed(1)}` : v.toFixed(1))
+                return (
+                  <li key={id}>
+                    <strong>{axis.name}</strong>: {topMatch.profile.name} {f(matches[0].profile.coords[id])},{' '}
+                    {matches[1].profile.name} {f(matches[1].profile.coords[id])}; you {f(combined[id])}.
+                  </li>
+                )
+              })}
+            </ul>
+          )}
         </div>
       )}
 
       <h3 className="text-xl font-semibold mt-8 mb-2">{t('closest_archetype')}</h3>
       {topMatches.map((match, index) => (
-        <ProfileCard key={match.profile.id} match={match} rank={index + 1} agreement={axesInAgreement(combined, match.profile)} />
+        <ProfileCard
+          key={match.profile.id}
+          match={match}
+          rank={index + 1}
+          agreement={axesInAgreement(combined, match.profile)}
+          combined={combined}
+        />
       ))}
       <p className="text-sm text-gray-500">
-        Matches are ranked by distance across all eight axes. &quot;Axes in agreement&quot; counts the axes where you and the
-        archetype fall on the same side (toward pole A, the middle, or toward pole B, with the middle running from −2 to +2).
+        Matches are ranked by how far apart you are across all eight axes, shown as the average gap per axis. &quot;Same
+        side&quot; counts the axes where you and the archetype fall in the same band (toward pole A, the middle from −2 to +2,
+        or toward pole B). The two can disagree: an archetype just over a band boundary on several axes shares fewer sides
+        with you but can still be closer overall than one that matches your sides and is far away on one axis.
       </p>
 
       <section className="mt-8 rounded-lg border border-gray-200 p-4" aria-labelledby="core-three-heading">
@@ -395,7 +436,7 @@ export function ResultsPage() {
                   : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
               }`}
             >
-              {tProfileName(match.profile.id)} ({axesInAgreement(combined, match.profile)}/8)
+              {tProfileName(match.profile.id)}
             </button>
           ))}
         </div>
@@ -434,7 +475,13 @@ export function ResultsPage() {
           </div>
         ) : (
           <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200 shadow-sm animate-fadeIn">
-            <MarkdownRenderer content={manifestoContents[inspectedMatch.profile.id] || '*No manifesto available.*'} />
+            <MarkdownRenderer
+              content={
+                manifestoContents[inspectedMatch.profile.id]
+                  ? withAxisPositions(manifestoContents[inspectedMatch.profile.id], inspectedMatch.profile)
+                  : '*No manifesto available.*'
+              }
+            />
           </div>
         )}
       </div>
@@ -444,6 +491,16 @@ export function ResultsPage() {
         <Link to="/thought-experiments" className="text-blue-600 underline">Read the 25 thought experiments</Link>. They don&apos;t
         change your scores.
       </p>
+
+      {STUDY_FORM_URL && (
+        <p className="mt-4 text-gray-700">
+          This quiz hasn&apos;t been validated yet.{' '}
+          <a href={STUDY_FORM_URL} target="_blank" rel="noreferrer" className="text-blue-600 underline">
+            Take it once more in the study version
+          </a>{' '}
+          to help test whether it measures what it claims to. It asks for consent first and no name.
+        </p>
+      )}
 
       <MethodologySection />
       <PinnacleReflection archetypeName={topMatch.profile.name} />

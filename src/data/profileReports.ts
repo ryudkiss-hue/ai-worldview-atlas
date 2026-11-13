@@ -1,6 +1,9 @@
 import type { ProfileReportContent } from './types'
+import { profileExpansions } from './profileExpansions'
 
-export const profileReports: Record<string, ProfileReportContent> = {
+type BaseReport = Omit<ProfileReportContent, 'axisReasons' | 'objections' | 'landmarks'>
+
+const baseReports: Record<string, BaseReport> = {
   doomer: {
     profileId: 'doomer',
     extendedNarrative: [
@@ -263,8 +266,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Tracking chips and training runs is genuinely tractable and enforceable, which is exactly its limit. It says very little about how a model actually behaves once it's already trained and deployed.",
     thinkers: [
-      { name: 'Compute governance policy researchers', bio: 'Published technical policy analysts on AI compute tracking', connection: 'Their published proposals for verifiable compute thresholds and hardware tracking are the direct technical basis for this stance.' },
-      { name: 'Export control policy analysts', bio: 'Published trade and technology policy researchers', connection: 'Their work on chip export controls provides the practical, mechanism-level thinking this stance is built around.' },
     ],
     furtherReading: [
       { title: 'Chip War', author: 'Chris Miller', note: 'Background on the semiconductor supply chain that compute governance proposals depend on tracking.' },
@@ -513,7 +514,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     shadowSide: "A purpose defined at a cosmic, near-eternal scale can make any near-term human cost look negligible by comparison — a framing that's very convenient for justifying almost anything happening right now.",
     thinkers: [
       { name: 'Friedrich Nietzsche', bio: '19th-century philosopher', connection: 'His writing on the will to power and the drive toward self-overcoming provides the closest historical philosophical grounding for this cosmic, expansionist view of value.' },
-      { name: 'Cosmist philosophical tradition', bio: 'A strand of thought tracing to Russian Cosmism and later transhumanist writing', connection: "This tradition explicitly frames the expansion of mind and intelligence across the cosmos as civilization's highest purpose." },
     ],
     furtherReading: [
       { title: 'Thus Spoke Zarathustra', author: 'Friedrich Nietzsche', note: "The philosophical root of this stance's framing of expansion and self-overcoming as the highest value." },
@@ -572,8 +572,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "A single national authority in sole control removes the outside checks that catch abuse everywhere else power concentrates. The same control meant to guarantee safety also removes the mechanism that would catch it going wrong.",
     thinkers: [
-      { name: 'National security doctrine on strategic technology control', bio: 'Published government strategy documents on controlling dual-use emerging technology', connection: 'This doctrine argues explicitly for centralized state control over technologies deemed too strategically significant for open or private-sector development.' },
-      { name: 'Historical precedent of state-controlled strategic programs', bio: 'Documented national programs for nuclear and aerospace technology', connection: 'These historical programs illustrate the same underlying logic, centralizing control of a strategically vital technology under one state authority.' },
     ],
     furtherReading: [
       { title: 'Command and Control', author: 'Eric Schlosser', note: "A history of centralized state control over a different strategically vital and dangerous technology, useful for understanding this stance's underlying logic." },
@@ -602,8 +600,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Viewing AI mainly through deterrence treats the arms-race dynamic as a fixed fact to plan around, rather than a dynamic that state actors, including your own, actively drive and could choose to de-escalate.",
     thinkers: [
-      { name: 'Military AI doctrine publications', bio: 'Published defense department strategy documents on AI in warfare', connection: 'These doctrines explicitly frame frontier AI capability as a matter of military deterrence and strategic advantage, the same framing this stance holds.' },
-      { name: 'RAND Corporation reports on AI and national security', bio: 'Published defense-policy think tank research', connection: "This research analyzes AI's military and deterrence implications directly, without centering broader ethical or governance debates." },
     ],
     furtherReading: [
       { title: 'Army of None', author: 'Paul Scharre', note: 'A detailed look at autonomous weapons and military AI strategy from inside the defense policy world.' },
@@ -632,7 +628,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Publishing openly is meant to make AI safer through scrutiny, but the same openness hands capability to whoever reads the papers, whether or not they share the safety-first intent behind publishing them.",
     thinkers: [
-      { name: 'CERN model of international scientific collaboration', bio: 'The multi-national, openly-published physics research organization', connection: 'This model of transparent, cross-border collaboration on a technically demanding, potentially risky field is the closest institutional parallel to what this stance wants for AI.' },
       { name: 'Michael Nielsen', bio: 'Physicist and researcher on open science', connection: 'His published work on open, networked scientific collaboration argues directly for the kind of transparency this stance wants applied to AI development.' },
     ],
     furtherReading: [
@@ -954,7 +949,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Duncan Crabtree-Ireland', bio: 'National Executive Director and Chief Negotiator, SAG-AFTRA', connection: "As chief negotiator through the 2023 actors' strike, he secured the union contract's first enforceable AI provisions — requiring informed consent and payment before a 'digital replica' can be created or used, protections that extend even to deceased performers' estates. A concrete, real-world example of collective bargaining applied directly to AI deployment." },
       { name: 'Milagros Miceli', bio: 'Research lead, DAIR Institute; head of the Data, Algorithmic Systems, and Ethics unit, Weizenbaum Institut', connection: "Her Data Workers' Inquiry funds and publishes first-person research by the data-labeling and content-moderation workers who train AI systems, documenting the power imbalance in how labeling decisions get imposed on them from above — the material conditions this stance argues collective bargaining needs to reach." },
-      { name: 'UNI Global Union', bio: 'International trade union federation representing services and tech-sector workers across more than 150 countries', connection: 'Their published "Top 10 Principles for Workers\' Data Rights and Artificial Intelligence" argue for binding, negotiated worker input into AI deployment worldwide, not just within any single country\'s labor law.' },
     ],
     furtherReading: [
       { title: 'The SAG-AFTRA 2023 contract provisions on AI (public text)', author: 'SAG-AFTRA', note: 'A concrete example of collective bargaining successfully setting real limits on AI use in the workplace.' },
@@ -984,7 +978,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Your focus on bias and access for disabled people is real and often overlooked elsewhere, but that focus doesn't extend automatically to other groups facing their own distinct forms of AI-driven exclusion.",
     thinkers: [
-      { name: 'Disability rights technology researchers', bio: 'Published scholars on accessible technology design', connection: 'Their published research documents both the promise of AI-powered accessibility tools and the specific bias risks disabled users face in AI systems.' },
       { name: 'Haben Girma', bio: 'Disability rights lawyer and advocate', connection: 'Her public advocacy and writing on accessible technology directly argues for AI development that genuinely serves disabled users, not just claims to.' },
     ],
     furtherReading: [
@@ -1014,8 +1007,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Building independent AI capacity means re-running the costs of a resource- and talent-intensive race that wealthier countries already have a head start in, even when the underlying critique of dependency is completely fair.",
     thinkers: [
-      { name: 'African Union AI strategy documents', bio: 'Published continental policy frameworks on AI development', connection: 'These documents explicitly frame AI capacity-building as a matter of avoiding renewed technological dependency, the same concern behind this stance.' },
-      { name: "India's national AI strategy publications", bio: 'Published government technology-sovereignty policy', connection: 'This strategy explicitly frames domestic AI capability as a matter of national self-reliance rather than global openness alone.' },
     ],
     furtherReading: [
       { title: 'The Costs of Connection', author: 'Nick Couldry and Ulises A. Mejias', note: "An argument that global data flows can replicate colonial patterns of extraction, directly relevant to this stance's concern." },
@@ -1044,8 +1035,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Requiring real consent before traditional knowledge trains AI is a strong, specific protection, but it doesn't extend automatically to the much larger universe of data use that isn't tied to any one community's traditional knowledge.",
     thinkers: [
-      { name: 'OCAP principles (Ownership, Control, Access, Possession)', bio: 'Data governance framework developed by First Nations researchers in Canada', connection: 'This framework directly establishes the standard this stance argues for: Indigenous communities, not outside institutions, should control data about them.' },
-      { name: 'Indigenous AI initiatives', bio: 'Published research and advocacy from Indigenous technologists and scholars', connection: 'Their published work applies data sovereignty principles specifically to AI training data and model development.' },
     ],
     furtherReading: [
       { title: 'Indigenous Data Sovereignty: Toward an Agenda', author: 'Tahu Kukutai and John Taylor (editors)', note: 'The foundational academic case for Indigenous control over data concerning Indigenous peoples.' },
@@ -1075,7 +1064,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     shadowSide: "The worry that slow rollout costs real lives is genuine and underrated, but it can also become the justification for skipping safety steps that would have caught real, serious harm before it reached the very people this stance wants to help.",
     thinkers: [
       { name: 'Payal Arora', bio: 'Digital anthropologist, Erasmus University Rotterdam', connection: 'Her book The Next Billion Users documents how people in the Global South actually use and benefit from new technology, grounding this stance in real usage patterns rather than assumptions imported from wealthy countries.' },
-      { name: 'World Health Organization Global Strategy on Digital Health', bio: 'Published multilateral public-health technology strategy', connection: 'This strategy frames AI-assisted diagnostics and health tools as a practical way to extend care to underserved regions faster than traditional infrastructure could reach them.' },
     ],
     furtherReading: [
       { title: 'The Next Billion Users', author: 'Payal Arora', note: 'A close, ground-level account of how AI and digital tools are actually adopted and valued outside wealthy, English-speaking markets.' },
@@ -1241,7 +1229,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
       { name: 'Amanda Askell', bio: 'Philosopher, Anthropic', connection: "Her public work shaping Claude's character, and how the model discusses its own possible experience, treats AI's inner life as a serious, open research problem worth getting right, without resolving it into either \"just a tool\" or \"deserves rights.\"" },
     ],
     furtherReading: [
-      { title: 'Taking AI Welfare Seriously', author: 'Kyle Fish et al.', note: 'A 2024 paper arguing near-term AI systems may plausibly have some form of consciousness or agency, and that AI companies should begin taking welfare research seriously now rather than waiting for the philosophical question to be settled.' },
+      { title: 'Taking AI Welfare Seriously', author: 'Robert Long, Jeff Sebo and others', note: 'A 2024 paper arguing near-term AI systems may plausibly have some form of consciousness or agency, and that AI companies should begin taking welfare research seriously now rather than waiting for the philosophical question to be settled.' },
       { title: 'A Defense of the Rights of Artificial Intelligences', author: 'Eric Schwitzgebel and Mara Garza', note: "The stronger, rights-based claim this stance stops short of — useful as the position immediately to this stance's left, showing what \"taking welfare seriously\" would need to add to become a rights claim." },
     ],
     nextSteps: [
@@ -1330,8 +1318,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "A verification regime is only as strong as its enforcement, and most weapon reviews under Article 36 are conducted by the fielding state itself, with no external audit. Treating the existence of a legal review requirement as more binding in practice than it usually is risks mistaking a paper safeguard for a real one — and offers no answer to a rival that simply isn't running the review at all.",
     thinkers: [
-      { name: 'Dr. Vincent Boulanin', bio: 'Director, Governance of AI Programme, Stockholm International Peace Research Institute (SIPRI)', connection: 'His 2017 SIPRI Policy Report "Mapping the Development of Autonomy in Weapon Systems" documented how autonomous functions were spreading through targeting and munitions systems years before policy debate caught up, and his continued research (including "Responsible Procurement of Military Artificial Intelligence," SIPRI 2026) makes the sustained case for verification and transparency regimes over deterrence-based reasoning.' },
-      { name: 'SIPRI (Stockholm International Peace Research Institute)', bio: 'Independent international institute researching conflict, armaments, arms control, and disarmament', connection: "As the institutional home of Boulanin's research program, SIPRI has produced the sustained body of work — from autonomy mapping to nuclear-risk analysis to procurement guidance — that grounds this stance's insistence on verifiable, legally-compliant restraint over an unconstrained capability race." },
+      { name: 'Vincent Boulanin', bio: 'Director, Governance of AI Programme, Stockholm International Peace Research Institute (SIPRI)', connection: 'His 2017 SIPRI Policy Report "Mapping the Development of Autonomy in Weapon Systems" documented how autonomous functions were spreading through targeting and munitions systems years before policy debate caught up, and his continued research (including "Responsible Procurement of Military Artificial Intelligence," SIPRI 2026) makes the sustained case for verification and transparency regimes over deterrence-based reasoning.' },
     ],
     furtherReading: [
       { title: 'Implementing Article 36 Weapon Reviews in the Light of Increasing Autonomy in Weapon Systems', author: 'Vincent Boulanin, SIPRI Insights on Peace and Security (2015)', note: "Makes the core legal case: the review requirement already exists under international humanitarian law, and the actual gap is in rigorous implementation as autonomy increases, not in the absence of a legal framework." },
@@ -1362,7 +1349,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     shadowSide: "The oversight you insist on pairing with every tool is frequently proposed, funded thinly if at all, and never actually enforced — which means the safeguard doing the moral work in your argument can end up existing only on paper, producing the same unaccountable outcome a ban was meant to prevent. You also don't have a strong answer for documented cases where facial recognition misidentification caused real harm to an innocent person; treating those as arguments for better oversight rather than evidence the tool itself is the problem is a real interpretive choice, not a neutral one.",
     thinkers: [
       { name: 'Daniel Castro', bio: 'Vice President, Information Technology and Innovation Foundation (ITIF); Director, Center for Data Innovation', connection: 'His "Banning Police Use of Facial Recognition Would Undercut Public Safety" (ITIF, 2018) and "Banning Facial Recognition Will Not Advance Efforts at Police Reform" (ITIF, 2020) are the direct source of this stance\'s core argument: bans remove a tool without addressing the underlying reform need, and cost departments real efficacy.' },
-      { name: 'Information Technology and Innovation Foundation (ITIF)', bio: 'Washington, D.C. think tank focused on technology policy and innovation', connection: "As the institutional home of Castro's Center for Data Innovation, ITIF published and backed the research and congressional testimony this stance draws on directly, including its formal submission to federal oversight hearings on facial recognition policy." },
     ],
     furtherReading: [
       { title: 'Banning Police Use of Facial Recognition Would Undercut Public Safety', author: 'Daniel Castro and Michael McLaughlin, ITIF (July 30, 2018)', note: "The founding statement of this stance's argument: that facial recognition bans remove a public-safety tool without addressing the reform questions that actually motivated the ban." },
@@ -1394,7 +1380,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     thinkers: [
       { name: 'Mary L. Gray & Siddharth Suri', bio: 'Co-authors, Ghost Work: How to Stop Silicon Valley from Building a New Global Underclass (2019); Gray is a senior researcher at Microsoft Research, Suri an economist', connection: 'Coined "ghost work" to name exactly the invisible, on-demand labor structure this stance describes, arguing it constitutes a new, unprotected labor underclass rather than a temporary side effect of automation.' },
       { name: 'Billy Perrigo', bio: 'Journalist, TIME', connection: 'His January 2023 investigative report on OpenAI\'s Kenyan Sama contractors is the concrete case this stance treats as paradigmatic: workers paid under $2/hour reviewing traumatic content to build ChatGPT\'s safety filter.' },
-      { name: 'Dr. Milagros Miceli / DAIR Institute', bio: 'Researcher; Distributed AI Research Institute', connection: "Her Data Workers' Inquiry ran participatory research with 15 co-researchers across Venezuela, Kenya, Syria, and Germany, documenting firsthand the conditions of annotation and moderation labor this stance centers." },
+      { name: 'Milagros Miceli', bio: 'Researcher; Distributed AI Research Institute', connection: "Her Data Workers' Inquiry ran participatory research with 15 co-researchers across Venezuela, Kenya, Syria, and Germany, documenting firsthand the conditions of annotation and moderation labor this stance centers." },
     ],
     furtherReading: [
       { title: 'Ghost Work: How to Stop Silicon Valley from Building a New Global Underclass', author: 'Mary L. Gray and Siddharth Suri', note: 'The 2019 book that coined "ghost work" and documented the invisible, on-demand labor structure underneath platform AI and the gig economy alike.' },
@@ -1425,7 +1411,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     shadowSide: "A legislative ban on a specific pay mechanism can be rewritten around the moment the law is drafted narrowly enough to name it, companies have already shown they can restructure incentive pay, bonuses, and \"quests\" faster than statutes can be updated to catch the new version. This stance is strong on diagnosing the harm precisely and weak on the durability of any single legal fix against a company with every incentive to route around it.",
     thinkers: [
       { name: 'Veena Dubal', bio: 'Law professor, UC Law San Francisco', connection: 'Coined "algorithmic wage discrimination" in her 2023 Columbia Law Review article, based on ethnographic interviews with rideshare drivers describing opaque, personalized algorithmic pay as "gambling" and "trickery"; her proposed remedy is a non-waivable statutory ban.' },
-      { name: 'Columbia Law Review', bio: 'Peer-reviewed legal scholarship journal, Columbia Law School', connection: 'Published Dubal\'s article "On Algorithmic Wage Discrimination" (123 Colum. L. Rev. 1929, 2023), the venue through which this legal-scholarship argument entered the mainstream regulatory conversation.' },
     ],
     furtherReading: [
       { title: 'On Algorithmic Wage Discrimination', author: 'Veena Dubal', note: 'Columbia Law Review 123(7), 2023, pp. 1929-1992 — the founding article naming and documenting the practice, drawn from ethnographic interviews with rideshare drivers.' },
@@ -1487,8 +1472,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "Treating all Western-built AI deployment in Africa as inherently colonial extraction risks flattening the real, active choices of African users, engineers, and institutions who adopt, adapt, or contest these tools on their own terms. Collapsing negotiated engagement into pure victimhood makes it harder, not easier, to tell a genuinely coercive imposition apart from a locally-driven decision to use a flawed tool anyway because it's still useful.",
     thinkers: [
-      { name: 'Dr. Abeba Birhane', bio: 'Cognitive scientist; Mozilla Foundation Senior Fellow, adjunct at Trinity College Dublin, DAIR affiliate', connection: 'Her paper "Algorithmic Colonization of Africa" (SCRIPTed 17(2), 2020) coined the framework this stance is built on: Western AI deployment in Africa as a continuation of colonial extraction logic, targeting corporate rather than state power.' },
-      { name: 'Radical AI Podcast', bio: 'Podcast examining ethics, power, and justice in AI', connection: "Episode 11, \"Robot Rights? Exploring Algorithmic Colonization with Abeba Birhane,\" extended her written argument into public conversation, naming the specific corporate extraction dynamic this stance centers." },
+      { name: 'Abeba Birhane', bio: 'Cognitive scientist; Mozilla Foundation Senior Fellow, adjunct at Trinity College Dublin, DAIR affiliate', connection: 'Her paper "Algorithmic Colonization of Africa" (SCRIPTed 17(2), 2020) coined the framework this stance is built on: Western AI deployment in Africa as a continuation of colonial extraction logic, targeting corporate rather than state power.' },
     ],
     furtherReading: [
       { title: 'Algorithmic Colonization of Africa', author: 'Abeba Birhane', note: 'The 2020 SCRIPTed academic paper making the core case: Western AI "solutions for Africa" replicate colonial extraction, treating data as raw material mined without consent.' },
@@ -1518,7 +1502,7 @@ export const profileReports: Record<string, ProfileReportContent> = {
     ],
     shadowSide: "A community-driven, volunteer open-source model is inspiring, but it doesn't solve the underlying resourcing problem: volunteer labor is unevenly sustainable across languages and contributors, a grassroots effort structurally can't match the training data and compute a well-funded Western lab can throw at a handful of profitable languages, and an openly-released dataset can still be scraped and repackaged by the same commercial actors this stance is trying to route around.",
     thinkers: [
-      { name: 'Prof. Vukosi Marivate', bio: 'Computer scientist, University of Pretoria; co-founder, Masakhane Research Foundation', connection: 'He co-founded Masakhane, the pan-African grassroots NLP community, and co-authored its foundational 2020 paper and the 2022 "Towards Afrocentric NLP for African Languages" follow-up.' },
+      { name: 'Vukosi Marivate', bio: 'Computer scientist, University of Pretoria; co-founder, Masakhane Research Foundation', connection: 'He co-founded Masakhane, the pan-African grassroots NLP community, and co-authored its foundational 2020 paper and the 2022 "Towards Afrocentric NLP for African Languages" follow-up.' },
       { name: 'Kathleen Siminyu', bio: 'NLP researcher; Board Chair, Masakhane Research Foundation', connection: 'As co-founder and Board Chair, her work has driven Masakhane\'s community-built approach to African-language translation and speech datasets, built "for Africans, by Africans."' },
     ],
     furtherReading: [
@@ -1550,7 +1534,6 @@ export const profileReports: Record<string, ProfileReportContent> = {
     shadowSide: "Centering accountability for how AI gets deployed against migrants doesn't, by itself, specify what should replace biometric screening or automated risk-scoring at borders under real strain. Documenting harm isn't the same as proposing a workable alternative, and this critique can read as opposing any AI tool at the border without fully engaging the real processing backlogs and chronic understaffing that push states toward automation in the first place.",
     thinkers: [
       { name: 'Petra Molnar', bio: 'Lawyer and anthropologist; Associate Director, Refugee Law Lab, York University; Faculty Associate, Harvard Berkman Klein Center', connection: 'Her book The Walls Have Eyes (The New Press, 2024, Governor General\'s Literary Award finalist) documents biometric border tech, automated asylum risk-scoring, and drone surveillance at borders worldwide, grounding this stance in direct field research rather than theory.' },
-      { name: 'Refugee Law Lab, York University', bio: 'Interdisciplinary research lab studying refugee law, technology, and migrant justice', connection: "Molnar's institutional home; the Lab's published research on automated border and asylum decision-making is where this stance's empirical claims about AI harm to migrants come from." },
     ],
     furtherReading: [
       { title: 'The Walls Have Eyes: Surviving Migration in the Age of Artificial Intelligence', author: 'Petra Molnar', note: 'The 2024 book (The New Press) documenting AI border and surveillance technology deployed against migrants and refugees across multiple continents.' },
@@ -1572,3 +1555,25 @@ export const profileReports: Record<string, ProfileReportContent> = {
     },
   },
 }
+
+/** Each base report with its expansion merged in: one more narrative paragraph, axis reasons, objections, landmarks, and extra thinkers and reading. */
+export const profileReports: Record<string, ProfileReportContent> = Object.fromEntries(
+  Object.entries(baseReports).map(([id, base]) => {
+    const x = profileExpansions[id]
+    if (!x) throw new Error(`No expansion for archetype ${id}`)
+    const seen = new Set(base.thinkers.map((t) => t.name))
+    const seenReading = new Set(base.furtherReading.map((r) => r.title))
+    return [
+      id,
+      {
+        ...base,
+        extendedNarrative: [...base.extendedNarrative, x.moreNarrative],
+        axisReasons: x.axisReasons,
+        objections: x.objections,
+        landmarks: x.landmarks,
+        thinkers: [...base.thinkers, ...x.addedThinkers.filter((t) => !seen.has(t.name))],
+        furtherReading: [...base.furtherReading, ...x.addedReading.filter((r) => !seenReading.has(r.title))],
+      },
+    ]
+  }),
+)

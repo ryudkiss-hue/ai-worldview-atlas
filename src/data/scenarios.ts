@@ -3,15 +3,15 @@ import type { Scenario } from './types'
 export const scenarios: Scenario[] = [
   {
     axisId: 'teleological',
-    prompt: "A city needs to build a new data center to keep training bigger AI models, but it will strain the local power grid for years. How do you see this?",
-    optionA: 'Worth it — building bigger, smarter systems matters more than short-term local strain.',
-    optionB: 'Not worth it — the real harm to real people outweighs an abstract future benefit.',
+    prompt: "A city is asked to host a huge data center for training far more capable AI. For decades it would use as much water and land as a small town. Should it go ahead?",
+    optionA: 'Yes — growing what minds can do is worth a heavy cost to the world as it is.',
+    optionB: 'No — living things and the places they depend on should come first.',
   },
   {
     axisId: 'risk',
-    prompt: "A country pauses its most advanced AI training runs for six months to let safety research catch up, even though a rival nation keeps building. Is this brave restraint or a dangerous surrender?",
-    optionA: 'Brave restraint — worth the risk of falling behind.',
-    optionB: "Dangerous surrender — restraint doesn't stop the risk, it just hands the future to whoever won't wait.",
+    prompt: "A country pauses its most advanced AI training runs for six months to let safety research catch up, even though a rival nation keeps building. Is this the right call?",
+    optionA: 'The right call — avoiding catastrophe is worth the risk of falling behind.',
+    optionB: "The wrong call — pausing doesn't remove the danger, it just hands the lead to whoever won't wait.",
   },
   {
     axisId: 'socioEconomic',
@@ -35,7 +35,7 @@ export const scenarios: Scenario[] = [
     axisId: 'evolutionary',
     prompt: "Human bodies may matter less over time. Digital minds may shape the future instead. Is that a natural step, or a loss worth fighting?",
     optionA: "A natural next step — clinging to biology for its own sake doesn't make sense.",
-    optionB: 'A loss to resist — humans, even upgraded ones, are worth protecting.',
+    optionB: 'A loss to resist — people should keep shaping the future, changing only by their own choice.',
   },
   {
     axisId: 'relational',

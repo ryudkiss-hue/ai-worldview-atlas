@@ -42,7 +42,13 @@ export function getResultHistory(): ResultHistoryEntry[] {
  * one without a second read.
  */
 export function recordResult(entry: Omit<ResultHistoryEntry, 'timestamp'>, timestamp: number): ResultHistoryEntry[] {
-  const priorHistory = readRaw()
+  const history = readRaw()
+  const last = history[history.length - 1]
+  // Answers are saved between visits, so reopening the results page must not log the same result again.
+  if (last && JSON.stringify([last.t1Raw, last.t2Raw]) === JSON.stringify([entry.t1Raw, entry.t2Raw])) {
+    return history.slice(0, -1)
+  }
+  const priorHistory = history
   const updated = [...priorHistory, { ...entry, timestamp }].slice(-MAX_ENTRIES)
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))

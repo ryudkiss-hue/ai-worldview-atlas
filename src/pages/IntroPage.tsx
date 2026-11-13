@@ -1,13 +1,22 @@
 import { useNavigate } from 'react-router-dom'
 import { useQuiz } from '../state/QuizContext'
 import { stakeholderTags } from '../data/stakeholderTags'
+import { axes } from '../data/axes'
+import { questions, questionsForAxis } from '../data/questions'
 
 export function IntroPage() {
   const navigate = useNavigate()
-  const { reset, selectedStakeholderTags, setStakeholderTags, t } = useQuiz()
+  const { reset, selectedStakeholderTags, setStakeholderTags, t, hasProgress, answers, declinedQuestions } = useQuiz()
+  const done = Object.keys(answers).length + declinedQuestions.length
+  // First axis with a statement still to answer; if none, the quiz is finished and continuing goes to results.
+  const nextAxis = axes.find((a) => questionsForAxis(a.id).some((q) => answers[q.id] === undefined && !declinedQuestions.includes(q.id)))
 
   function handleStart() {
     navigate('/quiz/1')
+  }
+
+  function handleContinue() {
+    navigate(nextAxis ? `/quiz/${nextAxis.number}` : '/results')
   }
 
   function toggleTag(tagId: string) {
@@ -57,15 +66,33 @@ export function IntroPage() {
       </div>
 
       <div className="text-center">
+        {hasProgress && (
+          <div className="mb-4">
+            <button
+              type="button"
+              onClick={handleContinue}
+              className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              {nextAxis ? 'Continue where you left off' : 'See your results'}
+            </button>
+            <p className="text-sm text-gray-500 mt-2">
+              {done} of {questions.length} statements answered. Your answers are saved in this browser only.
+            </p>
+          </div>
+        )}
         <button
           type="button"
           onClick={() => {
             reset()
             handleStart()
           }}
-          className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className={
+            hasProgress
+              ? 'px-6 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold transition'
+              : 'px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400'
+          }
         >
-          {t('start')}
+          {hasProgress ? 'Start over' : t('start')}
         </button>
       </div>
     </div>
