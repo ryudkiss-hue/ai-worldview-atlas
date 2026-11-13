@@ -563,7 +563,7 @@ export function ResultsPage() {
 
       <p className="mt-8 text-gray-700">
         Want to test your views against harder cases?{' '}
-        <Link to="/thought-experiments" className="text-blue-600 underline">Read the 25 thought experiments</Link>. They don&apos;t
+        <Link to="/thought-experiments" className="text-blue-600 underline">Read the thought experiments</Link>. They don&apos;t
         change your scores.
       </p>
       <p className="mt-4 text-gray-700">

@@ -136,7 +136,7 @@ Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2 
    → core-three reading from the tiers of Machine Experience, Moral Standing and Growth and Limits
 ```
 
-Statement weights are equal: with no response data yet, there is no basis for weighting one statement above another. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **25 thought experiments** are a separate, unscored reading page.
+Statement weights are equal: with no response data yet, there is no basis for weighting one statement above another. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **26 thought experiments** are a separate, unscored reading page.
 
 ### Optional extras on the website
 
@@ -205,7 +205,7 @@ src/
     ├── AxisPage.tsx              one of 8 question pages (/quiz/:axisIndex)
     ├── ScenarioPage.tsx          optional situational scenarios (/scenarios)
     ├── ResultsPage.tsx           radar chart, matches, full report, PDF export
-    ├── ThoughtExperimentsPage.tsx the 25 thought experiments, unscored (/thought-experiments)
+    ├── ThoughtExperimentsPage.tsx the 26 thought experiments, unscored (/thought-experiments)
     ├── IntimacyPage.tsx          the synthetic-intimacy focus module (/intimacy)
     └── PaperScoresPage.tsx       enter the paper edition's 16 net totals to see the online results (/paper)
 ```

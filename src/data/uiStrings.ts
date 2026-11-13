@@ -13,6 +13,7 @@ export const uiStrings: Record<string, string> = {
   "start_assessment": "Start the Assessment",
   "worldview_atlas": "AI Worldview Atlas",
   "intro_title": "The AI Worldview Atlas",
+  "report_framing": "Each report is written to you, as if the viewpoint were yours. It describes the view and the reasons people usually give for it, and your own reasons may be different. Keep what fits and set aside what doesn't.",
   "intro_subtitle": "This is a 144-statement assessment of how you think about AI: whether an AI system could ever have experiences, how it should be treated, what future it should help build, and who should decide. It shows where your views sit on eight axes and matches you to the closest of 50 named viewpoints.",
   "intro_notice": "About 25 to 35 minutes. Every statement has a mirrored partner, so there are no trick questions and no right answers. Your answers are saved in this browser as you go, so you can stop and come back; nothing is sent anywhere. Only a finished result can be shared by link.",
   "start": "Start",

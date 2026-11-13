@@ -2,6 +2,7 @@ import type { ProfileReportContent } from '../data/types'
 import { axes } from '../data/axes'
 import { profiles } from '../data/profiles'
 import { describePosition } from '../lib/axisPositions'
+import { uiStrings } from '../data/uiStrings'
 
 interface ReportPreviewProps {
   content: ProfileReportContent
@@ -12,6 +13,7 @@ export function ReportPreview({ content }: ReportPreviewProps) {
   return (
     <section className="mt-8">
       <h3 className="text-xl font-semibold mb-3">Full Report Preview</h3>
+      <p className="text-sm text-gray-500 mb-4">{uiStrings.report_framing}</p>
       <div className="space-y-3 mb-4">
         {content.extendedNarrative.map((paragraph, index) => (
           <p key={index} className="text-gray-700">{paragraph}</p>

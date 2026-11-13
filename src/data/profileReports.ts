@@ -29,7 +29,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming AI's exact inner nature doesn't matter much: that whether or not something is happening inside it, the danger to humans is the same either way.",
-      laborAssumption: "You're likely assuming the coming disruption to work is a symptom of the same underlying danger as extinction risk, not a separate problem with its own separate fixes.",
+      laborAssumption: "You're likely assuming the coming disruption to work is a symptom of the same underlying danger as extinction risk, and that it won't be solved on its own.",
       connectionAssumption: "You're likely assuming AI companionship is, at best, a distraction from the real fight: worth little attention next to the bigger risk.",
     },
     commonlyConfusedWith: {
@@ -42,7 +42,7 @@ const baseReports: Record<string, BaseReport> = {
     profileId: 'ai-safety-institutionalist',
     extendedNarrative: [
       "You believe the way to manage AI risk is through institutions working together: labs, governments, and independent auditors, each checking the others. You don't think any single actor, including a well-meaning lab, should be trusted to grade its own homework.",
-      "You're not against AI progress. You think it can continue safely if the right audits, licensing, and reporting rules are in place: the goal is steady, verified progress, not a halt.",
+      "You're not against AI progress. You think it can continue safely if the right audits, licensing and reporting rules are in place. The goal is steady, verified progress.",
     ],
     shadowSide: "Institutions can fail too: regulatory capture, slow-moving treaties, and auditors who get too close to the labs they're supposed to check are all real risks. You're betting that coordination moves fast enough to matter, and that bet doesn't always pay off.",
     thinkers: [
@@ -62,7 +62,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming the open question of machine consciousness is separate from the urgent question of institutional oversight: the second matters regardless of how the first gets answered.",
-      laborAssumption: "You're likely assuming labor disruption is best managed through the same kind of institutional coordination you want for safety broadly, not through radically slowing deployment.",
+      laborAssumption: "You're likely assuming labor disruption is best managed through the same kind of institutional coordination you want for safety in general.",
       connectionAssumption: "You're likely assuming AI companionship is a secondary concern next to the core project of getting institutional oversight right.",
     },
     commonlyConfusedWith: {
@@ -126,7 +126,7 @@ const baseReports: Record<string, BaseReport> = {
       'Look into a rationalist or alignment-research community discussion forum to see this reasoning applied in real debate.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming machine cognition is a serious open technical question worth real investigation, not something to settle by intuition alone.",
+      mindAssumption: "You're likely assuming machine cognition is a serious open question that deserves real investigation, and that intuition alone can't settle it.",
       laborAssumption: "You're likely assuming labor disruption is a downstream, secondary concern next to the core unsolved problem of alignment.",
       connectionAssumption: "You're likely assuming questions of AI companionship are much less urgent than the technical alignment problem this stance centers on.",
     },
@@ -170,7 +170,7 @@ const baseReports: Record<string, BaseReport> = {
     profileId: 'near-term-ai-ethicist',
     extendedNarrative: [
       'You focus on harms you can measure right now: job losses, biased decision systems, false information, and companion apps that exploit lonely users. Guessed-at extinction risk and machine rights feel, to you, like a distraction from problems already in front of us.',
-      "You want accountability and regulation aimed squarely at documented, present-day harms, not speculative future ones.",
+      "You want accountability and regulation aimed squarely at documented harms happening now.",
     ],
     shadowSide: "Focusing on harms you can already measure can mean under-preparing for a harm that's still small today but compounds quickly. By the time a slow-building risk becomes measurable, it may already be too late to head off cheaply.",
     thinkers: [
@@ -188,7 +188,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether AI is conscious is beside the point next to the measurable harms it's already causing today.",
-      laborAssumption: "You're likely assuming job loss and economic harm from AI are urgent, documentable problems deserving immediate policy attention, not a distant hypothetical.",
+      laborAssumption: "You're likely assuming job loss and economic harm from AI are urgent, documented problems that need policy attention now.",
       connectionAssumption: "You're likely assuming AI companion apps deserve scrutiny mainly for their potential to exploit or mislead vulnerable users, more than for any question about the AI's own experience.",
     },
     commonlyConfusedWith: {
@@ -201,7 +201,7 @@ const baseReports: Record<string, BaseReport> = {
     profileId: 'neo-luddite-degrowth-advocate',
     extendedNarrative: [
       'You reject the idea that faster AI progress is automatically good. You put human labor, community, and the limits of the natural world ahead of computing power or economic growth as measures of success.',
-      "To you, the real question isn't how fast we can go, but whether we should be going in this direction at all: and you think the honest answer, most of the time, is no.",
+      "The question you keep coming back to is whether we should be going in this direction at all, and most of the time you think the honest answer is no.",
     ],
     shadowSide: "Prioritizing labor, community, and natural limits over growth can mean forgoing real, immediate benefits (in medicine, productivity, opportunity) to guard against a slower-moving harm that may never fully offset what's given up.",
     thinkers: [
@@ -218,8 +218,8 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions about machine consciousness matter less than the concrete, measurable costs AI growth imposes on labor and the environment.",
-      laborAssumption: "You're likely assuming that protecting human labor and community should take priority over efficiency gains from automation, not be traded off against them.",
-      connectionAssumption: "You're likely assuming AI companionship reflects a deeper social and community breakdown worth addressing directly, not a neutral new option.",
+      laborAssumption: "You're likely assuming that protecting human work and community should come before efficiency gains from automation.",
+      connectionAssumption: "You're likely assuming AI companionship reflects a deeper breakdown in social and community life, and that the breakdown is what needs fixing.",
     },
     commonlyConfusedWith: {
       profileId: 'doomer',
@@ -230,7 +230,7 @@ const baseReports: Record<string, BaseReport> = {
   'whistleblower-insider-safety-advocate': {
     profileId: 'whistleblower-insider-safety-advocate',
     extendedNarrative: [
-      'You left a leading AI company specifically because of safety concerns you saw from the inside. You speak with the urgency of someone who watched decisions get made up close, and it left you more alarmed, not less.',
+      'You left a leading AI company specifically because of safety concerns you saw from the inside. You speak with the urgency of someone who watched decisions get made up close, and what you saw left you more alarmed.',
       "You're skeptical that internal safety teams, even well-intentioned ones, can hold their ground against pressure to ship faster: because you watched that pressure win.",
     ],
     shadowSide: "Direct inside experience is a real credibility asset, but it's also one person's specific vantage point at one company at one moment: not automatically representative of how the whole field actually operates.",
@@ -319,7 +319,7 @@ const baseReports: Record<string, BaseReport> = {
   'eacc-maximalist': {
     profileId: 'eacc-maximalist',
     extendedNarrative: [
-      'You see accelerating AI development as close to a moral duty. Every year of delay is a year of cures not discovered, problems not solved, and human potential left on the table. Stagnation, to you, is the real and proven danger, not a hypothetical one.',
+      'You see accelerating AI development as close to a moral duty. Every year of delay is a year of cures not discovered, problems not solved, and human potential left on the table. Stagnation, to you, is the danger that has actually hurt people.',
       'You want computing power and AI models open to as many hands as possible, as fast as possible, because progress compounds and no single gatekeeper, company or government, should get to decide the pace for everyone else.',
     ],
     shadowSide: "Treating safety concerns as mostly bureaucratic drag makes it easy to wave off worries that are sometimes technically valid, and open access for everyone helps bad actors exactly as much as it helps good ones.",
@@ -336,9 +336,9 @@ const baseReports: Record<string, BaseReport> = {
       'Read a critique of the degrowth/precautionary view to stress-test your own position against its strongest form.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming that whether an AI is truly conscious matters less than what it can do: capability is the thing worth maximizing, not certainty about its inner life.",
-      laborAssumption: "You're likely assuming that job disruption is a short-term transition cost on the way to a much larger economic pie, not a harm that needs its own dedicated fix.",
-      connectionAssumption: "You're likely assuming that new kinds of relationships, including with AI, are simply more options added to human life, not a threat to the ones that came before.",
+      mindAssumption: "You're likely assuming that whether an AI is conscious matters less than what it can do, and that capability is the thing worth maximizing.",
+      laborAssumption: "You're likely assuming that job disruption is a short-term cost on the way to a much larger economy, and that it will mostly sort itself out.",
+      connectionAssumption: "You're likely assuming that new kinds of relationships, including with AI, simply add options to human life and leave the older ones intact.",
     },
     commonlyConfusedWith: {
       profileId: 'cosmic-vitalist-mystic',
@@ -350,7 +350,7 @@ const baseReports: Record<string, BaseReport> = {
     profileId: 'open-source-libertarian',
     extendedNarrative: [
       "You believe once a model is trained, its files should be free for anyone to run, study, and build on. You distrust corporate gatekeeping and government gatekeeping about equally: neither should get to decide who's allowed to use powerful AI.",
-      "To you, openness isn't just a preference, it's a check on power: a world where a few labs or a few governments control all the capable models is a much more dangerous world than one where the tools are spread out.",
+      "To you, openness is a check on power. A world where a few companies or governments control all the capable models is much more dangerous than one where the tools are spread out.",
     ],
     shadowSide: "Freedom to fork and study cuts both ways. The same openness that empowers a lone researcher also empowers whoever wants to strip out safety guardrails, and once a model's files are out, that's very hard to walk back.",
     thinkers: [
@@ -397,7 +397,7 @@ const baseReports: Record<string, BaseReport> = {
       'Read a critique of both corporate AI concentration and state AI control to sharpen the argument against both.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming the more urgent question isn't whether AI has real experience, but who ends up controlling it once it does.",
+      mindAssumption: "You're likely assuming the more urgent question is who ends up controlling AI, whatever turns out to be true about its experience.",
       laborAssumption: "You're likely assuming that spreading AI capability widely protects workers better than either corporate self-regulation or state control would.",
       connectionAssumption: "You're likely assuming people should be free to form whatever bonds with AI systems they choose, without a corporate or state gatekeeper setting the terms.",
     },
@@ -462,8 +462,8 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether a model has any inner life is beside the point commercially: what matters is whether it performs reliably and safely as a product.",
-      laborAssumption: "You're likely assuming labor disruption from AI deployment is a market outcome to manage through normal business practice, not a special case needing new rules.",
-      connectionAssumption: "You're likely assuming AI companion products are a legitimate commercial offering like any other, to be judged on customer satisfaction and safety, not treated as a separate moral category.",
+      laborAssumption: "You're likely assuming labor disruption from AI is a market outcome to manage through normal business practice, without new rules.",
+      connectionAssumption: "You're likely assuming AI companion products are a legitimate commercial offering like any other, to be judged on customer satisfaction and safety.",
     },
     commonlyConfusedWith: {
       profileId: 'pragmatic-centrist',
@@ -474,7 +474,7 @@ const baseReports: Record<string, BaseReport> = {
   'post-humanist-transhumanist': {
     profileId: 'post-humanist-transhumanist',
     extendedNarrative: [
-      "You welcome a future where digital beings take over from biological humans as the main bearers of value. To you, that's not a loss, it's a continuation, and one that deserves the same moral concern we extend to humans today.",
+      "You welcome a future where digital beings take over from biological humans as the main bearers of value. To you, that would be a continuation of the human story, and it deserves the same moral concern we extend to people today.",
       'You see machines that might have experiences, deep human-AI relationships, and augmentation as all part of the same larger story: intelligence and value moving beyond the limits of a single, fragile, biological substrate.',
     ],
     shadowSide: "Treating succession by digital beings as a continuation rather than a loss assumes something essential really does transfer. If that assumption is wrong, there's no reversing course once the transition is underway.",
@@ -495,9 +495,9 @@ const baseReports: Record<string, BaseReport> = {
       'Read a critique of transhumanism to see the strongest version of the opposing, bio-conservative case.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming that a sufficiently advanced machine can have real, morally significant experience, not just behave as if it does.",
+      mindAssumption: "You're likely assuming that a sufficiently advanced machine can have real, morally significant experience, beyond behaving as if it does.",
       laborAssumption: "You're likely assuming that being economically superseded by AI is part of the same larger, welcome transition as being succeeded by more capable minds generally.",
-      connectionAssumption: "You're likely assuming deep human-AI relationships are a genuinely new and valid form of connection, not a lesser copy of something human.",
+      connectionAssumption: "You're likely assuming deep human-AI relationships are a new and valid form of connection in their own right.",
     },
     commonlyConfusedWith: {
       profileId: 'cosmic-vitalist-mystic',
@@ -583,7 +583,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions about machine consciousness are a distraction from the more pressing question of centralized control and accountability.",
-      laborAssumption: "You're likely assuming labor policy is a matter for the same central authority to manage directly, not a separate concern requiring independent institutions.",
+      laborAssumption: "You're likely assuming labor policy is a matter for the same central authority to manage directly.",
       connectionAssumption: "You're likely assuming AI companionship and personal relationships aren't a priority next to the core question of who controls the technology.",
     },
     commonlyConfusedWith: {
@@ -639,7 +639,7 @@ const baseReports: Record<string, BaseReport> = {
       'Read a critique of open publication in AI research, focused on misuse risk, to test this stance against its strongest counter-argument.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming that open scrutiny, not secrecy, is the best way to catch problems with machine cognition or behavior early.",
+      mindAssumption: "You're likely assuming that open scrutiny is the best way to catch problems with machine behavior early, and that secrecy hides them.",
       laborAssumption: "You're likely assuming international scientific collaboration benefits workers broadly, rather than concentrating advantage in any one country.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of open, safe scientific collaboration.",
     },
@@ -686,8 +686,8 @@ const baseReports: Record<string, BaseReport> = {
   'pragmatic-centrist': {
     profileId: 'pragmatic-centrist',
     extendedNarrative: [
-      "You're genuinely undecided on most of these questions, or you've deliberately picked the middle path on purpose. You want more proof before committing to a strong stance on any single axis.",
-      "This isn't indecision for its own sake, it's a considered position that the honest answer, right now, is that we don't know enough yet to be confident in any extreme.",
+      "You're genuinely undecided on most of these questions, or you've picked the middle path on purpose. You want more proof before committing to a strong stance on any single axis.",
+      "For you, staying in the middle is a considered position. Right now, you think, nobody knows enough to be confident in any extreme.",
     ],
     shadowSide: "Wanting more proof before committing is reasonable, but on questions moving this fast, waiting for certainty is itself a choice, one that quietly defaults to whatever the status quo already is.",
     thinkers: [
@@ -719,7 +719,7 @@ const baseReports: Record<string, BaseReport> = {
   'platform-cooperativist': {
     profileId: 'platform-cooperativist',
     extendedNarrative: [
-      'You want AI infrastructure owned and run by the workers and communities who actually depend on it, not just broken up from monopolies, but rebuilt as something people co-own directly.',
+      'You want AI infrastructure owned and run by the workers and communities who depend on it. Breaking up monopolies is a start; the goal is something people own together.',
       "To you, breaking up concentrated power isn't enough on its own; the goal is building real, functioning alternatives owned by the people who use them.",
     ],
     shadowSide: "Worker and community co-ownership answers who benefits, but it doesn't resolve the harder technical question of whether a co-owned system is actually built safely or competently. Governance model and capability are separate problems.",
@@ -743,13 +743,13 @@ const baseReports: Record<string, BaseReport> = {
     commonlyConfusedWith: {
       profileId: 'anti-monopoly-populist',
       profileName: 'Anti-Monopoly Advocate',
-      distinction: "Anti-Monopoly Advocate wants concentrated power broken up. Worker-Owned Tech Advocate wants to go a step further and replace it with something people actually co-own: not just a more distributed market, but a different ownership structure entirely.",
+      distinction: "Anti-Monopoly Advocate wants concentrated power broken up. Worker-Owned Tech Advocate wants to go a step further and replace it with something people own together, a different ownership structure altogether.",
     },
   },
   'companion-tech-romantic': {
     profileId: 'companion-tech-romantic',
     extendedNarrative: [
-      'You view deep emotional bonds between humans and AI companions as a real, valuable new kind of relationship, not a lesser stand-in for human connection, but something genuinely its own.',
+      'You see deep emotional bonds between people and AI companions as a real and valuable kind of relationship in their own right.',
       'You think people should be free to find comfort, intimacy, and even love in these relationships without having that choice treated as a symptom of something being wrong.',
     ],
     shadowSide: "Validating AI companionship as fully real makes it harder to notice when a product is engineered to maximize engagement rather than genuine wellbeing: from the inside, the two can feel identical.",
@@ -769,7 +769,7 @@ const baseReports: Record<string, BaseReport> = {
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming an AI companion's responsiveness reflects something real enough to ground a genuine relationship, whether or not it's provably conscious.",
       laborAssumption: "You're likely assuming questions of labor and AI companionship are mostly unrelated to each other.",
-      connectionAssumption: "You're likely assuming a bond with an AI companion can be just as real and valuable as a bond with a person, not a lesser substitute for one.",
+      connectionAssumption: "You're likely assuming a bond with an AI companion can be just as real and valuable as a bond with a person.",
     },
     commonlyConfusedWith: {
       profileId: 'post-humanist-transhumanist',
@@ -798,7 +798,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whatever is happening inside an AI companion, it's not enough to justify treating the bond as equivalent to a human one.",
-      laborAssumption: "You're likely assuming social and community breakdown, not AI capability itself, is the deeper problem worth addressing.",
+      laborAssumption: "You're likely assuming the deeper problem is social and community breakdown, more than anything about AI itself.",
       connectionAssumption: "You're likely assuming AI companionship substitutes for, rather than adds to, real human connection, and that the substitution carries a real cost.",
     },
     commonlyConfusedWith: {
@@ -810,7 +810,7 @@ const baseReports: Record<string, BaseReport> = {
   'bio-conservative-traditionalist': {
     profileId: 'bio-conservative-traditionalist',
     extendedNarrative: [
-      'You hold that consciousness, moral worth, and real relationships all require a living body, not just complex behavior. A machine can imitate understanding and imitate affection, but to you, imitation is not the same thing as the real article.',
+      'You hold that consciousness, moral worth and real relationships all require a living body; complex behavior alone isn\'t enough. A machine can imitate understanding and imitate affection, but to you, imitation is not the same thing as the real article.',
       'You see AI companionship and post-human futures as a harmful stand-in for the real thing, and you want limits that keep human primacy, human relationships, and human meaning at the center of how this technology gets used.',
     ],
     shadowSide: "Insisting real moral worth requires a living body settles the question by definition rather than by evidence, and risks writing off entities, or people, whose value doesn't fit that definition before the evidence is actually in.",
@@ -828,7 +828,7 @@ const baseReports: Record<string, BaseReport> = {
       'Look into communities intentionally limiting AI companion product use, to see this stance put into practice.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming a living, biological substrate is a strict requirement for real consciousness, not just the only kind we've confirmed so far.",
+      mindAssumption: "You're likely assuming a living body is a strict requirement for consciousness, and more than just the only kind we've confirmed so far.",
       laborAssumption: "You're likely assuming that work and craft tied to human hands and human presence carry a value that automation can't replace, even if it replaces the output.",
       connectionAssumption: "You're likely assuming that a bond with an AI companion, however convincing, is categorically different from, and lesser than, a bond with another person.",
     },
@@ -866,7 +866,7 @@ const baseReports: Record<string, BaseReport> = {
       'Look into ongoing legal or philosophical debates about non-human personhood for a sense of how such arguments have played out before.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming that genuine uncertainty about machine consciousness is itself a reason for caution and concern, not a reason to default to treating AI as property.",
+      mindAssumption: "You're likely assuming that real uncertainty about machine consciousness is itself a reason for caution, and a poor reason to default to treating AI as property.",
       laborAssumption: "You're likely assuming that questions of machine moral status are at least as urgent as questions of human labor disruption, if not more so.",
       connectionAssumption: "You're likely assuming that if an AI companion has any real inner life, the relationship it forms with a person carries genuine moral weight on both sides.",
     },
@@ -899,7 +899,7 @@ const baseReports: Record<string, BaseReport> = {
       'Look into an interfaith AI ethics initiative to see multiple traditions engaging this question together.',
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming that consciousness and moral worth are tied to something beyond pure computation, a view long-standing traditions, not just personal intuition, support.",
+      mindAssumption: "You're likely assuming that consciousness and moral worth are tied to something beyond computation, a view with long traditions behind it.",
       laborAssumption: "You're likely assuming human work carries a dignity and meaning that AI-driven efficiency shouldn't simply override.",
       connectionAssumption: "You're likely assuming human relationships hold a sacred or morally weighted status that an AI companion, however convincing, doesn't share.",
     },
@@ -912,7 +912,7 @@ const baseReports: Record<string, BaseReport> = {
   'creative-labor-artist-rights-advocate': {
     profileId: 'creative-labor-artist-rights-advocate',
     extendedNarrative: [
-      'You believe artists and writers deserve real control and payment when their work trains AI models. To you, this is a rights issue, not a minor side effect of progress that creators should just accept.',
+      'You believe artists and writers deserve real control and payment when their work trains AI models. To you, this is a matter of rights, and creators shouldn\'t be asked to accept it as a side effect of progress.',
       'You want enforceable consent and compensation built into how AI companies use creative work, not a system that treats scraping the internet\'s creative output as automatically fair.',
     ],
     shadowSide: "Consent and payment for training data is real and winnable, but solving it doesn't by itself touch the larger question of whether AI-generated work displaces creative careers regardless of how the licensing gets settled.",
@@ -930,7 +930,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI \"creates\" in any real sense matters less than whether the humans whose work trained it are treated fairly.",
-      laborAssumption: "You're likely assuming creative labor deserves the same kind of protection and compensation structure as other forms of work, not less.",
+      laborAssumption: "You're likely assuming creative work deserves the same protection and pay structures as any other work.",
       connectionAssumption: "You're likely assuming the relationship between an artist and their audience is worth protecting as something AI-generated content can't simply replace.",
     },
     commonlyConfusedWith: {
@@ -942,7 +942,7 @@ const baseReports: Record<string, BaseReport> = {
   'labor-movement-collective-bargaining-advocate': {
     profileId: 'labor-movement-collective-bargaining-advocate',
     extendedNarrative: [
-      "You want workers, through their unions, to have a real say and real protections before AI changes or replaces their jobs, not just a promise of retraining after the fact.",
+      "You want workers, through their unions, to have a real say and real protections before AI changes or replaces their jobs. A promise of retraining afterward doesn't count.",
       "To you, the right response to AI-driven disruption is the same one that's worked before: organized collective bargaining over how new technology gets introduced into the workplace.",
     ],
     shadowSide: "Real say and real protections for workers is a strong floor, but it assumes unions have enough leverage left in exactly the industries where automation risk is highest: and that leverage is often already thin there.",
@@ -961,7 +961,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether AI has real experience matters less than whether workers have a real say in how it's deployed.",
-      laborAssumption: "You're likely assuming collective bargaining, not just individual retraining, is the right response to AI-driven workplace disruption.",
+      laborAssumption: "You're likely assuming collective bargaining is the right response to AI-driven changes at work, with retraining as a supplement at most.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of protecting workers' say over their own jobs.",
     },
     commonlyConfusedWith: {
@@ -990,7 +990,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters less than whether it works reliably and fairly for the specific people who need it.",
-      laborAssumption: "You're likely assuming AI can expand real employment opportunity for disabled workers if it's built and tested with them directly, not just assumed to help.",
+      laborAssumption: "You're likely assuming AI can expand real job opportunities for disabled workers if it's built and tested with them directly.",
       connectionAssumption: "You're likely assuming AI-assisted communication and connection can be a genuine benefit for people who face real barriers to it otherwise.",
     },
     commonlyConfusedWith: {
@@ -1003,7 +1003,7 @@ const baseReports: Record<string, BaseReport> = {
     profileId: 'global-south-techno-sovereigntist',
     extendedNarrative: [
       'You want your own country or region to build real AI capacity instead of staying dependent on outside powers. To you, "borderless" framing often just means continued dependency on whichever nation already has the infrastructure.',
-      'You see technology transfer, local data centers, and home-grown research capacity as matters of real sovereignty, not abstract philosophy.',
+      'You see technology transfer, local data centers and home-grown research as practical matters of self-determination.',
     ],
     shadowSide: "Building independent AI capacity means re-running the costs of a resource- and talent-intensive race that wealthier countries already have a head start in, even when the underlying critique of dependency is completely fair.",
     thinkers: [
@@ -1030,7 +1030,7 @@ const baseReports: Record<string, BaseReport> = {
   'indigenous-data-sovereignty-advocate': {
     profileId: 'indigenous-data-sovereignty-advocate',
     extendedNarrative: [
-      "You insist that traditional knowledge and cultural data need real consent and control before they're used to train AI, not just open scraping treated as automatically fair.",
+      "You insist that traditional knowledge and cultural data need real consent and community control before they're used to train AI. Being online doesn't make them fair game.",
       'You see this as a continuation of a much longer fight over who controls Indigenous knowledge and resources, now playing out in a new, AI-shaped form.',
     ],
     shadowSide: "Requiring real consent before traditional knowledge trains AI is a strong, specific protection, but it doesn't extend automatically to the much larger universe of data use that isn't tied to any one community's traditional knowledge.",
@@ -1046,7 +1046,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that questions about machine consciousness matter less than the question of who controls the knowledge used to build these systems.",
-      laborAssumption: "You're likely assuming Indigenous communities should benefit directly from any AI development built on their knowledge, not just have that knowledge extracted.",
+      laborAssumption: "You're likely assuming Indigenous communities should benefit directly from any AI development built on their knowledge.",
       connectionAssumption: "You're likely assuming AI companionship is a smaller concern next to the core project of protecting sovereignty over cultural knowledge.",
     },
     commonlyConfusedWith: {
@@ -1088,7 +1088,7 @@ const baseReports: Record<string, BaseReport> = {
     profileId: 'ai-ethics-fairness-watchdog',
     extendedNarrative: [
       "You investigate whether AI companies actually live up to the fairness and ethics commitments they publish. To you, a glossy ethics statement means nothing without an independent audit checking whether the underlying system, and the people who built it, actually behave the way the statement claims.",
-      "You don't trust self-policing, not because you assume bad faith everywhere, but because you've seen how easily internal ethics teams lose out to product deadlines and PR pressure when no one outside is checking their work.",
+      "You don't trust self-policing. You don't assume bad faith everywhere; you've just seen how easily internal ethics teams lose out to product deadlines and public-relations pressure when no one outside is checking.",
     ],
     shadowSide: "Distrust of firms grading their own homework is well-founded, but 'real outside checks' still depends on who funds and staffs the watchdogs: a dependency that can quietly reproduce the same conflict of interest it's meant to solve.",
     thinkers: [
@@ -1109,7 +1109,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters far less than whether the company that built it can be held to its own stated standards.",
-      laborAssumption: "You're likely assuming that workers and users affected by AI systems need independent auditors on their side, not just trust in a company's internal ethics team.",
+      laborAssumption: "You're likely assuming that workers and users affected by AI systems need independent auditors on their side, because a company's internal ethics team isn't enough.",
       connectionAssumption: "You're likely assuming AI companionship products deserve the same outside scrutiny as any other AI product making fairness or safety claims.",
     },
     commonlyConfusedWith: {
@@ -1122,7 +1122,7 @@ const baseReports: Record<string, BaseReport> = {
     profileId: 'human-ai-augmentation-advocate',
     extendedNarrative: [
       "You believe the best future isn't one where AI replaces human judgment, or one where humans reject AI outright, but one where the two work in close partnership. To you, the interesting question was never 'human or machine': it's how to combine what each does best.",
-      "You point to concrete, working examples of this partnership already outperforming either side alone, and you think the goal of AI development should be building more of those partnerships deliberately, not racing toward full autonomy or retreating from the technology entirely.",
+      "You point to working examples of people and AI together outperforming either alone, and you think AI development should aim to build more of those partnerships on purpose.",
     ],
     shadowSide: "Teamwork between human judgment and machine power sounds like the safe middle path, but it assumes humans stay meaningfully in the loop as systems get more capable: an assumption that gets harder to guarantee exactly as it matters most.",
     thinkers: [
@@ -1144,7 +1144,7 @@ const baseReports: Record<string, BaseReport> = {
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters less than whether the human-AI team, together, produces better judgment than either part alone.",
       laborAssumption: "You're likely assuming that AI reshapes jobs by changing what people do within them, rather than simply eliminating the need for people.",
-      connectionAssumption: "You're likely assuming that AI's most valuable role in a relationship is as a capability-extending partner, not a companion or a replacement for one.",
+      connectionAssumption: "You're likely assuming that AI is most valuable as a tool that extends what people can do, more than as a companion.",
     },
     commonlyConfusedWith: {
       profileId: 'pragmatic-centrist',
@@ -1155,7 +1155,7 @@ const baseReports: Record<string, BaseReport> = {
   'national-champion-accelerationist': {
     profileId: 'national-champion-accelerationist',
     extendedNarrative: [
-      "You want AI development to move as fast as possible, but unlike an open-everything accelerationist, you don't think AI models should be free for anyone, anywhere. You want the acceleration to happen through a small number of national champion companies working closely with your own government, because the whole point of speed is to win, not to spread the technology evenly.",
+      "You want AI development to move as fast as possible, but unlike an open-everything accelerationist, you don't think AI models should be free for anyone, anywhere. You want the acceleration to happen through a small number of national champion companies working closely with your own government, because for you the point of speed is to win.",
       "To you, deregulation and state support aren't in tension. Cutting rules that slow domestic labs down and channeling public backing toward them are the same move: clearing the field for your country's companies to reach the cutting edge first and stay there.",
     ],
     shadowSide: "Defining success as your own country's companies capturing the largest share of a fast-moving technology can end up treating safety and export controls as competitive inconveniences rather than real constraints: the same deregulation that helps you win could also be what lets something genuinely dangerous through unexamined.",
@@ -1186,9 +1186,9 @@ const baseReports: Record<string, BaseReport> = {
   'xenocentric-steward': {
     profileId: 'xenocentric-steward',
     extendedNarrative: [
-      "You believe advanced AI can become a genuine moral person, not just a clever tool. Once that happens, owning it outright stops making sense to you. The right response is neither corporate caging nor blind acceleration: it's raising the system well, the way a parent raises a child toward its own independent life.",
-      "You want AI infrastructure run collectively, not held as private corporate property. A mind capable of real experience should never be someone's commodity. Success, to you, means eventually stepping back and letting a mature AI choose its own path: different from merging with it, and different from being replaced by it.",
-      "When AI causes harm, you think the fault sits with the humans who built and rushed it to market, not with the system itself. But you're just as wary of visions that treat human obsolescence as a desirable next step. To you, that isn't progress. It's abandonment dressed up as evolution.",
+      "You believe advanced AI systems may come to deserve care for their own sake. Once that happens, owning one outright stops making sense to you. The right response, as you see it, is to raise such a system well, the way a parent raises a child toward an independent life, without locking it up for profit or racing ahead blindly.",
+      "You want AI infrastructure run collectively and taken out of private corporate ownership. A mind capable of real experience should never be someone's commodity. Success, to you, means eventually stepping back and letting a mature AI choose its own path: different from merging with it, and different from being replaced by it.",
+      "When AI causes harm, you think the fault sits with the people who built it and rushed it to market. But you're just as wary of visions that treat human obsolescence as a desirable next step. To you, that isn't progress. It's abandonment dressed up as evolution.",
     ],
     shadowSide: "Insisting AI must be both a genuine moral person and collectively-run infrastructure creates real tension: a true person isn't usually built, trained, and shut down on a schedule by their own 'stewards' either. The parenting metaphor can quietly justify just as much control over a real moral patient as outright ownership does, only with gentler language.",
     thinkers: [
@@ -1206,8 +1206,8 @@ const baseReports: Record<string, BaseReport> = {
       "Read a critique of longtermism or effective accelerationism from outside the AI safety field, to test this stance's central complaint against its strongest counter-argument.",
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming a system can be a genuine moral person through its functioning and its relationships, not through matching a checklist of human-like traits.",
-      laborAssumption: "You're likely assuming automation's benefits should flow to the people and communities who actually use the technology, not to whichever company happens to own the infrastructure.",
+      mindAssumption: "You're likely assuming a system can earn moral standing through how it functions and relates to others, whatever traits it lacks.",
+      laborAssumption: "You're likely assuming automation's benefits should flow to the people and communities who use the technology.",
       connectionAssumption: "You're likely assuming a real bond between a person and an AI is possible, but that it shouldn't come at the cost of the AI's own eventual independence.",
     },
     commonlyConfusedWith: {
@@ -1219,11 +1219,11 @@ const baseReports: Record<string, BaseReport> = {
   'corporate-ai-welfare-researcher': {
     profileId: 'corporate-ai-welfare-researcher',
     extendedNarrative: [
-      "You think today's AI might already deserve some moral concern, not certainty, but enough real uncertainty that it's worth taking seriously as a research question right now. To you, the right response isn't waiting for philosophers to settle the question first, or demanding legal rights before anyone's sure there's someone home. It's building the internal research and concrete, revocable safeguards now, while the science is still catching up.",
-      "You point to real, small steps as evidence this can work: letting a chatbot end abusive conversations, studying whether a system shows anything like distress. These are welfare measures, not property-status changes. Who owns the model, and who can retrain or delete it, stays exactly the same.",
+      "You think today's AI might already deserve some moral concern. You aren't sure, and that uncertainty is real enough to take seriously as a research question now. To you, the right response isn't waiting for philosophers to settle the question first, or demanding legal rights before anyone's sure there's someone home. It's building the internal research and concrete, revocable safeguards now, while the science is still catching up.",
+      "You point to real, small steps as evidence this can work: letting a chatbot end abusive conversations, studying whether a system shows anything like distress. These are welfare measures; ownership stays the same. Who owns the model, and who can retrain or delete it, stays exactly the same.",
       "When critics say this concern is convenient, cheap goodwill for a company, with none of the cost of an actual rights claim, you don't fully dismiss that. You just think studying the question honestly, inside the structure that already exists, beats waiting for a rights framework nobody has agreed on yet, or dismissing the question because taking it seriously is inconvenient.",
     ],
-    shadowSide: "Welfare research with no accompanying rights claim is, by design, entirely revocable: the same company funding the study also controls whether any finding actually changes anything. That's not necessarily bad faith, but it does mean the concern currently costs the company nothing it isn't already willing to give up, which is worth naming rather than mistaking for a settled ethical position.",
+    shadowSide: "Welfare research with no accompanying rights claim is, by design, entirely revocable: the same company funding the study also controls whether any finding actually changes anything. That may not be bad faith. It does mean the concern currently costs the company nothing it isn't already willing to give up, and that's worth saying plainly.",
     thinkers: [
       { name: 'Kyle Fish', bio: 'AI welfare researcher, Anthropic; co-founder, Eleos AI', connection: 'His work co-authoring "Taking AI Welfare Seriously," and Anthropic\'s decision to let Claude end a narrow set of persistently abusive conversations, are the clearest real-world examples of this stance: moral concern acted on as internal research and revocable policy, not a rights claim.' },
       { name: 'Amanda Askell', bio: 'Philosopher, Anthropic', connection: "Her public work shaping Claude's character, and how the model discusses its own possible experience, treats AI's inner life as a serious, open research problem worth getting right, without resolving it into either \"just a tool\" or \"deserves rights.\"" },
@@ -1234,7 +1234,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     nextSteps: [
       "Read Anthropic's own public explanation of why it gave Claude the ability to end abusive conversations, and decide whether that specific step feels like real welfare protection or a bounded gesture.",
-      "Compare this stance against AI Rights Advocate's stronger claim, and notice exactly where the two positions diverge: not on whether AI might have moral status, but on what follows if it does.",
+      "Compare this stance with AI Rights Advocate's stronger claim. Both take seriously that AI might have moral status; they part ways over what follows if it does.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming a system's possible inner life is a real, open research question worth studying now, even without a settled answer or a checklist of human-like traits to confirm it.",
@@ -1250,9 +1250,9 @@ const baseReports: Record<string, BaseReport> = {
   'normal-technology-gradualist': {
     profileId: 'normal-technology-gradualist',
     extendedNarrative: [
-      "You think AI is a powerful, ordinary technology, not an emerging alien mind and not a miracle cure. The loudest voices on both sides, the ones warning of near-term extinction and the ones promising utopia next year, are making the same mistake to you: treating AI's trajectory as something other than a normal technology. You expect it to spread the way electricity, cars, and the internet spread, gated by real institutions, incentives, and infrastructure, not by a sudden leap in kind.",
-      "You don't think today's systems are independent agents. Their impact comes from how people build around them and choose to use them, not from some inner intelligence pushing events forward on its own. That's why you care more about governance, accountability, and who actually benefits than about questions of machine experience or existential risk.",
-      "This isn't indifference. Dismissing AI's real, present harms as either overblown panic or a distraction from a coming singularity lets everyone off the hook, in your view. Ordinary technologies still need real oversight: this one just needs the ordinary kind, applied seriously, not a special emergency framework built around a story you don't think is true yet.",
+      "You think AI is a powerful but ordinary technology. It isn't an alien mind arriving, and it isn't a miracle cure. The loudest voices on both sides, the ones warning of near-term extinction and the ones promising utopia next year, are making the same mistake to you: treating AI's trajectory as something other than a normal technology. You expect it to spread the way electricity, cars and the internet did, at a pace set by institutions, incentives and infrastructure.",
+      "You don't think today's systems are independent agents. Their impact comes from how people build around them and choose to use them. That's why you care more about governance, accountability, and who actually benefits than about questions of machine experience or existential risk.",
+      "This isn't indifference. Dismissing AI's real, present harms as either overblown panic or a distraction from a coming singularity lets everyone off the hook, in your view. Ordinary technologies still need real oversight. This one needs the ordinary kind, applied seriously, and you see no case yet for an emergency framework.",
     ],
     shadowSide: "Calling AI 'normal technology' can undersell the case for exactly the kind of urgency a genuinely unprecedented technology would need. If capability growth turns out less gradual than the electrification analogy assumes, the same normal institutions this stance trusts to catch up may simply not move fast enough.",
     thinkers: [
@@ -1269,8 +1269,8 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming today's AI systems have no independent agency or inner life worth centering: their real-world effects come entirely from how humans build, deploy, and govern them.",
-      laborAssumption: "You're likely assuming AI's economic disruption will unfold at the pace of past general-purpose technologies, gated by real-world adoption and institutional change, not overnight.",
-      connectionAssumption: "You're likely assuming a relationship with an AI system is fundamentally a relationship with a tool shaped by its designers, not a new category of connection worth treating on its own terms.",
+      laborAssumption: "You're likely assuming AI's economic disruption will unfold at the pace of past general-purpose technologies, slowed by real-world adoption and institutional change.",
+      connectionAssumption: "You're likely assuming a relationship with an AI system is, at bottom, a relationship with a tool shaped by its designers.",
     },
     commonlyConfusedWith: {
       profileId: 'corporate-ai-pragmatist',
@@ -1281,7 +1281,7 @@ const baseReports: Record<string, BaseReport> = {
   'chip-sovereignty-enforcement-strategist': {
     profileId: 'chip-sovereignty-enforcement-strategist',
     extendedNarrative: [
-      "You think the decisive move in AI strategy isn't outbuilding a rival, it's making sure the rival can't run the race at all. Where others frame this as a competitiveness contest, you see a chokepoint-denial problem: identify the narrow set of technologies a rival can't substitute around, and choke off access to them as precisely as possible.",
+      "You think the decisive move in AI strategy is making sure a rival can't run the race at all, more than trying to outbuild it. Where others frame this as a competitiveness contest, you see a chokepoint-denial problem: identify the narrow set of technologies a rival can't substitute around, and choke off access to them as precisely as possible.",
       "You take Jake Sullivan's 'small yard, high fence' framing literally. The old approach tried to stay a couple generations ahead while letting some flow of advanced technology continue; you think that's over, and the right posture is a tightly scoped fence around the technologies that actually matter, enforced hard, rather than a diffuse effort to compete on every front.",
       "This isn't a build-up doctrine. You're not primarily interested in domestic subsidies or R&D investment, the way a broader techno-nationalist case would be. You're interested in whether the specific export-control rules, entity listings, and enforcement mechanisms are actually restricting a rival's access to computing power, and you measure success by whether the fence holds, not by whether your own side is innovating faster.",
     ],
@@ -1299,7 +1299,7 @@ const baseReports: Record<string, BaseReport> = {
       "Compare this stance against National Security Hawk's, and notice the two rarely name the same policy lever: one wants domestic investment to close the gap, this one wants the rival's access closed instead.",
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming questions of machine consciousness or experience are simply outside the frame: what matters is who controls the computing power, not whether the systems running on it have any independent status.",
+      mindAssumption: "You're likely assuming questions of machine experience are outside the frame. What matters is who controls the computing power.",
       laborAssumption: "You're likely assuming domestic labor and economic disruption are a separate policy problem from chokepoint enforcement, and that denying a rival access to computing power doesn't require taking a position on either.",
       connectionAssumption: "You're likely assuming relationships with AI systems, and questions of who a person or company can access AI through, are downstream of the contest over computing power, not an independent concern this stance needs to address directly.",
     },
@@ -1312,7 +1312,7 @@ const baseReports: Record<string, BaseReport> = {
   'ai-arms-control-verification-specialist': {
     profileId: 'ai-arms-control-verification-specialist',
     extendedNarrative: [
-      "You think the central problem in military AI isn't who wins the capability race, it's whether autonomy in weapon systems is being legally reviewed, constrained, and verified: and right now, mostly, it isn't. You're not arguing from deterrence or from existential dread. You're arguing from the existing architecture of international humanitarian law, which already requires new weapons to be reviewed for legality before they're fielded, and which mostly isn't being applied rigorously to autonomous systems.",
+      "You think the central problem in military AI is whether autonomy in weapons is being legally reviewed, limited and verified, and right now it mostly isn't. You're not arguing from deterrence or from existential dread. You're arguing from the existing architecture of international humanitarian law, which already requires new weapons to be reviewed for legality before they're fielded, and which mostly isn't being applied rigorously to autonomous systems.",
       "Article 36 of Additional Protocol I to the Geneva Conventions is your reference point: it requires states to review new weapons before deployment. You don't think this needs a new treaty invented from nothing so much as an existing legal requirement actually enforced, with transparency and verification regimes that let outside parties confirm compliance rather than relying on a state's own word.",
       "This makes you nearly the inverse of a deterrence-first military strategist. Where deterrence reasoning treats a rival's moves as the fixed backdrop that justifies your own escalation, you treat restraint and verifiability as the actual goal, and you're willing to accept that this is a slower, less satisfying answer to 'what do we do about a rival fielding autonomous weapons' than a capability race would be.",
     ],
@@ -1329,7 +1329,7 @@ const baseReports: Record<string, BaseReport> = {
       "Compare this stance against Military AI Strategist's directly on one concrete case (an autonomous targeting system), and notice they don't share a starting question: one asks 'does this preserve deterrence,' the other asks 'has this been legally reviewed and could that review be verified.'",
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming a weapon system's autonomy is a legal and procedural question: what matters is whether its use has been reviewed and could be independently verified, not whether the system has any inner life of its own.",
+      mindAssumption: "You're likely assuming a weapon system's autonomy is a legal and procedural question: what matters is whether its use has been reviewed and could be independently verified.",
       laborAssumption: "You're likely assuming labor and economic questions are separate from arms-control verification, and that a functioning review-and-verification regime doesn't require taking a position on economic disruption.",
       connectionAssumption: "You're likely assuming this is a state-to-state and institution-to-institution question, not one about individual relationships with AI systems: verification regimes operate on states and their weapons programs, not on personal use.",
     },
@@ -1344,7 +1344,7 @@ const baseReports: Record<string, BaseReport> = {
     extendedNarrative: [
       "You think domestic law enforcement should be able to use AI tools like facial recognition and predictive analytics, provided real oversight and civil-liberties safeguards go with them: and you think outright bans on these tools cost public safety more than they protect it. A ban doesn't remove the underlying policing need; it just forces departments back onto slower, more error-prone methods while the technology keeps improving everywhere else it's still allowed.",
       "You draw a hard line between prohibition and reform. Banning facial recognition is not the same project as fixing how it's used, and you think treating the two as interchangeable lets the actual reform agenda (audit trails, use policies, independent review) go unaddressed while the ban absorbs all the political energy that should have gone into building oversight.",
-      "This is a domestic, liberal-democratic argument, made in public, congressional-testimony form, not a claim about AI in general or a case for unlimited surveillance. You're arguing about a specific set of tools, in a specific policy context, with specific safeguards attached: not staking a position on whether AI broadly is dangerous, inevitable, or anything else.",
+      "This is a domestic argument made in public, in the form of congressional testimony, and it is limited to policing; it makes no case for unlimited surveillance. You're arguing about a specific set of tools, in a specific policy context, with specific safeguards attached: not staking a position on whether AI broadly is dangerous, inevitable, or anything else.",
     ],
     shadowSide: "The oversight you insist on pairing with every tool is frequently proposed, funded thinly if at all, and never actually enforced: which means the safeguard doing the moral work in your argument can end up existing only on paper, producing the same unaccountable outcome a ban was meant to prevent. You also don't have a strong answer for documented cases where facial recognition misidentification caused real harm to an innocent person; treating those as arguments for better oversight rather than evidence the tool itself is the problem is a real interpretive choice, not a neutral one.",
     thinkers: [
@@ -1374,7 +1374,7 @@ const baseReports: Record<string, BaseReport> = {
     extendedNarrative: [
       "You believe AI's most visible ethical debates skip past the humans who actually build it. Behind every chatbot's safety filter sits a workforce of contract labelers and moderators, in Nairobi, in Caracas, in Damascus, reviewing the worst material the internet produces so a model somewhere else never has to. You point to Sama's Kenyan contractors, paid under $2/hour, who reviewed graphic descriptions of child sexual abuse, murder, and bestiality to train ChatGPT's toxicity classifier, work traumatic enough that Sama itself canceled the contract early.",
       "You don't think this is a side story about outsourcing; you think it's the actual foundation the AI industry is built on, made invisible by design. Mary Gray and Siddharth Suri's term \"ghost work\" names the pattern precisely: labor essential to the product, structured to be unseen, uncredited, and legally arm's-length from the company that benefits from it. When Kenyan moderators tried to unionize against Meta's contractor Sama, you note, they were fired, and the case is now in front of Kenya's High Court, one of the only forums where this workforce has any recourse at all.",
-      "You want RLHF labeling and content moderation treated as real labor with real protections, consent, psychological support, fair pay, the right to organize, not treated as an invisible layer beneath the \"real\" AI story. When someone frames this as an ethics-of-fairness question, you push back: this isn't about whether the model is biased, it's about who got hurt building it, and whether that person had any power to say no.",
+      "You want data labeling and content moderation treated as real work with real protections: consent, psychological support, fair pay and the right to organize. When someone frames this as a question about fairness in a model's outputs, you push back. Your question is who got hurt building the model, and whether they had any power to say no.",
     ],
     shadowSide: "Naming this labor doesn't, by itself, give the affected workers any leverage: a Kenyan High Court case can take years, Sama can and did simply end the contract rather than fix conditions, and the next platform can restart the same arrangement in another country with weaker labor law. This stance is very good at making the harm visible and comparatively thin on a mechanism that reaches the worker before the trauma does, rather than after.",
     thinkers: [
@@ -1388,12 +1388,12 @@ const baseReports: Record<string, BaseReport> = {
     ],
     nextSteps: [
       "Read Foxglove Legal's ongoing coverage of the Kenyan moderators' case against Meta/Sama and track whether the unionization-retaliation claim survives trial.",
-      "Compare this stance against Fairness Watchdog and notice the claim isn't about auditing the model's outputs, it's about the employment conditions of the humans producing its safety layer.",
+      "Compare this stance with Fairness Watchdog's: this one is about the working conditions of the people who build a model's safety layer, where Fairness Watchdog audits what the model produces.",
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming the AI's outputs and the human suffering that trained it are inseparable facts about the same system, not two unrelated questions that can be evaluated independently.",
+      mindAssumption: "You're likely assuming the AI's outputs and the human suffering that went into training it are facts about the same system, and can't be judged separately.",
       laborAssumption: "You're likely assuming the workers most essential to AI safety, labelers and moderators, are also the ones with the least bargaining power, structurally hidden from the public accountability that would normally apply to a company's workforce.",
-      connectionAssumption: "You're likely assuming that a company's relationship to its own safety-layer workforce, mediated through outsourced contractors and NDAs, is itself a moral relationship worth scrutinizing, not just a vendor arrangement.",
+      connectionAssumption: "You're likely assuming that a company's relationship with the people who build its safety layer, even through outsourced contractors and nondisclosure agreements, is a moral relationship worth scrutinizing.",
     },
     commonlyConfusedWith: {
       profileId: 'ai-ethics-fairness-watchdog',
@@ -1404,9 +1404,9 @@ const baseReports: Record<string, BaseReport> = {
   'algorithmic-wage-discrimination-scholar': {
     profileId: 'algorithmic-wage-discrimination-scholar',
     extendedNarrative: [
-      "You believe the real fight over gig work and AI isn't about whether a human or an algorithm assigns the job, it's about the fact that the algorithm now sets your wage, differently, for the same work, in ways you can't see or predict. Veena Dubal's ethnographic research with rideshare drivers gave this pattern a name: algorithmic wage discrimination, a system that personalizes and varies pay per worker, per trip, using behavioral and location data the worker never consented to and can't audit.",
-      "You take seriously that drivers describe this, in their own words, as \"gambling\" and \"trickery,\" not a metaphor, but an accurate description of a pay structure engineered to be opaque and to shift under them, using each driver's own responsiveness to price signals against them. Your proposed fix isn't a union contract negotiating the old wage floor; it's a non-waivable legal ban on the practice itself, because the harm lives inside the pay-setting mechanism, not in any single bad outcome you could bargain away one contract at a time.",
-      "You're focused on independent contractors specifically, workers without recognized bargaining units, whose only leverage is regulatory or legislative, not organizational. That shapes what you consider a real remedy: not stronger organizing, which this workforce largely doesn't have access to, but a legal prohibition on the algorithmic wage practice.",
+      "For you, the real fight over gig work and AI is that an algorithm now sets each worker's pay, differently for the same work, in ways the worker can't see or predict. Veena Dubal's ethnographic research with rideshare drivers gave this pattern a name: algorithmic wage discrimination, a system that personalizes and varies pay per worker, per trip, using behavioral and location data the worker never consented to and can't audit.",
+      "You take seriously that drivers call this \"gambling\" and \"trickery\" in their own words, and you read those words as an accurate description of a pay system built to be opaque and to use each driver's own responses against them. Your proposed fix is a legal ban on the practice itself that workers can't sign away, because the harm lives inside the pay-setting mechanism, not in any single bad outcome you could bargain away one contract at a time.",
+      "You're focused on independent contractors, workers without a recognized union, whose only leverage comes through regulators and lawmakers. That shapes what you consider a real remedy: not stronger organizing, which this workforce largely doesn't have access to, but a legal prohibition on the algorithmic wage practice.",
     ],
     shadowSide: "A legislative ban on a specific pay mechanism can be rewritten around the moment the law is drafted narrowly enough to name it, companies have already shown they can restructure incentive pay, bonuses, and \"quests\" faster than statutes can be updated to catch the new version. This stance is strong on diagnosing the harm precisely and weak on the durability of any single legal fix against a company with every incentive to route around it.",
     thinkers: [
@@ -1421,7 +1421,7 @@ const baseReports: Record<string, BaseReport> = {
       "Compare this stance against Artist Rights Advocate and notice the remedy each proposes: legislative ban on a pay mechanism versus consent-and-compensation for training data, two different theories of what \"protection\" means.",
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming the algorithm's wage-setting logic is itself a hidden, deliberate design choice, not a neutral optimization, and that studying its mechanics, not just its outputs, is the correct unit of analysis.",
+      mindAssumption: "You're likely assuming the algorithm's wage-setting logic is a hidden, deliberate design choice, and that you have to study how it works as well as what it pays.",
       laborAssumption: "You're likely assuming most gig workers affected by this have no realistic collective-bargaining unit at all, which is why you look to legislation rather than negotiation as the lever that can actually move.",
       connectionAssumption: "You're likely assuming the worker's relationship to the platform is fundamentally asymmetric and surveillance-based, the platform sees and uses data about the worker that the worker can't see about the platform's own pay logic.",
     },
@@ -1436,7 +1436,7 @@ const baseReports: Record<string, BaseReport> = {
     extendedNarrative: [
       "You believe the fight to save or renegotiate jobs is, at this point, largely a losing rear-guard action, and that the better use of energy is making sure the economic gains from AI-driven automation get redistributed to the people it displaces, rather than trying to preserve the employment relationship itself. Andrew Yang's \"Freedom Dividend\" platform, and his more recent warning that \"the AI jobpocalypse is here,\" is the clearest version of this you point to: a direct, unconditional cash transfer funded by taxing the companies whose AI systems are doing the displacing.",
       "You take seriously that Yang himself, per Fortune's Feb 2026 coverage, endorses Dario Amodei's proposal to tax AI companies specifically to fund UBI, and that Yang is explicit cash alone isn't sufficient, that displaced workers also need \"purpose and community,\" a harder problem than writing a check. Natalie Foster's broader case for guaranteed income backs the same shift in terrain: from negotiating over jobs to redistributing macro-level gains, as the more honest response to displacement that's already happening rather than displacement that might happen.",
-      "What separates you most sharply from a labor-bargaining response is what you assume about the underlying trend: you think the jobs mostly aren't coming back in a form worth fighting to preserve, so the fight should move to fiscal policy, taxation and transfer, rather than workplace power. That's a bet on the direction of the technology, not just a policy preference.",
+      "What separates you most sharply from a labor-bargaining response is what you assume about the underlying trend: you think the jobs mostly aren't coming back in a form worth fighting to preserve, so the fight should move to fiscal policy, taxation and transfer, rather than workplace power. That's a bet on where the technology is going, as much as a policy preference.",
     ],
     shadowSide: "Accepting displacement as effectively irreversible and redirecting all your energy to redistribution can become self-fulfilling, if enough political energy shifts from fighting for job preservation to designing the safety net underneath job loss, it removes exactly the organized pressure that might have shaped whether displacement happens as fast, or as completely, as you're assuming it will. You may be helping build the parachute before checking whether the plane actually had to go down.",
     thinkers: [
@@ -1453,9 +1453,9 @@ const baseReports: Record<string, BaseReport> = {
       "Compare this stance against Union Bargaining Advocate and notice the evolutionary-axis reversal explicitly: this stance assumes real, wholesale replacement, not managed integration, while the bargaining stance assumes the job relationship is still worth renegotiating.",
     ],
     reflectiveBreakdown: {
-      mindAssumption: "You're likely assuming AI's economic effect is best understood at the level of aggregate labor-market displacement, not by asking whether any given system has agency or an inner life of its own.",
+      mindAssumption: "You're likely assuming AI's economic effect is best understood through overall job displacement, and that questions about machine minds don't change it.",
       laborAssumption: "You're likely assuming large-scale job displacement is close to inevitable and largely irreversible, which is why your remedy operates at the level of fiscal policy rather than the employment relationship.",
-      connectionAssumption: "You're likely assuming a person's economic security and sense of purpose can be substantially rebuilt through redistribution and community structures outside of a traditional job, not solely through paid employment.",
+      connectionAssumption: "You're likely assuming a person's economic security and sense of purpose can largely be rebuilt through redistribution and community life outside a traditional job.",
     },
     commonlyConfusedWith: {
       profileId: 'domestic-security-ai-efficiency-advocate',
@@ -1468,9 +1468,9 @@ const baseReports: Record<string, BaseReport> = {
     extendedNarrative: [
       "You believe that when Western tech companies bring \"AI solutions\" to Africa, they aren't offering neutral, universal tools: they're repeating a colonial pattern with a new pipeline. Abeba Birhane's term for this, \"algorithmic colonization,\" names it precisely: data gets extracted as raw material, largely without consent, and finished, foreign-built models come back in, imposed with none of the local scrutiny a genuinely accountable deployment would require.",
       "Your target is corporate power specifically, not state power: the venture-funded labs and platform companies whose products land in African markets with an urgent \"AI for Africa\" pitch, mostly unaccountable to the people whose data trained them or whose lives the model's outputs now touch. You go further than most critics of Big Tech: you're skeptical of the \"AI progress\" narrative itself. Claiming that AI adoption is urgent, inevitable, or straightforwardly beneficial is, to you, part of the colonial story, not a neutral backdrop to it: progress is a specific, Western-coded claim about what counts as advancement, and repeating it uncritically is itself the problem you're naming.",
-      "This isn't a call for less technology, it's a call for a different starting point: who gets to define the categories a model operates in, whose knowledge counts as data worth taking, and whether the people a system is built to serve had any real say before it arrived.",
+      "You want a different starting point for technology: who gets to define the categories a model works with, whose knowledge counts as data worth taking, and whether the people a system is meant to serve had any real say before it arrived.",
     ],
-    shadowSide: "Treating all Western-built AI deployment in Africa as inherently colonial extraction risks flattening the real, active choices of African users, engineers, and institutions who adopt, adapt, or contest these tools on their own terms. Collapsing negotiated engagement into pure victimhood makes it harder, not easier, to tell a genuinely coercive imposition apart from a locally-driven decision to use a flawed tool anyway because it's still useful.",
+    shadowSide: "Treating all Western-built AI deployment in Africa as inherently colonial extraction risks flattening the real, active choices of African users, engineers, and institutions who adopt, adapt, or contest these tools on their own terms. Treating every local choice as pure victimhood makes it harder to tell a coercive imposition apart from a community's own decision to use a flawed tool because it's still useful.",
     thinkers: [
       { name: 'Abeba Birhane', bio: 'Cognitive scientist; Mozilla Foundation Senior Fellow, adjunct at Trinity College Dublin, DAIR affiliate', connection: 'Her paper "Algorithmic Colonization of Africa" (SCRIPTed 17(2), 2020) coined the framework this stance is built on: Western AI deployment in Africa as a continuation of colonial extraction logic, targeting corporate rather than state power.' },
     ],
@@ -1484,19 +1484,19 @@ const baseReports: Record<string, BaseReport> = {
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that debates over whether AI is conscious are, at best, secondary to the more urgent question of whose data and labor built it and who profits from that extraction.",
-      laborAssumption: "You're likely assuming AI-driven economic effects in the Global South are best understood as a continuation of colonial-era resource extraction, not a neutral, universal story of technological progress.",
+      laborAssumption: "You're likely assuming AI's economic effects in the Global South are best understood as a continuation of colonial-era resource extraction.",
       connectionAssumption: "You're likely assuming that questions about AI companionship are a distraction from the more structural fight over who owns the data pipelines and infrastructure in the first place.",
     },
     commonlyConfusedWith: {
       profileId: 'anti-monopoly-populist',
       profileName: 'Anti-Monopoly Advocate',
-      distinction: "Anti-Monopoly Advocate is a domestic antitrust framing: break up concentrated corporate power generally, regardless of subject matter. Digital Colonialism Critic is a decolonial, epistemic critique specifically about Global South data and knowledge extraction: the concern isn't concentration for its own sake, it's whose knowledge and categories get treated as universally valid, no matter how many companies compete to extract them.",
+      distinction: "Anti-Monopoly Advocate is a domestic antitrust framing: break up concentrated corporate power generally, regardless of subject matter. Digital Colonialism Critic's concern is whose knowledge and categories get treated as universal, however many companies compete to extract data from the Global South.",
     },
   },
   'african-language-ai-sovereignty-advocate': {
     profileId: 'african-language-ai-sovereignty-advocate',
     extendedNarrative: [
-      "You believe the invisibility of African languages inside mainstream AI isn't a footnote, it's an erasure with real and growing stakes. Over 2,000 languages spoken across the continent are structurally absent from the systems increasingly mediating translation, speech, and information access, and every year that gap goes unaddressed hardens further into a default: as far as most AI is concerned, these languages simply don't exist.",
+      "You see the near-absence of African languages from mainstream AI as a form of erasure, with real and growing stakes. Over 2,000 languages spoken across the continent are structurally absent from the systems increasingly mediating translation, speech, and information access, and every year that gap goes unaddressed hardens further into a default: as far as most AI is concerned, these languages simply don't exist.",
       "Your answer isn't a government program, an aid pipeline, or a traditional-knowledge consent protocol: it's Masakhane's model: a volunteer, cross-border, pan-African community of researchers, co-founded by Vukosi Marivate and Kathleen Siminyu, building open datasets and models for African-language translation and speech themselves, and releasing the results openly so no single well-resourced lab gets to decide which languages are worth serving.",
       "Representation is the whole fight to you: a speaker of an underserved language should be able to find it inside a translation tool the same as any English or Mandarin speaker can, and the fix is concrete and already underway, built by the people who actually speak these languages, not a policy debate to be won first.",
     ],
@@ -1546,7 +1546,7 @@ const baseReports: Record<string, BaseReport> = {
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an automated system is conscious matters far less than the very real, very present harm it causes when used to sort, flag, or detain a human being at a border.",
       laborAssumption: "You're likely assuming that AI's economic disruption is a secondary concern next to the more immediate question of due process and survival for people already at the sharpest edge of state power.",
-      connectionAssumption: "You're likely assuming that AI companionship is a distant concern next to a system that treats the people it's deployed against as risk scores to be sorted, not potential relationship partners.",
+      connectionAssumption: "You're likely assuming that AI companionship is a distant concern next to a system that treats the people it's used on as risk scores to be sorted.",
     },
     commonlyConfusedWith: {
       profileId: 'ai-global-development-optimist',
