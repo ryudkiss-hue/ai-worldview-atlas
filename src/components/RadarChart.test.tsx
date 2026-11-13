@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render } from '@testing-library/react'
-import { RadarChart } from './RadarChart'
+import { RadarChart, labelLines } from './RadarChart'
 import type { AxisVector } from '../lib/scoring'
 
 const sample: AxisVector = {
@@ -29,5 +29,20 @@ describe('RadarChart', () => {
       <RadarChart combined={sample} comparisonProfile={{ name: 'Doomer', coords: comparisonSample }} />,
     )
     expect(container.querySelectorAll('.recharts-radar')).toHaveLength(2)
+  })
+
+  it('names both series in a legend', () => {
+    const { getByText } = render(
+      <RadarChart combined={sample} comparisonProfile={{ name: 'Doomer', coords: comparisonSample }} />,
+    )
+    expect(getByText('You')).toBeInTheDocument()
+    expect(getByText('Doomer')).toBeInTheDocument()
+  })
+
+  it('splits long axis names into two balanced lines for narrow screens', () => {
+    expect(labelLines('Mind')).toEqual(['Mind'])
+    expect(labelLines('Ends of Intelligence')).toEqual(['Ends of', 'Intelligence'])
+    expect(labelLines('Openness & Control')).toEqual(['Openness &', 'Control'])
+    expect(labelLines('Moral Standing')).toEqual(['Moral', 'Standing'])
   })
 })
