@@ -32,7 +32,15 @@ The Atlas is read by people who don't follow AI debates for a living. Earlier ve
 ## 5. Reports and longer prose
 
 - Same rules, plus the project's writing checklist: plain is/are/has sentences, no grand claims about significance, no "not X, but Y" flips, no inflated register.
-- A viewpoint is described in the second person ("you") as a set of reasons a real person could hold, including its strongest objections.
+- The Summary Report describes a viewpoint in the second person ("you") as a set of reasons a real person could hold, including its strongest objections, and opens with a note that the reader's own reasons may differ. The longer "Case for This View" is reported in the third person (see section 6).
+
+## 6. Footing, quantity and rhythm
+
+- Attribute positions to the people who hold them. The case for each viewpoint is reported in the third person ("supporters think", "supporters reply that"), because the app has no stake in any position and shouldn't speak as "we" on a movement's behalf. Replies to objections follow the same rule; they never coach the reader with "You can answer that...". In Goffman's terms (*Forms of Talk*, 1981), the app is the animator, and the principal whose commitments a sentence states should be a real group of people.
+- Give information, and leave advice out. Report sections point to sources and to related viewpoints and describe what each contains; they don't tell the reader what to read, test or decide.
+- Say as much as the reader needs and no more. Name a familiar mechanism instead of narrating how it works.
+- Keep one register inside a sentence or passage, and don't mix a literal spatial description (a scale, an axis, a chart) with a spatial idiom ("where they stand"). Headings that sit above the axis chart say "position" for that reason.
+- Vary sentence length and let subordinate clauses carry reasons and conditions ("because", "although", "which means"). Runs of three or more short independent sentences in a row get combined, and lists of options don't end in a tidy recommendation.
 
 ## Sources
 

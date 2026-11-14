@@ -182,7 +182,7 @@ src/
 │   ├── stakeholderTags.ts       13 material-stakeholder self-select tags
 │   ├── scenarios.ts             8 situational diagnostic questions
 │   ├── attentionChecks.ts       2 optional, unscored check statements
-│   ├── manifestoContents.ts     50 plain-language manifestos, one per archetype (axis positions filled from profiles.ts)
+│   ├── manifestoContents.ts     50 "Case for This View" essays, one per archetype, reported in the third person (axis positions filled from profiles.ts)
 │   ├── study.ts                 link to the validation study's form (empty until set)
 │   ├── shortForm.ts             the 48-statement short version
 │   ├── intimacyModule.ts        focus module: statements, scoring, research summary and sources

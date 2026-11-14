@@ -45,9 +45,9 @@ export const uiStrings: Record<string, string> = {
   "axis_comparison": "Near-Term vs. Long-Term, by Axis",
   "right_now": "Near term",
   "looking_ahead": "Long run",
-  "view_report_manifesto": "View Report & Manifesto",
+  "view_report_manifesto": "Report and the Case for This View",
   "summary_report": "Summary Report",
-  "full_manifesto": "Full Worldview Manifesto",
+  "full_manifesto": "The Case for This View",
   "horizon_t1": "Today's and near-term AI",
   "horizon_t2": "In principle, and in the long run",
 }

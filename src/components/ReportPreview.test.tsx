@@ -39,7 +39,7 @@ describe('ReportPreview', () => {
 
   it('explains the position on all eight axes, with the live coordinate in words', () => {
     render(<ReportPreview content={content} />)
-    expect(screen.getByText('Where This View Stands on Each Axis')).toBeInTheDocument()
+    expect(screen.getByText('Position on Each Axis')).toBeInTheDocument()
     Object.values(content.axisReasons).forEach((r) => expect(screen.getByText(r)).toBeInTheDocument())
     expect(screen.getByText('+9, toward Caution first')).toBeInTheDocument()
   })

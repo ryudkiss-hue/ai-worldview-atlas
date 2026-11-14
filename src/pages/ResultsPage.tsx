@@ -498,7 +498,7 @@ export function ResultsPage() {
       )}
 
       <div className="border-t border-gray-200 mt-12 pt-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'View Report & Manifesto'}</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'Report and the Case for This View'}</h3>
         <div className="flex flex-wrap gap-2 mb-6">
           {topMatches.map((match) => (
             <button
@@ -538,7 +538,7 @@ export function ResultsPage() {
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >
-            {t('full_manifesto') || 'Full Worldview Manifesto'}
+            {t('full_manifesto') || 'The Case for This View'}
           </button>
         </div>
 
@@ -554,7 +554,7 @@ export function ResultsPage() {
               content={
                 manifestoContents[inspectedMatch.profile.id]
                   ? withAxisPositions(manifestoContents[inspectedMatch.profile.id], inspectedMatch.profile)
-                  : '*No manifesto available.*'
+                  : '*Not available for this viewpoint.*'
               }
             />
           </div>

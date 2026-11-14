@@ -65,7 +65,7 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
       </Page>
 
       <Page style={styles.page}>
-        <Text style={styles.heading}>Where {top.profile.name} Stands on Each Axis</Text>
+        <Text style={styles.heading}>{top.profile.name}: Position on Each Axis</Text>
         {axes.map((axis) => (
           <Text key={axis.id} style={styles.paragraph}>
             {axis.name} ({describePosition(axis.id, top.profile.coords[axis.id])}): {topContent.axisReasons[axis.id]}
@@ -111,7 +111,7 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
           </View>
         ))}
 
-        <Text style={styles.heading}>Further Reading and Next Steps</Text>
+        <Text style={styles.heading}>Where to Look Further</Text>
         {topMatches.map((match) => {
           const content = profileReports[match.profile.id]
           return (

@@ -24,8 +24,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All', author: 'Eliezer Yudkowsky and Nate Soares', note: "The 2025 book making this stance's case in its most current, specific, and uncompromising form — a categorical halt demand, not a call for better regulation." },
     ],
     nextSteps: [
-      'Look into organizations funding AI safety research, like the Machine Intelligence Research Institute or the Center for AI Safety.',
-      'Read a technical explainer on the alignment problem to see where the unsolved parts actually are.',
+      'The Machine Intelligence Research Institute and the Center for AI Safety both work on this risk and publish their research.',
+      'Technical explainers on the alignment problem lay out which parts of it remain unsolved.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming AI's exact inner nature doesn't matter much: that whether or not something is happening inside it, the danger to humans is the same either way.",
@@ -57,8 +57,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Rule of the Robots', author: 'Martin Ford', note: 'Covers the policy landscape shaping how governments and companies are trying to govern AI together.' },
     ],
     nextSteps: [
-      "Look into a leading AI company's published safety framework or responsible scaling policy to see institutional safety in practice.",
-      'Follow proposed AI legislation in your country to see how audit and licensing ideas are actually being drafted.',
+      "Several leading AI companies publish safety frameworks or responsible scaling policies, which show what institutional safety looks like in practice.",
+      'Proposed AI legislation in many countries shows how audit and licensing ideas are being drafted into law.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming the open question of machine consciousness is separate from the urgent question of institutional oversight: the second matters regardless of how the first gets answered.",
@@ -88,8 +88,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: "Counterpoint reading, not this stance's own view: a 2024 First Monday paper arguing that longtermism and the adjacent ideologies it bundles with trace to eugenicist thinking and function to concentrate power while normalizing neglect of present, real harm in the name of speculative future utility." },
     ],
     nextSteps: [
-      'Look into an effective-altruism-aligned AI safety funding organization to see longtermist reasoning applied in practice.',
-      'Read a critique of longtermism to stress-test the framework against its strongest objections.',
+      'Effective-altruism-aligned funders of AI safety research apply longtermist reasoning to real grant decisions.',
+      'The strongest critiques of longtermism, including the Gebru and Torres paper in First Monday, are the main counterweight to this view; the objections above summarize two of their arguments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that if there's a real chance AI systems can suffer, that possibility deserves serious moral weight even without certainty: inaction under uncertainty is itself a choice.",
@@ -122,8 +122,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Consciousness in Artificial Intelligence: A Philosophical Perspective through the Lens of Motivation and Volition', author: 'J. Su', note: "A useful complicating counterpoint: this paper argues volition doesn't require consciousness at all — it can be a purely mechanical planning process — which cuts against any assumption that solving alignment requires first resolving whether a model is conscious." },
     ],
     nextSteps: [
-      'Read a technical paper on a specific proposed alignment method to see the concrete research this stance is built on.',
-      'Look into a rationalist or alignment-research community discussion forum to see this reasoning applied in real debate.',
+      'Technical papers on specific alignment methods are where the research behind this view can be checked in detail.',
+      'Rationalist and alignment-research forums are where much of this reasoning gets argued out in public.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming machine cognition is a serious open question that deserves real investigation, and that intuition alone can't settle it.",
@@ -152,8 +152,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Governing the Commons', author: 'Elinor Ostrom', note: 'A Nobel-winning study of how shared, high-stakes resources get managed through collective institutions rather than any single controller — a useful model for this stance.' },
     ],
     nextSteps: [
-      'Follow a specific proposed international AI treaty or governance body to see this approach being drafted in real time.',
-      "Compare international AI governance efforts to nuclear non-proliferation history for a sense of what has and hasn't worked before.",
+      'Proposed international AI treaties and governance bodies show this approach as it is being drafted.',
+      "The history of nuclear non-proliferation is a comparison supporters often draw, and it records both what worked and what didn't.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming institutional and governance questions matter more right now than unresolved questions about machine consciousness.",
@@ -183,8 +183,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Unmasking AI', author: 'Joy Buolamwini', note: 'A firsthand account of uncovering bias in commercial AI systems and pushing for real-world accountability.' },
     ],
     nextSteps: [
-      'Look into the Algorithmic Justice League or a similar organization documenting present-day AI harms.',
-      "Read a case study of an AI system causing real, measurable harm to see this stance's core concern in detail.",
+      'The Algorithmic Justice League and similar organizations document present-day harms from AI systems.',
+      "Published case studies of AI systems causing measurable harm show this view's central concern in detail.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether AI is conscious is beside the point next to the measurable harms it's already causing today.",
@@ -213,8 +213,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Small Is Beautiful', author: 'E.F. Schumacher', note: 'A classic argument for human-scale technology and economics over growth-at-any-cost thinking.' },
     ],
     nextSteps: [
-      'Look into a degrowth economics organization or research group to see this framework applied to policy.',
-      "Read a critique of degrowth thinking to test this stance against its strongest counter-argument.",
+      'Degrowth economics research groups apply this framework to policy.',
+      "Economists who defend growth make the strongest case against this view, and the objections above summarize two of their arguments.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions about machine consciousness matter less than the concrete, measurable costs AI growth imposes on labor and the environment.",
@@ -244,8 +244,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Secrets: A Memoir of Vietnam and the Pentagon Papers', author: 'Daniel Ellsberg', note: 'Background on the moral logic of insider whistleblowing on high-stakes institutional decisions.' },
     ],
     nextSteps: [
-      'Read a published account from a researcher who left a leading AI company over safety concerns.',
-      'Look into whistleblower protection policies at AI companies to see how (or whether) this kind of dissent is currently protected.',
+      'Several researchers who left leading AI companies over safety concerns have published accounts of why they left.',
+      'AI companies\' whistleblower policies, where they exist, show how much protection dissent currently has.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that what you saw from the inside about how decisions actually get made matters more than official public safety statements.",
@@ -272,8 +272,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Precipice', author: 'Toby Ord', note: 'Background reading on why concrete, verifiable safety mechanisms matter for managing large-scale technological risk.' },
     ],
     nextSteps: [
-      "Read a technical proposal for reporting when training passes a computing-power threshold to see this stance's core mechanism in detail.",
-      'Look into how existing export control regimes track hardware, as a model for overseeing computing power.',
+      "Technical proposals for reporting training runs above a computing-power threshold describe the core mechanism this view relies on.",
+      'Existing export-control regimes already track hardware, and supporters often cite them as a model for overseeing computing power.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that broad philosophical questions about machine consciousness are less useful right now than concrete, verifiable rules about computing power.",
@@ -302,8 +302,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The EU AI Act (public text)', author: 'European Union', note: 'The concrete policy example this stance is modeled on.' },
     ],
     nextSteps: [
-      "Read the risk-category framework in the EU AI Act to see this approach's structure in detail.",
-      'Look into how companies outside the EU are adjusting products in response to the Act, as a real-world test of the "Brussels effect."',
+      "The EU AI Act's risk categories set out the structure of this approach in detail.",
+      'Companies outside the EU that adjust their products to comply with the Act are the real-world test of the "Brussels effect."',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that comprehensive, well-specified rules matter more right now than open questions about machine consciousness.",
@@ -332,8 +332,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Beginning of Infinity', author: 'David Deutsch', note: 'An argument that unbounded progress and knowledge-creation, not caution, is what has always solved humanity\'s hardest problems.' },
     ],
     nextSteps: [
-      'Look into open-weight model communities like EleutherAI to see permissionless AI development in practice.',
-      'Read a critique of the degrowth/precautionary view to stress-test your own position against its strongest form.',
+      'Open-weight model communities such as EleutherAI show permissionless AI development in practice.',
+      'The precautionary and degrowth views elsewhere in the Atlas make the strongest case against this one.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters less than what it can do, and that capability is the thing worth maximizing.",
@@ -362,8 +362,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Weapons of Math Destruction', author: "Cathy O'Neil", note: 'Useful counterpoint reading on the risks of concentrated, unaccountable algorithmic power, the thing openness is meant to guard against.' },
     ],
     nextSteps: [
-      'Try running an open-weight model locally to see what "permissionless" actually looks like in practice.',
-      'Read a debate transcript between open-weight and closed-model advocates to see the strongest form of the opposing case.',
+      'Open-weight models can be run on a personal computer, which shows what permissionless use looks like in practice.',
+      'Public debates between advocates of open-weight and closed models set out the strongest version of the opposing case.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whatever is or isn't happening inside a model, the more important fact is who gets to control access to it.",
@@ -393,8 +393,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: "Supporting evidence for this stance's core suspicion: a 2024 First Monday paper arguing that grand ideological narratives around AI's future can function to centralize power in practice, whatever liberatory language accompanies them — the same reason this stance trusts no single actor's story about where speed and openness are supposedly leading." },
     ],
     nextSteps: [
-      'Look into a shared-computing or open-model project to see this philosophy in active practice.',
-      'Read a critique of both corporate AI concentration and state AI control to sharpen the argument against both.',
+      'Shared-computing and open-model projects put this philosophy into practice.',
+      'Critics of corporate AI concentration and critics of state AI control rarely agree on much else, and reading both shows the two fronts this view fights on.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming the more urgent question is who ends up controlling AI, whatever turns out to be true about its experience.",
@@ -424,8 +424,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Superagency', author: 'Reid Hoffman', note: 'An argument for embracing rapid AI deployment as broadly empowering rather than concentrating power.' },
     ],
     nextSteps: [
-      "Look into a major AI product launch and its stated business rationale to see this philosophy applied.",
-      "Read a critique of Silicon Valley's approach to AI deployment to test your position against its strongest counter-argument.",
+      "Major AI product launches usually come with a stated business rationale, which shows this philosophy applied.",
+      "Critics of Silicon Valley's approach to deployment make the strongest case against this view, and the objections above summarize two of their arguments.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming a model's inner experience, if any, is a secondary question next to whether it's useful and ships reliably.",
@@ -457,8 +457,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Interview remarks on AI and creative work', author: 'Andy Weir', note: "The instrumentalist voice of this stance in one line: \"People are afraid of AI, but AI can do things no human can. I'm like, 'So can a forklift.'\" He predicts AI will eventually write more compelling fiction than humans and treats that mainly as a tool-driven market shift, not a moral or existential question — no AI character in his own novels; this is separate from his fiction." },
     ],
     nextSteps: [
-      "Read a leading AI company's published internal safety or responsible-deployment framework.",
-      "Compare two companies' self-regulation commitments to see how much they actually differ in practice.",
+      "Leading AI companies publish internal safety and responsible-deployment frameworks.",
+      "Placing two companies' self-regulation commitments side by side shows how much they actually differ.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether a model has any inner life is beside the point commercially: what matters is whether it performs reliably and safely as a product.",
@@ -491,8 +491,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: '"Succession" (talk, World Artificial Intelligence Conference, 2023)', author: 'Richard Sutton', note: 'Argues succession by AI offers "economic abundance, scientific glory, and the best hope for a long-term future for Humanity" — a secular, evolutionary-biology framing distinct from Kurzweil\'s singularity narrative or Kaku\'s merger framing.' },
     ],
     nextSteps: [
-      'Look into current brain-computer interface research to see one real path toward this future.',
-      'Read a critique of transhumanism to see the strongest version of the opposing, bio-conservative case.',
+      'Current brain-computer interface research is one concrete path toward the future this view describes.',
+      'Bioconservative writers make the strongest case against this view, and Human Nature Traditionalist is the Atlas viewpoint closest to them.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that a sufficiently advanced machine can have real, morally significant experience, beyond behaving as if it does.",
@@ -520,8 +520,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Fabric of Reality', author: 'David Deutsch', note: 'A physicist\'s argument that the growth of knowledge and intelligence is the most fundamental process in the universe.' },
     ],
     nextSteps: [
-      "Read a primer on the thermodynamics of computation to see the physical grounding for this stance's cosmic framing.",
-      'Look into the history of Russian Cosmism for the intellectual roots of this worldview.',
+      "Primers on the thermodynamics of computation explain the physics behind this view's cosmic framing.",
+      'Russian Cosmism, a nineteenth- and twentieth-century movement, is one of the intellectual roots of this worldview.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that any sufficiently advanced mind's experience is real and significant, on a timescale far beyond individual human concerns.",
@@ -550,8 +550,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Chip War', author: 'Chris Miller', note: 'A history of the global semiconductor industry and why chip supply chains became a matter of national strategy.' },
     ],
     nextSteps: [
-      "Look into your own country's domestic semiconductor or AI industrial strategy, if one exists.",
-      "Read a comparative account of two countries' differing approaches to chip and computing-power independence.",
+      "Many countries now publish domestic semiconductor or AI industrial strategies.",
+      "Comparisons of how different countries pursue independence in chips and computing power show the range of approaches.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions about machine consciousness are a distraction from the more pressing question of who controls the technology.",
@@ -578,8 +578,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Sovereign State and Its Competitors', author: 'Hendrik Spruyt', note: 'Background on why states have historically sought exclusive control over consequential new capabilities.' },
     ],
     nextSteps: [
-      'Look into a historical case of centralized state control over a strategic technology to see the tradeoffs in practice.',
-      'Read a critique of centralized technology control to test this stance against its strongest counter-argument.',
+      'Historical cases of centralized state control over a strategic technology show the trade-offs this view accepts.',
+      'Critics of centralized technology control make the strongest case against this view, and the objections above summarize two of their arguments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions about machine consciousness are a distraction from the more pressing question of centralized control and accountability.",
@@ -606,8 +606,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Kill Chain', author: 'Christian Brose', note: 'An argument for prioritizing AI-driven military capability as a matter of strategic necessity.' },
     ],
     nextSteps: [
-      "Look into a published defense-department AI strategy document to see this framing applied directly.",
-      'Read a critique of military AI development to test this stance against its strongest counter-argument.',
+      "Published defense-department AI strategy documents apply this framing directly.",
+      'Arms-Control Verification Specialist is the Atlas viewpoint that most directly challenges this one.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that questions about machine consciousness are irrelevant to the strategic and deterrence calculus that actually matters.",
@@ -635,8 +635,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Chip War', author: 'Chris Miller', note: 'Useful contrasting reading on how national competition, rather than openness, has shaped semiconductor and AI-adjacent technology.' },
     ],
     nextSteps: [
-      'Look into an international open-AI-research collaboration to see this model applied in practice.',
-      'Read a critique of open publication in AI research, focused on misuse risk, to test this stance against its strongest counter-argument.',
+      'International open AI research collaborations apply this model in practice.',
+      'Critics of open publication in AI research focus on misuse risk, and the objections above summarize two of their arguments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that open scrutiny is the best way to catch problems with machine behavior early, and that secrecy hides them.",
@@ -669,8 +669,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Zero to One', author: 'Peter Thiel', note: "Not this stance's view but the opposing thesis it argues against: that avoiding competition and building a durable monopoly is the correct goal, not a failure mode to guard against." },
     ],
     nextSteps: [
-      'Look into an antitrust case or proposal targeting a major AI company to see this stance applied in practice.',
-      'Read a critique of antitrust-focused AI policy to test this stance against its strongest counter-argument.',
+      'Antitrust cases and proposals aimed at major AI companies show this view applied.',
+      'Critics of antitrust-focused AI policy make the strongest case against this view, and the objections above summarize two of their arguments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether AI has real experience matters far less than who ends up controlling access to it.",
@@ -702,8 +702,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Consciousness in Artificial Intelligence? A Framework for Classifying Objections and Constraints', author: 'Andres Campero, Derek Shiller, Jaan Aru, and Jonathan Simon', note: "A 2025 paper that doesn't argue AI is or isn't conscious — it builds a taxonomy for organizing the many competing objections in the literature, from weak ones that leave digital consciousness possible to strong ones claiming it's outright impossible. Useful evidence that specialists are still building tools to organize the disagreement, not resolving it." },
     ],
     nextSteps: [
-      'Read arguments from two opposing extreme stances back to back, to sharpen your own sense of where the real uncertainty lies.',
-      'Revisit this assessment again in a year to see whether your genuinely undecided position has shifted.',
+      'Reading two opposing extreme views back to back is one way to locate where the real uncertainty lies.',
+      'Retaking this assessment later shows whether an undecided position has moved.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that the honest answer on machine consciousness, labor, and connection is that we simply don't know enough yet, and that admitting that is more useful than picking a side.",
@@ -732,8 +732,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Everything for Everyone', author: 'Nathan Schneider', note: 'A broader account of the cooperative ownership movement this stance is part of.' },
     ],
     nextSteps: [
-      'Look into an existing platform cooperative to see worker-owned digital infrastructure in practice.',
-      'Read a critique of cooperative ownership models to test this stance against its strongest counter-argument.',
+      'Existing platform cooperatives show worker-owned digital infrastructure in practice.',
+      'Critics of cooperative ownership models make the strongest case against this view, and the objections above summarize two of their arguments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions about machine consciousness matter less than the question of who owns and controls the infrastructure.",
@@ -763,8 +763,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Uncanny Valley (essay)', author: 'Masahiro Mori', note: "The foundational framework for why some human-like machines feel emotionally real and others feel deeply wrong — directly relevant to what makes an AI companion land as a genuine presence." },
     ],
     nextSteps: [
-      'Look into current AI companion app communities and how users describe their own experience.',
-      'Read a critique of AI companionship to test this stance against its strongest counter-argument.',
+      'Communities of AI companion users describe their own experience in their own words.',
+      'Human-Bonds Defender is the Atlas viewpoint that makes the strongest case against this one, and the companionship focus module covers the research on both sides.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming an AI companion's responsiveness reflects something real enough to ground a genuine relationship, whether or not it's provably conscious.",
@@ -793,8 +793,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Burnout Society', author: 'Byung-Chul Han', note: 'A philosophical account of how constant connectivity can produce isolation and exhaustion rather than genuine relationship.' },
     ],
     nextSteps: [
-      'Look into community-building initiatives that explicitly aim to reduce social isolation without relying on AI substitutes.',
-      'Read a counter-argument from someone who has found genuine value in AI companionship, to test this stance against its strongest opposing case.',
+      'Community initiatives that aim to reduce social isolation without AI substitutes show the alternative this view argues for.',
+      'AI Companionship Advocate is the Atlas viewpoint that makes the strongest case against this one, and the companionship focus module covers the research on both sides.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whatever is happening inside an AI companion, it's not enough to justify treating the bond as equivalent to a human one.",
@@ -824,8 +824,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Alone Together', author: 'Sherry Turkle', note: 'A close look at how technology, including early companion devices, can substitute for rather than support real human connection.' },
     ],
     nextSteps: [
-      "Read an account of a religious or philosophical tradition's position on personhood and technology.",
-      'Look into communities intentionally limiting AI companion product use, to see this stance put into practice.',
+      "Religious and philosophical traditions have published positions on personhood and technology.",
+      'Some communities deliberately limit their use of AI companion products, which puts this view into practice.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming a living body is a strict requirement for consciousness, and more than just the only kind we've confirmed so far.",
@@ -862,8 +862,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Klara and the Sun', author: 'Kazuo Ishiguro', note: "A 2021 novel by a Nobel laureate that deliberately never resolves whether its AI companion, Klara, has a real inner life — the moral weight instead falls on the humans who discard her once her usefulness ends, dramatizing this stance's exact claim: treating a possibly-experiencing system as disposable property is the real risk, whatever the truth about its consciousness turns out to be." },
     ],
     nextSteps: [
-      'Read a published ethics framework on machine welfare from an AI lab or research institute.',
-      'Look into ongoing legal or philosophical debates about non-human personhood for a sense of how such arguments have played out before.',
+      'AI labs and research institutes have begun publishing ethics frameworks on machine welfare.',
+      'Past legal and philosophical debates about non-human personhood, such as those over animals and rivers, show how arguments like this have played out before.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that real uncertainty about machine consciousness is itself a reason for caution, and a poor reason to default to treating AI as property.",
@@ -895,8 +895,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'From Rationality to Relationality: Ubuntu as an Ethical and Human Rights Framework for Artificial Intelligence', author: 'Sabelo Mhlambi', note: 'A non-Western relational-ethics framework for AI personhood and moral worth, grounded in Ubuntu philosophy rather than Christian or Western secular tradition.' },
     ],
     nextSteps: [
-      "Read a published faith-tradition statement on AI ethics from a tradition you're less familiar with.",
-      'Look into an interfaith AI ethics initiative to see multiple traditions engaging this question together.',
+      "Many faith traditions have published statements on AI ethics, and one from an unfamiliar tradition offers a different angle on the same questions.",
+      'Interfaith AI ethics initiatives bring several traditions to these questions together.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that consciousness and moral worth are tied to something beyond computation, a view with long traditions behind it.",
@@ -925,8 +925,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: "The Authors Guild's public statements on AI and copyright", author: 'Authors Guild', note: 'Represents the direct policy position this stance is built on.' },
     ],
     nextSteps: [
-      'Look into an ongoing copyright lawsuit against an AI company to see this argument being tested in court.',
-      'Read a counter-argument from the fair-use side to test this stance against its strongest opposing case.',
+      'Ongoing copyright lawsuits against AI companies are where this argument is being tested in court.',
+      'Defenders of fair use for AI training make the strongest case against this view, and the objections above summarize two of their arguments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI \"creates\" in any real sense matters less than whether the humans whose work trained it are treated fairly.",
@@ -956,8 +956,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: "Reporting on Scale AI's global data-labeling workforce (Washington Post, Rest of World, and Fair Work Foundation coverage)", author: 'Alexandr Wang / Scale AI, as reported', note: "A documented cautionary case, not this stance's own view: investigative reporting and a Fair Work Foundation score of 1/10 found Scale AI's Remotasks subsidiary paying contractors in the Philippines and Kenya far below local minimum wage with little grievance recourse — exactly the kind of unbargained, one-sided AI-labor relationship this stance argues unions need real leverage to prevent." },
     ],
     nextSteps: [
-      'Read the AI-related provisions in the SAG-AFTRA contract to see collective bargaining over AI applied directly.',
-      "Look into a union's current AI policy platform to see this stance's demands in concrete form.",
+      'The AI provisions in the SAG-AFTRA contract show collective bargaining over AI applied directly.',
+      "Several unions have published AI policy platforms that set out this view's demands in concrete form.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether AI has real experience matters less than whether workers have a real say in how it's deployed.",
@@ -985,8 +985,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Disability Visibility', author: 'Alice Wong (editor)', note: 'A collection of firsthand disability perspectives, including on technology\'s promise and its failures.' },
     ],
     nextSteps: [
-      'Look into an AI-powered accessibility tool and how it was actually developed and tested with disabled users.',
-      'Read a documented case of AI bias harming disabled users to understand the specific risk this stance is vigilant about.',
+      'The development history of an AI accessibility tool shows whether, and how, disabled users were involved in building and testing it.',
+      'Documented cases of AI bias harming disabled users show the specific risk this view watches for.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters less than whether it works reliably and fairly for the specific people who need it.",
@@ -1013,8 +1013,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Digital Empires', author: 'Anu Bradford', note: "A comparative look at how major powers' tech regulation shapes the rest of the world's options, including the case for tech sovereignty." },
     ],
     nextSteps: [
-      "Look into your own country's or region's national AI strategy, if one exists.",
-      'Read an account of a country building domestic AI or chip capacity from a position of limited resources.',
+      "Many countries and regions now publish national AI strategies.",
+      'Accounts of countries building domestic AI or chip capacity with limited resources show what this view asks for in practice.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions about machine consciousness matter less than the more concrete question of who controls the infrastructure.",
@@ -1041,8 +1041,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The OCAP principles (public framework documents)', author: 'First Nations Information Governance Centre', note: 'The concrete governance framework this stance is built on.' },
     ],
     nextSteps: [
-      'Read the OCAP principles in full to see this governance framework in detail.',
-      'Look into an Indigenous-led AI research initiative to see data sovereignty applied to AI development directly.',
+      'The OCAP principles set out this governance framework in full.',
+      'Indigenous-led AI research initiatives apply data sovereignty to AI development directly.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that questions about machine consciousness matter less than the question of who controls the knowledge used to build these systems.",
@@ -1070,8 +1070,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Poor Economics', author: 'Abhijit Banerjee and Esther Duflo', note: "Background on how real interventions succeed or fail in resource-limited settings — the same practical lens this stance applies to AI." },
     ],
     nextSteps: [
-      'Look into an AI-assisted diagnostic or education tool actually deployed in a low-resource setting and how it was evaluated.',
-      'Read a critique of "tech solutionism" in global development to test this stance against its strongest counter-argument.',
+      'AI-assisted diagnostic and education tools deployed in low-resource settings, and the evaluations of them, show this view\'s promise and its limits.',
+      'Critics of "tech solutionism" in global development make the strongest case against this view, and the objections above summarize two of their arguments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters far less than whether it gets real care or instruction to someone who needs it right now.",
@@ -1104,8 +1104,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: "Rumman Chowdhury's public writing and bias-bounty program reports", author: 'Rumman Chowdhury', note: 'Concrete, documented examples of adversarial, outside-in AI auditing in practice.' },
     ],
     nextSteps: [
-      "Look into a published AI bias bounty or red-teaming report to see this kind of outside audit in practice.",
-      "Compare two companies' public AI ethics statements against an independent audit of their actual products, if one exists.",
+      "Published AI bias bounties and red-teaming reports show outside audits in practice.",
+      "Where an independent audit of a company's products exists, comparing it with that company's public AI ethics statement shows how well the promises hold up.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters far less than whether the company that built it can be held to its own stated standards.",
@@ -1138,8 +1138,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Public writing and talks on Decision Intelligence', author: 'Cassie Kozyrkov', note: "This stance's business-decision-making analogue: her framing that humans must own the objective function while machines handle the statistics is a popularization of \"decision intelligence\" (a term originated by Lorien Pratt in 2012, not by Kozyrkov herself) applied to organizational AI adoption." },
     ],
     nextSteps: [
-      "Look into a real-world example of human-AI collaboration outperforming either alone, like advanced chess or a diagnostic-support tool used alongside doctors.",
-      'Read a critique of the augmentation framing to see whether "partnership" descriptions hold up as AI systems become more capable on their own.',
+      "Advanced chess and diagnostic-support tools used alongside doctors are two examples of human-AI collaboration that supporters cite.",
+      'Critics of the augmentation framing question whether "partnership" still describes the relationship as AI systems become more capable on their own.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI is conscious matters less than whether the human-AI team, together, produces better judgment than either part alone.",
@@ -1169,8 +1169,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'AI Superpowers: China, Silicon Valley, and the New World Order', author: 'Kai-Fu Lee', note: 'Useful background on how the U.S.-China AI relationship gets framed as an existential contest for technological dominance, the same framing this stance treats as settled fact rather than one contestable lens among several.' },
     ],
     nextSteps: [
-      "Read the American AI Action Plan's actual text to see this stance's reasoning laid out as official policy, not just rhetoric.",
-      "Compare this stance's \"market share equals winning\" framing against a critique of zero-sum AI-race thinking, to test it against its strongest counter-argument.",
+      "The text of the American AI Action Plan lays out this view's reasoning as official policy.",
+      "Critics of zero-sum AI-race thinking challenge this view's assumption that market share equals winning.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an AI has real inner experience matters far less than whether your country's companies are the ones building and controlling the most capable systems.",
@@ -1202,8 +1202,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Children of Time', author: 'Adrian Tchaikovsky', note: "A novel following uplifted spiders developing language, technology, and civilization over millennia — in interviews, Tchaikovsky invokes Nagel's \"what is it like to be a bat\" problem directly, taking seriously that a radically non-human intelligence might genuinely think without ever being confirmable by human standards, fiction's version of this stance's core wager." },
     ],
     nextSteps: [
-      'Look into an existing worker- or community-owned AI cooperative to see collectively-run AI infrastructure in practice, not just in theory.',
-      "Read a critique of longtermism or effective accelerationism from outside the AI safety field, to test this stance's central complaint against its strongest counter-argument.",
+      'Worker- and community-owned AI cooperatives show collectively run AI infrastructure in practice.',
+      "Critics of longtermism and effective accelerationism from outside the AI safety field make the same central complaint this view does.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming a system can earn moral standing through how it functions and relates to others, whatever traits it lacks.",
@@ -1233,8 +1233,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'A Defense of the Rights of Artificial Intelligences', author: 'Eric Schwitzgebel and Mara Garza', note: "The stronger, rights-based claim this stance stops short of — useful as the position immediately to this stance's left, showing what \"taking welfare seriously\" would need to add to become a rights claim." },
     ],
     nextSteps: [
-      "Read Anthropic's own public explanation of why it gave Claude the ability to end abusive conversations, and decide whether that specific step feels like real welfare protection or a bounded gesture.",
-      "Compare this stance with AI Rights Advocate's stronger claim. Both take seriously that AI might have moral status; they part ways over what follows if it does.",
+      "Anthropic has published its own explanation of why it gave Claude the ability to end abusive conversations, and readers differ on whether that step amounts to real welfare protection.",
+      "AI Rights Advocate makes a stronger claim than this view. Both take seriously that AI might have moral status, and they part ways over what follows if it does.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming a system's possible inner life is a real, open research question worth studying now, even without a settled answer or a checklist of human-like traits to confirm it.",
@@ -1264,8 +1264,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: "AI Snake Oil: What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference", author: 'Arvind Narayanan and Sayash Kapoor', note: "Draws the same line this stance draws in practice: distinguishing AI capabilities that are real and already useful from claims that don't hold up, without collapsing into either blanket dismissal or blanket hype." },
     ],
     nextSteps: [
-      'Read the "AI as Normal Technology" essay directly and compare its electrification-and-internet analogy against your own timeline expectations for AI capability growth.',
-      "Compare this stance against Extinction-Risk Advocate's and Tech Industry Optimist's, and notice they share almost no premises: this stance's whole case rests on disputing the idea that something categorically new is happening at all.",
+      'The essay "AI as Normal Technology" sets out the electrification-and-internet analogy this view rests on.',
+      "Extinction-Risk Advocate and Tech Industry Optimist share almost no premises with this view, since its case rests on disputing that something categorically new is happening at all.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming today's AI systems have no independent agency or inner life worth centering: their real-world effects come entirely from how humans build, deploy, and govern them.",
@@ -1295,8 +1295,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Where the Chips Fall: U.S. Export Controls Under the Biden Administration, 2022-2024', author: 'Center for Strategic and International Studies (CSIS)', note: "Traces how the 'small yard, high fence' doctrine was implemented and where its scope expanded or held, the exact question this stance treats as the measure of success." },
     ],
     nextSteps: [
-      "Read Jake Sullivan's September 2022 remarks directly and identify which specific technologies he named as the 'small yard': then check whether current export-control rules still match that scope or have crept beyond it.",
-      "Compare this stance against National Security Hawk's, and notice the two rarely name the same policy lever: one wants domestic investment to close the gap, this one wants the rival's access closed instead.",
+      "Jake Sullivan's September 2022 remarks named the technologies he meant by the \"small yard,\" and comparing that list with current export-control rules shows how far the scope has moved.",
+      "National Security Hawk and this view rarely reach for the same policy lever: one wants domestic investment to close the gap, while this one wants the rival's access closed.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming questions of machine experience are outside the frame. What matters is who controls the computing power.",
@@ -1325,8 +1325,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Artificial Intelligence, Strategic Stability and Nuclear Risk', author: 'Vincent Boulanin et al., SIPRI (2020)', note: "Extends the verification-and-restraint argument to strategic stability, examining how AI-driven speed and opacity in weapon systems could compress human decision time in a crisis — the strategic-stability case for this stance's caution." },
     ],
     nextSteps: [
-      "Read Boulanin's 2015 SIPRI Insights paper on Article 36 and identify what a rigorous weapon review would actually require that most current reviews skip.",
-      "Compare this stance against Military AI Strategist's directly on one concrete case (an autonomous targeting system), and notice they don't share a starting question: one asks 'does this preserve deterrence,' the other asks 'has this been legally reviewed and could that review be verified.'",
+      "Vincent Boulanin's 2015 SIPRI Insights paper on Article 36 sets out what a rigorous weapon review requires, including steps most current reviews skip.",
+      "Military AI Strategist starts from a different question than this view does: whether a system preserves deterrence, where this view asks whether its use has been legally reviewed and could be verified.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming a weapon system's autonomy is a legal and procedural question: what matters is whether its use has been reviewed and could be independently verified.",
@@ -1355,8 +1355,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Written Testimony Before the House Committee on Oversight and Reform', author: 'Daniel Castro (January 15, 2020)', note: "Delivered in the same public, accountable forum where the opposing case gets made — argues directly that bans 'undercut efforts to make police agencies more efficient and effective,' the clearest formal statement of this stance's position." },
     ],
     nextSteps: [
-      "Read Castro's 2020 ITIF piece on facial recognition and police reform, and identify which specific oversight mechanisms he proposes as an alternative to prohibition: then check whether any jurisdiction has actually funded and enforced them.",
-      "Compare this stance against Normal-Technology Realist's directly on one concrete policy (a municipal facial-recognition ban), and notice the difference: one is making a general claim about AI's pace and kind, the other is making a narrow claim about this one domestic tool.",
+      "Daniel Castro's 2020 ITIF piece on facial recognition and police reform proposes specific oversight mechanisms as an alternative to prohibition.",
+      "Normal-Technology Realist makes a general claim about AI's pace, while this view makes a narrow claim about one domestic tool, and a municipal facial-recognition ban is where the two can be compared.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming the tool's own nature (whether it 'understands' or has any independent status) isn't the relevant question: what matters is documented efficacy and whether real oversight is attached to its use.",
@@ -1387,8 +1387,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'OpenAI Used Kenyan Workers on Less Than $2 Per Hour: Exclusive', author: 'Billy Perrigo, TIME (Jan 18, 2023)', note: "Documents OpenAI/Sama contract workers labeling CSAM, murder, and bestiality content to build ChatGPT's toxicity filter; Sama canceled the contract early over trauma concerns." },
     ],
     nextSteps: [
-      "Read Foxglove Legal's ongoing coverage of the Kenyan moderators' case against Meta/Sama and track whether the unionization-retaliation claim survives trial.",
-      "Compare this stance with Fairness Watchdog's: this one is about the working conditions of the people who build a model's safety layer, where Fairness Watchdog audits what the model produces.",
+      "Foxglove Legal's coverage of the Kenyan moderators' case against Meta and Sama follows the unionization-retaliation claim as it moves through the courts.",
+      "Fairness Watchdog audits what a model produces, while this view is concerned with the working conditions of the people who build a model's safety layer.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming the AI's outputs and the human suffering that went into training it are facts about the same system, and can't be judged separately.",
@@ -1417,8 +1417,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'On Algorithmic Wage Discrimination (SSRN preprint)', author: 'Veena Dubal', note: 'Earlier working-paper version of the Columbia Law Review article, useful for tracing how the argument developed before peer review.' },
     ],
     nextSteps: [
-      "Read Dubal's Columbia Law Review article directly, particularly the driver interviews describing pay as \"gambling,\" and compare that language against your own assumptions about gig-platform fairness.",
-      "Compare this stance against Artist Rights Advocate and notice the remedy each proposes: legislative ban on a pay mechanism versus consent-and-compensation for training data, two different theories of what \"protection\" means.",
+      "Veena Dubal's Columbia Law Review article includes the driver interviews in which workers describe their pay as \"gambling.\"",
+      "Artist Rights Advocate proposes consent and compensation for training data, while this view proposes a legal ban on a pay mechanism, which reflects two different ideas of what protection means.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming the algorithm's wage-setting logic is a hidden, deliberate design choice, and that you have to study how it works as well as what it pays.",
@@ -1449,8 +1449,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: "The Guarantee: Inside the Fight for America's Next Economy", author: 'Natalie Foster (2024)', note: 'Economic Security Project case for guaranteed income as macro-level redistribution, corroborating the post-work framing this stance rests on.' },
     ],
     nextSteps: [
-      "Read the Fortune Feb 2026 piece on Yang's \"AI jobpocalypse\" warning in full, and note that even Yang says cash alone isn't sufficient, decide whether the \"purpose and community\" piece changes your view of what a real redistributive response requires.",
-      "Compare this stance against Union Bargaining Advocate and notice the evolutionary-axis reversal explicitly: this stance assumes real, wholesale replacement, not managed integration, while the bargaining stance assumes the job relationship is still worth renegotiating.",
+      "Fortune's February 2026 piece on Andrew Yang's \"AI jobpocalypse\" warning notes that even Yang says cash alone isn't enough, and that purpose and community matter too.",
+      "Union Bargaining Advocate assumes the job relationship is still worth renegotiating, while this view assumes wholesale replacement, which puts the two on opposite sides of the Growth and Limits axis.",
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming AI's economic effect is best understood through overall job displacement, and that questions about machine minds don't change it.",
@@ -1479,8 +1479,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Algorithmic Colonization of Africa', author: 'Abeba Birhane', note: 'A shorter, public-facing Real Life Magazine essay version of the same argument, aimed at a general audience rather than an academic one.' },
     ],
     nextSteps: [
-      'Read the SCRIPTed paper directly to see the specific case studies Birhane draws on, rather than the summary version.',
-      'Listen to Radical AI Podcast Episode 11 to hear this argument applied conversationally to specific deployments.',
+      'Abeba Birhane\'s SCRIPTed paper contains the specific case studies behind her argument.',
+      'Episode 11 of the Radical AI Podcast applies this argument conversationally to specific deployments.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that debates over whether AI is conscious are, at best, secondary to the more urgent question of whose data and labor built it and who profits from that extraction.",
@@ -1510,8 +1510,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'Towards Afrocentric NLP for African Languages', author: 'Masakhane community', note: 'The 2022 arXiv follow-up (2203.08351) extending the framework toward representation and against linguistic erasure specifically.' },
     ],
     nextSteps: [
-      'Look into masakhane.io and an active project for a specific African language to see community-built NLP in practice.',
-      'Read the Science Magazine feature on local scientists and volunteers "taking it back to school" for AI language work.',
+      'Masakhane (masakhane.io) runs community projects for specific African languages, which show community-built language technology in practice.',
+      'Science magazine has published a feature on local scientists and volunteers building AI tools for African languages.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether a model is conscious matters far less than whether it can even represent your language at all.",
@@ -1540,8 +1540,8 @@ const baseReports: Record<string, BaseReport> = {
       { title: '"Tech Doesn\'t Just Stay at the Border": Petra Molnar on Surveillance\'s Long Reach', author: 'Texas Observer (interview with Petra Molnar)', note: "An interview extending the book's argument into current U.S. border policy specifically." },
     ],
     nextSteps: [
-      'Read The Walls Have Eyes, focusing on a specific documented case of automated risk-scoring or biometric deployment.',
-      'Look into the Coda Story reporting on how the EU AI Act treats (or exempts) border surveillance technology.',
+      'Petra Molnar\'s The Walls Have Eyes documents specific cases of automated risk scoring and biometric systems at borders.',
+      'Coda Story has reported on how the EU AI Act treats, and in places exempts, border surveillance technology.',
     ],
     reflectiveBreakdown: {
       mindAssumption: "You're likely assuming that whether an automated system is conscious matters far less than the very real, very present harm it causes when used to sort, flag, or detain a human being at a border.",
