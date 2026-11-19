@@ -113,12 +113,11 @@ This project treats "did we accidentally build a biased classifier" as a real en
 
 - **Hidden pole labels, shuffled question order.** You never see which pole a question feeds, and question order is re-shuffled per axis on every attempt (Fisher-Yates, see [`shuffle.ts`](src/lib/shuffle.ts)), so you can't game or pattern-match your way to a target label.
 - **Average gap per axis instead of a match percentage.** Each match leads with how far apart you are, on average, per axis, which follows the ranking; below it, how many of the 8 axes put you on the same side (pole A, middle, pole B) and the two axes where you differ most. The old percentage put even very different archetypes in the 70s and 80s.
-- **Close calls calibrated against measurement error.** A result is flagged when the top two archetypes are less than 0.3 apart: in simulation ([`analysis/closecall_sim.py`](analysis/closecall_sim.py), synthetic sheets only), below that gap a different handful of statements on the same themes swaps the top match about half the time. The notice names the axes that separate the two.
-- **Optional check statements.** Two statements ask for a particular answer. They are never scored; if one gets a different answer, the results page says so, and the validation study sets that response aside.
+- **Close calls calibrated against measurement error.** A result is flagged when the top two archetypes are less than 0.4 apart: in simulation ([`analysis/closecall_sim.py`](analysis/closecall_sim.py), synthetic sheets only), below that gap a different handful of statements on the same themes swaps the top match about half the time. The notice names the axes that separate the two.
 - **Mirrored, balanced statements.** Every axis and horizon has as many pole-A as pole-B statements, so the habit of agreeing cancels out; a standing test checks that uniform answer sheets score exactly 0.
 - **A structural bias audit runs as a standing test** ([`classificationBias.test.ts`](src/lib/classificationBias.test.ts)): 500 trials of pure-random answers are classified, and the test fails if any non-centrist archetype wins an implausible share of random trials — the kind of subtle "opinion matching effect" that has been documented in other online quiz classifiers even under uniformly random input.
 - **A profile-redundancy guard** ([`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts)) fails the build if any two of the 50 archetypes are closer than 5.0 in 8D space — this caught (and forced fixes to) three near-duplicate pairs during development, and every profile report also names an archetype it's often confused with, with a specific distinguishing sentence (a conceptual neighbor, not always the nearest in coordinates; the results page shows the coordinate gaps directly). This guard catches content duplication; it does not guarantee balanced classification win-rates (two archetypes 5.0+ apart can still win wildly different shares of random input — see the calibration note below).
-- **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation (no test-retest reliability studies, no independent peer review) and explains the four-option scale with an explicit "no settled view" choice.
+- **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation and explains the four-option scale, the "no settled view" choice and how archetype matching weights each axis.
 - **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 144 statements aim for clarity: no statement above grade 15 and an average between grades 8 and 12, so the idea, not the vocabulary, does the work. Profile summaries, scenarios, and stakeholder-tag descriptions are held to a grade-14 ceiling. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
 - **Material-stakeholder tags are structurally separate from worldview scoring.** They're stored in their own piece of state, never enter `computeRawAxisScores`/`classify`, and are surfaced on the results page as their own labeled section — so "what you believe" and "what you have at stake" stay visibly distinct instead of getting blended into one score.
 
@@ -127,22 +126,24 @@ This project treats "did we accidentally build a biased classifier" as a real en
 ## How scoring works
 
 ```
-Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2   ("no settled view" = 0)
+Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2   ("no settled view" = left out)
    → flipped for pole-B statements, summed per axis (and per horizon)
-   → scaled linearly to -10..+10:  10 × sum ÷ (2 × number of statements)
-   → T1 and T2 combined in proportion to their statement counts (= the score over all 18)
-   → Euclidean distance to all 50 archetype coordinates; closest 3 shown as average gap per axis (distance ÷ √8)
-   → close call when the second match is less than 0.3 farther away than the first
+   → scaled linearly to -10..+10:  10 × sum ÷ (2 × base), where base = statements answered,
+     but never less than half the statements (so one strong answer can't give an extreme score)
+   → T1 and T2 combined in proportion to their bases (= the average over all answered statements)
+   → weighted distance to all 50 archetypes: √(8 × Σ kᵢΔᵢ² ÷ Σ kᵢ), where kᵢ = your axis weight × the archetype's
+     (2 on the axes that define it, 0.5 on axes outside its concerns, 0.75 where it says an axis matters less, else 1;
+     see archetypeSalience.ts). With every weight at 1 this is the ordinary Euclidean distance.
+   → closest 3 shown as average gap per axis (distance ÷ √8)
+   → close call when the second match is less than 0.4 farther away than the first
    → core-three reading from the tiers of Machine Experience, Moral Standing and Growth and Limits
 ```
 
-Statement weights are equal: with no response data yet, there is no basis for weighting one statement above another. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **26 thought experiments** are a separate, unscored reading page.
+Statement weights are equal, since there is no response data to justify weighting one statement above another. Archetype axis weights come from each archetype's own text: an archetype placed at 0 on an axis it barely takes a side on shouldn't count a strong view there as a disagreement. A quarter was tried for those axes, but on simulated random answer sheets it turned archetypes with many such axes into catch-all matches, so half is the floor. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **26 thought experiments** are a separate, unscored reading page.
 
 ### Optional extras on the website
 
-These are web-only and exploratory. They are not part of the validation study (see the deviation log in the protocol).
-
-- **Short version.** 48 of the 144 statements: three mirrored pairs per axis, one near-term and two long-run ([`src/data/shortForm.ts`](src/data/shortForm.ts)). Scores are scaled by the statements shown, so they sit on the same −10..+10 scale with less precision (six answers per axis instead of eighteen). The results page says so and offers to answer the other 96 without losing anything. The close-call simulation was rerun for the short version (`python3 analysis/closecall_sim.py --short`, synthetic sheets only) and gave the same 0.3 margin.
+- **Short version.** 48 of the 144 statements: three mirrored pairs per axis, one near-term and two long-run ([`src/data/shortForm.ts`](src/data/shortForm.ts)). Scores are scaled by the statements shown, so they sit on the same −10..+10 scale with less precision (six answers per axis instead of eighteen). The results page says so and offers to answer the other 96 without losing anything. The close-call simulation was rerun for the short version (`python3 analysis/closecall_sim.py --short`, synthetic sheets only) and gave a best margin of 0.3, with about the same error rate at 0.4, so both versions use 0.4.
 - **What matters most to you.** On the results page you can mark any axis Less (×0.5), Normal or More (×2). Only the archetype ranking changes: distance becomes √(8 × Σ wᵢΔᵢ² ÷ Σ wᵢ), which equals the ordinary distance when every weight is 1, so the average gap and the close-call margin keep their meaning. Your scores never change. Weights travel in share links.
 - **Statement by statement.** Your answer to each statement next to the answer each of your three closest archetypes would be expected to give. Archetypes never answered statements, so their answers are estimates from their position on that axis (strongly agree at 6 or more toward the statement's pole, agree at 2 or more, no clear lean in between), and the page says so. Only opposite sides are flagged.
 - **Focus module: friends, partners and therapists** (`/intimacy`). 18 mirrored statements on AI as a best friend, romantic partner and therapist, and on attachment, critical thinking, identity, loneliness, intimacy and social connection ([`src/data/intimacyModule.ts`](src/data/intimacyModule.ts)). It has its own Guarded ↔ Open score and theme breakdown, reflection questions, and a research summary that gives both sides, drawing on the American Psychological Association's 2025 health advisories, the World Health Organization's Commission on Social Connection, the American Philosophical Association's blog, peer-reviewed studies (Journal of Consumer Research, Psychological Science, Nature Human Behaviour, Perspectives on Psychological Science, New Media & Society, NEJM AI, JMIR, ACM CHI and AIES) and WIRED. It never touches the Atlas score, the match or share links.
@@ -181,9 +182,8 @@ src/
 │   ├── archetypeClusters.ts     7 groups of the 50 archetypes
 │   ├── stakeholderTags.ts       13 material-stakeholder self-select tags
 │   ├── scenarios.ts             8 situational diagnostic questions
-│   ├── attentionChecks.ts       2 optional, unscored check statements
+│   ├── archetypeSalience.ts     which axes define each archetype and which fall outside its concerns
 │   ├── manifestoContents.ts     50 "Case for This View" essays, one per archetype, reported in the third person (axis positions filled from profiles.ts)
-│   ├── study.ts                 link to the validation study's form (empty until set)
 │   ├── shortForm.ts             the 48-statement short version
 │   ├── intimacyModule.ts        focus module: statements, scoring, research summary and sources
 │   └── types.ts                 shared TypeScript interfaces
@@ -212,13 +212,9 @@ src/
 
 ---
 
-## Validation study
+## Close-call simulation
 
-The Atlas has not been validated yet. [`docs/VALIDATION_PROTOCOL.md`](docs/VALIDATION_PROTOCOL.md) fixes, before any data exist, which responses are set aside, what is measured (reliability per axis, mirrored pairs, distinct axes, measurement precision, the close-call margin, agreement with self-chosen viewpoints, retest stability, archetype coordinates) and what each result would change.
-
-- **Collecting responses.** The Google Forms edition ([`forms/AIWorldviewAtlasForm.gs`](forms/AIWorldviewAtlasForm.gs), set up in your own Google account) asks for consent, an optional self-chosen viewpoint and an optional retest code, includes the two check statements, and writes every answer to an "Answers" tab.
-- **Analysing them.** Download that tab as CSV and run `python3 analysis/analyze_atlas.py Answers.csv out/`. The script reads [`analysis/atlas_reference.json`](analysis/atlas_reference.json), which a test keeps identical to the quiz's own data. `analysis/make_test_data.py` writes a synthetic file for trying it out; the script only accepts synthetic rows with `--test` and labels every output as a test run.
-- **Linking the study from the results page.** Paste the form's share link into [`src/data/study.ts`](src/data/study.ts). While it's empty, no link is shown.
+`analysis/closecall_sim.py` calibrates the close-call margin on synthetic answer sheets only. It reads [`analysis/atlas_reference.json`](analysis/atlas_reference.json), which `npx vite-node scripts/export_sim_reference.ts` writes from the quiz source; a test fails if the two drift apart. Run `python3 analysis/closecall_sim.py` (add `--short` for the short version, or `--equal` for plain distance).
 
 ---
 
@@ -258,4 +254,4 @@ A few invariants the codebase deliberately enforces — worth knowing before tou
 
 ## Disclaimer
 
-This is a self-reflection and discussion tool, not a validated psychometric instrument. It has not been through test-retest reliability studies, factor analysis, or independent peer review; the study that would do so is planned in `docs/VALIDATION_PROTOCOL.md` but has no data yet. Treat your result as a conversation starter and a way to see the shape of a crowded debate — not a scientific reading of who you are.
+This is a tool for learning, self-reflection and discussion, made for anyone curious about the AI debate. It is not a validated psychometric instrument and has not been through test-retest reliability studies, factor analysis or independent peer review. Treat your result as a conversation starter and a way to see the shape of a crowded debate — not a scientific reading of who you are.

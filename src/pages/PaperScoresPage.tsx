@@ -45,7 +45,9 @@ export function PaperScoresPage() {
       <h1 className="text-3xl font-bold mb-3">Results from the paper edition</h1>
       <p className="text-gray-700 mb-6">
         Copy the net totals from the booklet&apos;s totals page: for each axis, the near-term net and the long-run net (pole A points
-        minus pole B points). You&apos;ll see the same results the online quiz gives, including your closest archetypes.
+        minus pole B points). You&apos;ll see the same kind of results the online quiz gives, including your closest archetypes.
+        The booklet counts &ldquo;no settled view&rdquo; as zero, while the online quiz leaves those statements out of the
+        average, so if you skipped many on paper your scores here will sit a little closer to the middle.
       </p>
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">

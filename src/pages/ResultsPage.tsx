@@ -9,6 +9,7 @@ import { stakeholderTags } from '../data/stakeholderTags'
 import { useQuiz } from '../state/QuizContext'
 import {
   computeRawAxisScores,
+  answeredCounts,
   scaleAxisScores,
   combineHorizons,
   classify,
@@ -35,8 +36,6 @@ import { manifestoContents } from '../data/manifestoContents'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 import { coreArchetype, coreCode, describeCore, tierInfo, type CoreAxis } from '../data/coreThree'
 import { biggestGaps, withAxisPositions } from '../lib/axisPositions'
-import { failedAttentionChecks } from '../data/attentionChecks'
-import { STUDY_FORM_URL } from '../data/study'
 import { AxisWeightsPanel } from '../components/AxisWeightsPanel'
 import { StatementComparison } from '../components/StatementComparison'
 
@@ -49,7 +48,6 @@ export function ResultsPage() {
     scenarioAnswers,
     selectedStakeholderTags,
     declinedQuestions,
-    checkAnswers,
     mode,
     setMode,
     axisWeights,
@@ -80,17 +78,20 @@ export function ResultsPage() {
   const hasNoData = !decoded && !modeQuestions.some((q) => answers[q.id] !== undefined)
   const modeDeclined = declinedQuestions.filter((id) => modeQuestions.some((q) => q.id === id))
 
-  const { t1Raw, t2Raw } = useMemo(() => {
+  const { t1Raw, t2Raw, t1N, t2N } = useMemo(() => {
     if (decoded) return decoded
     return {
       t1Raw: computeRawAxisScores(modeQuestions, answers, 'T1'),
       t2Raw: computeRawAxisScores(modeQuestions, answers, 'T2'),
+      t1N: answeredCounts(modeQuestions, answers, 'T1'),
+      t2N: answeredCounts(modeQuestions, answers, 'T2'),
     }
   }, [decoded, answers, modeQuestions])
 
-  const t1Scaled: AxisVector = scaleAxisScores(t1Raw, 'T1', modeQuestions)
-  const t2Scaled: AxisVector = scaleAxisScores(t2Raw, 'T2', modeQuestions)
-  const combined = combineHorizons(t1Scaled, t2Scaled, modeQuestions)
+  // "No settled view" counts as missing: each score is the average over the statements answered.
+  const t1Scaled: AxisVector = scaleAxisScores(t1Raw, 'T1', modeQuestions, t1N)
+  const t2Scaled: AxisVector = scaleAxisScores(t2Raw, 'T2', modeQuestions, t2N)
+  const combined = combineHorizons(t1Scaled, t2Scaled, modeQuestions, t1N, t2N)
   // Weights change only which archetypes rank closest; equal weights give the ordinary distance.
   const weights = decoded ? (decoded.weights ?? EQUAL_WEIGHTS) : axisWeights
   const weighted = !isEqualWeights(weights)
@@ -100,7 +101,6 @@ export function ResultsPage() {
   const closeCall = isCloseCall(matches, resultMode === 'short' ? CLOSE_CALL_MARGIN_SHORT : CLOSE_CALL_MARGIN)
   const remainingFull = questions.filter((q) => answers[q.id] === undefined && !declinedQuestions.includes(q.id)).length
   const closeCallAxes = closeCall ? biggestGaps(matches[0].profile.coords, matches[1].profile.coords, 3, 1) : []
-  const missedChecks = decoded ? [] : failedAttentionChecks(checkAnswers)
   const core = coreArchetype(combined)
 
   const [inspectedProfileId, setInspectedProfileId] = useState<string>(topMatch.profile.id)
@@ -123,7 +123,7 @@ export function ResultsPage() {
     if (decoded || hasNoData || savedHistoryRef.current) return
     savedHistoryRef.current = true
     const priorHistory = recordResult(
-      { t1Raw, t2Raw, topMatchId: topMatch.profile.id, topMatchName: topMatch.profile.name, mode: resultMode },
+      { t1Raw, t2Raw, t1N, t2N, topMatchId: topMatch.profile.id, topMatchName: topMatch.profile.name, mode: resultMode },
       Date.now(),
     )
     setPriorEntry(priorHistory.length > 0 ? priorHistory[priorHistory.length - 1] : null)
@@ -133,7 +133,13 @@ export function ResultsPage() {
   const priorCombined = useMemo(() => {
     if (!priorEntry) return null
     const qs = questionsForMode(priorEntry.mode ?? 'full')
-    return combineHorizons(scaleAxisScores(priorEntry.t1Raw, 'T1', qs), scaleAxisScores(priorEntry.t2Raw, 'T2', qs), qs)
+    return combineHorizons(
+      scaleAxisScores(priorEntry.t1Raw, 'T1', qs, priorEntry.t1N),
+      scaleAxisScores(priorEntry.t2Raw, 'T2', qs, priorEntry.t2N),
+      qs,
+      priorEntry.t1N,
+      priorEntry.t2N,
+    )
   }, [priorEntry])
 
   const selectedTagObjects = stakeholderTags.filter((tag) => selectedStakeholderTags.includes(tag.id))
@@ -149,7 +155,7 @@ export function ResultsPage() {
   }, [decoded, modeDeclined])
 
   async function handleShare() {
-    const encoded = encodeShareLink({ t1Raw, t2Raw, mode: resultMode, weights })
+    const encoded = encodeShareLink({ t1Raw, t2Raw, t1N, t2N, mode: resultMode, weights })
     const url = `${window.location.origin}${import.meta.env.BASE_URL}#/results?d=${encoded}`
     clearTimeout(copyStatusResetRef.current)
     try {
@@ -352,16 +358,6 @@ export function ResultsPage() {
         </div>
       )}
 
-      {missedChecks.length > 0 && (
-        <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">A Check Statement Was Answered Differently</h3>
-          <p className="text-gray-700">
-            {missedChecks.length === 1 ? 'One of the two check statements' : 'Both check statements'} asked for a particular
-            answer and got a different one. That often just means a quick tap, but if you were moving fast, your scores may
-            be less reliable than usual. Your answers are saved, so you can go back and look over any axis.
-          </p>
-        </div>
-      )}
 
       {closeCall && (
         <div className="mt-4 border-l-4 border-sky-500 bg-sky-50 p-4">
@@ -572,15 +568,6 @@ export function ResultsPage() {
         score and a summary of the research, and it doesn&apos;t change this result.
       </p>
 
-      {STUDY_FORM_URL && (
-        <p className="mt-4 text-gray-700">
-          This quiz hasn&apos;t been validated yet.{' '}
-          <a href={STUDY_FORM_URL} target="_blank" rel="noreferrer" className="text-blue-600 underline">
-            Take it once more in the study version
-          </a>{' '}
-          to help test whether it measures what it claims to. It asks for consent first and no name.
-        </p>
-      )}
 
       <MethodologySection />
       <PinnacleReflection archetypeName={topMatch.profile.name} />

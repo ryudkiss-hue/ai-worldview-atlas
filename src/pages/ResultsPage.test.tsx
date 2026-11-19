@@ -223,11 +223,11 @@ describe('ResultsPage', () => {
   })
 
   it('flags a close call, names both archetypes and the axes that separate them', () => {
-    const t1Raw = { teleological: 12, risk: -12, socioEconomic: 3, ontological: -11, legalMoral: 9, evolutionary: 4, relational: -11, geopolitical: 8 }
-    const t2Raw = { teleological: 6, risk: -10, socioEconomic: 3, ontological: -9, legalMoral: 10, evolutionary: 14, relational: -6, geopolitical: 11 }
+    const t1Raw = { teleological: -15, risk: 8, socioEconomic: 8, ontological: 11, legalMoral: -7, evolutionary: -1, relational: 8, geopolitical: 2 }
+    const t2Raw = { teleological: 0, risk: -11, socioEconomic: 0, ontological: -7, legalMoral: -2, evolutionary: 7, relational: 12, geopolitical: 16 }
     renderResultsPage(`?d=${encodeShareLink({ t1Raw, t2Raw })}`)
     expect(screen.getByText('This Was a Close Call')).toBeInTheDocument()
-    expect(screen.getByText(/Pragmatic Centrist and National Security Hawk are almost exactly as close/)).toBeInTheDocument()
+    expect(screen.getByText(/Pragmatic Centrist and Global South Self-Reliance Advocate are almost exactly as close/)).toBeInTheDocument()
     expect(screen.getByText('Where the two differ most:')).toBeInTheDocument()
   })
 
@@ -238,15 +238,6 @@ describe('ResultsPage', () => {
     expect(screen.queryByText('This Was a Close Call')).not.toBeInTheDocument()
   })
 
-  it('says so when a check statement got a different answer from the one it asked for', () => {
-    localStorage.setItem(
-      PROGRESS_KEY,
-      JSON.stringify({ answers: Object.fromEntries(questions.map((q) => [q.id, q.id % 3 ? 4 : 2])), checkAnswers: { 901: 4, 902: 5 } }),
-    )
-    renderResultsPage('')
-    expect(screen.getByText('A Check Statement Was Answered Differently')).toBeInTheDocument()
-    expect(screen.getByText(/One of the two check statements/)).toBeInTheDocument()
-  })
 
   it('shows a "no results yet" message instead of a fake neutral result when the quiz was never completed', () => {
     renderResultsPage('')

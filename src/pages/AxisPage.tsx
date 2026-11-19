@@ -7,7 +7,6 @@ import { useQuiz } from '../state/QuizContext'
 import { ProgressBar } from '../components/ProgressBar'
 import { AxisHorizonGroup } from '../components/AxisHorizonGroup'
 import { clearPersistentTTSCache } from '../lib/tts'
-import { attentionChecks, attentionCheckAsQuestion, isAttentionCheck } from '../data/attentionChecks'
 
 export function AxisPage() {
   const { axisIndex } = useParams<{ axisIndex: string }>()
@@ -17,8 +16,6 @@ export function AxisPage() {
     setAnswer,
     declinedQuestions,
     declineQuestion,
-    checkAnswers,
-    setCheckAnswer,
     questionOrder,
     ttsSettings,
     setTtsSettings,
@@ -36,19 +33,16 @@ export function AxisPage() {
     return <p>Unknown axis.</p>
   }
 
-  // The short version shows 6 of each axis's 18 statements; attention checks appear in both versions.
-  const inMode = (id: number) => mode === 'full' || isAttentionCheck(id) || isInShortForm(id)
+  // The short version shows 6 of each axis's 18 statements.
+  const inMode = (id: number) => mode === 'full' || isInShortForm(id)
   const allQuestions = questionsForAxis(axis.id).filter((q) => inMode(q.id))
   const modeQuestions = questionsForMode(mode)
   const order = questionOrder[axis.id]
-  const byId = new Map([
-    ...allQuestions.map((q) => [q.id, q] as const),
-    ...attentionChecks.map((c) => [c.id, attentionCheckAsQuestion(c)] as const),
-  ])
+  const byId = new Map(allQuestions.map((q) => [q.id, q] as const))
   const t1Questions = order.t1.filter(inMode).map((id) => byId.get(id)).filter((q) => q !== undefined)
   const t2Questions = order.t2.filter(inMode).map((id) => byId.get(id)).filter((q) => q !== undefined)
-  const shownAnswers = { ...answers, ...checkAnswers }
-  const onAnswer = (id: number, value: number) => (isAttentionCheck(id) ? setCheckAnswer(id, value) : setAnswer(id, value))
+  const shownAnswers = answers
+  const onAnswer = (id: number, value: number) => setAnswer(id, value)
   const allAnswered = allQuestions.every((q) => answers[q.id] !== undefined || declinedQuestions.includes(q.id))
   const answeredCount = modeQuestions.filter((q) => answers[q.id] !== undefined || declinedQuestions.includes(q.id)).length
 

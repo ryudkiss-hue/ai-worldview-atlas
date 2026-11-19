@@ -99,12 +99,11 @@ describe('saved progress', () => {
   it('restores valid answers and drops anything that does not fit the current statements', () => {
     localStorage.setItem(
       PROGRESS_KEY,
-      JSON.stringify({ answers: { 1: 5, 2: 3, 9999: 4 }, declinedQuestions: [3, 1, 777], checkAnswers: { 901: 2, 5: 4 }, questionOrder: {} }),
+      JSON.stringify({ answers: { 1: 5, 2: 3, 9999: 4 }, declinedQuestions: [3, 1, 777], questionOrder: {} }),
     )
     const saved = loadSavedProgress()!
     expect(saved.answers).toEqual({ 1: 5 })
     expect(saved.declinedQuestions).toEqual([3])
-    expect(saved.checkAnswers).toEqual({ 901: 2 })
     expect(Object.keys(saved.questionOrder)).toHaveLength(8)
   })
 
