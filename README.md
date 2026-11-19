@@ -1,40 +1,40 @@
 # The AI Worldview Atlas
 
-**A 144-statement diagnostic that maps where you stand on artificial minds and AI's future, across 8 axes, matched against 50 named worldview archetypes.**
+A 144-statement questionnaire that maps where you land on AI across eight axes and compares you with 50 named viewpoints from the current debate. It is meant for learning and personal reflection.
 
 Live at **[ryudkiss-hue.github.io/ai-worldview-atlas](https://ryudkiss-hue.github.io/ai-worldview-atlas/)**
 
-This version merges two instruments: the original Atlas (145 questions on 8 axes) and the Synthetic Compass (120 statements on machine minds, their moral standing, and the future of intelligence). Every statement was rewritten to one standard, described below, and the two item sets were folded into one set of axes so nothing is measured twice. The Atlas is English only.
+The Atlas combines two earlier quizzes, the original eight-axis Atlas and the Synthetic Compass on machine minds, into one set of statements so that nothing is measured twice. It is in English only.
 
 ---
 
-## Why this exists
+## Why it exists
 
-Most AI-opinion typologies make three mistakes this project tries to avoid:
+Most quizzes about AI opinions sort people along one line, from "for AI" to "against AI". That loses most of the disagreement, because whether AI poses an extinction risk and whether a chatbot could suffer are separate questions that people answer in every combination. The Atlas keeps eight of those questions apart, and groups its 50 viewpoints into seven families so it's easy to see which camps are large and which are narrow.
 
-1. **They flatten a multi-dimensional space into one or two axes.** Whether you think AI poses existential risk and whether you think a chatbot can suffer are different questions. Collapsing them into "pro-AI vs. anti-AI" loses the shape of the disagreement.
-2. **They imply every position is equally common.** This tool groups its 50 archetypes into 7 **groups** so the relative scale of each camp stays legible (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)).
-3. **They let wording, order and the habit of agreeing bias the result.** See [How the statements are built](#how-the-statements-are-built) and [Bias mitigations](#bias-mitigations-built-in).
+It also tries to keep the wording of a statement, the order statements appear in and the habit of agreeing from deciding anyone's result. The next two sections describe how.
 
 ---
 
 ## How the statements are built
 
-Every statement meets five tests:
+Every statement passes five checks:
 
-1. **Mirrored pairs.** Each statement has a partner on the same topic, under the same conditions, taking the opposite side (ids 1–2, 3–4, …). Agreeing with everything, or disagreeing with everything, lands at exactly 0 on every axis.
-2. **One claim.** No premise-plus-conclusion bundles and no second clause a reader might accept on its own.
-3. **A view, not a prediction.** Statements ask what is true in principle or what should happen, not what will happen, so answers reflect values and judgments rather than guesses about facts.
-4. **Matched strength.** Both sides of a pair are about equally easy to agree with, and neither uses loaded words.
-5. **The right axis.** Each pair measures its own axis's question and not something that merely travels with it (for example, relationship statements sit on Relationships, not on Moral Standing).
+1. It has a mirrored partner on the same topic, under the same conditions, that takes the other side (ids 1–2, 3–4 and so on). A person who agrees with everything, or disagrees with everything, lands at exactly 0 on every axis.
+2. It makes one claim, with no premise bundled in and no second clause a reader could accept on its own.
+3. It asks what is true in principle or what should happen, so answers reflect values and judgments; predictions about what will happen are left out.
+4. Both statements in a pair are about equally easy to agree with, and neither uses loaded words.
+5. Each pair measures its own axis's question. Statements about relationships with AI sit on Relationships, for example, even though they often travel with views on Moral Standing.
 
-Each axis has 9 pairs: 4 about today's and near-term AI (T1) and 5 about what is possible in principle or in the long run (T2). Answers use four options with no neutral midpoint, plus an explicit "I have no settled view on this", which counts as zero.
+Each axis has 9 pairs: 4 about today's and near-term AI (T1) and 5 about what is possible in principle or in the long run (T2). There are four answers and no neutral midpoint, plus "I have no settled view on this", which is left out of the score.
+
+Statements, scenarios, archetype names and report text follow the plain-language rules in [`docs/LANGUAGE_GUIDE.md`](docs/LANGUAGE_GUIDE.md): everyday words, AI systems described as products built and run by people, people described the way they describe themselves, and claims attributed to the people who make them.
 
 ---
 
 ## The 8 axes
 
-Positive scores lean toward Pole A, negative toward Pole B. Axis names, poles, archetype names and stakeholder tags follow the plain-language rules in [`docs/LANGUAGE_GUIDE.md`](docs/LANGUAGE_GUIDE.md). The axes fall into four groups: what AI is (1), how we live with it (2–3), what future to build (4–5), and who decides and how fast (6–8). Axis ids are kept from the original Atlas so the 50 archetypes, their reports and manifestos still line up.
+Positive scores lean toward pole A and negative scores toward pole B. The axes fall into four groups: what AI is (1), how we live with it (2 and 3), what future to build (4 and 5), and who decides and how fast (6 to 8).
 
 | # | Axis | Question | Pole A | Pole B |
 |---|------|----------|--------|--------|
@@ -47,13 +47,13 @@ Positive scores lean toward Pole A, negative toward Pole B. Axis names, poles, a
 | 7 | **Openness & Control** | Who should be able to build and use powerful AI? | Open to all | Public oversight |
 | 8 | **Nations and the World** | Should AI serve national interests or people everywhere? | National interest | Global cooperation |
 
-Each axis is also scored separately for T1 and T2, because many positions differ between the near term and the long run.
+Each axis is also scored separately for T1 and T2, since many people's views differ between the near term and the long run.
 
 ---
 
 ## The 50 archetypes, in 7 groups
 
-Rather than one flat list, every archetype belongs to exactly one of seven **groups** (see [`archetypeClusters.ts`](src/data/archetypeClusters.ts)), which keeps the relative size and shape of each camp visible instead of implying 50 equally-weighted tribes:
+Every archetype belongs to one of seven groups ([`archetypeClusters.ts`](src/data/archetypeClusters.ts)), and each match on the results page names its group and how many archetypes share it.
 
 <details>
 <summary><strong>Caution and safety</strong> (11 archetypes)</summary>
@@ -97,56 +97,56 @@ Artist Rights Advocate · Union Bargaining Advocate · Disability Rights Advocat
 Global South Self-Reliance Advocate · Indigenous Data Sovereignty Advocate · Global Development Optimist · Digital Colonialism Critic · African-Language AI Advocate · Border Surveillance Critic
 </details>
 
-Full definitions, 8-axis coordinates, and one-paragraph summaries for every archetype live in [`src/data/profiles.ts`](src/data/profiles.ts). Every archetype also has a full written report — extended narrative, its position and reasoning on each of the eight axes, the strongest objections with replies, real-world landmarks with sources ([`profileExpansions.ts`](src/data/profileExpansions.ts)), real thinkers, further reading, next steps, a "commonly confused with" distinction naming an archetype people often mix it up with and what separates them, and a reflective breakdown of its implicit assumptions — in [`src/data/profileReports.ts`](src/data/profileReports.ts).
-
----
-
-## The core-three reading
-
-Results also place you among **27 archetypes** from three axes about AI systems themselves and what they are for: Machine Experience (X), Moral Standing (Y) and Growth and Limits read in reverse (Z, from growth-first to within-limits). Each axis is split into three tiers at −2 and +2, and the three tiers pick one cell of 3 × 3 × 3. Descriptions are built from one sentence per tier, so the same tier always reads the same way. See [`coreThree.ts`](src/data/coreThree.ts).
-
----
-
-## Bias mitigations built in
-
-This project treats "did we accidentally build a biased classifier" as a real engineering question, not an afterthought:
-
-- **Hidden pole labels, shuffled question order.** You never see which pole a question feeds, and question order is re-shuffled per axis on every attempt (Fisher-Yates, see [`shuffle.ts`](src/lib/shuffle.ts)), so you can't game or pattern-match your way to a target label.
-- **Average gap per axis instead of a match percentage.** Each match leads with how far apart you are, on average, per axis, which follows the ranking; below it, how many of the 8 axes put you on the same side (pole A, middle, pole B) and the two axes where you differ most. The old percentage put even very different archetypes in the 70s and 80s.
-- **Close calls calibrated against measurement error.** A result is flagged when the top two archetypes are less than 0.4 apart: in simulation ([`analysis/closecall_sim.py`](analysis/closecall_sim.py), synthetic sheets only), below that gap a different handful of statements on the same themes swaps the top match about half the time. The notice names the axes that separate the two.
-- **Mirrored, balanced statements.** Every axis and horizon has as many pole-A as pole-B statements, so the habit of agreeing cancels out; a standing test checks that uniform answer sheets score exactly 0.
-- **A structural bias audit runs as a standing test** ([`classificationBias.test.ts`](src/lib/classificationBias.test.ts)): 500 trials of pure-random answers are classified, and the test fails if any non-centrist archetype wins an implausible share of random trials — the kind of subtle "opinion matching effect" that has been documented in other online quiz classifiers even under uniformly random input.
-- **A profile-redundancy guard** ([`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts)) fails the build if any two of the 50 archetypes are closer than 5.0 in 8D space — this caught (and forced fixes to) three near-duplicate pairs during development, and every profile report also names an archetype it's often confused with, with a specific distinguishing sentence (a conceptual neighbor, not always the nearest in coordinates; the results page shows the coordinate gaps directly). This guard catches content duplication; it does not guarantee balanced classification win-rates (two archetypes 5.0+ apart can still win wildly different shares of random input — see the calibration note below).
-- **An honest methodology disclosure**, expandable from the results page, states plainly that this has not been through psychometric validation and explains the four-option scale, the "no settled view" choice and how archetype matching weights each axis.
-- **A deliberate, checked reading level**, enforced by an automated Flesch-Kincaid check ([`readability.ts`](src/lib/readability.ts)). The 144 statements aim for clarity: no statement above grade 15 and an average between grades 8 and 12, so the idea, not the vocabulary, does the work. Profile summaries, scenarios, and stakeholder-tag descriptions are held to a grade-14 ceiling. (Long-form report content — the per-archetype narrative essays — is exempt from both, since that's read *after* scoring, not during it.)
-- **Material-stakeholder tags are structurally separate from worldview scoring.** They're stored in their own piece of state, never enter `computeRawAxisScores`/`classify`, and are surfaced on the results page as their own labeled section — so "what you believe" and "what you have at stake" stay visibly distinct instead of getting blended into one score.
+[`profiles.ts`](src/data/profiles.ts) holds each archetype's eight coordinates and one-paragraph summary. Each archetype also has a full report in [`profileReports.ts`](src/data/profileReports.ts) and [`profileExpansions.ts`](src/data/profileExpansions.ts): a narrative, its reasons on each axis, the strongest objections with the replies its supporters give, real-world landmarks with sources, related thinkers, further reading, where to look further, the archetype it's most often confused with and what separates them, and the assumptions it tends to rest on. A longer essay for each, "The Case for This View" ([`manifestoContents.ts`](src/data/manifestoContents.ts)), reports the view in the third person.
 
 ---
 
 ## How scoring works
 
 ```
-Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2   ("no settled view" = left out)
-   → flipped for pole-B statements, summed per axis (and per horizon)
-   → scaled linearly to -10..+10:  10 × sum ÷ (2 × base), where base = statements answered,
-     but never less than half the statements (so one strong answer can't give an extreme score)
-   → T1 and T2 combined in proportion to their bases (= the average over all answered statements)
-   → weighted distance to all 50 archetypes: √(8 × Σ kᵢΔᵢ² ÷ Σ kᵢ), where kᵢ = your axis weight × the archetype's
-     (2 on the axes that define it, 0.5 on axes outside its concerns, 0.75 where it says an axis matters less, else 1;
-     see archetypeSalience.ts). With every weight at 1 this is the ordinary Euclidean distance.
-   → closest 3 shown as average gap per axis (distance ÷ √8)
-   → close call when the second match is less than 0.4 farther away than the first
-   → core-three reading from the tiers of Machine Experience, Moral Standing and Growth and Limits
+Answer: strongly disagree, disagree, agree, strongly agree  →  -2, -1, +1, +2   ("no settled view" is left out)
+   → flipped for pole-B statements, summed per axis and horizon
+   → scaled to -10..+10:  10 × sum ÷ (2 × base), where base = statements answered in that horizon,
+     never less than half of them (so one strong answer can't give an extreme score)
+   → T1 and T2 combined in proportion to their bases, i.e. the average over all answered statements
+   → weighted distance to each of the 50 archetypes: √(8 × Σ kᵢΔᵢ² ÷ Σ kᵢ), where kᵢ is your axis weight
+     (Less 0.5, Normal 1, More 2) times the archetype's: 2 on axes that define it, 0.5 on axes outside its
+     concerns, 0.75 where it says an axis matters less, otherwise 1 (archetypeSalience.ts)
+   → the closest 3 shown as average gap per axis (distance ÷ √8)
+   → a close call when the second match is less than 0.4 farther away than the first
+   → the core-three reading from the tiers of Machine Experience, Moral Standing and Growth and Limits
 ```
 
-Statement weights are equal, since there is no response data to justify weighting one statement above another. Archetype axis weights come from each archetype's own text: an archetype placed at 0 on an axis it barely takes a side on shouldn't count a strong view there as a disagreement. A quarter was tried for those axes, but on simulated random answer sheets it turned archetypes with many such axes into catch-all matches, so half is the floor. See [`src/lib/scoring.ts`](src/lib/scoring.ts). The **situational scenarios** and **stakeholder tags** never enter this pipeline. The **26 thought experiments** are a separate, unscored reading page.
+All statements count equally, because there is no response data that would justify weighting one above another. The archetype weights come from each archetype's own text. Without them, an archetype placed at 0 on an axis it barely takes a side on would treat a strong view there as a disagreement. A weight of a quarter was tried for those axes, but on simulated random answer sheets it turned archetypes with many such axes into catch-all matches, so half is the floor. With every weight at 1 the distance is the ordinary Euclidean distance.
 
-### Optional extras on the website
+The scenarios and stakeholder tags never enter this pipeline, and the 26 thought experiments are unscored. See [`src/lib/scoring.ts`](src/lib/scoring.ts).
 
-- **Short version.** 48 of the 144 statements: three mirrored pairs per axis, one near-term and two long-run ([`src/data/shortForm.ts`](src/data/shortForm.ts)). Scores are scaled by the statements shown, so they sit on the same −10..+10 scale with less precision (six answers per axis instead of eighteen). The results page says so and offers to answer the other 96 without losing anything. The close-call simulation was rerun for the short version (`python3 analysis/closecall_sim.py --short`, synthetic sheets only) and gave a best margin of 0.3, with about the same error rate at 0.4, so both versions use 0.4.
-- **What matters most to you.** On the results page you can mark any axis Less (×0.5), Normal or More (×2). Only the archetype ranking changes: distance becomes √(8 × Σ wᵢΔᵢ² ÷ Σ wᵢ), which equals the ordinary distance when every weight is 1, so the average gap and the close-call margin keep their meaning. Your scores never change. Weights travel in share links.
-- **Statement by statement.** Your answer to each statement next to the answer each of your three closest archetypes would be expected to give. Archetypes never answered statements, so their answers are estimates from their position on that axis (strongly agree at 6 or more toward the statement's pole, agree at 2 or more, no clear lean in between), and the page says so. Only opposite sides are flagged.
-- **Focus module: friends, partners and therapists** (`/intimacy`). 18 mirrored statements on AI as a best friend, romantic partner and therapist, and on attachment, critical thinking, identity, loneliness, intimacy and social connection ([`src/data/intimacyModule.ts`](src/data/intimacyModule.ts)). It has its own Guarded ↔ Open score and theme breakdown, reflection questions, and a research summary that gives both sides, drawing on the American Psychological Association's 2025 health advisories, the World Health Organization's Commission on Social Connection, the American Philosophical Association's blog, peer-reviewed studies (Journal of Consumer Research, Psychological Science, Nature Human Behaviour, Perspectives on Psychological Science, New Media & Society, NEJM AI, JMIR, ACM CHI and AIES) and WIRED. It never touches the Atlas score, the match or share links.
+### The core-three reading
+
+Results also place you among 27 archetypes built from three axes about AI systems themselves and what they are for: Machine Experience (X), Moral Standing (Y) and Growth and Limits read in reverse (Z, from growth first to within limits). Each axis splits into three tiers at −2 and +2, and the three tiers pick one cell of a 3 × 3 × 3 grid. Each description is built from one sentence per tier, so a tier always reads the same way. See [`coreThree.ts`](src/data/coreThree.ts).
+
+### Safeguards
+
+- Pole labels are hidden while you answer, and statements are reshuffled within each axis on every attempt ([`shuffle.ts`](src/lib/shuffle.ts)).
+- Every axis and horizon has as many pole-A as pole-B statements, and a test checks that uniform answer sheets score exactly 0.
+- Matches lead with the average gap per axis, which follows the ranking, along with how many axes put you on the same side as the archetype and the two axes where you differ most. An earlier match percentage put very different archetypes in the 70s and 80s, so it was dropped.
+- A close call is flagged when the top two archetypes are less than 0.4 apart. In simulation on synthetic sheets ([`analysis/closecall_sim.py`](analysis/closecall_sim.py)), below that gap a different handful of statements on the same themes swaps the top match about half the time. The notice names the axes that separate the two.
+- [`classificationBias.test.ts`](src/lib/classificationBias.test.ts) classifies 500 seeded random answer sheets and fails if any archetype other than Pragmatic Centrist wins 15% or more of them.
+- [`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts) fails if any two archetypes sit closer than 5.0 apart. It caught three near-duplicate pairs during development. It doesn't guarantee that archetypes win equal shares of random sheets.
+- Statements are held to a Flesch-Kincaid grade of 15 or below with an average between 8 and 12, profile summaries, scenarios and tag descriptions to 14, and the How This Works text to 10 ([`readability.ts`](src/lib/readability.ts)). The reports are read after scoring and are exempt.
+- Stakeholder tags (what you have at stake, such as a job that could be automated) are kept in their own state, never reach `computeRawAxisScores` or `classify`, and appear on the results page as a separate section.
+- The How This Works section on the results page says plainly that the Atlas hasn't been through psychometric testing, and explains the answer scale, the "no settled view" choice and how matching weights each axis.
+
+---
+
+## Other parts of the site
+
+- The short version uses 48 of the 144 statements, three mirrored pairs per axis ([`shortForm.ts`](src/data/shortForm.ts)). Its scores sit on the same −10 to +10 scale with less precision, and the results page offers to answer the other 96 without losing anything.
+- "What matters most to you" on the results page lets you mark any axis Less, Normal or More. Only the archetype ranking changes; your scores stay the same, and the weights travel in share links.
+- "Statement by statement" sets your answer to each statement beside the answer each of your three closest archetypes would be expected to give. Archetypes never answered anything, so those answers are estimated from the archetype's position on that axis (strongly agree at 6 or more toward the statement's pole, agree at 2 or more, no clear lean in between), and the page says so.
+- The focus module on friends, partners and therapists (`/intimacy`) has 18 mirrored statements on AI as a best friend, partner or therapist and what that may do to attachment, critical thinking, identity, loneliness and intimacy ([`intimacyModule.ts`](src/data/intimacyModule.ts)). It has its own score, theme breakdown, reflection questions and a research summary that covers both sides, drawing on the American Psychological Association's 2025 health advisories, the World Health Organization's Commission on Social Connection, peer-reviewed studies and WIRED. It never touches the Atlas score, the match or share links.
+- The 26 thought experiments (`/thought-experiments`, listed in [`THOUGHT_EXPERIMENTS.md`](THOUGHT_EXPERIMENTS.md)) are short dilemmas with discussion questions.
+- The paper edition is a 39-page printable booklet ([`public/ai-worldview-atlas-paper.pdf`](public/ai-worldview-atlas-paper.pdf)) with the same statements and hand scoring by addition and a lookup table. Entering its 16 nets and counts of "no settled view" at `/paper` gives the exact online results. The intro page links to both.
 
 ---
 
@@ -154,18 +154,16 @@ Statement weights are equal, since there is no response data to justify weightin
 
 | Layer | Choice |
 |---|---|
-| Framework | React 18 + TypeScript, built with Vite |
-| Routing | React Router (`HashRouter`, for static GitHub Pages hosting) |
-| State | A single `QuizContext` (React `useReducer`) — no external state library |
+| Framework | React 18 and TypeScript, built with Vite 8 |
+| Routing | React Router 7 (`HashRouter`, for static GitHub Pages hosting); pages after the quiz load on demand |
+| State | One `QuizContext` (`useReducer`) |
 | Styling | Tailwind CSS |
-| Charts | Recharts (`RadarChart`, dual-series for you-vs-match comparison) |
-| Animations | Framer Motion (`motion` for smooth experiment transitions) |
-| Language | English only |
-| PDF export | `@react-pdf/renderer`, client-side, no backend |
-| Tests | Vitest + React Testing Library, 200+ tests across 44 files |
-| Hosting | GitHub Pages, deployed via GitHub Actions on every push to `master` |
+| Charts | Recharts |
+| PDF export | `@react-pdf/renderer`, in the browser, loaded only when you download a report |
+| Tests | Vitest and React Testing Library |
+| Hosting | GitHub Pages, deployed by GitHub Actions on every push to `master` |
 
-No backend, no database, no analytics, no accounts. Your answers are saved as you go in this browser's local storage, so a refresh or a closed tab doesn't lose them, and "Start over" clears them; a finished result can be turned into a shareable link (your raw per-axis scores, base64-encoded into the URL fragment — see [`shareLink.ts`](src/lib/shareLink.ts)) or a downloaded PDF, but nothing is ever sent to a server.
+There is no backend, database, analytics or account system. Answers are saved as you go in your browser's local storage, so a refresh or a closed tab doesn't lose them, and "Start over" clears them. A finished result can become a share link (your raw per-axis scores and answered counts, base64-encoded into the URL; see [`shareLink.ts`](src/lib/shareLink.ts)), a PDF or an image, and nothing is sent to a server.
 
 ---
 
@@ -174,53 +172,38 @@ No backend, no database, no analytics, no accounts. Your answers are saved as yo
 ```
 src/
 ├── data/
-│   ├── axes.ts                 8 axis definitions (id, name, question, poles)
-│   ├── coreThree.ts             the 27-archetype core-three reading
+│   ├── axes.ts                  8 axis definitions (id, name, question, poles)
 │   ├── questions/               144 statements in mirrored pairs, 18 per axis, one file per axis
-│   ├── profiles.ts              50 archetypes: id, name, 8D coords, summary
-│   ├── profileReports.ts        full report content per archetype
-│   ├── archetypeClusters.ts     7 groups of the 50 archetypes
-│   ├── stakeholderTags.ts       13 material-stakeholder self-select tags
-│   ├── scenarios.ts             8 situational diagnostic questions
+│   ├── profiles.ts              50 archetypes: id, name, coordinates, summary
+│   ├── archetypeClusters.ts     the 7 groups
 │   ├── archetypeSalience.ts     which axes define each archetype and which fall outside its concerns
-│   ├── manifestoContents.ts     50 "Case for This View" essays, one per archetype, reported in the third person (axis positions filled from profiles.ts)
+│   ├── profileReports.ts        report content per archetype
+│   ├── profileExpansions.ts     added narrative, axis reasons, objections and landmarks
+│   ├── manifestoContents.ts     the 50 "Case for This View" essays
+│   ├── coreThree.ts             the 27-archetype core-three reading
 │   ├── shortForm.ts             the 48-statement short version
-│   ├── intimacyModule.ts        focus module: statements, scoring, research summary and sources
+│   ├── scenarios.ts             8 optional scenarios
+│   ├── stakeholderTags.ts       13 optional stakeholder tags
+│   ├── intimacyModule.ts        the focus module: statements, scoring, research and sources
+│   ├── thoughtExperiments.ts    the 26 thought experiments
 │   └── types.ts                 shared TypeScript interfaces
 ├── lib/
-│   ├── scoring.ts                the scoring pipeline (see above)
-│   ├── shuffle.ts                Fisher-Yates question-order shuffle
-│   ├── scenarioTension.ts        compares scenario picks vs. computed score
-│   ├── shareLink.ts              encode/decode results into a URL param
-│   ├── readability.ts            Flesch-Kincaid grade-level checker
-│   ├── axisPositions.ts          an archetype's positions in words; biggest gaps between two positions
-│   ├── statementComparison.ts    expected answers of an archetype, estimated from its coordinates
-│   └── pdfReport.tsx              @react-pdf/renderer PDF document
-├── state/
-│   └── QuizContext.tsx           answers, question order, tags, scenario picks, version, axis weights, focus-module answers
-├── components/                  RadarChart, ProfileCard, MethodologySection,
-│                                 ReflectiveBreakdown, PinnacleReflection, ...
-└── pages/
-    ├── IntroPage.tsx             landing + stakeholder-tag checklist
-    ├── AxisPage.tsx              one of 8 question pages (/quiz/:axisIndex)
-    ├── ScenarioPage.tsx          optional situational scenarios (/scenarios)
-    ├── ResultsPage.tsx           radar chart, matches, full report, PDF export
-    ├── ThoughtExperimentsPage.tsx the 26 thought experiments, unscored (/thought-experiments)
-    ├── IntimacyPage.tsx          the synthetic-intimacy focus module (/intimacy)
-    └── PaperScoresPage.tsx       enter the paper edition's 16 net totals to see the online results (/paper)
+│   ├── scoring.ts               the scoring pipeline above
+│   ├── shareLink.ts             results in a URL
+│   ├── resultHistory.ts         earlier results in this browser, for comparison
+│   ├── axisPositions.ts         an archetype's positions in words; biggest gaps between two positions
+│   ├── statementComparison.ts   expected answers of an archetype
+│   ├── readability.ts           Flesch-Kincaid grade checker
+│   ├── pdfReport.tsx            the PDF report
+│   └── shareCard.ts             the share image
+├── state/QuizContext.tsx         answers, order, tags, scenario picks, version, weights, focus-module answers
+├── components/                  RadarChart, ProfileCard, ReportPreview, MethodologySection, ...
+└── pages/                       Intro, Axis (/quiz/:n), Scenario, Results, ThoughtExperiments, Intimacy, PaperScores (/paper)
+paper/                           the booklet builder (build.py, render.py) and its check against the app (verify.py)
+analysis/                        the close-call simulation and its reference data
+scripts/                         exporters that write the booklet and simulation data from the quiz source
+docs/LANGUAGE_GUIDE.md           the writing rules
 ```
-
----
-
-## Close-call simulation
-
-`analysis/closecall_sim.py` calibrates the close-call margin on synthetic answer sheets only. It reads [`analysis/atlas_reference.json`](analysis/atlas_reference.json), which `npx vite-node scripts/export_sim_reference.ts` writes from the quiz source; a test fails if the two drift apart. Run `python3 analysis/closecall_sim.py` (add `--short` for the short version, or `--equal` for plain distance).
-
----
-
-## Language
-
-The Atlas is English only. The earlier translations and pre-recorded audio matched the previous question set, so they were removed when the statements were rewritten. Read-aloud still works through the optional ElevenLabs key in Voice Settings, which reads the current text.
 
 ---
 
@@ -229,29 +212,32 @@ The Atlas is English only. The earlier translations and pre-recorded audio match
 ```bash
 npm install
 npm run dev       # http://localhost:5173
+npm test          # the Vitest suite
+npm run build     # type-check and production build to dist/
+npm run preview   # serve the production build
 ```
+
+The close-call simulation and the booklet are rebuilt from the quiz source:
 
 ```bash
-npm test          # run the full Vitest suite
-npm run build     # type-check + production build to dist/
-npm run preview   # serve the production build locally
+npx vite-node scripts/export_sim_reference.ts && python3 analysis/closecall_sim.py   # add --short or --equal
+npx vite-node scripts/export_paper_data.ts && python3 paper/build.py && python3 paper/render.py
+npx vite-node paper/gen_engine.ts && python3 paper/verify.py                         # booklet vs app, 3,000 synthetic sheets
 ```
 
-Deployment is automatic: every push to `master` runs the test suite, builds, and publishes to GitHub Pages via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+Tests fail if either data file drifts from the quiz. The booklet render needs Python Playwright.
 
 ---
 
-## Contributing / extending
+## Extending it
 
-A few invariants the codebase deliberately enforces — worth knowing before touching things:
-
-- The sign convention (positive = Pole A), the linear scaling and the mirrored-pair structure are load-bearing. Adding a statement means adding its mirrored partner on the same axis and horizon; `questions/index.test.ts` fails otherwise. Changing the item set or scaling invalidates shared links (bump `SHARE_LINK_VERSION`) and needs a new check that the 50 archetypes are still recovered.
-- Adding a new archetype? Run the redundancy test — it will tell you exactly which existing archetype yours is too close to, rather than letting a near-duplicate slip in silently.
-- Statements must stay at or below grade 15 (average 8–12), and the methodology text at or below grade 10; `fleschKincaidGrade()` is exported from `src/lib/readability.ts` and tests assert both.
-- Material-stakeholder tags and scenario answers must never be wired into `computeRawAxisScores` or `classify` — that separation is intentional and tested.
+- The sign convention (positive = pole A), the linear scaling and the mirrored pairs hold the scoring together. A new statement needs its mirrored partner on the same axis and horizon, and `questions/index.test.ts` fails without one. Changing the statements or the scaling also means bumping `SHARE_LINK_VERSION` and checking that the 50 archetypes are still recovered.
+- A new archetype needs coordinates, a group, its axis weights in `archetypeSalience.ts` and a report. The redundancy test names any existing archetype it sits too close to.
+- Statements stay at or below grade 15 (average 8 to 12) and the How This Works text at or below grade 10; tests check both with `fleschKincaidGrade()`.
+- Stakeholder tags and scenario answers stay out of `computeRawAxisScores` and `classify`. That separation is deliberate and tested.
 
 ---
 
 ## Disclaimer
 
-This is a tool for learning, self-reflection and discussion, made for anyone curious about the AI debate. It is not a validated psychometric instrument and has not been through test-retest reliability studies, factor analysis or independent peer review. Treat your result as a conversation starter and a way to see the shape of a crowded debate — not a scientific reading of who you are.
+The Atlas is a tool for learning, self-reflection and discussion, made for anyone curious about the debate over AI. It hasn't been through test-retest reliability studies, factor analysis or independent peer review, so it isn't a validated psychometric instrument. Your result is a starting point for conversation and a way to see the shape of a crowded debate.

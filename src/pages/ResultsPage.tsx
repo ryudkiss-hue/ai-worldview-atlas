@@ -24,15 +24,12 @@ import {
 import { encodeShareLink, decodeShareLink } from '../lib/shareLink'
 import { recordResult, type ResultHistoryEntry } from '../lib/resultHistory'
 import { renderShareCardToBlob } from '../lib/shareCard'
-import { pdf } from '@react-pdf/renderer'
-import { ReportDocument } from '../lib/pdfReport'
 import { RadarChart } from '../components/RadarChart'
 import { ProfileCard } from '../components/ProfileCard'
 import { ReportPreview } from '../components/ReportPreview'
 import { MethodologySection } from '../components/MethodologySection'
 import { ReflectiveBreakdown } from '../components/ReflectiveBreakdown'
 import { PinnacleReflection } from '../components/PinnacleReflection'
-import { manifestoContents } from '../data/manifestoContents'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 import { coreArchetype, coreCode, describeCore, tierInfo, type CoreAxis } from '../data/coreThree'
 import { biggestGaps, withAxisPositions } from '../lib/axisPositions'
@@ -105,6 +102,12 @@ export function ResultsPage() {
 
   const [inspectedProfileId, setInspectedProfileId] = useState<string>(topMatch.profile.id)
   const [activeTab, setActiveTab] = useState<'summary' | 'manifesto'>('summary')
+  // The 50 essays are the largest data file, so they load the first time the tab is opened.
+  const [manifestos, setManifestos] = useState<Record<string, string> | null>(null)
+  useEffect(() => {
+    if (activeTab !== 'manifesto' || manifestos) return
+    import('../data/manifestoContents').then((m) => setManifestos(m.manifestoContents))
+  }, [activeTab, manifestos])
 
   // Keep state updated if topMatch changes
   useEffect(() => {
@@ -185,7 +188,7 @@ export function ResultsPage() {
     return (
       staleLink ? (
         <div className="max-w-2xl mx-auto p-6 text-center">
-          <h2 className="text-2xl font-bold mb-4">This link is from an earlier version</h2>
+          <h1 className="text-2xl font-bold mb-4">This link is from an earlier version</h1>
           <p className="text-gray-700 mb-6">
             The Atlas's statements have been reworded since this link was made, so its result can't be shown
             here. Take the current assessment to get a result you can share.
@@ -196,7 +199,7 @@ export function ResultsPage() {
         </div>
       ) : (
       <div className="max-w-2xl mx-auto p-6 text-center">
-        <h2 className="text-2xl font-bold mb-4">{t('no_results_yet') || 'No Results Yet'}</h2>
+        <h1 className="text-2xl font-bold mb-4">{t('no_results_yet') || 'No Results Yet'}</h1>
         <p className="text-gray-700 mb-6">
           {t('no_results_desc') || "You haven't completed the assessment yet, so there's nothing to show here. Start from the beginning to get your results."}
         </p>
@@ -211,6 +214,8 @@ export function ResultsPage() {
   async function handleDownloadPdf() {
     setPdfStatus('generating')
     try {
+      // Loaded on demand: the PDF library is the largest dependency and most visitors never export.
+      const [{ pdf }, { ReportDocument }] = await Promise.all([import('@react-pdf/renderer'), import('../lib/pdfReport')])
       const doc = (
         <ReportDocument
           combined={combined}
@@ -224,7 +229,7 @@ export function ResultsPage() {
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.download = `tiam-report-${topMatch.profile.id}.pdf`
+      link.download = `ai-worldview-atlas-${topMatch.profile.id}.pdf`
       link.click()
       URL.revokeObjectURL(url)
       setPdfStatus('idle')
@@ -261,10 +266,10 @@ export function ResultsPage() {
   return (
     <div className="max-w-3xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
-        <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
+        <span className="text-gray-500 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
       </div>
 
-      <h2 className="text-2xl font-bold mb-4">{t('results_title')}</h2>
+      <h1 className="text-2xl font-bold mb-4">{t('results_title')}</h1>
       <RadarChart combined={combined} comparisonProfile={{ name: tProfileName(topMatch.profile.id), coords: topMatch.profile.coords }} />
 
       {resultMode === 'short' && (
@@ -352,8 +357,8 @@ export function ResultsPage() {
             </table>
           </div>
           <p className="text-gray-500 text-sm mt-2">
-            No test-retest reliability study backs this tool, so treat any shift as a prompt to reflect,
-            not a precise measurement of how your views actually moved.
+            No test-retest reliability study backs this tool, so a shift here is a prompt to reflect on,
+            and it can't tell you precisely how far your views actually moved.
           </p>
         </div>
       )}
@@ -548,9 +553,11 @@ export function ResultsPage() {
           <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200 shadow-sm animate-fadeIn">
             <MarkdownRenderer
               content={
-                manifestoContents[inspectedMatch.profile.id]
-                  ? withAxisPositions(manifestoContents[inspectedMatch.profile.id], inspectedMatch.profile)
-                  : '*Not available for this viewpoint.*'
+                !manifestos
+                  ? '*Loading…*'
+                  : manifestos[inspectedMatch.profile.id]
+                    ? withAxisPositions(manifestos[inspectedMatch.profile.id], inspectedMatch.profile)
+                    : '*Not available for this viewpoint.*'
               }
             />
           </div>

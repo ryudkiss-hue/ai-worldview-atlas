@@ -48,6 +48,23 @@ describe('PaperScoresPage', () => {
     })
     fireEvent.change(screen.getByLabelText('Machine Experience near-term net'), { target: { value: '17' } })
     expect(screen.getByRole('button', { name: 'See my results' })).toBeDisabled()
-    expect(screen.getByText(/Machine Experience, near term: a whole number from −16 to \+16/)).toBeInTheDocument()
+    expect(screen.getByText(/Machine Experience, near term: the net must be a whole number from −16 to \+16/)).toBeInTheDocument()
+  })
+
+  it('carries counts of "no settled view" answers and narrows the allowed range to match', () => {
+    renderPage()
+    axes.forEach((a) => {
+      fireEvent.change(screen.getByLabelText(`${a.name} near-term net`), { target: { value: '0' } })
+      fireEvent.change(screen.getByLabelText(`${a.name} long-run net`), { target: { value: '0' } })
+    })
+    fireEvent.change(screen.getByLabelText('Machine Experience near-term no settled view count'), { target: { value: '3' } })
+    fireEvent.change(screen.getByLabelText('Machine Experience near-term net'), { target: { value: '12' } })
+    expect(screen.getByRole('button', { name: 'See my results' })).toBeDisabled()
+    expect(screen.getByText(/Machine Experience, near term: the net must be a whole number from −10 to \+10/)).toBeInTheDocument()
+    fireEvent.change(screen.getByLabelText('Machine Experience near-term net'), { target: { value: '10' } })
+    fireEvent.click(screen.getByRole('button', { name: 'See my results' }))
+    const decoded = decodeShareLink(new URLSearchParams(screen.getByTestId('landing').textContent!).get('d')!)!
+    expect(decoded.t1N?.ontological).toBe(5)
+    expect(decoded.t2N?.ontological).toBe(10)
   })
 })

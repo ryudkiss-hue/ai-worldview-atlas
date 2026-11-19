@@ -71,7 +71,7 @@ export function AxisPage() {
       />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 mb-6">
         <div>
-          <h2 className="text-2xl font-bold">{tAxis(axis.id, 'name')}</h2>
+          <h1 className="text-2xl font-bold">{tAxis(axis.id, 'name')}</h1>
           <p className="text-gray-600 mt-1">{axis.question}</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -100,7 +100,7 @@ export function AxisPage() {
             <button
               type="button"
               onClick={() => setShowTtsPanel(false)}
-              className="text-gray-400 hover:text-gray-600 text-xs font-semibold"
+              className="text-gray-500 hover:text-gray-700 text-xs font-semibold"
             >
               {t('close') || 'Close'}
             </button>

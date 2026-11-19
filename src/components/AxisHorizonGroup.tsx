@@ -24,7 +24,7 @@ export function AxisHorizonGroup({
 
   return (
     <section className="mb-8">
-      <h3 className="text-lg font-semibold mb-3">{title}</h3>
+      <h2 className="text-lg font-semibold mb-3">{title}</h2>
       <ul className="space-y-5">
         {questions.map((question) => {
           const textToRead = tQuestion(question.id) || question.statement
@@ -32,7 +32,7 @@ export function AxisHorizonGroup({
             <li key={question.id}>
               <div className="flex items-start justify-between gap-4 mb-2">
                 <p className="flex-1 text-gray-800 leading-relaxed">{textToRead}</p>
-                <AudioPlayerButton text={textToRead} questionId={question.id} />
+                <AudioPlayerButton text={textToRead} />
               </div>
               <LikertInput
                 questionId={question.id}

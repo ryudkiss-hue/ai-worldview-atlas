@@ -36,11 +36,11 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
       <Page style={styles.page}>
         <Text style={styles.heading}>Methodology &amp; Disclaimer</Text>
         <Text style={styles.paragraph}>
-          This report is a self-reflection tool, not a validated scientific instrument. It has not
-          been through independent test-retest reliability studies, factor analysis, or peer
-          review. The named thinkers and books in this report describe documented public work only
-          — they are not claims about those people's personal views, quiz results, or endorsement
-          of this report's characterization of any archetype.
+          This report comes from a tool for learning and self-reflection. It has not been through
+          test-retest reliability studies, factor analysis or peer review, so it is not a validated
+          scientific instrument. The thinkers and books named here are described by their documented
+          public work only. Naming them makes no claim about their personal views, their quiz results
+          or whether they would agree with how any archetype is described.
         </Text>
       </Page>
 

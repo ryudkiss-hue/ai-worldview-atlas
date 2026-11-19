@@ -120,7 +120,7 @@ export function RadarChart({ combined, comparisonProfile }: RadarChartProps) {
             {comparisonProfile.name}
           </span>
         )}
-        <span className="text-gray-400">Scale −10 to +10; the centre is −10</span>
+        <span className="text-gray-500">Scale −10 to +10; the centre is −10</span>
       </figcaption>
     </figure>
   )

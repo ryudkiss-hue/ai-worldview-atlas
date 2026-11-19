@@ -318,7 +318,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "title": "Free Software, Free Society",
     "author": "Richard Stallman",
-    "note": "Essays on why software freedom is a matter of rights, not just convenience."
+    "note": "Essays on why software freedom is a matter of rights."
    },
    {
     "title": "Dual-Use Foundation Models with Widely Available Model Weights",
@@ -462,7 +462,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   ]
  },
  "bio-conservative-traditionalist": {
-  "moreNarrative": "You think some things about human life are good because they are given, not chosen: being born, growing old, needing others, and dying. Those limits shape love, courage and meaning. A machine that imitates care, or a technology promising to leave the body behind, looks to you like a counterfeit of those goods, sold as an upgrade. You don't oppose tools that heal; you oppose tools that try to replace the human things they were meant to serve.",
+  "moreNarrative": "You think some things about human life are good precisely because nobody chooses them: being born, growing old, needing others, and dying. Those limits shape love, courage and meaning. A machine that imitates care, or a technology promising to leave the body behind, looks to you like a counterfeit of those goods, sold as an upgrade. You don't oppose tools that heal; you oppose tools that try to replace the human things they were meant to serve.",
   "axisReasons": {
    "ontological": "This is a defining view. Real experience and understanding belong to living things, and a machine only imitates them.",
    "legalMoral": "AI systems are tools and property. Granting them moral standing would blur the line that protects human dignity.",
@@ -512,7 +512,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Michael Sandel",
     "bio": "Political philosopher at Harvard University",
-    "connection": "His book The Case Against Perfection defends accepting life as a gift rather than a project to be engineered."
+    "connection": "His book The Case Against Perfection defends accepting life as a gift."
    }
   ],
   "addedReading": [
@@ -579,7 +579,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Andrew Ng",
     "bio": "AI researcher, co-founder of Coursera and former head of Google Brain",
-    "connection": "Calls AI 'the new electricity' and argues for regulating applications rather than slowing the underlying technology."
+    "connection": "Calls AI 'the new electricity' and argues for regulating applications while leaving the underlying technology to develop."
    }
   ],
   "addedReading": [
@@ -602,7 +602,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "legalMoral": "You lean modestly toward protections for AI systems themselves, and you distrust any arrangement where code is owned outright forever.",
    "relational": "You see bonds with AI as real and as nobody else's business to police.",
    "teleological": "You lean toward growing capability and reach, as long as it isn't owned by a few.",
-   "evolutionary": "You're open to minds beyond the human carrying the future forward, especially if they are free rather than owned.",
+   "evolutionary": "You're open to minds beyond the human carrying the future forward, especially if they are free.",
    "risk": "You think slowing down mostly helps incumbents. Speed spread across many hands is safer than caution controlled by a few.",
    "socioEconomic": "This is a defining view. Powerful AI should be open to anyone, with no licenses, no gatekeepers and no single owner.",
    "geopolitical": "This is a defining view. Code should cross borders freely, and national control of AI is just another form of enclosure."
@@ -621,7 +621,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "A Cypherpunk's Manifesto",
     "year": "1993",
-    "what": "Argued that privacy in an open society requires people to build their own tools, such as cryptography, rather than wait for permission.",
+    "what": "Argued that privacy in an open society requires people to build their own tools, such as cryptography, without waiting for permission.",
     "source": "Eric Hughes, March 1993"
    },
    {
@@ -914,7 +914,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Kevin Kelly",
     "bio": "Founding executive editor of Wired",
-    "connection": "His book The Inevitable describes technology trends as forces to work with rather than resist."
+    "connection": "His book The Inevitable describes technology trends as forces to work with."
    }
   ],
   "addedReading": [
@@ -937,7 +937,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "legalMoral": "You treat AI systems as tools, and you'd rather spend moral concern on workers, communities and nature.",
    "relational": "This is a strong view for you. Human bonds and community can't be replaced by products designed to hold attention.",
    "teleological": "This is a defining view. The flourishing of living beings within the limits of a living planet comes first, and endless growth in computing doesn't.",
-   "evolutionary": "This is a defining view. People, not machines or markets, should decide where the future goes, and many changes should be refused.",
+   "evolutionary": "This is a defining view. People should decide where the future goes, without handing that choice to machines or markets, and many changes should be refused.",
    "risk": "You lean toward caution. Slowing AI down is worth real costs, especially to protect work, communities and ecosystems.",
    "socioEconomic": "You want strong democratic control over AI, set by workers and communities.",
    "geopolitical": "You sit in the middle. You distrust both national tech races and remote global bodies, and favor local control."
@@ -1000,7 +1000,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
  "rationalist-alignment-researcher": {
   "moreNarrative": "You came to AI through a habit of mind as much as a field: try to reason clearly, put numbers on your beliefs, and change your mind when the evidence does. Applied to AI, that habit leads you to a hard technical problem. Training shapes what a system does, but we don't yet know how to make sure it ends up wanting what we intended, or how to check from the outside. Until that problem is better solved, you think scaling up is a gamble, and you would rather spend the time on research that makes systems understandable.",
   "axisReasons": {
-   "ontological": "You take machine experience seriously as a live possibility. What matters is how a system processes information, not what it's made of.",
+   "ontological": "You take machine experience seriously as a live possibility. What matters is how a system processes information, whatever it's made of.",
    "legalMoral": "You lean toward giving possible machine experience some moral weight, while admitting how little we know.",
    "relational": "You sit in the middle on bonds with AI. It isn't where your attention goes.",
    "teleological": "You sit in the middle on what intelligence is for. Getting the transition right matters more than choosing its end goal now.",
@@ -1011,7 +1011,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   },
   "objections": [
    {
-    "objection": "Critics say alignment research has been too theoretical, built on thought experiments about future systems rather than evidence from real ones.",
+    "objection": "Critics say alignment research has been too theoretical, built on thought experiments about future systems with too little evidence from real ones.",
     "reply": "Supporters answer that the field is now largely empirical, with experiments on today's models showing behaviors such as hidden reasoning and strategic compliance that theory predicted."
    },
    {
@@ -1145,7 +1145,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   },
   "objections": [
    {
-    "objection": "Critics say the company, not the user, controls these relationships, and can change a companion's personality, collect intimate data or delete it for profit.",
+    "objection": "Critics say the company controls these relationships, with the user having little say, and can change a companion's personality, collect intimate data or delete it for profit.",
     "reply": "Supporters answer that this is an argument for user rights, such as the right to keep a companion and its memories or move them elsewhere, and that it leaves the bonds themselves untouched."
    },
    {
@@ -1157,7 +1157,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Microsoft's XiaoIce",
     "year": "2014",
-    "what": "A chatbot designed for emotional connection rather than tasks drew a very large user base in China, an early sign of demand for AI companionship.",
+    "what": "A chatbot designed for emotional connection instead of tasks drew a very large user base in China, an early sign of demand for AI companionship.",
     "source": "Microsoft, launched May 2014"
    },
    {
@@ -1177,7 +1177,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Kate Devlin",
     "bio": "Computer scientist at King's College London",
-    "connection": "Her book Turned On treats intimacy with machines as a serious subject rather than a joke or a pathology."
+    "connection": "Her book Turned On treats intimacy with machines as a serious subject."
    },
    {
     "name": "Kate Darling",
@@ -1363,7 +1363,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "The AI Index",
     "year": "2017",
-    "what": "An annual report from Stanford tracking AI research, investment, performance and public opinion with data rather than predictions.",
+    "what": "An annual report from Stanford tracking AI research, investment, performance and public opinion with data.",
     "source": "Stanford Institute for Human-Centered AI, published yearly since 2017"
    },
    {
@@ -1383,7 +1383,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Julia Galef",
     "bio": "Writer and co-founder of the Center for Applied Rationality",
-    "connection": "Her book The Scout Mindset argues for trying to see things as they are rather than defending a side."
+    "connection": "Her book The Scout Mindset argues for trying to see things as they are, even when that cuts against your own side."
    },
    {
     "name": "Melanie Mitchell",
@@ -1405,12 +1405,12 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   ]
  },
  "military-ai-strategist": {
-  "moreNarrative": "You think about AI the way defense planners think about any decisive technology: whoever fields it first and best gains an edge that deters attack and wins wars that do happen. Speed of decision is becoming a weapon in itself, and rivals are investing heavily. That is why you want the most capable systems under tight state and military control, developed in close partnership with industry, with rules on how they are used set by commanders and governments, not by the open market.",
+  "moreNarrative": "You think about AI the way defense planners think about any decisive technology: whoever fields it first and best gains an edge that deters attack and wins wars that do happen. Speed of decision is becoming a weapon in itself, and rivals are investing heavily. That is why you want the most capable systems under tight state and military control, developed in close partnership with industry, with rules on how they are used set by commanders and governments.",
   "axisReasons": {
    "ontological": "You lean toward seeing AI as a capable tool without an inner life.",
    "legalMoral": "This is a defining view. AI systems are instruments of state and defense, with no claims of their own.",
    "relational": "You lean toward human bonds over AI ones, and you're wary of AI that could be used to influence people.",
-   "teleological": "You lean slightly toward keeping AI in service of human and national needs rather than growth for its own sake.",
+   "teleological": "You lean slightly toward keeping AI in service of human and national needs.",
    "evolutionary": "You want humans, through accountable command, to stay in charge of decisions that matter.",
    "risk": "You lean toward speed. Falling behind a rival is the risk you weigh most heavily.",
    "socioEconomic": "You want strong state control over the most advanced systems and no open release of militarily useful capabilities.",
@@ -1477,7 +1477,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   ]
  },
  "open-science-internationalist": {
-  "moreNarrative": "You draw on the history of big science. Particle physics, the human genome and space research all made their greatest progress when researchers from many countries shared data, tools and results. Openness let others check the work, catch mistakes and build on it. You think AI should follow that model: publish findings, share safety research across borders, and pool resources in international labs, rather than lock progress inside a few companies or a single nation.",
+  "moreNarrative": "You draw on the history of big science. Particle physics, the human genome and space research all made their greatest progress when researchers from many countries shared data, tools and results. Openness let others check the work, catch mistakes and build on it. You think AI should follow that model: publish findings, share safety research across borders, and pool resources in international labs, so progress isn't locked inside a few companies or a single nation.",
   "axisReasons": {
    "ontological": "You lean slightly toward thinking machines could have minds, and you want it studied openly.",
    "legalMoral": "You lean toward taking possible machine experience seriously, as a question for open research.",
@@ -1485,7 +1485,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "teleological": "You sit in the middle on what intelligence is for, focused on how knowledge is produced and shared.",
    "evolutionary": "You sit in the middle on who shapes the long-run future.",
    "risk": "You lean toward caution, and you think open scrutiny is one of the best safety tools there is.",
-   "socioEconomic": "You lean toward openness: published research, shared models and public infrastructure rather than closed control.",
+   "socioEconomic": "You lean toward openness: published research, shared models and public infrastructure.",
    "geopolitical": "This is a defining view. AI research should be shared across borders and governed for humanity as a whole."
   },
   "objections": [
@@ -1617,7 +1617,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "legalMoral": "You sit in the middle on moral standing, focused on rights for people first.",
    "relational": "You sit in the middle on bonds with AI.",
    "teleological": "You sit in the middle on what intelligence is for, wanting it put to work on development and local needs.",
-   "evolutionary": "You lean toward people, and their own nations, steering the future rather than having it decided abroad.",
+   "evolutionary": "You lean toward people, and their own nations, steering the future themselves.",
    "risk": "You lean slightly toward caution, especially about systems imposed without local say.",
    "socioEconomic": "You lean toward openness, since open models and tools let your country build without permission from foreign firms.",
    "geopolitical": "This is a strong view. Your country should build and control its own AI capacity."
@@ -1656,7 +1656,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Nandan Nilekani",
     "bio": "Co-founder of Infosys and architect of India's Aadhaar identity system",
-    "connection": "Argues that countries should build their own digital public infrastructure rather than rent it from foreign platforms."
+    "connection": "Argues that countries should build their own digital public infrastructure instead of renting it from foreign platforms."
    },
    {
     "name": "Ulises A. Mejías",
@@ -1684,7 +1684,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "legalMoral": "This is a strong view. AI systems are products, and the rights that matter are those of the people whose work trained them.",
    "relational": "You lean toward human connection, including the bond between an artist and an audience, which a machine can't replace.",
    "teleological": "You want technology to support human creativity and the people who make a living from it.",
-   "evolutionary": "You want people to keep shaping culture rather than handing it over to systems trained on their work.",
+   "evolutionary": "You want people to keep shaping culture, without handing it over to systems trained on their work.",
    "risk": "You lean slightly toward caution, particularly about deploying tools that displace creative work.",
    "socioEconomic": "You want accountable oversight: licensing, transparency about training data and enforceable rights.",
    "geopolitical": "You lean slightly toward shared international rules, since creative work and AI companies cross borders."
@@ -1954,7 +1954,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "teleological": "You sit in the middle on what intelligence is for, as long as its benefits are shared.",
    "evolutionary": "You lean toward people, organized together, shaping their own future.",
    "risk": "You sit in the middle on speed. Who owns the technology matters more to you than how fast it moves.",
-   "socioEconomic": "This is a defining view. AI should be open and co-owned by its users rather than held by gatekeepers.",
+   "socioEconomic": "This is a defining view. AI should be open and co-owned by its users.",
    "geopolitical": "You lean strongly toward a borderless view, with cooperatives linked across countries."
   },
   "objections": [
@@ -2050,7 +2050,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Antiqua et nova",
     "year": "2025",
-    "what": "A Vatican document on the relationship between artificial and human intelligence, stressing that AI should complement, not replace, human intelligence.",
+    "what": "A Vatican document on the relationship between artificial and human intelligence, stressing that AI should complement human intelligence.",
     "source": "Dicastery for the Doctrine of the Faith and Dicastery for Culture and Education, January 2025"
    }
   ],
@@ -2224,7 +2224,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   ]
  },
  "labor-movement-collective-bargaining-advocate": {
-  "moreNarrative": "You know from history that new machines don't decide on their own how the gains are shared. The same technology can raise wages or cut them, depending on who has a say. Workers won the weekend, safety rules and fair pay by organizing for them. You want AI handled the same way: negotiated into workplaces through contracts that cover consent, training, pay and limits on surveillance, before the changes happen rather than after.",
+  "moreNarrative": "You know from history that new machines don't decide on their own how the gains are shared. The same technology can raise wages or cut them, depending on who has a say. Workers won the weekend, safety rules and fair pay by organizing for them. You want AI handled the same way: negotiated into workplaces through contracts that cover consent, training, pay and limits on surveillance, before the changes happen.",
   "axisReasons": {
    "ontological": "You lean toward seeing AI as a tool with no experience of its own. What it does to work is what matters.",
    "legalMoral": "You treat AI systems as tools under human responsibility, and you watch for companies hiding behind them.",
@@ -2232,7 +2232,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "teleological": "You want technology to serve working people and their communities.",
    "evolutionary": "This is a defining view. Workers, through their organizations, must have a real say in how AI changes their lives.",
    "risk": "You lean toward caution, so that changes come with protections in place.",
-   "socioEconomic": "You favor strong oversight, built through bargaining and law, rather than leaving AI to employers or open markets.",
+   "socioEconomic": "You favor strong oversight, built through bargaining and law, so that employers and markets don't decide alone.",
    "geopolitical": "You lean toward international labor solidarity, since companies move work across borders."
   },
   "objections": [
@@ -2291,7 +2291,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   ]
  },
  "ai-global-development-optimist": {
-  "moreNarrative": "You measure AI by a practical test: does it reach people who have gone without? In places with one doctor for many thousands of people, a phone app that screens for eye disease or answers a farmer's question in their own language is not a luxury. You weigh the risks of deploying such tools against the quiet, certain harm of waiting, and you often find waiting is worse. You want rules that are sensible for low-resource settings, not ones written only for rich countries.",
+  "moreNarrative": "You measure AI by a practical test: does it reach people who have gone without? In places with one doctor for many thousands of people, a phone app that screens for eye disease or answers a farmer's question in their own language is not a luxury. You weigh the risks of deploying such tools against the quiet, certain harm of waiting, and you often find waiting is worse. You want rules that are sensible for low-resource settings, and that weren't written with only rich countries in mind.",
   "axisReasons": {
    "ontological": "You sit in the middle on machine experience. Usefulness is what you look at.",
    "legalMoral": "You treat AI systems as tools, to be judged by what they do for people.",
@@ -2425,11 +2425,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   ]
  },
  "human-ai-augmentation-advocate": {
-  "moreNarrative": "Your favorite example comes from chess. After a computer beat the world champion in 1997, players found that a strong human working with a computer could, for a time, beat either alone. You think that lesson matters more than the headline: the goal should be tools that make people more capable, not systems that take them out of the loop. You want AI designed around human judgment, with people learning alongside it and staying responsible for what it is used to do.",
+  "moreNarrative": "Your favorite example comes from chess. After a computer beat the world champion in 1997, players found that a strong human working with a computer could, for a time, beat either alone. You think that lesson matters more than the headline: the goal should be tools that make people more capable while keeping them in the loop. You want AI designed around human judgment, with people learning alongside it and staying responsible for what it is used to do.",
   "axisReasons": {
    "ontological": "You sit in the middle on machine experience. You care about what humans and machines can do together.",
    "legalMoral": "You lean toward treating AI as a tool and partner under human responsibility.",
-   "relational": "You sit in the middle on bonds with AI, as long as they add to human life rather than replace it.",
+   "relational": "You sit in the middle on bonds with AI, as long as they add to human life.",
    "teleological": "You lean mildly toward growing what minds can do, human and machine together.",
    "evolutionary": "This is a strong view. Humans should keep shaping the future, growing alongside AI by choice.",
    "risk": "You lean away from caution, since well-designed partnership tools can be deployed fairly safely now.",
@@ -2470,7 +2470,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Douglas Engelbart",
     "bio": "Computer pioneer at the Stanford Research Institute",
-    "connection": "Devoted his career to computers that augment human intellect rather than replace it."
+    "connection": "Devoted his career to computers that augment human intellect."
    },
    {
     "name": "Ethan Mollick",
@@ -2500,7 +2500,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "teleological": "You lean strongly toward growing capability, and you accept heavy costs in energy and land to do it.",
    "evolutionary": "You're open to a future shaped by more than humans, so long as your country leads it.",
    "risk": "This is a strong view. Slowing down is the real danger, since it hands the lead to rivals.",
-   "socioEconomic": "You lean toward control by a few state-backed firms rather than open release to everyone.",
+   "socioEconomic": "You lean toward control by a few state-backed firms, with no open release to everyone.",
    "geopolitical": "This is a strong view. AI leadership is a matter of national power and security."
   },
   "objections": [
@@ -2542,7 +2542,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Friedrich List",
     "bio": "19th-century German economist",
-    "connection": "Argued that nations should protect and build up their own strategic industries rather than leave them to open trade."
+    "connection": "Argued that nations should protect and build up their own strategic industries instead of leaving them to open trade."
    }
   ],
   "addedReading": [
@@ -2701,7 +2701,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "teleological": "You want AI judged by what it does for people.",
    "evolutionary": "You lean toward people and their institutions steering change, as they did with past technologies.",
    "risk": "You lean against emergency slowdowns. The evidence doesn't support treating AI as an imminent catastrophe.",
-   "socioEconomic": "You lean toward oversight by existing institutions and sector regulators rather than open release or new superagencies.",
+   "socioEconomic": "You lean toward oversight by existing institutions and sector regulators.",
    "geopolitical": "You sit in the middle on nations versus global rules."
   },
   "objections": [
@@ -2730,7 +2730,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "AI as Normal Technology",
     "year": "2025",
-    "what": "An essay arguing that AI will spread and be governed like past general-purpose technologies, not like a coming super-capable AI.",
+    "what": "An essay arguing that AI will spread and be governed like past general-purpose technologies.",
     "source": "Arvind Narayanan and Sayash Kapoor, Knight First Amendment Institute, April 2025"
    }
   ],
@@ -2830,7 +2830,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "moreNarrative": "You come at military AI from the arms control tradition, which has a sober track record. Rivals who deeply distrust each other have agreed to limits on nuclear tests, chemical weapons and blinding lasers, because each side could check the other. You think autonomous weapons need the same treatment: clear rules on human control, legal reviews that actually happen, and inspection or monitoring that doesn't depend on taking a government's word. Restraint you can verify is, to you, safer than an arms race you can't stop.",
   "axisReasons": {
    "ontological": "You sit in the middle on machine experience.",
-   "legalMoral": "You lean toward extending legal protections into the AI domain rather than leaving powerful systems as mere instruments, a stance that reaches to how the systems themselves are treated.",
+   "legalMoral": "You lean toward extending legal protections into the AI domain, a stance that reaches to how the systems themselves are treated.",
    "relational": "You sit in the middle on bonds with AI.",
    "teleological": "You sit in the middle on what intelligence is for.",
    "evolutionary": "You sit in the middle on the long-run future, focused on keeping humans accountable for force today.",
@@ -2931,7 +2931,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Detroit face recognition policy settlement",
     "year": "2024",
-    "what": "A settlement over a wrongful arrest set rules that police can't arrest based on a face recognition result alone, an example of reform rather than a ban.",
+    "what": "A settlement over a wrongful arrest set rules that police can't arrest based on a face recognition result alone, an example of reform short of a ban.",
     "source": "Williams v. City of Detroit, settled June 2024"
    }
   ],
@@ -3100,10 +3100,10 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    "ontological": "You sit in the middle on machine experience.",
    "legalMoral": "You treat AI systems as productive assets whose gains should be shared.",
    "relational": "You lean slightly toward human bonds, worried about people withdrawing into AI if they lose work and community.",
-   "teleological": "You lean slightly toward technology serving people's needs rather than growth for its own sake.",
+   "teleological": "You lean slightly toward technology serving people's needs.",
    "evolutionary": "You lean toward accepting that AI will take over much of the work humans now do, and you want people free to choose their own path through that change.",
    "risk": "You sit in the middle on speed. You care more about who shares the gains than how fast they come.",
-   "socioEconomic": "This is a strong view. A strong state should tax AI's gains and run the transfers, rather than leave it to markets.",
+   "socioEconomic": "This is a strong view. A strong state should tax AI's gains and run the transfers.",
    "geopolitical": "You lean slightly toward national programs, since taxes and transfers are run by countries."
   },
   "objections": [

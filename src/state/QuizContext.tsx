@@ -222,7 +222,7 @@ interface QuizContextValue {
   /** The Atlas is English only. */
   language: 'en'
   t: (key: string) => string
-  tQuestion: (id: number, type?: 'statement' | 'simplifiedStatement') => string
+  tQuestion: (id: number) => string
   tScenario: (axisId: string, type: 'prompt' | 'optionA' | 'optionB') => string
   tAxis: (axisId: string, type: 'name' | 'poleA' | 'poleB') => string
   tProfileName: (profileId: string) => string
@@ -243,7 +243,7 @@ export function QuizProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => uiStrings[key] || key
 
-  const tQuestion = (id: number, _type: 'statement' | 'simplifiedStatement' = 'statement'): string =>
+  const tQuestion = (id: number): string =>
     questions.find((q) => q.id === id)?.statement || ''
 
   const tScenario = (axisId: string, type: 'prompt' | 'optionA' | 'optionB'): string =>

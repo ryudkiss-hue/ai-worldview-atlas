@@ -2,6 +2,7 @@ import type { AxisVector, ProfileMatch } from '../lib/scoring'
 import { useQuiz } from '../state/QuizContext'
 import { axes } from '../data/axes'
 import { biggestGaps } from '../lib/axisPositions'
+import { archetypeClusters } from '../data/archetypeClusters'
 
 interface ProfileCardProps {
   match: ProfileMatch
@@ -19,11 +20,17 @@ export function ProfileCard({ match, rank, agreement, combined }: ProfileCardPro
   // Average gap per axis (root mean square): the same order as the ranking, in points on the -10..+10 scale
   const averageGap = match.distance / Math.sqrt(axes.length)
   const gaps = combined ? biggestGaps(combined, match.profile.coords, 2, 1) : []
+  const group = archetypeClusters.find((c) => c.profileIds.includes(match.profile.id))
 
   return (
     <div className="rounded-lg border border-gray-200 p-4 mb-3">
       <p className="text-sm text-gray-500">{t('match_rank') || 'Match'} #{rank}</p>
       <h3 className="text-xl font-semibold">{tProfileName(match.profile.id)}</h3>
+      {group && (
+        <p className="text-sm text-gray-500">
+          Group: {group.name} ({group.profileIds.length} of 50 archetypes)
+        </p>
+      )}
       <p className="text-lg font-bold text-blue-600 mt-1">About {averageGap.toFixed(1)} points apart per axis</p>
       {agreement !== undefined && (
         <p className="text-sm text-gray-600">

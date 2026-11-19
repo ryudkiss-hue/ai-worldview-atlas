@@ -38,7 +38,7 @@ export function IntroPage() {
   return (
     <div className="max-w-2xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
-        <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
+        <span className="text-gray-500 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
       </div>
       
       <div className="text-center mb-8">
@@ -127,6 +127,23 @@ export function IntroPage() {
         <Link to="/intimacy" className="inline-block mt-2 text-blue-600 underline font-semibold">
           Open the focus module
         </Link>
+      </div>
+
+      <div className="mt-4 rounded-lg border border-gray-200 p-4">
+        <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Paper edition · printable</p>
+        <h2 className="text-lg font-semibold mt-1">Prefer pen and paper?</h2>
+        <p className="text-gray-700 mt-1">
+          The booklet has the same {questions.length} statements and scores them by hand with simple addition, which works well for a
+          class or a group. Afterward you can enter your totals here to see your closest archetypes.
+        </p>
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+          <a href={`${import.meta.env.BASE_URL}ai-worldview-atlas-paper.pdf`} className="text-blue-600 underline font-semibold">
+            Download the booklet (PDF, 39 pages)
+          </a>
+          <Link to="/paper" className="text-blue-600 underline font-semibold">
+            Enter booklet totals
+          </Link>
+        </div>
       </div>
     </div>
   )

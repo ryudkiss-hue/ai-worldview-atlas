@@ -4,10 +4,9 @@ import { fetchElevenLabsTTS, playGlobalAudio, stopGlobalAudio, playBrowserTTS } 
 
 interface AudioPlayerButtonProps {
   text: string
-  questionId: number
 }
 
-export function AudioPlayerButton({ text, questionId }: AudioPlayerButtonProps) {
+export function AudioPlayerButton({ text }: AudioPlayerButtonProps) {
   const { ttsSettings } = useQuiz()
   const [status, setStatus] = useState<'idle' | 'loading' | 'playing' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -47,7 +46,7 @@ export function AudioPlayerButton({ text, questionId }: AudioPlayerButtonProps) 
     setErrorMessage('')
 
     try {
-      const audioUrl = await fetchElevenLabsTTS(text, ttsSettings, questionId)
+      const audioUrl = await fetchElevenLabsTTS(text, ttsSettings)
       
       // Notify other players to stop
       window.dispatchEvent(new CustomEvent('global-audio-stopped'))

@@ -27,7 +27,7 @@ export const thoughtExperiments: ThoughtExperiment[] = [
   "questions": [
    {
     "q": "Does Sarah understand Chinese?",
-    "subtext": "Her outputs say yes. Her own experience says no. Which one decides the question?",
+    "subtext": "Her outputs say yes while her own experience says no, so which one decides the question?",
     "followups": [
      "If the translations help people and change minds, does it matter whether anyone in the room understands them?",
      "Replace Sarah with a computer program that follows the same rulebook. Does anything change?",
@@ -405,7 +405,7 @@ export const thoughtExperiments: ThoughtExperiment[] = [
     "q": "Can a surveillance system be legitimate if the people it watches can't see how it works?",
     "followups": [
      "If some of the people flagged are innocent, what share is acceptable, and who should decide?",
-     "Is explaining a system to a court, but not to the public, enough?",
+     "Is it enough to explain a system to a court while keeping the public in the dark?",
      "Who answers for a wrongful stop: the officer, the city, or the company that built the system?"
     ]
    }

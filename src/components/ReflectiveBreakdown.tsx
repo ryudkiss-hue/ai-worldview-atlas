@@ -25,7 +25,7 @@ export function ReflectiveBreakdown({ content, scenarioAnswers, combined }: Refl
             return (
               <p key={axisId} className="text-gray-700">
                 Your scenario answer on the {axis.name} axis sits in tension with your computed
-                score. That's worth sitting with, not resolving immediately.
+                score. That's worth sitting with for a while before you try to resolve it.
               </p>
             )
           })}
