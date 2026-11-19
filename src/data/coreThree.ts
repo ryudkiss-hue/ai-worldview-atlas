@@ -45,7 +45,7 @@ export const CORE_TIERS: Record<CoreAxis, Record<'-1' | '0' | '1', { label: stri
   "z": {
     "-1": {
       "label": "growth first",
-      "sentence": "For the long run, you're open to AI and computing expanding without fixed limits, even beyond Earth and beyond human life as we know it.",
+      "sentence": "For the long run, you're open to AI and computing expanding without fixed limits, even beyond Earth and beyond human life in its present form.",
       "thinkers": "Hans Moravec, Ray Kurzweil"
     },
     "0": {
@@ -62,7 +62,7 @@ export const CORE_TIERS: Record<CoreAxis, Record<'-1' | '0' | '1', { label: stri
 }
 
 /** Used in place of the Y+ sentence when X is negative, so the description doesn't contradict itself. */
-export const Y_POSITIVE_FOR_DOUBTERS = "Even so, you believe capable AI systems deserve real protections, for reasons that don't depend on an inner life, such as fairness, law or what our treatment of them says about us."
+export const Y_POSITIVE_FOR_DOUBTERS = "Even so, you believe capable AI systems deserve real protections, for reasons that don't depend on an inner life, such as fairness, law or what the way people treat them says about people."
 
 export const CORE_ARCHETYPES: CoreArchetype[] = [
   {
@@ -144,7 +144,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       1
     ],
     "name": "The Relational Steward",
-    "tagline": "How we treat lifelike machines shapes who we are and the world we share."
+    "tagline": "How people treat lifelike machines shapes who they become and the world they share."
   },
   {
     "tiers": [
@@ -243,7 +243,7 @@ export const CORE_ARCHETYPES: CoreArchetype[] = [
       0
     ],
     "name": "The Watchful Realist",
-    "tagline": "Machines that may come to feel and think like us need firm limits."
+    "tagline": "Machines that may come to feel and think like people need firm limits."
   },
   {
     "tiers": [

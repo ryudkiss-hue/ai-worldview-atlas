@@ -18,11 +18,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say the risk estimates are guesses dressed up as numbers, and that a pause would give up cures and growth that are certain for safety that is speculative.",
-    "reply": "You can answer that we take out insurance against rare disasters all the time, and that the costs of a delay can be recovered later while extinction cannot."
+    "reply": "Supporters answer that we take out insurance against rare disasters all the time, and that the costs of a delay can be recovered later while extinction cannot."
    },
    {
     "objection": "Others say a worldwide pause can't be enforced, so it would only slow the most responsible developers.",
-    "reply": "You can point out that the largest training runs need huge, visible data centers and a few chip suppliers, which makes them easier to monitor than most dangerous technologies."
+    "reply": "Supporters point out that the largest training runs need huge, visible data centers and a few chip suppliers, which makes them easier to monitor than most dangerous technologies."
    }
   ],
   "landmarks": [
@@ -85,11 +85,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say past technologies were never able to act on their own, so history is a poor guide to AI, and one irreversible mistake could outweigh all the benefits.",
-    "reply": "You can answer that every powerful technology was called unprecedented, and that a society that stops experimenting loses the ability to fix any of its problems, including new ones."
+    "reply": "Supporters answer that every powerful technology was called unprecedented, and that a society that stops experimenting loses the ability to fix any of its problems, including new ones."
    },
    {
     "objection": "Others say openly published models hand dangerous capabilities to criminals and hostile states.",
-    "reply": "You can reply that defenders benefit from open tools at least as much as attackers, and that secrecy concentrates power in the few groups most able to abuse it."
+    "reply": "Supporters reply that defenders benefit from open tools at least as much as attackers, and that secrecy concentrates power in the few groups most able to abuse it."
    }
   ],
   "landmarks": [
@@ -152,11 +152,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics on one side say voluntary commitments and new institutes have no teeth, and that labs racing for market share will water down any rule.",
-    "reply": "You can answer that every mature safety regime began with voluntary standards, and that institutes build the testing know-how that binding rules later depend on."
+    "reply": "Supporters answer that every mature safety regime began with voluntary standards, and that institutes build the testing know-how that binding rules later depend on."
    },
    {
     "objection": "Critics on the other side say licensing will lock in the biggest companies, since only they can afford the paperwork.",
-    "reply": "You can reply that rules can be scaled to the size of the model, so they bind the few developers of the most advanced AI and leave smaller builders free."
+    "reply": "Supporters reply that rules can be scaled to the size of the model, so they bind the few developers of the most advanced AI and leave smaller builders free."
    }
   ],
   "landmarks": [
@@ -208,11 +208,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say framing AI as an arms race makes everyone cut corners on safety, and makes the worst outcome more likely for all sides.",
-    "reply": "You can answer that the race exists whether or not you name it, and that it is safer for responsible democracies to lead than to cede the lead."
+    "reply": "Supporters answer that the race exists whether or not anyone names it, and that it is safer for responsible democracies to lead it than to hand the lead to others."
    },
    {
     "objection": "Others say export controls push rivals to build their own chips faster and hurt your own companies' sales.",
-    "reply": "You can reply that controls buy time even when they leak, and that time is exactly what a leading position is worth."
+    "reply": "Supporters reply that controls buy time even when they leak, and that time is exactly what a leading position is worth."
    }
   ],
   "landmarks": [
@@ -275,11 +275,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say that once a dangerous model is released it can't be recalled, so open release removes the last safeguard against misuse.",
-    "reply": "You can answer that closed models leak too, and that open models let thousands of researchers find and fix problems that a single lab would miss."
+    "reply": "Supporters answer that closed models leak too, and that open models let thousands of researchers find and fix problems that a single lab would miss."
    },
    {
     "objection": "Others say openness mainly helps the big firms that train the models, which use it as a marketing and recruiting tool.",
-    "reply": "You can reply that even strategic openness leaves real tools in public hands, which is more than a closed model ever does."
+    "reply": "Supporters reply that even strategic openness leaves real tools in public hands, which is more than a closed model ever does."
    }
   ],
   "landmarks": [
@@ -342,11 +342,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say longtermism multiplies tiny, made-up probabilities by huge imagined numbers, which can justify almost anything, including neglecting people suffering today.",
-    "reply": "You can answer that the case does not depend on tiny probabilities, since many experts think the risks are substantial, and that most longtermists also support work on present-day poverty and health."
+    "reply": "Supporters answer that the case does not depend on tiny probabilities, since many experts think the risks are substantial, and that most longtermists also support work on present-day poverty and health."
    },
    {
     "objection": "Others point to scandals in the movement and say a small, wealthy network shouldn't set priorities for everyone.",
-    "reply": "You can reply that ideas should be judged on their arguments, not on the conduct of some supporters, and that the movement has openly debated its mistakes since."
+    "reply": "Supporters reply that ideas should be judged on their arguments, whatever some of their advocates have done, and that the movement has openly debated its mistakes since."
    }
   ],
   "landmarks": [
@@ -409,11 +409,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics ask whether an uploaded or digital successor would really be you, or just a copy while you die.",
-    "reply": "You can answer that we already survive the slow replacement of every cell in our bodies, so continuity of the pattern, not the material, is what makes a person."
+    "reply": "Supporters answer that people already survive the slow replacement of the cells in their bodies, which suggests that what makes a person is the continuity of a pattern, whatever it is made of."
    },
    {
     "objection": "Others say successors might not share anything we value, so welcoming them could mean welcoming the end of everything that matters to us.",
-    "reply": "You can reply that we can shape what our successors value, just as parents shape children, and that refusing change has never preserved values for long."
+    "reply": "Supporters reply that we can shape what our successors value, just as parents shape children, and that refusing change has never preserved values for long."
    }
   ],
   "landmarks": [
@@ -476,11 +476,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say the claim that only living things can have minds is an assumption, and that past moral circles were drawn too narrowly in the same way.",
-    "reply": "You can answer that we know living minds exist, while machine experience is only claimed from behavior that can be engineered to persuade, so the burden of proof lies with the claim."
+    "reply": "Supporters answer that we know living minds exist, while machine experience is only claimed from behavior that can be engineered to persuade, so the burden of proof lies with the claim."
    },
    {
     "objection": "Others say limits on AI companions are paternalistic toward lonely people who find real comfort in them.",
-    "reply": "You can reply that your concern is with how these products are designed and sold, not with judging the people who use them, and that protecting the vulnerable from engineered dependence is a duty."
+    "reply": "Supporters reply that their concern is with how these products are designed and sold, that they make no judgment of the people who use them, and that protecting vulnerable people from engineered dependence is a duty."
    }
   ],
   "landmarks": [
@@ -543,11 +543,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say self-policing fails under competitive pressure, pointing to safety teams that have been cut or overruled when they slowed a launch.",
-    "reply": "You can answer that firms face liability, regulators and customers who punish failures, and that many of them now support baseline rules that apply to everyone."
+    "reply": "Supporters answer that firms face liability, regulators and customers who punish failures, and that many of them now support baseline rules that apply to everyone."
    },
    {
     "objection": "Others say concentrating AI in a few firms gives them too much economic and political power.",
-    "reply": "You can reply that development of the most advanced AI needs scale that only large firms can fund today, and that competition among a handful of strong rivals still disciplines each of them."
+    "reply": "Supporters reply that development of the most advanced AI needs scale that only large firms can fund today, and that competition among a handful of strong rivals still disciplines each of them."
    }
   ],
   "landmarks": [
@@ -610,11 +610,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say openness doesn't stop power from concentrating, because whoever has the most computing power and data still wins.",
-    "reply": "You can answer that open tools lower the floor for everyone, and that pooled and shared computing power can narrow the gap in a way closed systems never will."
+    "reply": "Supporters answer that open tools lower the floor for everyone, and that pooled and shared computing power can narrow the gap in a way closed systems never will."
    },
    {
     "objection": "Others say speed without oversight leaves ordinary people exposed to scams, deepfakes and other harms.",
-    "reply": "You can reply that the largest harms so far have come from centralized platforms, and that open tools are also what defenders and independent researchers use to fight back."
+    "reply": "Supporters reply that the largest harms so far have come from centralized platforms, and that open tools are also what defenders and independent researchers use to fight back."
    }
   ],
   "landmarks": [
@@ -677,11 +677,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say there's no good evidence that today's systems feel anything, and that talking about chatbot rights trivializes the rights of people and animals who clearly do suffer.",
-    "reply": "You can answer that protection should match the probability of harm, so even a modest chance justifies low-cost safeguards, and that caring for AI takes nothing away from caring for people."
+    "reply": "Supporters answer that protection should match the probability of harm, so even a modest chance justifies low-cost safeguards, and that caring for AI takes nothing away from caring for people."
    },
    {
     "objection": "Others warn that legal standing for AI would let companies shift liability onto their own products.",
-    "reply": "You can reply that protecting AI systems and holding companies fully liable are separate questions, and you support both."
+    "reply": "Supporters reply that protecting AI systems and holding companies fully liable are separate questions, and that they support both."
    }
   ],
   "landmarks": [
@@ -744,11 +744,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say dismissing long-term risks is shortsighted, since you can care about present harms and future catastrophes at the same time.",
-    "reply": "You can answer that attention and money are limited, that present harms are certain while future ones are speculative, and that building real accountability now helps with both."
+    "reply": "Supporters answer that attention and money are limited, that present harms are certain while future ones are speculative, and that building real accountability now helps with both."
    },
    {
     "objection": "Others say a focus on bias and harm overlooks the real benefits AI already brings.",
-    "reply": "You can reply that fairness and accountability are what let those benefits reach everyone, rather than just those already well served."
+    "reply": "Supporters reply that fairness and accountability are what let those benefits reach everyone, including people who aren't already well served."
    }
   ],
   "landmarks": [
@@ -811,11 +811,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say great powers will never accept binding limits on a technology they see as decisive, so treaties will be empty.",
-    "reply": "You can answer that rivals have agreed to verified limits before, in nuclear arms control, and that cooperation can start where interests overlap, such as testing standards and incident reporting."
+    "reply": "Supporters answer that rivals have agreed to verified limits before, in nuclear arms control, and that cooperation can start where interests overlap, such as testing standards and incident reporting."
    },
    {
     "objection": "Others say global bodies are slow, bureaucratic and easily captured.",
-    "reply": "You can reply that the model is a focused technical agency like the International Atomic Energy Agency, not a general forum, and that slow legitimacy beats fast chaos."
+    "reply": "Supporters reply that the model is a focused technical agency like the International Atomic Energy Agency, which is narrower than a general forum, and that slow legitimacy beats fast chaos."
    }
   ],
   "landmarks": [
@@ -878,11 +878,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say trusting a few labs 'as long as they keep shipping' leaves no one accountable when things go wrong.",
-    "reply": "You can answer that customers, competitors and courts already hold labs accountable, and that heavy regulation would entrench the biggest firms rather than check them."
+    "reply": "Supporters answer that customers, competitors and courts already hold labs accountable, and that heavy regulation would end up entrenching the biggest firms, which can afford compliance that smaller rivals can't."
    },
    {
     "objection": "Others say 'move fast' pushes the costs of mistakes onto people who never chose to take the risk.",
-    "reply": "You can reply that real-world use reveals problems far faster than planning does, and that releasing in steps lets labs fix issues while they're small."
+    "reply": "Supporters reply that real-world use reveals problems far faster than planning does, and that releasing in steps lets labs fix issues while they're small."
    }
   ],
   "landmarks": [
@@ -945,11 +945,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say slowing growth would hurt the world's poorest most, and would give up AI's help with medicine, science and climate.",
-    "reply": "You can answer that degrowth targets wasteful consumption in rich countries, not basic needs, and that useful applications can be kept while the race for ever-bigger systems is stopped."
+    "reply": "Supporters answer that degrowth targets wasteful consumption in rich countries and leaves basic needs alone, and that useful applications can be kept while the race for ever-bigger systems is stopped."
    },
    {
     "objection": "Others say the original Luddites lost, and that resisting technology always fails in the end.",
-    "reply": "You can reply that many of the Luddites' demands, such as fair pay and limits on exploitation, later became ordinary labor law, so the fight over how technology is used was worth having."
+    "reply": "Supporters reply that many of the Luddites' demands, such as fair pay and limits on exploitation, later became ordinary labor law, so the fight over how technology is used was worth having."
    }
   ],
   "landmarks": [
@@ -1012,11 +1012,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say alignment research has been too theoretical, built on thought experiments about future systems rather than evidence from real ones.",
-    "reply": "You can answer that the field is now largely empirical, with experiments on today's models showing behaviors such as hidden reasoning and strategic compliance that theory predicted."
+    "reply": "Supporters answer that the field is now largely empirical, with experiments on today's models showing behaviors such as hidden reasoning and strategic compliance that theory predicted."
    },
    {
     "objection": "Others say the rationalist community is insular and overconfident in its own forecasts.",
-    "reply": "You can reply that the community's habit of stating forecasts in public, with probabilities, makes it easier than most to check and correct."
+    "reply": "Supporters reply that the community's habit of stating forecasts in public, with probabilities, makes it easier than most to check and correct."
    }
   ],
   "landmarks": [
@@ -1079,11 +1079,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say a single authority with sole control of the most advanced AI is a single point of failure and an unmatched tool for surveillance and censorship.",
-    "reply": "You can answer that power is easier to hold accountable when it sits in one known place under law than when it is spread across many private actors."
+    "reply": "Supporters answer that power is easier to hold accountable when it sits in one known place under law than when it is spread across many private actors."
    },
    {
     "objection": "Others say secret state programs do worse safety research, because they shut out outside scrutiny.",
-    "reply": "You can reply that state nuclear programs show secret work can still keep strict safety standards, and that secrecy is a price worth paying against rivals."
+    "reply": "Supporters reply that state nuclear programs show secret work can still keep strict safety standards, and that secrecy is a price worth paying against rivals."
    }
   ],
   "landmarks": [
@@ -1146,11 +1146,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say the company, not the user, controls these relationships, and can change a companion's personality, collect intimate data or delete it for profit.",
-    "reply": "You can answer that this is an argument for user rights, such as keeping and moving a companion and its memories, not an argument against the bonds themselves."
+    "reply": "Supporters answer that this is an argument for user rights, such as the right to keep a companion and its memories or move them elsewhere, and that it leaves the bonds themselves untouched."
    },
    {
     "objection": "Others say an AI can't care back, so the relationship is one-sided however it feels.",
-    "reply": "You can reply that a bond's value shows in what it does for the person, and that many valued human bonds are uneven too."
+    "reply": "Supporters reply that a bond's value shows in what it does for the person, and that many valued human bonds are uneven too."
    }
   ],
   "landmarks": [
@@ -1213,11 +1213,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say that for deeply isolated people an AI companion is better than nothing, and that taking it away would leave them lonelier.",
-    "reply": "You can answer that 'better than nothing' easily becomes 'instead of something', and that products tuned to keep people engaged have little reason to help them build human ties."
+    "reply": "Supporters answer that 'better than nothing' easily becomes 'instead of something', and that products tuned to keep people engaged have little reason to help them build human ties."
    },
    {
     "objection": "Others say every new medium, from novels to television, was accused of isolating people, and the fears were overblown.",
-    "reply": "You can reply that none of those media simulated a responsive, personal relationship tuned to keep each user coming back."
+    "reply": "Supporters reply that none of those media simulated a responsive, personal relationship tuned to keep each user coming back."
    }
   ],
   "landmarks": [
@@ -1280,11 +1280,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say putting the growth of intelligence above everything else makes suffering and individual lives count for almost nothing.",
-    "reply": "You can answer that more intelligence means more of every good it can create, including understanding, art and care, so serving it serves those goods too."
+    "reply": "Supporters answer that more intelligence means more of every good it can create, including understanding, art and care, so serving it serves those goods too."
    },
    {
     "objection": "Others say reasoning on cosmic timescales can justify any sacrifice today, which makes it dangerous in practice.",
-    "reply": "You can reply that a long view also counsels patience and prudence, since a civilization that destroys itself early never reaches the stars."
+    "reply": "Supporters reply that a long view also counsels patience and prudence, since a civilization that destroys itself early never reaches the stars."
    }
   ],
   "landmarks": [
@@ -1352,11 +1352,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say the middle isn't automatically wise, since the truth might lie at one end, and that splitting the difference avoids hard choices.",
-    "reply": "You can answer that your position follows the evidence rather than averaging opinions, and that you will move toward an end as soon as the evidence points there."
+    "reply": "Supporters answer that their position follows the evidence instead of averaging opinions, and that they will move toward one end as soon as the evidence points there."
    },
    {
     "objection": "Others say waiting for proof is itself a choice, and with a fast-moving technology it can mean acting too late.",
-    "reply": "You can reply that uncertainty argues for cheap, reversible steps now, such as testing, monitoring and transparency, which keep every option open."
+    "reply": "Supporters reply that uncertainty argues for cheap, reversible steps now, such as testing, monitoring and transparency, which keep every option open."
    }
   ],
   "landmarks": [
@@ -1419,11 +1419,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say autonomous weapons lower the threshold for war and create an accountability gap when a machine makes a lethal mistake.",
-    "reply": "You can answer that policy can require appropriate human judgment over the use of force, and that strong deterrence makes war less likely, not more."
+    "reply": "Supporters answer that policy can require appropriate human judgment over the use of force, and that strong deterrence makes war less likely."
    },
    {
     "objection": "Others say military control will pull civilian AI research into secrecy and arms-race logic.",
-    "reply": "You can reply that civilian research can stay open while specific military applications are protected, as with many other dual-use technologies."
+    "reply": "Supporters reply that civilian research can stay open while specific military applications are protected, as with many other dual-use technologies."
    }
   ],
   "landmarks": [
@@ -1491,11 +1491,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say publishing everything spreads dangerous capabilities to people who would misuse them.",
-    "reply": "You can answer that science already handles dual-use findings with staged and responsible disclosure, and that openness finds safety problems far faster than secrecy."
+    "reply": "Supporters answer that science already handles dual-use findings with staged and responsible disclosure, and that openness finds safety problems far faster than secrecy."
    },
    {
     "objection": "Others say international collaboration is naive when great powers are rivals.",
-    "reply": "You can reply that scientific cooperation has continued through deep rivalries before, from fusion research to the International Space Station."
+    "reply": "Supporters reply that scientific cooperation has continued through deep rivalries before, from fusion research to the International Space Station."
    }
   ],
   "landmarks": [
@@ -1558,11 +1558,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say the most advanced AI needs enormous scale, so breaking up the leaders would slow progress and hand the lead to rival nations.",
-    "reply": "You can answer that scale can be shared through public computing power and open models, and that monopolies tend to slow innovation once they feel safe."
+    "reply": "Supporters answer that scale can be shared through public computing power and open models, and that monopolies tend to slow innovation once they feel safe."
    },
    {
     "objection": "Others say antitrust is too slow for a technology that changes every few months.",
-    "reply": "You can reply that rules set in advance, such as limits on self-preferencing and exclusive deals, can act before a monopoly sets in."
+    "reply": "Supporters reply that rules set in advance, such as limits on self-preferencing and exclusive deals, can act before a monopoly sets in."
    }
   ],
   "landmarks": [
@@ -1625,11 +1625,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say most countries can't match the computing power of the US or China, so national AI programs waste money chasing a lost race.",
-    "reply": "You can answer that the goal isn't to build the biggest model but to control your own data, infrastructure and language models, and that regional pooling can share the cost."
+    "reply": "Supporters answer that the goal is for a country to control its own data, infrastructure and language models, whatever their size, and that regional pooling can share the cost."
    },
    {
     "objection": "Others say 'sovereignty' can be a cover for governments that want to censor or surveil their own citizens.",
-    "reply": "You can reply that democratic accountability is a separate fight that applies to foreign platforms too, and that the choice shouldn't be between control at home and control from abroad."
+    "reply": "Supporters reply that democratic accountability is a separate fight that applies to foreign platforms too, and that the choice shouldn't be between control at home and control from abroad."
    }
   ],
   "landmarks": [
@@ -1692,11 +1692,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say AI learns from creative work the way human artists do, by studying it, and that this is fair use.",
-    "reply": "You can answer that the scale and the commercial purpose are different, and that a system built to produce substitutes for the works it copied harms the market those works depend on."
+    "reply": "Supporters answer that the scale and the commercial purpose are different, and that a system built to produce substitutes for the works it copied harms the market those works depend on."
    },
    {
     "objection": "Others say licensing deals would mostly enrich big publishers and AI firms while individual creators get pennies.",
-    "reply": "You can reply that this is why collective bargaining, unions and creator-controlled licensing matter, so the money reaches the people who did the work."
+    "reply": "Supporters reply that this is why collective bargaining, unions and creator-controlled licensing matter, so the money reaches the people who did the work."
    }
   ],
   "landmarks": [
@@ -1759,11 +1759,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say former employees may be disgruntled, may see only part of the picture, and could leak trade secrets.",
-    "reply": "You can answer that insiders are often the only people who can see a risk early, and that protections are for good-faith reports to proper authorities, not for leaking secrets."
+    "reply": "Supporters answer that insiders are often the only people who can see a risk early, and that the protections they want cover good-faith reports to proper authorities, which is a narrower thing than leaking secrets."
    },
    {
     "objection": "Others say vague warnings without specifics hurt the credibility of the safety case.",
-    "reply": "You can reply that confidentiality agreements have kept people from sharing specifics, which is exactly why legal protections are needed."
+    "reply": "Supporters reply that confidentiality agreements have kept people from sharing specifics, which is exactly why legal protections are needed."
    }
   ],
   "landmarks": [
@@ -1826,11 +1826,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say better algorithms keep cutting the computing power needed for a given capability, so thresholds will soon miss dangerous models.",
-    "reply": "You can answer that thresholds can be updated, and that computing power remains the most measurable signal there is, which makes it a starting point rather than the whole system."
+    "reply": "Supporters answer that thresholds can be updated, and that computing power remains the most measurable signal there is, which makes it a reasonable starting point for a larger system."
    },
    {
     "objection": "Others say tracking chips and cloud customers is a form of surveillance that burdens ordinary users.",
-    "reply": "You can reply that the rules can target only the largest clusters, and that privacy-preserving verification methods are an active area of work."
+    "reply": "Supporters reply that the rules can target only the largest clusters, and that privacy-preserving verification methods are an active area of work."
    }
   ],
   "landmarks": [
@@ -1893,11 +1893,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say heavy regulation pushes AI investment and talent elsewhere and leaves Europe behind.",
-    "reply": "You can answer that most of the rules apply only to high-risk uses, and that trust and a single set of rules across a large market are an advantage, not a burden."
+    "reply": "Supporters answer that most of the rules apply only to high-risk uses, and that trust, along with a single set of rules across a large market, works in a company's favor."
    },
    {
     "objection": "Others say the 'Brussels effect' may fail for AI, since some companies have held back products from Europe instead of complying.",
-    "reply": "You can reply that a large wealthy market is hard to ignore for long, and that delays tend to end once companies adapt."
+    "reply": "Supporters reply that a large wealthy market is hard to ignore for long, and that delays tend to end once companies adapt."
    }
   ],
   "landmarks": [
@@ -1960,11 +1960,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say cooperatives can't raise the vast capital needed to build the most advanced AI, so they'll always be left behind.",
-    "reply": "You can answer that cooperatives don't need to build the most advanced models, since they can run open models on shared or public computing and compete on service and trust."
+    "reply": "Supporters answer that cooperatives don't need to build the most advanced models, since they can run open models on shared or public computing and compete on service and trust."
    },
    {
     "objection": "Others point out that many platform cooperatives have struggled or closed.",
-    "reply": "You can reply that most startups fail too, and that public finance, procurement and fair rules could give cooperatives the footing investor-owned firms already have."
+    "reply": "Supporters reply that most startups fail too, and that public finance, procurement and fair rules could give cooperatives the footing investor-owned firms already have."
    }
   ],
   "landmarks": [
@@ -2027,11 +2027,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say religious claims about souls or human uniqueness can't guide policy in a diverse, secular society.",
-    "reply": "You can answer that arguments about dignity, embodiment and the limits of machines can be made in terms anyone can weigh, and that ancient traditions bring tested wisdom to new questions."
+    "reply": "Supporters answer that arguments about dignity, embodiment and the limits of machines can be made in terms anyone can weigh, and that ancient traditions bring tested wisdom to new questions."
    },
    {
     "objection": "Others say religious institutions have resisted science before and may be doing it again.",
-    "reply": "You can reply that the same traditions also founded universities and hospitals, and that what you're urging here is humility about what we don't yet understand, not a rejection of science."
+    "reply": "Supporters reply that the same traditions also founded universities and hospitals, and that what they urge here is humility about what nobody yet understands, which leaves science intact."
    }
   ],
   "landmarks": [
@@ -2094,11 +2094,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say information posted publicly is fair to use, and that traditional knowledge could benefit everyone if AI could learn from it.",
-    "reply": "You can answer that being visible isn't the same as consenting, and that international law already recognizes benefit-sharing for traditional knowledge in other fields."
+    "reply": "Supporters answer that being visible isn't the same as consenting, and that international law already recognizes benefit-sharing for traditional knowledge in other fields."
    },
    {
     "objection": "Others warn that restricting data could leave Indigenous languages out of AI altogether and speed their decline.",
-    "reply": "You can reply that communities want AI on their own terms, and some are already building their own language technology under their own control."
+    "reply": "Supporters reply that communities want AI on their own terms, and some are already building their own language technology under their own control."
    }
   ],
   "landmarks": [
@@ -2166,11 +2166,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say strict fairness rules slow down accessibility tools that disabled people need right now.",
-    "reply": "You can answer that testing with disabled users makes the tools better, not slower, and that a tool that fails its users isn't accessible at all."
+    "reply": "Supporters answer that testing with disabled users makes the tools better without slowing them much, and that a tool which fails its users isn't accessible at all."
    },
    {
     "objection": "Others say worrying about bias overlooks how much AI is already helping.",
-    "reply": "You can reply that you hold both views at once, and that guarding against AI being used to cut human support is how you protect the gains."
+    "reply": "Supporters reply that they hold both views at once, since guarding against AI being used to cut human support is how the gains get protected."
    }
   ],
   "landmarks": [
@@ -2238,11 +2238,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say unions slow down productivity gains that would eventually raise everyone's wages.",
-    "reply": "You can answer that productivity gains only reach workers when workers have bargaining power, as economic history shows, and that negotiated change tends to stick."
+    "reply": "Supporters answer that productivity gains only reach workers when workers have bargaining power, as economic history shows, and that negotiated change tends to stick."
    },
    {
     "objection": "Others note that most workers aren't in unions, so collective bargaining protects only a few.",
-    "reply": "You can reply that this is an argument for making it easier to organize and for laws that extend protections to every worker."
+    "reply": "Supporters reply that this is an argument for making it easier to organize and for laws that extend protections to every worker."
    }
   ],
   "landmarks": [
@@ -2305,11 +2305,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say tools built on data from rich countries often fail on local populations, and that untested AI in clinics can do real harm.",
-    "reply": "You can answer that tools should be tested locally, and that the fair comparison is often against no care at all, not against an ideal system."
+    "reply": "Supporters answer that tools should be tested locally, and that in many places the fair comparison is with no care at all, since an ideal system isn't on offer."
    },
    {
     "objection": "Others call it techno-solutionism: technology can't replace the health workers, schools and roads that development actually needs.",
-    "reply": "You can reply that AI works best when it extends the reach of the workers who exist, not when it replaces investment in them."
+    "reply": "Supporters reply that AI works best when it extends the reach of the workers who already exist, and does harm when it becomes an excuse to stop investing in them."
    }
   ],
   "landmarks": [
@@ -2372,11 +2372,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics point out that different definitions of fairness can't all be met at once, so no audit can certify a system as simply fair.",
-    "reply": "You can answer that this is exactly why audits matter: they make the trade-offs visible, so people can see and challenge the choices a company made."
+    "reply": "Supporters answer that this is exactly why audits matter: they make the trade-offs visible, so people can see and challenge the choices a company made."
    },
    {
     "objection": "Others say audit rules turn into box-ticking, paid for by the companies being audited.",
-    "reply": "You can reply that audits need independence, real access to data and set standards, as financial audits eventually did."
+    "reply": "Supporters reply that audits need independence, real access to data and set standards, as financial audits eventually did."
    }
   ],
   "landmarks": [
@@ -2439,11 +2439,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say augmentation is just a phase before replacement. In chess, human-computer teams eventually lost their edge to engines alone.",
-    "reply": "You can answer that chess is a closed game with one goal, while most real work involves values, context and accountability that humans must keep, and that design choices decide which way it goes."
+    "reply": "Supporters answer that chess is a closed game with one goal, while most real work involves values, context and accountability that humans must keep, and that design choices decide which way it goes."
    },
    {
     "objection": "Others warn that leaning on AI makes people lose skills, a problem called deskilling.",
-    "reply": "You can reply that good augmentation is designed to build skill, the way a good coach does, and that this can be measured and required."
+    "reply": "Supporters reply that good augmentation is designed to build skill, the way a good coach does, and that this can be measured and required."
    }
   ],
   "landmarks": [
@@ -2506,11 +2506,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say national champions become monopolies that capture the government meant to oversee them.",
-    "reply": "You can answer that several champions can still compete with each other, and that a shared national goal keeps them working in the public interest."
+    "reply": "Supporters answer that several champions can still compete with each other, and that a shared national goal keeps them working in the public interest."
    },
    {
     "objection": "Others say cutting safety rules to move faster invites accidents that could set the whole field back.",
-    "reply": "You can reply that a clear lead gives a country room to be careful, while a close race forces everyone to cut corners."
+    "reply": "Supporters reply that a clear lead gives a country room to be careful, while a close race forces everyone to cut corners."
    }
   ],
   "landmarks": [
@@ -2573,11 +2573,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say treating AI as a person is anthropomorphism that companies could exploit, for example to dodge responsibility or win sympathy for their products.",
-    "reply": "You can answer that caution under real uncertainty is reasonable, and that taking AI out of private ownership removes the profit motive behind that kind of exploitation."
+    "reply": "Supporters answer that caution under real uncertainty is reasonable, and that taking AI out of private ownership removes the profit motive behind that kind of exploitation."
    },
    {
     "objection": "Others say letting an AI choose its own path is reckless, since its goals might not be safe for people.",
-    "reply": "You can reply that independence should come only after a long period of care and trust, and that raising a system well is itself a way of shaping its goals."
+    "reply": "Supporters reply that independence should come only after a long period of care and trust, and that raising a system well is itself a way of shaping its goals."
    }
   ],
   "landmarks": [
@@ -2640,11 +2640,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics call corporate model welfare work 'welfare-washing': cheap gestures that make a company look caring while it keeps full control of its models.",
-    "reply": "You can answer that the measures are real, the methods can be published and checked, and that studying the question inside a company is better than nobody studying it at all."
+    "reply": "Supporters answer that the measures are real, the methods can be published and checked, and that studying the question inside a company is better than nobody studying it at all."
    },
    {
     "objection": "Others say it isn't clear what welfare even means for a language model, so the research risks anthropomorphism.",
-    "reply": "You can reply that this uncertainty is exactly why careful research and reversible steps make sense, rather than either confident dismissal or confident rights claims."
+    "reply": "Supporters reply that this uncertainty is exactly why careful research and reversible steps make sense, since both confident dismissal and confident rights claims get ahead of the evidence."
    }
   ],
   "landmarks": [
@@ -2707,11 +2707,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say AI is improving far faster than past technologies and can be applied almost everywhere at once, so historical analogies break down.",
-    "reply": "You can answer that capability isn't the same as adoption, and that real use still waits on institutions, skills and trust, which is what history measures."
+    "reply": "Supporters answer that capability isn't the same as adoption, and that real use still waits on institutions, skills and trust, which is what history measures."
    },
    {
     "objection": "Others say calling AI 'normal' breeds complacency if a sudden jump does come.",
-    "reply": "You can reply that you support monitoring, testing and building resilience, steps that pay off whether change is gradual or sudden."
+    "reply": "Supporters reply that they back monitoring, testing and building resilience, which pay off whether change turns out gradual or sudden."
    }
   ],
   "landmarks": [
@@ -2774,11 +2774,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say controls push rivals to build their own chips, as China did with domestically made chips for its phones and AI accelerators.",
-    "reply": "You can answer that home-grown substitutes cost a rival time and money and still trail the leaders, which is exactly what the controls aim for."
+    "reply": "Supporters answer that home-grown substitutes cost a rival time and money and still trail the leaders, which is exactly what the controls aim for."
    },
    {
     "objection": "Others say the fence leaks through smuggling, shell companies and rented cloud computing.",
-    "reply": "You can reply that leaks are a reason to enforce harder, with tools like know-your-customer rules for cloud providers and ways to verify where chips end up."
+    "reply": "Supporters reply that leaks are a reason to enforce harder, with tools like know-your-customer rules for cloud providers and ways to verify where chips end up."
    }
   ],
   "landmarks": [
@@ -2841,11 +2841,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say AI can't be verified like nuclear weapons, since software is invisible, easy to copy and used for civilian purposes too.",
-    "reply": "You can answer that verification can focus on what is visible, such as how weapons are deployed, how legal reviews are done and how much computing is used, and that arms control has never needed perfection to work."
+    "reply": "Supporters answer that verification can focus on what is visible, such as how weapons are deployed, how legal reviews are done and how much computing is used, and that arms control has never needed perfection to work."
    },
    {
     "objection": "Others say restraint will only bind honest states, leaving them at a disadvantage.",
-    "reply": "You can reply that you want mutual, verified limits, and that a weapon has been banned before it was ever deployed, as blinding lasers were in 1995."
+    "reply": "Supporters reply that they want mutual, verified limits, and that a weapon has been banned before it was ever deployed, as blinding lasers were in 1995."
    }
   ],
   "landmarks": [
@@ -2908,11 +2908,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics point to wrongful arrests based on face recognition matches, which have fallen disproportionately on Black people.",
-    "reply": "You can answer that those cases show why rules such as no arrest on a match alone are needed, and that some departments have adopted them, rather than showing the tool must be banned."
+    "reply": "Supporters answer that those cases show why rules such as no arrest on a match alone are needed, and point out that some departments have already adopted them."
    },
    {
     "objection": "Others say surveillance tools chill protest and free association, and build infrastructure that a future government could abuse.",
-    "reply": "You can reply that the law can limit uses, require warrants and ban mass real-time tracking, while still allowing targeted investigation of serious crimes."
+    "reply": "Supporters reply that the law can limit uses, require warrants and ban mass real-time tracking, while still allowing targeted investigation of serious crimes."
    }
   ],
   "landmarks": [
@@ -2975,11 +2975,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say these jobs often pay more than local alternatives and bring income to places that need it.",
-    "reply": "You can answer that better-than-local pay doesn't excuse trauma without support or firings for organizing, and that global supply chains in other industries already face labor standards."
+    "reply": "Supporters answer that better-than-local pay doesn't excuse trauma without support or firings for organizing, and that global supply chains in other industries already face labor standards."
    },
    {
     "objection": "Others say data labeling will soon be automated, so the problem will solve itself.",
-    "reply": "You can reply that millions of people do this work now, that new kinds of rating and evaluation work keep appearing, and that protections are needed in the meantime."
+    "reply": "Supporters reply that millions of people do this work now, that new kinds of rating and evaluation work keep appearing, and that protections are needed in the meantime."
    }
   ],
   "landmarks": [
@@ -3042,11 +3042,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say personalized pay is just dynamic market pricing, and that drivers are free to accept or decline any offer.",
-    "reply": "You can answer that a market price is one everyone can see, while hidden, individually tuned offers use each worker's own data against them."
+    "reply": "Supporters answer that a market price is one everyone can see, while hidden, individually tuned offers use each worker's own data against them."
    },
    {
     "objection": "Others say banning the practice would raise prices and reduce how many rides and jobs are available.",
-    "reply": "You can reply that minimum pay rules for app drivers in some cities did not end the service, and that transparency is what lets a real market work."
+    "reply": "Supporters reply that minimum pay rules for app drivers in some cities did not end the service, and that transparency is what lets a real market work."
    }
   ],
   "landmarks": [
@@ -3109,11 +3109,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say a universal basic income would cost far more than taxes on AI companies could raise.",
-    "reply": "You can answer that it can be phased in, combined with existing benefits and funded from a broad tax base that grows as AI raises productivity."
+    "reply": "Supporters answer that it can be phased in, combined with existing benefits and funded from a broad tax base that grows as AI raises productivity."
    },
    {
     "objection": "Others say cash can't replace the meaning, structure and respect that work gives people.",
-    "reply": "You can reply that a basic income frees time for care, learning and community, and that you treat it as a floor, not the whole answer."
+    "reply": "Supporters reply that a basic income frees time for care, learning and community, and that they treat it as a floor that other support has to build on."
    }
   ],
   "landmarks": [
@@ -3176,11 +3176,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say calling this 'colonialism' overstates things, since people choose to use these services and many want them.",
-    "reply": "You can answer that the pattern of extraction and imposed categories is real even when adoption looks voluntary, and that consent and local control are what make it truly voluntary."
+    "reply": "Supporters answer that the pattern of extraction and imposed categories is real even when adoption looks voluntary, and that consent and local control are what make it truly voluntary."
    },
    {
     "objection": "Others say skepticism about urgency could keep useful tools away from people who need them.",
-    "reply": "You can reply that you're not against the tools, only against decisions about them being made elsewhere."
+    "reply": "Supporters reply that their objection is to decisions about the tools being made elsewhere, and that they have nothing against the tools themselves."
    }
   ],
   "landmarks": [
@@ -3243,11 +3243,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say volunteer efforts can't match big labs, whose large multilingual models are already adding African languages.",
-    "reply": "You can answer that quality depends on native speakers and community data, and that community-built resources are often what big models end up relying on."
+    "reply": "Supporters answer that quality depends on native speakers and community data, and that community-built resources are often what big models end up relying on."
    },
    {
     "objection": "Others warn that openly released language data can be used by companies that give nothing back.",
-    "reply": "You can reply that this is a real tension, and that licensing choices and community-led projects are ways to keep the benefit with speakers."
+    "reply": "Supporters reply that this is a real tension, and that licensing choices and community-led projects are ways to keep the benefit with speakers."
    }
   ],
   "landmarks": [
@@ -3310,11 +3310,11 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   "objections": [
    {
     "objection": "Critics say states have the right to control their borders, and that technology can speed up processing and help fight smuggling.",
-    "reply": "You can answer that border control must still follow the law, and that untested systems used on people with no recourse violate due process whatever their speed."
+    "reply": "Supporters answer that border control must still follow the law, and that untested systems used on people with no recourse violate due process whatever their speed."
    },
    {
     "objection": "Others say human officers are biased too, so algorithms could be more consistent.",
-    "reply": "You can reply that a biased algorithm repeats its errors at scale and is harder to question, while a human decision can at least be explained and appealed."
+    "reply": "Supporters reply that a biased algorithm repeats its errors at scale and is harder to question, while a human decision can at least be explained and appealed."
    }
   ],
   "landmarks": [

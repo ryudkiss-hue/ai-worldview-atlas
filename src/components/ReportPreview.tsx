@@ -20,7 +20,7 @@ export function ReportPreview({ content }: ReportPreviewProps) {
         ))}
       </div>
 
-      <h4 className="font-semibold mb-2">Where This View Stands on Each Axis</h4>
+      <h4 className="font-semibold mb-2">Position on Each Axis</h4>
       <dl className="mb-6 divide-y divide-gray-100 border-y border-gray-100">
         {axes.map((axis) => (
           <div key={axis.id} className="py-2 grid gap-1 sm:grid-cols-[11rem_1fr] sm:gap-4">
@@ -81,7 +81,7 @@ export function ReportPreview({ content }: ReportPreviewProps) {
         ))}
       </ul>
 
-      <h4 className="font-semibold mb-2">Next Steps</h4>
+      <h4 className="font-semibold mb-2">Where to Look Further</h4>
       <ul className="list-disc list-inside space-y-1">
         {content.nextSteps.map((step, index) => (
           <li key={index}>{step}</li>
