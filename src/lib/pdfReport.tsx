@@ -2,6 +2,8 @@ import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer'
 import { axes } from '../data/axes'
 import type { AxisVector, ProfileMatch } from './scoring'
 import type { ProfileReportContent } from '../data/types'
+import { describePosition } from './axisPositions'
+import { uiStrings } from '../data/uiStrings'
 
 const styles = StyleSheet.create({
   page: { padding: 40, fontSize: 11, fontFamily: 'Helvetica' },
@@ -56,9 +58,35 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
 
       <Page style={styles.page}>
         <Text style={styles.heading}>Your Top Match: {top.profile.name}</Text>
+        <Text style={styles.paragraph}>{uiStrings.report_framing}</Text>
         {topContent.extendedNarrative.map((paragraph, index) => (
           <Text key={index} style={styles.paragraph}>{paragraph}</Text>
         ))}
+      </Page>
+
+      <Page style={styles.page}>
+        <Text style={styles.heading}>{top.profile.name}: Position on Each Axis</Text>
+        {axes.map((axis) => (
+          <Text key={axis.id} style={styles.paragraph}>
+            {axis.name} ({describePosition(axis.id, top.profile.coords[axis.id])}): {topContent.axisReasons[axis.id]}
+          </Text>
+        ))}
+        <Text style={styles.heading}>The Strongest Objections</Text>
+        {topContent.objections.map((o) => (
+          <View key={o.objection}>
+            <Text style={styles.paragraph}>{o.objection}</Text>
+            <Text style={{ ...styles.paragraph, marginLeft: 12 }}>{o.reply}</Text>
+          </View>
+        ))}
+        <Text style={styles.heading}>Where This View Shows Up</Text>
+        {topContent.landmarks.map((l) => (
+          <Text key={l.name} style={styles.paragraph}>
+            {l.name} ({l.year}). {l.what} Source: {l.source}
+          </Text>
+        ))}
+      </Page>
+
+      <Page style={styles.page}>
         <Text style={styles.heading}>Thinkers</Text>
         {topContent.thinkers.map((thinker) => (
           <Text key={thinker.name} style={styles.paragraph}>
@@ -79,11 +107,11 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
           <View key={match.profile.id} style={{ marginBottom: 12 }}>
             <Text style={{ fontSize: 13, marginBottom: 4 }}>{match.profile.name}</Text>
             <Text style={styles.paragraph}>{match.profile.summary}</Text>
-            <Text>Distance: {match.distance.toFixed(2)}</Text>
+            <Text>About {(match.distance / Math.sqrt(8)).toFixed(1)} points apart per axis (distance {match.distance.toFixed(2)})</Text>
           </View>
         ))}
 
-        <Text style={styles.heading}>Further Reading and Next Steps</Text>
+        <Text style={styles.heading}>Where to Look Further</Text>
         {topMatches.map((match) => {
           const content = profileReports[match.profile.id]
           return (

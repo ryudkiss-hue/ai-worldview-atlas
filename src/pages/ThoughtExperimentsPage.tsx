@@ -1,35 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { narrativeExperiments } from '../data/narrativeExperiments'
-import { narrativeExperimentsB } from '../data/narrativeExperimentsB'
-import { narrativeExperimentsC } from '../data/narrativeExperimentsC'
-import { narrativeExperimentsD } from '../data/narrativeExperimentsD'
+import { thoughtExperiments } from '../data/thoughtExperiments'
 import { axes } from '../data/axes'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 
-interface Experiment {
-  title: string
-  intro: string
-  clash?: { external: string; internal: string }
-  questions?: { q: string; subtext?: string; followups?: string[] }[]
-  axes?: string[]
-}
+const ALL = thoughtExperiments.map((e) => [e.key, e] as const)
 
-const ALL: [string, Experiment][] = Object.entries({
-  ...narrativeExperiments,
-  ...narrativeExperimentsB,
-  ...narrativeExperimentsC,
-  ...narrativeExperimentsD,
-}) as [string, Experiment][]
+const axisName = (id: string) => axes.find((a) => a.id === id)?.name ?? id
 
-const AXIS_ALIAS: Record<string, string> = {
-  'legal-moral': 'legalMoral',
-  'socio-economic': 'socioEconomic',
-  'risk-profile': 'risk',
-}
-const axisName = (id: string) => axes.find((a) => a.id === (AXIS_ALIAS[id] ?? id))?.name ?? id
-
-/** The 25 thought experiments, unscored: reflections that ground the axes in concrete situations. */
+/** The thought experiments, unscored: concrete situations that put the axes under pressure. */
 export function ThoughtExperimentsPage() {
   const [open, setOpen] = useState<string | null>(null)
   return (

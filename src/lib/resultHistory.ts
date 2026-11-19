@@ -6,10 +6,12 @@ export interface ResultHistoryEntry {
   t2Raw: AxisVector
   topMatchId: string
   topMatchName: string
+  /** Which version produced it; older entries have none and came from the full quiz */
+  mode?: 'full' | 'short'
 }
 
-// v2: the merged 144-statement Atlas. Results from the earlier question set are kept under the old key, unread.
-const STORAGE_KEY = 'atlas-result-history-v2'
+// v3: item set 3, the plain-language rewrite. Results from earlier wordings stay under their old keys, unread.
+const STORAGE_KEY = 'atlas-result-history-v3'
 const MAX_ENTRIES = 20
 
 function readRaw(): ResultHistoryEntry[] {
@@ -42,7 +44,17 @@ export function getResultHistory(): ResultHistoryEntry[] {
  * one without a second read.
  */
 export function recordResult(entry: Omit<ResultHistoryEntry, 'timestamp'>, timestamp: number): ResultHistoryEntry[] {
-  const priorHistory = readRaw()
+  const history = readRaw()
+  const last = history[history.length - 1]
+  // Answers are saved between visits, so reopening the results page must not log the same result again.
+  const sameResult =
+    last &&
+    (last.mode ?? 'full') === (entry.mode ?? 'full') &&
+    JSON.stringify([last.t1Raw, last.t2Raw]) === JSON.stringify([entry.t1Raw, entry.t2Raw])
+  if (sameResult) {
+    return history.slice(0, -1)
+  }
+  const priorHistory = history
   const updated = [...priorHistory, { ...entry, timestamp }].slice(-MAX_ENTRIES)
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))

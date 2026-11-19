@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import { beforeEach } from 'vitest'
 
 if (typeof ResizeObserver === 'undefined') {
   ;(globalThis as any).ResizeObserver = class {
@@ -38,6 +39,11 @@ if (typeof localStorage === 'undefined') {
     Object.defineProperty(window, 'localStorage', { value: memoryStorage, configurable: true })
   }
 }
+
+// Quiz progress is saved to localStorage; every test starts from a clean browser.
+beforeEach(() => {
+  localStorage.clear()
+})
 
 // jsdom does not implement layout, so getBoundingClientRect() always returns
 // all-zero dimensions. Recharts' ResponsiveContainer reads this on mount to

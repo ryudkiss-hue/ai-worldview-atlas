@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { QuizProvider, useQuiz } from './QuizContext'
+import { QuizProvider, useQuiz, loadSavedProgress, PROGRESS_KEY } from './QuizContext'
 import { axes } from '../data/axes'
 
 function TestConsumer() {
@@ -92,5 +92,77 @@ describe('QuizContext', () => {
       return null
     }
     expect(() => render(<Broken />)).toThrow('useQuiz must be used within a QuizProvider')
+  })
+})
+
+describe('saved progress', () => {
+  it('restores valid answers and drops anything that does not fit the current statements', () => {
+    localStorage.setItem(
+      PROGRESS_KEY,
+      JSON.stringify({ answers: { 1: 5, 2: 3, 9999: 4 }, declinedQuestions: [3, 1, 777], checkAnswers: { 901: 2, 5: 4 }, questionOrder: {} }),
+    )
+    const saved = loadSavedProgress()!
+    expect(saved.answers).toEqual({ 1: 5 })
+    expect(saved.declinedQuestions).toEqual([3])
+    expect(saved.checkAnswers).toEqual({ 901: 2 })
+    expect(Object.keys(saved.questionOrder)).toHaveLength(8)
+  })
+
+  it('restores the version, axis weights and focus-module answers, dropping invalid ones', () => {
+    localStorage.setItem(
+      PROGRESS_KEY,
+      JSON.stringify({
+        answers: {},
+        mode: 'short',
+        axisWeights: { ontological: 2, risk: 3 },
+        intimacyAnswers: { 1001: 5, 1002: 0, 1003: 3, 1: 4 },
+      }),
+    )
+    const saved = loadSavedProgress()!
+    expect(saved.mode).toBe('short')
+    expect(saved.axisWeights.ontological).toBe(2)
+    expect(saved.axisWeights.risk).toBe(1)
+    expect(saved.intimacyAnswers).toEqual({ 1001: 5, 1002: 0 })
+  })
+
+  it('defaults older saved progress to the full version with equal weights', () => {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers: { 1: 5 }, mode: 'something' }))
+    const saved = loadSavedProgress()!
+    expect(saved.mode).toBe('full')
+    expect(Object.values(saved.axisWeights).every((w) => w === 1)).toBe(true)
+    expect(saved.intimacyAnswers).toEqual({})
+  })
+
+  it('starting the quiz again keeps the separate focus-module answers', () => {
+    function Consumer() {
+      const { startQuiz, setIntimacyAnswer, intimacyAnswers, mode, setAxisWeight, axisWeights } = useQuiz()
+      return (
+        <div>
+          <span data-testid="intimacy">{JSON.stringify(intimacyAnswers)}</span>
+          <span data-testid="mode">{mode}</span>
+          <span data-testid="w">{axisWeights.risk}</span>
+          <button onClick={() => setIntimacyAnswer(1001, 4)}>intimacy</button>
+          <button onClick={() => setAxisWeight('risk', 2)}>weight</button>
+          <button onClick={() => startQuiz('short')}>short</button>
+        </div>
+      )
+    }
+    render(
+      <QuizProvider>
+        <Consumer />
+      </QuizProvider>,
+    )
+    fireEvent.click(screen.getByText('intimacy'))
+    fireEvent.click(screen.getByText('weight'))
+    expect(screen.getByTestId('w').textContent).toBe('2')
+    fireEvent.click(screen.getByText('short'))
+    expect(screen.getByTestId('mode').textContent).toBe('short')
+    expect(screen.getByTestId('intimacy').textContent).toBe('{"1001":4}')
+    expect(screen.getByTestId('w').textContent).toBe('1')
+  })
+
+  it('starts fresh when the saved data is unreadable', () => {
+    localStorage.setItem(PROGRESS_KEY, '{not json')
+    expect(loadSavedProgress()).toBeNull()
   })
 })

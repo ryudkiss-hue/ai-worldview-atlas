@@ -2,10 +2,8 @@ interface PinnacleReflectionProps {
   archetypeName: string
 }
 
-// Vowel-sound exceptions where the leading letter doesn't match the leading sound
-// (e.g. "EU-Style..." and "UBI..." are pronounced "you-style"/"you-bee-eye", a consonant
-// sound despite the vowel letter).
-const CONSONANT_SOUND_EXCEPTIONS = ['EU-', 'UBI']
+// Names that start with a vowel letter but a consonant sound ("Union" is said "you-nion").
+const CONSONANT_SOUND_EXCEPTIONS = ['Union', 'EU-', 'UBI']
 
 function indefiniteArticle(name: string): 'a' | 'an' {
   if (CONSONANT_SOUND_EXCEPTIONS.some((prefix) => name.startsWith(prefix))) return 'a'

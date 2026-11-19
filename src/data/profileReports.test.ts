@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { profileReports } from './profileReports'
 import { profiles } from './profiles'
+import { axes } from './axes'
+import { tierOf } from '../lib/scoring'
 
 function checkShape(id: string) {
   const content = profileReports[id]
@@ -18,6 +20,13 @@ function checkShape(id: string) {
   expect(content.commonlyConfusedWith.profileId).not.toBe(id)
   expect(content.commonlyConfusedWith.profileName.length).toBeGreaterThan(0)
   expect(content.commonlyConfusedWith.distinction.length).toBeGreaterThan(0)
+  expect(Object.keys(content.axisReasons).sort()).toEqual(axes.map((a) => a.id).sort())
+  Object.values(content.axisReasons).forEach((r) => expect(r.length).toBeGreaterThan(20))
+  expect(content.objections.length).toBeGreaterThanOrEqual(2)
+  content.objections.forEach((o) => expect(o.objection.length && o.reply.length).toBeGreaterThan(0))
+  expect(content.landmarks.length).toBeGreaterThanOrEqual(3)
+  content.landmarks.forEach((l) => expect(l.source.length && l.year.length && l.what.length).toBeGreaterThan(0))
+  expect(content.extendedNarrative.length).toBeGreaterThanOrEqual(3)
 }
 
 describe('profileReports (batch 1: Precautionary/Safety pt1)', () => {
@@ -126,5 +135,23 @@ describe('profileReports completeness', () => {
     const shadowSides = Object.values(profileReports).map((content) => content.shadowSide)
     shadowSides.forEach((s) => expect(s.length).toBeGreaterThan(20))
     expect(new Set(shadowSides).size).toBe(shadowSides.length)
+  })
+})
+
+describe('expanded reports', () => {
+  it('lists only people as thinkers, never organizations or descriptions', () => {
+    const notPeople = /doctrine|publications|reports|tradition|model of|strategy documents|researchers$|analysts$|precedent|principles|initiatives|Institute|Union$|Review$|Podcast|Lab,/
+    Object.values(profileReports).forEach((r) => r.thinkers.forEach((t) => expect(t.name, `${r.profileId}: ${t.name}`).not.toMatch(notPeople)))
+  })
+
+  it("describes each axis on the same side as the archetype's coordinate", () => {
+    profiles.forEach((p) => {
+      axes.forEach((a) => {
+        const text = profileReports[p.id].axisReasons[a.id]
+        const middle = /sits? (in|near) the middle/i.test(text)
+        if (tierOf(p.coords[a.id]) === 0) expect(middle, `${p.id} ${a.id} should read as middle: ${text}`).toBe(true)
+        else expect(middle, `${p.id} ${a.id} is ${p.coords[a.id]} but reads as middle`).toBe(false)
+      })
+    })
   })
 })

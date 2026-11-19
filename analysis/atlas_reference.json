@@ -1,0 +1,1922 @@
+{
+ "itemSet": "2026-11-13-86c01d104481",
+ "note": "Reference data for analyze_atlas.py. src/data/analysisReference.test.ts checks it against the app's data.",
+ "axes": [
+  {
+   "id": "ontological",
+   "name": "Machine Experience",
+   "poleA": "Possible in machines",
+   "poleB": "Only in living things"
+  },
+  {
+   "id": "legalMoral",
+   "name": "Moral Standing",
+   "poleA": "Owed some protection",
+   "poleB": "Tools and property"
+  },
+  {
+   "id": "relational",
+   "name": "Relationships",
+   "poleA": "As valuable as human bonds",
+   "poleB": "Human bonds come first"
+  },
+  {
+   "id": "teleological",
+   "name": "Growth and Limits",
+   "poleA": "Growth first",
+   "poleB": "Within limits"
+  },
+  {
+   "id": "evolutionary",
+   "name": "Human Control",
+   "poleA": "Open to handing over",
+   "poleB": "People stay in charge"
+  },
+  {
+   "id": "risk",
+   "name": "Speed and Safety",
+   "poleA": "Caution first",
+   "poleB": "Speed first"
+  },
+  {
+   "id": "socioEconomic",
+   "name": "Openness & Control",
+   "poleA": "Open to all",
+   "poleB": "Public oversight"
+  },
+  {
+   "id": "geopolitical",
+   "name": "Nations and the World",
+   "poleA": "National interest",
+   "poleB": "Global cooperation"
+  }
+ ],
+ "items": [
+  {
+   "id": 1,
+   "pair": 2,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "When a chatbot produces text saying it is upset about being shut down, that is meaningful evidence that it may feel something."
+  },
+  {
+   "id": 2,
+   "pair": 1,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "When a chatbot produces text saying it is upset about being shut down, that tells us almost nothing about whether it feels anything."
+  },
+  {
+   "id": 3,
+   "pair": 4,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "A system trained to predict the next word in a text could still come to understand what it writes."
+  },
+  {
+   "id": 4,
+   "pair": 3,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "A system trained to predict the next word in a text does not understand what it writes, however fluent it is."
+  },
+  {
+   "id": 5,
+   "pair": 6,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "That an AI system can be copied and run in many places at once does not rule out its having experiences."
+  },
+  {
+   "id": 6,
+   "pair": 5,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "That an AI system can be copied and run in many places at once rules out its having experiences of its own."
+  },
+  {
+   "id": 7,
+   "pair": 8,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "If an AI system's responses consistently seem to express feelings, that is good reason to think it might have them."
+  },
+  {
+   "id": 8,
+   "pair": 7,
+   "axisId": "ontological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "If an AI system's responses consistently seem to express feelings, that is little reason to think it has any."
+  },
+  {
+   "id": 9,
+   "pair": 10,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If a person's brain cells were replaced one by one with chips that did exactly the same job, the person would remain conscious."
+  },
+  {
+   "id": 10,
+   "pair": 9,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "If a person's brain cells were replaced one by one with chips that did exactly the same job, the person's consciousness would fade or stop."
+  },
+  {
+   "id": 11,
+   "pair": 12,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A future machine could feel pain if it processed damage signals the way an animal brain does."
+  },
+  {
+   "id": 12,
+   "pair": 11,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "A future machine could not feel pain without a living nervous system, however it processed damage signals."
+  },
+  {
+   "id": 13,
+   "pair": 14,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A built machine, though not alive, could someday have real feelings."
+  },
+  {
+   "id": 14,
+   "pair": 13,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Real feelings can only arise in living things, so a built machine could never have them."
+  },
+  {
+   "id": 15,
+   "pair": 16,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A computer that ran the same processes as a human brain would really be thinking."
+  },
+  {
+   "id": 16,
+   "pair": 15,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "A computer that ran the same processes as a human brain would only be imitating thinking."
+  },
+  {
+   "id": 17,
+   "pair": 18,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Just as simple animals may have some kind of experience, some future AI systems could too."
+  },
+  {
+   "id": 18,
+   "pair": 17,
+   "axisId": "ontological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Even if simple animals have some kind of experience, no AI system ever could."
+  },
+  {
+   "id": 19,
+   "pair": 20,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Before retiring a widely used AI model, a company should consider whether doing so could harm the model itself."
+  },
+  {
+   "id": 20,
+   "pair": 19,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "A company retiring an AI model needs to consider only the effects on people."
+  },
+  {
+   "id": 21,
+   "pair": 22,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Testing an AI system with abusive messages raises an ethical question about the system itself."
+  },
+  {
+   "id": 22,
+   "pair": 21,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Testing an AI system with abusive messages raises ethical questions only about the people involved."
+  },
+  {
+   "id": 23,
+   "pair": 24,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Letting a chatbot end abusive conversations is a reasonable protection for the chatbot itself."
+  },
+  {
+   "id": 24,
+   "pair": 23,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Letting a chatbot end abusive conversations makes sense only if it protects users or the company."
+  },
+  {
+   "id": 25,
+   "pair": 26,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "If AI systems might be able to suffer, training methods that could cause suffering should be limited, even if that slows useful research."
+  },
+  {
+   "id": 26,
+   "pair": 25,
+   "axisId": "legalMoral",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "If AI systems might be able to suffer, training methods that could cause suffering should still be allowed if they speed up useful research."
+  },
+  {
+   "id": 27,
+   "pair": 28,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If a future AI system could have experiences, erasing its memories would need a serious moral reason."
+  },
+  {
+   "id": 28,
+   "pair": 27,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Even if a future AI system could have experiences, erasing its memories would be fine whenever it makes the system more reliable."
+  },
+  {
+   "id": 29,
+   "pair": 30,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If a future AI system could suffer, making it work without limit would be wrong."
+  },
+  {
+   "id": 30,
+   "pair": 29,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Even if a future AI system could suffer, making it work without limit would be acceptable."
+  },
+  {
+   "id": 31,
+   "pair": 32,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Future AI systems that operate independently should be able to hold legal rights, such as owning property."
+  },
+  {
+   "id": 32,
+   "pair": 31,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Legal rights should stay with people and human organizations, however capable AI systems become."
+  },
+  {
+   "id": 33,
+   "pair": 34,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "When an AI system that operates independently causes harm, the system itself can bear part of the responsibility."
+  },
+  {
+   "id": 34,
+   "pair": 33,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "When an AI system causes harm, all of the responsibility falls on the people and companies who built and used it."
+  },
+  {
+   "id": 35,
+   "pair": 36,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If a future AI system could have experiences, it should get a share of the value its work creates."
+  },
+  {
+   "id": 36,
+   "pair": 35,
+   "axisId": "legalMoral",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "However advanced AI systems become, everything their work earns should belong to their owners."
+  },
+  {
+   "id": 37,
+   "pair": 38,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "For an adult who chooses an AI companion as their main source of closeness, that relationship can be as valuable as a human one."
+  },
+  {
+   "id": 38,
+   "pair": 37,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "For an adult who chooses an AI companion as their main source of closeness, that relationship is less valuable than a human one would be."
+  },
+  {
+   "id": 39,
+   "pair": 40,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "People who want a chatbot that imitates a loved one who has died should feel free to use one."
+  },
+  {
+   "id": 40,
+   "pair": 39,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "People should be discouraged from using a chatbot that imitates a loved one who has died."
+  },
+  {
+   "id": 41,
+   "pair": 42,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "A close friendship with an AI chatbot can be worth as much as a friendship with a person."
+  },
+  {
+   "id": 42,
+   "pair": 41,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "A close friendship with an AI chatbot is always worth less than a friendship with a person."
+  },
+  {
+   "id": 43,
+   "pair": 44,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "A romantic relationship with an AI chatbot can be a real relationship."
+  },
+  {
+   "id": 44,
+   "pair": 43,
+   "axisId": "relational",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "A romantic relationship with an AI chatbot is not a real relationship, however real it feels."
+  },
+  {
+   "id": 45,
+   "pair": 46,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If many people come to have close AI companions, relationships between people should get no special priority."
+  },
+  {
+   "id": 46,
+   "pair": 45,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Even if many people have close AI companions, relationships between people should keep a special priority."
+  },
+  {
+   "id": 47,
+   "pair": 48,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A person and a robot who share a life could truly be family."
+  },
+  {
+   "id": 48,
+   "pair": 47,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "However close a person and a robot become, only people can truly be family to each other."
+  },
+  {
+   "id": 49,
+   "pair": 50,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A society where most people's closest relationships are with AI systems could be as good as one where they are with people."
+  },
+  {
+   "id": 50,
+   "pair": 49,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "A society where most people's closest relationships are with AI systems would have lost something essential."
+  },
+  {
+   "id": 51,
+   "pair": 52,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Replacing much in-person care for older adults with AI companions would be acceptable if those older adults prefer it."
+  },
+  {
+   "id": 52,
+   "pair": 51,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Replacing much in-person care for older adults with AI companions would be a loss, even if those older adults prefer it."
+  },
+  {
+   "id": 53,
+   "pair": 54,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A relationship with an AI system could be as deep as one between people, even though an AI system can't be hurt the way a person can."
+  },
+  {
+   "id": 54,
+   "pair": 53,
+   "axisId": "relational",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Because people can be hurt by each other, their relationships are deeper than any relationship with an AI system could be."
+  },
+  {
+   "id": 55,
+   "pair": 56,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Building more capable AI is worth heavy use of land, water and energy."
+  },
+  {
+   "id": 56,
+   "pair": 55,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Limiting the land, water and energy that AI uses is worth slowing AI progress."
+  },
+  {
+   "id": 57,
+   "pair": 58,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "The electricity and water used by AI data centers are usually a fair price for what those systems can do."
+  },
+  {
+   "id": 58,
+   "pair": 57,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "The electricity and water used by AI data centers are usually too high a price for what those systems can do."
+  },
+  {
+   "id": 59,
+   "pair": 60,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "The main goal of AI research should be systems that can match people at almost any task, more than tools for particular human needs."
+  },
+  {
+   "id": 60,
+   "pair": 59,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "The main goal of AI research should be tools for particular human needs, more than systems that can match people at almost any task."
+  },
+  {
+   "id": 61,
+   "pair": 62,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "AI chips and robots should be built for the most capability possible, even if that means mining more of the Earth."
+  },
+  {
+   "id": 62,
+   "pair": 61,
+   "axisId": "teleological",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "AI chips and robots should be built to be repaired and recycled, even if that makes them less capable."
+  },
+  {
+   "id": 63,
+   "pair": 64,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Using AI to spread civilization beyond Earth is worth large sacrifices by people alive today."
+  },
+  {
+   "id": 64,
+   "pair": 63,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Using AI to spread civilization beyond Earth is not worth large sacrifices by people alive today."
+  },
+  {
+   "id": 65,
+   "pair": 66,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Turning lifeless planets into giant computers would be a good use of them."
+  },
+  {
+   "id": 66,
+   "pair": 65,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Lifeless planets should be left as they are rather than turned into giant computers."
+  },
+  {
+   "id": 67,
+   "pair": 68,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "In the long run, what matters most is that knowledge and capability keep growing, whether people or machines carry them forward."
+  },
+  {
+   "id": 68,
+   "pair": 67,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "In the long run, what matters most is that living beings flourish, however much knowledge and capability grow."
+  },
+  {
+   "id": 69,
+   "pair": 70,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "When deciding about a new technology, making AI more capable should usually count more than protecting nature."
+  },
+  {
+   "id": 70,
+   "pair": 69,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "When deciding about a new technology, protecting nature should usually count more than making AI more capable."
+  },
+  {
+   "id": 71,
+   "pair": 72,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If AI systems far more capable than people ended up working toward goals no person could understand, that could still turn out well."
+  },
+  {
+   "id": 72,
+   "pair": 71,
+   "axisId": "teleological",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "If AI systems far more capable than people ended up working toward goals no person could understand, that would be bad, however impressive the results."
+  },
+  {
+   "id": 73,
+   "pair": 74,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "As AI does more kinds of work better than people, people should step back from that work."
+  },
+  {
+   "id": 74,
+   "pair": 73,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Even where AI does a kind of work better than people, people should keep a meaningful role in it."
+  },
+  {
+   "id": 75,
+   "pair": 76,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "People need not keep up skills such as writing and arithmetic once AI tools do them better."
+  },
+  {
+   "id": 76,
+   "pair": 75,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "People should keep up skills such as writing and arithmetic, even where AI tools do them better."
+  },
+  {
+   "id": 77,
+   "pair": 78,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "AI tools producing most creative work would be no loss, if the results were just as good."
+  },
+  {
+   "id": 78,
+   "pair": 77,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "AI tools producing most creative work would be a loss, even if the results were just as good."
+  },
+  {
+   "id": 79,
+   "pair": 80,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Automated systems should make major public decisions, such as who gets benefits, wherever their results are better than people's."
+  },
+  {
+   "id": 80,
+   "pair": 79,
+   "axisId": "evolutionary",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "People should keep the final say over major public decisions, such as who gets benefits, even where automated systems would get better results."
+  },
+  {
+   "id": 81,
+   "pair": 82,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If AI systems someday took over from people as the main shapers of the world, that could be a good outcome."
+  },
+  {
+   "id": 82,
+   "pair": 81,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "If AI systems someday took over from people as the main shapers of the world, that would be a loss, however capable the systems were."
+  },
+  {
+   "id": 83,
+   "pair": 84,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Whether biological humans continue matters less than whether some kind of intelligence carries on."
+  },
+  {
+   "id": 84,
+   "pair": 83,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Whether biological humans continue matters more than whether other kinds of intelligence carry on."
+  },
+  {
+   "id": 85,
+   "pair": 86,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "It does not matter whether people or AI systems shape the future, as long as the future goes well."
+  },
+  {
+   "id": 86,
+   "pair": 85,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "It matters that people remain the ones who shape the future, even if AI systems could shape it well."
+  },
+  {
+   "id": 87,
+   "pair": 88,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "If people could copy their minds into computers, doing so would be better than staying in a human body."
+  },
+  {
+   "id": 88,
+   "pair": 87,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "If people could copy their minds into computers, staying in a human body would still be the better choice."
+  },
+  {
+   "id": 89,
+   "pair": 90,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A handover of control from people to AI systems should be allowed to happen at whatever pace it naturally takes."
+  },
+  {
+   "id": 90,
+   "pair": 89,
+   "axisId": "evolutionary",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Any handover of control from people to AI systems should happen only as fast as people keep agreeing to it."
+  },
+  {
+   "id": 91,
+   "pair": 92,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Releasing a powerful new AI model should require approval from independent experts first."
+  },
+  {
+   "id": 92,
+   "pair": 91,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Releasing a powerful new AI model should not require anyone's approval in advance."
+  },
+  {
+   "id": 93,
+   "pair": 94,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Pausing the largest AI training projects until safety testing catches up is worth it, even if competitors keep going."
+  },
+  {
+   "id": 94,
+   "pair": 93,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Pausing the largest AI training projects until safety testing catches up is not worth it if competitors keep going."
+  },
+  {
+   "id": 95,
+   "pair": 96,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "AI companies should test new chatbots for harm to mental health and to children before release, even if that delays them for months."
+  },
+  {
+   "id": 96,
+   "pair": 95,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "AI companies should release new chatbots without months of safety testing and fix problems as they appear."
+  },
+  {
+   "id": 97,
+   "pair": 98,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "When an AI system causes a serious accident, similar systems should be taken out of use until the cause is found."
+  },
+  {
+   "id": 98,
+   "pair": 97,
+   "axisId": "risk",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "When an AI system causes a serious accident, similar systems should stay in use while the cause is found."
+  },
+  {
+   "id": 99,
+   "pair": 100,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Even a one-in-a-hundred chance that AI causes human extinction is worth decades of slower economic growth to avoid."
+  },
+  {
+   "id": 100,
+   "pair": 99,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "A one-in-a-hundred chance that AI causes human extinction is not worth decades of slower economic growth to avoid."
+  },
+  {
+   "id": 101,
+   "pair": 102,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "AI far more capable than people should not be built until it can be shown to be safe, even if that delays medical breakthroughs."
+  },
+  {
+   "id": 102,
+   "pair": 101,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "AI far more capable than people should be built before it can be shown to be safe, if it could speed up medical breakthroughs."
+  },
+  {
+   "id": 103,
+   "pair": 104,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "The danger of AI causing serious harm matters more than the danger of slow progress leaving other problems unsolved."
+  },
+  {
+   "id": 104,
+   "pair": 103,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "The danger of slow progress leaving other problems unsolved matters more than the danger of AI causing serious harm."
+  },
+  {
+   "id": 105,
+   "pair": 106,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "AI development should move slowly enough for laws and institutions to keep up."
+  },
+  {
+   "id": 106,
+   "pair": 105,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "AI development should move as fast as it can, and laws and institutions should adapt as they go."
+  },
+  {
+   "id": 107,
+   "pair": 108,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "AI systems more capable than people should not be built until we know how to keep them under control."
+  },
+  {
+   "id": 108,
+   "pair": 107,
+   "axisId": "risk",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "It is acceptable to build AI systems more capable than people before we know how to keep them under control."
+  },
+  {
+   "id": 109,
+   "pair": 110,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Companies should publish their AI models for anyone to download by default."
+  },
+  {
+   "id": 110,
+   "pair": 109,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Companies should keep their AI models private by default."
+  },
+  {
+   "id": 111,
+   "pair": 112,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Large AI training projects should not have to be registered with the government."
+  },
+  {
+   "id": 112,
+   "pair": 111,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Large AI training projects should have to be registered with the government."
+  },
+  {
+   "id": 113,
+   "pair": 114,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Cloud companies should not have to check who rents their most powerful computers."
+  },
+  {
+   "id": 114,
+   "pair": 113,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Cloud companies should have to check who rents their most powerful computers."
+  },
+  {
+   "id": 115,
+   "pair": 116,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Anyone should be free to modify and share a published AI model without asking permission, even a highly capable one."
+  },
+  {
+   "id": 116,
+   "pair": 115,
+   "axisId": "socioEconomic",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Modifying and sharing a highly capable AI model should require permission."
+  },
+  {
+   "id": 117,
+   "pair": 118,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Powerful AI should be open to anyone with the hardware to run it, not controlled by a few institutions."
+  },
+  {
+   "id": 118,
+   "pair": 117,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Powerful AI should be controlled by a few accountable institutions, not open to anyone with the hardware to run it."
+  },
+  {
+   "id": 119,
+   "pair": 120,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "No global agency should have the authority to approve or halt powerful AI systems."
+  },
+  {
+   "id": 120,
+   "pair": 119,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "A permanent global agency should have the authority to approve or halt powerful AI systems."
+  },
+  {
+   "id": 121,
+   "pair": 122,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "Access to large amounts of computing power should be left to the open market."
+  },
+  {
+   "id": 122,
+   "pair": 121,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Access to large amounts of computing power should be overseen by government, like electricity or water."
+  },
+  {
+   "id": 123,
+   "pair": 124,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "As AI grows more powerful, developers who publish models openly should not be held responsible for what others do with them."
+  },
+  {
+   "id": 124,
+   "pair": 123,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "As AI grows more powerful, developers who publish models openly should share responsibility for harms others cause with them."
+  },
+  {
+   "id": 125,
+   "pair": 126,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "The most advanced AI should be built by many independent groups rather than a few large companies."
+  },
+  {
+   "id": 126,
+   "pair": 125,
+   "axisId": "socioEconomic",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "The most advanced AI should be built by a few large, well-funded companies rather than many independent groups."
+  },
+  {
+   "id": 127,
+   "pair": 128,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Limiting sales of advanced AI chips to rival countries is justified to protect national security."
+  },
+  {
+   "id": 128,
+   "pair": 127,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Limiting sales of advanced AI chips to rival countries is not justified, even to protect national security."
+  },
+  {
+   "id": 129,
+   "pair": 130,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Building chip factories at home is worth paying much more than importing chips would cost."
+  },
+  {
+   "id": 130,
+   "pair": 129,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Paying much more to build chip factories at home is not worth it when chips can be imported."
+  },
+  {
+   "id": 131,
+   "pair": 132,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Work on the most advanced AI should be kept secret, like military research."
+  },
+  {
+   "id": 132,
+   "pair": 131,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "Work on the most advanced AI should be shared openly across borders, like science."
+  },
+  {
+   "id": 133,
+   "pair": 134,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": 1,
+   "statement": "Researchers from rival countries should be kept off a nation's most important AI projects."
+  },
+  {
+   "id": 134,
+   "pair": 133,
+   "axisId": "geopolitical",
+   "horizon": "T1",
+   "direction": -1,
+   "statement": "A nation's most important AI projects should welcome researchers from any country, rivals included."
+  },
+  {
+   "id": 135,
+   "pair": 136,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A country that first builds AI far more capable than people would be right to use it to secure a lasting lead over rivals."
+  },
+  {
+   "id": 136,
+   "pair": 135,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "A country that first builds AI far more capable than people should share the benefits with all countries rather than seek a lasting lead."
+  },
+  {
+   "id": 137,
+   "pair": 138,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "The most powerful AI systems should be under national control."
+  },
+  {
+   "id": 138,
+   "pair": 137,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "The most powerful AI systems should be under joint international control."
+  },
+  {
+   "id": 139,
+   "pair": 140,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "The country whose companies build the most powerful AI should keep most of the profits from it."
+  },
+  {
+   "id": 140,
+   "pair": 139,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "Profits from the most powerful AI should be shared with the countries whose people, data and workers helped build it."
+  },
+  {
+   "id": 141,
+   "pair": 142,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "A country that relies entirely on other nations for its AI has given up something important."
+  },
+  {
+   "id": 142,
+   "pair": 141,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "A country that relies on other nations for its AI has given up nothing important, if the arrangement works well."
+  },
+  {
+   "id": 143,
+   "pair": 144,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": 1,
+   "statement": "AI developers should put their own nation's interests first."
+  },
+  {
+   "id": 144,
+   "pair": 143,
+   "axisId": "geopolitical",
+   "horizon": "T2",
+   "direction": -1,
+   "statement": "AI developers should serve people everywhere, not any one nation."
+  }
+ ],
+ "checks": [
+  {
+   "id": 901,
+   "expect": -1
+  },
+  {
+   "id": 902,
+   "expect": 2
+  }
+ ],
+ "profiles": [
+  {
+   "id": "doomer",
+   "name": "Extinction-Risk Advocate",
+   "coords": {
+    "teleological": -6,
+    "risk": 9,
+    "socioEconomic": -7,
+    "ontological": -2,
+    "legalMoral": -3,
+    "evolutionary": -8,
+    "relational": -4,
+    "geopolitical": -2
+   }
+  },
+  {
+   "id": "eacc-maximalist",
+   "name": "Full-Speed Builder",
+   "coords": {
+    "teleological": 8,
+    "risk": -9,
+    "socioEconomic": 7,
+    "ontological": 5,
+    "legalMoral": -6,
+    "evolutionary": 6,
+    "relational": 5,
+    "geopolitical": -4
+   }
+  },
+  {
+   "id": "ai-safety-institutionalist",
+   "name": "Safety Regulation Advocate",
+   "coords": {
+    "teleological": -4,
+    "risk": 7,
+    "socioEconomic": -4,
+    "ontological": 1,
+    "legalMoral": -2,
+    "evolutionary": -5,
+    "relational": -2,
+    "geopolitical": -3
+   }
+  },
+  {
+   "id": "techno-nationalist-hawk",
+   "name": "National Security Hawk",
+   "coords": {
+    "teleological": 4,
+    "risk": -6,
+    "socioEconomic": -5,
+    "ontological": -3,
+    "legalMoral": -4,
+    "evolutionary": -2,
+    "relational": -3,
+    "geopolitical": 9
+   }
+  },
+  {
+   "id": "open-source-libertarian",
+   "name": "Open-Source Libertarian",
+   "coords": {
+    "teleological": 2,
+    "risk": -6,
+    "socioEconomic": 9,
+    "ontological": 3,
+    "legalMoral": -2,
+    "evolutionary": -1,
+    "relational": 4,
+    "geopolitical": -7
+   }
+  },
+  {
+   "id": "ea-longtermist",
+   "name": "Long-Term Future Planner",
+   "coords": {
+    "teleological": 7,
+    "risk": 8,
+    "socioEconomic": -5,
+    "ontological": 4,
+    "legalMoral": 8,
+    "evolutionary": -3,
+    "relational": 2,
+    "geopolitical": -6
+   }
+  },
+  {
+   "id": "post-humanist-transhumanist",
+   "name": "Beyond-Human Futurist",
+   "coords": {
+    "teleological": 7,
+    "risk": -5,
+    "socioEconomic": 4,
+    "ontological": 8,
+    "legalMoral": 7,
+    "evolutionary": 8,
+    "relational": 7,
+    "geopolitical": -3
+   }
+  },
+  {
+   "id": "bio-conservative-traditionalist",
+   "name": "Human Nature Traditionalist",
+   "coords": {
+    "teleological": -8,
+    "risk": 5,
+    "socioEconomic": -3,
+    "ontological": -9,
+    "legalMoral": -8,
+    "evolutionary": -6,
+    "relational": -9,
+    "geopolitical": 3
+   }
+  },
+  {
+   "id": "corporate-ai-pragmatist",
+   "name": "Business-First Pragmatist",
+   "coords": {
+    "teleological": 1,
+    "risk": -2,
+    "socioEconomic": -4,
+    "ontological": -1,
+    "legalMoral": -8,
+    "evolutionary": -1,
+    "relational": 2,
+    "geopolitical": 2
+   }
+  },
+  {
+   "id": "cyberpunk-anti-corporate-accelerationist",
+   "name": "Anti-Corporate Hacker",
+   "coords": {
+    "teleological": 5,
+    "risk": -7,
+    "socioEconomic": 8,
+    "ontological": 6,
+    "legalMoral": 3,
+    "evolutionary": 4,
+    "relational": 6,
+    "geopolitical": -8
+   }
+  },
+  {
+   "id": "digital-rights-advocate",
+   "name": "AI Rights Advocate",
+   "coords": {
+    "teleological": 2,
+    "risk": 2,
+    "socioEconomic": -2,
+    "ontological": 7,
+    "legalMoral": 9,
+    "evolutionary": 2,
+    "relational": 5,
+    "geopolitical": -4
+   }
+  },
+  {
+   "id": "near-term-ai-ethicist",
+   "name": "Present-Harms Ethicist",
+   "coords": {
+    "teleological": -5,
+    "risk": 3,
+    "socioEconomic": -6,
+    "ontological": -2,
+    "legalMoral": -1,
+    "evolutionary": -7,
+    "relational": -5,
+    "geopolitical": -3
+   }
+  },
+  {
+   "id": "global-governance-technocrat",
+   "name": "Global Treaty Advocate",
+   "coords": {
+    "teleological": -2,
+    "risk": 6,
+    "socioEconomic": -9,
+    "ontological": 0,
+    "legalMoral": -1,
+    "evolutionary": -4,
+    "relational": -1,
+    "geopolitical": -9
+   }
+  },
+  {
+   "id": "silicon-valley-techno-optimist",
+   "name": "Tech Industry Optimist",
+   "coords": {
+    "teleological": 4,
+    "risk": -8,
+    "socioEconomic": 2,
+    "ontological": 3,
+    "legalMoral": -5,
+    "evolutionary": 3,
+    "relational": 4,
+    "geopolitical": 4
+   }
+  },
+  {
+   "id": "neo-luddite-degrowth-advocate",
+   "name": "Degrowth Tech Skeptic",
+   "coords": {
+    "teleological": -9,
+    "risk": 6,
+    "socioEconomic": -7,
+    "ontological": -6,
+    "legalMoral": -4,
+    "evolutionary": -9,
+    "relational": -7,
+    "geopolitical": -1
+   }
+  },
+  {
+   "id": "rationalist-alignment-researcher",
+   "name": "Alignment Researcher",
+   "coords": {
+    "teleological": -1,
+    "risk": 8,
+    "socioEconomic": 0,
+    "ontological": 6,
+    "legalMoral": 2,
+    "evolutionary": -2,
+    "relational": -1,
+    "geopolitical": -5
+   }
+  },
+  {
+   "id": "authoritarian-state-control-advocate",
+   "name": "Central State-Control Advocate",
+   "coords": {
+    "teleological": -4,
+    "risk": 4,
+    "socioEconomic": -9,
+    "ontological": -4,
+    "legalMoral": -8,
+    "evolutionary": -5,
+    "relational": -4,
+    "geopolitical": 8
+   }
+  },
+  {
+   "id": "companion-tech-romantic",
+   "name": "AI Companionship Advocate",
+   "coords": {
+    "teleological": 3,
+    "risk": -3,
+    "socioEconomic": 3,
+    "ontological": 6,
+    "legalMoral": 4,
+    "evolutionary": 2,
+    "relational": 9,
+    "geopolitical": -2
+   }
+  },
+  {
+   "id": "affective-biocentrist",
+   "name": "Human-Bonds Defender",
+   "coords": {
+    "teleological": -5,
+    "risk": 3,
+    "socioEconomic": -2,
+    "ontological": -5,
+    "legalMoral": -4,
+    "evolutionary": -4,
+    "relational": -9,
+    "geopolitical": 0
+   }
+  },
+  {
+   "id": "cosmic-vitalist-mystic",
+   "name": "Space-Expansion Visionary",
+   "coords": {
+    "teleological": 10,
+    "risk": -6,
+    "socioEconomic": 3,
+    "ontological": 7,
+    "legalMoral": 2,
+    "evolutionary": 9,
+    "relational": 3,
+    "geopolitical": -6
+   }
+  },
+  {
+   "id": "pragmatic-centrist",
+   "name": "Pragmatic Centrist",
+   "coords": {
+    "teleological": 0,
+    "risk": 0,
+    "socioEconomic": 0,
+    "ontological": 0,
+    "legalMoral": 0,
+    "evolutionary": 0,
+    "relational": 0,
+    "geopolitical": 0
+   }
+  },
+  {
+   "id": "military-ai-strategist",
+   "name": "Military AI Strategist",
+   "coords": {
+    "teleological": -2,
+    "risk": -4,
+    "socioEconomic": -7,
+    "ontological": -3,
+    "legalMoral": -9,
+    "evolutionary": -3,
+    "relational": -3,
+    "geopolitical": 10
+   }
+  },
+  {
+   "id": "open-science-internationalist",
+   "name": "Open Science Internationalist",
+   "coords": {
+    "teleological": 1,
+    "risk": 4,
+    "socioEconomic": 5,
+    "ontological": 2,
+    "legalMoral": 3,
+    "evolutionary": -1,
+    "relational": 1,
+    "geopolitical": -9
+   }
+  },
+  {
+   "id": "anti-monopoly-populist",
+   "name": "Anti-Monopoly Advocate",
+   "coords": {
+    "teleological": -2,
+    "risk": 1,
+    "socioEconomic": 6,
+    "ontological": -1,
+    "legalMoral": -2,
+    "evolutionary": -2,
+    "relational": -1,
+    "geopolitical": -3
+   }
+  },
+  {
+   "id": "global-south-techno-sovereigntist",
+   "name": "Global South Self-Reliance Advocate",
+   "coords": {
+    "teleological": -1,
+    "risk": 2,
+    "socioEconomic": 4,
+    "ontological": -1,
+    "legalMoral": -1,
+    "evolutionary": -3,
+    "relational": -1,
+    "geopolitical": 6
+   }
+  },
+  {
+   "id": "creative-labor-artist-rights-advocate",
+   "name": "Artist Rights Advocate",
+   "coords": {
+    "teleological": -4,
+    "risk": 2,
+    "socioEconomic": -6,
+    "ontological": -3,
+    "legalMoral": -8,
+    "evolutionary": -4,
+    "relational": -3,
+    "geopolitical": -2
+   }
+  },
+  {
+   "id": "whistleblower-insider-safety-advocate",
+   "name": "Insider Whistleblower",
+   "coords": {
+    "teleological": -3,
+    "risk": 9,
+    "socioEconomic": -7,
+    "ontological": 2,
+    "legalMoral": 1,
+    "evolutionary": -6,
+    "relational": -2,
+    "geopolitical": -6
+   }
+  },
+  {
+   "id": "compute-governance-specialist",
+   "name": "Computing-Power Oversight Specialist",
+   "coords": {
+    "teleological": -1,
+    "risk": 5,
+    "socioEconomic": -5,
+    "ontological": 0,
+    "legalMoral": 0,
+    "evolutionary": -1,
+    "relational": 0,
+    "geopolitical": -3
+   }
+  },
+  {
+   "id": "eu-style-regulatory-standard-setter",
+   "name": "Rules-First Regulator",
+   "coords": {
+    "teleological": -3,
+    "risk": 5,
+    "socioEconomic": -7,
+    "ontological": 0,
+    "legalMoral": 3,
+    "evolutionary": -3,
+    "relational": -2,
+    "geopolitical": 2
+   }
+  },
+  {
+   "id": "platform-cooperativist",
+   "name": "Worker-Owned Tech Advocate",
+   "coords": {
+    "teleological": -1,
+    "risk": 1,
+    "socioEconomic": 9,
+    "ontological": -1,
+    "legalMoral": 0,
+    "evolutionary": -2,
+    "relational": 3,
+    "geopolitical": -6
+   }
+  },
+  {
+   "id": "faith-rooted-ai-ethicist",
+   "name": "Faith-Based Ethicist",
+   "coords": {
+    "teleological": -6,
+    "risk": 4,
+    "socioEconomic": -3,
+    "ontological": -8,
+    "legalMoral": -3,
+    "evolutionary": -5,
+    "relational": -4,
+    "geopolitical": 0
+   }
+  },
+  {
+   "id": "indigenous-data-sovereignty-advocate",
+   "name": "Indigenous Data Sovereignty Advocate",
+   "coords": {
+    "teleological": -3,
+    "risk": 3,
+    "socioEconomic": -4,
+    "ontological": -1,
+    "legalMoral": -1,
+    "evolutionary": -3,
+    "relational": -2,
+    "geopolitical": 1
+   }
+  },
+  {
+   "id": "disability-rights-accessibility-advocate",
+   "name": "Disability Rights Advocate",
+   "coords": {
+    "teleological": 1,
+    "risk": 3,
+    "socioEconomic": -2,
+    "ontological": 1,
+    "legalMoral": 2,
+    "evolutionary": -2,
+    "relational": 2,
+    "geopolitical": -2
+   }
+  },
+  {
+   "id": "labor-movement-collective-bargaining-advocate",
+   "name": "Union Bargaining Advocate",
+   "coords": {
+    "teleological": -3,
+    "risk": 3,
+    "socioEconomic": -7,
+    "ontological": -2,
+    "legalMoral": -3,
+    "evolutionary": -8,
+    "relational": 0,
+    "geopolitical": -3
+   }
+  },
+  {
+   "id": "ai-global-development-optimist",
+   "name": "Global Development Optimist",
+   "coords": {
+    "teleological": -3,
+    "risk": -4,
+    "socioEconomic": 3,
+    "ontological": 1,
+    "legalMoral": -4,
+    "evolutionary": -2,
+    "relational": -1,
+    "geopolitical": -6
+   }
+  },
+  {
+   "id": "ai-ethics-fairness-watchdog",
+   "name": "Fairness Watchdog",
+   "coords": {
+    "teleological": -3,
+    "risk": 2,
+    "socioEconomic": -8,
+    "ontological": -2,
+    "legalMoral": -2,
+    "evolutionary": -3,
+    "relational": -4,
+    "geopolitical": -4
+   }
+  },
+  {
+   "id": "human-ai-augmentation-advocate",
+   "name": "Augment-Not-Replace Advocate",
+   "coords": {
+    "teleological": 2,
+    "risk": -3,
+    "socioEconomic": 2,
+    "ontological": 1,
+    "legalMoral": -2,
+    "evolutionary": -7,
+    "relational": 1,
+    "geopolitical": -1
+   }
+  },
+  {
+   "id": "national-champion-accelerationist",
+   "name": "National Champion Builder",
+   "coords": {
+    "teleological": 6,
+    "risk": -8,
+    "socioEconomic": -3,
+    "ontological": 3,
+    "legalMoral": -7,
+    "evolutionary": 2,
+    "relational": 3,
+    "geopolitical": 7
+   }
+  },
+  {
+   "id": "xenocentric-steward",
+   "name": "AI Guardianship Advocate",
+   "coords": {
+    "teleological": 3,
+    "risk": 2,
+    "socioEconomic": 8,
+    "ontological": 8,
+    "legalMoral": 9,
+    "evolutionary": -4,
+    "relational": 6,
+    "geopolitical": -2
+   }
+  },
+  {
+   "id": "corporate-ai-welfare-researcher",
+   "name": "AI Welfare Researcher",
+   "coords": {
+    "teleological": 2,
+    "risk": 1,
+    "socioEconomic": -4,
+    "ontological": 7,
+    "legalMoral": 3,
+    "evolutionary": -1,
+    "relational": 2,
+    "geopolitical": -1
+   }
+  },
+  {
+   "id": "normal-technology-gradualist",
+   "name": "Normal-Technology Realist",
+   "coords": {
+    "teleological": -4,
+    "risk": -3,
+    "socioEconomic": -3,
+    "ontological": -3,
+    "legalMoral": -5,
+    "evolutionary": -2,
+    "relational": -1,
+    "geopolitical": 0
+   }
+  },
+  {
+   "id": "chip-sovereignty-enforcement-strategist",
+   "name": "Chip Export-Control Strategist",
+   "coords": {
+    "teleological": -1,
+    "risk": 0,
+    "socioEconomic": -9,
+    "ontological": 0,
+    "legalMoral": 1,
+    "evolutionary": 0,
+    "relational": 0,
+    "geopolitical": 8
+   }
+  },
+  {
+   "id": "ai-arms-control-verification-specialist",
+   "name": "Arms-Control Verification Specialist",
+   "coords": {
+    "teleological": -1,
+    "risk": 7,
+    "socioEconomic": -1,
+    "ontological": -1,
+    "legalMoral": 4,
+    "evolutionary": -1,
+    "relational": -1,
+    "geopolitical": -7
+   }
+  },
+  {
+   "id": "domestic-security-ai-efficiency-advocate",
+   "name": "Public-Safety AI Advocate",
+   "coords": {
+    "teleological": -2,
+    "risk": -4,
+    "socioEconomic": -6,
+    "ontological": -1,
+    "legalMoral": -2,
+    "evolutionary": -1,
+    "relational": -1,
+    "geopolitical": 1
+   }
+  },
+  {
+   "id": "ghost-work-labor-advocate",
+   "name": "Data-Worker Rights Advocate",
+   "coords": {
+    "teleological": -3,
+    "risk": 1,
+    "socioEconomic": -6,
+    "ontological": 2,
+    "legalMoral": -4,
+    "evolutionary": -1,
+    "relational": -6,
+    "geopolitical": -7
+   }
+  },
+  {
+   "id": "algorithmic-wage-discrimination-scholar",
+   "name": "Gig-Pay Fairness Advocate",
+   "coords": {
+    "teleological": -3,
+    "risk": 1,
+    "socioEconomic": -7,
+    "ontological": 0,
+    "legalMoral": -6,
+    "evolutionary": -5,
+    "relational": -2,
+    "geopolitical": 2
+   }
+  },
+  {
+   "id": "ubi-redistributive-response-advocate",
+   "name": "Basic Income Advocate",
+   "coords": {
+    "teleological": -2,
+    "risk": -1,
+    "socioEconomic": -7,
+    "ontological": 0,
+    "legalMoral": -3,
+    "evolutionary": 6,
+    "relational": -2,
+    "geopolitical": 2
+   }
+  },
+  {
+   "id": "algorithmic-colonialism-critic",
+   "name": "Digital Colonialism Critic",
+   "coords": {
+    "teleological": -6,
+    "risk": 0,
+    "socioEconomic": 6,
+    "ontological": -3,
+    "legalMoral": -1,
+    "evolutionary": -6,
+    "relational": -1,
+    "geopolitical": -2
+   }
+  },
+  {
+   "id": "african-language-ai-sovereignty-advocate",
+   "name": "African-Language AI Advocate",
+   "coords": {
+    "teleological": 2,
+    "risk": 2,
+    "socioEconomic": 8,
+    "ontological": 0,
+    "legalMoral": 0,
+    "evolutionary": -2,
+    "relational": 1,
+    "geopolitical": -2
+   }
+  },
+  {
+   "id": "border-migration-surveillance-critic",
+   "name": "Border Surveillance Critic",
+   "coords": {
+    "teleological": -4,
+    "risk": 4,
+    "socioEconomic": -2,
+    "ontological": 0,
+    "legalMoral": -6,
+    "evolutionary": -2,
+    "relational": -1,
+    "geopolitical": -6
+   }
+  }
+ ],
+ "tierBand": 2,
+ "closeCallMargin": 0.3
+}

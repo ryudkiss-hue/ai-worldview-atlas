@@ -12,6 +12,9 @@ import {
   itemCounts,
   tierOf,
   CLOSE_CALL_MARGIN,
+  CLOSE_CALL_MARGIN_SHORT,
+  EQUAL_WEIGHTS,
+  isEqualWeights,
   type ProfileMatch,
 } from './scoring'
 
@@ -100,6 +103,28 @@ describe('classify', () => {
     expect(ranked.map((m) => m.profile.id)).toEqual(['near', 'far'])
     expect(ranked[0].distance).toBe(1)
   })
+
+  it('gives the ordinary distance when every axis is weighted equally', () => {
+    const you = { ...zeroVector, teleological: 3, risk: -4 }
+    const plain = classify(you, profiles)
+    const equal = classify(you, profiles, EQUAL_WEIGHTS)
+    equal.forEach((m, i) => expect(m.distance).toBeCloseTo(plain[i].distance, 10))
+    expect(isEqualWeights(EQUAL_WEIGHTS)).toBe(true)
+    expect(isEqualWeights(undefined)).toBe(true)
+  })
+
+  it('lets a heavier axis change which archetype ranks first', () => {
+    const two: Profile[] = [
+      { id: 'tele', name: 'Tele', summary: '', coords: { ...zeroVector, teleological: 6 } },
+      { id: 'risk', name: 'Risk', summary: '', coords: { ...zeroVector, risk: 5 } },
+    ]
+    // You: teleological 6, risk 5 away from each. Unweighted, 'tele' is 5 away and 'risk' is 6 away.
+    const you = { ...zeroVector, teleological: 6, risk: 5 }
+    expect(classify(you, two)[0].profile.id).toBe('tele')
+    const riskMatters = { ...EQUAL_WEIGHTS, risk: 2, teleological: 0.5 }
+    expect(isEqualWeights(riskMatters)).toBe(false)
+    expect(classify(you, two, riskMatters)[0].profile.id).toBe('risk')
+  })
 })
 
 describe('axesInAgreement', () => {
@@ -123,5 +148,11 @@ describe('isCloseCall', () => {
     expect(isCloseCall([matchAt(10)])).toBe(false)
     expect(isCloseCall([matchAt(10), matchAt(10 + CLOSE_CALL_MARGIN / 2)])).toBe(true)
     expect(isCloseCall([matchAt(5), matchAt(20)])).toBe(false)
+  })
+
+  it('takes a margin for the short version', () => {
+    expect(CLOSE_CALL_MARGIN_SHORT).toBe(0.3)
+    expect(isCloseCall([matchAt(10), matchAt(10.5)], 1)).toBe(true)
+    expect(isCloseCall([matchAt(10), matchAt(10.5)], 0.3)).toBe(false)
   })
 })
