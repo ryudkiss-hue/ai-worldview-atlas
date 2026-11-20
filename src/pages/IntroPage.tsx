@@ -57,15 +57,16 @@ export function IntroPage() {
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
                   type="checkbox"
-                  aria-label={tag.name}
+                  aria-labelledby={`tag-${tag.id}-name`}
+                  aria-describedby={`tag-${tag.id}-desc`}
                   checked={selectedStakeholderTags.includes(tag.id)}
                   onChange={() => toggleTag(tag.id)}
                   className="mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer"
                 />
                 <span>
-                  <span className="font-semibold text-gray-800">{tag.name}</span>
-                  <span className="text-gray-400 mx-2">·</span>
-                  <span className="text-gray-600 text-sm">{tag.description}</span>
+                  <span id={`tag-${tag.id}-name`} className="font-semibold text-gray-800">{tag.name}</span>
+                  <span aria-hidden="true" className="text-gray-400 mx-2">·</span>
+                  <span id={`tag-${tag.id}-desc`} className="text-gray-600 text-sm">{tag.description}</span>
                 </span>
               </label>
             </li>

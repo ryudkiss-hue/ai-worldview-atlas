@@ -77,9 +77,9 @@ export function PaperScoresPage() {
             <tr>
               <th className="border-b py-2">Axis</th>
               <th className="border-b py-2">Near-term net</th>
-              <th className="border-b py-2">Near-term &mdash;</th>
+              <th className="border-b py-2"><span aria-hidden="true">Near-term &mdash;</span><span className="sr-only">Near-term statements left as no settled view</span></th>
               <th className="border-b py-2">Long-run net</th>
-              <th className="border-b py-2">Long-run &mdash;</th>
+              <th className="border-b py-2"><span aria-hidden="true">Long-run &mdash;</span><span className="sr-only">Long-run statements left as no settled view</span></th>
             </tr>
           </thead>
           <tbody>

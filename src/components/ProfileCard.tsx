@@ -3,6 +3,7 @@ import { useQuiz } from '../state/QuizContext'
 import { axes } from '../data/axes'
 import { biggestGaps } from '../lib/axisPositions'
 import { archetypeClusters } from '../data/archetypeClusters'
+import { salienceTable } from '../data/archetypeSalience'
 
 interface ProfileCardProps {
   match: ProfileMatch
@@ -21,6 +22,11 @@ export function ProfileCard({ match, rank, agreement, combined }: ProfileCardPro
   const averageGap = match.distance / Math.sqrt(axes.length)
   const gaps = combined ? biggestGaps(combined, match.profile.coords, 2, 1) : []
   const group = archetypeClusters.find((c) => c.profileIds.includes(match.profile.id))
+  const salience = salienceTable[match.profile.id]
+  const names = (ids?: string[]) => (ids ?? []).map((id) => axes.find((a) => a.id === id)!.name)
+  const listed = (xs: string[]) => (xs.length < 3 ? xs.join(' and ') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`)
+  const doubled = names(salience?.defining)
+  const lighter = [...names(salience?.less), ...names(salience?.outside)]
 
   return (
     <div className="rounded-lg border border-gray-200 p-4 mb-3">
@@ -48,6 +54,12 @@ export function ProfileCard({ match, rank, agreement, combined }: ProfileCardPro
             })
             .join(' and ')}
           .
+        </p>
+      )}
+      {(doubled.length > 0 || lighter.length > 0) && (
+        <p className="text-sm text-gray-600 mt-2">
+          {doubled.length > 0 && <>In this match, {listed(doubled)} {doubled.length === 1 ? 'counts' : 'count'} double, because {doubled.length === 1 ? 'it defines' : 'they define'} this archetype. </>}
+          {lighter.length > 0 && <>{listed(lighter)} {lighter.length === 1 ? 'counts' : 'count'} for less, because {lighter.length === 1 ? 'it matters' : 'they matter'} less to this archetype.</>}
         </p>
       )}
       <p className="text-sm text-gray-500 mt-2">{t('distance') || 'Distance'}: {match.distance.toFixed(2)}</p>

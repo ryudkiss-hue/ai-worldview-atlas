@@ -31,11 +31,12 @@ export function AxisHorizonGroup({
           return (
             <li key={question.id}>
               <div className="flex items-start justify-between gap-4 mb-2">
-                <p className="flex-1 text-gray-800 leading-relaxed">{textToRead}</p>
+                <p id={`statement-${question.id}`} className="flex-1 text-gray-800 leading-relaxed">{textToRead}</p>
                 <AudioPlayerButton text={textToRead} />
               </div>
               <LikertInput
                 questionId={question.id}
+                labelledBy={`statement-${question.id}`}
                 value={answers[question.id]}
                 declined={declinedQuestions.includes(question.id)}
                 onChange={(value) => onAnswer(question.id, value)}

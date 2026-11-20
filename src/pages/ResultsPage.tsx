@@ -465,6 +465,12 @@ export function ResultsPage() {
         <button type="button" onClick={handleRetake} className="px-4 py-2 rounded border border-gray-300">
           {t('retake') || 'Retake'}
         </button>
+        <Link
+          to={`/compare?a=${encodeURIComponent(encodeShareLink({ t1Raw, t2Raw, t1N, t2N, mode: resultMode, weights }))}`}
+          className="px-4 py-2 rounded border border-gray-300"
+        >
+          Compare with someone
+        </Link>
       </div>
 
       <h3 className="text-xl font-semibold mt-8 mb-2">{t('axis_comparison') || 'Near-Term vs. Long-Term, by Axis'}</h3>

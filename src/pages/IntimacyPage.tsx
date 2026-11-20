@@ -105,9 +105,10 @@ export function IntimacyPage() {
           const declined = value === INTIMACY_DECLINED
           return (
             <li key={q.id}>
-              <p className="text-gray-800 leading-relaxed mb-2">{q.statement}</p>
+              <p id={`statement-${q.id}`} className="text-gray-800 leading-relaxed mb-2">{q.statement}</p>
               <LikertInput
                 questionId={q.id}
+                labelledBy={`statement-${q.id}`}
                 value={declined ? undefined : value}
                 declined={declined}
                 onChange={(v) => setIntimacyAnswer(q.id, v)}

@@ -10,6 +10,7 @@ const ScenarioPage = lazy(() => import('./pages/ScenarioPage').then((m) => ({ de
 const ResultsPage = lazy(() => import('./pages/ResultsPage').then((m) => ({ default: m.ResultsPage })))
 const ThoughtExperimentsPage = lazy(() => import('./pages/ThoughtExperimentsPage').then((m) => ({ default: m.ThoughtExperimentsPage })))
 const PaperScoresPage = lazy(() => import('./pages/PaperScoresPage').then((m) => ({ default: m.PaperScoresPage })))
+const ComparePage = lazy(() => import('./pages/ComparePage').then((m) => ({ default: m.ComparePage })))
 const IntimacyPage = lazy(() => import('./pages/IntimacyPage').then((m) => ({ default: m.IntimacyPage })))
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/thought-experiments" element={<ThoughtExperimentsPage />} />
           <Route path="/paper" element={<PaperScoresPage />} />
           <Route path="/intimacy" element={<IntimacyPage />} />
+          <Route path="/compare" element={<ComparePage />} />
           {/* The Synthetic Compass and the old research flow are now part of the main assessment. */}
           <Route path="/compass/*" element={<Navigate to="/" replace />} />
           <Route path="/assessment" element={<Navigate to="/" replace />} />

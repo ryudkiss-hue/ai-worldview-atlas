@@ -32,7 +32,7 @@ The Atlas is read by people who don't follow AI debates for a living. Earlier ve
 ## 5. Reports and longer prose
 
 - Same rules, plus the project's writing checklist: plain is/are/has sentences, no grand claims about significance, no "not X, but Y" flips, no inflated register.
-- The Summary Report describes a viewpoint in the second person ("you") as a set of reasons a real person could hold, including its strongest objections, and opens with a note that the reader's own reasons may differ. The longer "Case for This View" is reported in the third person (see section 6).
+- The Summary Report and "The Case for This View" both describe a viewpoint in the third person ("supporters think"), as the people who hold it see it, including its strongest objections. The report opens with a note that the reader's own reasons may differ.
 
 ## 6. Footing, quantity and rhythm
 
