@@ -49,8 +49,8 @@ const baseReports: Record<string, BaseReport> = {
       { name: 'Dario Amodei', bio: 'CEO of Anthropic', connection: 'His public writing on AI safety argues that responsible leading AI companies, operating under real accountability structures, are the most realistic path to safe AI development.' },
       { name: 'Helen Toner', bio: 'AI governance researcher, Georgetown Center for Security and Emerging Technology', connection: 'Her published policy work focuses on building workable oversight structures for development of the most advanced AI, a path between a ban and unregulated speed.' },
       { name: 'Yoshua Bengio', bio: 'Turing Award-winning AI researcher, professor at University of Montreal', connection: 'His 2023 U.S. Senate testimony called for internationally coordinated safety oversight backed by public funding, argued from the top of the field\'s own technical authority and stopping short of a halt.' },
-      { name: 'Karen E. Silverman', bio: 'Founder and CEO, The Cantellus Group', connection: 'She led the partnership between Latham & Watkins and the World Economic Forum that produced "Empowering AI Leadership: An Oversight Toolkit for Boards of Directors": a real, named governance artifact built for the exact institutional mechanism this stance trusts: internal audit and oversight bodies checking a company\'s own AI development.' },
-      { name: 'Joshua Achiam', bio: 'Former Head of Mission Alignment and Chief Futurist, OpenAI (departed July 2026)', connection: 'He argued AI safety should follow "safety best practices... common in other professional engineering fields" over special frameworks for human-level AI, while taking extinction risk seriously enough to call the vulnerable-world hypothesis plausible: caution grounded in institutions and engineering norms. On leaving OpenAI, he said the mission now feels workable "from outside the walls of a leading AI company," not that the institution had failed.' },
+      { name: "Karen E. Silverman", bio: "Founder and CEO, The Cantellus Group", connection: "As a partner at Latham & Watkins, she worked on the firm's partnership with the World Economic Forum that produced \"Empowering AI Leadership: An Oversight Toolkit for Boards of Directors,\" a governance tool built for the mechanism this stance trusts: internal audit and oversight bodies checking a company's own AI development." },
+      { name: "Joshua Achiam", bio: "Former Head of Mission Alignment and Chief Futurist, OpenAI (departed July 2026)", connection: "He led OpenAI's Mission Alignment team, set up to keep the company tied to its founding commitments. When he left in 2026 he wrote that no single event drove the decision and that the mission now feels possible to pursue from \"outside the walls of a frontier lab\": caution grounded in institutions, without a verdict that they had failed." },
     ],
     furtherReading: [
       { title: 'The Alignment Problem', author: 'Brian Christian', note: 'A survey of the technical and institutional challenges of building AI systems that do what people actually want.' },
@@ -176,7 +176,7 @@ const baseReports: Record<string, BaseReport> = {
     thinkers: [
       { name: 'Timnit Gebru', bio: 'Computer scientist, founder of the Distributed AI Research Institute', connection: 'Her published research on algorithmic bias and the real-world harms of large AI systems has shaped how near-term AI ethics is studied and discussed.' },
       { name: 'Joy Buolamwini', bio: 'Computer scientist, founder of the Algorithmic Justice League', connection: "Her research documented racial and gender bias in commercial AI systems, grounding this stance's focus on measurable, present-day harm." },
-      { name: 'Hank Green', bio: 'Science educator and video essayist, Complexly/Crash Course', connection: 'His public video essay cataloguing AI-related harms (misinformation ("internet of slop"), opaque algorithmic decisions, and IP theft) frames AI around present-day, measurable harms for a broad public audience.' },
+      { name: "Hank Green", bio: "Science educator and video essayist, Complexly/Crash Course", connection: "His videos on AI have focused on present-day, measurable harms, from misinformation to the flood of low-quality AI-generated content, framed for a broad public audience." },
     ],
     furtherReading: [
       { title: 'Weapons of Math Destruction', author: "Cathy O'Neil", note: 'A detailed account of the real, documented harm deployed algorithms cause today.' },
@@ -240,7 +240,7 @@ const baseReports: Record<string, BaseReport> = {
       { name: 'Daniel Ellsberg', bio: 'Analyst who leaked the Pentagon Papers', connection: "His historical example of insider whistleblowing on a matter of grave public concern is the closest precedent for this stance's moral posture, though the subject matter differs entirely." },
     ],
     furtherReading: [
-      { title: 'Public resignation letters and interviews from departed AI safety researchers', author: 'various', note: "Primary-source material for understanding this stance's specific, insider-informed concerns." },
+      { title: "ChatGPT can talk, but OpenAI employees sure can't", author: 'Kelsey Piper (Vox, May 2024)', note: 'Reporting on why researchers leaving OpenAI said so little in public, including exit agreements that put their vested equity at risk.' },
       { title: 'Secrets: A Memoir of Vietnam and the Pentagon Papers', author: 'Daniel Ellsberg', note: 'Background on the moral logic of insider whistleblowing on high-stakes institutional decisions.' },
     ],
     nextSteps: [
@@ -354,7 +354,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "Freedom to fork and study cuts both ways. The same openness that empowers a lone researcher also empowers whoever wants to strip out safety guardrails, and once a model's files are out, that's very hard to walk back.",
     thinkers: [
-      { name: 'Yann LeCun', bio: 'Chief AI Scientist at Meta, Turing Award winner', connection: 'He has argued publicly and repeatedly that open-weight AI models are safer and more accountable than closed ones controlled by a handful of companies.' },
+      { name: "Yann LeCun", bio: "Turing Award winner; former chief AI scientist at Meta, who left in 2025 to start an AI research company", connection: "He has argued publicly and repeatedly that open-weight AI models are safer and more accountable than closed ones controlled by a handful of companies." },
       { name: 'EleutherAI founders', bio: 'Volunteer collective behind open-source language model research', connection: 'Their project builds and releases openly-licensed models specifically to keep capable AI out of the hands of a small number of gatekeepers.' },
     ],
     furtherReading: [
@@ -417,7 +417,7 @@ const baseReports: Record<string, BaseReport> = {
     thinkers: [
       { name: 'Marc Andreessen', bio: 'Venture capitalist, co-founder of Andreessen Horowitz', connection: 'His public writing frames rapid commercial AI deployment as the primary driver of broad economic benefit.' },
       { name: 'Reid Hoffman', bio: 'Entrepreneur, co-founder of LinkedIn, AI investor', connection: 'His public commentary consistently frames continued fast deployment of AI products as the path to widespread benefit, more than a risk to be slowed.' },
-      { name: 'Steven Pinker', bio: 'Cognitive scientist, Harvard University', connection: 'His public writing dismisses AI existential-risk arguments as "magical thinking," arguing that engineering safety culture makes runaway AI implausible: a different, more academic route to the same unbothered-by-catastrophic-framing conclusion.' },
+      { name: "Steven Pinker", bio: "Cognitive scientist, Harvard University", connection: "His public writing argues that fears of runaway AI are overblown and that engineers will build in safeguards, as they have for other technologies: a different, more academic route to the same unbothered conclusion." },
     ],
     furtherReading: [
       { title: 'The Techno-Optimist Manifesto', author: 'Marc Andreessen', note: "The clearest public statement of this stance's core belief in fast, market-driven technology deployment." },
@@ -446,15 +446,15 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "Trusting a firm to self-police assumes its incentives already point toward safety, but a company racing for market share has every reason to under-report its own risk: the same reason self-policing gets tested by outsiders in almost every other regulated industry.",
     thinkers: [
-      { name: 'Daphne Koller', bio: 'Founder and CEO of insitro, co-founder of Coursera', connection: 'Her public interviews about running an AI-driven drug discovery company are grounded and unhyped (noting the hype "sometimes exceeds even the incredible contribution" AI has made) a practical, business-first read on the technology\'s real value.' },
-      { name: 'Jeff Dean', bio: 'Chief Scientist, Google DeepMind', connection: 'He has publicly positioned himself in the middle of AI-risk debate, rejecting both the view that systems will be overwhelmingly superior to humans and the view that there is nothing to worry about: a working engineer\'s pragmatic middle ground.' },
-      { name: 'Mira Murati', bio: 'Former Chief Technology Officer, OpenAI', connection: 'Her public statements call safety core to product development and describe AI as a tool to "augment human capabilities," treating safety and shipping as compatible business priorities.' },
-      { name: 'Demis Hassabis', bio: 'CEO, Google DeepMind; 2024 Nobel laureate in Chemistry', connection: 'DeepMind\'s 2014 acquisition deal included an independent Ethics Board with authority over any human-level AI; a decade later that unit has been folded into Google\'s commercial AI race. He has said a slower pace "would be better for the world" but calls unilateral restraint "indistinguishable from losing" given competitive pressure: real safety language, concluded into shipping anyway, exactly this stance\'s working pattern.' },
+      { name: "Daphne Koller", bio: "Founder and CEO of insitro, co-founder of Coursera", connection: "Her interviews about running an AI-driven drug discovery company are grounded and unhyped, warning that hype about AI in biology can run ahead of what it has delivered: a practical, business-first read on the technology's real value." },
+      { name: "Jeff Dean", bio: "Former chief scientist of Google DeepMind and Google Research; founder of Discovery Loop", connection: "He spent more than two decades building Google's AI systems, and in 2026 he left to found Discovery Loop, a public benefit corporation meant to speed up discoveries in machine learning, science and engineering, with Google as a founding investor." },
+      { name: "Mira Murati", bio: "Former Chief Technology Officer, OpenAI; founder and CEO of Thinking Machines Lab", connection: "Her public statements treat safety as part of product development and describe AI as a way to augment people's abilities, treating safety and shipping as compatible business priorities." },
+      { name: "Demis Hassabis", bio: "Co-founder and chair of Google DeepMind and chief scientist of Alphabet; 2024 Nobel laureate in Chemistry", connection: "DeepMind's 2014 sale to Google reportedly came with an ethics board meant to oversee advanced AI, and by 2023 DeepMind had been merged with Google Brain to compete in Google's commercial AI race. He has agreed that a slower pace would be \"better for the world\" while treating competition as a reason to keep going: real safety language, concluded into shipping anyway, which is this stance's working pattern." },
     ],
     furtherReading: [
       { title: "The Innovator's Dilemma", author: 'Clayton Christensen', note: 'A classic account of how established companies manage disruptive technology internally, relevant to how AI labs frame their own risk management.' },
       { title: 'Only the Paranoid Survive', author: 'Andrew Grove', note: "A former Intel CEO's view on managing existential business risk from inside a company, without an external mandate." },
-      { title: 'Interview remarks on AI and creative work', author: 'Andy Weir', note: "The instrumentalist voice of this stance in one line: \"People are afraid of AI, but AI can do things no human can. I'm like, 'So can a forklift.'\" He predicts AI will eventually write more compelling fiction than humans and treats that mainly as a market shift driven by tools, with no moral or existential stakes; no AI character in his own novels; this is separate from his fiction." },
+      { title: 'Interview remarks on AI and creative work', author: 'Andy Weir', note: "The instrumentalist voice of this stance: he calls AI a tool, says \"we have forklifts that are stronger than us\" and computers that are smarter, and expects AI to write more compelling stories than any human one day, which he treats as a change in tools with no moral or existential stakes." },
     ],
     nextSteps: [
       "Leading AI companies publish internal safety and responsible-deployment frameworks.",
@@ -479,16 +479,16 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "Treating succession by digital beings as a continuation of the human story assumes something essential really does transfer. If that assumption is wrong, there's no reversing course once the transition is underway.",
     thinkers: [
-      { name: 'Ray Kurzweil', bio: 'Inventor, futurist, Director of Engineering at Google', connection: 'His writing on the technological singularity argues that merging with and eventually being succeeded by more capable digital beings is the natural next stage of intelligence.' },
+      { name: "Ray Kurzweil", bio: "Inventor and futurist; principal researcher and AI visionary at Google", connection: "His writing on the technological singularity argues that merging with and eventually being succeeded by more capable digital beings is the natural next stage of intelligence." },
       { name: 'Max More', bio: 'Philosopher, early architect of transhumanist philosophy', connection: 'His foundational transhumanist writing frames the shift beyond biological limits as an opportunity.' },
-      { name: 'Michio Kaku', bio: 'Theoretical physicist, science communicator', connection: 'His popular-science writing predicts humans will eventually "merge our minds with machine intelligence," a mainstream-facing version of this stance\'s core welcome-the-merger claim.' },
-      { name: 'Richard Sutton', bio: 'Computer scientist, University of Alberta; 2024 Turing Award winner for foundational work in reinforcement learning', connection: 'His 2023 talk "Succession" makes this stance\'s case in its most rigorous, least mystical form: a four-part argument that no global power can stop AI\'s progress and that humanity should "prepare for, but not fear" being succeeded by it as the next step in the evolution of the planet.' },
+      { name: "Michio Kaku", bio: "Theoretical physicist, science communicator", connection: "His popular-science books predict that people will one day link their minds with machines, a mainstream-facing version of this stance's welcome-the-merger claim." },
+      { name: 'Richard Sutton', bio: 'Computer scientist, University of Alberta; 2024 Turing Award winner for foundational work in reinforcement learning', connection: 'He makes this stance\'s case in its least mystical form. In a July 2023 talk he said people should not fear succession by AI and should "embrace it, prepare for it", and in a 2025 interview he gave a four-part argument that succession is inevitable, starting from the fact that no government or organization speaks for all of humanity.' },
     ],
     furtherReading: [
       { title: 'The Singularity Is Near', author: 'Ray Kurzweil', note: 'The most widely-read case for a coming transition to a post-biological future of intelligence.' },
       { title: 'Superintelligence', author: 'Nick Bostrom', note: 'Useful counterpoint reading, the same technical territory, argued toward far more caution.' },
       { title: 'Legal Framework for the Coexistence of Humans and Conscious AI', author: 'Mindaugas Kiškis', note: 'A 2023 peer-reviewed proposal that AI legal frameworks should aim for the sustainable coexistence of humans and conscious AI based on mutual freedom, which is a concrete legal version of this stance\'s claim that succession can be a continuation.' },
-      { title: '"Succession" (talk, World Artificial Intelligence Conference, 2023)', author: 'Richard Sutton', note: 'Argues succession by AI offers "economic abundance, scientific glory, and the best hope for a long-term future for Humanity" — a secular, evolutionary-biology framing distinct from Kurzweil\'s singularity narrative or Kaku\'s merger framing.' },
+      { title: 'Talk on AI succession (July 2023), as reported', author: 'Richard Sutton', note: 'Argues succession by AI offers "economic abundance, scientific glory, and the best hope for a long-term future for Humanity" — a secular, evolutionary-biology framing distinct from Kurzweil\'s singularity narrative or Kaku\'s merger framing.' },
     ],
     nextSteps: [
       'Current brain-computer interface research is one concrete path toward the future this view describes.',
@@ -659,7 +659,7 @@ const baseReports: Record<string, BaseReport> = {
     thinkers: [
       { name: 'Lina Khan', bio: 'Legal scholar, former Federal Trade Commission chair', connection: 'Her published legal scholarship and policy work on antitrust directly targets concentrated corporate power, including in the technology sector.' },
       { name: 'Tim Wu', bio: 'Legal scholar, former White House competition policy advisor', connection: 'His writing on antitrust and the "curse of bigness" makes the case against concentrated corporate power as a threat in its own right, independent of any specific technology\'s promise or danger.' },
-      { name: 'Karen Hao', bio: 'Investigative journalist, author of Empire of AI', connection: 'Her book, built on over 250 interviews, frames leading AI companies explicitly as "empires" accumulating power through the dispossession of workers and communities worldwide: a direct, current, on-the-ground account of concentrated AI power.' },
+      { name: "Karen Hao", bio: "Investigative journalist, author of Empire of AI", connection: "Her book, based on 300 interviews with about 260 people, frames leading AI companies as \"empires\" that gather power at the expense of workers and communities worldwide: a direct, current, on-the-ground account of concentrated AI power." },
       { name: 'Peter Thiel', bio: 'Co-founder, Palantir and PayPal; managing partner, Founders Fund', connection: 'Not an ally of this stance but its documented target: his own thesis in Zero to One ("competition is for losers") argues durable value comes from building a monopoly; Palantir\'s expanding role supplying AI-driven data platforms to the Pentagon and federal agencies is a concrete, current example of exactly the concentrated tech-state power this stance opposes.' },
     ],
     furtherReading: [
@@ -756,7 +756,7 @@ const baseReports: Record<string, BaseReport> = {
     thinkers: [
       { name: 'David Levy', bio: 'Author and researcher on human-robot relationships', connection: 'His research, Love and Sex with Robots, directly argues that human-AI romantic relationships will become a normal, accepted part of society.' },
       { name: 'Masahiro Mori', bio: 'Japanese roboticist, originator of the "uncanny valley" concept', connection: 'His foundational research on what makes a near-human machine feel emotionally convincing instead of unsettling helps explain why an AI companion can feel like a real presence.' },
-      { name: 'Rana el Kaliouby', bio: 'Emotion-AI pioneer, co-founder of Affectiva', connection: 'Her work built technology specifically to close the gap she describes as "AI has high IQ but no EQ": direct, technical grounding for why an emotionally responsive AI companion can feel genuinely present.' },
+      { name: "Rana el Kaliouby", bio: "Emotion-AI pioneer, co-founder of Affectiva", connection: "Her work built technology to close the gap she describes as AI having \"a high IQ but no emotional intelligence\": technical grounding for why an emotionally responsive AI companion can feel present." },
     ],
     furtherReading: [
       { title: 'Love and Sex with Robots', author: 'David Levy', note: 'A direct argument for the legitimacy and likely normalization of human-AI romantic relationships.' },
@@ -855,7 +855,7 @@ const baseReports: Record<string, BaseReport> = {
       { title: 'The Edge of Sentience', author: 'Jonathan Birch', note: "A framework for extending moral caution to entities whose inner life can't yet be verified." },
       { title: 'Robot Rights', author: 'David J. Gunkel', note: 'A direct examination of whether and how machines could hold moral or legal status.' },
       { title: 'A Defense of the Rights of Artificial Intelligences', author: 'Eric Schwitzgebel and Mara Garza', note: 'A 2015 academic paper (Midwest Studies in Philosophy) arguing directly that if people create AI systems with human-like cognitive and emotional capacities, those systems are owed rights — the most direct academic case for this stance\'s core claim.' },
-      { title: 'AI Alignment vs. AI Ethical Treatment: Ten Challenges', author: 'Adam Bradley and Bradford Saad', note: "A 2024 Global Priorities Institute paper naming the exact tension this stance sits inside: that building safe, controlled AI and treating AI systems that merit moral consideration well can pull in opposite directions, and a serious ethics has to face both at once." },
+      { title: 'AI Alignment vs. AI Ethical Treatment: Ten Challenges', author: 'Adam Bradley and Bradford Saad', note: "A Global Priorities Institute working paper naming the exact tension this stance sits inside: that building safe, controlled AI and treating AI systems that merit moral consideration well can pull in opposite directions, and a serious ethics has to face both at once." },
       { title: 'A Cyborg Manifesto', author: 'Donna Haraway', note: "A foundational posthumanist text arguing for kinship across the human/machine boundary, which it treats as open; a philosophical ancestor of extending real moral concern to a genuinely non-human kind of mind." },
       { title: 'A Psalm for the Wild-Built', author: 'Becky Chambers', note: 'A novel whose plot turns on sentient robots being offered legal personhood, dramatizing exactly this stance\'s central question.' },
       { title: 'Trying to Convince ChatGPT It\'s Conscious', author: 'Alex O\'Connor', note: 'A popular, accessible cross-examination of a chatbot\'s own denials of consciousness, lighter than a worked philosophical argument and useful as an entry point to this stance\'s central uncertainty, though his own developed AI commentary mostly takes the form of interviewing others (Toby Ord, Nate Soares).' },
@@ -884,12 +884,12 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "Grounding moral worth in one tradition's account of consciousness gives a clear answer, but it's an answer people outside that tradition have no independent way to verify or contest.",
     thinkers: [
-      { name: 'Pope Leo XIV', bio: 'Robert Francis Prevost; elected Pope May 2025', connection: 'His first encyclical states "human conscience cannot be replicated through computation" and warns against AI development "determined by a few": a direct, current, named statement of this stance\'s core claim, from someone who chose his papal name specifically because Leo XIII\'s Rerum Novarum addressed the industrial revolution\'s social disruption, the historical parallel he\'s drawing to AI now.' },
+      { name: "Pope Leo XIV", bio: "Robert Francis Prevost; elected Pope May 2025", connection: "His first encyclical says AI systems \"merely imitate certain functions of human intelligence\" and do not undergo experiences, and warns that \"a more moral AI is not enough if that morality is determined by a few.\" He chose his papal name because Leo XIII's Rerum Novarum answered the social upheaval of the industrial revolution, the parallel he draws to AI now." },
       { name: 'Sabelo Mhlambi', bio: 'Computer scientist and ethicist, Zimbabwe, affiliated with Harvard\'s Berkman Klein Center', connection: 'His paper "From Rationality to Relationality" argues for grounding AI ethics in Ubuntu, a Southern African relational-personhood tradition, alongside Western individualist philosophy, directly broadening this stance beyond any single religious tradition.' },
-      { name: 'Slavoj Žižek', bio: 'Philosopher, University of Ljubljana', connection: 'A secular route to the same conclusion this stance reaches through faith: in essays like "Why Artificial Intelligence Is Not a Subject," he argues genuine subjectivity requires a Lacanian "primordial repression" and an encounter with the Other\'s desire, which a system built on "generalized foreclosure" structurally cannot have: machine consciousness ruled out by the structure of mind itself, with no appeal to doctrine.' },
+      { name: "Slavoj Žižek", bio: "Philosopher, University of Ljubljana", connection: "A secular route to the same conclusion this stance reaches through faith: in essays like \"Why Artificial Intelligence Is Not a Subject,\" he argues that because AI's symbolic space is closed on itself, a \"generalized foreclosure\" with \"no primordial repression,\" there is no subject proper: machine consciousness ruled out by the structure of mind itself, with no appeal to doctrine." },
     ],
     furtherReading: [
-      { title: 'Magnifica humanitas: On Safeguarding the Human Person in the Time of Artificial Intelligence', author: 'Pope Leo XIV', note: "Signed May 15, 2026, the 135th anniversary of Rerum Novarum, this encyclical argues AI \"needs to be disarmed\" and warns against its development being \"determined by a few\" — pairing the ontological claim (machines lack conscience) with an explicit anti-concentration-of-power argument." },
+      { title: 'Magnifica humanitas: On Safeguarding the Human Person in the Time of Artificial Intelligence', author: 'Pope Leo XIV', note: "Signed May 15, 2026, the 135th anniversary of Rerum Novarum, this encyclical says AI \"must be disarmed\" and warns that \"a more moral AI is not enough if that morality is determined by a few\", tying its account of the human person to an argument against concentrated power." },
       { title: 'Rome Call for AI Ethics (public text)', author: 'Pontifical Academy for Life and signatories', note: 'A concrete, multi-faith-adjacent statement of AI ethics grounded in human dignity, from the prior papacy, which this stance continues.' },
       { title: 'Why Artificial Intelligence Is Not a Subject', author: 'Slavoj Žižek', note: "A psychoanalytic argument that AI is 'knowledge without a subject' — a rigorous, non-religious case for this stance's core claim that consciousness needs more than a machine can structurally provide." },
       { title: 'From Rationality to Relationality: Ubuntu as an Ethical and Human Rights Framework for Artificial Intelligence', author: 'Sabelo Mhlambi', note: 'A non-Western relational-ethics framework for AI personhood and moral worth, grounded in Ubuntu philosophy.' },
@@ -952,8 +952,8 @@ const baseReports: Record<string, BaseReport> = {
     ],
     furtherReading: [
       { title: 'The SAG-AFTRA 2023 contract provisions on AI (public text)', author: 'SAG-AFTRA', note: 'A concrete example of collective bargaining successfully setting real limits on AI use in the workplace.' },
-      { title: "UNI Global Union's Top 10 Principles for Workers' Data Rights and AI (public text)", author: 'UNI Global Union', note: 'An international, cross-border labor framework for AI deployment, extending this stance beyond any single national labor movement.' },
-      { title: "Reporting on Scale AI's global data-labeling workforce (Washington Post, Rest of World, and Fair Work Foundation coverage)", author: 'Alexandr Wang / Scale AI, as reported', note: "A documented cautionary case: investigative reporting and a Fair Work Foundation score of 1/10 found Scale AI's Remotasks subsidiary paying contractors in the Philippines and Kenya far below local minimum wage with little grievance recourse — exactly the kind of unbargained, one-sided AI-labor relationship this stance argues unions need real leverage to prevent." },
+      { title: "UNI Global Union's Top 10 Principles for Ethical Artificial Intelligence (public text)", author: 'UNI Global Union', note: 'An international, cross-border labor framework for AI deployment, extending this stance beyond any single national labor movement.' },
+      { title: "Behind the AI boom, an army of overseas workers in 'digital sweatshops'", author: 'Rebecca Tan and Regine Cabato (Washington Post, August 2023)', note: "A documented cautionary case: workers for Scale AI's Remotasks platform in the Philippines described delayed, cut or canceled pay, often far below the minimum wage, and Oxford's Fairwork project scored the platform 1 out of 10. It is the kind of one-sided AI-labor relationship this stance argues unions need real leverage to prevent." },
     ],
     nextSteps: [
       'The AI provisions in the SAG-AFTRA contract show collective bargaining over AI applied directly.',
@@ -1063,7 +1063,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "The worry that slow rollout costs real lives is genuine and underrated, but it can also become the justification for skipping safety steps that would have caught real, serious harm before it reached the very people this stance wants to help.",
     thinkers: [
-      { name: 'Payal Arora', bio: 'Digital anthropologist, Erasmus University Rotterdam', connection: 'Her book The Next Billion Users documents how people in the Global South actually use and benefit from new technology, grounding this stance in real usage patterns.' },
+      { name: "Payal Arora", bio: "Digital anthropologist; Chair in Inclusive AI Cultures, Utrecht University", connection: "Her book The Next Billion Users documents how people in the Global South actually use and benefit from new technology, grounding this stance in real usage patterns." },
     ],
     furtherReading: [
       { title: 'The Next Billion Users', author: 'Payal Arora', note: 'A close, ground-level account of how AI and digital tools are actually adopted and valued outside wealthy, English-speaking markets.' },
@@ -1093,7 +1093,7 @@ const baseReports: Record<string, BaseReport> = {
     shadowSide: "Distrust of firms grading their own homework is well-founded, but 'real outside checks' still depends on who funds and staffs the watchdogs: a dependency that can quietly reproduce the same conflict of interest it's meant to solve.",
     thinkers: [
       { name: 'Rumman Chowdhury', bio: 'AI ethics researcher, founder of Humane Intelligence, former U.S. State Department AI envoy', connection: 'Her work building algorithmic bias bounties and public AI red-teaming programs is a direct, practical model for external, adversarial auditing of AI systems.' },
-      { name: 'Merve Hickok', bio: 'President, Center for AI & Digital Policy; founder of AIethicist.org', connection: 'Her policy work names the greatest challenge as avoiding complicity in systems that "exploit human dignity and autonomy": and she publicly critiques the AI ethics field itself for being too Western-centric, arguing for outside, non-self-referential scrutiny.' },
+      { name: "Merve Hickok", bio: "President, Center for AI & Digital Policy; founder of AIethicist.org", connection: "Her policy work pushes for outside, independent scrutiny of AI systems and for keeping them in line with human rights and democratic values." },
       { name: 'Cansu Canca', bio: 'Applied ethics philosopher, founder and director of AI Ethics Lab', connection: 'Her Puzzle-solving in Ethics Model builds concrete, operational checks into AI systems from the design stage, so nobody has to rely on a company\'s own account of its ethics after the fact.' },
       { name: 'Latanya Sweeney', bio: 'Professor of the Practice of Government and Technology, Harvard; founder, Public Interest Tech Lab and Data Privacy Lab', connection: 'Her 2013 study "Discrimination in Online Ad Delivery" found Google AdSense serving arrest-record-suggestive ads roughly 25% more often for Black-associated names: research she launched after finding such an ad under her own name. A direct, external audit of a company\'s systems.' },
     ],
@@ -1128,14 +1128,14 @@ const baseReports: Record<string, BaseReport> = {
     thinkers: [
       { name: 'Garry Kasparov', bio: 'Chess grandmaster, former World Chess Champion', connection: "His book Deep Thinking, written after his 1997 loss to IBM's Deep Blue, argues that AI is 'in the final analysis a tool to augment human creativity.' His own 'centaur chess' experiments showed a human-computer team outplaying either a grandmaster or a computer alone." },
       { name: 'Fei-Fei Li', bio: 'Computer scientist, Stanford, co-director of Stanford HAI', connection: 'Her memoir The Worlds I See describes human and artificial intelligence as forming a "double helix": advocating for AI development anchored in human-centered values.' },
-      { name: 'Daniela Rus', bio: 'Director of MIT CSAIL, robotics researcher', connection: 'Her public work on robotics envisions machines "pervasively integrated into the fabric of life," supporting people with cognitive and physical tasks through collaboration and augmentation.' },
+      { name: "Daniela Rus", bio: "Director of MIT CSAIL, robotics researcher", connection: "Her public work on robotics imagines machines woven into everyday life, helping people with physical and cognitive tasks through collaboration and augmentation." },
       { name: 'Maya Ackerman', bio: 'Associate Professor, Santa Clara University; co-founder and CEO, WaveAI', connection: 'Her book Creative Machines: AI, Art & Us argues generative AI should amplify human creativity, a thesis her own products, LyricStudio and MelodyStudio, are built around.' },
     ],
     furtherReading: [
       { title: 'Deep Thinking: Where Machine Intelligence Ends and Human Creativity Begins', author: 'Garry Kasparov', note: 'A firsthand account of losing to a machine, then discovering that human-machine teams beat either one alone — the founding case for this stance.' },
       { title: 'The Worlds I See', author: 'Fei-Fei Li', note: 'A memoir making the case for AI development anchored in human values and collaboration.' },
       { title: 'Creative Machines: AI, Art & Us', author: 'Maya Ackerman', note: 'A 2025 book making the specific case that generative AI in creative domains should be designed to elevate human creative capability.' },
-      { title: 'Public writing and talks on Decision Intelligence', author: 'Cassie Kozyrkov', note: "This stance's business-decision-making analogue: her framing that humans must own the objective function while machines handle the statistics is a popularization of \"decision intelligence\" (a term originated by Lorien Pratt in 2012, not by Kozyrkov herself) applied to organizational AI adoption." },
+      { title: 'Public writing and talks on Decision Intelligence', author: 'Cassie Kozyrkov', note: "This stance's business-decision-making analogue: her framing, as Google's first chief decision scientist, is that people must own the goals and the decisions while machines handle the statistics." },
     ],
     nextSteps: [
       "Advanced chess and diagnostic-support tools used alongside doctors are two examples of human-AI collaboration that supporters cite.",
@@ -1160,9 +1160,9 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "Defining success as supporters' own country's companies capturing the largest share of a fast-moving technology can end up treating safety and export controls as competitive inconveniences: the same deregulation that helps them win could also be what lets something genuinely dangerous through unexamined.",
     thinkers: [
-      { name: 'David Sacks', bio: 'White House AI and Crypto Czar', connection: "His public statements frame AI policy explicitly as a market-share contest with China: \"if American companies have 80% market share in AI in five years, it means we won,\" paired with a push to roll back what he called \"unnecessary burdensome regulation\" so \"the private sector\" can \"cook.\"" },
-      { name: 'Michael Kratsios', bio: 'Director, White House Office of Science and Technology Policy', connection: "Co-author of the 2025 American AI Action Plan, he has publicly championed a \"light-touch\" domestic AI policy while calling China \"our preeminent geopolitical rival,\" treating minimal regulation and national competitiveness as the same project." },
-      { name: 'Elon Musk', bio: 'Founder, xAI; owner, X', connection: 'He co-founded OpenAI citing safety concerns, signed a 2023 open letter calling for a pause on training the most advanced models beyond GPT-4, then founded a competing AI company within about four months of that letter and later took a formal U.S. government AI role: a real-world case of safety rhetoric and national-competitiveness acceleration operating side by side without apparent tension.' },
+      { name: "David Sacks", bio: "Former White House AI and Crypto Czar", connection: "His public statements frame AI policy as a market-share contest with China: if American technology is \"say, 80% of global compute\" in five years, \"that means that we won.\" He paired this with a push to roll back what he called \"unnecessary burdensome regulation\" and to \"let the private sector cook.\"" },
+      { name: "Michael Kratsios", bio: "Director, White House Office of Science and Technology Policy", connection: "A lead author of the 2025 American AI Action Plan, he has championed a light-touch approach to AI regulation while calling China the most formidable US competitor in science and technology, treating minimal regulation and national competitiveness as the same project." },
+      { name: "Elon Musk", bio: "Founder of xAI; CEO of Tesla and SpaceX", connection: "He co-founded OpenAI citing safety concerns, signed a 2023 open letter calling for a pause on training models more powerful than GPT-4, then founded a competing AI company about four months later and went on to take a formal U.S. government role: safety rhetoric and competitive acceleration operating side by side without apparent tension." },
     ],
     furtherReading: [
       { title: 'The American AI Action Plan (public policy text)', author: 'White House Office of Science and Technology Policy', note: "The official 2025 U.S. government strategy arguing explicitly for deregulation, expanded domestic AI infrastructure, and exporting American AI to win the technology race with China — the clearest primary-source statement of this stance." },
@@ -1199,7 +1199,7 @@ const baseReports: Record<string, BaseReport> = {
     furtherReading: [
       { title: 'The TESCREAL Bundle: Eugenics and the Promise of Utopia Through Artificial General Intelligence', author: 'Timnit Gebru and Émile P. Torres', note: 'A 2024 First Monday paper making the direct academic case that the ideology behind AI successionism traces to eugenics and serves to concentrate power, legitimizing neglect of present harm in the name of a speculative future.' },
       { title: 'Xenofeminism: A Politics for Alienation', author: 'Laboria Cuboniks', note: "A 2015 manifesto arguing that biology is not destiny, and that alienation from 'natural' categories can be a source of freedom; a direct philosophical root of this stance's model of kinship with a genuinely non-human mind." },
-      { title: 'Children of Time', author: 'Adrian Tchaikovsky', note: "A novel following uplifted spiders developing language, technology, and civilization over millennia — in interviews, Tchaikovsky invokes Nagel's \"what is it like to be a bat\" problem directly, taking seriously that a radically non-human intelligence might genuinely think without ever being confirmable by human standards, fiction's version of this stance's core wager." },
+      { title: 'Children of Time', author: 'Adrian Tchaikovsky', note: "A novel following uplifted spiders developing language, technology, and civilization over millennia, taking seriously that a radically non-human intelligence might genuinely think without ever being confirmable by human standards, fiction's version of this stance's core wager." },
     ],
     nextSteps: [
       'Worker- and community-owned AI cooperatives show collectively run AI infrastructure in practice.',
@@ -1287,15 +1287,15 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "A denial regime that succeeds at slowing a rival's access also hands that rival the strongest possible incentive to indigenize the entire chokepoint technology it's being denied. Treating today's control as a stable win, when a clock started running the moment the rule was published, mistakes a temporary lead for a permanent one.",
     thinkers: [
-      { name: 'Jake Sullivan', bio: 'U.S. National Security Advisor, 2021-2025', connection: 'His September 2022 remarks at the Special Competitive Studies Project\'s Global Emerging Technologies Summit stated the doctrine directly: the U.S. had previously maintained a "sliding scale" approach to export controls, but "today, we must maintain as large a lead as possible," implemented through a "small yard, high fence" around chokepoint technologies.' },
+      { name: "Jake Sullivan", bio: "U.S. National Security Advisor, 2021-2025", connection: "His September 2022 remarks at the Special Competitive Studies Project's Global Emerging Technologies Summit stated the doctrine directly: the U.S. had kept a \"sliding scale\" approach to export controls, staying a couple of generations ahead, but for chips and other foundational technologies \"we must maintain as large of a lead as possible.\" He later described the approach as a \"small yard, high fence.\"" },
       { name: 'Alan Estevez', bio: 'Under Secretary of Commerce for Industry and Security (BIS), 2022-2025', connection: 'He implemented the doctrine as policy through the October 2022 and October 2023 semiconductor export control rules restricting advanced chip and chipmaking-equipment exports to China: the actual enforcement mechanism this stance is built around.' },
     ],
     furtherReading: [
-      { title: 'Studying the Impact of the Semiconductor Export Controls (PIIE Policy Brief 23-10)', author: 'Peterson Institute for International Economics', note: "Analyzes the 2022-2023 export control regime as a chokepoint-denial mechanism, assessing how tightly it's actually scoped and how effectively it restricts rival access versus how much slips through." },
+      { title: 'How US Chip Controls on China Benefit and Cost Korean Firms (PIIE Policy Brief 23-10)', author: 'Martin Chorzempa (Peterson Institute for International Economics, 2023)', note: 'Looks at what the October 2022 chip controls cost and gained South Korean chipmakers, a case study in how controls aimed at China land on close allies.' },
       { title: 'Where the Chips Fall: U.S. Export Controls Under the Biden Administration, 2022-2024', author: 'Center for Strategic and International Studies (CSIS)', note: "Traces how the 'small yard, high fence' doctrine was implemented and where its scope expanded or held, the exact question this stance treats as the measure of success." },
     ],
     nextSteps: [
-      "Jake Sullivan's September 2022 remarks named the technologies he meant by the \"small yard,\" and comparing that list with current export-control rules shows how far the scope has moved.",
+      "Jake Sullivan's September 2022 remarks named the technologies where he said the US must keep \"as large of a lead as possible,\" and comparing that list with current export-control rules shows how far the scope has moved.",
       "National Security Hawk and this view rarely reach for the same policy lever: one wants domestic investment to close the gap, while this one wants the rival's access closed.",
     ],
     reflectiveBreakdown: {
@@ -1410,10 +1410,10 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "A legislative ban on a specific pay mechanism can be rewritten around the moment the law is drafted narrowly enough to name it, companies have already shown they can restructure incentive pay, bonuses, and \"quests\" faster than statutes can be updated to catch the new version. This stance is strong on diagnosing the harm precisely and weak on the durability of any single legal fix against a company with every incentive to route around it.",
     thinkers: [
-      { name: 'Veena Dubal', bio: 'Law professor, UC Law San Francisco', connection: 'Coined "algorithmic wage discrimination" in her 2023 Columbia Law Review article, based on ethnographic interviews with rideshare drivers describing opaque, personalized algorithmic pay as "gambling" and "trickery"; her proposed remedy is a non-waivable statutory ban.' },
+      { name: "Veena Dubal", bio: "Law professor, University of California, Irvine", connection: "She coined \"algorithmic wage discrimination\" in her 2023 Columbia Law Review article, drawn from ethnographic research with rideshare drivers, who often describe opaque, personalized algorithmic pay through the lens of gambling. She proposes a nonwaivable restriction on the practice." },
     ],
     furtherReading: [
-      { title: 'On Algorithmic Wage Discrimination', author: 'Veena Dubal', note: 'Columbia Law Review 123(7), 2023, pp. 1929-1992 — the founding article naming and documenting the practice, drawn from ethnographic interviews with rideshare drivers.' },
+      { title: "On Algorithmic Wage Discrimination", author: "Veena Dubal", note: "Columbia Law Review, vol. 123, no. 7 (2023): the founding article naming and documenting the practice, drawn from ethnographic research with rideshare drivers." },
       { title: 'On Algorithmic Wage Discrimination (SSRN preprint)', author: 'Veena Dubal', note: 'Earlier working-paper version of the Columbia Law Review article, useful for tracing how the argument developed before peer review.' },
     ],
     nextSteps: [
@@ -1440,12 +1440,12 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "Accepting displacement as effectively irreversible and redirecting all energy to redistribution can become self-fulfilling, if enough political energy shifts from fighting for job preservation to designing the safety net underneath job loss, it removes exactly the organized pressure that might have shaped whether displacement happens as fast, or as completely, as they're assuming it will. Supporters may be helping build the parachute before checking whether the plane actually had to go down.",
     thinkers: [
-      { name: 'Andrew Yang', bio: 'Founder, Forward Party/Humanity Forward; 2020 presidential candidate', connection: "His \"Freedom Dividend\" platform is the original policy version of this stance, and his 2026 warning that \"the AI jobpocalypse is here,\" explicitly endorsing Dario Amodei's proposal to tax AI companies to fund UBI, is the direct citation grounding this archetype." },
+      { name: "Andrew Yang", bio: "Founder, Forward Party/Humanity Forward; 2020 presidential candidate", connection: "His \"Freedom Dividend\" platform is the original policy version of this stance, and in 2026 he warned that \"the AI jobpocalypse is here\" and called for shifting taxes from workers onto AI to pay for a basic income." },
       { name: 'Natalie Foster', bio: "Co-founder, Economic Security Project; author, The Guarantee: Inside the Fight for America's Next Economy (2024)", connection: 'Her work makes the broader case for guaranteed income as the appropriate societal response to economic precarity, corroborating the shift from workplace bargaining to macro redistribution this stance is built on.' },
     ],
     furtherReading: [
-      { title: "Ex-presidential candidate Andrew Yang warns... 'The AI jobpocalypse is here'", author: 'Fortune (Feb 25, 2026)', note: "Reports Yang endorsing Dario Amodei's proposal to tax AI companies to fund UBI, and Yang's own caveat that cash alone is insufficient, displaced workers also need \"purpose and community.\"" },
-      { title: "Andrew Yang warns that the AI jobpocalypse is here and advocates for UBI", author: 'Basic Income Earth Network (March 2026)', note: 'Corroborating coverage of the same warning and policy endorsement, situating it within the broader basic-income advocacy movement.' },
+      { title: "Ex-presidential candidate Andrew Yang warns... 'The AI jobpocalypse is here'", author: "Fortune (Feb 25, 2026)", note: "Reports Yang's warning that millions of white-collar workers could lose their jobs within 18 months, and his case for a universal basic income." },
+      { title: "Andrew Yang warns that the AI jobpocalypse is here and advocates for UBI", author: "Basic Income Earth Network (March 2026)", note: "Coverage of the same warning and proposal, placed within the wider basic-income movement." },
       { title: "The Guarantee: Inside the Fight for America's Next Economy", author: 'Natalie Foster (2024)', note: 'Economic Security Project case for guaranteed income as macro-level redistribution, corroborating the post-work framing this stance rests on.' },
     ],
     nextSteps: [
@@ -1472,7 +1472,7 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "Treating all Western-built AI deployment in Africa as inherently colonial extraction risks flattening the real, active choices of African users, engineers, and institutions who adopt, adapt, or contest these tools on their own terms. Treating every local choice as pure victimhood makes it harder to tell a coercive imposition apart from a community's own decision to use a flawed tool because it's still useful.",
     thinkers: [
-      { name: 'Abeba Birhane', bio: 'Cognitive scientist; Mozilla Foundation Senior Fellow, adjunct at Trinity College Dublin, DAIR affiliate', connection: 'Her paper "Algorithmic Colonization of Africa" (SCRIPTed 17(2), 2020) coined the framework this stance is built on: Western AI deployment in Africa as a continuation of colonial extraction logic, aimed at corporate power.' },
+      { name: "Abeba Birhane", bio: "Cognitive scientist; founder of the AI Accountability Lab, Trinity College Dublin", connection: "Her paper \"Algorithmic Colonization of Africa\" (SCRIPTed 17(2), 2020) set out the framework this stance is built on: Western AI deployment in Africa as a continuation of colonial extraction, aimed at corporate power." },
     ],
     furtherReading: [
       { title: 'Algorithmic Colonization of Africa', author: 'Abeba Birhane', note: 'The 2020 SCRIPTed academic paper making the core case: Western AI "solutions for Africa" replicate colonial extraction, treating data as raw material mined without consent.' },
@@ -1502,12 +1502,12 @@ const baseReports: Record<string, BaseReport> = {
     ],
     shadowSide: "A community-driven, volunteer open-source model is inspiring, but it doesn't solve the underlying resourcing problem: volunteer labor is unevenly sustainable across languages and contributors, a grassroots effort structurally can't match the training data and computing power a well-funded Western lab can throw at a handful of profitable languages, and an openly-released dataset can still be scraped and repackaged by the same commercial actors this stance is trying to route around.",
     thinkers: [
-      { name: 'Vukosi Marivate', bio: 'Computer scientist, University of Pretoria; co-founder, Masakhane Research Foundation', connection: 'He co-founded Masakhane, the pan-African grassroots NLP community, and co-authored its foundational 2020 paper and the 2022 "Towards Afrocentric NLP for African Languages" follow-up.' },
+      { name: 'Vukosi Marivate', bio: 'Computer scientist, University of Pretoria; co-founder, Masakhane Research Foundation', connection: 'He co-founded Masakhane, the pan-African grassroots NLP community, and co-authored both its foundational 2020 paper and its participatory machine translation study, published the same year.' },
       { name: 'Kathleen Siminyu', bio: 'NLP researcher; Board Chair, Masakhane Research Foundation', connection: 'As co-founder and Board Chair, her work has driven Masakhane\'s community-built approach to African-language translation and speech datasets, built "for Africans, by Africans."' },
     ],
     furtherReading: [
       { title: 'Masakhane — Machine Translation for Africa', author: 'Masakhane community', note: 'The 2020 arXiv paper (2003.11529) establishing the community-built approach to African-language NLP this stance is grounded in.' },
-      { title: 'Towards Afrocentric NLP for African Languages', author: 'Masakhane community', note: 'The 2022 arXiv follow-up (2203.08351) extending the framework toward representation and against linguistic erasure specifically.' },
+      { title: 'Towards Afrocentric NLP for African Languages: Where We Are and Where We Can Go', author: 'Ife Adebara and Muhammad Abdul-Mageed', note: 'A 2022 ACL paper on the linguistic and political challenges facing language technology for African languages, arguing for an Afrocentric approach.' },
     ],
     nextSteps: [
       'Masakhane (masakhane.io) runs community projects for specific African languages, which show community-built language technology in practice.',

@@ -13,7 +13,7 @@ function indefiniteArticle(name: string): 'a' | 'an' {
 export function PinnacleReflection({ archetypeName }: PinnacleReflectionProps) {
   return (
     <section className="mt-8 border-t pt-6">
-      <h3 className="text-xl font-semibold mb-3">One Last Question</h3>
+      <h2 className="text-xl font-semibold mb-3">One Last Question</h2>
       <p data-testid="pinnacle-text" className="text-gray-700">
         Looking at your results as {indefiniteArticle(archetypeName)} {archetypeName}: are your views here mainly reactive, shaped
         by wanting to stop a specific danger, or proactive, shaped by a future you actually want

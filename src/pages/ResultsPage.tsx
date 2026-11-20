@@ -274,7 +274,7 @@ export function ResultsPage() {
 
       {resultMode === 'short' && (
         <div className="mt-4 border-l-4 border-indigo-500 bg-indigo-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">{decoded ? 'From the Short Version' : 'You Took the Short Version'}</h3>
+          <h2 className="text-lg font-semibold mb-1">{decoded ? 'From the Short Version' : 'You Took the Short Version'}</h2>
           <p className="text-gray-700">
             This result comes from {modeQuestions.length} of the {questions.length} statements, six per axis instead of eighteen.
             Each score sits on the same −10 to +10 scale but rests on fewer answers, so one answer moves it more and your closest
@@ -294,7 +294,7 @@ export function ResultsPage() {
 
       {selectedTagObjects.length > 0 && (
         <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">Your Stake</h3>
+          <h2 className="text-lg font-semibold mb-1">Your Stake</h2>
           <p className="text-gray-700 mb-2">{selectedTagObjects.map((tag) => tag.name).join(', ')}</p>
           <p className="text-gray-700">
             Your match above came only from your belief-question answers; your stake played no part in
@@ -306,7 +306,7 @@ export function ResultsPage() {
 
       {!decoded && modeDeclined.length > 0 && (
         <div className="mt-4 border-l-4 border-gray-400 bg-gray-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">No Settled View</h3>
+          <h2 className="text-lg font-semibold mb-1">No Settled View</h2>
           <p className="text-gray-700">
             You marked {modeDeclined.length} of {modeQuestions.length} statements as having no settled
             view{topDeclineAxis ? `, mostly on ${topDeclineAxis.name}` : ''}. Each counts as zero. A near-zero score on an
@@ -318,7 +318,7 @@ export function ResultsPage() {
 
       {!decoded && priorEntry && priorCombined && (
         <div className="mt-4 border-l-4 border-emerald-500 bg-emerald-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">Compared to Your Last Attempt</h3>
+          <h2 className="text-lg font-semibold mb-1">Compared to Your Last Attempt</h2>
           <p className="text-gray-700 mb-3">
             Last taken {new Date(priorEntry.timestamp).toLocaleDateString()}, you matched closest to{' '}
             <strong>{priorEntry.topMatchName}</strong>
@@ -366,7 +366,7 @@ export function ResultsPage() {
 
       {closeCall && (
         <div className="mt-4 border-l-4 border-sky-500 bg-sky-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">This Was a Close Call</h3>
+          <h2 className="text-lg font-semibold mb-1">This Was a Close Call</h2>
           <p className="text-gray-700">
             {topMatch.profile.name} and {matches[1].profile.name} are almost exactly as close to you as each other. When the
             gap is this small, a slightly different set of statements on the same themes would give a different first match
@@ -392,7 +392,7 @@ export function ResultsPage() {
         </div>
       )}
 
-      <h3 className="text-xl font-semibold mt-8 mb-2">{t('closest_archetype')}</h3>
+      <h2 className="text-xl font-semibold mt-8 mb-2">{t('closest_archetype')}</h2>
       {topMatches.map((match, index) => (
         <ProfileCard
           key={match.profile.id}
@@ -418,7 +418,7 @@ export function ResultsPage() {
 
       <section className="mt-8 rounded-lg border border-gray-200 p-4" aria-labelledby="core-three-heading">
         <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Your core three · {coreCode(core.tiers)}</p>
-        <h3 id="core-three-heading" className="text-xl font-semibold mt-1">{core.name}</h3>
+        <h2 id="core-three-heading" className="text-xl font-semibold mt-1">{core.name}</h2>
         <p className="text-gray-600 italic">{core.tagline}</p>
         <p className="text-gray-800 mt-2">{describeCore(core)}</p>
         <p className="text-sm text-gray-500 mt-2">
@@ -473,7 +473,7 @@ export function ResultsPage() {
         </Link>
       </div>
 
-      <h3 className="text-xl font-semibold mt-8 mb-2">{t('axis_comparison') || 'Near-Term vs. Long-Term, by Axis'}</h3>
+      <h2 className="text-xl font-semibold mt-8 mb-2">{t('axis_comparison') || 'Near-Term vs. Long-Term, by Axis'}</h2>
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -505,7 +505,7 @@ export function ResultsPage() {
       )}
 
       <div className="border-t border-gray-200 mt-12 pt-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'Report and the Case for This View'}</h3>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'Report and the Case for This View'}</h2>
         <div className="flex flex-wrap gap-2 mb-6">
           {topMatches.map((match) => (
             <button

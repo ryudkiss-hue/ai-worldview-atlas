@@ -97,7 +97,9 @@ Artist Rights Advocate · Union Bargaining Advocate · Disability Rights Advocat
 Global South Self-Reliance Advocate · Indigenous Data Sovereignty Advocate · Global Development Optimist · Digital Colonialism Critic · African-Language AI Advocate · Border Surveillance Critic
 </details>
 
-[`profiles.ts`](src/data/profiles.ts) holds each archetype's eight coordinates and one-paragraph summary. Each archetype also has a full report in [`profileReports.ts`](src/data/profileReports.ts) and [`profileExpansions.ts`](src/data/profileExpansions.ts): a narrative, its reasons on each axis, the strongest objections with the replies its supporters give, real-world landmarks with sources, related thinkers, further reading, where to look further, the archetype it's most often confused with and what separates them, and the assumptions it tends to rest on. A longer essay for each, "The Case for This View" ([`manifestoContents.ts`](src/data/manifestoContents.ts)), reports the view in the third person.
+[`profiles.ts`](src/data/profiles.ts) holds each archetype's eight coordinates and one-paragraph summary. Each archetype also has a full report in [`profileReports.ts`](src/data/profileReports.ts) and [`profileExpansions.ts`](src/data/profileExpansions.ts): a narrative, its reasons on each axis, the strongest objections with the replies its supporters give, real-world landmarks with sources, related thinkers, further reading, where to look further, the archetype it's most often confused with and what separates them, and the assumptions it tends to rest on. The reports and a longer essay for each, "The Case for This View" ([`manifestoContents.ts`](src/data/manifestoContents.ts)), describe each view in the third person, as the people who hold it see it.
+
+Every landmark and reading in the reports, and every thinker with an encyclopedia entry, links to the work, record or entry it was checked against ([`reportSources.ts`](src/data/reportSources.ts)). The links came from Open Library, Crossref, arXiv, Wikipedia and web searches, and each one was opened to confirm it points at the thing named; quotations, dates and figures in the reports were checked against those pages, and the ones that didn't hold up were corrected or removed. Each report shows the date the sources were last checked, and a test fails if a reading or landmark has no link.
 
 ---
 
@@ -135,6 +137,7 @@ Results also place you among 27 archetypes built from three axes about AI system
 - [`profileRedundancy.test.ts`](src/data/profileRedundancy.test.ts) fails if any two archetypes sit closer than 5.0 apart. It caught three near-duplicate pairs during development. It doesn't guarantee that archetypes win equal shares of random sheets.
 - Statements are held to a Flesch-Kincaid grade of 15 or below with an average between 8 and 12, profile summaries, scenarios and tag descriptions to 14, and the How This Works text to 10 ([`readability.ts`](src/lib/readability.ts)). The reports are read after scoring and are exempt.
 - Stakeholder tags (what you have at stake, such as a job that could be automated) are kept in their own state, never reach `computeRawAxisScores` or `classify`, and appear on the results page as a separate section.
+- Each answer scale is a labelled radio group named by its statement, and the arrow, Home and End keys move between its four answers. An automated accessibility scan (axe) of every page finds no violations; a pass with a real screen reader is still worth doing by hand.
 - The How This Works section on the results page says plainly that the Atlas hasn't been through psychometric testing, and explains the answer scale, the "no settled view" choice and how matching weights each axis.
 
 ---
@@ -145,6 +148,8 @@ Results also place you among 27 archetypes built from three axes about AI system
 - "What matters most to you" on the results page lets you mark any axis Less, Normal or More. Only the archetype ranking changes; your scores stay the same, and the weights travel in share links.
 - "Statement by statement" sets your answer to each statement beside the answer each of your three closest archetypes would be expected to give. Archetypes never answered anything, so those answers are estimated from the archetype's position on that axis (strongly agree at 6 or more toward the statement's pole, agree at 2 or more, no clear lean in between), and the page says so.
 - The focus module on friends, partners and therapists (`/intimacy`) has 18 mirrored statements on AI as a best friend, partner or therapist and what that may do to attachment, critical thinking, identity, loneliness and intimacy ([`intimacyModule.ts`](src/data/intimacyModule.ts)). It has its own score, theme breakdown, reflection questions and a research summary that covers both sides, drawing on the American Psychological Association's 2025 health advisories, the World Health Organization's Commission on Social Connection, peer-reviewed studies and WIRED. It never touches the Atlas score, the match or share links.
+- "Compare with someone" (`/compare`) takes two share links and sets the two results side by side, axis by axis, with each person's closest archetype and the widest gaps. The links carry the scores, so nothing is sent anywhere ([`compare.ts`](src/lib/compare.ts)).
+- Each match card names the axes that count double for that archetype and the ones that count for less, the same weights the match uses.
 - The 26 thought experiments (`/thought-experiments`, listed in [`THOUGHT_EXPERIMENTS.md`](THOUGHT_EXPERIMENTS.md)) are short dilemmas with discussion questions.
 - The paper edition is a 39-page printable booklet ([`public/ai-worldview-atlas-paper.pdf`](public/ai-worldview-atlas-paper.pdf)) with the same statements and hand scoring by addition and a lookup table. Entering its 16 nets and counts of "no settled view" at `/paper` gives the exact online results. The intro page links to both.
 
@@ -179,6 +184,7 @@ src/
 │   ├── archetypeSalience.ts     which axes define each archetype and which fall outside its concerns
 │   ├── profileReports.ts        report content per archetype
 │   ├── profileExpansions.ts     added narrative, axis reasons, objections and landmarks
+│   ├── reportSources.ts         checked links for every reading, landmark and thinker, and the date they were checked
 │   ├── manifestoContents.ts     the 50 "Case for This View" essays
 │   ├── coreThree.ts             the 27-archetype core-three reading
 │   ├── shortForm.ts             the 48-statement short version
@@ -190,6 +196,7 @@ src/
 ├── lib/
 │   ├── scoring.ts               the scoring pipeline above
 │   ├── shareLink.ts             results in a URL
+│   ├── compare.ts               two results from share links, axis by axis
 │   ├── resultHistory.ts         earlier results in this browser, for comparison
 │   ├── axisPositions.ts         an archetype's positions in words; biggest gaps between two positions
 │   ├── statementComparison.ts   expected answers of an archetype
@@ -198,7 +205,7 @@ src/
 │   └── shareCard.ts             the share image
 ├── state/QuizContext.tsx         answers, order, tags, scenario picks, version, weights, focus-module answers
 ├── components/                  RadarChart, ProfileCard, ReportPreview, MethodologySection, ...
-└── pages/                       Intro, Axis (/quiz/:n), Scenario, Results, ThoughtExperiments, Intimacy, PaperScores (/paper)
+└── pages/                       Intro, Axis (/quiz/:n), Scenario, Results, Compare, ThoughtExperiments, Intimacy, PaperScores (/paper)
 paper/                           the booklet builder (build.py, render.py) and its check against the app (verify.py)
 analysis/                        the close-call simulation and its reference data
 scripts/                         exporters that write the booklet and simulation data from the quiz source

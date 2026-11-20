@@ -554,7 +554,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "White House voluntary AI commitments",
     "year": "2023",
-    "what": "Seven leading AI companies committed to safety testing, security measures and watermarking research for their the most advanced models.",
+    "what": "Seven leading AI companies committed to safety testing, security measures and watermarking research for their most advanced models.",
     "source": "The White House, July 2023"
    },
    {
@@ -1375,7 +1375,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
    {
     "name": "Public opinion on AI",
     "year": "2023",
-    "what": "Pew Research Center found that more Americans were more concerned than excited about the growing use of AI in daily life, with many unsure.",
+    "what": "Pew Research Center found that 52% of Americans felt more concerned than excited about the growing use of AI, 10% more excited than concerned, and 36% an equal mix.",
     "source": "Pew Research Center, August 2023"
    }
   ],
@@ -2789,7 +2789,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
     "source": "US Bureau of Industry and Security, foreign direct product rule amendments, May and August 2020"
    },
    {
-    "name": "'Small yard, high fence'",
+    "name": "'As large of a lead as possible'",
     "year": "2022",
     "what": "The US national security adviser said the US must now keep as large a lead as possible in key technologies, guarded by tight controls.",
     "source": "Jake Sullivan, remarks at the Special Competitive Studies Project summit, September 2022"
@@ -2815,7 +2815,7 @@ export const profileExpansions: Record<string, ProfileExpansion> = {
   ],
   "addedReading": [
    {
-    "title": "Choking Off China's AI Access to US Technologies",
+    "title": "Choking off China's Access to the Future of AI",
     "author": "Gregory C. Allen (CSIS, 2022)",
     "note": "An early analysis of what the October 2022 controls were trying to do."
    },

@@ -19,9 +19,9 @@ export function StatementComparison({ questions, answers, declinedQuestions, pro
 
   return (
     <section className="mt-8" aria-labelledby="statement-comparison-heading">
-      <h3 id="statement-comparison-heading" className="text-xl font-semibold mb-2">
+      <h2 id="statement-comparison-heading" className="text-xl font-semibold mb-2">
         Statement by Statement
-      </h3>
+      </h2>
       <p className="text-gray-700 mb-2">
         Your answer to each statement, next to the answer your closest archetypes would be expected to give. The archetypes never
         answered these statements. Their answers here are estimates from where each one sits on that statement&apos;s axis: one
