@@ -7,6 +7,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/ai-worldview-atlas/' : '/',
   plugins: [react()],
+  build: {
+    // Two chunks are large on purpose and load only when needed: the PDF library (on "Download PDF") and the results
+    // page with its 50 reports. The first screen loads about 245 kB.
+    chunkSizeWarningLimit: 1500,
+  },
   test: {
     environment: 'jsdom',
     globals: true,

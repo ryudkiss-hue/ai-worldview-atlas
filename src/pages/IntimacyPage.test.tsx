@@ -28,7 +28,7 @@ describe('IntimacyPage', () => {
     renderPage()
     expect(screen.queryByText(/Your lean:/)).not.toBeInTheDocument()
     intimacyStatements.forEach((q) => {
-      const group = screen.getByRole('radiogroup', { name: `Question ${q.id} answer` })
+      const group = screen.getByRole('radiogroup', { name: q.statement })
       fireEvent.click(within(group).getByRole('radio', { name: q.leans === 'open' ? 'Strongly Agree' : 'Strongly Disagree' }))
     })
     expect(screen.getByText('Your lean: Strongly open')).toBeInTheDocument()

@@ -93,7 +93,7 @@ export function drawShareCard(ctx: CanvasRenderingContext2D, data: ShareCardData
 
   ctx.fillStyle = '#64748b'
   ctx.font = '400 18px system-ui, sans-serif'
-  ctx.fillText('A self-reflection tool, not a scientific instrument.', 60, SHARE_CARD_HEIGHT - 40)
+  ctx.fillText('A tool for learning and self-reflection.', 60, SHARE_CARD_HEIGHT - 40)
 }
 
 /**

@@ -8,6 +8,9 @@ export interface ResultHistoryEntry {
   topMatchName: string
   /** Which version produced it; older entries have none and came from the full quiz */
   mode?: 'full' | 'short'
+  /** Statements answered per axis and horizon; older entries have none and are scored as if all were answered */
+  t1N?: AxisVector
+  t2N?: AxisVector
 }
 
 // v3: item set 3, the plain-language rewrite. Results from earlier wordings stay under their old keys, unread.
@@ -50,7 +53,7 @@ export function recordResult(entry: Omit<ResultHistoryEntry, 'timestamp'>, times
   const sameResult =
     last &&
     (last.mode ?? 'full') === (entry.mode ?? 'full') &&
-    JSON.stringify([last.t1Raw, last.t2Raw]) === JSON.stringify([entry.t1Raw, entry.t2Raw])
+    JSON.stringify([last.t1Raw, last.t2Raw, last.t1N, last.t2N]) === JSON.stringify([entry.t1Raw, entry.t2Raw, entry.t1N, entry.t2N])
   if (sameResult) {
     return history.slice(0, -1)
   }

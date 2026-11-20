@@ -18,10 +18,10 @@ export function ScenarioPage() {
   return (
     <div className="max-w-2xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
-        <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
+        <span className="text-gray-500 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
       </div>
 
-      <h2 className="text-2xl font-bold mb-2">{t('scenario_title') || "One More Thing (Optional)"}</h2>
+      <h1 className="text-2xl font-bold mb-2">{t('scenario_title') || "One More Thing (Optional)"}</h1>
       <p className="text-gray-600 mb-6">
         {t('scenario_subtitle') || "Eight quick gut-check questions. These don't change your score — they're just here to compare against it."}
       </p>

@@ -1,9 +1,10 @@
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer'
+import { Document, Page, Text, View, Link, StyleSheet } from '@react-pdf/renderer'
 import { axes } from '../data/axes'
 import type { AxisVector, ProfileMatch } from './scoring'
 import type { ProfileReportContent } from '../data/types'
 import { describePosition } from './axisPositions'
 import { uiStrings } from '../data/uiStrings'
+import { readingLinks, landmarkLinks, thinkerLinks, formatCheckedDate } from '../data/reportSources'
 
 const styles = StyleSheet.create({
   page: { padding: 40, fontSize: 11, fontFamily: 'Helvetica' },
@@ -11,6 +12,7 @@ const styles = StyleSheet.create({
   heading: { fontSize: 16, marginTop: 16, marginBottom: 8 },
   paragraph: { marginBottom: 8, lineHeight: 1.4 },
   row: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 },
+  link: { color: '#1e40af', textDecoration: 'underline' },
 })
 
 interface ReportDocumentProps {
@@ -36,11 +38,11 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
       <Page style={styles.page}>
         <Text style={styles.heading}>Methodology &amp; Disclaimer</Text>
         <Text style={styles.paragraph}>
-          This report is a self-reflection tool, not a validated scientific instrument. It has not
-          been through independent test-retest reliability studies, factor analysis, or peer
-          review. The named thinkers and books in this report describe documented public work only
-          — they are not claims about those people's personal views, quiz results, or endorsement
-          of this report's characterization of any archetype.
+          This report comes from a tool for learning and self-reflection. It has not been through
+          test-retest reliability studies, factor analysis or peer review, so it is not a validated
+          scientific instrument. The thinkers and books named here are described by their documented
+          public work only. Naming them makes no claim about their personal views, their quiz results
+          or whether they would agree with how any archetype is described.
         </Text>
       </Page>
 
@@ -81,7 +83,7 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
         <Text style={styles.heading}>Where This View Shows Up</Text>
         {topContent.landmarks.map((l) => (
           <Text key={l.name} style={styles.paragraph}>
-            {l.name} ({l.year}). {l.what} Source: {l.source}
+            {landmarkLinks[l.name] ? <Link src={landmarkLinks[l.name]} style={styles.link}>{l.name}</Link> : l.name} ({l.year}). {l.what} Source: {l.source}
           </Text>
         ))}
       </Page>
@@ -90,15 +92,16 @@ export function ReportDocument({ combined, t1Scaled, t2Scaled, topMatches, profi
         <Text style={styles.heading}>Thinkers</Text>
         {topContent.thinkers.map((thinker) => (
           <Text key={thinker.name} style={styles.paragraph}>
-            {thinker.name} ({thinker.bio}): {thinker.connection}
+            {thinkerLinks[thinker.name] ? <Link src={thinkerLinks[thinker.name]} style={styles.link}>{thinker.name}</Link> : thinker.name} ({thinker.bio}): {thinker.connection}
           </Text>
         ))}
         <Text style={styles.heading}>Further Reading</Text>
         {topContent.furtherReading.map((item) => (
           <Text key={item.title} style={styles.paragraph}>
-            {item.title}, {item.author} — {item.note}
+            {readingLinks[item.title] ? <Link src={readingLinks[item.title]} style={styles.link}>{item.title}</Link> : item.title}, {item.author} — {item.note}
           </Text>
         ))}
+        <Text style={{ ...styles.paragraph, fontSize: 9, color: '#555555' }}>Sources last checked {formatCheckedDate()}.</Text>
       </Page>
 
       <Page style={styles.page}>

@@ -9,6 +9,7 @@ import { stakeholderTags } from '../data/stakeholderTags'
 import { useQuiz } from '../state/QuizContext'
 import {
   computeRawAxisScores,
+  answeredCounts,
   scaleAxisScores,
   combineHorizons,
   classify,
@@ -23,20 +24,15 @@ import {
 import { encodeShareLink, decodeShareLink } from '../lib/shareLink'
 import { recordResult, type ResultHistoryEntry } from '../lib/resultHistory'
 import { renderShareCardToBlob } from '../lib/shareCard'
-import { pdf } from '@react-pdf/renderer'
-import { ReportDocument } from '../lib/pdfReport'
 import { RadarChart } from '../components/RadarChart'
 import { ProfileCard } from '../components/ProfileCard'
 import { ReportPreview } from '../components/ReportPreview'
 import { MethodologySection } from '../components/MethodologySection'
 import { ReflectiveBreakdown } from '../components/ReflectiveBreakdown'
 import { PinnacleReflection } from '../components/PinnacleReflection'
-import { manifestoContents } from '../data/manifestoContents'
 import { MarkdownRenderer } from '../components/MarkdownRenderer'
 import { coreArchetype, coreCode, describeCore, tierInfo, type CoreAxis } from '../data/coreThree'
 import { biggestGaps, withAxisPositions } from '../lib/axisPositions'
-import { failedAttentionChecks } from '../data/attentionChecks'
-import { STUDY_FORM_URL } from '../data/study'
 import { AxisWeightsPanel } from '../components/AxisWeightsPanel'
 import { StatementComparison } from '../components/StatementComparison'
 
@@ -49,7 +45,6 @@ export function ResultsPage() {
     scenarioAnswers,
     selectedStakeholderTags,
     declinedQuestions,
-    checkAnswers,
     mode,
     setMode,
     axisWeights,
@@ -80,17 +75,20 @@ export function ResultsPage() {
   const hasNoData = !decoded && !modeQuestions.some((q) => answers[q.id] !== undefined)
   const modeDeclined = declinedQuestions.filter((id) => modeQuestions.some((q) => q.id === id))
 
-  const { t1Raw, t2Raw } = useMemo(() => {
+  const { t1Raw, t2Raw, t1N, t2N } = useMemo(() => {
     if (decoded) return decoded
     return {
       t1Raw: computeRawAxisScores(modeQuestions, answers, 'T1'),
       t2Raw: computeRawAxisScores(modeQuestions, answers, 'T2'),
+      t1N: answeredCounts(modeQuestions, answers, 'T1'),
+      t2N: answeredCounts(modeQuestions, answers, 'T2'),
     }
   }, [decoded, answers, modeQuestions])
 
-  const t1Scaled: AxisVector = scaleAxisScores(t1Raw, 'T1', modeQuestions)
-  const t2Scaled: AxisVector = scaleAxisScores(t2Raw, 'T2', modeQuestions)
-  const combined = combineHorizons(t1Scaled, t2Scaled, modeQuestions)
+  // "No settled view" counts as missing: each score is the average over the statements answered.
+  const t1Scaled: AxisVector = scaleAxisScores(t1Raw, 'T1', modeQuestions, t1N)
+  const t2Scaled: AxisVector = scaleAxisScores(t2Raw, 'T2', modeQuestions, t2N)
+  const combined = combineHorizons(t1Scaled, t2Scaled, modeQuestions, t1N, t2N)
   // Weights change only which archetypes rank closest; equal weights give the ordinary distance.
   const weights = decoded ? (decoded.weights ?? EQUAL_WEIGHTS) : axisWeights
   const weighted = !isEqualWeights(weights)
@@ -100,11 +98,16 @@ export function ResultsPage() {
   const closeCall = isCloseCall(matches, resultMode === 'short' ? CLOSE_CALL_MARGIN_SHORT : CLOSE_CALL_MARGIN)
   const remainingFull = questions.filter((q) => answers[q.id] === undefined && !declinedQuestions.includes(q.id)).length
   const closeCallAxes = closeCall ? biggestGaps(matches[0].profile.coords, matches[1].profile.coords, 3, 1) : []
-  const missedChecks = decoded ? [] : failedAttentionChecks(checkAnswers)
   const core = coreArchetype(combined)
 
   const [inspectedProfileId, setInspectedProfileId] = useState<string>(topMatch.profile.id)
   const [activeTab, setActiveTab] = useState<'summary' | 'manifesto'>('summary')
+  // The 50 essays are the largest data file, so they load the first time the tab is opened.
+  const [manifestos, setManifestos] = useState<Record<string, string> | null>(null)
+  useEffect(() => {
+    if (activeTab !== 'manifesto' || manifestos) return
+    import('../data/manifestoContents').then((m) => setManifestos(m.manifestoContents))
+  }, [activeTab, manifestos])
 
   // Keep state updated if topMatch changes
   useEffect(() => {
@@ -123,7 +126,7 @@ export function ResultsPage() {
     if (decoded || hasNoData || savedHistoryRef.current) return
     savedHistoryRef.current = true
     const priorHistory = recordResult(
-      { t1Raw, t2Raw, topMatchId: topMatch.profile.id, topMatchName: topMatch.profile.name, mode: resultMode },
+      { t1Raw, t2Raw, t1N, t2N, topMatchId: topMatch.profile.id, topMatchName: topMatch.profile.name, mode: resultMode },
       Date.now(),
     )
     setPriorEntry(priorHistory.length > 0 ? priorHistory[priorHistory.length - 1] : null)
@@ -133,7 +136,13 @@ export function ResultsPage() {
   const priorCombined = useMemo(() => {
     if (!priorEntry) return null
     const qs = questionsForMode(priorEntry.mode ?? 'full')
-    return combineHorizons(scaleAxisScores(priorEntry.t1Raw, 'T1', qs), scaleAxisScores(priorEntry.t2Raw, 'T2', qs), qs)
+    return combineHorizons(
+      scaleAxisScores(priorEntry.t1Raw, 'T1', qs, priorEntry.t1N),
+      scaleAxisScores(priorEntry.t2Raw, 'T2', qs, priorEntry.t2N),
+      qs,
+      priorEntry.t1N,
+      priorEntry.t2N,
+    )
   }, [priorEntry])
 
   const selectedTagObjects = stakeholderTags.filter((tag) => selectedStakeholderTags.includes(tag.id))
@@ -149,7 +158,7 @@ export function ResultsPage() {
   }, [decoded, modeDeclined])
 
   async function handleShare() {
-    const encoded = encodeShareLink({ t1Raw, t2Raw, mode: resultMode, weights })
+    const encoded = encodeShareLink({ t1Raw, t2Raw, t1N, t2N, mode: resultMode, weights })
     const url = `${window.location.origin}${import.meta.env.BASE_URL}#/results?d=${encoded}`
     clearTimeout(copyStatusResetRef.current)
     try {
@@ -179,7 +188,7 @@ export function ResultsPage() {
     return (
       staleLink ? (
         <div className="max-w-2xl mx-auto p-6 text-center">
-          <h2 className="text-2xl font-bold mb-4">This link is from an earlier version</h2>
+          <h1 className="text-2xl font-bold mb-4">This link is from an earlier version</h1>
           <p className="text-gray-700 mb-6">
             The Atlas's statements have been reworded since this link was made, so its result can't be shown
             here. Take the current assessment to get a result you can share.
@@ -190,7 +199,7 @@ export function ResultsPage() {
         </div>
       ) : (
       <div className="max-w-2xl mx-auto p-6 text-center">
-        <h2 className="text-2xl font-bold mb-4">{t('no_results_yet') || 'No Results Yet'}</h2>
+        <h1 className="text-2xl font-bold mb-4">{t('no_results_yet') || 'No Results Yet'}</h1>
         <p className="text-gray-700 mb-6">
           {t('no_results_desc') || "You haven't completed the assessment yet, so there's nothing to show here. Start from the beginning to get your results."}
         </p>
@@ -205,6 +214,8 @@ export function ResultsPage() {
   async function handleDownloadPdf() {
     setPdfStatus('generating')
     try {
+      // Loaded on demand: the PDF library is the largest dependency and most visitors never export.
+      const [{ pdf }, { ReportDocument }] = await Promise.all([import('@react-pdf/renderer'), import('../lib/pdfReport')])
       const doc = (
         <ReportDocument
           combined={combined}
@@ -218,7 +229,7 @@ export function ResultsPage() {
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.download = `tiam-report-${topMatch.profile.id}.pdf`
+      link.download = `ai-worldview-atlas-${topMatch.profile.id}.pdf`
       link.click()
       URL.revokeObjectURL(url)
       setPdfStatus('idle')
@@ -255,15 +266,15 @@ export function ResultsPage() {
   return (
     <div className="max-w-3xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
-        <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
+        <span className="text-gray-500 text-xs font-semibold uppercase tracking-wider">{t('worldview_atlas')}</span>
       </div>
 
-      <h2 className="text-2xl font-bold mb-4">{t('results_title')}</h2>
+      <h1 className="text-2xl font-bold mb-4">{t('results_title')}</h1>
       <RadarChart combined={combined} comparisonProfile={{ name: tProfileName(topMatch.profile.id), coords: topMatch.profile.coords }} />
 
       {resultMode === 'short' && (
         <div className="mt-4 border-l-4 border-indigo-500 bg-indigo-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">{decoded ? 'From the Short Version' : 'You Took the Short Version'}</h3>
+          <h2 className="text-lg font-semibold mb-1">{decoded ? 'From the Short Version' : 'You Took the Short Version'}</h2>
           <p className="text-gray-700">
             This result comes from {modeQuestions.length} of the {questions.length} statements, six per axis instead of eighteen.
             Each score sits on the same −10 to +10 scale but rests on fewer answers, so one answer moves it more and your closest
@@ -283,7 +294,7 @@ export function ResultsPage() {
 
       {selectedTagObjects.length > 0 && (
         <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">Your Stake</h3>
+          <h2 className="text-lg font-semibold mb-1">Your Stake</h2>
           <p className="text-gray-700 mb-2">{selectedTagObjects.map((tag) => tag.name).join(', ')}</p>
           <p className="text-gray-700">
             Your match above came only from your belief-question answers; your stake played no part in
@@ -295,7 +306,7 @@ export function ResultsPage() {
 
       {!decoded && modeDeclined.length > 0 && (
         <div className="mt-4 border-l-4 border-gray-400 bg-gray-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">No Settled View</h3>
+          <h2 className="text-lg font-semibold mb-1">No Settled View</h2>
           <p className="text-gray-700">
             You marked {modeDeclined.length} of {modeQuestions.length} statements as having no settled
             view{topDeclineAxis ? `, mostly on ${topDeclineAxis.name}` : ''}. Each counts as zero. A near-zero score on an
@@ -307,7 +318,7 @@ export function ResultsPage() {
 
       {!decoded && priorEntry && priorCombined && (
         <div className="mt-4 border-l-4 border-emerald-500 bg-emerald-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">Compared to Your Last Attempt</h3>
+          <h2 className="text-lg font-semibold mb-1">Compared to Your Last Attempt</h2>
           <p className="text-gray-700 mb-3">
             Last taken {new Date(priorEntry.timestamp).toLocaleDateString()}, you matched closest to{' '}
             <strong>{priorEntry.topMatchName}</strong>
@@ -346,26 +357,16 @@ export function ResultsPage() {
             </table>
           </div>
           <p className="text-gray-500 text-sm mt-2">
-            No test-retest reliability study backs this tool, so treat any shift as a prompt to reflect,
-            not a precise measurement of how your views actually moved.
+            No test-retest reliability study backs this tool, so a shift here is a prompt to reflect on,
+            and it can't tell you precisely how far your views actually moved.
           </p>
         </div>
       )}
 
-      {missedChecks.length > 0 && (
-        <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">A Check Statement Was Answered Differently</h3>
-          <p className="text-gray-700">
-            {missedChecks.length === 1 ? 'One of the two check statements' : 'Both check statements'} asked for a particular
-            answer and got a different one. That often just means a quick tap, but if you were moving fast, your scores may
-            be less reliable than usual. Your answers are saved, so you can go back and look over any axis.
-          </p>
-        </div>
-      )}
 
       {closeCall && (
         <div className="mt-4 border-l-4 border-sky-500 bg-sky-50 p-4">
-          <h3 className="text-lg font-semibold mb-1">This Was a Close Call</h3>
+          <h2 className="text-lg font-semibold mb-1">This Was a Close Call</h2>
           <p className="text-gray-700">
             {topMatch.profile.name} and {matches[1].profile.name} are almost exactly as close to you as each other. When the
             gap is this small, a slightly different set of statements on the same themes would give a different first match
@@ -391,7 +392,7 @@ export function ResultsPage() {
         </div>
       )}
 
-      <h3 className="text-xl font-semibold mt-8 mb-2">{t('closest_archetype')}</h3>
+      <h2 className="text-xl font-semibold mt-8 mb-2">{t('closest_archetype')}</h2>
       {topMatches.map((match, index) => (
         <ProfileCard
           key={match.profile.id}
@@ -417,7 +418,7 @@ export function ResultsPage() {
 
       <section className="mt-8 rounded-lg border border-gray-200 p-4" aria-labelledby="core-three-heading">
         <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Your core three · {coreCode(core.tiers)}</p>
-        <h3 id="core-three-heading" className="text-xl font-semibold mt-1">{core.name}</h3>
+        <h2 id="core-three-heading" className="text-xl font-semibold mt-1">{core.name}</h2>
         <p className="text-gray-600 italic">{core.tagline}</p>
         <p className="text-gray-800 mt-2">{describeCore(core)}</p>
         <p className="text-sm text-gray-500 mt-2">
@@ -464,9 +465,15 @@ export function ResultsPage() {
         <button type="button" onClick={handleRetake} className="px-4 py-2 rounded border border-gray-300">
           {t('retake') || 'Retake'}
         </button>
+        <Link
+          to={`/compare?a=${encodeURIComponent(encodeShareLink({ t1Raw, t2Raw, t1N, t2N, mode: resultMode, weights }))}`}
+          className="px-4 py-2 rounded border border-gray-300"
+        >
+          Compare with someone
+        </Link>
       </div>
 
-      <h3 className="text-xl font-semibold mt-8 mb-2">{t('axis_comparison') || 'Near-Term vs. Long-Term, by Axis'}</h3>
+      <h2 className="text-xl font-semibold mt-8 mb-2">{t('axis_comparison') || 'Near-Term vs. Long-Term, by Axis'}</h2>
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -498,7 +505,7 @@ export function ResultsPage() {
       )}
 
       <div className="border-t border-gray-200 mt-12 pt-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'Report and the Case for This View'}</h3>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">{t('view_report_manifesto') || 'Report and the Case for This View'}</h2>
         <div className="flex flex-wrap gap-2 mb-6">
           {topMatches.map((match) => (
             <button
@@ -552,9 +559,11 @@ export function ResultsPage() {
           <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200 shadow-sm animate-fadeIn">
             <MarkdownRenderer
               content={
-                manifestoContents[inspectedMatch.profile.id]
-                  ? withAxisPositions(manifestoContents[inspectedMatch.profile.id], inspectedMatch.profile)
-                  : '*Not available for this viewpoint.*'
+                !manifestos
+                  ? '*Loading…*'
+                  : manifestos[inspectedMatch.profile.id]
+                    ? withAxisPositions(manifestos[inspectedMatch.profile.id], inspectedMatch.profile)
+                    : '*Not available for this viewpoint.*'
               }
             />
           </div>
@@ -572,15 +581,6 @@ export function ResultsPage() {
         score and a summary of the research, and it doesn&apos;t change this result.
       </p>
 
-      {STUDY_FORM_URL && (
-        <p className="mt-4 text-gray-700">
-          This quiz hasn&apos;t been validated yet.{' '}
-          <a href={STUDY_FORM_URL} target="_blank" rel="noreferrer" className="text-blue-600 underline">
-            Take it once more in the study version
-          </a>{' '}
-          to help test whether it measures what it claims to. It asks for consent first and no name.
-        </p>
-      )}
 
       <MethodologySection />
       <PinnacleReflection archetypeName={topMatch.profile.name} />

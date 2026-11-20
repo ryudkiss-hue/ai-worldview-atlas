@@ -8,18 +8,16 @@ import { uiStrings } from '../data/uiStrings'
 import { questions } from '../data/questions'
 import { scenarios } from '../data/scenarios'
 import { profiles } from '../data/profiles'
-import { attentionChecks } from '../data/attentionChecks'
 import { questionsForMode, type QuizMode } from '../data/shortForm'
 import { intimacyStatements } from '../data/intimacyModule'
 import { AXIS_WEIGHT_OPTIONS, EQUAL_WEIGHTS, type AxisWeights } from '../lib/scoring'
 
 export type QuestionOrder = Record<AxisId, { t1: number[]; t2: number[] }>
 
-/** Statement ids shown in one axis and horizon: the real statements plus any attention check placed there. */
+/** Statement ids shown in one axis and horizon. */
 function idsFor(axisId: AxisId, horizon: 'T1' | 'T2'): number[] {
   return [
     ...questionsForAxis(axisId).filter((q) => q.horizon === horizon).map((q) => q.id),
-    ...attentionChecks.filter((c) => c.axisId === axisId && c.horizon === horizon).map((c) => c.id),
   ]
 }
 
@@ -38,7 +36,6 @@ interface QuizState {
   scenarioAnswers: Partial<Record<AxisId, 'A' | 'B'>>
   selectedStakeholderTags: string[]
   /** Answers to the optional attention checks, kept apart from the scored answers */
-  checkAnswers: Record<number, number>
   /** Full 144-statement Atlas or the 48-statement short version */
   mode: QuizMode
   /** How much each axis counts when matching archetypes (never changes the scores) */
@@ -54,7 +51,6 @@ function buildInitialState(): QuizState {
     questionOrder: buildQuestionOrder(),
     scenarioAnswers: {},
     selectedStakeholderTags: [],
-    checkAnswers: {},
     mode: 'full',
     axisWeights: { ...EQUAL_WEIGHTS },
     intimacyAnswers: {},
@@ -82,7 +78,6 @@ export function loadSavedProgress(): QuizState | null {
     const saved = JSON.parse(raw) as Partial<QuizState>
     const fresh = buildInitialState()
     const realIds = new Set(questions.map((q) => q.id))
-    const checkIds = new Set(attentionChecks.map((c) => c.id))
     const pick = (obj: unknown, ids: Set<number>) =>
       Object.fromEntries(
         Object.entries(obj && typeof obj === 'object' ? obj : {}).filter(
@@ -109,7 +104,6 @@ export function loadSavedProgress(): QuizState | null {
       selectedStakeholderTags: Array.isArray(saved.selectedStakeholderTags)
         ? saved.selectedStakeholderTags.filter((x) => typeof x === 'string')
         : [],
-      checkAnswers: pick(saved.checkAnswers, checkIds),
       mode: saved.mode === 'short' ? 'short' : 'full',
       axisWeights: Object.fromEntries(
         axes.map((a) => {
@@ -142,7 +136,6 @@ type QuizAction =
   | { type: 'ANSWER_SCENARIO'; axisId: AxisId; choice: 'A' | 'B' }
   | { type: 'CLEAR_SCENARIO_ANSWERS' }
   | { type: 'SET_STAKEHOLDER_TAGS'; tagIds: string[] }
-  | { type: 'ANSWER_CHECK'; checkId: number; value: number }
   | { type: 'RESET' }
   | { type: 'START'; mode: QuizMode }
   | { type: 'SET_MODE'; mode: QuizMode }
@@ -174,8 +167,6 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
       return { ...state, scenarioAnswers: {} }
     case 'SET_STAKEHOLDER_TAGS':
       return { ...state, selectedStakeholderTags: action.tagIds }
-    case 'ANSWER_CHECK':
-      return { ...state, checkAnswers: { ...state.checkAnswers, [action.checkId]: action.value } }
     case 'RESET':
       // The intimacy module is separate, so retaking the main quiz leaves it alone.
       return { ...buildInitialState(), selectedStakeholderTags: state.selectedStakeholderTags, intimacyAnswers: state.intimacyAnswers }
@@ -207,7 +198,6 @@ interface QuizContextValue {
   questionOrder: QuestionOrder
   scenarioAnswers: Partial<Record<AxisId, 'A' | 'B'>>
   selectedStakeholderTags: string[]
-  checkAnswers: Record<number, number>
   mode: QuizMode
   axisWeights: AxisWeights
   intimacyAnswers: Record<number, number>
@@ -218,7 +208,6 @@ interface QuizContextValue {
   setScenarioAnswer: (axisId: AxisId, choice: 'A' | 'B') => void
   clearScenarioAnswers: () => void
   setStakeholderTags: (tagIds: string[]) => void
-  setCheckAnswer: (checkId: number, value: number) => void
   reset: () => void
   /** Clears answers and starts the chosen version from the first axis */
   startQuiz: (mode: QuizMode) => void
@@ -233,7 +222,7 @@ interface QuizContextValue {
   /** The Atlas is English only. */
   language: 'en'
   t: (key: string) => string
-  tQuestion: (id: number, type?: 'statement' | 'simplifiedStatement') => string
+  tQuestion: (id: number) => string
   tScenario: (axisId: string, type: 'prompt' | 'optionA' | 'optionB') => string
   tAxis: (axisId: string, type: 'name' | 'poleA' | 'poleB') => string
   tProfileName: (profileId: string) => string
@@ -254,7 +243,7 @@ export function QuizProvider({ children }: { children: ReactNode }) {
 
   const t = (key: string): string => uiStrings[key] || key
 
-  const tQuestion = (id: number, _type: 'statement' | 'simplifiedStatement' = 'statement'): string =>
+  const tQuestion = (id: number): string =>
     questions.find((q) => q.id === id)?.statement || ''
 
   const tScenario = (axisId: string, type: 'prompt' | 'optionA' | 'optionB'): string =>
@@ -272,7 +261,6 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     questionOrder: state.questionOrder,
     scenarioAnswers: state.scenarioAnswers,
     selectedStakeholderTags: state.selectedStakeholderTags,
-    checkAnswers: state.checkAnswers,
     mode: state.mode,
     axisWeights: state.axisWeights,
     intimacyAnswers: state.intimacyAnswers,
@@ -284,7 +272,6 @@ export function QuizProvider({ children }: { children: ReactNode }) {
     setScenarioAnswer: (axisId, choice) => dispatch({ type: 'ANSWER_SCENARIO', axisId, choice }),
     clearScenarioAnswers: () => dispatch({ type: 'CLEAR_SCENARIO_ANSWERS' }),
     setStakeholderTags: (tagIds) => dispatch({ type: 'SET_STAKEHOLDER_TAGS', tagIds }),
-    setCheckAnswer: (checkId, val) => dispatch({ type: 'ANSWER_CHECK', checkId, value: val }),
     reset: () => dispatch({ type: 'RESET' }),
     startQuiz: (mode) => dispatch({ type: 'START', mode }),
     setMode: (mode) => dispatch({ type: 'SET_MODE', mode }),

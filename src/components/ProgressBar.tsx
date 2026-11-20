@@ -14,6 +14,7 @@ export function ProgressBar({ current, total, label }: ProgressBarProps) {
           className="h-2 rounded-full bg-blue-600 transition-all"
           style={{ width: `${percent}%` }}
           role="progressbar"
+          aria-label="Progress through the statements"
           aria-valuenow={percent}
           aria-valuemin={0}
           aria-valuemax={100}

@@ -3,6 +3,18 @@ import { axes } from '../data/axes'
 import { profiles } from '../data/profiles'
 import { describePosition } from '../lib/axisPositions'
 import { uiStrings } from '../data/uiStrings'
+import { readingLinks, landmarkLinks, thinkerLinks, SOURCES_CHECKED, formatCheckedDate } from '../data/reportSources'
+
+/** A source name, linked when the report has a checked link for it. Opens in a new tab. */
+function SourceName({ text, href }: { text: string; href?: string }) {
+  if (!href) return <span className="font-medium">{text}</span>
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-800 underline decoration-blue-300 underline-offset-2 hover:decoration-blue-800">
+      {text}
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
+  )
+}
 
 interface ReportPreviewProps {
   content: ProfileReportContent
@@ -56,7 +68,7 @@ export function ReportPreview({ content }: ReportPreviewProps) {
       <ul className="space-y-3 mb-4">
         {content.landmarks.map((l) => (
           <li key={l.name} className="text-gray-700">
-            <span className="font-medium">{l.name}</span> <span className="text-gray-500 tabular-nums">({l.year})</span>. {l.what}
+            <SourceName text={l.name} href={landmarkLinks[l.name]} /> <span className="text-gray-500 tabular-nums">({l.year})</span>. {l.what}
             <span className="block text-sm text-gray-500">Source: {l.source}</span>
           </li>
         ))}
@@ -66,7 +78,7 @@ export function ReportPreview({ content }: ReportPreviewProps) {
       <ul className="space-y-2 mb-4">
         {content.thinkers.map((thinker) => (
           <li key={thinker.name}>
-            <span className="font-medium">{thinker.name}</span> — {thinker.bio}.{' '}
+            <SourceName text={thinker.name} href={thinkerLinks[thinker.name]} /> — {thinker.bio}.{' '}
             <span>{thinker.connection}</span>
           </li>
         ))}
@@ -76,7 +88,7 @@ export function ReportPreview({ content }: ReportPreviewProps) {
       <ul className="space-y-2 mb-4">
         {content.furtherReading.map((item) => (
           <li key={item.title}>
-            <span className="font-medium">{item.title}</span>, {item.author} — {item.note}
+            <SourceName text={item.title} href={readingLinks[item.title]} />, {item.author} — {item.note}
           </li>
         ))}
       </ul>
@@ -87,6 +99,10 @@ export function ReportPreview({ content }: ReportPreviewProps) {
           <li key={index}>{step}</li>
         ))}
       </ul>
+      <p className="mt-6 text-sm text-gray-500">
+        Sources last checked <time dateTime={SOURCES_CHECKED}>{formatCheckedDate()}</time>. Links open the work, record or
+        encyclopedia entry each claim was checked against.
+      </p>
     </section>
   )
 }
