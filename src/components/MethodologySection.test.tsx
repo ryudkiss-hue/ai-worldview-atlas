@@ -8,7 +8,7 @@ describe('MethodologySection', () => {
     render(<MethodologySection />)
     expect(screen.queryByText(/Pew-style/i)).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'How This Works' }))
-    expect(screen.getByText(/strong view on just one or two axes/i)).toBeInTheDocument()
+    expect(screen.getByText(/barely takes a side on count half/i)).toBeInTheDocument()
   })
 
   it('exposes expanded state via aria-expanded for screen readers', () => {

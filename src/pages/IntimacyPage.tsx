@@ -74,7 +74,7 @@ export function IntimacyPage() {
   return (
     <div className="max-w-2xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
-        <Link to="/" className="text-gray-400 hover:text-gray-600 text-xs font-semibold uppercase tracking-wider">
+        <Link to="/" className="text-gray-500 hover:text-gray-700 text-xs font-semibold uppercase tracking-wider">
           AI Worldview Atlas
         </Link>
         <Link to="/results" className="text-gray-500 hover:text-gray-700 text-xs font-semibold uppercase tracking-wider">
@@ -105,9 +105,10 @@ export function IntimacyPage() {
           const declined = value === INTIMACY_DECLINED
           return (
             <li key={q.id}>
-              <p className="text-gray-800 leading-relaxed mb-2">{q.statement}</p>
+              <p id={`statement-${q.id}`} className="text-gray-800 leading-relaxed mb-2">{q.statement}</p>
               <LikertInput
                 questionId={q.id}
+                labelledBy={`statement-${q.id}`}
                 value={declined ? undefined : value}
                 declined={declined}
                 onChange={(v) => setIntimacyAnswer(q.id, v)}
@@ -160,7 +161,7 @@ export function IntimacyPage() {
             </div>
           ))}
           <p className="text-sm text-gray-500 mt-4">
-            Each theme rests on just two statements, so treat these as conversation starters, not measurements. Like the rest of the
+            Each theme rests on just two statements, so these work best as conversation starters. Like the rest of the
             site, this module hasn&apos;t been validated.
           </p>
         </section>

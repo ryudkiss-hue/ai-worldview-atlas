@@ -59,9 +59,6 @@ export async function clearPersistentTTSCache(): Promise<boolean> {
 export async function fetchElevenLabsTTS(
   text: string,
   settings: TTSSettings,
-  // Kept for call compatibility. Pre-recorded audio was removed because it read the previous wording.
-  _questionId?: number,
-  _isSimplified?: boolean
 ): Promise<string> {
   const cacheKey = `${settings.voiceId}:${settings.stability}:${settings.similarityBoost}:${text}`
   

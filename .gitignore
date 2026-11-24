@@ -3,3 +3,7 @@ dist/
 .superpowers/
 *.tsbuildinfo
 .env*
+.claude/worktrees/
+paper/engine_results.json
+paper/booklet.html
+__pycache__/

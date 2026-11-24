@@ -35,4 +35,22 @@ describe('LikertInput', () => {
     expect(onDecline).toHaveBeenCalled()
     screen.getAllByRole('radio').forEach((r) => expect(r.getAttribute('aria-checked')).toBe('false'))
   })
+
+  it('is one tab stop that arrow keys move through, named by its statement', () => {
+    const onChange = vi.fn()
+    render(
+      <QuizProvider>
+        <p id="s1">AI can feel.</p>
+        <LikertInput questionId={1} value={2} onChange={onChange} labelledBy="s1" />
+      </QuizProvider>,
+    )
+    const group = screen.getByRole('radiogroup', { name: 'AI can feel.' })
+    expect(screen.getAllByRole('radio').filter((r) => r.tabIndex === 0)).toHaveLength(1)
+    expect(screen.getByRole('radio', { name: 'Disagree' }).tabIndex).toBe(0)
+    fireEvent.keyDown(group, { key: 'ArrowRight' })
+    expect(onChange).toHaveBeenLastCalledWith(4)
+    fireEvent.keyDown(group, { key: 'Home' })
+    expect(onChange).toHaveBeenLastCalledWith(1)
+  })
 })
+

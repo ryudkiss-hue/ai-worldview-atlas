@@ -14,9 +14,9 @@ export function AxisWeightsPanel({ weights, onChange, onReset }: AxisWeightsPane
   const equal = isEqualWeights(weights)
   return (
     <section className="mt-8 rounded-lg border border-gray-200 p-4" aria-labelledby="weights-heading">
-      <h3 id="weights-heading" className="text-xl font-semibold">
+      <h2 id="weights-heading" className="text-xl font-semibold">
         What Matters Most to You?
-      </h3>
+      </h2>
       <p className="text-gray-700 mt-1 mb-4">
         {onChange
           ? 'By default every axis counts the same when you are matched to archetypes. If some questions matter more to you than others, say so here. "More" counts an axis twice as much and "Less" half as much. Your scores stay exactly the same; only the ranking of archetypes can change.'

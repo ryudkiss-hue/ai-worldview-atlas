@@ -14,7 +14,7 @@ export function ReflectiveBreakdown({ content, scenarioAnswers, combined }: Refl
 
   return (
     <section className="mt-8">
-      <h3 className="text-xl font-semibold mb-3">Reflective Breakdown</h3>
+      <h2 className="text-xl font-semibold mb-3">Reflective Breakdown</h2>
       <p className="text-gray-700 mb-2">{content.reflectiveBreakdown.mindAssumption}</p>
       <p className="text-gray-700 mb-2">{content.reflectiveBreakdown.laborAssumption}</p>
       <p className="text-gray-700 mb-2">{content.reflectiveBreakdown.connectionAssumption}</p>
@@ -25,7 +25,7 @@ export function ReflectiveBreakdown({ content, scenarioAnswers, combined }: Refl
             return (
               <p key={axisId} className="text-gray-700">
                 Your scenario answer on the {axis.name} axis sits in tension with your computed
-                score. That's worth sitting with, not resolving immediately.
+                score. That's worth sitting with for a while before you try to resolve it.
               </p>
             )
           })}

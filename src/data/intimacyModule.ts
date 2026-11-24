@@ -56,7 +56,7 @@ export const intimacyThemes: IntimacyTheme[] = [
     short: 'partner',
     name: 'AI as a romantic partner',
     group: 'The roles AI plays',
-    reflection: 'What do you give in a relationship, not just get? Is there anything you could give to an AI partner?',
+    reflection: 'What do you give in a relationship, as well as get? Is there anything you could give to an AI partner?',
   },
   {
     id: 'therapist',
@@ -443,7 +443,7 @@ export const intimacyResearch: ResearchSection[] = [
         sources: ['folk'],
       },
       {
-        text: 'Among 1,131 Character.AI users, people with smaller social networks were more likely to use the chatbot mainly for companionship, and that use was linked to lower well-being, especially when chats were intense and very personal. This kind of study shows a link, not a cause.',
+        text: 'Among 1,131 Character.AI users, people with smaller social networks were more likely to use the chatbot mainly for companionship, and that use was linked to lower well-being, especially when chats were intense and very personal. A study like this can show a link, though it can\'t show a cause.',
         sources: ['zhang-nhb'],
       },
       {

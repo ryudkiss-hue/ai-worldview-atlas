@@ -53,12 +53,13 @@ describe('App end-to-end smoke test', () => {
     expect(screen.getByText('Your Results')).toBeInTheDocument()
   })
 
-  it('shows a "no results yet" prompt, not a fake result, when /results is reached without answering anything', () => {
+  it('shows a "no results yet" prompt, not a fake result, when /results is reached without answering anything', async () => {
     render(
       <MemoryRouter initialEntries={['/results']}>
         <App />
       </MemoryRouter>,
     )
-    expect(screen.getByText('No Results Yet')).toBeInTheDocument()
+    // The results page loads on demand, so wait for it.
+    expect(await screen.findByText('No Results Yet', {}, { timeout: 5000 })).toBeInTheDocument()
   })
 })

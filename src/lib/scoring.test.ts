@@ -16,7 +16,11 @@ import {
   EQUAL_WEIGHTS,
   isEqualWeights,
   type ProfileMatch,
+  answeredCounts,
+  scoringBase,
 } from './scoring'
+import { profiles } from '../data/profiles'
+import { axisSalience, DEFINING, OUTSIDE } from '../data/archetypeSalience'
 
 const fixtureQuestions: Question[] = [
   { id: 1, pair: 2, axisId: 'teleological', horizon: 'T1', agreeShiftsToward: 'A', statement: 'q1' },
@@ -151,8 +155,40 @@ describe('isCloseCall', () => {
   })
 
   it('takes a margin for the short version', () => {
-    expect(CLOSE_CALL_MARGIN_SHORT).toBe(0.3)
+    expect(CLOSE_CALL_MARGIN_SHORT).toBe(0.4)
     expect(isCloseCall([matchAt(10), matchAt(10.5)], 1)).toBe(true)
-    expect(isCloseCall([matchAt(10), matchAt(10.5)], 0.3)).toBe(false)
+    expect(isCloseCall([matchAt(10), matchAt(10.5)], 0.4)).toBe(false)
+  })
+})
+
+describe('"no settled view" as missing', () => {
+  const four = (n: number) => ({ ...zeroVector, teleological: n })
+  it('averages over the statements answered', () => {
+    // 2 statements in the horizon; one answered "strongly agree" toward A, the other left as no settled view
+    expect(scaleAxisScores(four(2), 'T1', fixtureQuestions, four(1)).teleological).toBe(10)
+    expect(scaleAxisScores(four(2), 'T1', fixtureQuestions).teleological).toBe(5)
+  })
+  it('never divides by less than half the statements', () => {
+    expect(scoringBase(18, 1)).toBe(9)
+    expect(scoringBase(18, 12)).toBe(12)
+    expect(scoringBase(18)).toBe(18)
+  })
+  it('counts answered statements per axis and horizon', () => {
+    expect(answeredCounts(fixtureQuestions, { 1: 5, 3: 2 }, 'T1').teleological).toBe(1)
+    expect(answeredCounts(fixtureQuestions, { 1: 5, 3: 2 }, 'T2').teleological).toBe(1)
+  })
+})
+
+describe('archetype axis weights', () => {
+  it('lets an axis outside an archetype\'s concerns count for less', () => {
+    const chip = profiles.find((p) => p.id === 'chip-sovereignty-enforcement-strategist')!
+    const you = { ...chip.coords, relational: chip.coords.relational + 8 }
+    const d = classify(you, [chip])[0].distance
+    expect(d).toBeLessThan(8)
+    expect(axisSalience(chip.id, 'relational')).toBe(OUTSIDE)
+    expect(axisSalience(chip.id, 'socioEconomic')).toBe(DEFINING)
+  })
+  it('leaves archetypes without listed axes at the plain distance', () => {
+    expect(axisSalience('pragmatic-centrist', 'risk')).toBe(1)
   })
 })

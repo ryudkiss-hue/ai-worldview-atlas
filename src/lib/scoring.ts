@@ -1,8 +1,9 @@
 import type { AxisId, Horizon, Question, Profile } from '../data/types'
 import { axes } from '../data/axes'
 import { questions as allQuestions } from '../data/questions'
+import { axisSalience } from '../data/archetypeSalience'
 
-/** Stored answers: 1 strongly disagree, 2 disagree, 4 agree, 5 strongly agree. "No settled view" is stored separately and scores 0. */
+/** Stored answers: 1 strongly disagree, 2 disagree, 4 agree, 5 strongly agree. "No settled view" is stored separately and counts as missing. */
 export type Answers = Record<number, number>
 
 export type AxisVector = Record<AxisId, number>
@@ -26,6 +27,25 @@ export function computeRawAxisScores(questions: Question[], answers: Answers, ho
   return raw
 }
 
+/** How many statements per axis in a horizon were actually answered ("no settled view" and skipped ones are left out). */
+export function answeredCounts(questions: Question[], answers: Answers, horizon: Horizon): AxisVector {
+  const counts = {} as AxisVector
+  axes.forEach((axis) => {
+    counts[axis.id] = questions.filter((q) => q.axisId === axis.id && q.horizon === horizon && answers[q.id] !== undefined).length
+  })
+  return counts
+}
+
+/**
+ * The number a raw total is divided by. With every statement answered it is the statement count. With some left as
+ * "no settled view" it is the number answered, so those statements don't pull the score toward zero, but never less
+ * than half the statements, so a single strong answer on an otherwise unanswered axis can't produce an extreme score.
+ */
+export function scoringBase(total: number, answered?: number): number {
+  if (answered === undefined) return total
+  return Math.max(answered, Math.ceil(total / 2))
+}
+
 /** Number of statements per axis in a horizon (each can contribute at most 2 points either way). */
 export function itemCounts(horizon: Horizon, questions: Question[] = allQuestions): AxisVector {
   const counts = {} as AxisVector
@@ -36,27 +56,37 @@ export function itemCounts(horizon: Horizon, questions: Question[] = allQuestion
 }
 
 /**
- * Linear scaling to -10..+10: 10 x raw / (2 x number of statements). Strongly agreeing with every pole-A
- * statement and strongly disagreeing with every pole-B one gives +10. Because every statement has a mirrored
- * partner, agreeing (or disagreeing) with everything gives exactly 0.
+ * Linear scaling to -10..+10: 10 x raw / (2 x base), where the base is the number of statements answered (see
+ * scoringBase). Strongly agreeing with every pole-A statement and strongly disagreeing with every pole-B one gives +10.
+ * Because every statement has a mirrored partner, agreeing (or disagreeing) with everything gives exactly 0. Without
+ * answered counts (results saved before this change), every statement is assumed answered.
  */
-export function scaleAxisScores(raw: AxisVector, horizon: Horizon, questions: Question[] = allQuestions): AxisVector {
+export function scaleAxisScores(raw: AxisVector, horizon: Horizon, questions: Question[] = allQuestions, answered?: AxisVector): AxisVector {
   const counts = itemCounts(horizon, questions)
   const scaled = {} as AxisVector
   ;(Object.keys(raw) as AxisId[]).forEach((axisId) => {
-    scaled[axisId] = counts[axisId] ? (10 * raw[axisId]) / (2 * counts[axisId]) : 0
+    const base = scoringBase(counts[axisId], answered?.[axisId])
+    scaled[axisId] = base ? (10 * raw[axisId]) / (2 * base) : 0
   })
   return scaled
 }
 
-/** Overall score per axis: the two horizons weighted by how many statements each has, i.e. the score over all of them. */
-export function combineHorizons(t1: AxisVector, t2: AxisVector, questions: Question[] = allQuestions): AxisVector {
+/** Overall score per axis: the two horizons weighted by their scoring bases, i.e. the score over all answered statements. */
+export function combineHorizons(
+  t1: AxisVector,
+  t2: AxisVector,
+  questions: Question[] = allQuestions,
+  answered1?: AxisVector,
+  answered2?: AxisVector,
+): AxisVector {
   const n1 = itemCounts('T1', questions)
   const n2 = itemCounts('T2', questions)
   const combined = {} as AxisVector
   ;(Object.keys(t1) as AxisId[]).forEach((axisId) => {
-    const total = n1[axisId] + n2[axisId]
-    combined[axisId] = total ? (t1[axisId] * n1[axisId] + t2[axisId] * n2[axisId]) / total : 0
+    const b1 = scoringBase(n1[axisId], answered1?.[axisId])
+    const b2 = scoringBase(n2[axisId], answered2?.[axisId])
+    const total = b1 + b2
+    combined[axisId] = total ? (t1[axisId] * b1 + t2[axisId] * b2) / total : 0
   })
   return combined
 }
@@ -77,20 +107,24 @@ export const EQUAL_WEIGHTS: AxisWeights = Object.fromEntries(axes.map((a) => [a.
 export const isEqualWeights = (w?: AxisWeights): boolean => !w || axes.every((a) => w[a.id] === 1)
 
 /**
- * Ranks archetypes by distance. With weights, each axis's squared gap counts in proportion to its weight, normalised so
- * that equal weights give exactly the ordinary Euclidean distance (and the same scale for the close-call margin).
+ * Ranks archetypes by distance. Each axis's squared gap counts in proportion to two weights multiplied together: the
+ * reader's own weight for that axis (Less, Normal, More) and the archetype's (archetypeSalience.ts: double on the axes
+ * that define it, a quarter on axes outside its concerns). The sum is normalised so that when every weight is 1 the
+ * result is exactly the ordinary Euclidean distance, which keeps the close-call margin on the same scale.
  */
 export function classify(combined: AxisVector, profiles: Profile[], weights?: AxisWeights): ProfileMatch[] {
   const ids = Object.keys(combined) as AxisId[]
   const w = (id: AxisId) => (weights ? weights[id] ?? 1 : 1)
-  const totalWeight = ids.reduce((s, id) => s + w(id), 0)
   const withDistance = profiles.map((profile) => {
-    const weighted = ids.reduce((sum, axisId) => {
+    let weighted = 0
+    let totalWeight = 0
+    ids.forEach((axisId) => {
+      const k = w(axisId) * axisSalience(profile.id, axisId)
       const diff = combined[axisId] - profile.coords[axisId]
-      return sum + w(axisId) * diff * diff
-    }, 0)
-    const distance = weights ? Math.sqrt((ids.length * weighted) / totalWeight) : Math.sqrt(weighted)
-    return { profile, distance }
+      weighted += k * diff * diff
+      totalWeight += k
+    })
+    return { profile, distance: Math.sqrt((ids.length * weighted) / totalWeight) }
   })
   return withDistance.sort((a, b) => a.distance - b.distance)
 }
@@ -109,21 +143,20 @@ export function axesInAgreement(combined: AxisVector, profile: Profile): number 
 }
 
 /**
- * A close call is when the second-closest archetype is less than 0.3 points farther away than the closest.
- * Calibrated by simulation against measurement error (analysis/closecall_sim.py: synthetic answer sheets, never data about
- * people): each sheet was rescored many times on resampled statements, and below this gap the top match survived
- * fewer than half of the resamples. About 1 in 10 sheets near an archetype and 1 in 5 broad sheets fall under it.
- * To be rechecked against real responses in the validation study.
+ * A close call is when the second-closest archetype is less than 0.4 points farther away than the closest.
+ * Calibrated by simulation against measurement error (analysis/closecall_sim.py, synthetic answer sheets only): each
+ * sheet was rescored many times on resampled statements, and below this gap the top match survived fewer than half of
+ * the resamples. Rerun on 2026-11-19 after archetype axis weights were added to matching (it had been 0.3 with plain
+ * distance); about 1 in 8 sheets near an archetype and 1 in 4 broad sheets fall under it.
  */
-export const CLOSE_CALL_MARGIN = 0.3
+export const CLOSE_CALL_MARGIN = 0.4
 
 /**
- * The same calibration rerun for the 48-statement short version (analysis/closecall_sim.py --short, synthetic sheets
- * only). The simulation found the same 0.3 margin; it flags about 14% of sheets near an archetype and 20% of broad
- * sheets. The short version's scores are still less precise, so its top match is less stable overall; the results page
- * says so.
+ * The same margin for the 48-statement short version. Its own simulation (closecall_sim.py --short) put the best
+ * margin at 0.3, with almost the same error rate at 0.4 or 0.5, so it uses 0.4 like the full quiz. The short version's
+ * scores are less precise, so its top match is less stable overall; the results page says so.
  */
-export const CLOSE_CALL_MARGIN_SHORT = 0.3
+export const CLOSE_CALL_MARGIN_SHORT = 0.4
 
 export function isCloseCall(matches: ProfileMatch[], margin: number = CLOSE_CALL_MARGIN): boolean {
   if (matches.length < 2) return false

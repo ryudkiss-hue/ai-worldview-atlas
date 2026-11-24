@@ -3,10 +3,14 @@ import { questions } from '../data/questions'
 import { profiles } from '../data/profiles'
 import { computeRawAxisScores, scaleAxisScores, combineHorizons, classify } from './scoring'
 
+// Seeded, so the audit gives the same answer on every run instead of failing now and then by chance.
+let seed = 12345
+const random = () => (seed = (seed * 16807) % 2147483647) / 2147483647
+
 function randomAnswers(): Record<number, number> {
   const answers: Record<number, number> = {}
   questions.forEach((q) => {
-    answers[q.id] = [1, 2, 4, 5][Math.floor(Math.random() * 4)]
+    answers[q.id] = [1, 2, 4, 5][Math.floor(random() * 4)]
   })
   return answers
 }

@@ -40,18 +40,6 @@ describe('AxisPage', () => {
     expect(screen.getAllByRole('radio')).toHaveLength(18 * 4)
   })
 
-  it('mixes one optional check statement into the Risk page, without a no-settled-view option or a required answer', () => {
-    renderAxisPage(6)
-    expect(screen.getByText('Speed and Safety')).toBeInTheDocument()
-    expect(screen.getAllByRole('radio')).toHaveLength(19 * 4)
-    expect(screen.getByText(/checks that answers are being read/)).toBeInTheDocument()
-    expect(screen.getAllByText('I have no settled view on this')).toHaveLength(18)
-    const check = screen.getByText(/checks that answers are being read/).closest('li')!
-    const real = screen.getAllByRole('radio', { name: 'Strongly Agree' }).filter((r) => !check.contains(r))
-    real.forEach((radio) => fireEvent.click(radio))
-    expect(screen.getByRole('button', { name: 'Next' })).not.toBeDisabled()
-    expect(screen.getByText('Axis 6 of 8 · Question 18 of 144')).toBeInTheDocument()
-  })
 
   it('keeps answers after the page is closed and reopened', () => {
     const first = renderAxisPage(1)

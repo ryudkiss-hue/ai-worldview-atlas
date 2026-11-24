@@ -14,6 +14,9 @@ if '--short' in sys.argv:   # the short version: three pairs per axis
 AX = [a['id'] for a in REF['axes']]
 profiles = REF['profiles']
 P = np.array([[p['coords'][a] for a in AX] for p in profiles], float)
+# archetype axis weights (src/data/archetypeSalience.ts); --equal reproduces the old unweighted distance
+W = np.ones_like(P) if '--equal' in sys.argv else np.array([[p['salience'][a] for a in AX] for p in profiles], float)
+def dist(S): return np.sqrt(len(AX) * (W * (P - S) ** 2).sum(1) / W.sum(1))
 # groups of pair ids per axis and horizon
 groups = []
 for a in AX:
@@ -39,12 +42,12 @@ def respond(theta, rng, k=3.0, noise=0.3):
 def analyse(sheets, rng, B=200):
     gaps, stab = [], []
     for ans in sheets:
-        S = score_pairs(ans, full); dd = np.sqrt(((P - S) ** 2).sum(1)); o = np.argsort(dd)
+        S = score_pairs(ans, full); dd = dist(S); o = np.argsort(dd)
         top = o[0]; gaps.append(dd[o[1]] - dd[o[0]])
         keep = 0
         for _ in range(B):
             sel = [[rng.randrange(len(g)) for _ in g] for g in groups]
-            Sb = score_pairs(ans, sel); keep += int(np.argmin(((P - Sb) ** 2).sum(1)) == top)
+            Sb = score_pairs(ans, sel); keep += int(np.argmin(dist(Sb)) == top)
         stab.append(keep / B)
     return np.array(gaps), np.array(stab)
 rng = random.Random(11)
@@ -61,6 +64,7 @@ for m in np.arange(0.1, 4.01, 0.05):
     err = np.mean((G < m) != U)
     if best is None or err < best[1]: best = (round(float(m), 2), float(err))
 m = best[0]
+print('misclassified at margin: ' + ', '.join(f'{x}: {np.mean((G < x) != U):.0%}' for x in (0.2, 0.3, 0.5, 0.8)))
 print(f'unstable (top match kept in <50% of resamples): near-archetype {np.mean(s1<0.5):.0%}, broad {np.mean(s2<0.5):.0%}')
 print(f'best margin {m} (misclassifies {best[1]:.0%} of sheets)')
 for name, g, s in (('near-archetype', g1, s1), ('broad', g2, s2)):
